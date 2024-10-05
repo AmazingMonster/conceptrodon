@@ -18,8 +18,8 @@ struct Exemplar
     template<typename...Elements>
     struct ProtoMold {};
     
-    template<typename...Elements>
-    using Mold = ProtoMold<Elements...>;
+    template<typename...Agreements>
+    using Mold = ProtoMold<Agreements...>;
     
     template<typename Element>
     using UniMold = IMPLEMENTATION;
@@ -32,6 +32,9 @@ struct Exemplar
 
     template<typename...Args>
     static constexpr auto Mold_v {Mold<Args...>::value};
+    
+    template<typename...Elements>
+    using SubMold = IMPLEMENTATION;
 
 
 
@@ -39,8 +42,8 @@ struct Exemplar
     template<auto...Variables>
     struct ProtoPage {};
 
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
+    template<auto...Agreements>
+    using Page = ProtoPage<Agreements...>;
 
     template<auto Variable>
     using UniPage = IMPLEMENTATION;
@@ -54,14 +57,17 @@ struct Exemplar
     template<auto...Args>
     static constexpr auto Page_v {Page<Args...>::value};
 
+    template<auto...Variables>
+    using SubPage = IMPLEMENTATION;
+
 
 
 
     template<template<typename...> class...Containers>
     struct ProtoRoad {};
 
-    template<template<typename...> class...Containers>
-    using Road = ProtoRoad<Containers...>;
+    template<template<typename...> class...Agreements>
+    using Road = ProtoRoad<Agreements...>;
 
     template<template<typename...> class Container>
     using UniRoad = Container<CONTENTS>;
@@ -71,6 +77,9 @@ struct Exemplar
 
     template<template<typename...> class...Args>
     static constexpr auto Road_v {Road<Args...>::value};
+
+    template<template<typename...> class...Containers>
+    using SubRoad = IMPLEMENTATION;
     
 
 
@@ -78,8 +87,8 @@ struct Exemplar
     template<template<auto...> class...Sequences>
     struct ProtoRail {};
 
-    template<template<auto...> class...Sequences>
-    using Rail = ProtoRail<Sequences...>;
+    template<template<auto...> class...Agreements>
+    using Rail = ProtoRail<Agreements...>;
 
     template<template<auto...> class Sequence>
     using UniRail = Sequence<CONTENTS>;
@@ -89,6 +98,9 @@ struct Exemplar
 
     template<template<auto...> class...Args>
     static constexpr auto Rail_v {Rail<Args...>::value};
+
+    template<template<auto...> class...Sequences>
+    using SubRail = IMPLEMENTATION;
     
 
 
@@ -96,8 +108,8 @@ struct Exemplar
     template<template<template<typename...> class...> class...Warehouses>
     struct ProtoFlow {};
 
-    template<template<template<typename...> class...> class...Warehouses>
-    using Flow = ProtoFlow<Warehouses...>;
+    template<template<template<typename...> class...> class...Agreements>
+    using Flow = ProtoFlow<Agreements...>;
 
     template<template<template<typename...> class...> class Warehouse>
     using UniFlow = Warehouse<CONTENTS>;
@@ -108,14 +120,17 @@ struct Exemplar
     template<template<template<typename...> class...> class...Args>
     static constexpr auto Flow_v {Flow<Args...>::value};
 
+    template<template<template<typename...> class...> class...Warehouses>
+    using SubFlow = IMPLEMENTATION;
+
 
 
 
     template<template<template<auto...> class...> class...Stockrooms>
     struct ProtoSail {};
     
-    template<template<template<auto...> class...> class...Stockrooms>
-    using Sail = ProtoSail<Stockrooms...>;
+    template<template<template<auto...> class...> class...Agreements>
+    using Sail = ProtoSail<Agreements...>;
 
     template<template<template<auto...> class...> class Stockroom>
     using UniSail = Stockroom<CONTENTS>;
@@ -126,14 +141,17 @@ struct Exemplar
     template<template<template<auto...> class...> class...Args>
     static constexpr auto Sail_v {Sail<Args...>::value};
 
+    template<template<template<auto...> class...> class...Stockrooms>
+    using SubSail = IMPLEMENTATION;
+
 
 
 
     template<template<template<template<typename...> class...> class...> class...Madness>
     struct ProtoZeal {};
 
-    template<template<template<template<typename...> class...> class...> class...Madness>
-    using Zeal = ProtoZeal<Madness...>;
+    template<template<template<template<typename...> class...> class...> class...Agreements>
+    using Zeal = ProtoZeal<Agreements...>;
 
     template<template<template<template<typename...> class...> class...> class Madness>
     using UniZeal = Madness<CONTENTS>;
@@ -143,6 +161,9 @@ struct Exemplar
 
     template<template<template<template<typename...> class...> class...> class...Args>
     static constexpr auto Zeal_v {Zeal<Args...>::value};
+
+    template<template<template<template<typename...> class...> class...> class...Madness>
+    using SubZeal = IMPLEMENTATION;
 
 
 
@@ -162,11 +183,11 @@ struct Exemplar
         template<auto...>
         struct ProtoPage
         {
-            template<typename...>
+            template<typename...Elements>
             struct ProtoMold {};
 
-            template<typename...Arguments>
-            using Mold = ProtoMold<Arguments...>;
+            template<typename...Agreements>
+            using Mold = ProtoMold<Agreements...>;
         };
         
         template<auto...Arguments>
@@ -178,8 +199,8 @@ struct Exemplar
     
     };
     
-    template<template<template<template<auto...> class...> class...> class...Craziness>
-    using Zest = ProtoZest<Craziness...>;
+    template<template<template<template<auto...> class...> class...> class...Agreements>
+    using Zest = ProtoZest<Agreements...>;
 
     template<template<template<template<auto...> class...> class...> class Craziness>
     using UniZest = Craziness<CONTENTS>;
@@ -189,6 +210,9 @@ struct Exemplar
 
     template<template<template<template<auto...> class...> class...> class...Args>
     static constexpr auto Zest_v {Zest<Args...>::value};
+
+    template<template<template<template<auto...> class...> class...> class...Craziness>
+    using SubZest = IMPLEMENTATION;
 
 
 

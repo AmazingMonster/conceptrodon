@@ -18,6 +18,9 @@ struct Travel
         template<template<auto...> class...Songs>
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
+        template<template<auto...> class...Sequences>
+        using SubRail = Travel<Rail>::template ProtoRail<Sequences...>;
+
         template<template<typename...> class...Containers>
         using Road = Travel<Rail>::template ProtoRoad<Containers...>;
 
@@ -36,6 +39,9 @@ struct Travel
     {
         template<template<auto...> class...Songs>
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniRail<Car>;
+
+        template<template<auto...> class...Sequences>
+        using SubRail = Travel<Rail>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
         using Road = Travel<Rail>::template ProtoRoad<Containers...>;
@@ -56,6 +62,9 @@ struct Travel
         template<template<auto...> class...Songs>
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniFlow<Car>;
 
+        template<template<auto...> class...Sequences>
+        using SubRail = Travel<Rail>::template ProtoRail<Sequences...>;
+
         template<template<typename...> class...Containers>
         using Road = Travel<Rail>::template ProtoRoad<Containers...>;
 
@@ -74,6 +83,9 @@ struct Travel
     {
         template<template<auto...> class...Songs>
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniSail<Car>;
+
+        template<template<auto...> class...Sequences>
+        using SubRail = Travel<Rail>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
         using Road = Travel<Rail>::template ProtoRoad<Containers...>;

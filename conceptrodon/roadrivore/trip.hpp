@@ -16,8 +16,11 @@ struct Trip
         template<template<typename...> class...Songs>
         using Road = Car<typename Radio<Songs...>::type>;
 
+        template<template<typename...> class...Containers>
+        using SubRoad = Trip<Road>::template ProtoRoad<Containers...>;
+
         template<template<auto...> class...Sequences>
-        using Rail = Trip<Road>::template ProtoRoad<Sequences...>;
+        using Rail = Trip<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
         using Flow = Trip<Road>::template ProtoFlow<Warehouses...>;
@@ -35,8 +38,11 @@ struct Trip
         template<template<typename...> class...Songs>
         using Road = Car<Radio<Songs...>::value>;
 
+        template<template<typename...> class...Containers>
+        using SubRoad = Trip<Road>::template ProtoRoad<Containers...>;
+
         template<template<auto...> class...Sequences>
-        using Rail = Trip<Road>::template ProtoRoad<Sequences...>;
+        using Rail = Trip<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
         using Flow = Trip<Road>::template ProtoFlow<Warehouses...>;
@@ -54,8 +60,11 @@ struct Trip
         template<template<typename...> class...Songs>
         using Road = Car<Radio<Songs...>::template Mold>;
 
+        template<template<typename...> class...Containers>
+        using SubRoad = Trip<Road>::template ProtoRoad<Containers...>;
+
         template<template<auto...> class...Sequences>
-        using Rail = Trip<Road>::template ProtoRoad<Sequences...>;
+        using Rail = Trip<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
         using Flow = Trip<Road>::template ProtoFlow<Warehouses...>;
@@ -73,8 +82,11 @@ struct Trip
         template<template<typename...> class...Songs>
         using Road = Car<Radio<Songs...>::template Page>;
 
+        template<template<typename...> class...Containers>
+        using SubRoad = Trip<Road>::template ProtoRoad<Containers...>;
+
         template<template<auto...> class...Sequences>
-        using Rail = Trip<Road>::template ProtoRoad<Sequences...>;
+        using Rail = Trip<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
         using Flow = Trip<Road>::template ProtoFlow<Warehouses...>;

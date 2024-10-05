@@ -16,6 +16,9 @@ struct Trip
         template<template<auto...> class...Songs>
         using Rail = Car<typename Radio<Songs...>::type>;
 
+        template<template<auto...> class...Sequences>
+        using SubRail = Trip<Rail>::template ProtoRail<Sequences...>;
+
         template<template<typename...> class...Containers>
         using Road = Trip<Rail>::template ProtoRoad<Containers...>;
 
@@ -34,6 +37,9 @@ struct Trip
     {
         template<template<auto...> class...Songs>
         using Rail = Car<Radio<Songs...>::value>;
+
+        template<template<auto...> class...Sequences>
+        using SubRail = Trip<Rail>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
         using Road = Trip<Rail>::template ProtoRoad<Containers...>;
@@ -54,6 +60,9 @@ struct Trip
         template<template<auto...> class...Songs>
         using Rail = Car<Radio<Songs...>::template Mold>;
 
+        template<template<auto...> class...Sequences>
+        using SubRail = Trip<Rail>::template ProtoRail<Sequences...>;
+
         template<template<typename...> class...Containers>
         using Road = Trip<Rail>::template ProtoRoad<Containers...>;
 
@@ -72,6 +81,9 @@ struct Trip
     {
         template<template<auto...> class...Songs>
         using Rail = Car<Radio<Songs...>::template Page>;
+
+        template<template<auto...> class...Sequences>
+        using SubRail = Trip<Rail>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
         using Road = Trip<Rail>::template ProtoRoad<Containers...>;
