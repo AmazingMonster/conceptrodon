@@ -1,0 +1,104 @@
+#ifndef CONCEPTRODON_OMENNIVORE_TEST_AMONG_3RD_H
+#define CONCEPTRODON_OMENNIVORE_TEST_AMONG_3RD_H
+
+#include "conceptrodon/omennivore/among.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/reverie.hpp"
+#include "macaron/judgmental/same_type.hpp"
+#include "macaron/fragmental/sheep.hpp"
+#include <utility>
+
+#include "macaron/judgmental/amenity/define_same_type.hpp"
+#include "macaron/fragmental/amenity/define_sheep.hpp"
+
+namespace Conceptrodon {
+namespace Omennivore {
+namespace TestAmong3rd {
+
+
+
+
+/******************************************************************************************************/
+template<size_t>
+struct Tester 
+{
+    template<typename...>
+    struct ProtoMold {};
+
+    template<typename...Agreements>
+    using Mold = ProtoMold<Agreements...>;
+};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    Tester<
+#define SHEEP_SUFFIX    \
+    >::Mold<int>
+#define SHEEP_SEPARATOR \
+    ,
+
+using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedResult
+/******************************************************************************************************/
+
+
+
+/******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    Tester<
+#define SHEEP_SUFFIX    \
+    >::Mold
+#define SHEEP_SEPARATOR \
+    ,
+
+using Amongus = Among<Reverie<SHEEP_SPROUT(240)>>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+
+#define SHEEP_PREFIX    \
+    Amongus::Page<
+#define SHEEP_SUFFIX    \
+    >::Mold<int>
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
+
+#endif

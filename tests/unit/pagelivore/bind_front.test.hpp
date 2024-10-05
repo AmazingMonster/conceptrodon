@@ -1,0 +1,55 @@
+#ifndef CONCEPTRODON_PAGELIVORE_TEST_BIND_FRONT_H
+#define CONCEPTRODON_PAGELIVORE_TEST_BIND_FRONT_H
+
+#include <concepts>
+#include "conceptrodon/pagelivore/bind_front.hpp"
+#include "macaron/judgmental/same_type.hpp"
+#include "macaron/fragmental/sheep.hpp"
+
+#include "macaron/judgmental/amenity/define_same_type.hpp"
+#include "macaron/fragmental/amenity/define_sheep.hpp"
+
+namespace Conceptrodon {
+namespace Pagelivore {
+namespace TestBindFront {
+
+
+
+
+/******************************************************************************************************/
+template<auto...Variables>
+requires (sizeof...(Variables) == 240)
+struct Tester {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+using SupposedResult = Tester<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+SAME_TYPE(BindFront<Tester>::Page<SHEEP_SPROUT(100)>::Page<SHEEP_SPROUT(140)>);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
+
+#endif
