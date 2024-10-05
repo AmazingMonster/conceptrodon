@@ -1,3 +1,6 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef CONCEPTRODON_OMENNIVORE_TEST_PASTE_2ND_H
 #define CONCEPTRODON_OMENNIVORE_TEST_PASTE_2ND_H
 

@@ -1,3 +1,6 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef CONCEPTRODON_TYPELIVORE_TEST_HAS_H
 #define CONCEPTRODON_TYPELIVORE_TEST_HAS_H
 

@@ -1,3 +1,6 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef CONCEPTRODON_ROADRIVORE_TEST_BIND_BACK_H
 #define CONCEPTRODON_ROADRIVORE_TEST_BIND_BACK_H
 

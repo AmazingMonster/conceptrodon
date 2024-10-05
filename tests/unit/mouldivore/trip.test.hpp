@@ -1,3 +1,6 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef CONCEPTRODON_MOULDIVORE_TEST_TRIP_H
 #define CONCEPTRODON_MOULDIVORE_TEST_TRIP_H
 
@@ -6,6 +9,9 @@
 #include "conceptrodon/mouldivore/trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
+#include "conceptrodon/omennivore/concepts/valuable.hpp"
+#include "conceptrodon/emissary.hpp"
+#include "conceptrodon/diplomat.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -18,60 +24,60 @@ namespace TestTrip {
 
 
 /******************************************************************************************************/
-template<typename T>
+template<typename Element>
 struct TesterA
 { 
-    using type = T*; 
-    static constexpr auto value {0};
-};
+    using type = Element*;
 
-template<auto V>
-struct TesterB
-{
-    static constexpr auto value {V};
-    using type = TesterB;
-};
-
-template<typename T>
-struct TesterC
-{
-    static constexpr auto value {T::value + 1};
-};
-
-template<typename T>
-struct TesterD
-{
-    template<typename First, typename Second, typename...Ts>
+    template<typename, typename Target, typename...>
     struct ProtoMold
-    { using type = std::tuple<T, Second>;};
+    {
+        using type = std::tuple<TesterA::type, Target>;
+    };
 
     template<typename...Elements>
     using Mold = ProtoMold<Elements...>;
 };
 
-template<template<typename...> class W>
-struct TesterE
-{
-    template<typename...Elements>
-    using Mold = W<Elements...>;
-};
+template<typename Element>
+requires Omennivore::Valuable<Element>
+struct TesterA<Element>
+{ 
+    using type = Element;
+    static constexpr auto value {Element::value};
 
-template<auto V>
-struct TesterF
-{
-    template<auto First, auto Second, auto...Vs>
+    template<typename, typename Target, typename...>
+    struct ProtoMold
+    {
+        using type = std::tuple<TesterA::type, Target>;
+    };
+
+    template<typename...Elements>
+    using Mold = ProtoMold<Elements...>;
+
+    template<auto, auto Target, auto...>
     struct ProtoPage
-    { using type = std::index_sequence<V, Second>;};
+    {
+        using type = std::index_sequence<TesterA::value, Target>;
+    };
 
     template<auto...Variables>
     using Page = ProtoPage<Variables...>;
 };
 
-template<template<auto...> class S>
-struct TesterG
+template<typename Element>
+requires Omennivore::Valuable<Element>
+struct TesterB
 {
-    template<auto...Variables>
-    using Page = S<Variables...>;
+    using type = TesterB;
+    static constexpr auto value {Element::value + 1};
+};
+
+template<auto Variable>
+struct TesterC
+{
+    using type = TesterC;
+    static constexpr auto value {Variable + 1};
 };
 /******************************************************************************************************/
 
@@ -82,10 +88,26 @@ struct TesterG
 #define SUPPOSED_TYPE   \
     int***
 #define SUPPOSED_VALUE  \
-    1
+    2
 
-SAME_TYPE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Mold<int>::type);
-EQUAL_VALUE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Rail<TesterB>::Road<TesterC>::Mold<std::integral_constant<int, 1>>::value);
+SAME_TYPE
+(
+    Trip<TesterA>
+    ::Road<TesterA>
+    ::Road<TesterA>
+    ::Mold<int>
+    ::type
+);
+
+EQUAL_VALUE
+(
+    Trip<TesterA>
+    ::Road<TesterA>
+    ::Road<TesterB>
+    ::Rail<TesterC>
+    ::Mold<std::integral_constant<int, 0>>
+    ::value
+);
 
 #undef SUPPOSED_VALUE
 #undef SUPPOSED_TYPE
@@ -96,21 +118,17 @@ EQUAL_VALUE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Rail<TesterB>::Road<Tes
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterB<0>
+    std::tuple<int**, float>
 
-SAME_TYPE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Rail<TesterB>::Mold<std::integral_constant<int, 1>>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    std::tuple<int***, float>
-
-SAME_TYPE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Road<TesterD>::Flow<TesterE>::Mold<int>::Mold<int, float, double>::type);
+SAME_TYPE
+(
+    Trip<TesterA>
+    ::Road<TesterA>
+    ::Flow<Emissary>
+    ::Mold<int>
+    ::Mold<int, float, double>
+    ::type
+);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -120,9 +138,19 @@ SAME_TYPE(Trip<TesterA>::Road<TesterA>::Road<TesterA>::Road<TesterD>::Flow<Teste
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    std::index_sequence<1, 11>
+    std::index_sequence<2, 11>
 
-SAME_TYPE(Trip<TesterA>::Rail<TesterB>::Road<TesterC>::Rail<TesterF>::Sail<TesterG>::Mold<int>::Page<10, 11, 12>::type);
+SAME_TYPE
+(
+    Trip<TesterA>
+    ::Road<TesterB>
+    ::Rail<TesterC>
+    ::Road<TesterA>
+    ::Sail<Diplomat>
+    ::Mold<std::integral_constant<int, 0>>
+    ::Page<10, 11, 12>
+    ::type
+);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

@@ -1,3 +1,6 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef CONCEPTRODON_STOCKIVORE_TEST_REPACK_H
 #define CONCEPTRODON_STOCKIVORE_TEST_REPACK_H
 
