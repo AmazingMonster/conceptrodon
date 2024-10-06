@@ -24,7 +24,7 @@ These identifiers are deployed inside a metafunction to take corresponding argum
 
 Every function in this library is tailored to fit this pattern. Since the inner structures of functions are fixed, composing various signatures is now possible[TODO: Add examples].
 
-## Idea
+## Intuition
 Let's take another look at *Mold*. It can be thought of as the set of all metafunctions with the signature *template<typename...>*. The same is true for *Road*, while the corresponding signature becomes *template<template<typename...> class...>*. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, by taking arguments in steps('quoted metafunction' in **boost::mp11** is an example of this), we are making maps from functions to functions.
 
 If we reverse the order of *Road* and *Fun*, say the new function is called *FunReversed*, we can invoke it by *FunReversed\<std::tuple\>::Mold\<int\>::Rail\<std::index_sequence\>* to get the same result as before. *FunReversed* is then a map from set *Road* to set *Mold*. In conclusion, there is a loose correspondence between all the maps from set *Mold* to set *Road* and all the maps from set *Road* to set *Mold*. 
@@ -54,6 +54,34 @@ The library is further broken down according to dependency. Functions in *\Conce
 ## Speed
 Many functions are tested against **boost::mp11**. If the function being tested is slower than its counterpart, the implementation from **boost::mp11** is used. Therefore, This library is generally faster than **boost::mp11**. Tests can be found in *tests/unit*. 
 
-## Future
-Descriptions will be gradually added to each function.
+## Limitation
+This library is only tested with Clang. It won't work with GCC since GCC still doesn't support explicit specialization inside a struct. There are workarounds and a GCC compatible version is planned in the future.
 
+## Future
+Descriptions will be gradually added to each function. A GCC compatible version will be added after..
+
+## Install
+Since this is a header-only library, you can download the library and include what you need just like your own headers.  
+
+You can also install it using CMake:
+
+- Windows
+ 1. Download the library.
+ 2. Open Developer Command Prompt that comes with Visual Studio. Redirect to the library folder. Generate a project buildsystem using CMake:
+    ```
+    cmake -S . -B "Where you want to build"
+    ```
+ 3. Redirect to the build directory which you specified after -B. Run command:
+    ```
+    cmake --install . --prefix "Where you want to install"
+    ```
+[TODO: Add instructions for other systems]
+
+After installation, in the CMakeList.txt of your own project, Add:
+```
+find_package(Conceptrodon REQUIRED CONFIG)
+target_link_libraries(YourProject PRIVATE Conceptrodon::Contents)
+```
+Now, you can include what you need in your own project.
+
+    
