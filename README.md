@@ -66,12 +66,12 @@ Since this is a header-only library, you can download the library and include wh
 You can also install it using CMake:
 
 - Windows
- 1. Download the library.
- 2. Open Developer Command Prompt that comes with Visual Studio. Redirect to the library folder. Generate a project buildsystem using CMake:
+    1. Download the library.
+    2. Open Developer Command Prompt that comes with Visual Studio. Redirect to the library folder. Generate a project buildsystem using CMake:
     ```
     cmake -S . -B "Where you want to build"
     ```
- 3. Redirect to the build directory which you specified after -B. Run command:
+    3. Redirect to the build directory which you specified after -B. Run command:
     ```
     cmake --install . --prefix "Where you want to install"
     ```
