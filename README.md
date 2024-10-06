@@ -22,7 +22,17 @@ These identifiers are deployed inside a metafunction to take corresponding argum
 2. Since the next parameter(`std::tuple`) is corresponding to *Road*(`template<template<typename...> class...>`), we pass it to *Road*: `Fun<int>::Road<std::tuple>`.
 3. The last parameter(`std::index_sequence`) is corresponding to *Rail*(`template<template<auto...> class...>`), we pass it to *Rail*: `Fun<int>::Road<std::tuple>::Rail<std::index_sequence>`.
 
-Every function in this library is tailored to fit this pattern. Since the inner structures of functions are fixed, composing various signatures is now possible[TODO: Add examples].
+Every function in this library is tailored to fit this pattern. Since the inner structures of functions are fixed, composing various signatures is now possible. Examples can be found in:
+- *tests/unit/mouldivore/trip.test.hpp*
+- *tests/unit/mouldivore/travel.test.hpp*
+- *tests/unit/pagelivore/trip.test.hpp*
+- *tests/unit/pagelivore/travel.test.hpp*
+- *tests/unit/roadrivore/trip.test.hpp*
+- *tests/unit/roadrivore/travel.test.hpp*
+- *tests/unit/raillivore/trip.test.hpp*
+- *tests/unit/raillivore/travel.test.hpp*
+
+[TODO: Add More Explanations]
 
 ## Intuition
 Let's take another look at *Mold*. It can be thought of as the set of all metafunctions with the signature `template<typename...>`. The same is true for *Road*, while the corresponding signature becomes `template<template<typename...> class...>`. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, by taking arguments in steps('quoted metafunction' in **boost::mp11** is an example of this), we are making maps from functions to functions.
