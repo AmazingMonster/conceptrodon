@@ -24,10 +24,12 @@ These identifiers are deployed inside a metafunction to take corresponding argum
 
 Every function in this library is tailored to fit this pattern. Since the inner structures of functions are fixed, composing various signatures is now possible[TODO: Add examples].
 
-## Theory
+## Idea
 Let's take another look at *Mold*. It can be thought of as the set of all metafunctions with the signature *template<typename...>*. The same is true for *Road*, while the corresponding signature becomes *template<template<typename...> class...>*. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, by taking arguments in steps('quoted metafunction' in **boost::mp11** is an example of this), we are making maps from functions to functions.
 
-If we reverse the order of *Road* and *Fun*, say the new function is called *FunReversed*, we can invoke it by *FunReversed\<std::tuple\>::Mold\<int\>::Rail\<std::index_sequence\>* to get the same result as before. *FunReversed* is then a map from set *Road* to set *Mold*. In conclusion, there is a loose correspondence between all the maps from set *Mold* to set *Road* and all the maps from set *Road* to set *Mold*. This library is structured according to these ideas.
+If we reverse the order of *Road* and *Fun*, say the new function is called *FunReversed*, we can invoke it by *FunReversed\<std::tuple\>::Mold\<int\>::Rail\<std::index_sequence\>* to get the same result as before. *FunReversed* is then a map from set *Road* to set *Mold*. In conclusion, there is a loose correspondence between all the maps from set *Mold* to set *Road* and all the maps from set *Road* to set *Mold*. 
+ 
+This library is structured according to these ideas.
 
 ## Structure
 This library contains four main namespaces:
