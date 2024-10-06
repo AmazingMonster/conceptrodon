@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 project(
     Conceptrodon
     VERSION 1.0.0.0
     LANGUAGES CXX
 )
+
+option(CONCEPTRODON_COMPARE_WITH_BOOST OFF)
 
 # cache variables for installation destinations
 include(GNUInstallDirs)
@@ -20,6 +25,34 @@ target_include_directories(ConceptrodonContents INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
+
+
+if(CMAKE_SOURCE_DIR STREQUAL Conceptrodon_SOURCE_DIR OR TEST_CONCEPTRODON)
+
+add_executable(TestConceptrodon
+    ${CMAKE_CURRENT_LIST_DIR}/tests/tests.cpp
+)
+
+
+target_include_directories(TestConceptrodon
+    PRIVATE ${CMAKE_CURRENT_LIST_DIR}
+)
+
+target_compile_options(TestConceptrodon
+    PRIVATE -ftime-trace
+)
+
+find_package(Macaron REQUIRED CONFIG)
+target_link_libraries(TestConceptrodon PRIVATE Macaron::Macros)
+
+if(CONCEPTRODON_COMPARE_WITH_BOOST)
+find_package(Boost REQUIRED CONFIG)
+target_include_directories(TestConceptrodon
+    PRIVATE ${Boost_INCLUDE_DIRS}
+)
+endif()
+
+endif()
 
 
 install(

@@ -2,7 +2,7 @@
 A C++20 metaprogramming library focusing on composition and continuation.
 
 ## Introduction
-This library is inspired by pipe syntax and aims to create a similar way to compose metafunctions.  
+This library is inspired by pipe syntax and aims to compose metafunctions in a similar manner.  
 
 Both **boost::mp11** and **kvasir::mpl** contain a function called 'compose'. It takes a variadic pack of metafunctions and uses the result from the previous function to invoke the next one.
 Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​>>…​>`. However, since we still don't have a universal template parameter token, signatures of `F1...` must be specified.
@@ -68,7 +68,7 @@ Many functions are tested against **boost::mp11**. If the function being tested 
 This library is only tested with Clang. It won't work with GCC since GCC still doesn't support explicit specialization inside a struct. There are workarounds and a GCC compatible version is planned in the future.
 
 ## Future
-Descriptions will be gradually added to each function. A GCC-compatible version will be added after..
+Descriptions will be gradually added to each function. A GCC-compatible version will be added after.
 
 ## Install
 Since this is a header-only library, you can download the library and include what you need like your own headers.  

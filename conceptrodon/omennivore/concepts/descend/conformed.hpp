@@ -13,7 +13,7 @@ namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Arg>
-concept NotPottery
+concept Conformed
 =   PotteryProbe<Arg>
 ||  AlmanacProbe<Arg>
 ||  FreewayProbe<Arg>
