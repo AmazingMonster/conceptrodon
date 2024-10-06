@@ -39,7 +39,7 @@ This library contains four main sections:
 While there are many exceptions, these rules guide the majority of decision-making.
 
 ## Speed
-Many functions are tested against boost::mp11. If the function being tested is slower than its counterpart, the implementation from boost::mp11 will be used. Therefore, Conceptrodon is generally faster than mp11. Tests can be found in tests/unit. 
+Many functions are tested against boost::mp11. If the function being tested is slower than its counterpart, the implementation from boost::mp11 is used. Therefore, Conceptrodon is generally faster than mp11. Tests can be found in tests/unit. 
 
 ## Future
 Descriptions will be gradually added to each function. The purpose of this library is to facilitate another project, which is to create a new form of QWidget that can install various features via template parameters. This library will be tested and modified as the other project progresses.
