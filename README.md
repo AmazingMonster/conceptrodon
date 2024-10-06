@@ -1,5 +1,5 @@
 # Conceptrodon
-A metaprogramming library focusing on continuation.
+A C++20 metaprogramming library focusing on composition and continuation.
 
 ## Introduction
 This library is inspired by pipe syntax and aims to create a similar way to compose metafunctions.  
