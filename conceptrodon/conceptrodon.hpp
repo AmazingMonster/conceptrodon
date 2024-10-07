@@ -19,6 +19,9 @@
 #include "conceptrodon/foolery.hpp"
 #include "conceptrodon/lunatic.hpp"
 
+#include "conceptrodon/transcend.hpp"
+#include "conceptrodon/revelation.hpp"
+
 #include "conceptrodon/monotony.hpp"
 #include "conceptrodon/emissary.hpp"
 #include "conceptrodon/diplomat.hpp"

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_REMOVE_H
-#define CONCEPTRODON_MOULDIVORE_TEST_REMOVE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REMOVE_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REMOVE_H
 
 #include <concepts>
 #include "conceptrodon/descend/descend/mouldivore/remove.hpp"

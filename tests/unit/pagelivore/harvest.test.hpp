@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_TEST_HARVEST_H
-#define CONCEPTRODON_PAGELIVORE_TEST_HARVEST_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_HARVEST_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_HARVEST_H
 
 #include <type_traits>
 #include "conceptrodon/descend/pagelivore/harvest.hpp"

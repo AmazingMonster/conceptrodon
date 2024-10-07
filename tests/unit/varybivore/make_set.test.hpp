@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_MAKE_SET_H
-#define CONCEPTRODON_VARYBIVORE_TEST_MAKE_SET_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MAKE_SET_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MAKE_SET_H
 
 #include <concepts>
 #include "conceptrodon/descend/descend/varybivore/make_set.hpp"

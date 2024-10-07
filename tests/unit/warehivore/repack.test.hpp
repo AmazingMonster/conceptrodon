@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_WAREHIVORE_TEST_REPACK_H
-#define CONCEPTRODON_WAREHIVORE_TEST_REPACK_H
+#ifndef CONCEPTRODON_TESTS_UNIT_WAREHIVORE_REPACK_H
+#define CONCEPTRODON_TESTS_UNIT_WAREHIVORE_REPACK_H
 
 #include <concepts>
 #include "conceptrodon/warehivore/repack.hpp"

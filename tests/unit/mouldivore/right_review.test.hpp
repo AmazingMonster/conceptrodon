@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_RIGHT_REVIEW_H
-#define CONCEPTRODON_MOULDIVORE_TEST_RIGHT_REVIEW_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_RIGHT_REVIEW_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_RIGHT_REVIEW_H
 
 #include <concepts>
 #include "conceptrodon/descend/mouldivore/right_review.hpp"

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_IS_POTTERY_H
-#define CONCEPTRODON_OMENNIVORE_TEST_IS_POTTERY_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_POTTERY_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_POTTERY_H
 
 #include "conceptrodon/omennivore/is_pottery.hpp"
 #include "conceptrodon/capsule.hpp"

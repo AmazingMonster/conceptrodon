@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TEST_EMISSARY_H
-#define CONCEPTRODON_TEST_EMISSARY_H
+#ifndef CONCEPTRODON_TESTS_UNIT_EMISSARY_H
+#define CONCEPTRODON_TESTS_UNIT_EMISSARY_H
 
 #include <concepts>
 #include "conceptrodon/emissary.hpp"

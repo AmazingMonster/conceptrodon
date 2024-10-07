@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_TEST_OBSERVE_H
-#define CONCEPTRODON_PAGELIVORE_TEST_OBSERVE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_OBSERVE_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_OBSERVE_H
 
 #include "conceptrodon/descend/pagelivore/observe.hpp"
 #include "conceptrodon/shuttle.hpp"

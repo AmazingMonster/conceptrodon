@@ -12,10 +12,10 @@ struct Foolery
     static constexpr size_t size() { return sizeof...(Things); }
 
     template<template<template<template<typename...> class...> class...> class Intoxication>
-    struct ProtoZeal { using type = Intoxication<Things...>; };
+    struct Detail { using type = Intoxication<Things...>; };
 
     template<template<template<template<typename...> class...> class...> class...Madness>
-    using Zeal = ProtoZeal<Madness...>::type;
+    using Zeal = Detail<Madness...>::type;
     
     template<template<template<template<typename...> class...> class...> class Intoxication>
     using UniZeal = Intoxication<Things...>;

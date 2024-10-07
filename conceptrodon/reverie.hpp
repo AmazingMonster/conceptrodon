@@ -12,10 +12,10 @@ struct Reverie
     static constexpr size_t size() { return sizeof...(Containers); }
 
     template<template<template<typename...> class...> class Warehouse>
-    struct ProtoFlow { using type = Warehouse<Containers...>; };
+    struct Detail { using type = Warehouse<Containers...>; };
 
     template<template<template<typename...> class...> class...Warehouses>
-    using Flow = ProtoFlow<Warehouses...>::type;
+    using Flow = Detail<Warehouses...>::type;
 
     template<template<template<typename...> class...> class Warehouse>
     using UniFlow = Warehouse<Containers...>;

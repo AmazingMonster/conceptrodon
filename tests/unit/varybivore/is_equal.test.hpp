@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_IS_EQUAL_H
-#define CONCEPTRODON_VARYBIVORE_TEST_IS_EQUAL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_EQUAL_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_EQUAL_H
 
 #include <concepts>
 #include "conceptrodon/varybivore/is_equal.hpp"

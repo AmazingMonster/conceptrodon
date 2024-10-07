@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_DISMISS_H
-#define CONCEPTRODON_VARYBIVORE_TEST_DISMISS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DISMISS_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DISMISS_H
 
 #include "conceptrodon/descend/varybivore/dismiss.hpp"
 #include "conceptrodon/shuttle.hpp"

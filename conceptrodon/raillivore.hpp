@@ -5,4 +5,5 @@
 #include "conceptrodon/raillivore/bind_front.hpp"
 #include "conceptrodon/raillivore/trip.hpp"
 
+#include "conceptrodon/descend/raillivore/tale.hpp"
 #include "conceptrodon/descend/raillivore/travel.hpp"

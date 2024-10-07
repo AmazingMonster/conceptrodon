@@ -15,10 +15,10 @@ struct Shuttle
     static constexpr size_t size() { return sizeof...(Variables); }
 
     template<template<auto...> class Sequence>
-    struct ProtoRail { using type = Sequence<Variables...>; };
+    struct Detail { using type = Sequence<Variables...>; };
 
     template<template<auto...> class...Sequences>
-    using Rail = ProtoRail<Sequences...>::type;
+    using Rail = Detail<Sequences...>::type;
 
     template<template<auto...> class Sequence>
     using UniRail = Sequence<Variables...>;

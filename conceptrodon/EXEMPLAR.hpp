@@ -25,7 +25,7 @@ template<TEMPLATE_PARAMETER_CATEGORY...>
 struct Exemplar
 {
     template<typename...Elements>
-    struct Mold {}
+    struct Mold {};
 
 // While this is much clearer to implement, it has one major downfall:
 
@@ -48,7 +48,7 @@ struct Exemplar
     {
         struct Slash    /* Add intermediate struct */
         {
-            template<template<typename...> class...Warehouses>
+            template<template<typename...> class...>
             struct Road {};
         };
 
@@ -67,9 +67,9 @@ struct Exemplar
     struct Rail: public Road<>
     {};
 
-// 'Slash' that surrounds 'Road' is not needed anymore, yet we still need to go through 'Slash' to access the inherited 'Road':\
+// 'Slash' that surrounds 'Road' is not needed anymore, yet we still have to go through 'Slash' to access the inherited 'Road':\
 // Exemplar<>::Rail<>::Slash::Road<>.
-// However, An intermediate structure surrounding 'Rail' is needed now. We cannot access the inherited 'Rail' from Exemplar::Rail.\
+// An intermediate structure surrounding 'Rail' is needed now. Since it is missing, we cannot access the inherited 'Rail' from Exemplar::Rail.\
 // Exemplar<>::Rail<>::Rail will refer to the constructor instead.
 // These behaviors are not predictable by high-level functions. Probing into arguments' inner structures is necessary before every operation.\
 // This is both complicated and inefficient.
@@ -79,7 +79,7 @@ struct Exemplar
 
 }}
 
-[TODO: Add more details]
+// [TODO: Add more details]
 
 namespace Conceptrodon {
 

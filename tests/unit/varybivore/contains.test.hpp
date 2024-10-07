@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_CONTAINS_H
-#define CONCEPTRODON_VARYBIVORE_TEST_CONTAINS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CONTAINS_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CONTAINS_H
 
 #include <concepts>
 #include "conceptrodon/descend/varybivore/contains.hpp"

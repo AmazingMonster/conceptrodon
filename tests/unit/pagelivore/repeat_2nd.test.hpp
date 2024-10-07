@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_TEST_REPEAT_2ND_H
-#define CONCEPTRODON_PAGELIVORE_TEST_REPEAT_2ND_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_REPEAT_2ND_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_REPEAT_2ND_H
 
 #include <concepts>
 #include "conceptrodon/descend/pagelivore/repeat.hpp"

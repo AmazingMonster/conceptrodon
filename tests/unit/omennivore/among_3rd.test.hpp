@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_AMONG_3RD_H
-#define CONCEPTRODON_OMENNIVORE_TEST_AMONG_3RD_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_3RD_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_3RD_H
 
 #include "conceptrodon/omennivore/among.hpp"
 #include "conceptrodon/capsule.hpp"

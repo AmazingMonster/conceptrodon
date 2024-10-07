@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TEST_DELEGACY_H
-#define CONCEPTRODON_TEST_DELEGACY_H
+#ifndef CONCEPTRODON_TESTS_UNIT_DELEGACY_H
+#define CONCEPTRODON_TESTS_UNIT_DELEGACY_H
 
 #include <concepts>
 #include "conceptrodon/delegacy.hpp"

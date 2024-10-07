@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_TEST_TRIM_H
-#define CONCEPTRODON_TYPELIVORE_TEST_TRIM_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TRIM_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TRIM_H
 
 #include "conceptrodon/descend/typelivore/trim.hpp"
 #include "conceptrodon/capsule.hpp"

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_DISMISS_H
-#define CONCEPTRODON_MOULDIVORE_TEST_DISMISS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_DISMISS_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_DISMISS_H
 
 #include "conceptrodon/descend/mouldivore/dismiss.hpp"
 #include "macaron/judgmental/same_type.hpp"

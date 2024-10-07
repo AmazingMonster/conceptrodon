@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_AGENT_H
-#define CONCEPTRODON_MOULDIVORE_TEST_AGENT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_AGENT_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_AGENT_H
 
 #include <concepts>
 #include <tuple>

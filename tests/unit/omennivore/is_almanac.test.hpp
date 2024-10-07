@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_IS_RAILWAY_H
-#define CONCEPTRODON_OMENNIVORE_TEST_IS_RAILWAY_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_RAILWAY_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_RAILWAY_H
 
 #include "conceptrodon/omennivore/is_railway.hpp"
 #include "conceptrodon/capsule.hpp"

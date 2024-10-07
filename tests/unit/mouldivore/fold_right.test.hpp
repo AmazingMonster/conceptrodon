@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_FOLD_RIGHT_H
-#define CONCEPTRODON_MOULDIVORE_TEST_FOLD_RIGHT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_FOLD_RIGHT_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_FOLD_RIGHT_H
 
 #include <concepts>
 #include <type_traits>

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_HARVEST_VARIABLES_H
-#define CONCEPTRODON_OMENNIVORE_TEST_HARVEST_VARIABLES_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_VARIABLES_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_VARIABLES_H
 
 #include <type_traits>
 #include "conceptrodon/descend/omennivore/harvest_variables.hpp"

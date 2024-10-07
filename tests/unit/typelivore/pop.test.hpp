@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_TEST_POP_H
-#define CONCEPTRODON_TYPELIVORE_TEST_POP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_POP_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_POP_H
 
 #include <utility>
 #include "conceptrodon/descend/typelivore/pop.hpp"

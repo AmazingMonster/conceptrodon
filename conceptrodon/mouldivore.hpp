@@ -46,6 +46,7 @@
 #include "conceptrodon/descend/mouldivore/rotate.hpp"
 #include "conceptrodon/descend/mouldivore/sieve.hpp"
 #include "conceptrodon/descend/mouldivore/slice.hpp"
+#include "conceptrodon/descend/mouldivore/tale.hpp"
 #include "conceptrodon/descend/mouldivore/transform.hpp"
 #include "conceptrodon/descend/mouldivore/travel.hpp"
 #include "conceptrodon/descend/mouldivore/trim.hpp"

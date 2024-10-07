@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_TEST_LEFT_INTERVIEW_2ND_H
-#define CONCEPTRODON_PAGELIVORE_TEST_LEFT_INTERVIEW_2ND_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_LEFT_INTERVIEW_2ND_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_LEFT_INTERVIEW_2ND_H
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/left_interview.hpp"

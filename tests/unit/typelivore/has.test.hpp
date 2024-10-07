@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_TEST_HAS_H
-#define CONCEPTRODON_TYPELIVORE_TEST_HAS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_HAS_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_HAS_H
 
 #include <concepts>
 #include "conceptrodon/descend/typelivore/has.hpp"

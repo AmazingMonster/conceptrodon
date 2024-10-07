@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_TEST_RECONFORMED_LEFT_INTERVIEW_H
-#define CONCEPTRODON_TYPELIVORE_TEST_RECONFORMED_LEFT_INTERVIEW_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_LEFT_INTERVIEW_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_LEFT_INTERVIEW_H
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/typelivore/reconformed_left_interview.hpp"

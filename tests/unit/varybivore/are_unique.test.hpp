@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_ARE_UNIQUE_H
-#define CONCEPTRODON_VARYBIVORE_TEST_ARE_UNIQUE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNIQUE_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNIQUE_H
 
 #include <concepts>
 #include "conceptrodon/descend/descend/varybivore/are_unique.hpp"

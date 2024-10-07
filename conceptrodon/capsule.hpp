@@ -12,10 +12,10 @@ struct Capsule
     static constexpr size_t size() { return sizeof...(Elements); }
 
     template<template<typename...> class Container>
-    struct ProtoRoad { using type = Container<Elements...>; };
+    struct Detail { using type = Container<Elements...>; };
 
     template<template<typename...> class...Containers>
-    using Road = ProtoRoad<Containers...>::type;
+    using Road = Detail<Containers...>::type;
 
     template<template<typename...> class Container>
     using UniRoad = Container<Elements...>;

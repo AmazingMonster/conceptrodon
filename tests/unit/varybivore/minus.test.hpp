@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_MINUS_H
-#define CONCEPTRODON_VARYBIVORE_TEST_MINUS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINUS_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINUS_H
 
 #include <concepts>
 #include "conceptrodon/varybivore/minus.hpp"

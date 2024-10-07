@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_ZIP_H
-#define CONCEPTRODON_OMENNIVORE_TEST_ZIP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_H
 
 #include "conceptrodon/descend/omennivore/zip.hpp"
 #include "macaron/judgmental/same_type.hpp"

@@ -48,6 +48,7 @@
 #include "conceptrodon/descend/pagelivore/segment.hpp"
 #include "conceptrodon/descend/pagelivore/sieve.hpp"
 #include "conceptrodon/descend/pagelivore/slice.hpp"
+#include "conceptrodon/descend/pagelivore/tale.hpp"
 #include "conceptrodon/descend/pagelivore/transform.hpp"
 #include "conceptrodon/descend/pagelivore/travel.hpp"
 #include "conceptrodon/descend/pagelivore/trim.hpp"

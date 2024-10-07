@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TEST_HARVEST_H
-#define CONCEPTRODON_MOULDIVORE_TEST_HARVEST_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_HARVEST_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_HARVEST_H
 
 #include <concepts>
 #include <type_traits>

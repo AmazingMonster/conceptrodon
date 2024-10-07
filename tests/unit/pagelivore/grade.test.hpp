@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_TEST_GRADE_H
-#define CONCEPTRODON_PAGELIVORE_TEST_GRADE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_GRADE_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_GRADE_H
 
 #include <concepts>
 #include <type_traits>

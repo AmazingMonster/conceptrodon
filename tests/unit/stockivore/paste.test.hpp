@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_STOCKIVORE_TEST_PASTE_H
-#define CONCEPTRODON_STOCKIVORE_TEST_PASTE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_STOCKIVORE_PASTE_H
+#define CONCEPTRODON_TESTS_UNIT_STOCKIVORE_PASTE_H
 
 #include <concepts>
 #include "conceptrodon/stockivore/paste.hpp"

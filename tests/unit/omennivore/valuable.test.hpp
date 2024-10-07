@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_TEST_VALUABLE_H
-#define CONCEPTRODON_OMENNIVORE_TEST_VALUABLE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_VALUABLE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_VALUABLE_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "macaron/judgmental/valid.hpp"

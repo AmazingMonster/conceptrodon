@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_TEST_ROTATE_H
-#define CONCEPTRODON_VARYBIVORE_TEST_ROTATE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ROTATE_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ROTATE_H
 
 #include "conceptrodon/descend/varybivore/rotate.hpp"
 #include "conceptrodon/shuttle.hpp"

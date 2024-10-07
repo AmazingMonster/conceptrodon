@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_SEQUNIVORE_TEST_PASTE_H
-#define CONCEPTRODON_SEQUNIVORE_TEST_PASTE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_PASTE_H
+#define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_PASTE_H
 
 #include "conceptrodon/sequnivore/paste.hpp"
 #include "conceptrodon/shuttle.hpp"
