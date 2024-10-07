@@ -1,14 +1,85 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
+// Every function in the library follows the structure presented by Exemplar.
+// This document will explain the library's mechanics and design decisions.
+
 #ifndef CONCEPTRODON_EXEMPLAR_H
 #define CONCEPTRODON_EXEMPLAR_H
 
+// Define dummy placeholder tokens for readability.
 #define TEMPLATE_PARAMETER_CATEGORY auto
 #define TYPE int
 #define VALUE true
 #define CONTENTS
 #define IMPLEMENTATION int
+
+// The core idea of the library is to dissect the process of argument passing, making signatures of metafunctions predictable and better suited for composition.
+// The first attempt was to deploy member structure templates to accept further arguments.
+
+namespace Conceptrodon {
+namespace FirstAttempt
+{
+
+template<TEMPLATE_PARAMETER_CATEGORY...>
+struct Exemplar
+{
+    template<typename...Elements>
+    struct Mold {}
+
+// While this is much clearer to implement, it has one major downfall:
+
+    template<auto...Variables>
+    struct Page
+    {
+//      template<auto...>
+//      struct Page {};    
+//      using Page = IMPLEMENTATION;    /*cannot define a member with the same name as its surrounding struct*/
+    };
+
+// Assuming we are creating a function(for the sake of this example, we let the function itself take the argument for transform)\
+// that transforms a variable of certain index in any given sequence, 
+// it's not possible to invoke the function by Function<Transformation>::Page<Index>::Page<Arguments...>.
+
+// Attempts have been made to resolve this issue:
+
+    template<template<typename...> class...Warehouses>
+    struct Road
+    {
+        struct Slash    /* Add intermediate struct */
+        {
+            template<template<typename...> class...Warehouses>
+            struct Road {};
+        };
+
+        
+        template<template<auto...> class...Stockrooms>
+        struct Rail: public Road<>
+        {};
+
+// Now, the example above can be written as Exemplar<>::Page<0>::Slash::Page<Arguments...>.
+
+    };
+
+// This doesn't solve all of our problems. If we inherit Road to a new name:
+
+    template<template<auto...> class...Stockrooms>
+    struct Rail: public Road<>
+    {};
+
+// 'Slash' that surrounds 'Road' is not needed anymore, yet we still need to go through 'Slash' to access the inherited 'Road':\
+// Exemplar<>::Rail<>::Slash::Road<>.
+// However, An intermediate structure surrounding 'Rail' is needed now. We cannot access the inherited 'Rail' from Exemplar::Rail.\
+// Exemplar<>::Rail<>::Rail will refer to the constructor instead.
+// These behaviors are not predictable by high-level functions. Probing into arguments' inner structures is necessary before every operation.\
+// This is both complicated and inefficient.
+// After studying boost::mp11 and kvasir::mpl, a second approach relying on alias templates was adopted.
+
+};
+
+}}
+
+[TODO: Add more details]
 
 namespace Conceptrodon {
 
