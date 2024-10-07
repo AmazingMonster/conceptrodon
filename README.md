@@ -24,7 +24,8 @@ These identifiers are deployed inside a metafunction to take corresponding argum
 
 More details can be found in *./conceptrodon/EXAMPLAR.hpp*
 
-Every function in this library is tailored to fit this pattern. Since the inner structures of functions are predictable, different signatures can be composed by invoking member templates corresponding to the signature. This is done via *trip* and *travel* functions in various namespaces. Examples can be found in:
+Every function in this library is tailored to fit this pattern. Since the inner structures of functions are predictable, different signatures can be composed by invoking member templates corresponding to the signature. This is done via *tale*, *trip*, and *travel* functions in various namespaces. Examples can be found in:
+- *./tests/composition/mouldivore/trip.test.hpp*
 - *./tests/unit/mouldivore/trip.test.hpp*
 - *./tests/unit/mouldivore/travel.test.hpp*
 - *./tests/unit/pagelivore/trip.test.hpp*
