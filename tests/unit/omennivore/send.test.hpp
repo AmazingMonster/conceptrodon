@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestSend {
 
 
@@ -86,7 +87,7 @@ SAME_TYPE(Send<Phantom<Shuttle, Shuttle, Shuttle>>::UniSail<TesterD>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 

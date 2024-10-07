@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestPaste2nd {
 
 
@@ -113,7 +114,7 @@ SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

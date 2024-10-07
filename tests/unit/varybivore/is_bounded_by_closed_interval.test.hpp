@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestIsBoundedByClosedInterval {
 
 VALID(IsBoundedByClosedInterval<0, 1>::Page_v<0>);
@@ -22,7 +23,7 @@ VALID(IsBoundedByClosedInterval<0, 1>::Page_v<0.5>);
 VALID(IsBoundedByClosedInterval<0, 1>::Page_v<1>);
 INVALID(IsBoundedByClosedInterval<0, 1>::Page_v<2>);
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

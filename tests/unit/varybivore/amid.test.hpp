@@ -29,6 +29,7 @@ template<auto A> using mp_value = std::integral_constant<decltype(A), A>;
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestAmid {
 
 
@@ -128,7 +129,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
 
 #endif
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

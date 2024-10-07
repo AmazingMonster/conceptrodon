@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestRotate {
 
 
@@ -113,7 +114,7 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Rail<Tester>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

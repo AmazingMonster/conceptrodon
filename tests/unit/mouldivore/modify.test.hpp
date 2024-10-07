@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestModify {
 
 
@@ -86,6 +87,6 @@ SAME_TYPE(Modify<Tester>::Road<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Mold<LLAMA
 #include "macaron/fragmental/amenity/undef_llama.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
 
-}}}
+}}}}
 
 #endif

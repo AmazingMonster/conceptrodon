@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestGrade {
 
 
@@ -57,7 +58,7 @@ SAME_TYPE(Grade<SHEEP_SPROUT(240)>::UniRoad<Tester>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

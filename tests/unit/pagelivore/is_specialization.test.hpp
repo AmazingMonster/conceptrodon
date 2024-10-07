@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestIsSpecialization {
 
 VALID(IsSpecializationOf<std::index_sequence>::Mold_v<std::index_sequence<>>);
@@ -27,6 +28,6 @@ INVALID(IsSpecializationOf<std::index_sequence>::Mold_v<Capsule<int>>);
 INVALID(IsSpecializationOf<std::index_sequence>::Mold_v<Shuttle<>>);
 INVALID(IsSpecializationOf<std::index_sequence>::Mold_v<Shuttle<1>>);
 
-}}}
+}}}}
 
 #endif

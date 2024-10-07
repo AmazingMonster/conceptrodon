@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestFoldLeft {
 
 
@@ -78,7 +79,7 @@ SAME_TYPE(FoldLeft<SHEEP_SPROUT(1)>::Mold<std::integral_constant<int, 1>>::UniRo
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

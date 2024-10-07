@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestModifyTypes {
 
 
@@ -88,6 +89,6 @@ SAME_TYPE(ModifyTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Road<Plu
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"
 
-}}}
+}}}}
 
 #endif

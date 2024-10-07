@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestRotate {
 
 
@@ -110,6 +111,6 @@ SAME_TYPE(Rotate<TesterC>::Page<200>::Mold<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #endif

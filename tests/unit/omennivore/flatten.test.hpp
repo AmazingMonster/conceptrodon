@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestFlatten {
 
 struct Tester
@@ -103,7 +104,7 @@ VALID(Flatten<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>,  Reverie
 VALID(Flatten<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>,  Reverie<std::tuple>>::value);
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

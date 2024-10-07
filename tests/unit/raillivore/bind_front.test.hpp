@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Raillivore {
+namespace UnitTests {
 namespace TestBindFront {
 
 
@@ -71,7 +72,7 @@ SAME_TYPE(BindFront<Phantom>::Rail<SHEEP_SPROUT(100)>::Rail<SHEEP_SPROUT(140)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

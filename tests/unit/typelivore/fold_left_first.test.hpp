@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestFoldLeftFirst {
 
 
@@ -78,7 +79,7 @@ SAME_TYPE(FoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(1)>::Road<B
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

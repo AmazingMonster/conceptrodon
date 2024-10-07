@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestSieve {
 
 
@@ -98,6 +99,6 @@ SAME_TYPE(Sieve<IsEven>::Mold_t<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 
-}}}
+}}}}
 
 #endif

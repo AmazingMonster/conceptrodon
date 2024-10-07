@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestAreUnique3rd {
 
 
@@ -32,7 +33,7 @@ VALID(AreUnique<SHEEP_SPROUT(240)>::value);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

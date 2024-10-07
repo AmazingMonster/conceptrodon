@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestFilter {
 
 
@@ -68,6 +69,6 @@ SAME_TYPE(Filter<Tester>::Road<IsEven>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 
-}}}
+}}}}
 
 #endif

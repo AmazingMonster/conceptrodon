@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestPlume {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Plume<SHEEP_SPROUT(240)>::Page_t<LLAMA_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

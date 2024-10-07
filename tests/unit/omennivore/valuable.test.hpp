@@ -13,6 +13,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestValuable {
 
 
@@ -57,6 +58,6 @@ INVALID(Valuable<Tester_4>);
 
 
 
-}}}
+}}}}
 
 #endif

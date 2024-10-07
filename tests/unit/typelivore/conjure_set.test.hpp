@@ -22,6 +22,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestAreDistinct {
 
 
@@ -75,7 +76,7 @@ SAME_TYPE(ConjureSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::type);
 #endif
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

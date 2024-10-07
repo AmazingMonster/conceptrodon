@@ -6,8 +6,9 @@
 
 namespace Conceptrodon {
 namespace Roadrivore {
+namespace UnitTests {
 namespace TestExemplar {
 
-}}}
+}}}}
 
 #endif

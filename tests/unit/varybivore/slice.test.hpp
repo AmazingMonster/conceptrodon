@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestSlice {
 
 
@@ -100,6 +101,6 @@ SAME_TYPE(Slice<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Tester>);
 
 
 
-}}}
+}}}}
 
 #endif

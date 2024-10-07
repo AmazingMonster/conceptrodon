@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestSlice {
 
 
@@ -97,6 +98,6 @@ SAME_TYPE(Slice<Tester>::Page<40, 100>::Page<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #endif

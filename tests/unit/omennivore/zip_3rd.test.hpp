@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestZip3rd {
 
 
@@ -134,7 +135,7 @@ SAME_TYPE(TesterD<Zip<ArgA, ArgB>::type>::type);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

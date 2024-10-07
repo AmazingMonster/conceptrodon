@@ -12,6 +12,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestPlus {
 
 
@@ -39,7 +40,7 @@ EQUAL_VALUE(Plus_v<10.0>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 

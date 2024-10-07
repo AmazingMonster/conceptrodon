@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestFoldLeft {
 
 
@@ -78,7 +79,7 @@ SAME_TYPE(FoldLeft<BinaryOperation>::Mold<std::integral_constant<int, 1>>::Mold_
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

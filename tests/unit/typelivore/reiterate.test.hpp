@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestReiterate {
 
 
@@ -50,7 +51,7 @@ SAME_TYPE(Reiterate<int, float, double>::Page_t<240>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"

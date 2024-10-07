@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestInsert {
 
 
@@ -43,7 +44,7 @@ SAME_TYPE(Insert<Shuttle>::Page<SHEEP_SPROUT(120, *2+1)>::Page<SHEEP_SPROUT(120,
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

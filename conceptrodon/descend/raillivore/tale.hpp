@@ -55,6 +55,162 @@ struct Tale
             using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
         };
 
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<typename...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Mold>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Mold>>
+        struct ProtoFlow<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Mold>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Mold>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Mold>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Mold>::template Sail<Stockrooms...>;
+        };
+
         template<template<template<typename...> class...> class...Warehouses>
         using Flow = ProtoFlow<Warehouses...>;
     };
@@ -93,6 +249,162 @@ struct Tale
         requires Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
         struct ProtoSail<Stop>
         {
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<auto...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Page>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Page>>
+        struct ProtoSail<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Page>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Page>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Page>::template Flow<Warehouses...>;
+
             template<template<template<auto...> class...> class...Stockrooms>
             using Sail = Stop<Radio<Songs...>::template Page>::template Sail<Stockrooms...>;
         };
@@ -139,6 +451,162 @@ struct Tale
             using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
         };
 
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<typename...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Road>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Road>>
+        struct ProtoZeal<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Road>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Road>::template Rail<Sequences...>;
+
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Road>::template Flow<Warehouses...>;
+
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Road>::template Sail<Stockrooms...>;
+        };
+
         template<template<template<template<typename...> class...> class...> class...Madness>
         using Zeal = ProtoZeal<Madness...>;
     };
@@ -177,6 +645,162 @@ struct Tale
         requires Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
         struct ProtoZest<Stop>
         {
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<auto...> class...> class...Stockrooms>
+            using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+        };
+
+        template<template<template<template<auto...> class...> class...> class Stop>
+        requires Omennivore::RoadProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::RailProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::FlowProbe<Stop<Radio<Songs...>::template Rail>>
+        && Omennivore::SailProbe<Stop<Radio<Songs...>::template Rail>>
+        struct ProtoZest<Stop>
+        {
+            template<template<typename...> class...Containers>
+            using Road = Stop<Radio<Songs...>::template Rail>::template Road<Containers...>;
+
+            template<template<auto...> class...Sequences>
+            using Rail = Stop<Radio<Songs...>::template Rail>::template Rail<Sequences...>;
+            
+            template<template<template<typename...> class...> class...Warehouses>
+            using Flow = Stop<Radio<Songs...>::template Rail>::template Flow<Warehouses...>;
+            
             template<template<template<auto...> class...> class...Stockrooms>
             using Sail = Stop<Radio<Songs...>::template Rail>::template Sail<Stockrooms...>;
         };

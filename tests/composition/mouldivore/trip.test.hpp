@@ -18,8 +18,8 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
-namespace TestComposition {
-namespace Travel {
+namespace CompositionTests {
+namespace TestTrip {
 
 
 

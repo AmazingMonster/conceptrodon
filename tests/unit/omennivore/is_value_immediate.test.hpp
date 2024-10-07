@@ -13,6 +13,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestIsValueImmediate {
 
 namespace 
@@ -54,6 +55,6 @@ VALID(Truth<Tester::func>);
 // VALID(isValueImmediate(Tester::value_2));
 // VALID(isValueImmediate(value_1));
 
-}}}
+}}}}
 
 #endif

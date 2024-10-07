@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestBoolean {
 
 
@@ -37,7 +38,7 @@ INVALID(Boolean<nullptr>::value);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

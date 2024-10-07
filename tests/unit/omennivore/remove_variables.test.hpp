@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestRemoveVariables {
 
 
@@ -57,7 +58,7 @@ SAME_TYPE(RemoveVariables<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Page
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

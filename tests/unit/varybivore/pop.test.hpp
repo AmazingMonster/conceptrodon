@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestPop {
 
 
@@ -43,7 +44,7 @@ SAME_TYPE(Pop<SHEEP_SPROUT(240)>::type);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

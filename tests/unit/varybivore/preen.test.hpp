@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestPreen {
 
 
@@ -56,7 +57,7 @@ SAME_TYPE(Preen<SHEEP_SPROUT(240)>::UniRail<Tester>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

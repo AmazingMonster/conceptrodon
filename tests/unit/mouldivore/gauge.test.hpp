@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestGauge {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Gauge<SHEEP_SPROUT(240)>::Mold_t<LLAMA_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

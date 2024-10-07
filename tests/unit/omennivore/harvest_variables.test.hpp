@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestHarvestVariables {
 
 
@@ -64,7 +65,7 @@ SAME_TYPE(HarvestVariables<SHEEP_SPROUT(240)>::UniRail<TesterA>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

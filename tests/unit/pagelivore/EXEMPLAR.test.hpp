@@ -6,8 +6,9 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestExemplar {
 
-}}}
+}}}}
 
 #endif

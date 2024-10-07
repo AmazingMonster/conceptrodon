@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestConditional {
 
 
@@ -52,7 +53,7 @@ INVALID(Conditional<true, false>::Rail<PageF, PageT, PageT, PageT>::Page_v<1>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

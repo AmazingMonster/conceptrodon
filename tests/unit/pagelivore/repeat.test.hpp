@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestRepeat {
 
 
@@ -91,7 +92,7 @@ SAME_TYPE(Repeat<std::index_sequence>::Page<64>::Page<1, 2, 3>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"

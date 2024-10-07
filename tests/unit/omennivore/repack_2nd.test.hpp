@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestRepack2nd {
 
 
@@ -97,7 +98,7 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<Shuttle>);
 
 
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

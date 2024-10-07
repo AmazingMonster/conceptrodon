@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestDuplicate {
 
 
@@ -52,7 +53,7 @@ SAME_TYPE(Duplicate<int>::Page<240>::Road<>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"

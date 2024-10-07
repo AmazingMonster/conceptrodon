@@ -14,6 +14,7 @@
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
 namespace Conceptrodon {
+namespace UnitTests {
 namespace TestDiplomat {
 
 
@@ -41,7 +42,7 @@ SAME_TYPE(Diplomat<Shuttle>::Page<SHEEP_SPROUT(240)>);
 
 
 
-}}
+}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

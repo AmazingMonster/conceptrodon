@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestBindFront {
 
 
@@ -50,7 +51,7 @@ SAME_TYPE(BindFront<Tester>::Page<SHEEP_SPROUT(100)>::Page<SHEEP_SPROUT(140)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

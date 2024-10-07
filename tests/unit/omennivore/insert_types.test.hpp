@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestInsertTypes {
 
 
@@ -58,7 +59,7 @@ SAME_TYPE(InsertTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Mold<SHE
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

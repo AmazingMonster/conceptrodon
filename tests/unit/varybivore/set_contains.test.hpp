@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestSetContains {
     
     
@@ -60,7 +61,7 @@ INVALID(SetContains<SHEEP_SPROUT(240)>::Page<-2>::value);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

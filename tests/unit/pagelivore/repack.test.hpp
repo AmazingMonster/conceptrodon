@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestRepack {
 
 
@@ -133,7 +134,7 @@ SAME_TYPE(Repack<Shuttle>::Mold<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestFoldRightLast2nd {
 
 
@@ -79,7 +80,7 @@ EQUAL_VALUE(FoldRightLast<BinaryOperation>::Page_v<SHEEP_REVERSED_SPROUT(1), 1>)
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 #include "macaron/fragmental/amenity/undef_sheep_reversed.hpp"

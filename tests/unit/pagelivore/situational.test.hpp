@@ -13,6 +13,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestSituational {
 
 
@@ -43,7 +44,7 @@ EQUAL_VALUE(Situational<Predicate>::Page_v<std::false_type{}, std::true_type{}>)
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 

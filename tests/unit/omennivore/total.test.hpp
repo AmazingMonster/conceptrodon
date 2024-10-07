@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestTotal {
 
 #define SUPPOSED_VALUE  \
@@ -27,7 +28,7 @@ EQUAL_VALUE(Total<std::index_sequence<0, 1, 2, 3>>::value);
 EQUAL_VALUE(Total<Reverie<Capsule, Capsule, Capsule, Capsule>>::value);
 EQUAL_VALUE(Total<Phantom<Shuttle, Shuttle, Shuttle, Shuttle>>::value);
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 

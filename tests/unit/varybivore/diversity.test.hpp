@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestDiversity {
 
 
@@ -46,7 +47,7 @@ SAME_TYPE(Diversity<SHEEP_SPROUT(20)>::Page_t<SHEEP_SPROUT(240), 39>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

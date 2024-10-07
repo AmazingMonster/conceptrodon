@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestPop {
 
 
@@ -52,7 +53,7 @@ SAME_TYPE(Recur<Agent<Typelivore::Pop>::Mold>::Road<Predicate>::Mold_t<Capsule<S
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

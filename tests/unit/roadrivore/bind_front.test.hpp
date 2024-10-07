@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Roadrivore {
+namespace UnitTests {
 namespace TestBindFront {
 
 
@@ -71,7 +72,7 @@ SAME_TYPE(BindFront<Reverie>::Road<SHEEP_SPROUT(100)>::Road<SHEEP_SPROUT(140)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

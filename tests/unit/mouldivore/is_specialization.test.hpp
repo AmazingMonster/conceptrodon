@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestIsSpecialization {
 
 VALID(IsSpecializationOf<std::tuple>::Mold_v<std::tuple<>>);
@@ -27,6 +28,6 @@ INVALID(IsSpecializationOf<std::tuple>::Mold_v<Capsule<int>>);
 INVALID(IsSpecializationOf<std::tuple>::Mold_v<Shuttle<>>);
 INVALID(IsSpecializationOf<std::tuple>::Mold_v<Shuttle<1>>);
 
-}}}
+}}}}
 
 #endif

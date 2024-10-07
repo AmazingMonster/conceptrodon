@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestBind {
 
 
@@ -61,7 +62,7 @@ SAME_TYPE(Bind<Shuttle>::Page<DOUBLE_SHEEP_SPROUT(120)>::Page<SHEEP_REVERSED_SPR
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

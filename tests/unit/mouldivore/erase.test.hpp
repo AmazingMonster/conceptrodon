@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestErase {
 
 
@@ -110,7 +111,7 @@ SAME_TYPE(Erase<TesterC>::Page<40, 100>::Mold<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

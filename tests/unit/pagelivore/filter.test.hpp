@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestFilter {
 
 
@@ -65,6 +66,6 @@ SAME_TYPE(Filter<Tester>::Rail<IsEven>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 
-}}}
+}}}}
 
 #endif

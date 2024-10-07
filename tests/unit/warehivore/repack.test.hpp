@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Warehivore {
+namespace UnitTests {
 namespace TestRepack {
 
 
@@ -78,7 +79,7 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniFlow<Transport>);
 /**************************************************************************************************/
 
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

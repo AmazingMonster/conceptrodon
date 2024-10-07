@@ -22,6 +22,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestAreUnique2nd {
 
 
@@ -60,7 +61,7 @@ INVALID(AreUnique<std::integral_constant<int, 100>, SHEEP_SPROUT(240)>::value);
 
 #endif
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

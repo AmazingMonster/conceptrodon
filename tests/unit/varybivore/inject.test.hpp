@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestInject {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Page<SHEEP_SPROUT(100)>::Rail<Tes
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

@@ -22,6 +22,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestBind2nd {
 
 
@@ -103,7 +104,7 @@ SAME_TYPE(Bind<Capsule>::Mold<DOUBLE_SHEEP_SPROUT(120)>::Mold<SHEEP_SPROUT(120, 
 #endif
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestIsDifferent {
 
 
@@ -37,7 +38,7 @@ VALID(IsDifferentAs<1>::Page_v<static_cast<size_t>(1)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

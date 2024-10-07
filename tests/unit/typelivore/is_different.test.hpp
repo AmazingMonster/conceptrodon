@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestIsDifferent {
 
 
@@ -36,7 +37,7 @@ VALID(IsDifferentAs<int>::Mold_v<float>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

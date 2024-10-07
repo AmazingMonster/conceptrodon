@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Cotanivore {
+namespace UnitTests {
 namespace TestRepack {
 
 
@@ -54,7 +55,7 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Road_t<std::tuple>);
 
 
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

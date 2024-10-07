@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestRemove {
 
 
@@ -47,7 +48,7 @@ SAME_TYPE(Remove<Capsule>::Page<SHEEP_SPROUT(120, *2)>::Mold<LLAMA_SPROUT(240)>)
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

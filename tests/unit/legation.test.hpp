@@ -15,6 +15,7 @@
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
 namespace Conceptrodon {
+namespace UnitTests {
 namespace TestLegation {
 
 
@@ -70,7 +71,7 @@ SAME_TYPE(Legation<Phantom>::Rail<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>);
 
 
 
-}}
+}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

@@ -6,8 +6,9 @@
 
 namespace Conceptrodon {
 namespace Raillivore {
+namespace UnitTests {
 namespace TestExemplar {
 
-}}}
+}}}}
 
 #endif

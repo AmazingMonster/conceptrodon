@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestPlume {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Road_t<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

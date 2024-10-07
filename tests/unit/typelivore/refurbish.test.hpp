@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestRefurbish {
 
 
@@ -59,7 +60,7 @@ SAME_TYPE(Refurbish<SHEEP_SPROUT(240)>::UniRoad<Tester_t>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

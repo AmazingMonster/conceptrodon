@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestIsSame3rd {
 
 
@@ -186,7 +187,7 @@ using Tester = Shuttle<SHEEP_SPROUT(240)>;
 
 
 
-}}}
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 

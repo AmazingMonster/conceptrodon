@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestTrim {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Trim<SHEEP_SPROUT(240)>::Page<180>::Road<Tester>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

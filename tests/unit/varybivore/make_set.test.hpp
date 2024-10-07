@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestMakeSet {
 
 
@@ -46,7 +47,7 @@ SAME_TYPE(MakeSet<SHEEP_SPROUT(240), 39>::type);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

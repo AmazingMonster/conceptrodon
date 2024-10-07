@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestConjunction {
 
 
@@ -39,7 +40,7 @@ INVALID(Conjunction<PageF, PageT, PageT, PageT>::Page_v<1>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

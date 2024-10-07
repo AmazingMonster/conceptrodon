@@ -13,6 +13,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestConditional {
 
 
@@ -61,7 +62,7 @@ SAME_TYPE(Conditional<std::true_type, std::false_type>::Rail<PageF, PageT, PageT
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 

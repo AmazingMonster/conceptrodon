@@ -12,6 +12,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestSubtract {
 
 
@@ -43,7 +44,7 @@ EQUAL_VALUE(SubtractFrom<1>::Page_v<2.0>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 

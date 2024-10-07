@@ -15,6 +15,7 @@
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestIndependentLeftInterview3rd {
 
 
@@ -58,7 +59,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

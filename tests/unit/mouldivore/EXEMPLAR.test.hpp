@@ -6,8 +6,9 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestExemplar {
 
-}}}
+}}}}
 
 #endif

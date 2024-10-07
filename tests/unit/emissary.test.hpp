@@ -15,6 +15,7 @@
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
 namespace Conceptrodon {
+namespace UnitTests {
 namespace TestEmissary {
 
 
@@ -43,7 +44,7 @@ SAME_TYPE(Emissary<Capsule>::Mold<SHEEP_SPROUT(240)>);
 
 
 
-}}
+}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

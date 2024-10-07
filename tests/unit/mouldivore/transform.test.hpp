@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestTransform {
 
 
@@ -93,6 +94,6 @@ SAME_TYPE(Transform<Tester>::Road<IsEven>::Road<PlusOne>::Mold<SHEEP_SPROUT(240)
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
 
-}}}
+}}}}
 
 #endif

@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestSlice {
 
 
@@ -98,7 +99,7 @@ SAME_TYPE(Slice<SHEEP_SPROUT(240)>::Page<40, 100>::Road<TesterC>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

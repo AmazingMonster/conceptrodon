@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestRightReview {
 
 
@@ -80,7 +81,7 @@ VALID(RightReview<Mouldivore::Negation<BinaryOperation>::Mold>::Mold_v<SHEEP_SPR
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

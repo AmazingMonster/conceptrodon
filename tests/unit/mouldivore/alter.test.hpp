@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestAlter {
 
 
@@ -83,6 +84,6 @@ SAME_TYPE(Alter<Tester>::Road<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Mold<LLAMA_
 #include "macaron/fragmental/amenity/undef_llama.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
 
-}}}
+}}}}
 
 #endif

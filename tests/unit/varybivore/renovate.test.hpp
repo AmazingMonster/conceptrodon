@@ -18,6 +18,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestRenovate {
 
 
@@ -78,7 +79,7 @@ SAME_TYPE(Renovate<LLAMA_SPROUT(240)>::Rail_t<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

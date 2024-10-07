@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestAgent {
 
 
@@ -44,7 +45,7 @@ SAME_TYPE(Agent<Capsule>::Mold<std::tuple<SHEEP_SPROUT(240)>>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

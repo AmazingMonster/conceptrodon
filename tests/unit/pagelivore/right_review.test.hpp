@@ -21,6 +21,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestRightReview {
 
 
@@ -109,7 +110,7 @@ INVALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEE
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

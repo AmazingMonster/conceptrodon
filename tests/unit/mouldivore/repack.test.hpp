@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestRepack {
 
 
@@ -63,7 +64,7 @@ SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

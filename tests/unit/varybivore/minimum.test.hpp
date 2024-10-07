@@ -12,6 +12,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestMinimum {
 
 
@@ -28,7 +29,7 @@ EQUAL_VALUE(Minimum_v<-10.0, -9.0, -8.5, static_cast<double>(7)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 

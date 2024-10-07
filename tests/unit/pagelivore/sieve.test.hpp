@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestSieve {
 
 
@@ -56,6 +57,6 @@ SAME_TYPE(Sieve<IsEven>::Page<SHEEP_SPROUT(240)>::type);
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 
-}}}
+}}}}
 
 #endif

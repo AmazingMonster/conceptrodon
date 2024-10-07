@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestHarvestTypes {
 
 
@@ -67,7 +68,7 @@ SAME_TYPE(HarvestTypes<SHEEP_SPROUT(240)>::Road<TesterA>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

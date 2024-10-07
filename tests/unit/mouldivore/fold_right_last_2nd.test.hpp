@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestFoldRightLast2nd {
 
 
@@ -80,7 +81,7 @@ SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<SHEEP_REVERSED_SPROUT(240)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep_reversed.hpp"

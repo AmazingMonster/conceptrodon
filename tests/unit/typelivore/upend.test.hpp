@@ -21,6 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestUpend {
 
 
@@ -84,7 +85,7 @@ SAME_TYPE(Upend<SHEEP_SPROUT(240)>::Road<Capsule>);
 #endif
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestFoldLeft {
 
 
@@ -79,7 +80,7 @@ EQUAL_VALUE(FoldLeft<SHEEP_SPROUT(1)>::Page<1>::Rail<BinaryOperation>::value);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

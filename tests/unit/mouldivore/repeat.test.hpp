@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestRepeat {
 
 
@@ -92,7 +93,7 @@ SAME_TYPE(Repeat<std::tuple>::Page<64>::Mold<int, float, double>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"

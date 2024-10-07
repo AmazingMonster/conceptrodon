@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestLeftReview {
 
 
@@ -80,7 +81,7 @@ INVALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40),std::integral_const
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

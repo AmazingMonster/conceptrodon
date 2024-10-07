@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestRise {
 
 
@@ -58,7 +59,7 @@ SAME_TYPE(Rise<Tester>::Page<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

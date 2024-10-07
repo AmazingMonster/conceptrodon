@@ -15,12 +15,13 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestIsSame {
 
 VALID(IsSameAs<int>::Mold_v<int>);
 INVALID(IsSameAs<int>::Mold_v<float>);
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

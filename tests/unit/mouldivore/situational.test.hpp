@@ -13,6 +13,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestSituational {
 
 
@@ -43,7 +44,7 @@ SAME_TYPE(Situational<Predicate>::Mold_t<std::false_type, std::true_type>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 

@@ -21,6 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestHas {
     
     
@@ -98,7 +99,7 @@ INVALID(Has<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::Mold<std::integ
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

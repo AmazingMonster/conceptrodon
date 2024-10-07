@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestDismiss {
 
 
@@ -125,7 +126,7 @@ SAME_TYPE(Dismiss<SHEEP_SPROUT(240)>::Page<40>::Rail<Tester>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

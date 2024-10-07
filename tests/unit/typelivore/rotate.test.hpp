@@ -14,6 +14,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestRotate {
 
 
@@ -111,6 +112,6 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<200>::Road<TesterC>);
 
 
 
-}}}
+}}}}
 
 #endif

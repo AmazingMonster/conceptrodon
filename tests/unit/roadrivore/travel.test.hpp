@@ -21,6 +21,7 @@
 
 namespace Conceptrodon {
 namespace Roadrivore {
+namespace UnitTests {
 namespace TestTravel {
 
 
@@ -224,7 +225,7 @@ SAME_TYPE
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/judgmental/amenity/undef_equal_value.hpp"

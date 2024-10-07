@@ -17,6 +17,7 @@
 
 namespace Conceptrodon {
 namespace Omennivore {
+namespace UnitTests {
 namespace TestIsFreeway {
 
 using CapsuleTester = Capsule<>;
@@ -36,7 +37,7 @@ VALID(IsFreeway_v<ReverieTester>);
 INVALID(IsFreeway<PhantomTester>::value);
 INVALID(IsFreeway_v<PhantomTester>);
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

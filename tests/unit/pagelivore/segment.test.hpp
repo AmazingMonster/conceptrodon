@@ -19,6 +19,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
+namespace UnitTests {
 namespace TestSegment {
 
 
@@ -56,7 +57,7 @@ SAME_TYPE(Segment<Shuttle>::Mold<std::index_sequence<SHEEP_SPROUT(240)>>);
 /******************************************************************************************************/
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"

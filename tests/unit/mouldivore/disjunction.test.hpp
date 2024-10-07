@@ -15,6 +15,7 @@
 
 namespace Conceptrodon {
 namespace Mouldivore {
+namespace UnitTests {
 namespace TestDisjunction {
 
 
@@ -40,7 +41,7 @@ INVALID(Disjunction<MoldF, MoldF, MoldF, MoldF>::Mold_v<int>);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

@@ -22,6 +22,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestDiversity {
 
 
@@ -76,7 +77,7 @@ SAME_TYPE(Diversity<SHEEP_SPROUT(20)>::Mold_t<SHEEP_SPROUT(240), std::integral_c
 
 #endif
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

@@ -16,6 +16,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
+namespace UnitTests {
 namespace TestAreDistinct {
 
 
@@ -78,7 +79,7 @@ VALID(AreDistinct<SHEEP_SPROUT(40), ThirtyNine<size_t>>::value);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"

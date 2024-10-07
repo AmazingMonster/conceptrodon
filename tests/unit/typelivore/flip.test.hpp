@@ -20,6 +20,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
+namespace UnitTests {
 namespace TestFlip {
 
 
@@ -85,7 +86,7 @@ SAME_TYPE(Flip<SHEEP_SPROUT(240)>::type);
 
 
 
-}}}
+}}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
