@@ -288,6 +288,48 @@ struct Exemplar
 
 
 
+    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
+    struct ProtoLull {};
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
+    using Lull = ProtoLull<Agreements...>;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class Silence>
+    using UniLull = Silence<CONTENTS>;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Args>
+    using Lull_t = Lull<Args...>::type;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Args>
+    static constexpr auto Lull_v {Lull<Args...>::value};
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
+    using SubLull = IMPLEMENTATION;
+
+
+
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
+    struct ProtoCalm {};
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
+    using Calm = ProtoCalm<Agreements...>;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class Tranquil>
+    using UniCalm = Tranquil<CONTENTS>;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Args>
+    using Calm_t = Calm<Args...>::type;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Args>
+    static constexpr auto Calm_v {Calm<Args...>::value};
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
+    using SubCalm = IMPLEMENTATION;
+
+
+
+
     template<TEMPLATE_PARAMETER_CATEGORY...>
     static consteval auto idyl(...) {};
 

@@ -27,6 +27,12 @@ struct Trek
     
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
     };
 
     template<template<typename...> class...Containers>
@@ -49,6 +55,12 @@ struct Trek
     
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -71,6 +83,12 @@ struct Trek
     
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -93,10 +111,72 @@ struct Trek
     
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>
     using Sail = ProtoSail<Stockrooms...>;
+
+    template<template<template<template<typename...> class...> class...> class Car>
+    struct ProtoZeal
+    {
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>::template Road>;
+
+        template<template<auto...> class...Sequences>
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
+
+        template<template<typename...> class...Containers>
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
+
+        template<template<template<typename...> class...> class...Warehouses>
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
+        template<template<template<auto...> class...> class...Stockrooms>
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
+    };
+    
+    template<template<template<template<typename...> class...> class...> class...Madness>
+    using Zeal = ProtoZeal<Madness...>;
+
+    template<template<template<template<auto...> class...> class...> class Car>
+    struct ProtoZest
+    {
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>::template Rail>;
+
+        template<template<auto...> class...Sequences>
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
+
+        template<template<typename...> class...Containers>
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
+
+        template<template<template<typename...> class...> class...Warehouses>
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
+        template<template<template<auto...> class...> class...Stockrooms>
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
+
+        template<template<template<template<typename...> class...> class...> class...Madness>
+        using Zeal = Trek<Page>::template ProtoZeal<Madness...>;
+        
+        template<template<template<template<auto...> class...> class...> class...Craziness>
+        using Zest = Trek<Page>::template ProtoZest<Craziness...>;
+    };
+    
+    template<template<template<template<auto...> class...> class...> class...Craziness>
+    using Zest = ProtoZest<Craziness...>;
 };
 
 }}

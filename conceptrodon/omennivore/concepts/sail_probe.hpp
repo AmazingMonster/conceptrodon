@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_SAIL_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_SAIL_PROBE_H
 
-#include "conceptrodon/revelation.hpp"
+#include "conceptrodon/halcyon.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept SailProbe = requires 
-{typename Revelation<Structure::template Sail>;};
+{typename Halcyon<Structure::template Sail>;};
 
 }}
 
