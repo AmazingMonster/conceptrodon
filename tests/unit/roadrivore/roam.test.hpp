@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_TRAVEL_H
-#define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_TRAVEL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_ROAM_H
+#define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_ROAM_H
 
 #include <concepts>
 #include <type_traits>
 #include <utility>
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/roadrivore/travel.hpp"
+#include "conceptrodon/descend/roadrivore/roam.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
@@ -22,7 +22,7 @@
 namespace Conceptrodon {
 namespace Roadrivore {
 namespace UnitTests {
-namespace TestTravel {
+namespace TestRoam {
 
 
 
@@ -134,7 +134,7 @@ struct TesterH
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Road<TesterB>
     ::SubRoad<TesterB>
     ::SubRoad<TesterB>
@@ -154,7 +154,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Road<TesterC>
     ::Rail<TesterD>
     ::Rail<TesterD>
@@ -180,7 +180,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Road<TesterB>
     ::SubRoad<TesterB>
     ::SubRoad<TesterB>
@@ -208,7 +208,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Road<TesterB>
     ::SubRoad<TesterC>
     ::Rail<TesterD>

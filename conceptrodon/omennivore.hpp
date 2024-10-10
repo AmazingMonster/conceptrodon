@@ -40,6 +40,7 @@
 #include "conceptrodon/descend/omennivore/concepts/peg_probe.hpp"
 #include "conceptrodon/descend/omennivore/concepts/zero_value.hpp"
 #include "conceptrodon/descend/omennivore/alter_types.hpp"
+#include "conceptrodon/descend/omennivore/breeze.hpp"
 #include "conceptrodon/descend/omennivore/harvest_types.hpp"
 #include "conceptrodon/descend/omennivore/harvest_variables.hpp"
 #include "conceptrodon/descend/omennivore/insert_types.hpp"
@@ -51,3 +52,5 @@
 #include "conceptrodon/descend/omennivore/remove_variables.hpp"
 #include "conceptrodon/descend/omennivore/repack.hpp"
 #include "conceptrodon/descend/omennivore/zip.hpp"
+
+#include "conceptrodon/descend/descend/omennivore/wind.hpp"

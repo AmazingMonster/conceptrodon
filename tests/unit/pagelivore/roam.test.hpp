@@ -1,14 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_RAILLIVORE_TRAVEL_H
-#define CONCEPTRODON_TESTS_UNIT_RAILLIVORE_TRAVEL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ROAM_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ROAM_H
 
-#include <concepts>
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/descend/raillivore/travel.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/descend/pagelivore/roam.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
@@ -20,53 +18,41 @@
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
 
 namespace Conceptrodon {
-namespace Raillivore {
+namespace Pagelivore {
 namespace UnitTests {
-namespace TestTravel {
+namespace TestRoam {
 
 
 
 
 /******************************************************************************************************/
-template<template<auto...> class...Sequences>
+template<auto...Variables>
 struct TesterA
 { 
-    using type = std::tuple<Sequences<'*'>...>;
+    using type = std::tuple<decltype(Variables)*...>;
 };
 
-template<template<auto...> class...Sequences>
-requires (...&&std::same_as<Phantom<Sequences>, Phantom<Monotony>>)
-struct TesterA<Sequences...>
+template<auto...Variables>
+requires (...&&std::is_integral_v<decltype(Variables)>)
+struct TesterA<Variables...>
 { 
-    using type = std::tuple<Sequences<0>...>;
-};
-
-template<>
-struct TesterA<Shuttle>
-{ 
-    using type = Shuttle<0, 0, 0>;
+    using type = Shuttle<Variables+1 ...>;
 };
 
 template<auto...Variables>
 struct TesterB
 {
-    using type = Shuttle<Variables+1 ...>;
-};
-
-template<auto...Variables>
-struct TesterC
-{
     using type = std::tuple<std::integral_constant<int, Variables+1> ...>;
 };
 
 template<typename...Elements>
-struct TesterD
+struct TesterC
 {
     using type = std::tuple<std::integral_constant<int, Elements::value+1> ...>;
 };
 
 template<typename...Elements>
-struct TesterE
+struct TesterD
 { 
     template<typename Element>
     struct Detail
@@ -81,7 +67,7 @@ struct TesterE
 };
 
 template<template<typename...> class...Containers>
-struct TesterF
+struct TesterE
 { 
     template<typename...Elements>
     struct ProtoMold
@@ -94,7 +80,7 @@ struct TesterF
 };
 
 template<auto...Variables>
-struct TesterG
+struct TesterF
 { 
     template<auto Variable>
     struct Detail
@@ -109,7 +95,7 @@ struct TesterG
 };
 
 template<template<auto...> class...Sequences>
-struct TesterH
+struct TesterG
 { 
     template<auto...Variables>
     struct ProtoPage
@@ -131,11 +117,10 @@ struct TesterH
 
 SAME_TYPE
 (
-    Travel<TesterA>
-    ::Rail<TesterB>
-    ::SubRail<TesterB>
-    ::SubRail<TesterB>
-    ::Rail<Shuttle>
+    Roam<TesterA>
+    ::Rail<TesterA>
+    ::Rail<TesterA>
+    ::Page<0, 0, 0>
     ::type
 );
 
@@ -147,21 +132,14 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    std::tuple  \
-    <   \
-        std::integral_constant<int, 4>, \
-        std::integral_constant<int, 4>, \
-        std::integral_constant<int, 4>  \
-    >
+    std::tuple<std::integral_constant<int, 3>, std::integral_constant<int, 3>, std::integral_constant<int, 3>>
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Rail<TesterB>
-    ::SubRail<TesterC>
-    ::Road<TesterD>
-    ::Road<TesterD>
-    ::Rail<Shuttle>
+    ::Road<TesterC>
+    ::Page<0, 0, 0>
     ::type
 );
 
@@ -182,13 +160,12 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Rail<TesterB>
-    ::SubRail<TesterC>
+    ::Road<TesterC>
     ::Road<TesterD>
-    ::Road<TesterE>
-    ::Flow<TesterF>
-    ::Rail<Shuttle>
+    ::Flow<TesterE>
+    ::Page<0, 0, 0>
     ::Mold<float, double>
     ::type
 );
@@ -210,13 +187,12 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Travel<TesterA>
-    ::Rail<TesterB>
-    ::SubRail<TesterB>
-    ::SubRail<TesterB>
-    ::SubRail<TesterG>
-    ::Sail<TesterH>
-    ::Rail<Shuttle>
+    Roam<TesterA>
+    ::Rail<TesterA>
+    ::Rail<TesterA>
+    ::Rail<TesterF>
+    ::Sail<TesterG>
+    ::Page<0, 0, 0>
     ::Page<10, 11>
     ::type
 );

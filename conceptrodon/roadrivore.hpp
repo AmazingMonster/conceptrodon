@@ -3,7 +3,8 @@
 
 #include "conceptrodon/roadrivore/bind_back.hpp"
 #include "conceptrodon/roadrivore/bind_front.hpp"
+#include "conceptrodon/roadrivore/trek.hpp"
 #include "conceptrodon/roadrivore/trip.hpp"
 
-#include "conceptrodon/descend/roadrivore/tale.hpp"
-#include "conceptrodon/descend/roadrivore/travel.hpp"
+#include "conceptrodon/descend/roadrivore/roam.hpp"
+#include "conceptrodon/descend/roadrivore/rove.hpp"

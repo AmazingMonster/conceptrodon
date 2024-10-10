@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRAVEL_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRAVEL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ROAM_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ROAM_H
 
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/descend/pagelivore/travel.hpp"
+#include "conceptrodon/descend/mouldivore/roam.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
@@ -18,41 +18,35 @@
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
 
 namespace Conceptrodon {
-namespace Pagelivore {
+namespace Mouldivore {
 namespace UnitTests {
-namespace TestTravel {
+namespace TestRoam {
 
 
 
 
 /******************************************************************************************************/
-template<auto...Variables>
+template<typename...Elements>
 struct TesterA
 { 
-    using type = std::tuple<decltype(Variables)*...>;
+    using type = std::tuple<Elements*...>;
 };
 
-template<auto...Variables>
-requires (...&&std::is_integral_v<decltype(Variables)>)
-struct TesterA<Variables...>
+template<typename...Elements>
+requires (...&&Omennivore::Valuable<Elements>)
+struct TesterA<Elements...>
 { 
-    using type = Shuttle<Variables+1 ...>;
+    using type = Shuttle<Elements::value...>;
 };
 
 template<auto...Variables>
 struct TesterB
 {
-    using type = std::tuple<std::integral_constant<int, Variables+1> ...>;
+    using type = Shuttle<Variables+1 ...>;
 };
 
 template<typename...Elements>
 struct TesterC
-{
-    using type = std::tuple<std::integral_constant<int, Elements::value+1> ...>;
-};
-
-template<typename...Elements>
-struct TesterD
 { 
     template<typename Element>
     struct Detail
@@ -67,7 +61,7 @@ struct TesterD
 };
 
 template<template<typename...> class...Containers>
-struct TesterE
+struct TesterD
 { 
     template<typename...Elements>
     struct ProtoMold
@@ -80,7 +74,7 @@ struct TesterE
 };
 
 template<auto...Variables>
-struct TesterF
+struct TesterE
 { 
     template<auto Variable>
     struct Detail
@@ -95,7 +89,7 @@ struct TesterF
 };
 
 template<template<auto...> class...Sequences>
-struct TesterG
+struct TesterF
 { 
     template<auto...Variables>
     struct ProtoPage
@@ -113,14 +107,14 @@ struct TesterG
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Shuttle<3, 3, 3>
+    std::tuple<int***, int***, int***>
 
 SAME_TYPE
 (
-    Travel<TesterA>
-    ::Rail<TesterA>
-    ::Rail<TesterA>
-    ::Page<0, 0, 0>
+    Roam<TesterA>
+    ::Road<TesterA>
+    ::Road<TesterA>
+    ::Mold<int, int, int>
     ::type
 );
 
@@ -132,14 +126,14 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    std::tuple<std::integral_constant<int, 3>, std::integral_constant<int, 3>, std::integral_constant<int, 3>>
+    Shuttle<2, 2, 2>
 
 SAME_TYPE
 (
-    Travel<TesterA>
+    Roam<TesterA>
     ::Rail<TesterB>
-    ::Road<TesterC>
-    ::Page<0, 0, 0>
+    ::Rail<TesterB>
+    ::Mold<std::integral_constant<int, 0>, std::integral_constant<int, 0>, std::integral_constant<int, 0>>
     ::type
 );
 
@@ -151,21 +145,15 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    std::tuple  \
-    <   \
-        std::tuple<std::integral_constant<int, 3>, float, double>,  \
-        std::tuple<std::integral_constant<int, 3>, float, double>,  \
-        std::tuple<std::integral_constant<int, 3>, float, double>   \
-    >
+    std::tuple<std::tuple<int**, float, double>, std::tuple<int**, float, double>, std::tuple<int**, float, double>>
 
 SAME_TYPE
 (
-    Travel<TesterA>
-    ::Rail<TesterB>
+    Roam<TesterA>
+    ::Road<TesterA>
     ::Road<TesterC>
-    ::Road<TesterD>
-    ::Flow<TesterE>
-    ::Page<0, 0, 0>
+    ::Flow<TesterD>
+    ::Mold<int, int, int>
     ::Mold<float, double>
     ::type
 );
@@ -178,21 +166,15 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    std::tuple  \
-    <   \
-        Shuttle<3, 10, 11>, \
-        Shuttle<3, 10, 11>, \
-        Shuttle<3, 10, 11>  \
-    >
+    std::tuple<Shuttle<1, 10, 11>, Shuttle<1, 10, 11>, Shuttle<1, 10, 11>>
 
 SAME_TYPE
 (
-    Travel<TesterA>
-    ::Rail<TesterA>
-    ::Rail<TesterA>
-    ::Rail<TesterF>
-    ::Sail<TesterG>
-    ::Page<0, 0, 0>
+    Roam<TesterA>
+    ::Rail<TesterB>
+    ::Rail<TesterE>
+    ::Sail<TesterF>
+    ::Mold<std::integral_constant<int, 0>, std::integral_constant<int, 0>, std::integral_constant<int, 0>>
     ::Page<10, 11>
     ::type
 );

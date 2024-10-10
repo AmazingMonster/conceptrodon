@@ -55,18 +55,46 @@ struct Send<Warehouse<Containers...>>
     using UniFlow = Operation<Containers...>;
 };
 
-template<template<template<auto...> class...> class Stockroom, template<auto...> class...Sequence>
-struct Send<Stockroom<Sequence...>>
+template<template<template<auto...> class...> class Stockroom, template<auto...> class...Sequences>
+struct Send<Stockroom<Sequences...>>
 {
     template<template<template<auto...> class...> class Operation>
     struct Detail 
-    { using type = Operation<Sequence...>; };
+    { using type = Operation<Sequences...>; };
 
     template<template<template<auto...> class...> class...Agreements>
     using Sail = Detail<Agreements...>::type;
 
     template<template<template<auto...> class...> class Operation>
-    using UniSail = Operation<Sequence...>;
+    using UniSail = Operation<Sequences...>;
+};
+
+template<template<template<template<typename...> class...> class...> class Madness, template<template<typename...> class...> class...Warehouses>
+struct Send<Madness<Warehouses...>>
+{
+    template<template<template<template<typename...> class...> class...> class Operation>
+    struct Detail 
+    { using type = Operation<Warehouses...>; };
+
+    template<template<template<template<typename...> class...> class...> class...Agreements>
+    using Zeal = Detail<Agreements...>::type;
+
+    template<template<template<template<typename...> class...> class...> class Operation>
+    using UniZeal = Operation<Warehouses...>;
+};
+
+template<template<template<template<auto...> class...> class...> class Craziness, template<template<auto...> class...> class...Stockrooms>
+struct Send<Craziness<Stockrooms...>>
+{
+    template<template<template<template<auto...> class...> class...> class Operation>
+    struct Detail 
+    { using type = Operation<Stockrooms...>; };
+
+    template<template<template<template<auto...> class...> class...> class...Agreements>
+    using Zest = Detail<Agreements...>::type;
+
+    template<template<template<template<auto...> class...> class...> class Operation>
+    using UniZest = Operation<Stockrooms...>;
 };
 
 }}

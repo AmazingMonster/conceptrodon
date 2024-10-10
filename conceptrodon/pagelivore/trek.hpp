@@ -1,34 +1,32 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_TRAVEL_H
-#define CONCEPTRODON_MOULDIVORE_TRAVEL_H
-
-#include "conceptrodon/omennivore/send.hpp"
+#ifndef CONCEPTRODON_PAGELIVORE_TREK_H
+#define CONCEPTRODON_PAGELIVORE_TREK_H
 
 namespace Conceptrodon {
-namespace Mouldivore {
+namespace Pagelivore {
 
-template<template<typename...> class Radio>
-struct Travel
+template<template<auto...> class Radio>
+struct Trek
 {
     template<template<typename...> class Car>
     struct ProtoRoad
     {
-        template<typename...Songs>
-        using Mold = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>>;
 
         template<template<typename...> class...Containers>
-        using Road = Travel<Mold>::template ProtoRoad<Containers...>;
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Mold>::template ProtoRail<Sequences...>;
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Mold>::template ProtoFlow<Warehouses...>;
-
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Mold>::template ProtoSail<Stockrooms...>;
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<typename...> class...Containers>
@@ -37,20 +35,20 @@ struct Travel
     template<template<auto...> class Car>
     struct ProtoRail
     {
-        template<typename...Songs>
-        using Mold = Omennivore::Send<typename Radio<Songs...>::type>::template UniRail<Car>;
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>::value>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Mold>::template ProtoRail<Sequences...>;
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
-        using Road = Travel<Mold>::template ProtoRoad<Containers...>;
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Mold>::template ProtoFlow<Warehouses...>;
-
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Mold>::template ProtoSail<Stockrooms...>;
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -59,20 +57,20 @@ struct Travel
     template<template<template<typename...> class...> class Car>
     struct ProtoFlow
     {
-        template<typename...Songs>
-        using Mold = Omennivore::Send<typename Radio<Songs...>::type>::template UniFlow<Car>;
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>::template Mold>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Mold>::template ProtoRail<Sequences...>;
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
-        using Road = Travel<Mold>::template ProtoRoad<Containers...>;
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Mold>::template ProtoFlow<Warehouses...>;
-
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Mold>::template ProtoSail<Stockrooms...>;
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -81,22 +79,22 @@ struct Travel
     template<template<template<auto...> class...> class Car>
     struct ProtoSail
     {
-        template<typename...Songs>
-        using Mold = Omennivore::Send<typename Radio<Songs...>::type>::template UniSail<Car>;
+        template<auto...Songs>
+        using Page = Car<Radio<Songs...>::template Page>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Mold>::template ProtoRail<Sequences...>;
+        using Rail = Trek<Page>::template ProtoRail<Sequences...>;
 
         template<template<typename...> class...Containers>
-        using Road = Travel<Mold>::template ProtoRoad<Containers...>;
+        using Road = Trek<Page>::template ProtoRoad<Containers...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Mold>::template ProtoFlow<Warehouses...>;
-
+        using Flow = Trek<Page>::template ProtoFlow<Warehouses...>;
+    
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Mold>::template ProtoSail<Stockrooms...>;
+        using Sail = Trek<Page>::template ProtoSail<Stockrooms...>;
     };
-
+    
     template<template<template<auto...> class...> class...Stockrooms>
     using Sail = ProtoSail<Stockrooms...>;
 };

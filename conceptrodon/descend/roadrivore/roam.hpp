@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_ROADRIVORE_TRAVEL_H
-#define CONCEPTRODON_ROADRIVORE_TRAVEL_H
+#ifndef CONCEPTRODON_ROADRIVORE_ROAM_H
+#define CONCEPTRODON_ROADRIVORE_ROAM_H
 
 #include "conceptrodon/omennivore/send.hpp"
 
@@ -10,7 +10,7 @@ namespace Conceptrodon {
 namespace Roadrivore {
 
 template<template<template<typename...> class...> class Radio>
-struct Travel
+struct Roam
 {
     template<template<typename...> class Car>
     struct ProtoRoad
@@ -19,16 +19,16 @@ struct Travel
         using Road = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
         template<template<typename...> class...Containers>
-        using SubRoad = Travel<Road>::template ProtoRoad<Containers...>;
+        using SubRoad = Roam<Road>::template ProtoRoad<Containers...>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Road>::template ProtoRail<Sequences...>;
+        using Rail = Roam<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Road>::template ProtoFlow<Warehouses...>;
+        using Flow = Roam<Road>::template ProtoFlow<Warehouses...>;
 
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Road>::template ProtoSail<Stockrooms...>;
+        using Sail = Roam<Road>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<typename...> class...Containers>
@@ -41,16 +41,16 @@ struct Travel
         using Road = Omennivore::Send<typename Radio<Songs...>::type>::template UniRail<Car>;
 
         template<template<typename...> class...Containers>
-        using SubRoad = Travel<Road>::template ProtoRoad<Containers...>;
+        using SubRoad = Roam<Road>::template ProtoRoad<Containers...>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Road>::template ProtoRail<Sequences...>;
+        using Rail = Roam<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Road>::template ProtoFlow<Warehouses...>;
+        using Flow = Roam<Road>::template ProtoFlow<Warehouses...>;
 
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Road>::template ProtoSail<Stockrooms...>;
+        using Sail = Roam<Road>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -63,16 +63,16 @@ struct Travel
         using Road = Omennivore::Send<typename Radio<Songs...>::type>::template UniFlow<Car>;
 
         template<template<typename...> class...Containers>
-        using SubRoad = Travel<Road>::template ProtoRoad<Containers...>;
+        using SubRoad = Roam<Road>::template ProtoRoad<Containers...>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Road>::template ProtoRail<Sequences...>;
+        using Rail = Roam<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Road>::template ProtoFlow<Warehouses...>;
+        using Flow = Roam<Road>::template ProtoFlow<Warehouses...>;
 
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Road>::template ProtoSail<Stockrooms...>;
+        using Sail = Roam<Road>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -85,16 +85,16 @@ struct Travel
         using Road = Omennivore::Send<typename Radio<Songs...>::type>::template UniSail<Car>;
 
         template<template<typename...> class...Containers>
-        using SubRoad = Travel<Road>::template ProtoRoad<Containers...>;
+        using SubRoad = Roam<Road>::template ProtoRoad<Containers...>;
 
         template<template<auto...> class...Sequences>
-        using Rail = Travel<Road>::template ProtoRail<Sequences...>;
+        using Rail = Roam<Road>::template ProtoRail<Sequences...>;
 
         template<template<template<typename...> class...> class...Warehouses>
-        using Flow = Travel<Road>::template ProtoFlow<Warehouses...>;
+        using Flow = Roam<Road>::template ProtoFlow<Warehouses...>;
 
         template<template<template<auto...> class...> class...Stockrooms>
-        using Sail = Travel<Road>::template ProtoSail<Stockrooms...>;
+        using Sail = Roam<Road>::template ProtoSail<Stockrooms...>;
     };
 
     template<template<template<auto...> class...> class...Stockrooms>

@@ -25,6 +25,7 @@
 #include "conceptrodon/pagelivore/terse_find.hpp"
 #include "conceptrodon/pagelivore/terse_left_interview.hpp"
 #include "conceptrodon/pagelivore/terse_right_interview.hpp"
+#include "conceptrodon/pagelivore/trek.hpp"
 #include "conceptrodon/pagelivore/trip.hpp"
 
 #include "conceptrodon/descend/pagelivore/dismiss.hpp"
@@ -44,13 +45,13 @@
 #include "conceptrodon/descend/pagelivore/reverse.hpp"
 #include "conceptrodon/descend/pagelivore/right_review.hpp"
 #include "conceptrodon/descend/pagelivore/rise.hpp"
+#include "conceptrodon/descend/pagelivore/roam.hpp"
 #include "conceptrodon/descend/pagelivore/rotate.hpp"
+#include "conceptrodon/descend/pagelivore/rove.hpp"
 #include "conceptrodon/descend/pagelivore/segment.hpp"
 #include "conceptrodon/descend/pagelivore/sieve.hpp"
 #include "conceptrodon/descend/pagelivore/slice.hpp"
-#include "conceptrodon/descend/pagelivore/tale.hpp"
 #include "conceptrodon/descend/pagelivore/transform.hpp"
-#include "conceptrodon/descend/pagelivore/travel.hpp"
 #include "conceptrodon/descend/pagelivore/trim.hpp"
 
 
