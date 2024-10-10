@@ -9,6 +9,7 @@
 #include "conceptrodon/mouldivore/bind_front.hpp"
 #include "conceptrodon/mouldivore/trek.hpp"
 #include "conceptrodon/mouldivore/bind_back.hpp"
+#include "conceptrodon/mouldivore/mold_diverge.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 
@@ -102,6 +103,34 @@ SAME_TYPE(MakeNestedMap<int, int*>);
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    std::map<size_t, std::function<void(int, int*, void*, void**)>>
+
+SAME_TYPE
+(
+    Trek<BindBack<MakeFunctionAlias>::Mold>
+    ::Flow<MoldDiverge>
+    ::Flow
+    <
+        Trek<BindFront<std::map>::Mold>
+        ::Flow
+        <    
+            Trek<std::function>
+            ::Road
+        >
+        ::Road
+    >
+    ::Mold<void*, void**>
+    ::Mold<size_t>
+    ::Mold<int, int*>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
 
 
 
