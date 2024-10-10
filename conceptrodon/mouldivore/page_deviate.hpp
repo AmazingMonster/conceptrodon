@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Mouldivore {
 
 template<template<typename...> class Operation>
-struct DeviatePage
+struct PageDeviate
 {
     template<typename Negotiation>
     struct ProtoMold
