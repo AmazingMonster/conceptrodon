@@ -58,7 +58,6 @@ struct Ramble
         template<typename...Songs>
         using Mold = Omennivore::Send<typename Radio<Songs...>::type>::template UniSail<Car>;
 
-
         template<template<template<typename...> class...> class...Tunes>
         using Flow = Omennivore::Wind<Tunes<Mold>...>;
     };

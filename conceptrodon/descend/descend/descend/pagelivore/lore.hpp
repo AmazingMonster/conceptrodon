@@ -1,22 +1,23 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_MOULDIVORE_YORE_H
-#define CONCEPTRODON_MOULDIVORE_YORE_H
+#ifndef CONCEPTRODON_PAGELIVORE_LORE_H
+#define CONCEPTRODON_PAGELIVORE_LORE_H
 
 #include "conceptrodon/descend/descend/omennivore/wind.hpp"
+#include "conceptrodon/omennivore/send.hpp"
 
 namespace Conceptrodon {
-namespace Mouldivore {
+namespace Pagelivore {
 
-template<template<typename...> class Car>
-struct Yore
+template<template<auto...> class Car>
+struct Lore
 {
     template<template<typename...> class Radio>
     struct ProtoRoad
     {
         template<typename...Songs>
-        using Mold = Car<Radio<Songs...>>;
+        using Mold = Omennivore::Send<Radio<Songs...>>::template UniRail<Car>;
 
         template<template<template<typename...> class...> class...Memories>
         using Flow = Omennivore::Wind<Memories<Mold>...>;
@@ -29,7 +30,7 @@ struct Yore
     struct ProtoRail
     {
         template<auto...Songs>
-        using Page = Car<Radio<Songs...>>;
+        using Page = Omennivore::Send<Radio<Songs...>>::template UniRail<Car>;
 
         template<template<template<auto...> class...> class...Memories>
         using Sail = Omennivore::Wind<Memories<Page>...>;
@@ -42,7 +43,7 @@ struct Yore
     struct ProtoFlow
     {
         template<template<typename...> class...Songs>
-        using Road = Car<Radio<Songs...>>;
+        using Road = Omennivore::Send<Radio<Songs...>>::template UniRail<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Memories>
         using Zeal = Omennivore::Wind<Memories<Road>...>;
@@ -55,7 +56,7 @@ struct Yore
     struct ProtoSail
     {
         template<template<auto...> class...Songs>
-        using Rail = Car<Radio<Songs...>>;
+        using Rail = Omennivore::Send<Radio<Songs...>>::template UniRail<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Memories>
         using Zest = Omennivore::Wind<Memories<Rail>...>;

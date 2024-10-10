@@ -33,7 +33,7 @@ struct Tale
         using Page = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
         template<template<template<auto...> class...> class...Memories>
-        using Flow = Omennivore::Wind<Memories<Page>...>;
+        using Sail = Omennivore::Wind<Memories<Page>...>;
     };
 
     template<template<auto...> class...Sequences>

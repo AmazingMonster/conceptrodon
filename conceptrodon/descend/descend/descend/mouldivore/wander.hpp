@@ -58,7 +58,6 @@ struct Wander
         template<typename...Songs>
         using Mold = Omennivore::Send<Radio<Songs...>>::template UniSail<Car>;
 
-
         template<template<template<typename...> class...> class...Tunes>
         using Flow = Omennivore::Wind<Tunes<Mold>...>;
     };
