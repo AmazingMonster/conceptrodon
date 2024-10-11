@@ -2,7 +2,7 @@
 A C++20 metaprogramming library focusing on composition and continuation.
 
 ## Introduction
-This library is inspired by pipe syntax and aims to compose metafunctions similarly.  
+The goal of this library is to make metafunction composition simple and natural.
 
 Both **boost::mp11** and **kvasir::mpl** contain a function called 'compose.' It takes a variadic pack of metafunctions and uses the result from the previous function to invoke the next one.
 Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​>>…​>`. However, since we still don't have a universal template parameter token, signatures of `F1...` must be specified.
@@ -22,40 +22,33 @@ These identifiers are deployed inside a metafunction to take corresponding argum
 2. Since the next parameter(`std::tuple`) is corresponding to *Road*(`template<template<typename...> class...>`), we pass it to *Road*: `Fun<int>::Road<std::tuple>`.
 3. The last parameter(`std::index_sequence`) is corresponding to *Rail*(`template<template<auto...> class...>`), we pass it to *Rail*: `Fun<int>::Road<std::tuple>::Rail<std::index_sequence>`.
 
-More details can be found in *./conceptrodon/EXAMPLAR.hpp*
+More details can be found in [*./conceptrodon/EXAMPLAR.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/conceptrodon/EXEMPLAR.hpp)
 
-Every function in this library is tailored to fit this pattern. Since the inner structures of functions are predictable, different signatures can be composed by invoking member templates corresponding to the signature. This is done via *tale*, *trip*, and *travel* functions in various namespaces. Examples can be found in:
-- *./tests/composition/mouldivore/trip.test.hpp*
-- *./tests/unit/mouldivore/trip.test.hpp*
-- *./tests/unit/mouldivore/travel.test.hpp*
-- *./tests/unit/pagelivore/trip.test.hpp*
-- *./tests/unit/pagelivore/travel.test.hpp*
-- *./tests/unit/roadrivore/trip.test.hpp*
-- *./tests/unit/roadrivore/travel.test.hpp*
-- *./tests/unit/raillivore/trip.test.hpp*
-- *./tests/unit/raillivore/travel.test.hpp*
+Most functions in this library are tailored to fit this pattern. Since the inner structures of functions are predictable, different signatures can be composed by invoking member templates corresponding to the signature. Examples can be found in:
+- [*./tests/composition/mouldivore/trip.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/unit/mouldivore/trip.test.hpp)
+- [*./tests/unit/mouldivore/trek.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/composition/mouldivore/trek.test.hpp)
 
 [TODO: Add More Explanations]
 
 ## Observation
-*Mold* can be further abstracted as the set of all metafunctions of signature `template<typename...>`. The same applies to *Road*, except the corresponding signature becomes `template<template<typename...> class...>`. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, by taking arguments in steps, we are making maps from function to function.
+*Mold* can be further abstracted as the set of all metafunctions of signature `template<typename...>`. The same applies to *Road*, except the corresponding signature becomes `template<template<typename...> class...>`. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, we are making maps from function to function by taking arguments in steps.
 
 If we reverse the order of *Road* and *Fun* and call the new function *FunReversed*, we can invoke it by `FunReversed<std::tuple>::Mold<int>::Rail<std::index_sequence>`. *FunReversed* is then a map from set *Road* to set *Mold*. The result will be the same as before. In conclusion, there is a loose correspondence between 'maps from set *Mold* to set *Road*' and 'maps from set *Road* to set *Mold*.' 
  
 This library is structured according to these ideas.
 
 ## Structure
-This library contains four main namespaces:
-- *Typelivore*. It contains functions of signature `template<typename...>` that output a function of signature `template<template<typename...> class...>`.
-- *Mouldivore*. It contains functions of signature `template<template<typename...> class...>` that output functions of signature `template<typename...>`.
-- *Varybivore*. It contains functions of signature `template<auto...>` that output a function of signature `template<template<auto...> class...>`.
-- *Pagelivore*. It contains functions of signature `template<template<auto...> class...>` that output functions of signature `template<auto...>`.
-
-While exceptions exist, these rules guide the majority of decision-making. Most functions presented in the library are included in these namespaces. 
-
-A few more namespaces are provided to handle functions that cannot fit in the namespaces above naturally.
+This library contains 6 main namespaces:
+- *Typelivore*. It contains functions of signature `template<typename...>` (that output a function of signature `template<template<typename...> class...>`).
+- *Mouldivore*. It contains functions of signature `template<template<typename...> class...>` (that output functions of signature `template<typename...>`).
+- *Varybivore*. It contains functions of signature `template<auto...>` (that output a function of signature `template<template<auto...> class...>`).
+- *Pagelivore*. It contains functions of signature `template<template<auto...> class...>` (that output functions of signature `template<auto...>`).
 - *Roadrivore*. It contains functions of signature `template<template<template<typename...> class...> class...>`.
 - *Raillivore*. It contains functions of signature `template<template<template<auto...> class...> class...>`.
+
+Even though parenthesized statements are not followed strictly, these rules guide most decision-making.
+
+A few more namespaces are provided to handle functions that cannot fit in the namespaces above naturally.
 - *Cotanivore*. Functions in this namespace take arguments of form `Container<Elements...>`, where `Container` has signature `template<typename...>` and `Elements...` are types.
 - *Sequnivore*. Functions in this namespace take arguments of form `Sequence<Variables...>`, where `Sequence` has signature `template<auto...>` and `Variables...` are values.
 - *Warehivore*. Functions in this namespace take arguments of form `Warehouse<Containers...>`, where `Warehouse` has signature `template<template<typename...> class...>` and `Containers...` have signature *template<typename...>*.
