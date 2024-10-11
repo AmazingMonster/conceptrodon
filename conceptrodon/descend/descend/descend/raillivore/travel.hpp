@@ -19,7 +19,7 @@ struct Travel
         using Rail = Car<typename Radio<Songs...>::type>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<typename...> class...Containers>
@@ -32,7 +32,7 @@ struct Travel
         using Rail = Car<Radio<Songs...>::value>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -45,7 +45,7 @@ struct Travel
         using Rail = Car<Radio<Songs...>::template Mold>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -58,7 +58,7 @@ struct Travel
         using Rail = Car<Radio<Songs...>::template Page>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>

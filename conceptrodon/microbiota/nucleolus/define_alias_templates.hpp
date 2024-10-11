@@ -8,6 +8,6 @@
 #include "./define_alias_templates/rail.hpp"
 #include "./define_alias_templates/flow.hpp"
 #include "./define_alias_templates/sail.hpp"
-#include "./define_alias_templates/zeal.hpp"
-#include "./define_alias_templates/zest.hpp"
+#include "./define_alias_templates/snow.hpp"
+#include "./define_alias_templates/hail.hpp"
 /******************************************************************************************************/

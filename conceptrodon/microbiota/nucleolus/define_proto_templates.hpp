@@ -8,6 +8,6 @@
 #include "./define_proto_templates/rail.hpp"
 #include "./define_proto_templates/flow.hpp"
 #include "./define_proto_templates/sail.hpp"
-#include "./define_proto_templates/zeal.hpp"
-#include "./define_proto_templates/zest.hpp"
+#include "./define_proto_templates/snow.hpp"
+#include "./define_proto_templates/hail.hpp"
 /******************************************************************************************************/

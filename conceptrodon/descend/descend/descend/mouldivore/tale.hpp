@@ -46,7 +46,7 @@ struct Tale
         using Road = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Memories>
-        using Zeal = Omennivore::Wind<Memories<Road>...>;
+        using Snow = Omennivore::Wind<Memories<Road>...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -59,7 +59,7 @@ struct Tale
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Memories>
-        using Zest = Omennivore::Wind<Memories<Rail>...>;
+        using Hail = Omennivore::Wind<Memories<Rail>...>;
     };
 
     template<template<template<auto...> class...> class...Stockrooms>

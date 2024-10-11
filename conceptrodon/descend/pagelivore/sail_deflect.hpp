@@ -16,7 +16,7 @@ struct SailDeflect
     struct ProtoMold
     {
         template<auto...Agreements>
-        using Page = Omennivore::Send<Operation<Agreements...>>::template UniZest<Negotiation::template Sail>;
+        using Page = Omennivore::Send<Operation<Agreements...>>::template UniHail<Negotiation::template Sail>;
     };
 
     template<typename...Agreements>

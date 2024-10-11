@@ -6,19 +6,19 @@
 
 namespace Conceptrodon {
     
-template<template<template<template<auto...> class...> class...> class...Nothing>
+template<template<template<template<auto...> class...> class...> class...Nothingness>
 struct Halcyon 
 {
-    static constexpr size_t size() { return sizeof...(Nothing); }
+    static constexpr size_t size() { return sizeof...(Nothingness); }
 
     template<template<template<template<template<auto...> class...> class...> class...> class Revelation>
-    struct Detail { using type = Revelation<Nothing...>; };
+    struct Detail { using type = Revelation<Nothingness...>; };
 
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
     using Calm = Detail<Tranquil...>::type;
     
     template<template<template<template<template<auto...> class...> class...> class...> class Revelation>
-    using UniCalm = Revelation<Nothing...>;
+    using UniCalm = Revelation<Nothingness...>;
 
 };
  

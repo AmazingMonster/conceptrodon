@@ -16,7 +16,7 @@ struct SailDetract
     struct ProtoMold
     {
         template<template<auto...> class...Agreements>
-        using Rail = Omennivore::Send<typename Operation<Agreements...>::type>::template UniZest<Negotiation::template Sail>;
+        using Rail = Omennivore::Send<typename Operation<Agreements...>::type>::template UniHail<Negotiation::template Sail>;
     };
 
     template<typename...Agreements>

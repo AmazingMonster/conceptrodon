@@ -16,7 +16,7 @@ struct FlowDeflect
     struct ProtoMold
     {
         template<typename...Agreements>
-        using Mold = Omennivore::Send<Operation<Agreements...>>::template UniZeal<Negotiation::template Flow>;
+        using Mold = Omennivore::Send<Operation<Agreements...>>::template UniSnow<Negotiation::template Flow>;
     };
 
     template<typename...Agreements>

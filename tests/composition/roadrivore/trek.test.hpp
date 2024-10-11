@@ -6,9 +6,13 @@
 
 #include <functional>
 #include <map>
+#include "conceptrodon/descend/descend/mouldivore/delay.hpp"
+#include "conceptrodon/descend/descend/mouldivore/defer.hpp"
 #include "conceptrodon/mouldivore/bind_front.hpp"
 #include "conceptrodon/roadrivore/trek.hpp"
+#include "conceptrodon/descend/roadrivore/memorize.hpp"
 #include "conceptrodon/mouldivore/trek.hpp"
+#include "conceptrodon/emissary.hpp"
 #include "conceptrodon/mouldivore/bind_back.hpp"
 #include "conceptrodon/descend/descend/descend/mouldivore/yore.hpp"
 #include "conceptrodon/descend/descend/descend/roadrivore/past.hpp"
@@ -38,9 +42,10 @@ using MakeFunctionAlias = void(Elements...);
 
 SAME_TYPE
 (
+
     Trek<Mouldivore::BindFront>
     ::Flow<Mouldivore::Trek>
-    ::Zeal
+    ::Snow
     <
         Mouldivore::Trek<Mouldivore::BindBack<MakeFunctionAlias>::Mold>
         ::Flow
@@ -53,6 +58,83 @@ SAME_TYPE
     >
     ::Road<std::map>
     ::Mold<void*, void**>
+    ::Mold<size_t>
+    ::Mold<int, int*>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    std::map<size_t, std::function<void(int, int*, void*, void**)>>
+
+template<typename...Elements>
+using MakeFunctionAlias = void(Elements...);
+
+SAME_TYPE
+(
+    
+    Memorize
+    <
+        Trek<Mouldivore::BindFront>
+        ::Flow<Mouldivore::Trek>
+        ::Road
+    >
+    ::Flow<Mouldivore::Defer>
+    ::Flow
+    <
+        Mouldivore::Trek<Mouldivore::BindBack<MakeFunctionAlias>::Mold>
+        ::Flow
+        <
+            Mouldivore::Yore<std::function>
+            ::Road
+        >
+        ::Road
+    >
+    ::Road<std::map>
+    ::Mold<size_t>
+    ::Mold<void*, void**>
+    ::Mold<int, int*>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    std::map<size_t, std::function<void(int, int*, void*, void**)>>
+
+template<typename...Elements>
+using MakeFunctionAlias = void(Elements...);
+
+SAME_TYPE
+(
+    Mouldivore::Trek<Mouldivore::BindBack<MakeFunctionAlias>::Mold>
+    ::Flow
+    <
+        Mouldivore::Yore<std::function>
+        ::Road
+    >
+    ::Flow<Mouldivore::MoldDiverge>
+    ::Flow
+    <
+        Memorize
+        <
+            Trek<Mouldivore::BindFront>
+            ::Flow<Mouldivore::Trek>
+            ::Road
+        >
+        ::SubRoad
+    >
+    ::Mold<void*, void**>
+    ::Road<std::map>
     ::Mold<size_t>
     ::Mold<int, int*>
 );

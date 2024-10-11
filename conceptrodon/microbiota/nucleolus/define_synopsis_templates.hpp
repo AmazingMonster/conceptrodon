@@ -8,6 +8,6 @@
 #include "./define_synopsis_templates/rail.hpp"
 #include "./define_synopsis_templates/flow.hpp"
 #include "./define_synopsis_templates/sail.hpp"
-#include "./define_synopsis_templates/zeal.hpp"
-#include "./define_synopsis_templates/zest.hpp"
+#include "./define_synopsis_templates/snow.hpp"
+#include "./define_synopsis_templates/hail.hpp"
 /******************************************************************************************************/

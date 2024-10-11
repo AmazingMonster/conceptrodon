@@ -20,7 +20,7 @@ struct Ramble
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniRoad<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<typename...> class...Containers>
@@ -33,7 +33,7 @@ struct Ramble
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniRail<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -46,7 +46,7 @@ struct Ramble
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniFlow<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -59,7 +59,7 @@ struct Ramble
         using Rail = Omennivore::Send<typename Radio<Songs...>::type>::template UniSail<Car>;
 
         template<template<template<template<auto...> class...> class...> class...Tunes>
-        using Zest = Omennivore::Wind<Tunes<Rail>...>;
+        using Hail = Omennivore::Wind<Tunes<Rail>...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>

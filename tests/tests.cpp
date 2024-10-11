@@ -162,10 +162,9 @@
 // #include "tests/unit/omennivore/insert_types.test.hpp"
 // #include "tests/unit/omennivore/oust_types.test.hpp"
 // #include "tests/unit/omennivore/modify_types.test.hpp"
-// #include "tests/unit/omennivore/flatten.test.hpp"
+ #include "tests/unit/omennivore/flatten.test.hpp"
 
 // #include "tests/unit/cotanivore/repack.test.hpp"
-
 
 
 int main()

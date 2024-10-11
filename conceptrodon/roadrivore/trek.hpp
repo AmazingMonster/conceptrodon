@@ -28,11 +28,11 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
 
     template<template<typename...> class...Containers>
@@ -56,11 +56,11 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -84,11 +84,11 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -112,18 +112,18 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>
     using Sail = ProtoSail<Stockrooms...>;
 
     template<template<template<template<typename...> class...> class...> class Car>
-    struct ProtoZeal
+    struct ProtoSnow
     {
         template<template<typename...> class...Songs>
         using Road = Car<Radio<Songs...>::template Road>;
@@ -140,18 +140,18 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
     
-    template<template<template<template<typename...> class...> class...> class...Madness>
-    using Zeal = ProtoZeal<Madness...>;
+    template<template<template<template<typename...> class...> class...> class...Foolishness>
+    using Snow = ProtoSnow<Foolishness...>;
 
     template<template<template<template<auto...> class...> class...> class Car>
-    struct ProtoZest
+    struct ProtoHail
     {
         template<template<typename...> class...Songs>
         using Road = Car<Radio<Songs...>::template Rail>;
@@ -168,15 +168,15 @@ struct Trek
         template<template<template<auto...> class...> class...Stockrooms>
         using Sail = Trek<Road>::template ProtoSail<Stockrooms...>;
     
-        template<template<template<template<typename...> class...> class...> class...Madness>
-        using Zeal = Trek<Road>::template ProtoZeal<Madness...>;
+        template<template<template<template<typename...> class...> class...> class...Foolishness>
+        using Snow = Trek<Road>::template ProtoSnow<Foolishness...>;
 
-        template<template<template<template<auto...> class...> class...> class...Craziness>
-        using Zest = Trek<Road>::template ProtoZest<Craziness...>;
+        template<template<template<template<auto...> class...> class...> class...Foolishness>
+        using Hail = Trek<Road>::template ProtoHail<Foolishness...>;
     };
     
-    template<template<template<template<auto...> class...> class...> class...Craziness>
-    using Zest = ProtoZest<Craziness...>;
+    template<template<template<template<auto...> class...> class...> class...Foolishness>
+    using Hail = ProtoHail<Foolishness...>;
 };
 
 }}

@@ -8,6 +8,6 @@
 #include "./define_variable_templates/rail.hpp"
 #include "./define_variable_templates/flow.hpp"
 #include "./define_variable_templates/sail.hpp"
-#include "./define_variable_templates/zeal.hpp"
-#include "./define_variable_templates/zest.hpp"
+#include "./define_variable_templates/snow.hpp"
+#include "./define_variable_templates/hail.hpp"
 /******************************************************************************************************/

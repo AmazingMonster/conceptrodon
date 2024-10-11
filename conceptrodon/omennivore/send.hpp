@@ -69,32 +69,32 @@ struct Send<Stockroom<Sequences...>>
     using UniSail = Operation<Sequences...>;
 };
 
-template<template<template<template<typename...> class...> class...> class Madness, template<template<typename...> class...> class...Warehouses>
-struct Send<Madness<Warehouses...>>
+template<template<template<template<typename...> class...> class...> class Foolishness, template<template<typename...> class...> class...Warehouses>
+struct Send<Foolishness<Warehouses...>>
 {
     template<template<template<template<typename...> class...> class...> class Operation>
     struct Detail 
     { using type = Operation<Warehouses...>; };
 
     template<template<template<template<typename...> class...> class...> class...Agreements>
-    using Zeal = Detail<Agreements...>::type;
+    using Snow = Detail<Agreements...>::type;
 
     template<template<template<template<typename...> class...> class...> class Operation>
-    using UniZeal = Operation<Warehouses...>;
+    using UniSnow = Operation<Warehouses...>;
 };
 
-template<template<template<template<auto...> class...> class...> class Craziness, template<template<auto...> class...> class...Stockrooms>
-struct Send<Craziness<Stockrooms...>>
+template<template<template<template<auto...> class...> class...> class Foolishness, template<template<auto...> class...> class...Stockrooms>
+struct Send<Foolishness<Stockrooms...>>
 {
     template<template<template<template<auto...> class...> class...> class Operation>
     struct Detail 
     { using type = Operation<Stockrooms...>; };
 
     template<template<template<template<auto...> class...> class...> class...Agreements>
-    using Zest = Detail<Agreements...>::type;
+    using Hail = Detail<Agreements...>::type;
 
     template<template<template<template<auto...> class...> class...> class Operation>
-    using UniZest = Operation<Stockrooms...>;
+    using UniHail = Operation<Stockrooms...>;
 };
 
 }}

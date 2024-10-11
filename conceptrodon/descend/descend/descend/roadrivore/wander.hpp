@@ -20,7 +20,7 @@ struct Wander
         using Road = Omennivore::Send<Radio<Songs...>>::template UniRoad<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<typename...> class...Containers>
@@ -33,7 +33,7 @@ struct Wander
         using Road = Omennivore::Send<Radio<Songs...>>::template UniRail<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -46,7 +46,7 @@ struct Wander
         using Road = Omennivore::Send<Radio<Songs...>>::template UniFlow<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -59,7 +59,7 @@ struct Wander
         using Road = Omennivore::Send<Radio<Songs...>>::template UniSail<Car>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>

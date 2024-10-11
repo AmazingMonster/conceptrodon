@@ -19,7 +19,7 @@ struct Voyage
         using Road = Car<Radio<Songs...>>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<typename...> class...Containers>
@@ -32,7 +32,7 @@ struct Voyage
         using Road = Car<Radio<Songs...>::value>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -45,7 +45,7 @@ struct Voyage
         using Road = Car<Radio<Songs...>::template Mold>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -58,7 +58,7 @@ struct Voyage
         using Road= Car<Radio<Songs...>::template Page>;
 
         template<template<template<template<typename...> class...> class...> class...Tunes>
-        using Zeal = Omennivore::Wind<Tunes<Road>...>;
+        using Snow = Omennivore::Wind<Tunes<Road>...>;
     };
     
     template<template<template<auto...> class...> class...Stockrooms>

@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_RAIL_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_RAIL_PROBE_H
 
-#include "conceptrodon/lunatic.hpp"
+#include "conceptrodon/travail.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept RailProbe = requires
-{typename Lunatic<Structure::template Rail>;};
+{typename Travail<Structure::template Rail>;};
 
 }}
 
