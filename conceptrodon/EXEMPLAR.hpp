@@ -94,7 +94,7 @@ struct Exemplar
 // The library was first written using this method.
 // Convoluted machineries were used to remove or add intermediate structures when necessary. 
 // While it was doable, the added complexity was daunting and opposed to the goal of making metafunction composition simple. 
-// After studying boost::mp11 and kvasir::mpl, the author adopted a second approach, \
+// After studying boost::mp11 and kvasir::mpl, I adopted a second approach, \
 // which uses alias templates for interface and class templates for implementation.
 
 };
@@ -171,7 +171,7 @@ struct Exemplar
         struct Detail { using type = Container<Elements...>; };
 
         template<template<typename...> class...Agreements> /* Indirection needed to make 'Road' usable with pack expansion */
-        using Road = Detail<Agreements...>;
+        using Road = Detail<Agreements...>::type;
 
         template<template<typename...> class Container>
         using UniRoad = Container<Elements...>; /* Added to avoid indirection */
