@@ -8,7 +8,7 @@ Both [**boost::mp11**](https://www.boost.org/doc/libs/master/libs/mp11/doc/html/
 Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​>>…​>`. However, since we still don't have a universal template parameter token, signatures of `F1...` must be specified.
 Regarding **boost::mp11** and **kvasir::mpl**, `F1...` can only take type arguments, which means many functions in both libraries are not composable.  
 
-This library expands the idea of a 'quoted metafunction.' By taking arguments from different categories using dedicated member templates, the library groups commonly used functions together based on their signatures, creating better candidates for composition.
+This library expands the idea of 'quoted metafunctions.' By taking arguments from different categories using dedicated member templates, this library categorizes metafunctions based on their signatures, creating better candidates for composition.
 
 ## Implementation
 The library mainly uses four types of member templates:
@@ -18,7 +18,7 @@ The library mainly uses four types of member templates:
 - *Rail*, which has signature `template<template<auto...> class...>`.
 
 These templates are deployed inside a metafunction to take corresponding arguments. For example, assuming we plan to pass `int`, `std::tuple`, `0` and `std::index_sequence` to function *Fun*:
-1. The function itself can always take a kind of argument. we let *Fun* take types and pass `int` to *Fun*: `Fun<int>`.
+1. The function itself can always take a category of arguments. we let *Fun* take types and pass `int` to *Fun*: `Fun<int>`.
 2. `std::tuple` is corresponding to *Road*(`template<template<typename...> class...>`), we pass it to *Road*: `Fun<int>::Road<std::tuple>`.
 3. `0` is corresponding to *Page*(`template<auto...>`), we pass it to *Page*: `Fun<int>::Road<std::tuple>::Page<0>`.
 4. `std::index_sequence` is corresponding to *Rail*(`template<template<auto...> class...>`), we pass it to *Rail*: `Fun<int>::Road<std::tuple>::Page<0>::Rail<std::index_sequence>`.  
@@ -74,15 +74,15 @@ Since the structural layout of a metafunction is predictable, different signatur
 ## Observation
 *Mold* can be further abstracted as the set of all metafunctions of signature `template<typename...>`. The same applies to *Road*, except the corresponding signature becomes `template<template<typename...> class...>`. Function *Fun* then turns into a map from set *Mold* to set *Road*. In other words, we are making maps from function to function by taking arguments in steps.
 
-If we reverse the order of *Road* and *Fun* and call it *FunReversed*, we can invoke the new function by `FunReversed<std::tuple>::Mold<int>::Rail<std::index_sequence>`. *FunReversed* is then a map from set *Road* to set *Mold*. The result will be the same as before. In conclusion, there is a loose correspondence between 'maps from set *Mold* to set *Road*' and 'maps from set *Road* to set *Mold*.' 
+If we reverse the order of *Road* and *Fun* and call it *FunReversed*, we can invoke the new function by `FunReversed<std::tuple>::Mold<int>::Page<0>::Rail<std::index_sequence>`. *FunReversed* is then a map from set *Road* to set *Mold*. The result will be the same as before. In conclusion, there is a loose correspondence between 'maps from set *Mold* to set *Road*' and 'maps from set *Road* to set *Mold*.' 
  
 This library is structured according to these observations.
 
 ## Structure
 This library mainly contains six namespaces:
-- *Typelivore*. It contains functions of signature `template<typename...>` (that output a function of signature `template<template<typename...> class...>`).
+- *Typelivore*. It contains functions of signature `template<typename...>` (that output functions of signature `template<template<typename...> class...>`).
 - *Mouldivore*. It contains functions of signature `template<template<typename...> class...>` (that output functions of signature `template<typename...>`).
-- *Varybivore*. It contains functions of signature `template<auto...>` (that output a function of signature `template<template<auto...> class...>`).
+- *Varybivore*. It contains functions of signature `template<auto...>` (that output functions of signature `template<template<auto...> class...>`).
 - *Pagelivore*. It contains functions of signature `template<template<auto...> class...>` (that output functions of signature `template<auto...>`).
 - *Roadrivore*. It contains functions of signature `template<template<template<typename...> class...> class...>`.
 - *Raillivore*. It contains functions of signature `template<template<template<auto...> class...> class...>`.
@@ -96,12 +96,12 @@ A few more namespaces are introduced to handle functions that cannot fit in the 
 - *Stockivore*. Functions in this namespace take arguments of form `Stockroom<Sequences...>`, where `Stockroom` has signature `template<template<auto...> class...>` and `Sequences...` have signature `template<auto...>`.
 - *Omennivore*. It contains functions that do not fit in the namespaces above.
 
-The library is further divided according to dependency. Functions in *./conceptrodon/\*/descend* depend on facilities in *./conceptrodon/\**. For example, functions in *./conceptrodon/descend/descend* depend on facilities in *./conceptrodon/descend*, while functions in *./conceptrodon/descend* depend on facilities in *./conceptrodon*.
+The library is further divided according to dependency. Functions in '*./conceptrodon/\*/descend*' depend on facilities in '*./conceptrodon/\**.' For example, functions in '*./conceptrodon/descend/descend*' depend on facilities in '*./conceptrodon/descend*,' while functions in '*./conceptrodon/descend*' depend on facilities in '*./conceptrodon*.'
 
 ## Speed
 Many functions are tested against **boost::mp11**. If the function being tested is slower than its counterpart, the implementation from **boost::mp11** is used. Therefore, This library is generally faster than **boost::mp11**. Tests can be found in *tests/unit*. 
 
-A few functions are tested against **kvasir::mpl**. Tested functions are optimized similarly as before. More tests against **kvasir::mpl** are planned for the future.
+A few functions are tested against **kvasir::mpl**. The tested functions are optimized similarly to before. More tests against **kvasir::mpl** are planned for the future.
 
 ## Limitation
 This library is only tested with Clang. GCC won't compile since explicit specialization inside a struct is still unavailable. Workarounds exist, and a GCC-compatible version is planned for the future.
@@ -112,7 +112,7 @@ Each function will be given a description. A GCC-compatible version of the libra
 ## Install
 Since this is a header-only library, you can download it to your project and use it like your own headers.  
 
-In directory *./conceptrodon*, including headers named after namespaces consequently includes all functions within the corresponding namespaces, while including *conceptrodon.hpp* includes everything inside the library.
+[In directory '*./conceptrodon*,' including headers named after namespaces consequently includes all functions within the corresponding namespaces, while including *conceptrodon.hpp* includes everything inside the library. (Not true at the moment; those headers will be added soon)]
 
 You can also install it using CMake:
 
@@ -122,13 +122,15 @@ You can also install it using CMake:
 ```
 cmake -S . -B "Where to build"
 ```
-3. Redirect to the build directory that you specified after -B. Run command:
+3. Redirect to the build directory you specified after '-B' earlier. Run command:
 ```
 cmake --install . --prefix "Where to install"
 ```
 [TODO: Add instructions for other systems]
 
-After installation, in the CMakeList.txt of your project, Add:
+After installation, add the install directory you specified after '--prefix' to CMAKE_PREFIX_PATH in your project's CMakeCache.txt.  
+
+In the CMakeList.txt of your project, Add:
 ```
 find_package(Conceptrodon REQUIRED CONFIG)
 target_link_libraries(YourProject PRIVATE Conceptrodon::Contents)
