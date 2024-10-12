@@ -4,7 +4,7 @@ A C++20 metaprogramming library focusing on metafunction composition.
 ## Introduction
 The goal of this library is to make metafunction composition simple and natural.
 
-Both **boost::mp11** and **kvasir::mpl** contain a function called 'compose.' It takes a variadic pack of metafunctions and uses the result from the left function to invoke the right one.
+Both [**boost::mp11**](https://www.boost.org/doc/libs/master/libs/mp11/doc/html/mp11.html) and [**kvasir::mpl**](https://github.com/kvasir-io/mpl) contain a function called 'compose.' It takes a variadic pack of metafunctions and uses the result from the left function to invoke the right one.
 Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​>>…​>`. However, since we still don't have a universal template parameter token, signatures of `F1...` must be specified.
 Regarding **boost::mp11** and **kvasir::mpl**, `F1...` can only take type arguments, which means many functions in both libraries are not composable.  
 
@@ -67,6 +67,7 @@ static_assert(Fun<>::Road<>::Page<>::Rail<Fun<>::Road<>::Page>::value);
 Since the structural layout of a metafunction is predictable, different signatures can be composed by high-level functions. Examples can be found in:
 - [*./tests/composition/mouldivore/trip.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/unit/mouldivore/trip.test.hpp)
 - [*./tests/unit/mouldivore/trek.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/composition/mouldivore/trek.test.hpp)
+- Trip and Trek tests in numerous directories.
 
 [TODO: Add More Explanations]
 
@@ -100,11 +101,13 @@ The library is further divided according to dependency. Functions in *./conceptr
 ## Speed
 Many functions are tested against **boost::mp11**. If the function being tested is slower than its counterpart, the implementation from **boost::mp11** is used. Therefore, This library is generally faster than **boost::mp11**. Tests can be found in *tests/unit*. 
 
+A few functions are tested against **kvasir::mpl**. Tested functions are optimized similarly as before. More tests against **kvasir::mpl** are planned for the future.
+
 ## Limitation
 This library is only tested with Clang. GCC won't compile since explicit specialization inside a struct is still unavailable. Workarounds exist, and a GCC-compatible version is planned for the future.
 
 ## Future
-Descriptions will be gradually added to each function. A GCC-compatible version will be added after.
+Each function will be given a description. A GCC-compatible version of the library will be added after. Tests against **kvasir::mpl** will be gradually added.
 
 ## Install
 Since this is a header-only library, you can download it to your project and use it like your own headers.  
