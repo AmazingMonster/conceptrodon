@@ -9,5 +9,6 @@
 - Develop a GCC-compatible version of the library.
 
 ## Maybe:
+
 - Use macro to reimplement Trip and Trek for maintainability.
 - Change the structure of Memorize to conform to rules better.
