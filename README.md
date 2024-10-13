@@ -78,8 +78,6 @@ Since the structural layout of a metafunction is predictable, different signatur
 - [*./tests/composition/mouldivore/trip.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/unit/mouldivore/trip.test.hpp)
 - [*./tests/unit/mouldivore/trek.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/composition/mouldivore/trek.test.hpp)
 
-[TODO: Add More Explanations]
-
 ## Observation
 
 *Mold* can be further abstracted as the set of all metafunctions of signature `template<typename...>`.
@@ -154,8 +152,6 @@ cmake -S . -B "Where to build"
 ```
 cmake --install . --prefix "Where to install"
 ```
-
-[TODO: Add instructions for other systems]
 
 After installation, add the install directory you specified after '--prefix' to CMAKE_PREFIX_PATH in your project's CMakeCache.txt.  
 
