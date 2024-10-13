@@ -62,11 +62,9 @@ struct Fun
 };
 ```
 
-More details can be found in [*./conceptrodon/EXAMPLAR.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/conceptrodon/EXEMPLAR.hpp)
+More details can be found in [*./conceptrodon/EXEMPLAR.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/conceptrodon/EXEMPLAR.hpp)
 
-All metafunctions in this library are tailored to fit this pattern. 
-This means every *Mold* can be passed to every *Road* as an argument, and every *Page* can be passed to every *Rail* as an argument. 
-In the previous example, we can pass `Fun` to `Fun<>::Road` and pass `Fun<>::Road<>::Page` to `Fun<>::Road<>::Page<>::Rail`:
+All metafunctions in this library are tailored to fit this pattern. This means every *Mold* can be passed to every *Road* as an argument, and every *Page* can be passed to every *Rail* as an argument. In the previous example, we can pass `Fun` to `Fun<>::Road` and pass `Fun<>::Road<>::Page` to `Fun<>::Road<>::Page<>::Rail`:
 
 ```c++
 static_assert(Fun<>::Road<Fun>::value);
