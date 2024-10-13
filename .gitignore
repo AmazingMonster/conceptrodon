@@ -4,6 +4,9 @@
 *.cache
 compile_commands.json
 
+# Markdownlint
+*.markdownlint.json
+
 # Compiled Object files
 *.slo
 *.lo
