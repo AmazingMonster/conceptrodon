@@ -165,3 +165,5 @@ target_link_libraries(YourProject PRIVATE Conceptrodon::Contents)
 Now, you can include what you need in your project.
 
 ## Links
+
+[Documentation for Conceptrodon](https://github.com/AmazingMonster/conceptrodon/blob/main/docs/index.md)
