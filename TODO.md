@@ -8,7 +8,7 @@
 - Add speed tests against kvasir::mpl.
 - Develop a GCC-compatible version of the library.
 
-## Maybe:
+## Maybe
 
 - Use macro to reimplement Trip and Trek for maintainability.
 - Change the structure of Memorize to conform to rules better.

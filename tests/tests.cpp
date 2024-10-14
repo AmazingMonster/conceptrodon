@@ -99,7 +99,7 @@
 // #include "tests/unit/typelivore/are_distinct_2nd.test.hpp"
 // #include "tests/unit/typelivore/are_distinct_3rd.test.hpp"
 // #include "tests/unit/typelivore/left_interview.test.hpp"
-// #include "tests/unit/typelivore/left_interview_2nd.test.hpp"
+ #include "tests/unit/typelivore/left_interview_2nd.test.hpp"
 // #include "tests/unit/typelivore/right_interview.test.hpp"
 // #include "tests/unit/typelivore/amid.test.hpp"
 // #include "tests/unit/typelivore/amidst.test.hpp"

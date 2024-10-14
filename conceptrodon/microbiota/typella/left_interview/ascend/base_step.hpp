@@ -41,12 +41,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER  \
-    Interviewer
+#define CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER  \
+    Interviewers
 /******************************************************************************************************/
 
 
@@ -105,8 +105,8 @@ struct CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_FUNCTION_NAME
 {
     template
     <
-        CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-        CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+        CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY ...
+        CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
     >
     struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
     {
@@ -159,6 +159,6 @@ struct CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+#undef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
 #undef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
 /******************************************************************************************************/
