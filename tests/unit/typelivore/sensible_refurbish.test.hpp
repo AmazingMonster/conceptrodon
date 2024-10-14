@@ -1,13 +1,13 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PREEN_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PREEN_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_REFURBISH_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_REFURBISH_H
 
 #include <concepts>
 #include <type_traits>
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/typelivore/preen.hpp"
+#include "conceptrodon/typelivore/sensible_refurbish.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -18,7 +18,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestPreen {
+namespace TestSensibleRefurbish {
 
 
 
@@ -29,6 +29,9 @@ struct Tester
 {
     using type = std::integral_constant<int, 1 + T::value>;
 };
+
+template<typename...Args>
+using Tester_t = Tester<Args...>::type;
 /******************************************************************************************************/
 
 
@@ -48,8 +51,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, +1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Preen<SHEEP_SPROUT(240)>::Road<Tester>::Road<Capsule>);
-SAME_TYPE(Preen<SHEEP_SPROUT(240)>::Road<Tester>::UniRoad<Capsule>);
+SAME_TYPE(SensibleRefurbish<SHEEP_SPROUT(240)>::Road<Capsule>::Road<Tester_t>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

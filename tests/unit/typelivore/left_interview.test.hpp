@@ -34,7 +34,7 @@ struct Integer: public std::integral_constant<int, I> {};
 
 /******************************************************************************************************/
 template<typename, typename Base, typename Derived>
-struct SecondIsBaseOf: std::is_base_of<Base, Derived> {};
+struct IsBaseOf: std::is_base_of<Base, Derived> {};
 /******************************************************************************************************/
 
 
@@ -100,8 +100,8 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
     ,
     
 template<int I>
-constexpr auto SecondInterviewed = LeftInterview<SHEEP_SPROUT(120)>
-::Mold<int, std::integral_constant<int, I>>::template Road_v<SecondIsBaseOf>;
+constexpr auto MultipleInterviewed = LeftInterview<SHEEP_SPROUT(120)>
+::Mold<int, std::integral_constant<int, I>>::template Road_v<IsBaseOf>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -116,7 +116,7 @@ constexpr auto SecondInterviewed = LeftInterview<SHEEP_SPROUT(120)>
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    SecondInterviewed <
+    MultipleInterviewed <
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \

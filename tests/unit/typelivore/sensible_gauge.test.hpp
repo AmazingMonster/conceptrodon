@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_GAUGE_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_GAUGE_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/gauge.hpp"
+#include "conceptrodon/typelivore/sensible_gauge.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -20,7 +20,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestGauge {
+namespace TestSensibleGauge {
 
 
 
@@ -64,8 +64,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Rail<Shuttle>);
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
+SAME_TYPE(SensibleGauge<LLAMA_SPROUT(240)>::Rail<Shuttle>::Road<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX

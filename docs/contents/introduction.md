@@ -79,6 +79,14 @@
             <td>list</td>
             <td>A list is an arrangement of tokens where tokens can be enumerated</td>
         </tr>
+        <tr>
+            <td>type result</td>
+            <td>class member <code>type</code> of an instantiated function</td>
+        </tr>
+        <tr>
+            <td>value result</td>
+            <td>class member <code>value</code> of an instantiated function</td>
+        </tr>
     </tbody>
 </table>
 

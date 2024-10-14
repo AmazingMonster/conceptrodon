@@ -1,12 +1,13 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_PLUME_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_PLUME_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/gauge.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/typelivore/sensible_plume.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -20,7 +21,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestGauge {
+namespace TestSensiblePlume {
 
 
 
@@ -32,7 +33,7 @@ struct Tester
     template<typename T>
     struct ProtoMold
     {
-        static constexpr auto value {I + T::value};
+        using type = std::integral_constant<int, I + T::value>;
     };
 
     template<typename...Agreements>
@@ -44,9 +45,9 @@ struct Tester
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 
@@ -64,8 +65,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Rail<Shuttle>);
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
+SAME_TYPE(SensiblePlume<LLAMA_SPROUT(240)>::Road<Capsule>::Road<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX

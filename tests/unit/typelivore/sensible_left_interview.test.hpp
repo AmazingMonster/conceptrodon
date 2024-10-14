@@ -33,6 +33,14 @@ struct Integer: public std::integral_constant<int, I> {};
 
 
 /******************************************************************************************************/
+template<typename, typename Base, typename Derived>
+struct IsBaseOf: std::is_base_of<Base, Derived> {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #define SHEEP_PREFIX    \
     Integer <
 #define SHEEP_SUFFIX    \
@@ -66,6 +74,49 @@ using SupposedResult = SignedArk<SHEEP_SPROUT(120)>;
 
 #define SHEEP_PREFIX    \
     Interviewed <
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    Integer <
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+    
+template<int I>
+constexpr auto MultipleInterviewed = SensibleLeftInterview<SHEEP_SPROUT(120)>
+::Road<IsBaseOf>
+::Mold_v<int, std::integral_constant<int, I>>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedResult
+
+#define SHEEP_PREFIX    \
+    MultipleInterviewed <
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \

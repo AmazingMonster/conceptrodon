@@ -176,11 +176,23 @@ These functions have the signature `template<typename...>` and are placed in the
 
 | Name | Functionality | Location |
 |:-|:-|:-|
-| Among | pick out the element at a given index from a list | conceptrodon/typelivore/among.hpp |
-| Amid | same as Among | conceptrodon/descend/typelivore/amid.hpp |
-| Amidst | same as Among | conceptrodon/descend/typelivore/amidst.hpp |
+| Amid | pick out the element at a given index from a list | conceptrodon/descend/typelivore/amid.hpp |
+| Amidst | same as Amid | conceptrodon/descend/typelivore/amidst.hpp |
+| Among | same as Amid | conceptrodon/typelivore/among.hpp |
+| ConjureSet | create a set from a list such that every element of the list is contained in the set | conceptrodon/descend/conjure_set.hpp |
+| Dismiss | remove the element at a given index from a list | conceptrodon/descend/typelivore/dismiss.hpp |
+| Diversity | extend a set by a list to create a new set that contains every element of the list | conceptrodon/descend/typelivore/diversity.hpp |
+| Duplicate | instantiate a function with duplications of a given element | conceptrodon/descend/typelivore/duplicate.hpp |
+| Erase | remove a segment from a list and then instantiate a function with the result | conceptrodon/descend/typelivore/duplicate.hpp |
 | Find | find from a list the index of the first element that satisfies a given predicate | conceptrodon/typelivore/find.hpp |
-| LookFor | same as Find | conceptrodon/typelivore/look_for.hpp |
+| Flip | instantiate Conceptrodon::Capsule using elements from a list with the order reversed | conceptrodon/descend/typelivore/flip.hpp |
 | FoldLeft | similar to [std::ranges::fold_left](https://en.cppreference.com/w/cpp/algorithm/ranges/fold_left) | conceptrodon/typelivore/fold_left.hpp |
 | FoldLeftFirst | similar to [std::ranges::fold_left_first](https://en.cppreference.com/w/cpp/algorithm/ranges/fold_left_first) | conceptrodon/typelivore/fold_left_first.hpp |
-| FoldLeftFirst | similar to [std::ranges::fold_left_first](https://en.cppreference.com/w/cpp/algorithm/ranges/fold_left_first) | conceptrodon/typelivore/fold_left_first.hpp |
+| Front | collect a given amount of elements from the beginning of a list and then instantiate a function with the result | conceptrodon/descend/typelivore/front.hpp |
+| Gauge | instantiate every function from a list with the corresponding element from another list and then instantiate Conceptrodon::Shuttle with value results from the instantiated functions | conceptrodon/descend/typelivore/gauge.hpp |
+| LeftInterview | similar to Find but accepts additional arguments to fill out the left side of the predicate | conceptrodon/typelivore/left_interview.hpp |
+| LookFor | same as Find | conceptrodon/typelivore/look_for.hpp |
+| ReconformedLeftInterview | same as LeftInterview | conceptrodon/typelivore/reconformed_left_interview.hpp |
+| RightInterview | similar to Find but accepts additional arguments to fill out the right side of the predicate | conceptrodon/typelivore/right_interview.hpp |
+| SensibleLeftInterview | similar to LeftInterview but with a different invoking order | conceptrodon/typelivore/sensible_left_interview.hpp |
+| SensibleRightInterview | similar to RightInterview but with a different invoking order | conceptrodon/typelivore/sensible_right_interview.hpp |

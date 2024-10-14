@@ -4,8 +4,6 @@
 #ifndef CONCEPTRODON_TYPELIVORE_REFURBISH_H
 #define CONCEPTRODON_TYPELIVORE_REFURBISH_H
 
-#include "conceptrodon/capsule.hpp"
-
 namespace Conceptrodon {
 namespace Typelivore {
 
@@ -14,16 +12,22 @@ struct Refurbish
 {
     template<template<typename...> class Decoration>
     struct ProtoRoad 
-    { using type = Capsule<Decoration<Elements>...>; };
+    { 
+        template<template<typename...> class Operation>
+        struct Detail
+        {
+            using type = Operation<Decoration<Elements>...>; 
+        }; 
+
+        template<template<typename...> class...Agreements>
+        using Road = Detail<Agreements...>::type;
+
+        template<template<typename...> class Operation>
+        using UniRoad = Operation<Decoration<Elements>...>; 
+    };
 
     template<template<typename...> class...Agreements>
     using Road = ProtoRoad<Agreements...>;
-
-    template<template<typename...> class...Args>
-    using Road_t = ProtoRoad<Args...>::type;
-
-    template<template<typename...> class Decoration>
-    using UniRoad = Capsule<Decoration<Elements>...>;
 };
 
 }}

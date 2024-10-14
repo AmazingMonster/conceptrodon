@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/descend/typelivore/grade.hpp"
+#include "conceptrodon/typelivore/grade.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -48,8 +48,8 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, +1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Grade<SHEEP_SPROUT(240)>::Road_t<Tester>);
-SAME_TYPE(Grade<SHEEP_SPROUT(240)>::UniRoad<Tester>);
+SAME_TYPE(Grade<SHEEP_SPROUT(240)>::Road<Tester>::Rail<Shuttle>);
+SAME_TYPE(Grade<SHEEP_SPROUT(240)>::Road<Tester>::UniRail<Shuttle>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

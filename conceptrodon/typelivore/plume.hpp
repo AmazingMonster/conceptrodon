@@ -4,8 +4,6 @@
 #ifndef CONCEPTRODON_TYPELIVORE_PLUME_H
 #define CONCEPTRODON_TYPELIVORE_PLUME_H
 
-#include "conceptrodon/capsule.hpp"
-
 namespace Conceptrodon {
 namespace Typelivore {
 
@@ -14,13 +12,22 @@ struct Plume
 {
     template<template<typename...> class...Cosmetics>
     struct ProtoRoad 
-    { using type = Capsule<typename Cosmetics<Elements>::type...>; };
+    { 
+        template<template<typename...> class Operation>
+        struct Detail
+        {
+            using type = Operation<typename Cosmetics<Elements>::type...>;
+        };
+
+        template<template<typename...> class...Agreements>
+        using Road = Detail<Agreements...>::type;
+
+        template<template<typename...> class Operation>
+        using UniRoad = Operation<typename Cosmetics<Elements>::type...>;
+    };
 
     template<template<typename...> class...Cosmetics>
     using Road = ProtoRoad<Cosmetics...>;
-
-    template<template<typename...> class...Cosmetics>
-    using Road_t = Capsule<typename Cosmetics<Elements>::type...>;
 };
 
 }}

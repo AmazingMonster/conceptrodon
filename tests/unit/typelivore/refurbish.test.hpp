@@ -6,7 +6,8 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/descend/typelivore/refurbish.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/typelivore/refurbish.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -50,8 +51,8 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, +1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Refurbish<SHEEP_SPROUT(240)>::Road_t<Tester_t>);
-SAME_TYPE(Refurbish<SHEEP_SPROUT(240)>::UniRoad<Tester_t>);
+SAME_TYPE(Refurbish<SHEEP_SPROUT(240)>::Road<Tester_t>::Road<Capsule>);
+SAME_TYPE(Refurbish<SHEEP_SPROUT(240)>::Road<Tester_t>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -1,13 +1,13 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PREEN_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PREEN_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_PREEN_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_PREEN_H
 
 #include <concepts>
 #include <type_traits>
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/typelivore/preen.hpp"
+#include "conceptrodon/typelivore/sensible_preen.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -18,7 +18,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestPreen {
+namespace TestSensiblePreen {
 
 
 
@@ -48,8 +48,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, +1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Preen<SHEEP_SPROUT(240)>::Road<Tester>::Road<Capsule>);
-SAME_TYPE(Preen<SHEEP_SPROUT(240)>::Road<Tester>::UniRoad<Capsule>);
+SAME_TYPE(SensiblePreen<SHEEP_SPROUT(240)>::Road<Capsule>::Road<Tester>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

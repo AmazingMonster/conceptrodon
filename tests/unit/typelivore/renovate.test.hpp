@@ -6,7 +6,8 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/descend/typelivore/renovate.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/typelivore/renovate.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -66,7 +67,8 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Renovate<LLAMA_SPROUT(240)>::Road_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Renovate<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Road<Capsule>);
+SAME_TYPE(Renovate<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX

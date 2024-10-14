@@ -46,7 +46,7 @@
 #endif
 
 #define CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER  \
-    Interviewer
+    Interviewers
 /******************************************************************************************************/
 
 
