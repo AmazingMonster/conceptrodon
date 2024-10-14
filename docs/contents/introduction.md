@@ -77,15 +77,27 @@
         </tr>
         <tr>
             <td>list</td>
-            <td>A list is an arrangement of tokens where tokens can be enumerated</td>
+            <td>arrangement of tokens where tokens can be enumerated</td>
         </tr>
         <tr>
             <td>type result</td>
             <td>class member <code>type</code> of an instantiated function</td>
         </tr>
         <tr>
+            <td>invoke</td>
+            <td>instantiate</td>
+        </tr>
+        <tr>
             <td>value result</td>
             <td>class member <code>value</code> of an instantiated function</td>
+        </tr>
+        <tr>
+            <td>layer</td>
+            <td>A layer of a function is a member template of the function or a member template of a layer of the function</td>
+        </tr>
+        <tr>
+            <td>invoking order</td>
+            <td>The invoking order of a function is the arrangement of the function's layers</td>
         </tr>
     </tbody>
 </table>
@@ -355,4 +367,3 @@
             </td>
         </tr>
 </table>
-

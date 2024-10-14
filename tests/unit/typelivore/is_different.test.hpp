@@ -30,8 +30,8 @@ VALID(IsDifferent_v<int, float>);
 
 
 /******************************************************************************************************/
-INVALID(IsDifferentAs<int>::Mold_v<int>);
-VALID(IsDifferentAs<int>::Mold_v<float>);
+INVALID(IsDifferentFrom<int>::Mold_v<int>);
+VALID(IsDifferentFrom<int>::Mold_v<float>);
 /******************************************************************************************************/
 
 

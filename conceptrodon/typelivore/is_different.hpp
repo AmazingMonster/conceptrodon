@@ -16,7 +16,7 @@ struct IsDifferent<Element, Element>
 { static constexpr bool value {false}; };
 
 template<typename RightSide>
-struct IsDifferentAs
+struct IsDifferentFrom
 {
     template<typename LeftSide>
     struct ProtoMold
