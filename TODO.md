@@ -4,11 +4,11 @@
 
 I thought I could finish the documentation in about a week. This is not the case now.
 
-I have to admit that I never thought of C++ templates as a built-in functional programming language. After all, I knew nothing about functional programming except a few things I read here and there.
+I have to admit that I never thought of C++ templates as a built-in functional programming language. After all, I knew nothing about functional programming except a few names I picked up here and there.
 My intuition for templates was the polynomial algebra instead of lambda calculus since `template<template<typename>>` looks like $x^2$ to me. However, it didn't get me very far.
 A couple of days ago, I read [CppMl's tutorial](https://github.com/ZigaSajovic/CppML/blob/master/docs/index.md).
 It presented some interesting ideas about functional programming.
-I started to read a book about Haskell and realized what I was doing in this library was essentially currying. Take `Fun` as an example:
+I started to read a book about Purescript and realized what I was doing in this library was essentially currying. Take `Fun` as an example:
 
 ```c++
 Fun :: template<typename...> -> template<template<typename...> class...> -> template<auto..> -> template<template<auto...> class...>
