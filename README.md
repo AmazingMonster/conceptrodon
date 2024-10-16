@@ -6,7 +6,7 @@ A C++20 metaprogramming library focusing on metafunction composition.
 
 The goal of this library is to make metafunction composition simple and natural.
 
-Both [**boost::mp11**](https://www.boost.org/doc/libs/master/libs/mp11/doc/html/mp11.html) and [**kvasir::mpl**](https://github.com/kvasir-io/mpl) contain a function called 'compose.' 
+Both [**boost::mp11**](https://www.boost.org/doc/libs/master/libs/mp11/doc/html/mp11.html) and [**kvasir::mpl**](https://github.com/kvasir-io/mpl) contain a function called 'compose.'
 It takes a variadic pack of metafunctions and uses the result from the left function to invoke the right one.
 Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​>>…​>`. However, since we still don't have a universal template parameter token, signatures of `F1...` must be specified.
 Regarding **boost::mp11** and **kvasir::mpl**, `F1...` can only take type arguments, which means many functions in both libraries are not composable.  
@@ -32,18 +32,18 @@ These templates are deployed inside a metafunction to take corresponding argumen
 We finalize the structural design of `Fun` as follows:
 
 ```c++
-template<typename...>
+template<typename...Elements>
 struct Fun
 {
-    template<template<typename...> class...>
+    template<template<typename...> class...Containers>
     struct ProtoRoad
     {
         static constexpr bool value {true};
 
-        template<auto...>
+        template<auto...Variables>
         struct ProtoPage
         {
-            template<template<auto...> class...>
+            template<template<auto...> class...Sequences>
             struct ProtoRail
             {
                 static constexpr bool value {true};
@@ -64,7 +64,8 @@ struct Fun
 
 More details can be found in [*./conceptrodon/EXEMPLAR.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/conceptrodon/EXEMPLAR.hpp)
 
-All metafunctions in this library are tailored to fit this pattern. This means every *Mold* can be passed to every *Road* as an argument, and every *Page* can be passed to every *Rail* as an argument. In the previous example, we can pass `Fun` to `Fun<>::Road` and pass `Fun<>::Road<>::Page` to `Fun<>::Road<>::Page<>::Rail`:
+All metafunctions in this library are tailored to fit this pattern. This means every *Mold* can be passed to every *Road* as an argument, and every *Page* can be passed to every *Rail* as an argument.
+In the previous example, we can pass `Fun` to `Fun<>::Road` and pass `Fun<>::Road<>::Page` to `Fun<>::Road<>::Page<>::Rail`:
 
 ```c++
 static_assert(Fun<>::Road<Fun>::value);
@@ -78,18 +79,24 @@ Since the structural layout of a metafunction is predictable, different signatur
 - [*./tests/composition/mouldivore/trip.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/unit/mouldivore/trip.test.hpp)
 - [*./tests/unit/mouldivore/trek.test.hpp*](https://github.com/AmazingMonster/conceptrodon/blob/main/tests/composition/mouldivore/trek.test.hpp)
 
-## Observation
+## Observation(oops)
 
-*Mold* can be further abstracted as the set of all metafunctions of signature `template<typename...>`.
-The same applies to *Road*, except the corresponding signature becomes `template<template<typename...> class...>`.
-Function *Fun* then turns into a map from set *Mold* to set *Road*.
-In other words, we are making maps from function to function by taking arguments in steps.
+I thought I could finish the documentation in about a week. This is not the case now.
 
-If we reverse the order of *Road* and *Fun* and call it *FunReversed*, we can invoke the new function by `FunReversed<std::tuple>::Mold<int>::Page<0>::Rail<std::index_sequence>`.
-*FunReversed* is then a map from set *Road* to set *Mold*.
-The result will be the same as before. In conclusion, there is a loose correspondence between 'maps from set *Mold* to set *Road*' and 'maps from set *Road* to set *Mold*.'
+I have to admit that I never thought of C++ templates as a built-in functional programming language. After all, I knew nothing about functional programming except a few things I read here and there.
+My intuition for templates was the polynomial algebra instead of lambda calculus since `template<template<typename>>` looks like $x^2$ to me. However, it didn't get me very far.
+A couple of days ago, I read [CppMl's tutorial](https://github.com/ZigaSajovic/CppML/blob/master/docs/index.md).
+It presented some interesting ideas about functional programming.
+I started to read a book about Haskell and realized what I was doing in this library was essentially currying. Take `Fun` as an example:
 
-This library is structured according to these observations.
+```c++
+Fun :: template<typename...> -> template<template<typename...> class...> -> template<auto..> -> template<template<auto...> class...>
+Fun Elements... Containers... Variables... Sequences... = True
+```
+
+Here, we think of template-head as types and parameter packs as parameters.
+
+I am not sure if this idea is useful at all since template-head is much less flexible than types in Purescript or Haskell. Nonetheless, I will spend some time studying Haskell and finish Conceptrodon afterward.
 
 ## Structure
 
