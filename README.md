@@ -84,19 +84,20 @@ Since the structural layout of a metafunction is predictable, different signatur
 I thought I could finish the documentation in about a week. This is not the case now.
 
 I have to admit that I never thought of C++ templates as a built-in functional programming language. After all, I knew nothing about functional programming except a few names I picked up here and there.
-My intuition for templates was the polynomial algebra instead of lambda calculus(I was a math student and never heard of lambda calculus) since `template<template<typename>>` looks like $x^2$ to me. However, it didn't get me very far.
 A couple of days ago, I read [CppMl's tutorial](https://github.com/ZigaSajovic/CppML/blob/master/docs/index.md).
 It presented some interesting ideas about functional programming.
-I started to read a book about Purescript and realized what I was doing in this library was essentially currying. Take `Fun` as an example:
+I started to read a book about Purescript and realized what I was doing in this library was essentially currying.
+
+Take `Fun` as an example, this would be its type signature in Haskell:
 
 ```c++
 Fun :: typename -> template<typename...> class -> auto -> template<auto...> class -> typename
 Fun Elements... Containers... Variables... Sequences... = struct { static constexpr bool value {true}; }
 ```
 
-Here, we think of signatures(more on that later) as types and parameter packs as parameters.
+Here, we think of parameter signatures(more on this later) as types and parameter packs as parameters.
 
-I am not sure if this idea is useful at all since template-head is much less flexible than types in Purescript or Haskell. Nonetheless, I will spend some time studying Haskell and finish Conceptrodon afterward.
+I am not sure if this idea is useful at all. Nonetheless, I will spend some time studying Haskell and finish Conceptrodon afterward.
 
 ## Structure
 
