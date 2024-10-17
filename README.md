@@ -90,7 +90,7 @@ It presented some interesting ideas about functional programming.
 I started to read a book about Purescript and realized what I was doing in this library was essentially currying. Take `Fun` as an example:
 
 ```c++
-Fun :: template<typename...> -> template<template<typename...> class...> -> template<auto..> -> template<template<auto...> class...> -> struct
+Fun :: template<typename...> -> template<template<typename...> class...> -> template<auto..> -> template<template<auto...> class...> -> typename
 Fun Elements... Containers... Variables... Sequences... = struct { static constexpr bool value {true}; }
 ```
 
