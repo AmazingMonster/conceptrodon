@@ -21,6 +21,13 @@ I am not sure if this idea is useful at all since template-head is much less fle
 
 ## Halt
 
+- Use macro to reimplement some functions for maintainability.
+- Add more functions that are synonymic to Memorize to handle slightly different situations.
+- Use Typical\* or Classic\* prefix to rename functions that have members called 'type'
+- Change SubMold to M_ld, P_ge, ect.
+- Add M_ldTrip, P_geTrip, ect. to compose functions with respect to M_ld, P_ge, ect.
+- Add function Restore(for currying)
+
 - Add more explanations for the mechanics of composition.
 - Finish documentation.
 - Add more tests for composition.
@@ -28,8 +35,3 @@ I am not sure if this idea is useful at all since template-head is much less fle
 - Add installation instructions for other systems.
 - Add speed tests against kvasir::mpl.
 - Develop a GCC-compatible version of the library.
-
-## Maybe
-
-- Use macro to reimplement Trip and Trek for maintainability.
-- Change the structure of Memorize to conform to rules better.
