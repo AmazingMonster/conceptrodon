@@ -7,7 +7,8 @@
 - Use Typical\* or Classic\* prefix to rename functions that have members called 'type'
 - Change SubMold to M_ld, P_ge, ect.
 - Add M_ldTrip, P_geTrip, ect. to compose functions with respect to M_ld, P_ge, ect.
-- Add function Restore(for currying)
+- Change the name of Flatten(Uncurry) to Press
+- Add function Bloom(for currying)
 - Add Infixl and Infixr
 
 - Add more explanations for the mechanics of composition.
