@@ -1,6 +1,7 @@
 # Todo
 
 - Finish _Haskell Programming from First Principles_
+- Study _Lambda Calculus_
 
 - Use macro to reimplement some functions for maintainability.
 - Add more functions that are synonymic to Memorize to handle slightly different situations.
@@ -10,6 +11,12 @@
 - Change the name of Flatten(Uncurry) to Press
 - Add function Bloom(for currying)
 - Add Infixl and Infixr
+- Add variable template Valorize
+- Add alias template Typify
+- Add symbols Dao and Zen
+- Add ZipWith
+- Change function names so that they are aligned to Haskell
+- Give an fmap . fmap . fmap equivalence
 
 - Add more explanations for the mechanics of composition.
 - Finish documentation.
@@ -18,3 +25,11 @@
 - Add installation instructions for other systems.
 - Add speed tests against kvasir::mpl.
 - Develop a GCC-compatible version of the library.
+
+## Words
+
+- Witness
+- Arity
+- Kind
+- Nil
+- Adverse
