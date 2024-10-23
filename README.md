@@ -12,7 +12,7 @@ Namely, `mp_compose<F1, F2, …​, Fn>::fn<T…​>` is `Fn<…​F2<F1<T…​
 Regarding **boost::mp11** and **kvasir::mpl**,  `F1...` are metafunctions that only accept type arguments, which means many functions in both libraries are not composable.
 
 Conceptrodon expands the idea of *quoted metafunctions* from **boost::mp11**.
-It utilizes dedicated member templates to take arguments of different template heads,
+It utilizes dedicated member templates to take arguments of different signatures,
 creating better candidates for composition and making higher-order functions possible.
 
 ## Implementation
@@ -47,7 +47,7 @@ The library mainly uses four types of member templates:
 </table>
 
 These templates are deployed inside a metafunction to take corresponding arguments.
-For example, assuming we want to create a metafunction called `Fun` that will accept arguments `int`, `std::tuple`, `0`, and `std::index_sequence` in order:
+For example, assuming we want to create a metafunction called `Fun`, which will accept arguments `int`, `std::tuple`, `0`, and `std::index_sequence` in order:
 
 1. The function itself can be templatized.
 we let `Fun` take types and pass `int` to `Fun`:
@@ -125,6 +125,11 @@ charPlusPlus a b c = [a, b, c]
 
 `charPlusPlus` combines three `Char` values into a `String`. The following is its counterpart in C++.
 
+```C++
+auto charPlusPlus(char a, char b, char c) -> string 
+{ return {a, b, c, '\0'}; }
+```
+
 [Compare them on Godbolt](https://godbolt.org/#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:haskell,selection:(endColumn:31,endLineNumber:4,positionColumn:1,positionLineNumber:3,selectionStartColumn:31,selectionStartLineNumber:4,startColumn:1,startLineNumber:3),source:'module+Main+where%0A%0AcharPlusPlus+::+Char+-%3E+Char+-%3E+Char+-%3E+String%0AcharPlusPlus+a+b+c+%3D+%5Ba,+b,+c%5D%0A%0Amain::IO()%0Amain+%3D+do%0A++++print+$+charPlusPlus+!'c!'+!'%2B!'+!'%2B!'%0A'),l:'5',n:'1',o:'Haskell+source+%231',t:'0')),k:28.260013001289842,l:'4',m:100,n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'0',compiler:ghc961,compilerName:'',compilerOutShown:'0',execArgs:'',execStdin:'',fontScale:14,fontUsePx:'0',j:1,lang:haskell,libs:!(),options:'',overrides:!(),runtimeTools:!(),source:1,stdinPanelShown:'1',tree:0,wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+ghc+9.6.1+(Haskell,+Editor+%231)',t:'0')),k:14.65577418438985,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:2,lang:c%2B%2B,selection:(endColumn:2,endLineNumber:13,positionColumn:2,positionLineNumber:13,selectionStartColumn:2,selectionStartLineNumber:13,startColumn:2,startLineNumber:13),source:'%23include+%3Ciostream%3E%0A%0Ausing+namespace+std%3B%0A%0Aauto+charPlusPlus(char+a,+char+b,+char+c)+-%3E+string+%0A%7B%0A++++return+%7Ba,+b,+c,+!'%5C0!'%7D%3B%0A%7D%0A%0Aint+main+()%0A%7B%0A++++cout+%3C%3C+charPlusPlus(!'c!',+!'%2B!',+!'%2B!')%3B%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%232',t:'0')),k:39.393368059651934,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'0',compiler:g142,compilerName:'',compilerOutShown:'0',execArgs:'',execStdin:'',fontScale:14,fontUsePx:'0',j:2,lang:c%2B%2B,libs:!(),options:'',source:2,stdinPanelShown:'1',wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+gcc+14.2+(C%2B%2B,+Editor+%232)',t:'0')),k:17.690844754668394,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',m:100,n:'0',o:'',t:'0')),version:4)
 
 What if we want the first `Char` always to be `'c'`? In C++,
@@ -147,7 +152,7 @@ cPlusPlus :: Char -> Char -> String
 cPlusPlus = charPlusPlus 'c'
 ```
 
-`cPlusPlus` is then a map from `Char` values to the functions of type signature `Char->String`. Applying it to '+' gives us another function.
+`cPlusPlus` is then a map from `Char` values to the functions of type signature `Char->String`. Applying it to `'+'` gives us another function.
 
 ```Haskell
 cPositivelyPlus :: Char -> String
@@ -218,8 +223,8 @@ We are working with four types.
         <tr>
             <td><code>...</code></td>
             <td>
-                A higher-kinded type of kind <code>* -> *</code>.
-                It is a list-like structure similar to ZipList in Haskell.
+                A higher-kinded type of kind <code>*->*</code>.
+                It is a list-like structure similar to <code>ZipList</code> in Haskell.
                 For example, <code>int, int*, int**, int***</code> is a value of <code>typename...</code>; <code>0, 1, 2, 3</code> is a value of <code>auto...</code>
             </td>
         </tr>
@@ -241,7 +246,7 @@ Namely, for every value <code>f</code> of type <code>template&lt;a class...&gt;<
 
 ```C++
 f :: a... -> typename
-f a... = fun<a...>
+f a... = f<a...>
 ```
 
 [We can summarize our observations using Haskell on Godbolt.](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1AImCgNaZatUkvrICeAZUboAwqloBXFgxAAmP1IXABk8BkwAOW8AI0xiEABmAFZSAAdUBUJHBncvH39A9MyHAVDwqJZY%2BOSbS0x7bKECJmICXO9fANq7EoYmloIyyJi4xJSFZtb2/K6JgaGKqrGAShtUT2Jkdg4AWh2AandUgE9iPGAEAn2/DT9JfYAxRmB9gFlUKkMAUg0AQT39kJlAARAAaO1CWwYSh2AEksII8DRRvtfqkmMgEJgdn4AHQaH6/QksDCeeiPTwMBoCMQRJgEDaYfYAdyxxEwhMJAIAKsdUoxWEyTAp9gxUPsAG5iTxMsL7AASpgsVlxXIOsIIIqlXiZtDwmBFctcXz8ACETabVX8AbCGIcLRbSPtefzmGx9ngRQQ%2BQK2IT0PSmM6fW6OX81ftbfazY7UZ4iB6RUx46h/YG40ROdaDsaY2b9ujiIKCHECxizIn9kG9RMdnqLPsJsRPPZGVb/uq7bnzWandgrHhUplDSLcWO0819v29UPPVX9l8EsCpyxUt6FwB2VyHARJ/YQaeD4dV5ZZjuRrsO3vOzCrgwlyslu/0jkJVwAKjHqoS2H2JH2T6pPer4fvsyAGAoChfou2ARlGBBYvs/BWKgzJhC8WAktCBBFr0TrMkyaFWH%2BLCEPsYAcOBpgKBRSH/pkd54MghDHO2AaTtyt5AS%2BVZngC3YWgBXHAR62GGA49LZBGYRzIikkCPsIAgEJz4lourhMNBP77DsMFVl%2BOl6d6rqCoSMnNHJvSKcpnGqUyQa6dpDl6S6vphr85niXg8l2ouy6UlgNDhOgfEHL8%2BxsM0VCUtSdpGlepqVmICjikGgHAe2ALsvwyCeCKSn7ppY6Odg0TLIZ2npS%2B6lFd%2BsF/NlqC5flykHgOs57iV%2BxlRVv62dxD5tTOx5MKeDWYDleULku%2BwBRNYSYCF4bZqicUsEwwBhC0xyStKTIfABiHGUyFECfmhbFqW6LIGYFFDUenrlXOqTEKSWzoPs6AbOh%2ByYBKcQ7ZFTDRVSVlhBKTU%2BZlBzg6gFgAOqEAg1nzl1tVmQwEMI0jKPOdph4dbxfyw9jCHTf5DCBQtS1EitABKmAvQajDNFZB0PJSokKkqli0BGIMo8doYGV1VVqW%2BQuClp2Ai3pyZELLlXCdVb7y6g0vQX8AsFQTx6uaGvVTu1x4QP1In3YT%2BuCss5Vdbrc6/Cmhv2yKpvK4NLsZqgNuEgLfmzZT83BaF%2BzBJgBAUV6PqYvUt1gBGdoFZLbAGYSifKZ7Vt%2Bn8vkzXNQWLSH%2BqC%2B7IHJ5gGtjguxNMjrxtzm7dn7pnIbW2NHlMv7%2BfUyHxC4ymqcNSjnuO5mQ9d4HBc0xGLxJ6X6nl5XuKG2riu/mLIGr%2BOP6a78s8Z/XrtmzxFt663bA287h9e1fw0N8fHvX6P3vty8/sCwwIfIwVW/L6L8%2BqwHtvGWVdCTfwPnfEUz9b4PSPqXZuT8Uw%2Bz%2BMjd%2BnM4ruWkiXOyNUgF1UHh5Ye19G4DSZKfB2SD254HJkhdBHomTEBDtobBpCF7nwrsAteVY8GGw3rghWnDxwrQeHgYgEwnTxTzKaJ0CEmRKCuAdIGINYojjArIJg1Nuo7VkY2cOf4qAqVIVBNUAJ4YMMWqI%2BoCiNh0WagBcUOiN6inpIyfR5EOAIAoouRKEYhD1AEOgfCsoxKWROh42iaEyYUTIBEhATFkYMmINCdxniOCiQTEGM6iUqKQW8RGbkcTiCBJZIRIsqQUm0TCBktaG0trEB2hdSKV1yx5OESQBCQTRKyQkg%2BCiIMIk4x0ddMwrTfjMLrpA/cD8yEtxMhfW2ekR5OztsQ6ZCDJnP2QWMmhAsAQPHaQgQk%2Bxjn7iOSc85JNMCIzJjyQpNNznnIgGch5DzPKWWyDpA4fi0CU2eS8k5Ty/j/OBfsRqdjkZ7NERMP5wLyqMKBf89u5z24cFWLQTgSReC%2BG4LwVAnBFTmF5o2dYmxO5%2BASDwUgBBNCotWGYEASQND6E4JIXgLAJAaCZdirQpA8UcF4AoEATLqUcC0KsOAsAkBoFXHQOI5BKDStSLK%2BIFxkAAE4ABsXA%2BB0BLGIyg0QaWkGiHU44nBKUmuYPUgA8tEbQVjzW8GlWwQQ1qGC0DNaK3gWBoieGABpKwgqcWkEwoYYA4gvUhssQ0f6QaeWYFUPUeM2xKVVMsEavU0Qiz1PcFgI1OE8DsuDf9Yg0QMiYGBLeMNeojA0tWFQAwwAFAADV9TMmta6R1MhBAiDEOwKQ3b5BKDUEa3Q2qDC1uFMqawmbBWQFWKgNc2Qg24pLWcLAc6ICrFsFY7IzhKbTE6AkIIlMFgjHiBuDVaQMhZAEIe/wx6ii3oYGeyooxL3dF3QIfoUwPAdAfZ%2B2KP7BgLUWO%2Bq9cxf15CPTYSYIHyjnpAJe7dJKtgSDRRirFRq%2BX7FUAADg1TsDV9xVX7DVbiDVuIuDN3wEQPuJoKXLF4CKsVqwsRMCwPELdpB6WMuZRwVlpBuW4s4AKoVVK60YY4H4LDka%2BXMck6QEtmQnCSCAA%3D%3D)
@@ -269,7 +274,7 @@ Therefore, This library is generally faster than **boost::mp11**.
 
 ## Limitation
 
-This library is only tested with Clang. GCC won't compile since explicit specialization inside a struct is still unavailable. Workarounds exist, and a GCC-compatible version is planned for the future.
+This library is only tested with Clang. GCC won't compile since explicit specialization inside a class is still unavailable. Workarounds exist, and a GCC-compatible version is planned for the future.
 
 ## Install
 
@@ -299,7 +304,7 @@ After installation, add the install directory you specified after `--prefix` to 
 CMAKE_PREFIX_PATH:PATH=Install directory of the library
 ```
 
-If CMAKE_PREFIX_PATH already exists,
+If `CMAKE_PREFIX_PATH` already exists,
 append the install directory to the values of the variable(note the added semicolon):
 
 ```CMake

@@ -100,7 +100,7 @@ struct Flatten
         template<template<template<template<template<typename...> class...> class...> class...> class...> class...Contents
     >
     struct Detail<Sunshines<Contents...>>
-    { using type = Operation::template Hope<Contents...>; };
+    { using type = Operation::template Grit<Contents...>; };
 
     template
     <
@@ -259,7 +259,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Hope<Contents...>>
+        using type = Flatten<typename Operation::template Grit<Contents...>>
         ::template Detail<Others...>::type;
     };
 

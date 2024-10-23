@@ -2,5 +2,5 @@
 
 ## Index
 
-- [Introduction](https://github.com/AmazingMonster/conceptrodon/blob/main/docs/contents/introduction.md)
-- [Metafunctions](https://github.com/AmazingMonster/conceptrodon/blob/main/docs/contents/metafunctions.md)
+- [Introduction](./contents/introduction.md)
+- [Metafunctions](./contents/metafunctions.md)

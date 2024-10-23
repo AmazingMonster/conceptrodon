@@ -15,10 +15,10 @@ struct Pursuit
     struct Detail { using type = Realization<Dreams...>; };
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
-    using Hope = Detail<Agreements...>::type;
+    using Grit = Detail<Agreements...>::type;
     
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Realization>
-    using UniHope = Realization<Dreams...>;
+    using UniGrit = Realization<Dreams...>;
 };
  
 }

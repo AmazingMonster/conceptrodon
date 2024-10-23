@@ -451,29 +451,29 @@ struct Exemplar
 
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    struct ProtoHope {};
+    struct ProtoGrit {};
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
-    using Hope = ProtoHope<Agreements...>;
+    using Grit = ProtoGrit<Agreements...>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine>
-    using UniHope = Sunshine<CONTENTS>;
+    using UniGrit = Sunshine<CONTENTS>;
 
     template
     <
         template<template<template<template<template<typename...> class...> class...> class...> class...> class First, 
         template<template<template<template<template<typename...> class...> class...> class...> class...> class Second
     >
-    using DuoHope = IMPLEMENTATION;
+    using DuoGrit = IMPLEMENTATION;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Args>
-    using Hope_t = Hope<Args...>::type;
+    using Grit_t = Grit<Args...>::type;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Args>
-    static constexpr auto Hope_v {Hope<Args...>::value};
+    static constexpr auto Grit_v {Grit<Args...>::value};
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using SubHope = IMPLEMENTATION;
+    using SubGrit = IMPLEMENTATION;
 
 
 

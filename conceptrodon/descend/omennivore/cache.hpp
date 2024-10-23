@@ -56,7 +56,7 @@ struct Cache
     using Calm = Cache<Items..., Persist<Tranquil...>>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Hope = Cache<Items..., Morning<Sunshines...>>;
+    using Grit = Cache<Items..., Morning<Sunshines...>>;
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
     using Will = Cache<Items..., Sunrise<Sunshines...>>;

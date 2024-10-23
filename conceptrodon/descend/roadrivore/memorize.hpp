@@ -62,7 +62,7 @@ struct Preload
     using Calm = Preload<Operation, Items..., Persist<Tranquil...>>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Hope = Preload<Operation, Items..., Morning<Sunshines...>>;
+    using Grit = Preload<Operation, Items..., Morning<Sunshines...>>;
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
     using Will = Preload<Operation, Items..., Sunrise<Sunshines...>>;
