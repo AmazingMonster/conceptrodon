@@ -254,7 +254,7 @@ The most helpful thing is always the simplest.
 However, those simplest things never get explained.
 This doesn't seem right.
 
-The documentation of Conceptrodon will focus on the library's implementation details and explain the mechanisms with testable code.
+[The documentation of Conceptrodon](./docs/index.md) will focus on the library's implementation details and explain the mechanisms with testable code.
 It will assume the reader is a C++ programmer who may not be interested in metaprogramming but is willing to give it a try.
 The contents will be elementary but not entirely from scratch to bore everyone out.
 Functional programming will be mentioned as a comparison or inspiration, but it will not be a roadblock to understanding C++ techniques.
