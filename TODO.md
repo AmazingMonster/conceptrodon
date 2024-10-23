@@ -17,6 +17,9 @@
 - Add ZipWith
 - Change function names so that they are aligned to Haskell
 - Give an fmap . fmap . fmap equivalence
+- Add function Arrange to rearrange the invoke order of a function
+- Add function Index, Guide as maps
+- Regulate set operations.
 
 - Add more explanations for the mechanics of composition.
 - Finish documentation.
