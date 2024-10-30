@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SWAP_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SWAP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
 
 #include <utility>
-#include "conceptrodon/pagelivore/swap.hpp"
+#include "conceptrodon/pagelivore/flip.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/reverie.hpp"
@@ -16,7 +16,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestSwap {
+namespace TestFlip {
 
 
 
@@ -85,12 +85,12 @@ struct Tester
 
 
 /******************************************************************************************************/
-VALID(Swap<Tester>::Mold<int>::Page<>::value);
-VALID(Swap<Tester>::Page<0>::Page<>::value);
-VALID(Swap<Tester>::Road<std::tuple>::Page<>::value);
-VALID(Swap<Tester>::Rail<std::index_sequence>::Page<>::value);
-VALID(Swap<Tester>::Flow<Reverie>::Page<>::value);
-VALID(Swap<Tester>::Sail<Phantom>::Page<>::value);
+VALID(Flip<Tester>::Mold<int>::Page<>::value);
+VALID(Flip<Tester>::Page<0>::Page<>::value);
+VALID(Flip<Tester>::Road<std::tuple>::Page<>::value);
+VALID(Flip<Tester>::Rail<std::index_sequence>::Page<>::value);
+VALID(Flip<Tester>::Flow<Reverie>::Page<>::value);
+VALID(Flip<Tester>::Sail<Phantom>::Page<>::value);
 /******************************************************************************************************/
 
 

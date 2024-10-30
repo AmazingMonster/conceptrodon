@@ -1,3 +1,6 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
 # Conceptrodon
 
 A C++20 metaprogramming library focusing on metafunction composition.

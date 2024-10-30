@@ -1,20 +1,20 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_ROADRIVORE_SWAP_H
-#define CONCEPTRODON_ROADRIVORE_SWAP_H
+#ifndef CONCEPTRODON_RAILLIVORE_FLIP_H
+#define CONCEPTRODON_RAILLIVORE_FLIP_H
 
 namespace Conceptrodon {
-namespace Roadrivore {
+namespace Raillivore {
 
-template<template<template<typename...> class...> class Operation>
-struct Swap
+template<template<template<auto...> class...> class Operation>
+struct Flip
 {
     template<typename...Elements>
     struct ProtoMold 
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Mold<Elements...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Mold<Elements...>;
     };
 
     template<typename...Elements>
@@ -23,8 +23,8 @@ struct Swap
     template<auto...Variables>
     struct ProtoPage 
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Page<Variables...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Page<Variables...>;
     };
 
     template<auto...Variables>
@@ -33,8 +33,8 @@ struct Swap
     template<template<typename...> class...Containers>
     struct ProtoRoad
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Road<Containers...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Road<Containers...>;
     };
 
     template<template<typename...> class...Containers>
@@ -43,8 +43,8 @@ struct Swap
     template<template<auto...> class...Sequences>
     struct ProtoRail
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Rail<Sequences...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Rail<Sequences...>;
     };
 
     template<template<auto...> class...Sequences>
@@ -53,8 +53,8 @@ struct Swap
     template<template<template<typename...> class...> class...Warehouses>
     struct ProtoFlow
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Flow<Warehouses...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Flow<Warehouses...>;
     };
 
     template<template<template<typename...> class...> class...Warehouses>
@@ -63,8 +63,8 @@ struct Swap
     template<template<template<auto...> class...> class...Stockrooms>
     struct ProtoSail
     {
-        template<template<typename...> class...Agreements>
-        using Road = Operation<Agreements...>::template Sail<Stockrooms...>;
+        template<template<auto...> class...Agreements>
+        using Rail = Operation<Agreements...>::template Sail<Stockrooms...>;
     };
 
     template<template<template<auto...> class...> class...Stockrooms>

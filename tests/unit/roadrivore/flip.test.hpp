@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_RAILLIVORE_SWAP_H
-#define CONCEPTRODON_TESTS_UNIT_RAILLIVORE_SWAP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_FLIP_H
+#define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_FLIP_H
 
 #include <utility>
-#include "conceptrodon/raillivore/swap.hpp"
+#include "conceptrodon/roadrivore/flip.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/reverie.hpp"
@@ -14,15 +14,15 @@
 #include "macaron/judgmental/amenity/define_valid.hpp"
 
 namespace Conceptrodon {
-namespace Raillivore {
+namespace Roadrivore {
 namespace UnitTests {
-namespace TestSwap {
+namespace TestFlip {
 
 
 
 
 /******************************************************************************************************/
-template<template<auto...> class...>
+template<template<typename...> class...>
 struct Tester
 { 
     template<typename...>
@@ -85,12 +85,12 @@ struct Tester
 
 
 /******************************************************************************************************/
-VALID(Swap<Tester>::Mold<int>::Rail<>::value);
-VALID(Swap<Tester>::Page<0>::Rail<>::value);
-VALID(Swap<Tester>::Road<std::tuple>::Rail<>::value);
-VALID(Swap<Tester>::Rail<std::index_sequence>::Rail<>::value);
-VALID(Swap<Tester>::Flow<Reverie>::Rail<>::value);
-VALID(Swap<Tester>::Sail<Phantom>::Rail<>::value);
+VALID(Flip<Tester>::Mold<int>::Road<>::value);
+VALID(Flip<Tester>::Page<0>::Road<>::value);
+VALID(Flip<Tester>::Road<std::tuple>::Road<>::value);
+VALID(Flip<Tester>::Rail<std::index_sequence>::Road<>::value);
+VALID(Flip<Tester>::Flow<Reverie>::Road<>::value);
+VALID(Flip<Tester>::Sail<Phantom>::Road<>::value);
 /******************************************************************************************************/
 
 
