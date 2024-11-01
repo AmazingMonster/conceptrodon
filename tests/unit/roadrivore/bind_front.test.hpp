@@ -19,22 +19,32 @@ namespace Roadrivore {
 namespace UnitTests {
 namespace TestBindFront {
 
+// In this test,
+// we will bind 
+//  Dummy<0>::Mold,
+//  ...,
+//  Dummy<99>::Mold
+// to the back of Reverie.
+// Then, we will invoke the resulting metafunction by
+//  Dummy<0>::Mold,
+//  ...,
+//  Dummy<139>::Mold.
 
-
-
+/******************************************************************************************************/
 template<auto>
-struct Tester
+struct Dummy
 {
     template<typename...Elements>
     using Mold = Capsule<Elements...>;
 };
+/******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold
 #define SHEEP_SEPARATOR \
@@ -55,7 +65,7 @@ using SupposedResult = Reverie<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold
 #define SHEEP_SEPARATOR \

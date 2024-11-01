@@ -19,12 +19,16 @@ namespace Cotanivore {
 namespace UnitTests {
 namespace TestPaste {
 
-
-
+// In this test, we will paste
+//  std::tuple<>,
+//  Capsule<std::integral_constant<int, 0>>,
+//  ...,
+//  Capsule<std::integral_constant<int, 239>>
+// together.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedCapsule = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = std::tuple<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -33,7 +37,7 @@ using SupposedCapsule = Capsule<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedCapsule
+    SupposedResult
 
 #define SHEEP_PREFIX    \
     Capsule<std::integral_constant<int,
@@ -42,7 +46,7 @@ using SupposedCapsule = Capsule<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<std::tuple<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

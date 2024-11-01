@@ -96,6 +96,14 @@
             <td>A layer of a function is a member template of the function or a member template of a layer of the function</td>
         </tr>
         <tr>
+            <td><i>0</i>th layer</td>
+            <td>The function itself</td>
+        </tr>
+        <tr>
+            <td><i>n</i>th layer</td>
+            <td>A member template of <i>n-1</i>th layer</td>
+        </tr>
+        <tr>
             <td>invoking order</td>
             <td>The invoking order of a function is the arrangement of the function's layers</td>
         </tr>

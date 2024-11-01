@@ -19,24 +19,34 @@ namespace Raillivore {
 namespace UnitTests {
 namespace TestBindFront {
 
+// In this test,
+// we will bind 
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<99>::Page
+// to the back of Phantom.
+// Then, we will invoke the resulting metafunction by
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<139>::Page.
 
-
-
+/******************************************************************************************************/
 template<auto>
-struct Tester
+struct Dummy
 {
     template<auto...Variables>
-    using Mold = Shuttle<Variables...>;
+    using Page = Shuttle<Variables...>;
 };
+/******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
-    >::Mold
+    >::Page
 #define SHEEP_SEPARATOR \
     ,
 
@@ -55,9 +65,9 @@ using SupposedResult = Phantom<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
-    >::Mold
+    >::Page
 #define SHEEP_SEPARATOR \
     ,
 

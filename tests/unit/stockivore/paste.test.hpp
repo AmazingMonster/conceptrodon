@@ -19,12 +19,18 @@ namespace Stockivore {
 namespace UnitTests {
 namespace TestPaste {
 
-
-
+// In this test, we will paste
+//  Tester<>,
+//  Phantom<Dummy<0>::Page>,
+//  Phantom<Dummy<239>::Page>
+// together.
 
 /******************************************************************************************************/
+template<template<auto...> class...Sequences>
+struct Tester;
+
 template<size_t>
-struct Tester
+struct Dummy
 {
     template<auto...>
     struct ProtoPage {};
@@ -39,13 +45,13 @@ struct Tester
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Phantom<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -60,13 +66,13 @@ using SupposedResult = Phantom<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Phantom<Tester<
+    Phantom<Dummy<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

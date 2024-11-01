@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_WAREHIVORE_REPACK_H
 
 #include <concepts>
-#include "conceptrodon/warehivore/repack.hpp"
+#include "conceptrodon/descend/warehivore/repack.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -19,12 +19,19 @@ namespace Warehivore {
 namespace UnitTests {
 namespace TestRepack {
 
-
-
+// In this test, we will paste
+//  Reverie<Dummy<0>::Mold>,
+//  ...,
+//  Reverie<Dummy<239>::Mold>
+// together and place the result in Tester.
 
 /******************************************************************************************************/
+template<template<typename...> class...Warehouses>
+requires (sizeof...(Warehouses) == 240)
+struct Tester {};
+
 template<size_t>
-struct Tester
+struct Dummy
 {
     template<typename...>
     struct ProtoMold {};
@@ -32,9 +39,6 @@ struct Tester
     template<typename...Elements>
     using Mold = ProtoMold<Elements...>;
 };
-
-template<template<typename...> class...>
-struct Transport {};
 /******************************************************************************************************/
 
 
@@ -42,13 +46,13 @@ struct Transport {};
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Transport<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -63,13 +67,13 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Reverie<Tester<
+    Reverie<Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniFlow<Transport>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniFlow<Tester>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

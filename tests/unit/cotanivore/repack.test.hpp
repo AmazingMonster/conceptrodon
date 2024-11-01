@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_COTANIVORE_REPACK_H
 
 #include <utility>
-#include "conceptrodon/cotanivore/repack.hpp"
+#include "conceptrodon/descend/cotanivore/repack.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -19,12 +19,24 @@ namespace Cotanivore {
 namespace UnitTests {
 namespace TestRepack {
 
+// In this test, we will paste
+//  Capsule<std::integral_constant<int, 0>>,
+//  ...,
+//  Capsule<std::integral_constant<int, 239>>
+// together and place the result in Tester.
+
+/******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements) == 240)
+struct Tester;
+/******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedTuple = std::tuple<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -33,7 +45,7 @@ using SupposedTuple = std::tuple<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedTuple
+    SupposedResult
 
 #define SHEEP_PREFIX    \
     Capsule<std::integral_constant<int,
@@ -42,9 +54,8 @@ using SupposedTuple = std::tuple<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRoad<std::tuple>);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Road<std::tuple>::type);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Road_t<std::tuple>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRoad<Tester>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Road<Tester>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

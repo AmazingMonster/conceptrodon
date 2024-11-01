@@ -4,8 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_REPACK_H
 #define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_REPACK_H
 
-#include "conceptrodon/sequnivore/repack.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/descend/sequnivore/repack.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -18,12 +17,24 @@ namespace Sequnivore {
 namespace UnitTests {
 namespace TestRepack {
 
+// In this test, we will paste
+//  Shuttle<0>,
+//  ...,
+//  Shuttle<239>
+// together and place the result in Tester.
+
+/******************************************************************************************************/
+template<auto...Variables>
+requires (sizeof...(Variables) == 240)
+struct Tester;
+/******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -32,8 +43,7 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 
 /**************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedIndexSequence
-
+    SupposedResult
 #define SHEEP_PREFIX    \
     Shuttle<
 #define SHEEP_SUFFIX    \
@@ -41,9 +51,8 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRail<std::index_sequence>);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail<std::index_sequence>::type);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<std::index_sequence>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRail<Tester>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail<Tester>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -52,8 +61,11 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<std::index_sequence>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-
-
+// In this test, we will paste
+//  Shuttle<0>,
+//  ...,
+//  Shuttle<239>
+// together and place the result in Tester.
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
@@ -63,7 +75,7 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<std::index_sequence>);
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult_1 = Tester<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -75,7 +87,7 @@ using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
 
 /**************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedShuttle
+    SupposedResult_1
 
 #define SHEEP_PREFIX    \
     std::integer_sequence<int,
@@ -84,9 +96,8 @@ using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail<Shuttle>::type);
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<Shuttle>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniRail<Tester>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail<Tester>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -94,8 +105,6 @@ SAME_TYPE(Repack<SHEEP_SPROUT(240)>::Rail_t<Shuttle>);
 
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
-
-
 
 
 }}}}

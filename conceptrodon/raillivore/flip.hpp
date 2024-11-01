@@ -10,6 +10,7 @@ namespace Raillivore {
 template<template<template<auto...> class...> class Operation>
 struct Flip
 {
+// Mold -> Rail
     template<typename...Elements>
     struct ProtoMold 
     {
@@ -20,6 +21,7 @@ struct Flip
     template<typename...Elements>
     using Mold = ProtoMold<Elements...>;
     
+// Page -> Rail
     template<auto...Variables>
     struct ProtoPage 
     {
@@ -30,6 +32,7 @@ struct Flip
     template<auto...Variables>
     using Page = ProtoPage<Variables...>;
 
+// Road -> Rail
     template<template<typename...> class...Containers>
     struct ProtoRoad
     {
@@ -40,6 +43,7 @@ struct Flip
     template<template<typename...> class...Containers>
     using Road = ProtoRoad<Containers...>;
 
+// Rail -> Rail
     template<template<auto...> class...Sequences>
     struct ProtoRail
     {
@@ -50,6 +54,7 @@ struct Flip
     template<template<auto...> class...Sequences>
     using Rail = ProtoRail<Sequences...>;
 
+// Flow -> Rail
     template<template<template<typename...> class...> class...Warehouses>
     struct ProtoFlow
     {
@@ -60,6 +65,7 @@ struct Flip
     template<template<template<typename...> class...> class...Warehouses>
     using Flow = ProtoFlow<Warehouses...>;
 
+// Sail -> Rail
     template<template<template<auto...> class...> class...Stockrooms>
     struct ProtoSail
     {

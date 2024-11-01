@@ -11,6 +11,7 @@
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
+#include <utility>
 
 
 namespace Conceptrodon {
@@ -18,12 +19,24 @@ namespace Sequnivore {
 namespace UnitTests {
 namespace TestPaste {
 
+// In this test, we will paste
+//  Tester<>,
+//  Shuttle<0>,
+//  ...,
+//  Shuttle<239>
+// together.
+
+/******************************************************************************************************/
+template<size_t...>
+struct Tester;
+/******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -32,7 +45,7 @@ using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
 
 /**************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedShuttle
+    SupposedResult
 
 #define SHEEP_PREFIX    \
     Shuttle<
@@ -41,7 +54,7 @@ using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -50,12 +63,16 @@ SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-
-
+// In this test, we will paste
+//  std::integer_sequence<size_t>,
+//  std::integer_sequence<int, 0>,
+//  ...,
+//  std::integer_sequence<int, 239>
+// together.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedIntegerSequence = std::integer_sequence<int, SHEEP_SPROUT(240)>;
+using SupposedResult_1 = std::integer_sequence<size_t, SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -64,7 +81,7 @@ using SupposedIntegerSequence = std::integer_sequence<int, SHEEP_SPROUT(240)>;
 
 /**************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedIntegerSequence
+    SupposedResult_1
 
 #define SHEEP_PREFIX    \
     std::integer_sequence<int,
@@ -73,7 +90,7 @@ using SupposedIntegerSequence = std::integer_sequence<int, SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<std::integer_sequence<size_t>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -82,12 +99,16 @@ SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-
-
+// In this test, we will paste
+//  std::integer_sequence<int>,
+//  std::index_sequence<0>,
+//  ...,
+//  std::index_sequence<239>
+// together.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
+using SupposedResult_2 = std::integer_sequence<int, SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -96,7 +117,7 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 
 /**************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedIndexSequence
+    SupposedResult_2
 
 #define SHEEP_PREFIX    \
     std::index_sequence<
@@ -105,7 +126,7 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<std::integer_sequence<int>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

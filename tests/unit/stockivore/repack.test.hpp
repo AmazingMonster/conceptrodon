@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_STOCKIVORE_REPACK_H
 
 #include <concepts>
-#include "conceptrodon/stockivore/repack.hpp"
+#include "conceptrodon/descend/stockivore/repack.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -19,12 +19,24 @@ namespace Stockivore {
 namespace UnitTests {
 namespace TestRepack {
 
+// In this test, we will paste
+//  Phantom<Dummy<0>::Page>,
+//  ...,
+//  Phantom<Dummy<239>::Page>
+// together and place the result in Tester.
+
+/******************************************************************************************************/
+template<template<auto...> class...Sequences>
+requires (sizeof...(Sequences) == 240)
+struct Tester;
+/******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 template<size_t>
-struct Tester
+struct Dummy
 {
     template<auto...>
     struct ProtoPage {};
@@ -32,9 +44,6 @@ struct Tester
     template<auto...Variables>
     using Page = ProtoPage<Variables...>;
 };
-
-template<template<auto...> class...>
-struct Transport {};
 /******************************************************************************************************/
 
 
@@ -42,13 +51,13 @@ struct Transport {};
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Transport<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -63,13 +72,13 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Phantom<Tester<
+    Phantom<Dummy<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniSail<Transport>);
+SAME_TYPE(Repack<SHEEP_SPROUT(240)>::UniSail<Tester>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

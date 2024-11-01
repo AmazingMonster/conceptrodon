@@ -19,12 +19,18 @@ namespace Warehivore {
 namespace UnitTests {
 namespace TestPaste {
 
-
-
+// In this test, we will paste
+//  Tester<>,
+//  Reverie<Dummy<0>::Mold>,
+//  Reverie<Dummy<239>::Mold>
+// together.
 
 /******************************************************************************************************/
+template<template<typename...> class...Containers>
+struct Tester;
+
 template<size_t>
-struct Tester
+struct Dummy
 {
     template<typename...>
     struct ProtoMold {};
@@ -39,13 +45,13 @@ struct Tester
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Reverie<SHEEP_SPROUT(240)>;
+using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -60,13 +66,13 @@ using SupposedResult = Reverie<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Reverie<Tester<
+    Reverie<Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

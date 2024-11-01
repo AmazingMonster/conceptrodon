@@ -4,15 +4,13 @@
 #ifndef CONCEPTRODON_SEQUNIVORE_PASTE_H
 #define CONCEPTRODON_SEQUNIVORE_PASTE_H
 
-#include "conceptrodon/microbiota/sequena/paste.hpp"
+#include "conceptrodon/microbiota/sequena/typical_paste.hpp"
 
 namespace Conceptrodon {
 namespace Sequnivore {
 
-using Sequena::Paste;
-
 template<typename...Packs>
-using Paste_t = Paste<Packs...>::type;
+using Paste = Sequena::TypicalPaste<Packs...>::type;
 
 }}
 
