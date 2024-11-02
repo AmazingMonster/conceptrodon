@@ -1,10 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_RAILLIVORE_MEMORIZE_H
-#define CONCEPTRODON_TESTS_UNIT_RAILLIVORE_MEMORIZE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_LABORIOUS_PRESS_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_LABORIOUS_PRESS_H
 
-#include "conceptrodon/descend/raillivore/memorize.hpp"
+#include "conceptrodon/omennivore/laborious_press.hpp"
+#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/phantom.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -12,11 +16,10 @@
 #include "macaron/judgmental/amenity/define_invalid.hpp"
 
 namespace Conceptrodon {
-namespace Raillivore {
+namespace Omennivore {
 namespace UnitTests {
-namespace TestMemorize {
+namespace TestPress {
 
-template<template<auto...> class...>
 struct Tester
 {
     template<auto...>
@@ -94,11 +97,11 @@ struct Tester
 };
 
 
-INVALID(Memorize<Tester>::Page<>::Mold<>::Page<>::Mold<>::Page<>::Rail<>::value);
-VALID(Memorize<Tester>::Page<>::Mold<>::Page<>::Mold<>::Page<1>::Rail<>::value);
-INVALID(Memorize<Tester>::Page<>::Mold<>::Page<>::Mold<>::Road<>::Page<>::Rail<>::value);
-VALID(Memorize<Tester>::Page<>::Mold<>::Page<>::Mold<>::Road<>::Page<1>::Rail<>::value);
-VALID(Memorize<Tester>::Page<>::Mold<>::Page<>::Mold<>::Road<std::tuple>::Rail<>::value);
+INVALID(LaboriousPress<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>, Shuttle<>>::value);
+VALID(LaboriousPress<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>, Shuttle<1>>::value);
+INVALID(LaboriousPress<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>, Reverie<>, Shuttle<>>::value);
+VALID(LaboriousPress<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>,  Reverie<>, Shuttle<1>>::value);
+VALID(LaboriousPress<Tester>::Mold<Shuttle<>, Capsule<>, Shuttle<>, Capsule<>,  Reverie<std::tuple>>::value);
 
 
 }}}}

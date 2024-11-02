@@ -1,6 +1,6 @@
 # Todo
 
-- Finish _Haskell Programming from First Principles_
+- Finish _Haskell Programming from First Principles_ (Partially Done)
 - Study _Lambda Calculus_
 
 - Use macro to reimplement some functions for maintainability.
@@ -8,7 +8,7 @@
 - Use Typical\* or Classic\* prefix to rename functions that have members called 'type'
 - Change SubMold to M_ld, P_ge, ect.
 - Add M_ldTrip, P_geTrip, ect. to compose functions with respect to M_ld, P_ge, ect.
-- Change the name of Flatten(Uncurry) to Press
+- Change the name of Flatten(Uncurry) to Press (Done)
 - Add function Bloom(for currying)
 - Add Infixl and Infixr
 - Add variable template Valorize

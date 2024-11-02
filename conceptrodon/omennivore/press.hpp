@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_OMENNIVORE_FLATTEN_H
-#define CONCEPTRODON_OMENNIVORE_FLATTEN_H
+#ifndef CONCEPTRODON_OMENNIVORE_PRESS_H
+#define CONCEPTRODON_OMENNIVORE_PRESS_H
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Operation>
-struct Flatten
+struct Press
 {
     template<typename...>
     struct Detail {};
@@ -139,7 +139,7 @@ struct Flatten
     >
     struct Detail<Container<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Mold<Contents...>>
+        using type = Press<typename Operation::template Mold<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -151,7 +151,7 @@ struct Flatten
     >
     struct Detail<Sequence<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Page<Contents...>>
+        using type = Press<typename Operation::template Page<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -163,7 +163,7 @@ struct Flatten
     >
     struct Detail<Warehouse<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Road<Contents...>>
+        using type = Press<typename Operation::template Road<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -175,7 +175,7 @@ struct Flatten
     >
     struct Detail<Stockroom<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Rail<Contents...>>
+        using type = Press<typename Operation::template Rail<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -187,7 +187,7 @@ struct Flatten
     >
     struct Detail<Sorrow<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Flow<Contents...>>
+        using type = Press<typename Operation::template Flow<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -199,7 +199,7 @@ struct Flatten
     >
     struct Detail<Melancholy<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Sail<Contents...>>
+        using type = Press<typename Operation::template Sail<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -211,7 +211,7 @@ struct Flatten
     >
     struct Detail<Silence<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Snow<Contents...>>
+        using type = Press<typename Operation::template Snow<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -223,7 +223,7 @@ struct Flatten
     >
     struct Detail<Tranquil<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Hail<Contents...>>
+        using type = Press<typename Operation::template Hail<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -235,7 +235,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Lull<Contents...>>
+        using type = Press<typename Operation::template Lull<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -247,7 +247,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Calm<Contents...>>
+        using type = Press<typename Operation::template Calm<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -259,7 +259,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Grit<Contents...>>
+        using type = Press<typename Operation::template Grit<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -271,7 +271,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Will<Contents...>>
+        using type = Press<typename Operation::template Will<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -283,7 +283,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Glow<Contents...>>
+        using type = Press<typename Operation::template Glow<Contents...>>
         ::template Detail<Others...>::type;
     };
 
@@ -295,7 +295,7 @@ struct Flatten
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Flatten<typename Operation::template Dawn<Contents...>>
+        using type = Press<typename Operation::template Dawn<Contents...>>
         ::template Detail<Others...>::type;
     };
 /******************************************************************************************************/

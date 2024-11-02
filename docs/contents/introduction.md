@@ -104,8 +104,8 @@
             <td>A member template of <i>n-1</i>th layer</td>
         </tr>
         <tr>
-            <td>invoking order</td>
-            <td>The invoking order of a function is the arrangement of the function's layers</td>
+            <td>invocation order</td>
+            <td>The invocation order of a function is the arrangement of the function's layers</td>
         </tr>
     </tbody>
 </table>

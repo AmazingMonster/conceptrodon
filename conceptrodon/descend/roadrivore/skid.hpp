@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_RAILLIVORE_MEMORIZE_H
-#define CONCEPTRODON_RAILLIVORE_MEMORIZE_H
+#ifndef CONCEPTRODON_ROADRIVORE_SKID_H
+#define CONCEPTRODON_ROADRIVORE_SKID_H
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
@@ -19,66 +19,66 @@
 #include "conceptrodon/arcadia.hpp"
 #include "conceptrodon/nirvana.hpp"
 
-#include "conceptrodon/omennivore/flatten.hpp"
+#include "conceptrodon/omennivore/press.hpp"
 
 namespace Conceptrodon {
-namespace Raileus {
+namespace Roadria {
 
 
-template<template<template<auto...> class...> class Operation, typename...Items>
-struct Preload
+template<template<template<typename...> class...> class Operation, typename...Items>
+struct LoadSkid
 {
-    template<template<auto...> class...Sequences>
-    using Rail = Omennivore::Flatten<Operation<Sequences...>>::template Mold<Items...>;
+    template<template<typename...> class...Containers>
+    using Road = Omennivore::Press<Operation<Containers...>>::template Mold<Items...>;
 
     template<typename...Elements>
-    using Mold = Preload<Operation, Items..., Capsule<Elements...>>;
+    using Mold = LoadSkid<Operation, Items..., Capsule<Elements...>>;
 
     template<auto...Variables>
-    using Page = Preload<Operation, Items..., Shuttle<Variables...>>;
+    using Page = LoadSkid<Operation, Items..., Shuttle<Variables...>>;
 
     template<template<typename...> class...Containers>
-    using Road = Preload<Operation, Items..., Reverie<Containers...>>;
+    using R_ad = LoadSkid<Operation, Items..., Reverie<Containers...>>;
 
     template<template<auto...> class...Sequences>
-    using SubRail = Preload<Operation, Items..., Phantom<Sequences...>>;
+    using Rail = LoadSkid<Operation, Items..., Phantom<Sequences...>>;
 
     template<template<template<typename...> class...> class...Warehouses>
-    using Flow = Preload<Operation, Items..., Forlorn<Warehouses...>>;
+    using Flow = LoadSkid<Operation, Items..., Forlorn<Warehouses...>>;
 
     template<template<template<auto...> class...> class...Stockrooms>
-    using Sail = Preload<Operation, Items..., Travail<Stockrooms...>>;
+    using Sail = LoadSkid<Operation, Items..., Travail<Stockrooms...>>;
 
     template<template<template<template<typename...> class...> class...> class...Sorrow>
-    using Snow = Preload<Operation, Items..., Lullaby<Sorrow...>>;
+    using Snow = LoadSkid<Operation, Items..., Lullaby<Sorrow...>>;
 
     template<template<template<template<auto...> class...> class...> class...Melancholy>
-    using Hail = Preload<Operation, Items..., Halcyon<Melancholy...>>;
+    using Hail = LoadSkid<Operation, Items..., Halcyon<Melancholy...>>;
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using Lull = Preload<Operation, Items..., Pursuit<Silence...>>;
+    using Lull = LoadSkid<Operation, Items..., Pursuit<Silence...>>;
 
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using Calm = Preload<Operation, Items..., Persist<Tranquil...>>;
+    using Calm = LoadSkid<Operation, Items..., Persist<Tranquil...>>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Grit = Preload<Operation, Items..., Morning<Sunshines...>>;
+    using Grit = LoadSkid<Operation, Items..., Morning<Sunshines...>>;
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = Preload<Operation, Items..., Sunrise<Sunshines...>>;
+    using Will = LoadSkid<Operation, Items..., Sunrise<Sunshines...>>;
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Glow = Preload<Operation, Items..., Arcadia<Sunshines...>>;
+    using Glow = LoadSkid<Operation, Items..., Arcadia<Sunshines...>>;
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Dawn = Preload<Operation, Items..., Nirvana<Sunshines...>>;
+    using Dawn = LoadSkid<Operation, Items..., Nirvana<Sunshines...>>;
 };
 }
 
-namespace Raillivore {
+namespace Roadrivore {
 
-template<template<template<auto...> class...> class Operation>
-struct Memorize: public Raileus::Preload<Operation> {};
+template<template<template<typename...> class...> class Operation>
+struct Skid: public Roadria::LoadSkid<Operation> {};
 
 }}
 
