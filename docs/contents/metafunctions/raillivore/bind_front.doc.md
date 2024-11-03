@@ -7,7 +7,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Raillivore::BindFront` accepts an operation and a variable number of sequences.
 It returns a metafunction such that when invoked, the previously provided sequences will be appended to the end of the argument list;
-then, the metafunction becomes the previously provided operation invoked by the newly formed argument list.<pre><code>   Operation
+then, the metafunction becomes the previously provided operation invoked by the newly formed argument list.
+<pre><code>   Operation
 ->&nbsp;Sequences...
 ->&nbsp;Operation&lt;Sequences...,&nbsp;*&gt;</code></pre>
 

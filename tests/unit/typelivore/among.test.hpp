@@ -22,8 +22,12 @@ namespace Typelivore {
 namespace UnitTests {
 namespace TestAmong {
 
-
-
+// In this test,
+// we will collect every element of list
+//  std::integral_constant<0>,
+//  ...,
+//  std::integral_constant<239>
+// using their indices and collect the result in Capsule.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
@@ -76,7 +80,7 @@ SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<size_t I>
-using At = Among<SHEEP_SPROUT(240)>::Page_t<I>;
+using At = Among<SHEEP_SPROUT(240)>::Page<I>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #define SHEEP_PREFIX    \

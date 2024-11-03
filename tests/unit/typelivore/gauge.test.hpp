@@ -4,7 +4,6 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
 
-#include <concepts>
 #include <type_traits>
 #include "conceptrodon/typelivore/gauge.hpp"
 #include "conceptrodon/shuttle.hpp"

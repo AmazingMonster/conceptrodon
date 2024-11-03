@@ -1,13 +1,13 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PLUME_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_PLUME_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_PLUME_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_PLUME_H
 
 #include <concepts>
 #include <type_traits>
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/typelivore/plume.hpp"
+#include "conceptrodon/typelivore/classic_plume.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -20,7 +20,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestPlume {
+namespace TestClassicPlume {
 
 
 
@@ -30,13 +30,13 @@ template<auto I>
 struct Dummy
 {
     template<typename T>
-    struct Detail
+    struct ProtoMold
     {
         using type = std::integral_constant<int, I + T::value>;
     };
 
     template<typename...Agreements>
-    using Mold = Detail<Agreements...>::type;
+    using Mold = ProtoMold<Agreements...>;
 };
 /******************************************************************************************************/
 
@@ -72,8 +72,8 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Road<Capsule>);
-SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
+SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Road<Capsule>);
+SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -106,8 +106,8 @@ using SupposedResult_1 = Capsule<SHEEP_SPROUT(240, +1)>;
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::Road<Capsule>);
-SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRoad<Capsule>);
+SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::Road<Capsule>);
+SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRoad<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SUPPOSED_TYPE
@@ -142,8 +142,8 @@ using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Plume<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::Road<Capsule>);
-SAME_TYPE(Plume<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
+SAME_TYPE(ClassicPlume<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::Road<Capsule>);
+SAME_TYPE(ClassicPlume<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

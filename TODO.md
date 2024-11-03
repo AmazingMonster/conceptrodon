@@ -9,6 +9,7 @@
 - Change SubMold to M_ld, P_ge, ect.
 - Add M_ldTrip, P_geTrip, ect. to compose functions with respect to M_ld, P_ge, ect.
 - Change the name of Flatten(Uncurry) to Press (Done)
+- Add a Trip like function to send type directly
 - Add function Bloom(for currying)
 - Add Infixl and Infixr
 - Add variable template Valorize

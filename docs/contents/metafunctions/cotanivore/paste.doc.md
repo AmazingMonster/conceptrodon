@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Cotanivore::Paste` is an alias template. It concatenates a variable number of packed containers. The first container will be used to hold the result.<pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...&nbsp;
+`Cotanivore::Paste` is an alias template. It concatenates a variable number of packed containers. The first container will be used to hold the result.
+<pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...&nbsp;
 ->&nbsp;Container<sub><i>0</i></sub>&lt;Elements<sub><i>0</i></sub>...,&nbsp;Elements<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature

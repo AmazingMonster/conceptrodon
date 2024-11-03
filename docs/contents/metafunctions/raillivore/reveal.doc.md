@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Raillivore::Reveal` accepts an operation and returns a metafunction such that when invoked by an argument list, the metafunction becomes the member `type` of the previously provided operation invoked by the argument list.<pre><code>Operation&nbsp;->&nbsp;Rail&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
+`Raillivore::Reveal` accepts an operation and returns a metafunction such that when invoked by an argument list, the metafunction becomes the member `type` of the previously provided operation invoked by the argument list.
+<pre><code>Operation&nbsp;->&nbsp;Rail&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
 
 ## Type Signature
 

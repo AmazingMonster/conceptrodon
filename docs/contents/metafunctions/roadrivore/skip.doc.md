@@ -6,7 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Roadrivore::Skip` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.
-The only difference between `Skip` and `Skid` is that `Skip` uses `R_ad` for initiation and `Road` for recursion, while `Skid` uses `Road` for initiation and `R_ad` for recursion.<pre><code>   Operation{FirstLayer{...LastLayer}}
+The only difference between `Skip` and `Skid` is that `Skip` uses `R_ad` for initiation and `Road` for recursion, while `Skid` uses `Road` for initiation and `R_ad` for recursion.
+<pre><code>   Operation{FirstLayer{...LastLayer}}
 -> FirstLayer{...LastLayer{Operation}}</code></pre>
 
 ## Type Signature

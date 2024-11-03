@@ -10,11 +10,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-#error "CONCEPTRODON_NUCLEOLUS_TYPE_RESULT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
+#error "CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_results/type.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_helpers/detail.hpp"
 /******************************************************************************************************/
 
 
@@ -37,17 +37,6 @@
 #endif
 
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/page.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/page.hpp"
 /******************************************************************************************************/
 
 

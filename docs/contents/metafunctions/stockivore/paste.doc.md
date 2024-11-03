@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Stockivore::Paste` is an alias template. It concatenates a variable number of packed stockrooms. The first stockroom will be used to hold the result..<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...&nbsp;
+`Stockivore::Paste` is an alias template. It concatenates a variable number of packed stockrooms. The first stockroom will be used to hold the result.
+<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...&nbsp;
 ->&nbsp;Stockroom<sub><i>0</i></sub>&lt;Sequences<sub><i>0</i></sub>...,&nbsp;Sequences<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature

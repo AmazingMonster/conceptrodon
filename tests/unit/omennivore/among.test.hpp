@@ -33,7 +33,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<size_t I>
-using At = Among<SupposedResult>::Page_t<I>;
+using At = Among<SupposedResult>::Page<I>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 

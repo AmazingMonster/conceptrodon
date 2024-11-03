@@ -5,11 +5,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Sequnivore::Repack` concatenates a variables number of packed sequences. The result will be used to invoke an operation.<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
+`Sequnivore::Repack` concatenates a variables number of packed sequences. The result will be used to invoke an operation.
+<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
 ->&nbsp;Operation
 ->&nbsp;Operation&lt;Variables<sub><i>0</i></sub>...,&nbsp;Variables<sub><i>1</i></sub>..., ...></code></pre>
 
-`Sequnivore::Repack` can also handle `std::integer_sequence`. The function first `static_cast` integers to `std::make_signed_t<size_t>`. Then, it uses the result to invoke an operation.<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>,&nbsp;Variables<sub><i>i</i></sub>...&gt;...
+`Sequnivore::Repack` can also handle `std::integer_sequence`. The function first `static_cast` integers to `std::make_signed_t<size_t>`. Then, it uses the result to invoke an operation.
+<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>,&nbsp;Variables<sub><i>i</i></sub>...&gt;...
 ->&nbsp;Operation
 ->&nbsp;Operation&lt;(size_t)Variables<sub><i>0</i></sub>...,&nbsp;(size_t)Variables<sub><i>1</i></sub>..., ...></code></pre>
 

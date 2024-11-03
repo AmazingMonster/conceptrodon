@@ -5,10 +5,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Sequnivore::TypicalPaste` concatenates a variable number of packed sequences. The first sequence will be used to hold the result. The result will be returned via the type alias member `type`.<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...&nbsp;
+`Sequnivore::TypicalPaste` concatenates a variable number of packed sequences. The first sequence will be used to hold the result. The result will be returned via the type alias member `type`.
+<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...&nbsp;
 ->&nbsp;Sequence<sub><i>0</i></sub>&lt;Variables<sub><i>0</i></sub>...,&nbsp;Variables<sub><i>1</i></sub>..., ...></code></pre>
 
-`Sequnivore::TypicalPaste` can also handle `std::integer_sequence`. The function `static_cast` integers to fit into the first sequence.<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>, Variables<sub><i>i</i></sub>...&gt;...&nbsp;
+`Sequnivore::TypicalPaste` can also handle `std::integer_sequence`. The function `static_cast` integers to fit into the first sequence.
+<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>, Variables<sub><i>i</i></sub>...&gt;...&nbsp;
 ->&nbsp;Sequence<sub><i>0</i></sub>&lt;Type<sub><i>0</i></sub>, Variables<sub><i>0</i></sub>...,&nbsp;Variables<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature

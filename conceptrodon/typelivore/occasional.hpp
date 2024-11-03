@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPEBIVORE_CONDITIONAL_H
-#define CONCEPTRODON_TYPEBIVORE_CONDITIONAL_H
+#ifndef CONCEPTRODON_TYPEBIVORE_OCCASIONAL_H
+#define CONCEPTRODON_TYPEBIVORE_OCCASIONAL_H
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename IfTrue, typename IfFalse>
-struct Conditional
+struct Occasional
 {
     template<auto>
     struct Detail {};
@@ -25,13 +25,13 @@ struct Conditional
 
 
     template<auto...Agreements>
-    using Page = Detail<(...&&static_cast<bool>(Agreements))>::type;
+    using Page = Detail<(...||static_cast<bool>(Agreements))>::type;
 
 
 
 
     template<typename...Elements>
-    using Mold = Detail<(...&&static_cast<bool>(Elements::value))>::type;
+    using Mold = Detail<(...||static_cast<bool>(Elements::value))>::type;
 
 
 
@@ -40,7 +40,7 @@ struct Conditional
     struct ProtoRoad
     {
         template<typename...Elements>
-        using Mold = Detail<(...&&static_cast<bool>(Predicates<Elements...>::value))>::type;
+        using Mold = Detail<(...||static_cast<bool>(Predicates<Elements...>::value))>::type;
     };
 
     template<template<typename...> class...Predicates>
@@ -53,7 +53,7 @@ struct Conditional
     struct ProtoRail
     {
         template<auto...Variables>
-        using Page = Detail<(...&&static_cast<bool>(Predicates<Variables...>::value))>::type;
+        using Page = Detail<(...||static_cast<bool>(Predicates<Variables...>::value))>::type;
     };
     
     template<template<auto...> class...Predicates>
