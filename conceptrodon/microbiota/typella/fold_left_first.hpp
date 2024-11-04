@@ -10,6 +10,17 @@
 
 
 /******************************************************************************************************/
+#ifdef CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
+#error "CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER has already been defined"
+#endif
+
+#include "conceptrodon/microbiota/nucleolus/define_helpers/detail.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifdef CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
 #error "CONCEPTRODON_NUCLEOLUS_TYPE_RESULT has already been defined"
 #endif
@@ -25,12 +36,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE has already been defined"
 #endif
 
-#ifdef CONCEPTRODON_NUCLEOLUS_ROAD_PROTO_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_ROAD_PROTO_TEMPLATE has already been defined"
-#endif
-
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/mold.hpp"
-#include "conceptrodon/microbiota/nucleolus/define_proto_templates/road.hpp"
 /******************************************************************************************************/
 
 
@@ -47,17 +53,6 @@
 
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/road.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_ROAD_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_ROAD_ALIAS_TEMPLATE has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/road.hpp"
 /******************************************************************************************************/
 
 
@@ -117,12 +112,11 @@ namespace Typella {
 
 
 /******************************************************************************************************/
+#include "conceptrodon/microbiota/nucleolus/undef_helpers/detail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/mold.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/road.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_uni_templates/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/road.hpp"

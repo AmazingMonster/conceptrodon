@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_H
-#define CONCEPTRODON_TYPELLA_FOLD_LEFT_H
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_H
+#define CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_H
 /******************************************************************************************************/
 
 
@@ -86,12 +86,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME   \
-    FoldLeft
+#define CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_FUNCTION_NAME   \
+    ClassicFoldLeftFirst
 /******************************************************************************************************/
 
 
@@ -102,7 +102,7 @@ namespace Conceptrodon {
 namespace Typella {
 
 
-#include "conceptrodon/microbiota/typella/fold_left/fold_left.hpp"
+#include "conceptrodon/microbiota/typella/classic_fold_left_first/classic_fold_left_first.hpp"
 
 
 }}
@@ -126,7 +126,7 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
+#undef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FIRST_FUNCTION_NAME
 /******************************************************************************************************/
 
 

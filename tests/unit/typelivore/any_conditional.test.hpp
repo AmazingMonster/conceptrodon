@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_OCCASIONAL_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_OCCASIONAL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONDITIONAL_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONDITIONAL_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/occasional.hpp"
+#include "conceptrodon/typelivore/any_conditional.hpp"
 #include "macaron/judgmental/same_type.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
@@ -14,7 +14,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestOccasional {
+namespace TestAnyConditional {
 
 
 
@@ -62,11 +62,11 @@ struct NonnegativeTester<I>: public std::true_type {};
 #define SUPPOSED_TYPE   \
     std::false_type
 
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int*>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void*>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<-1>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<>::Mold<VoidInt>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Rail<>::Page<1>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int*>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void*>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<-1>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<>::Mold<VoidInt>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<>::Page<1>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -78,11 +78,11 @@ SAME_TYPE(Occasional<std::true_type, std::false_type>::Rail<>::Page<1>);
 #define SUPPOSED_TYPE   \
     std::true_type
 
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<VoidInt>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<1>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void>);
-SAME_TYPE(Occasional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<0>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<VoidInt>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<1>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void>);
+SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<0>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FUNCTION_NAME has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,8 +11,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_AMOUNT
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_AMOUNT has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_AMOUNT
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_AMOUNT has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -20,8 +20,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_OPERATION_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_OPERATION_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_OPERATION_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_OPERATION_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -29,8 +29,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -38,8 +38,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -93,9 +93,9 @@
 
 
 /******************************************************************************************************/
-CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
+CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_FUNCTION_NAME
 <
-    CONCEPTRODON_TYPELLA_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER
+    CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_REST_ELEMENTS_IDENTIFIER
     ...
 >
 ::template CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
@@ -104,12 +104,12 @@ CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
 #define CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS    \
     typename
 #define CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS    \
-    CONCEPTRODON_TYPELLA_FOLD_LEFT_OPERATION_IDENTIFIER
+    CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_OPERATION_IDENTIFIER
 #define CONCEPTRODON_CYTOPLASM_ALKANE_SUFFIX_SYMBOLS    \
     <
 #define CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH    \
-    CONCEPTRODON_TYPELLA_FOLD_LEFT_AMOUNT
+    CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/alkane.hpp"
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS
@@ -117,15 +117,15 @@ CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH
 
-        CONCEPTRODON_TYPELLA_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER ,
+        CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_INITIAL_ELEMENT_IDENTIFIER ,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS   \
-    >
+    >:: CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_TYPELLA_FOLD_LEFT_AMOUNT
+    CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
@@ -135,6 +135,6 @@ CONCEPTRODON_TYPELLA_FOLD_LEFT_FUNCTION_NAME
 >
 ::template CONCEPTRODON_NUCLEOLUS_ROAD_UNI_TEMPLATE
 <
-    CONCEPTRODON_TYPELLA_FOLD_LEFT_OPERATION_IDENTIFIER
+    CONCEPTRODON_TYPELLA_CLASSIC_FOLD_LEFT_OPERATION_IDENTIFIER
 >
 /******************************************************************************************************/

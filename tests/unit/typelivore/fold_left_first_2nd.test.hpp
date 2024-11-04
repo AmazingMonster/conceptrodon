@@ -80,7 +80,7 @@ SAME_TYPE(boost::mp11::mp_fold<CapsuleTester, std::integral_constant<int, 1>, Bi
     std::integral_constant<int, 1 + 239 * 240 / 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>::Road<BinaryOperation>::type);
+SAME_TYPE(FoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>::Road<BinaryOperation_t>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

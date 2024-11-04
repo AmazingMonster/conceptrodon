@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPEBIVORE_OCCASIONAL_H
-#define CONCEPTRODON_TYPEBIVORE_OCCASIONAL_H
+#ifndef CONCEPTRODON_TYPEBIVORE_ANY_CONDITIONAL_H
+#define CONCEPTRODON_TYPEBIVORE_ANY_CONDITIONAL_H
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename IfTrue, typename IfFalse>
-struct Occasional
+struct AnyConditional
 {
     template<auto>
     struct Detail {};

@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FOLD_LEFT_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FOLD_LEFT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_FOLD_LEFT_FIRST_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_FOLD_LEFT_FIRST_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/fold_left.hpp"
+#include "conceptrodon/typelivore/classic_fold_left_first.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -17,7 +17,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestFoldLeft {
+namespace TestFoldLeftFirst {
 
 
 
@@ -41,10 +41,10 @@ using BinaryOperation_t = BinaryOperation<Left, Right>::type;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    std::integral_constant<int, 1 + 18 * 17 / 2>
+    std::integral_constant<int, 1 + 239 * 240 / 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldLeft<SHEEP_SPROUT(18)>::Mold<std::integral_constant<int, 1>>::Road<BinaryOperation_t>);
+SAME_TYPE(ClassicFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>::Road<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -57,7 +57,7 @@ SAME_TYPE(FoldLeft<SHEEP_SPROUT(18)>::Mold<std::integral_constant<int, 1>>::Road
 #define SUPPOSED_TYPE \
     std::integral_constant<int, 1 + 7 * 8 / 2>
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldLeft<SHEEP_SPROUT(8)>::Mold<std::integral_constant<int, 1>>::Road<BinaryOperation_t>);
+SAME_TYPE(ClassicFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(8)>::UniRoad<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -70,7 +70,7 @@ SAME_TYPE(FoldLeft<SHEEP_SPROUT(8)>::Mold<std::integral_constant<int, 1>>::Road<
 #define SUPPOSED_TYPE \
     std::integral_constant<int, 1>
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldLeft<SHEEP_SPROUT(1)>::Mold<std::integral_constant<int, 1>>::UniRoad<BinaryOperation_t>);
+SAME_TYPE(ClassicFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(1)>::Road<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

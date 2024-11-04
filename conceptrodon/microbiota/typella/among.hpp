@@ -21,6 +21,17 @@
 
 
 /******************************************************************************************************/
+#ifdef CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
+#error "CONCEPTRODON_NUCLEOLUS_TYPE_RESULT has already been defined"
+#endif
+
+#include "conceptrodon/microbiota/nucleolus/define_results/type.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifdef CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 #error "CONCEPTRODON_NUCLEOLUS_PLAN_PROTO_TEMPLATE has already been defined"
 #endif
@@ -93,10 +104,9 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/page.hpp"
 /******************************************************************************************************/
