@@ -10,17 +10,17 @@ Elements will be placed into containers via a process similar to pack expansion.
 Then, the type result of each packed container will be collected to invoke an operation.
 Check out **Example** for more information.
 <pre><code>   Element
-->&nbsp;...Container<sub><i>i</i></sub>...
+-> ...Container<sub><i>i</i></sub>...
 -> Operation
-->&nbsp;Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::type...&gt;</code></pre>
+-> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::type...&gt;</code></pre>
 <pre><code>   ...Element<sub><i>i</i></sub>...
-->&nbsp;Container
+-> Container
 -> Operation
-->&nbsp;Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+-> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
 <pre><code>   ...Element<sub><i>i</i></sub>...
-->&nbsp;...Container<sub><i>i</i></sub>...
+-> ...Container<sub><i>i</i></sub>...
 -> Operation
-->&nbsp;Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+-> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
 
 ## Type Signature
 

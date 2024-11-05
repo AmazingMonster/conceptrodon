@@ -7,8 +7,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Stockivore::Repack` concatenates a variable number of packed stockrooms. The result will be used to invoke an operation.
 <pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...
-->&nbsp;Operation
-->&nbsp;Operation&lt;Sequences<sub><i>0</i></sub>...,&nbsp;Sequences<sub><i>1</i></sub>..., ...></code></pre>
+-> Operation
+-> Operation&lt;Sequences<sub><i>0</i></sub>..., Sequences<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature
 

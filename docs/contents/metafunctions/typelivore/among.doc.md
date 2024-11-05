@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Among` picks out the element at a given index from a list.
-<pre><code>...Element<sub><i>i</i></sub>...&nbsp;->&nbsp;I&nbsp;->&nbsp;Element<sub><i>i</i></sub></code></pre>
+<pre><code>...Element<sub><i>i</i></sub>... -> I -> Element<sub><i>i</i></sub></code></pre>
 
 ## Type Signature
 

@@ -7,12 +7,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 Different inputs can lead to different metafunctions returned by `Typelivore::AnyConditional`.
 Overall, `Typelivore::AnyConditional` yields a result according to the boolean evaluation of a condition. Check out **Example** for more details.
-<pre><code>IfTrue, IfFalse&nbsp;->&nbsp;true&nbsp;->&nbsp;IfTrue</code></pre>
-<pre><code>IfTrue, IfFalse&nbsp;->&nbsp;false&nbsp;->&nbsp;IfFalse</code></pre>
+<pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
+<pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse
-->&nbsp;Predicates
-->&nbsp;Arguments...
-->&nbsp;(...||Predicates&lt;Arguments...&gt;::value) ?
+-> Predicates
+-> Arguments...
+-> (...||Predicates&lt;Arguments...&gt;::value) ?
    IfTrue : IfFalse</code></pre>
 
 ## Type Signature

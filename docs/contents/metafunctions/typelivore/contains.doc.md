@@ -5,10 +5,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Contains` accepts a variable number of arguments and returns a predicate that checks if an element is in the previously provided arguments.
+`Typelivore::Contains` accepts a variable number of elements and returns a predicate that checks if the argument is in the previously provided arguments.
 <pre><code>   Arguments...
-->&nbsp;Element
-->&nbsp;Element&nbsp;&in;&nbsp;Arguments...&nbsp;?
+-> Element
+-> Element &in; Arguments... ?
    true : false</code></pre>
 
 ## Type Signature

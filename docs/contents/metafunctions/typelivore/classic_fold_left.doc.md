@@ -10,9 +10,9 @@ It produces a function that accepts an initiator and an operation.
 The function left-folds the list with the operation and the initiator.
 The type result of the operation is used for continuation.
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
-->&nbsp;Initiator
-->&nbsp;Operation
-->&nbsp;Operation&lt;...
+-> Initiator
+-> Operation
+-> Operation&lt;...
    Operation&lt;
    Operation&lt;
        Initiator, E<sub>0</sub>

@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked with an operation, the function left-folds the list with the first element as the initiator.
 The type result of the operation is used for continuation.
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
-->&nbsp;Operation
-->&nbsp;Operation&lt;...
+-> Operation
+-> Operation&lt;...
    Operation&lt;
    Operation&lt;
        E<sub>0</sub>, E<sub>1</sub>

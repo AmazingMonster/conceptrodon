@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Roadrivore::Flip` accepts an operation and flips its *0*th layer and the *1*th layer.
-<pre><code>ZerothLayer{FirstLayer}&nbsp;->&nbsp;FirstLayer{ZerothLayer}</code></pre>
+<pre><code>ZerothLayer{FirstLayer} -> FirstLayer{ZerothLayer}</code></pre>
 
 ## Type Signature
 

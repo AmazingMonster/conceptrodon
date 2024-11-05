@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 It returns a metafunction such that when invoked, the previously provided containers will be appended to the end of the argument list;
 then, the metafunction becomes the previously provided operation invoked by the newly formed argument list.
 <pre><code>   Operation
-->&nbsp;Containers...
-->&nbsp;Operation&lt;Containers...,&nbsp;*&gt;</code></pre>
+-> Containers...
+-> Operation&lt;Containers..., *&gt;</code></pre>
 
 ## Type Signature
 

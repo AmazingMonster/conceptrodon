@@ -6,8 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Stockivore::TypicalPaste` concatenates a variable number of packed stockrooms. The first stockroom will be used to hold the result. The result will be returned via the type alias member `type`.
-<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...&nbsp;
-->&nbsp;Stockroom<sub><i>0</i></sub>&lt;Sequences<sub><i>0</i></sub>...,&nbsp;Sequences<sub><i>1</i></sub>..., ...></code></pre>
+<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...
+-> Stockroom<sub><i>0</i></sub>&lt;Sequences<sub><i>0</i></sub>..., Sequences<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature
 
