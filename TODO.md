@@ -1,6 +1,6 @@
 # Todo
 
-It is a time-consuming process to push changes to GitHub from where I live. The library is still in active development, and one-third of the documentation is finished.
+It is a time-consuming process to push changes to GitHub from where I live, so I will only do big updates except for things that can be done on the GitHub webpage. The library is still in active development, and one-third of the documentation is finished.
 
 - Finish _Haskell Programming from First Principles_
 - Study _Lambda Calculus_
