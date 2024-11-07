@@ -1,5 +1,7 @@
 # Todo
 
+It is a time-consuming process to push changes to GitHub from where I live. The library is still in active development, and one-third of the documentation is finished.
+
 - Finish _Haskell Programming from First Principles_
 - Study _Lambda Calculus_
 
@@ -11,8 +13,6 @@
 - Change the name of Flatten(Uncurry) to Press
 - Add function Bloom(for currying)
 - Add Infixl and Infixr
-- Add variable template Valorize
-- Add alias template Typify
 - Add symbols Dao and Zen
 - Add ZipWith
 - Change function names so that they are aligned to Haskell
