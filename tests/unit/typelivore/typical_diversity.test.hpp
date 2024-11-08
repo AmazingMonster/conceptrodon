@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_DIVERSITY_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_DIVERSITY_H
 
 #include <concepts>
-#include "conceptrodon/descend/typelivore/conjure_set.hpp"
+#include "conceptrodon/descend/typelivore/diversity.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -23,7 +23,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestConjureSet {
+namespace TestTypicalDiversity {
 
 
 
@@ -47,7 +47,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
+SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<SHEEP_SPROUT(20)>, SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -66,15 +66,16 @@ SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integ
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(ConjureSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
+SAME_TYPE(TypicalDiversity<SHEEP_SPROUT(20)>::Mold_t<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
-#endif
 
+
+#endif
 
 }}}}
 

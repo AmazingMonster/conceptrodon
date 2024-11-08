@@ -120,7 +120,7 @@
 #endif
 
 #define CONCEPTRODON_TYPELLA_REITERATE_PASTE_FUNCTION   \
-    Cotanivore::Paste
+    Cotanivore::TypicalPaste
 /******************************************************************************************************/
 
 

@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Warehivore::TypicalPaste` concatenates a variable number of packed warehouses. The first warehouse will be used to hold the result. The result will be returned via the type alias member `type`.
+`Warehivore::TypicalPaste` concatenates a list of packed warehouses. The first warehouse will be used to hold the result. The result will be returned via the type alias member `type`.
 <pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
 -> Warehouse<sub><i>0</i></sub>&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>
 

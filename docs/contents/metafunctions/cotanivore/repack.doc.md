@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Cotanivore::Repack` concatenates a variable number of packed containers. The result will be used to invoke an operation.
+`Cotanivore::Repack` concatenates a list of packed containers. The result will be used to invoke an operation.
 <pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>

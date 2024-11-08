@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::ClassicFoldLeft` accepts a list of elements.
-It produces a function that accepts an initiator and an operation.
+It produces a function that accepts an initiator and whose first layer accepts an operation.
 The function left-folds the list with the operation and the initiator.
 The type result of the operation is used for continuation.
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
@@ -18,7 +18,7 @@ The type result of the operation is used for continuation.
        Initiator, E<sub>0</sub>
    &gt;::type, E<sub>1</sub>
    &gt;::type
-   ..., E<sub>n</sub>&gt::type</code></pre>
+   ..., E<sub>n</sub>&gt;::type</code></pre>
 
 ## Type Signature
 

@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::SensibleGauge` accepts a list of elements and an operation.
-It returns a function that, when invoked with containers, will place the previously provided elements into the containers via a process similar to pack expansion.
-Then, the value result of each packed container will be collected to invoke the previously provided operation.
+`Typelivore::SensibleGauge` accepts a list of elements.
+Its first layer accepts an operation and returns a function such that when invoked with containers, the previously provided elements will be placed into the containers via a process similar to pack expansion;
+then, the value result of each packed container will be collected to invoke the previously provided operation.
 Check out **Example** for more information.
 <pre><code>   Element
 -> Operation

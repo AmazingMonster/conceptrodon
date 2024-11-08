@@ -72,7 +72,7 @@ SAME_TYPE(boost::mp11::mp_reverse<OrderedCapsule>);
     SuppesedCapsule
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Flip<SHEEP_SPROUT(240)>::type);
+SAME_TYPE(Flip<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

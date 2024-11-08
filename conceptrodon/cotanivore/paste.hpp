@@ -9,6 +9,8 @@
 namespace Conceptrodon {
 namespace Cotanivore {
 
+using Cotanis::TypicalPaste;
+
 template<typename...PackedContainers>
 using Paste = Cotanis::TypicalPaste<PackedContainers...>::type;
 

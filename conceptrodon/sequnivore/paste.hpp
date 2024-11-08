@@ -9,6 +9,8 @@
 namespace Conceptrodon {
 namespace Sequnivore {
 
+using Sequena::TypicalPaste;
+
 template<typename...Packs>
 using Paste = Sequena::TypicalPaste<Packs...>::type;
 

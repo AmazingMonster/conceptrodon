@@ -4,17 +4,15 @@
 #ifndef CONCEPTRODON_TYPELIVORE_MAKE_SET_H
 #define CONCEPTRODON_TYPELIVORE_MAKE_SET_H
 
-#include "conceptrodon/descend/typelivore/diversity.hpp"
+#include "conceptrodon/descend/typelivore/typical_diversity.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename FirstElement, typename...Elements>
-struct MakeSet
-{
-    using type = Diversity<FirstElement>::template ProtoMold<Elements...>
-    ::type;
-};
+template<typename...Elements>
+using MakeSet = TypicalDiversity<>
+::ProtoMold<Elements...>
+::type;
 
 }}
 

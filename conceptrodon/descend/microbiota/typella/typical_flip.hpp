@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_FLIP_H
-#define CONCEPTRODON_TYPELLA_FLIP_H
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_FLIP_H
+#define CONCEPTRODON_TYPELLA_TYPICAL_FLIP_H
 /******************************************************************************************************/
 
 
@@ -62,23 +62,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_FLIP_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_FLIP_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_FLIP_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_TYPICAL_FLIP_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_FLIP_FUNCTION_NAME   \
-    Flip
+#define CONCEPTRODON_TYPELLA_TYPICAL_FLIP_FUNCTION_NAME   \
+    TypicalFlip
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_FLIP_EXTEND_BACK_FUNCTION
-#error "CONCEPTRODON_TYPELLA_FLIP_EXTEND_BACK_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_FLIP_EXTEND_BACK_FUNCTION
+#error "CONCEPTRODON_TYPELLA_TYPICAL_FLIP_EXTEND_BACK_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_FLIP_EXTEND_BACK_FUNCTION   \
+#define CONCEPTRODON_TYPELLA_TYPICAL_FLIP_EXTEND_BACK_FUNCTION   \
     Omennivore::ExtendBack
 /******************************************************************************************************/
 
@@ -94,7 +94,7 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/descend/microbiota/typella/flip/flip.hpp"
+#include "conceptrodon/descend/microbiota/typella/typical_flip/typical_flip.hpp"
 /******************************************************************************************************/
 
  
@@ -118,14 +118,14 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_FLIP_FUNCTION_NAME
+#undef CONCEPTRODON_TYPELLA_TYPICAL_FLIP_FUNCTION_NAME
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_FLIP_EXTEND_BACK_FUNCTION
+#undef CONCEPTRODON_TYPELLA_TYPICAL_FLIP_EXTEND_BACK_FUNCTION
 /******************************************************************************************************/
 
 

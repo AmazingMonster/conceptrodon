@@ -22,17 +22,14 @@ struct Amid
     { using Label<Elements, I>::idyl...; };
 
     template<size_t I>
-    struct ProtoPage
+    struct Hidden
     {
         using type = decltype
         (Detail<std::make_index_sequence<sizeof...(Elements)>>::idyl(std::integral_constant<size_t, I>{}));
     };
 
     template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto...Args>
-    using Page_t = ProtoPage<Args...>::type;
+    using Page = Hidden<Agreements...>::type;
 
     template<size_t I>
     using UniPage = decltype

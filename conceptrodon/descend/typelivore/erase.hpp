@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TYPELIVORE_ERASE_H
 
 #include "conceptrodon/descend/microbiota/typella/expunge.hpp"
+#include "conceptrodon/descend/microbiota/typella/ditch.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -12,9 +13,30 @@ namespace Typelivore {
 template<typename...Elements>
 struct Erase
 {
+    template<auto...>
+    struct ProtoPage {};
+
+    template<size_t Index>
+    struct ProtoPage<Index>
+    {
+        template<template<typename...> class...Agreements>
+        using Road = decltype
+        (
+            Typella::Ditch<std::make_index_sequence<Index>>
+            ::template lark<Agreements..., Elements...>()
+        );
+
+        template<template<typename...> class Operation=Capsule>
+        using UniRoad = decltype
+        (
+            Typella::Ditch<std::make_index_sequence<Index>>
+            ::template lark<Operation, Elements...>()
+        );
+    };
+
     template<size_t Start, size_t End>
     requires (Start <= End)
-    struct ProtoPage
+    struct ProtoPage<Start, End>
     {
         template<template<typename...> class...Agreements>
         using Road = decltype

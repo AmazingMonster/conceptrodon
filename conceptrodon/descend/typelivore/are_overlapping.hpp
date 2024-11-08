@@ -11,7 +11,8 @@ namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename...InspectedElements>
-struct AreOverlapping: public std::type_identity<InspectedElements>...
+struct AreOverlapping
+: public std::type_identity<InspectedElements>...
 {
     struct Detail
     {
@@ -29,7 +30,7 @@ struct AreOverlapping: public std::type_identity<InspectedElements>...
             AreOverlapping<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
 
-        static constexpr bool value {not std::is_same_v<type, void>};
+        static constexpr bool value {std::is_same_v<type, void>};
     };
 
     template<typename InspectingElement>
@@ -42,7 +43,7 @@ struct AreOverlapping: public std::type_identity<InspectedElements>...
             Capsule<InspectedElements..., InspectingElement>
         >::type;
         
-        static constexpr bool value {not std::is_same_v<type, void>};
+        static constexpr bool value {std::is_same_v<type, void>};
     };
 
     template<typename...Elements>
@@ -53,7 +54,7 @@ struct AreOverlapping: public std::type_identity<InspectedElements>...
     
     template<typename...Elements>
     static constexpr bool Mold_v 
-    {not std::is_same_v<typename ProtoMold<Elements...>::type, void>};;
+    {std::is_same_v<typename ProtoMold<Elements...>::type, void>};;
 
 };
 
@@ -66,7 +67,7 @@ struct AreOverlapping<>
         using type = AreOverlapping<InspectingElement>::template ProtoMold<RestElements...>
         ::type;
 
-        static constexpr bool value {not std::is_same_v<type, void>};
+        static constexpr bool value {std::is_same_v<type, void>};
     };
 
     template<typename...Elements>
@@ -77,10 +78,8 @@ struct AreOverlapping<>
     
     template<typename...Elements>
     static constexpr bool Mold_v 
-    {not std::is_same_v<typename ProtoMold<Elements...>::type, void>};;
+    {std::is_same_v<typename ProtoMold<Elements...>::type, void>};;
 };
-
-
 
 }}
 

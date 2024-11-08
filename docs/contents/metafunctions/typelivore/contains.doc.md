@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Contains` accepts a variable number of elements and returns a predicate that checks if the argument is in the previously provided arguments.
+`Typelivore::Contains` accepts a list of elements and returns a predicate that checks if the argument is in the previously provided arguments.
 <pre><code>   Arguments...
 -> Element
 -> Element &in; Arguments... ?
@@ -35,7 +35,7 @@ struct Contains
 
 ## Example
 
-We will check whether `int*` or `void`  is inside `int`, `int*`, `int**`, `int**`.
+We will check whether `int*` or `void`  is inside `int, int*, int**, int**`.
 
 ```C++
 template<typename...Args>

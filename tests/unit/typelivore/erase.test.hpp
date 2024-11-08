@@ -111,6 +111,76 @@ SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Road<TesterC>);
 
 
 
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+template<size_t I>
+using EraseIndex = Erase<SHEEP_SPROUT(240)>::Page<I>::template Road<std::tuple>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResultD = std::tuple<SHEEP_SPROUT(239, +1)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResultD
+    
+SAME_TYPE(EraseIndex<0>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResultE = std::tuple<SHEEP_SPROUT(40), SHEEP_SPROUT(199, +41)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResultE
+    
+SAME_TYPE(EraseIndex<40>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResultF = std::tuple<SHEEP_SPROUT(239)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResultF
+    
+SAME_TYPE(EraseIndex<239>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
 
 }}}}
 

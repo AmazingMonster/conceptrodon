@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_STOCKIVORE_TYPICAL_PASTE_H
 
 #include <concepts>
-#include "conceptrodon/stockivore/typical_paste.hpp"
+#include "conceptrodon/stockivore/paste.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Plume` accepts a list of elements and a list of containers.
-Elements will be placed into containers via a process similar to pack expansion.
-Then, the packed containers will be collected to invoke an operation.
+`Typelivore::Plume` accepts a list of elements.
+Its first layer accepts a list of containers and returns a function such that when invoked, elements will be placed into containers via a process similar to pack expansion;
+then, the packed containers will be collected to invoke an operation.
 Check out **Example** for more information.
 <pre><code>   Element
 -> ...Container<sub><i>i</i></sub>...

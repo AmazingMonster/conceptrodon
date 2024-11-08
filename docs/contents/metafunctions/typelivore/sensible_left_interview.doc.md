@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::SensibleLeftInterview` accepts a list of elements and a variable number of predicates and produces a function.
-When invoked, the function first binds the second list to the front of every predicate.
-Then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if the element is not found.
+`Typelivore::SensibleLeftInterview` accepts a list of elements.
+Its first layer accepts a list of predicates and returns a function such that when invoked, the function first binds the arguments to the front of every predicate;
+then, it returns the index of the first element that satisfies all newly formed predicates or `-1` if the element is not found.
 <pre><code>   Arguments...
 -> Predicates...
 -> LeftSides

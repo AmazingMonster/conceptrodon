@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_WAREHIVORE_TYPICAL_PASTE_H
 
 #include <concepts>
-#include "conceptrodon/warehivore/typical_paste.hpp"
+#include "conceptrodon/warehivore/paste.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

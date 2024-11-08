@@ -44,8 +44,8 @@ using SupposedResult = Capsule<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedResult
 
-SAME_TYPE(Duplicate<int>::Page<240>::UniRoad<>);
-SAME_TYPE(Duplicate<int>::Page<240>::Road<>);
+SAME_TYPE(Duplicate<int>::Page<240>::UniRoad<Capsule>);
+SAME_TYPE(Duplicate<int>::Page<240>::Road<Capsule>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

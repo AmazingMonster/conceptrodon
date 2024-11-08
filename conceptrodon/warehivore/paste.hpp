@@ -9,6 +9,8 @@
 namespace Conceptrodon {
 namespace Warehivore {
 
+using Waretus::TypicalPaste;
+
 template<typename...Packs>
 using Paste = Waretus::TypicalPaste<Packs...>::type;
 

@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Warehivore::Repack` concatenates a variable number of packed warehouses. The result will be used to invoke an operation.
+`Warehivore::Repack` concatenates a list of packed warehouses. The result will be used to invoke an operation.
 <pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>

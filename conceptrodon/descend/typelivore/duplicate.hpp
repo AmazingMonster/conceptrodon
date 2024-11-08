@@ -4,11 +4,16 @@
 #ifndef CONCEPTRODON_TYPELIVORE_DUPLICATE_H
 #define CONCEPTRODON_TYPELIVORE_DUPLICATE_H
 
-#include "conceptrodon/label.hpp"
-#include "conceptrodon/capsule.hpp"
 #include <utility>
 
 namespace Conceptrodon {
+namespace Typella {
+
+template<typename Element, auto>
+using Bundle = Element;
+
+}
+
 namespace Typelivore {
 
 template<typename Element>
@@ -19,23 +24,20 @@ struct Duplicate
 
     template<size_t...I>
     struct ProtoMold<std::index_sequence<I...>>
-    : public Label<Element, I>...
     {
-        using Label<Element, I>::idyl...;
-        
-        template<template<typename...> class Operation=Capsule>
+        template<template<typename...> class Operation>
         struct Detail
         {
             using type = Operation
-            <decltype(idyl(std::integral_constant<size_t, I>{}))...>;
+            <Typella::Bundle<Element, I>...>;
         };
 
         template<template<typename...> class...Agreements>
         using Road = Detail<Agreements...>::type;
 
-        template<template<typename...> class Operation=Capsule>
+        template<template<typename...> class Operation>
         using UniRoad = Operation
-        <decltype(idyl(std::integral_constant<size_t, I>{}))...>;
+        <Typella::Bundle<Element, I>...>;
     };
 
     template<typename...Agreements>

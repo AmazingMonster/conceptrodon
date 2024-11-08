@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::LeftInterview` accepts two lists of elements and produces a function.
-When provided with predicates, the function first binds the second list to the front of every predicate.
-Then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if the element is not found.
+`Typelivore::LeftInterview` accepts a list of elements.
+Its first layer accepts another list of elements and produces a function such that when invoked with predicates, the function first binds the second list to the front of every predicate;
+then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if the element is not found.
 <pre><code>   Arguments...
 -> LeftSides
 -> Predicates...

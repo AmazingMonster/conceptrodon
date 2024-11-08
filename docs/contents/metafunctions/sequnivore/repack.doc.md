@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Sequnivore::Repack` concatenates a variables number of packed sequences. The result will be used to invoke an operation.
+`Sequnivore::Repack` concatenates a list of packed sequences. The result will be used to invoke an operation.
 <pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>

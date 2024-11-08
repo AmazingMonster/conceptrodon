@@ -26,16 +26,21 @@ template<typename...>
 struct SetContains
 {
     template<typename...>
-    alias Mold = RESULT;
+    alias Mold
+    {
+        static constexpr bool value
+        {RESULT};
+    };
 
     template<typename>
-    static constexpr bool Mold_v = RESULT;
+    static constexpr bool Mold_v
+    {RESULT};
 };
 ```
 
 ## Example
 
-We will check whether `int*` or `void`  is inside `int`, `int*`, `int**`.
+We will check whether `int*` or `void`  is inside `int, int*, int**`.
 
 ```C++
 template<typename...Args>
@@ -49,7 +54,7 @@ static_assert(! Metafunction<void>::value);
 ## Implementation
 
 The idea is that we create a class that inherits every element we would like to check against.
-Then, when the user provides an argument, we use `std::is_base_of` to inspect whether the argument is a base of our class, subsequently determining whether the argument is one of the elements we had early on.
+Then, when the user provides an argument, we use `std::is_base_of` to inspect whether the argument is a base of our class, subsequently determining whether the argument is one of the elements our class inherited early on.
 
 This idea is also presented in `mp_set_contains<S, V>`.
 

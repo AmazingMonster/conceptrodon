@@ -9,6 +9,8 @@
 namespace Conceptrodon {
 namespace Stockivore {
 
+using Stockii::TypicalPaste;
+
 template<typename...Packs>
 using Paste = Stockii::TypicalPaste<Packs...>::type;
 

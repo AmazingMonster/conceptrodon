@@ -5,8 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Cotanivore::TypicalPaste` concatenates a variable number of packed containers. The first container will be used to hold the result. The result will be returned via the type alias member `type`.
-<pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;... 
+`Cotanivore::TypicalPaste` concatenates a list of packed containers. The first container will be used to hold the result. The result will be returned via the type alias member `type`.
+<pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
 -> Container<sub><i>0</i></sub>&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>
 
 ## Type Signature
@@ -85,5 +85,5 @@ struct TypicalPaste<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others..
 
 ## Links
 
-- [source code](../../../../conceptrodon/cotanivore/typical_paste.hpp)
+- [source code](../../../../conceptrodon/cotanivore/paste.hpp)
 - [unit test](../../../../tests/unit/cotanivore/typical_paste.test.hpp)

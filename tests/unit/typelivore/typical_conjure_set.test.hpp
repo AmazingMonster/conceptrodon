@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_CONJURE_SET_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_CONJURE_SET_H
 
 #include <concepts>
 #include "conceptrodon/descend/typelivore/conjure_set.hpp"
@@ -23,7 +23,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestConjureSet {
+namespace TestTypicalConjureSet {
 
 
 
@@ -66,7 +66,7 @@ SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integ
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(ConjureSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
+SAME_TYPE(TypicalConjureSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::type);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

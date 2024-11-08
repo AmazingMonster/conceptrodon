@@ -22,8 +22,12 @@ namespace Typelivore {
 namespace UnitTests {
 namespace TestAmidst {
 
-
-
+// In this test,
+// we will collect every element of list
+//  std::integral_constant<0>,
+//  ...,
+//  std::integral_constant<239>
+// using their indices and collect the result in Capsule.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"

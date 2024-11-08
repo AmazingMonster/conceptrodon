@@ -4,12 +4,15 @@
 #ifndef CONCEPTRODON_TYPELIVORE_FLIP_H
 #define CONCEPTRODON_TYPELIVORE_FLIP_H
 
-#include "conceptrodon/descend/microbiota/typella/flip.hpp"
+#include "conceptrodon/descend/microbiota/typella/typical_flip.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
-using Typella::Flip;
+using Typella::TypicalFlip;
+
+template<typename...Elements>
+using Flip = Typella::TypicalFlip<Elements...>::type;
 
 }}
 
