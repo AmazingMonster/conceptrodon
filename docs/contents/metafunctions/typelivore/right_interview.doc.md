@@ -59,9 +59,9 @@ static_assert
 
 ## Implementation
 
-Each specialization of `Typelivore::RightInterview` checks several arguments in the front of the argument list.
+Each specialization of `Typelivore::RightInterview` checks several parameters from the front of the parameter list.
 If a match is found, the index of the matching element is returned.
-Otherwise, the function drops checked arguments and calls itself with the rest.
+Otherwise, the function drops checked parameters and calls itself with the rest.
 
 Here's a simplified version of it:
 

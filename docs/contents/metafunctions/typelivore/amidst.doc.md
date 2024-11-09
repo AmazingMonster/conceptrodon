@@ -42,12 +42,12 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We want to count elements one by one up to the desired number.
+We want to count elements one by one up to the desired index.
 We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the elements to enumerate.
 
 We will use variadic functions for this purpose.
 There are two ways to achieve it.
-First, we can use `void*` to declare unwanted arguments in the function signature to reach the desired element.
+First, we can use `void*` to declare unwanted parameters in the function signature to reach the desired element.
 
 ```C++
 template<auto>
@@ -59,12 +59,13 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
+    // We use `VoidPointer<I>...` to enumerate unwanted arguments.
     static constexpr auto idyl(VoidPointer<I>..., auto* target, auto*...)
     { return target; }
 };
 ```
 
-Second, we can use concepts from C++20 to constrain the type of unwanted arguments in the function signature to reach the desired element.
+Second, we can use concepts from C++20 to constrain the type of unwanted parameters in the function signature to reach the desired element.
 
 ```C++
 template<typename, auto>
@@ -76,10 +77,34 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    static constexpr auto idyl(Prefix<I> auto* ..., auto* target, auto*...)
+    // We use `Prefix<I> auto*...` to enumerate unwanted arguments.
+    static constexpr auto idyl(Prefix<I> auto*..., auto* target, auto*...)
     { return target; }
 };
 ```
+
+`Prefix<I> auto*` constrains the placeholder type `auto`. Assuming the deduced type is `T`, then `Prefix<I> auto*` becomes `T*`, and `Prefix<T, I>` is evaluated to determine the legitimacy of the instantiation.
+
+Note that `Prefix<I>` constrains `auto` instead of `auto*`.
+
+```C++
+template<typename Type, auto>
+concept IsPointer = std::is_pointer_v<Type>;
+
+consteval bool checker(IsPointer<0> auto)
+{ return false; }
+
+consteval bool checker(IsPointer<0> auto*)
+{ return true; }
+
+constexpr void* pointer = 0;
+constexpr void** pointer_pointer = 0;
+
+static_assert(! checker(pointer));
+static_assert(checker(pointer_pointer));
+```
+
+[*Check out this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwDMpK4AMngMmAByPgBGmMT%2BpAAOqAqETgwe3r7%2BQSlpjgJhEdEscQlmtpj2hQxCBEzEBFk%2BfoFVNRn1jQTFUbHxiQoNTS057cM9faXl/gCUtqhexMjsHOYB4cjeWADUJgFuXo60hACeB9gmGgCCG1s7mPuHBGdJmAD6BMRMhAqX1zutwImBYSQMIIOble72YbF2ABU3phSLsmMdUADbmgGKskgRdgBJBTKVDhEHEZ4AEV2w3QIBAeAUHxS5PiHwAblCke8AQErLdATjhpgOWJdjFUJ5dsgEJhkABreIQYmktnEKEaS5ojFzQEmADsFl2xEwBGWDF2VDESgOxsNVP12IEIrFtAlUvdsvlSuIKpJZME8U12vRRAAVHrBUaTWaLbtvl5MHb9gbHYLnQwRaokpSOWT0OHdqyg5SDjStfyhS6QTm8wXw0WSxSWYGKdTdpWBUCbpNHMgPkwFEomhAwGAZXLFcrm/E5nqq7c%2B3gB0ORwQIN7p37Z8RW%2Br53aOAtaJwAKy8PwcLSkVCcNzWay0pYrJ4bHikAiaY8LBUgM%2BSAAdBokhcAaAQaGeGhmAAbDBZgABwIfonCSLwLASBoGikFeN53hwvAKCA2Fftex6kHAsAwIgIBLAQSTHOQlBoGCdDxJErBrKoCEwQAtDBki7MAyDILsUiAWYvCYPgRDEHg9JcDIggiGI7BSEp8hKGo36kLoikAO4/EknA8Ce56Xjp%2BEAPLHAxBKoFQuzcXxAlCSJYlAWYuwQB4rH0GWgRcHMvCkVoCwQEgLFJGxZAUJuqB%2BYMwBSJUNC0BSREQDEOkxOEjRnCZvC5cwxBnFZMTaPKpEfixbCCFZDC0AVZGkFgMReMAbhiLQRHcLwWAsIYwDiC1%2BCmg4eAcpgvU3pgqjyscawfmyp4tacMQ/KVHhYDp3x4BhfWkFNxCSkoVKgkNpxGN%2BCxUAYwAKAAangmD6VZsKFRpKniOp/CCIoKjqC1en6ENKCPpY%2Bh4DERGQAsqD4hkvW8XS5amJY1hmHhx1yVgsMQAsdhVRkLgMO4nitHooThP0ZSDIp%2BTpAIYx%2BAzqRMww0wDAkilExNAjdKMFM5Lz1TEwLIy9DTMz07Ykss3okxNFzdM84TL6rBIZkcBeOGWZwTk8fxgnCaJ4leRAuCECQ%2ByBcFn43QscpMFgCQE6Qf6SAEgEAJwBAakggWYkgwVhZ4wT7KEcGhpAYQEXCATBXAwQhPsIcnAFcGefswXrLX4YRxEO2R4XURFtG2YxcVRTFHFsJwjQsByBq8UwMoGEYYk%2B4BCezTJJDyXof3CKIP3SMPAPacDiSGUwxl9druu4bw1mV/ZjmN83rft0NXc98B3m%2BdF/m2wEZj26F5HlzX/lMfFiUJJvLfbENXA%2B1w2FpRllDZS1xX5Z9f%2BpVyqVQcJ9WqjACANSajpNqHUuq0B6p9Aal01g3jGsTKaM0pLzWQItT6K0dLrU2mcbaaCQpyQOh%2BY6p1MDnUGkYK6oAS58Huk9F6b0PqHWHt9NS49ZCTyBjeXQlQO7GAhjYda%2BN4aIxdJwFGBB0BowkVjFeON5LTXgITMW/M/AQFcArRS1MSjcz0IzWohjkjs1qCrWYotOgSx6JYvmtRBZSxMarRW8thaszllMaWpigqLGWJrIJq0l76w4GiYgTcW5txfp3N%2B%2B8NDeStrJU%2BQUQqO1IM7V2lBtYxzjt3ECBps4GnApIYOAlFLL1vJwQuJEboUTLkgOidk7433YpxBuMTXIsAUByUSHIkkQmmgQKS/dcZD1kLwiQ/D/paSEToEAQRZ7z1MlHCJ%2BdOA2XoscXYDloksD6QMoZIymAgmGIfBKx94inwCBfJp18bkxQ6S8/yIBBlJCSJyN%2BHxRnDEHL08edBv5ZRynlUqgDIVlQqlVcBCU6pQMas1dBmB2qdW6r1D8KDGHkNangcajgsE6TmgtEEBCgyrRvMQ/KZDdqUM%2BjQ1IdCLqMPCMwsKrCmAPWeq9d6jBPo8NHnwjSgidK6CCGI8GGNIZSK0beWRWZOAAHo6QyqsJYVRt51F4wVS4km%2BiyaWOMbTOxViCgZEseYjItjZYGscULbIviHV1ElnanmfinWU15u6gJnigkKA1mpReFltlRMbicwZuxhndwBQSS2kyMmPJLk7TALtBju1WoU/w3cAgBDPFBUCWF80GhTnnPC9TbBF0vvOD2IBJBnl9meBCsEfaSB9uBf2XApWcACGGytBFi5hW1pJCtK8q21oWMdNIzhJBAA%3D)
 
 Now, we make a class that generates the `std::index_sequence` and translates the result to a type.
 
@@ -118,7 +143,7 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    template<Prefix<I>..., typename Target, typename...>
+    template<Prefix<I>...Nah, typename Target, typename...>
     static constexpr auto idyl() -> Target;
 
     template<typename...Elements>
@@ -129,6 +154,9 @@ struct Midst<std::index_sequence<I...>>
     using Mold = Detail<Elements...>::type;
 };
 ```
+
+`Prefix<I>...Nah` tells compilers that this function template is only allowed when `Nah` satisfies `Prefix<Nah, I>...`
+In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 
 We will write an `Amidst` compatible with this version of `Midst`, which is also the one this library uses:
 

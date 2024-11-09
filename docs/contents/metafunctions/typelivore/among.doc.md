@@ -39,7 +39,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Typelivore::Among` first reduces the requested index by removing elements in the front of the list via recursion.
+`Typelivore::Among` first reduces the requested index by removing elements from the front of the list via recursion.
 When the index reaches one of the base cases, the function returns the element at the index directly.
 
 A simplified version will be as follows:

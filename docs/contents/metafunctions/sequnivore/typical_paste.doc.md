@@ -48,8 +48,8 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Sequnivore::TypicalPaste` first reduces the number of arguments via recursion.
-When the number of arguments reaches one of the base cases, the function utilizes partial template specialization to extract variables from packed sequences and place them into the first sequence.
+`Sequnivore::TypicalPaste` first reduces the number of parameters via recursion.
+When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract variables from packed sequences and place them into the first sequence.
 
 A simplified version will be as follows:
 

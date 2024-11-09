@@ -72,7 +72,7 @@ static consteval auto idyl() -> std::conditional_t
 ```
 
 `concept Prefix` is a technique explained in `Typelivore::Amidst`.
-Namely, we use `Prefix` pack expansion to enumerate arguments.
+Namely, we use `Prefix` pack expansion to enumerate parameters.
 In `std::conditional_t,` we check if `Inspecting` has appeared in `FrontElements...`.
 If so, an empty `Capsule` is returned.
 Otherwise, `idyl` returns a `Capsule` containing `Inspecting.`

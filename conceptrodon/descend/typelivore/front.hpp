@@ -17,11 +17,10 @@ struct Front
     {
         template<template<typename...> class...Agreements>
         using Road = decltype
-        (Typella::Fore<std::make_index_sequence<Amount>>::template lark<Agreements..., Elements...>());
-
-        template<template<typename...> class Operation=Capsule>
-        using UniRoad = decltype
-        (Typella::Fore<std::make_index_sequence<Amount>>::template lark<Operation, Elements...>());
+        (
+            Typella::Fore<std::make_index_sequence<Amount>>
+            ::template idyl<Agreements..., Elements...>()
+        );
     };
 
     template<auto...Agreements>

@@ -16,8 +16,8 @@ When provided with predicates, the function returns the index of the first eleme
 
 ```Haskell
 Find ::   typename...
-          -> template<typename...> class...
-          -> auto
+       -> template<typename...> class...
+       -> auto
 ```
 
 ## Structure
@@ -58,9 +58,9 @@ static_assert(Metafunction<IsVoid>::value == -1);
 
 ## Implementation
 
-Each specialization of `Typelivore::Find` checks several arguments in the front of the argument list.
+Each specialization of `Typelivore::Find` checks several parameters from the front of the parameter list.
 If a match is found, the index of the match is returned.
-Otherwise, the function drops checked arguments and calls itself with the rest.
+Otherwise, the function drops checked parameters and calls itself with the rest.
 
 Here's a simplified version of it:
 

@@ -20,14 +20,7 @@ struct Slice
         using Road = decltype
         (
             Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Agreements..., Elements...>()
-        );
-
-        template<template<typename...> class Operation=Capsule>
-        using UniRoad = decltype
-        (
-            Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Elements...>()
+            ::template idyl<Agreements..., Elements...>()
         );
     };
 

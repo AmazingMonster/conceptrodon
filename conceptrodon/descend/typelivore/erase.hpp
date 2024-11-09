@@ -23,14 +23,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Ditch<std::make_index_sequence<Index>>
-            ::template lark<Agreements..., Elements...>()
-        );
-
-        template<template<typename...> class Operation=Capsule>
-        using UniRoad = decltype
-        (
-            Typella::Ditch<std::make_index_sequence<Index>>
-            ::template lark<Operation, Elements...>()
+            ::template idyl<Agreements..., Elements...>()
         );
     };
 
@@ -42,14 +35,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Agreements..., Elements...>()
-        );
-
-        template<template<typename...> class Operation=Capsule>
-        using UniRoad = decltype
-        (
-            Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Elements...>()
+            ::template idyl<Agreements..., Elements...>()
         );
     };
 

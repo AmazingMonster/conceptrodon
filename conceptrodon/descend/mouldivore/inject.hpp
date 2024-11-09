@@ -9,7 +9,7 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Operation=Capsule>
+template<template<typename...> class Operation>
 struct Inject
 {
     template<size_t Index>
@@ -23,7 +23,7 @@ struct Inject
             (
                 Typella::Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template lark<Operation, Elements...>()
+                ::template idyl<Operation, Elements...>()
             );
         };
 

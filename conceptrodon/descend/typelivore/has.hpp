@@ -7,7 +7,6 @@
 #include "conceptrodon/label.hpp"
 #include <utility>
 
-
 namespace Conceptrodon {
 namespace Typelivore {
 
@@ -22,17 +21,17 @@ struct Has
 
         template<size_t...I, size_t...J>
         struct Detail<std::index_sequence<I...>, std::index_sequence<J...>>
-        : public Label<Elements, I>..., public Label<InspectingElements, sizeof...(Elements) + J>...
+        : public Label<Elements*, I>..., public Label<InspectingElements*, sizeof...(Elements) + J>...
         {
-            using Label<Elements, I>::lark...;
-            using Label<InspectingElements, sizeof...(Elements) + J>::lark...;
+            using Label<Elements*, I>::lark...;
+            using Label<InspectingElements*, sizeof...(Elements) + J>::lark...;
 
             template<typename, typename=void>
             struct Hidden
             { static constexpr bool value {true}; };
 
             template<typename Element>
-            struct Hidden<Element, std::void_t<decltype(lark(std::declval<Element>()))>>
+            struct Hidden<Element, std::void_t<decltype(lark(std::declval<Element*>()))>>
             { static constexpr bool value {false}; };
 
             static constexpr bool value {(...&&(Hidden<InspectingElements>::value))};

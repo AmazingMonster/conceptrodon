@@ -5,10 +5,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Contains` accepts a list of elements and returns a predicate that checks if the argument is in the previously provided arguments.
-<pre><code>   Arguments...
--> Element
--> Element &in; Arguments... ?
+`Typelivore::Contains` accepts a list of elements and returns a predicate that checks if its argument is in the previously provided elements.
+<pre><code>   Elements...
+-> Argument
+-> Argument &in; Elements... ?
    true : false</code></pre>
 
 ## Type Signature

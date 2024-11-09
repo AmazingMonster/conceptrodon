@@ -65,8 +65,8 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Stockivore::TypicalPaste` first reduces the number of arguments via recursion.
-When the number of arguments reaches one of the base cases, the function utilizes partial template specialization to extract sequences from packed stockrooms and place them into the first stockroom.
+`Stockivore::TypicalPaste` first reduces the number of parameters via recursion.
+When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract sequences from packed stockrooms and place them into the first stockroom.
 
 A simplified version will be as follows:
 

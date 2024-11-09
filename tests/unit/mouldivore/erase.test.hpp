@@ -35,7 +35,7 @@ using SupposedResultA = Capsule<SHEEP_SPROUT(40), SHEEP_SPROUT(140, +100)>;
     SupposedResultA
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Erase<>::Page<40, 100>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Erase<Capsule>::Page<40, 100>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 
 
@@ -47,7 +47,7 @@ SAME_TYPE(Erase<>::Page<40, 100>::Mold<SHEEP_SPROUT(240)>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-// SAME_TYPE(Erase<>::Page<400, 100>::Mold<SHEEP_SPROUT(240)>);
+// SAME_TYPE(Erase<Capsule>::Page<400, 100>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -68,7 +68,7 @@ using SupposedResultB = Capsule<SHEEP_SPROUT(240)>;
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Erase<>::Page<40, 40>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Erase<Capsule>::Page<40, 40>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 
 

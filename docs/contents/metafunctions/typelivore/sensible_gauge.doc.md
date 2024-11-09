@@ -123,7 +123,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Typelivore::SensibleGauge` separates cases according to the number of arguments.
+`Typelivore::SensibleGauge` separates cases according to the number of parameters.
 The goal is to mimic the behavior of pack expansion in C++:
 
 - If the user only provides one element, we pack the element in each container separately;

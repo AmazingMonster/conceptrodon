@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Raillivore::Conceal` accepts an operation and returns a metafunction such that when invoked by an argument list, the alias member `type` becomes the previously provided operation invoked by the argument list.
+`Raillivore::Conceal` accepts an operation and returns a metafunction such that when invoked, the alias member `type` becomes the previously provided operation invoked by the arguments.
 <pre><code>Operation -> Rail&lt;&ast;&gt;{type=Operation&lt;&ast;&gt;}</code></pre>
 
 ## Type Signature

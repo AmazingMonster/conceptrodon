@@ -88,10 +88,10 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Typelivore::FoldLeftFirst` relies on recursion to reduce the number of arguments.
+`Typelivore::FoldLeftFirst` relies on recursion to reduce the number of parameters.
 Each recursive case has two functionalities:
 
-1. left-fold several arguments;
+1. left-fold several parameters;
 2. use the result from 1 as an initiator and perform recursion to fold the rest.
 
 The function always ends in base cases, which fold the last couple of elements to produce a result.

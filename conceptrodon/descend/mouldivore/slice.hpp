@@ -9,7 +9,7 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Operation=Capsule>
+template<template<typename...> class Operation>
 struct Slice
 {
     template<size_t Start, size_t End>
@@ -20,7 +20,7 @@ struct Slice
         using Mold = decltype
         (
             Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Elements...>()
+            ::template idyl<Operation, Elements...>()
         );
     };
 

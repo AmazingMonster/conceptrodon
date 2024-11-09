@@ -34,7 +34,6 @@ using SupposedResultA = Capsule<SHEEP_SPROUT(40), SHEEP_SPROUT(100), SHEEP_SPROU
     SupposedResultA
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Mold<SHEEP_SPROUT(100)>::UniRoad<>);
 SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Mold<SHEEP_SPROUT(100)>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
@@ -67,7 +66,6 @@ using SupposedResultB = Tester<SHEEP_SPROUT(40), SHEEP_SPROUT(100), SHEEP_SPROUT
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Mold<SHEEP_SPROUT(100)>::UniRoad<Tester>);
 SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Mold<SHEEP_SPROUT(100)>::Road<Tester>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 

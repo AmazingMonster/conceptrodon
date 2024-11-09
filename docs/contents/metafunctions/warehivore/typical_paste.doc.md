@@ -65,8 +65,8 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Warehivore::TypicalPaste` first reduces the number of arguments via recursion.
-When the number of arguments reaches one of the base cases, the function utilizes partial template specialization to extract containers from packed warehouses and place them into the first warehouse.
+`Warehivore::TypicalPaste` first reduces the number of parameters via recursion.
+When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract containers from packed warehouses and place them into the first warehouse.
 
 A simplified version will be as follows:
 
