@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CONDITIONAL_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CONDITIONAL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_CONDITIONAL_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_CONDITIONAL_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/varybivore/conditional.hpp"
+#include "conceptrodon/varybivore/any_conditional.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -16,7 +16,7 @@
 namespace Conceptrodon {
 namespace Varybivore {
 namespace UnitTests {
-namespace TestConditional {
+namespace TestAnyConditional {
 
 
 
@@ -61,19 +61,32 @@ struct NonnegativeTester<I>: public std::true_type {};
 
 
 /******************************************************************************************************/
-INVALID(Conditional<1, 0>::Road<VoidTester, IntTester>::Mold<int>::value);
-INVALID(Conditional<1, 0>::Road<VoidTester, IntTester>::Mold<void>::value);
-INVALID(Conditional<1, 0>::Rail<PositiveTester, NonnegativeTester>::Page<0>::value);
+#define SUPPOSED_TYPE   \
+    std::false_type
+
+INVALID(AnyConditional<1, 0>::Road<VoidTester, IntTester>::Mold<int*>::value);
+INVALID(AnyConditional<1, 0>::Road<VoidTester, IntTester>::Mold<void*>::value);
+INVALID(AnyConditional<1, 0>::Rail<PositiveTester, NonnegativeTester>::Page<-1>::value);
+INVALID(AnyConditional<1, 0>::Road<>::Mold<VoidInt>::value);
+INVALID(AnyConditional<1, 0>::Rail<>::Page<1>::value);
+
+#undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-VALID(Conditional<1, 0>::Road<VoidTester, IntTester>::Mold<VoidInt>::value);
-VALID(Conditional<1, 0>::Rail<PositiveTester, NonnegativeTester>::Page<1>::value);
-VALID(Conditional<1, 0>::Road<>::Mold<VoidInt>::value);
-VALID(Conditional<1, 0>::Rail<>::Page<1>::value);
+#define SUPPOSED_TYPE   \
+    std::true_type
+
+VALID(AnyConditional<1, 0>::Road<VoidTester, IntTester>::Mold<VoidInt>::value);
+VALID(AnyConditional<1, 0>::Rail<PositiveTester, NonnegativeTester>::Page<1>::value);
+VALID(AnyConditional<1, 0>::Road<VoidTester, IntTester>::Mold<int>::value);
+VALID(AnyConditional<1, 0>::Road<VoidTester, IntTester>::Mold<void>::value);
+VALID(AnyConditional<1, 0>::Rail<PositiveTester, NonnegativeTester>::Page<0>::value);
+
+#undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
@@ -83,5 +96,6 @@ VALID(Conditional<1, 0>::Rail<>::Page<1>::value);
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"
 #include "macaron/judgmental/amenity/undef_invalid.hpp"
+
 
 #endif

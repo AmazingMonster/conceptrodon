@@ -58,9 +58,12 @@ static_assert(Metafunction<IsVoid>::value == -1);
 
 ## Implementation
 
-Each specialization of `Typelivore::Find` checks several parameters from the front of the parameter list.
-If a match is found, the index of the match is returned.
-Otherwise, the function drops checked parameters and calls itself with the rest.
+We will implement `Find` using recursion over the total number of parameters.
+
+- **Base Case:** Handle several amounts directly.
+- **Recursive Case:** Check several parameters at the front of the list.
+If a match is found, then its index is returned.
+Otherwise, drop the checked parameters and call itself with the rest.
 
 Here's a simplified version of it:
 

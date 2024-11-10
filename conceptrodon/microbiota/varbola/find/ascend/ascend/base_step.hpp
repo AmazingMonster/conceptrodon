@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -58,9 +58,9 @@
 {
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_PREFIX_SYMBOLS  \
-    if constexpr ( CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER <
+    if constexpr ( (...&& CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER <
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_MIDDLE_SYMBOLS  \
-    > :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ) \
+    > :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ) ) \
     { return
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_SUFFIX_SYMBOLS  \
     ; }

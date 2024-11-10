@@ -44,9 +44,13 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-We will implement `TypicalFlip` using recursion.
-During recursive steps, we will directly flip the first several elements from the list and call `TypicalFlip` to flip the rest.
-Then, we switch the position of these two flipped parts.
+We will implement `TypicalFlip` using recursion over the total number of parameters.
+
+- **Base Case:** Handle several amounts directly.
+- **Recursive Case:**
+  1. Flip the several elements from the front of the list;
+  2. Invoke `TypicalFlip` by the rest to flip them over;
+  3. Switch the positions of these two flipped parts and concatenate them together.
 
 Here's a simplified version of the implementation:
 

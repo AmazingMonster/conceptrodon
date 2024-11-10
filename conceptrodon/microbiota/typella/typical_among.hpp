@@ -2,19 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_AMONG_H
-#define CONCEPTRODON_TYPELLA_AMONG_H
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
-#error "CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_helpers/detail.hpp"
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_AMONG_H
+#define CONCEPTRODON_TYPELLA_TYPICAL_AMONG_H
 /******************************************************************************************************/
 
 
@@ -54,6 +43,17 @@
 
 
 /******************************************************************************************************/
+#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE
+#error "CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE has already been defined"
+#endif
+
+#include "conceptrodon/microbiota/nucleolus/define_alias_templates/page.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
 #error "CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY has already been defined"
 #endif
@@ -70,12 +70,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_AMONG_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_AMONG_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_AMONG_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_TYPICAL_AMONG_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_AMONG_FUNCTION_NAME   \
-    Among
+#define CONCEPTRODON_TYPELLA_TYPICAL_AMONG_FUNCTION_NAME   \
+    TypicalAmong
 /******************************************************************************************************/
 
 
@@ -90,7 +90,7 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/typella/among/among.hpp"
+#include "conceptrodon/microbiota/typella/typical_among/typical_among.hpp"
 /******************************************************************************************************/
 
 
@@ -104,9 +104,10 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/page.hpp"
 /******************************************************************************************************/
@@ -115,7 +116,7 @@ namespace Typella {
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_AMONG_FUNCTION_NAME
+#undef CONCEPTRODON_TYPELLA_TYPICAL_AMONG_FUNCTION_NAME
 /******************************************************************************************************/
 
 

@@ -44,8 +44,12 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Cotanivore::TypicalPaste` first reduces the number of parameters via recursion.
-When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract elements from packed containers and place them into the first container.
+We will implement `TypicalPaste` using recursion over the total number of packed containers.
+
+- **Base Case:** Handle several amounts directly;
+- **Recursive Case:**
+  1. Concatenate several packed containers from the front directly and place the result into the first container;
+  2. Invoke `TypicalPaste` with the newly packed first container and the unhandled containers.
 
 A simplified version will be as follows:
 
@@ -53,7 +57,7 @@ A simplified version will be as follows:
 template<typename...>
 struct TypicalPaste {};
 
-// Base Step:
+// Base Case:
 
 template<typename PackedContainer>
 struct TypicalPaste<PackedContainer>
@@ -61,7 +65,7 @@ struct TypicalPaste<PackedContainer>
     using type = PackedContainer;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

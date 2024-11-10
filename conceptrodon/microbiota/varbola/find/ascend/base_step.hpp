@@ -41,12 +41,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER   \
-    Predicate
+#define CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER   \
+    Predicates
 /******************************************************************************************************/
 
 
@@ -94,7 +94,7 @@ struct CONCEPTRODON_VARBOLA_FIND_FUNCTION_NAME
     template
     <
         CONCEPTRODON_NUCLEOLUS_RAIL_PARAMETER_CATEGORY
-        CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER
+        ... CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
     >
     struct CONCEPTRODON_NUCLEOLUS_RAIL_PROTO_TEMPLATE
     {
@@ -115,7 +115,7 @@ struct CONCEPTRODON_VARBOLA_FIND_FUNCTION_NAME
     template
     <
         CONCEPTRODON_NUCLEOLUS_RAIL_PARAMETER_CATEGORY
-        CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER
+        ... CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
     >
     static constexpr auto CONCEPTRODON_NUCLEOLUS_RAIL_VARIABLE_TEMPLATE
     {
@@ -128,5 +128,5 @@ struct CONCEPTRODON_VARBOLA_FIND_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_FIND_PREDICATE_IDENTIFIER
+#undef CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
 /******************************************************************************************************/

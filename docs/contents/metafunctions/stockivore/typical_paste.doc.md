@@ -65,8 +65,12 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Stockivore::TypicalPaste` first reduces the number of parameters via recursion.
-When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract sequences from packed stockrooms and place them into the first stockroom.
+We will implement `TypicalPaste` using recursion over the total number of packed stockrooms.
+
+- **Base Case:** Handle several amounts directly;
+- **Recursive Case:**
+  1. Concatenate several packed stockrooms from the front directly and place the result into the first stockroom;
+  2. Invoke `TypicalPaste` with the newly packed first stockroom and the unhandled stockrooms.
 
 A simplified version will be as follows:
 
@@ -74,7 +78,7 @@ A simplified version will be as follows:
 template<typename...>
 struct TypicalPaste {};
 
-// Base Step:
+// Base Case:
 
 template<typename PackedStockroom>
 struct TypicalPaste<PackedStockroom>
@@ -82,7 +86,7 @@ struct TypicalPaste<PackedStockroom>
     using type = PackedStockroom;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

@@ -84,9 +84,9 @@ Since inheriting the same type multiple times is illegal in C++, elements in the
 
 We will implement `AreOverlapping` using recursion over the second list:
 
-**Base step:** When only one element exists, the function returns true if it is in the first list and false otherwise.
+- **Base Case:** When only one element exists, the function returns true if it is in the first list and false otherwise.
 
-**Recursive step:** Pop the first element from the list. The function returns true if the element is in the first list. Otherwise, we append the element to the first list and pass the result back to the function for recursion.
+- **Recursive Case:** Pop the first element from the list. The function returns true if the element is in the first list. Otherwise, we append the element to the first list and pass the result back to the function for recursion.
 
 Here's the entire implementation:
 
@@ -105,7 +105,7 @@ struct AreOverlapping
         { using type = void; };
     };
 
-// Recursive Step:
+// Recursive Case:
     template<typename InspectingElement, typename...RestElements>
     struct ProtoMold
     {
@@ -120,7 +120,7 @@ struct AreOverlapping
         static constexpr bool value {std::is_same_v<type, void>};
     };
 
-// Base Step:
+// Base Case:
     template<typename InspectingElement>
     struct ProtoMold<InspectingElement>
     {

@@ -70,15 +70,14 @@ It becomes a standalone function since its functionality is intuitive enough tha
 In general, `TypicalDiversity` is a simplified version of `Typelivore::AreOverlapping` as we won't worry about short-circuit here.
 We will implement `TypicalDiversity` using recursion over the second list, which is accepted by the first layer:
 
-- **Base step**: When only one element exists, the result is:
+- **Base Case**: When only one element exists, the result is:
 
-  - The first list if the element is already in the first list
-  - or the list made by appending the element to the end of the first list if it is not in the first list.
+  1. The first list if the element is already in the first list
+  2. or the list made by appending the element to the end of the first list if it is not in the first list.
+- **Recursive Case**: Pop the first element from the second list. We invoke `TypicalDiversity` with:
 
-- **Recursive step**: Pop the first element from the second list. We invoke `TypicalDiversity` with:
-
-  - The first list if the element is already in the first list
-  - Or the list made by appending the element to the end of the first list if it is not in the first list.
+  1. The first list if the element is already in the first list
+  2. Or the list made by appending the element to the end of the first list if it is not in the first list.
   
   Then, we invoke the first layer of `TypicalDiversity` with the rest of the elements from the second list.
 

@@ -48,8 +48,12 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Sequnivore::TypicalPaste` first reduces the number of parameters via recursion.
-When the number of parameters reaches one of the base cases, the function utilizes partial template specialization to extract variables from packed sequences and place them into the first sequence.
+We will implement `TypicalPaste` using recursion over the total number of packed sequences.
+
+- **Base Case:** Handle several amounts directly;
+- **Recursive Case:**
+  1. Concatenate several packed sequences from the front directly and place the result into the first sequence;
+  2. Invoke `TypicalPaste` with the newly packed first sequence and the unhandled sequences.
 
 A simplified version will be as follows:
 
@@ -57,7 +61,7 @@ A simplified version will be as follows:
 template<typename...>
 struct TypicalPaste {};
 
-// Base Step:
+// Base Case:
 
 template<typename PackedSequence>
 struct TypicalPaste<PackedSequence>
@@ -65,7 +69,7 @@ struct TypicalPaste<PackedSequence>
     using type = PackedSequence;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

@@ -72,7 +72,7 @@ struct Shuttle;
 template<typename...>
 struct Repack {};
 
-// Base Step:
+// Base Case:
 
 template<template<auto...> class Sequence, auto...Variables>
 struct Repack<Sequence<Variables...>>
@@ -88,7 +88,7 @@ struct Repack<Sequence<Type, Variables...>>
     using UniRoad = Operation<static_cast<std::size_t>(Variables)...>;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

@@ -85,7 +85,7 @@ struct Reverie;
 template<typename...>
 struct Repack {};
 
-// Base Step:
+// Base Case:
 
 template<template<template<typename...> class...> class Warehouse, template<typename...> class...Containers>
 struct Repack<Warehouse<Containers...>>
@@ -94,7 +94,7 @@ struct Repack<Warehouse<Containers...>>
     using UniFlow = Operation<Containers...>;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

@@ -63,12 +63,12 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 We will implement `TypicalReiterate` using recursion over the times of iterations.
 
-- **Base Step:** Handles several numbers of times directly.
-- **Recursive Step:**
-  - Iterate several times;
-  - Reduce the total times by the same amount;
-  - Invoke the first layer of `TypicalReiterate` with the times left;
-  - Concatenate two results.
+- **Base Case:** Handle several numbers of times directly.
+- **Recursive Case:**
+  1. Iterate several times;
+  2. Reduce the total times by the same amount;
+  3. Invoke the first layer of `TypicalReiterate` with the times left;
+  4. Concatenate two results.
 
 Here is a simplified version of the implementation:
 
@@ -96,7 +96,7 @@ struct TypicalReiterate
     template<auto...>
     struct ProtoPage {};
 
-// Base Step:
+// Base Case:
     template<auto I>
     requires (I == 0)
     struct ProtoPage<I>
@@ -111,7 +111,7 @@ struct TypicalReiterate
         using type = Capsule<Elements...>;
     };
 
-// Recursive Step:
+// Recursive Case:
     template<auto I>
     requires (2 <= I)
     struct ProtoPage<I>

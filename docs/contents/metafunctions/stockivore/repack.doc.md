@@ -85,7 +85,7 @@ struct Phantom;
 template<typename...>
 struct Repack {};
 
-// Base Step:
+// Base Case:
 
 template<template<template<auto...> class...> class Stockroom, template<auto...> class...Sequences>
 struct Repack<Stockroom<Sequences...>>
@@ -94,7 +94,7 @@ struct Repack<Stockroom<Sequences...>>
     using UniSail = Operation<Sequences...>;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <

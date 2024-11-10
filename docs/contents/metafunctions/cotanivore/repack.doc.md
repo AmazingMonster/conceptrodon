@@ -64,7 +64,7 @@ struct Capsule;
 template<typename...>
 struct Repack {};
 
-// Base Step:
+// Base Case:
 
 template<template<typename...> class Container, typename...Elements>
 struct Repack<Container<Elements...>>
@@ -73,7 +73,7 @@ struct Repack<Container<Elements...>>
     using UniRoad = Operation<Elements...>;
 };
 
-// Recursive Step:
+// Recursive Case:
 
 template
 <
