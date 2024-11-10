@@ -39,7 +39,7 @@ struct AreOverlapping
 };
 ```
 
-## Example
+## Examples
 
 We will showcase three examples.
 
@@ -71,7 +71,9 @@ The name `AreOverlapping` is probably a bit misleading.
 This function used to be a helper class for `Typelivore::AreUnique`.
 It becomes a standalone function since its functionality is intuitive enough that it might be helpful on other occasions.
 
-After instantiating two layers, `AreOverlapping` has two lists of elements to deal with. The first list must be a set, meaning repetitive elements are prohibited. The reason for this will be apparent later on. We will check two things about the second list:
+After instantiating two layers, `AreOverlapping` has two lists of elements to work with.
+The first list must be a set, meaning repetitive elements are prohibited. The reason for this will be apparent later on.
+For the function to return true, the second list must satisfy two properties:
 
 - Every element in the second list is not also contained in the first one.
 - The second list does not contain repetitive elements.
@@ -82,9 +84,9 @@ Since inheriting the same type multiple times is illegal in C++, elements in the
 
 We will implement `AreOverlapping` using recursion over the second list:
 
-**Base step**: When only one element exists, the function returns true if it is in the first list and false otherwise.
+**Base step:** When only one element exists, the function returns true if it is in the first list and false otherwise.
 
-**Recursive step**: Pop the first element from the list. The function returns true if the element is in the first list. Otherwise, we append the element to the first list and pass the result back to the function for recursion.
+**Recursive step:** Pop the first element from the list. The function returns true if the element is in the first list. Otherwise, we append the element to the first list and pass the result back to the function for recursion.
 
 Here's the entire implementation:
 

@@ -30,7 +30,7 @@ struct TypicalConjureSet
 };
 ```
 
-## Example
+## Examples
 
 We will turn `int, int*, int**, int**` into a set.
 

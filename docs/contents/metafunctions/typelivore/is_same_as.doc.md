@@ -32,7 +32,7 @@ struct IsSameAs
 };
 ```
 
-## Example
+## Examples
 
 ```C++
 template<typename...Args>

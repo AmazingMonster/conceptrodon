@@ -35,7 +35,7 @@ struct BindFront
 };
 ```
 
-## Example
+## Examples
 
 We will bind `Seq_0` and `Seq_1` to the front of `Operation`.
 

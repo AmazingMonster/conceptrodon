@@ -45,7 +45,7 @@ struct FoldLeft
 };
 ```
 
-## Example
+## Examples
 
 We will left-fold 2, 3, 4 and 3 using a power operation.
 The process can be described as follows:

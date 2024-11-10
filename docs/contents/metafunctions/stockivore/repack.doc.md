@@ -31,7 +31,7 @@ struct Repack
 };
 ```
 
-## Example
+## Examples
 
 Here, we first concatenate `Stockroom_0<Seq_0>`,  `Stockroom_1<Seq_1, Seq_2>` and `Stockroom_2<Seq_3>`. Then we pack the result into `Stockroom`:
 

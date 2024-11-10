@@ -35,7 +35,7 @@ alias Front
 }；
 ```
 
-## Example
+## Examples
 
 We will invoke the `Operation` with the first three elements from `int, int*, int**, int**`.
 

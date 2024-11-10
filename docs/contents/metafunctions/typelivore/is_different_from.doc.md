@@ -32,7 +32,7 @@ struct IsDifferentFrom
 };
 ```
 
-## Example
+## Examples
 
 ```C++
 template<typename...Args>

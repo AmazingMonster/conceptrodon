@@ -34,7 +34,6 @@ using SupposedResultA = Capsule<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
     SupposedResultA
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::UniRoad<>);
 SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
@@ -57,7 +56,7 @@ using SupposedResultB = Capsule<SHEEP_SPROUT(240)>;
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::UniRoad<>);
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -71,7 +70,7 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::UniRoad<>);
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::UniRoad<>);
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

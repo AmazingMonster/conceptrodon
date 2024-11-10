@@ -26,7 +26,7 @@ struct IsDifferent
 };
 ```
 
-## Example
+## Examples
 
 ```C++
 static_assert(IsDifferent<int, int*>::value);

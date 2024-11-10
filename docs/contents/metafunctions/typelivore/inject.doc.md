@@ -44,7 +44,7 @@ alias Inject
 }；
 ```
 
-## Example
+## Examples
 
 We will inject `double, double*` into index 1 of `int, int*, int**, int**`. Then, we will instantiate `Operation` with the resulting list.
 

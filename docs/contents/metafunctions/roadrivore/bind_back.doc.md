@@ -35,7 +35,7 @@ struct BindBack
 };
 ```
 
-## Example
+## Examples
 
 We will bind `Con_0` and `Con_1` to the back of `Operation`.
 

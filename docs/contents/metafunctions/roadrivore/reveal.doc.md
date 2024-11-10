@@ -26,7 +26,7 @@ struct Reveal
 };
 ```
 
-## Example
+## Examples
 
 We will reveal `Operation`.
 

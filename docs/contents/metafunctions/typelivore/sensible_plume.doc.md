@@ -45,7 +45,7 @@ struct SensiblePlume
 };
 ```
 
-## Example
+## Examples
 
 We will see three examples that present different use cases of `Typelivore::SensiblePlume`:
 

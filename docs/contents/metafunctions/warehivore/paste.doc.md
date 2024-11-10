@@ -22,7 +22,7 @@ template<typename...>
 alias Paste = RESULT;
 ```
 
-## Example
+## Examples
 
 Here, we paste `Warehouse_0<Con_0>`,  `Warehouse_1<Con_1, Con_2>` and `Warehouse_2<Con_3>` together:
 

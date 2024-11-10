@@ -26,7 +26,7 @@ template<typename...>
 using Paste = RESULT;
 ```
 
-## Example
+## Examples
 
 Here, we paste `std::integer_sequence<int, 0>`,  `std::index_sequence<1, 2>` and `std::index_sequence<3>` together:
 

@@ -9,7 +9,7 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Operation=Capsule>
+template<template<typename...> class Operation>
 struct Rotate
 {
     template<size_t Amount>
@@ -17,7 +17,7 @@ struct Rotate
     {
         template<typename...Elements>
         using Mold = decltype
-        (Typella::Swivel<std::make_index_sequence<Amount>>::template lark<Operation, Elements...>());
+        (Typella::Swivel<std::make_index_sequence<Amount>>::template idyl<Operation, Elements...>());
     };
 
     template<auto...Agreements>

@@ -31,7 +31,7 @@ struct Repack
 };
 ```
 
-## Example
+## Examples
 
 Here, we first concatenate `Warehouse_0<Con_0>`,  `Warehouse_1<Con_1, Con_2>` and `Warehouse_2<Con_3>`. Then we pack the result into `Warehouse`:
 

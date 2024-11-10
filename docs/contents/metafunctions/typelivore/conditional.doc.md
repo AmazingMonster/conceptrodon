@@ -67,7 +67,7 @@ struct Conditional
 };
 ```
 
-## Example
+## Examples
 
 We will see four examples that present different use cases of `Typelivore::Conditional`:
 

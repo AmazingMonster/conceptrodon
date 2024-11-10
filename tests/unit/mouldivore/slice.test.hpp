@@ -42,6 +42,7 @@ SAME_TYPE(Slice<Capsule>::Page<60, 100>::Mold<SHEEP_SPROUT(240)>);
 
 
 
+
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 using SupposedResultB = Capsule<>;
@@ -89,6 +90,62 @@ using SupposedResultC = TesterC<SHEEP_SPROUT(60, +40)>;
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 SAME_TYPE(Slice<TesterC>::Page<40, 100>::Mold<SHEEP_SPROUT(240)>);
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResultD = Capsule<SHEEP_SPROUT(200, +40)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Slice<Capsule>::Page<40>::Mold<SHEEP_SPROUT(240)>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements)==60)
+struct Tester {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResultC = Tester<SHEEP_SPROUT(60, +180)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedResultC
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Slice<Tester>::Page<180>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 
 

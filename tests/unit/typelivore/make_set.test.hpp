@@ -66,7 +66,7 @@ SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integ
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(MakeSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::type);
+SAME_TYPE(MakeSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

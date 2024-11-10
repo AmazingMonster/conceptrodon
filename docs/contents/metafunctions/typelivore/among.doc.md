@@ -25,7 +25,7 @@ struct Among
 };
 ```
 
-## Example
+## Examples
 
 We will pick the element at index `3` out of the list `int, int*, int**, int***`.
 

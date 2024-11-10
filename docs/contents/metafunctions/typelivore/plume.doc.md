@@ -48,7 +48,7 @@ struct Plume
 };
 ```
 
-## Example
+## Examples
 
 We will see three examples that present different use cases of `Typelivore::Plume`:
 

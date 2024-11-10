@@ -98,7 +98,7 @@ struct Flip
 };
 ```
 
-## Example
+## Examples
 
 We will flip `Operation` and its member `Mold`.
 

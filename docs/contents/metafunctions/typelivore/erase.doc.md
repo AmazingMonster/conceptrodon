@@ -6,10 +6,11 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Erase` accepts a list of elements.
+
 Suppose its first layer is instantiated with an index.
 In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided list modified by removing the element at the index.
 
-Suppose its first layer is instantiated with two indices where the first is less or equal to the second one.
+Suppose its first layer is instantiated with two indices where the first is less or equal to the second.
 In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided list modified by removing elements between the indices.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
@@ -43,7 +44,7 @@ alias Erase
 }；
 ```
 
-## Example
+## Examples
 
 We will see two examples that demonstrate two different use cases.
 
@@ -61,8 +62,7 @@ using Result = Erase<int, int*, int**, int**>::Page<1>::Road<Operation>;
 static_assert(std::same_as<SupposedResult, Result>);
 ```
 
-In the second example, we will remove the elements of index one to three from `int, int*, int**, int**`.
-Then, we instantiate `Operation` with the resulting list.
+In the second example, we will erase elements between indices one and three from `int, int*, int**, int**`. Then, we instantiate `Operation` with the resulting list.
 
 ```C++
 using SupposedResult_1 = Operation<int, int**>;

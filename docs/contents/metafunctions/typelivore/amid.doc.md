@@ -28,7 +28,7 @@ struct Amid
 };
 ```
 
-## Example
+## Examples
 
 We will pick the element at index `3` out of the list `int, int*, int**, int***`.
 
@@ -42,7 +42,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We want to label each element to record its index and figure out a way to pull the element out by the index on its label.
+We want to label each element to record its index and instruct compilers to pull the element from a set by the index on its label.
 
 First, we need to create a label class:
 
@@ -55,11 +55,10 @@ struct Label
 };
 ```
 
-We can pull the label by asking `decltype` the return type of `idyl` if invoked with `std::integral_constant<size_t, I>`.
+We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked with `std::integral_constant<size_t, I>`.
 Here, `std::integral_constant` helps us create a type with an index for argument-dependent lookup.
-Now, we need to assemble an overload set for compilers to search for the correct `idyl`.
 
-Here's the entire implementation:
+Now, we will assemble an overload set and instruct compilers to pull the element out when provided with an index. Here's the entire implementation:
 
 ```C++
 template<typename...Elements>
@@ -70,12 +69,20 @@ struct Amid
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
+    // We create an overload set of `idyl` through inheritance.
     : public Label<Elements, I>...
-    { using Label<Elements, I>::idyl...; };
+    {
+        // We bring every `idyl` from its base class to the current scope.
+        using Label<Elements, I>::idyl...;
+    };
 
     template<size_t I>
     struct Hidden
     {
+        // We ask the compiler to find an `idyl` that
+        // declares a parameter of type `std::integral_constant<size_t, I>`.
+        // If found, the return type of such `idyl` is the element
+        // of index I in the list.
         using type = decltype
         (Detail<std::make_index_sequence<sizeof...(Elements)>>::idyl(std::integral_constant<size_t, I>{}));
     };

@@ -48,7 +48,7 @@ struct ClassicPlume
 };
 ```
 
-## Example
+## Examples
 
 We will see three examples that present different use cases of `Typelivore::ClassicPlume`:
 

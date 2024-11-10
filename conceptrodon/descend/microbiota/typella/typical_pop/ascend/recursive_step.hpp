@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_POP_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_TYPICAL_POP_FUNCTION_NAME has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,8 +11,17 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_POP_LENGTH
-#error "CONCEPTRODON_TYPELLA_POP_LENGTH has not been defined"
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION
+#error "CONCEPTRODON_TYPELLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_POP_LENGTH
+#error "CONCEPTRODON_TYPELLA_TYPICAL_POP_LENGTH has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -50,7 +59,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_TYPELLA_POP_LENGTH
+    CONCEPTRODON_TYPELLA_TYPICAL_POP_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -60,10 +69,13 @@ template
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
     , CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-    LastElement
+    PseudoLastElement
+
+    , CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
+    ...RestElements
 
 >
-struct CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME
+struct CONCEPTRODON_TYPELLA_TYPICAL_POP_FUNCTION_NAME
 <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
@@ -71,7 +83,7 @@ struct CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_TYPELLA_POP_LENGTH
+    CONCEPTRODON_TYPELLA_TYPICAL_POP_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -80,19 +92,26 @@ struct CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
-    , LastElement
+    , PseudoLastElement
+    , RestElements...
+
 >
 {
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-    = CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT
+    = CONCEPTRODON_TYPELLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION
     <
+        typename CONCEPTRODON_TYPELLA_TYPICAL_POP_FUNCTION_NAME <RestElements...>
+        :: CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
+    >
+    ::template CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
+    < 
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_TYPELLA_POP_LENGTH
+    CONCEPTRODON_TYPELLA_TYPICAL_POP_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -101,6 +120,7 @@ struct CONCEPTRODON_TYPELLA_POP_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
+        , PseudoLastElement
     >;
 };
 /******************************************************************************************************/

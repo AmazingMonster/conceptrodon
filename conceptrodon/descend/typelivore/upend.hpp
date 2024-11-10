@@ -4,7 +4,6 @@
 #ifndef CONCEPTRODON_TYPELIVORE_UPEND_H
 #define CONCEPTRODON_TYPELIVORE_UPEND_H
 
-#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/label.hpp"
 #include <utility>
 
@@ -28,9 +27,6 @@ struct Upend
 
     template<template<typename...> class...Agreements>
     using Road = Detail<Agreements..., std::make_index_sequence<sizeof...(Elements)>>::type;
-
-    template<template<typename...> class Operation=Capsule>
-    using UniRoad = Detail<Operation, std::make_index_sequence<sizeof...(Elements)>>::type;
 };
 
 }}

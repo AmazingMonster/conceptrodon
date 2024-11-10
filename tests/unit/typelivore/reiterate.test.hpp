@@ -43,7 +43,7 @@ using SupposedCapsule = Capsule<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedCapsule
 
-SAME_TYPE(Reiterate<int, float, double>::Page_t<240>);
+SAME_TYPE(Reiterate<int, float, double>::Page<240>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

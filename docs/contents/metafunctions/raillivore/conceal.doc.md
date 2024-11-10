@@ -30,7 +30,7 @@ struct Conceal
 };
 ```
 
-## Example
+## Examples
 
 We will conceal `Operation`.
 

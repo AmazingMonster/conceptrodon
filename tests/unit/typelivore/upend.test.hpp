@@ -72,7 +72,6 @@ SAME_TYPE(boost::mp11::mp_reverse<Ordered>);
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Upend<SHEEP_SPROUT(240)>::UniRoad<>);
 SAME_TYPE(Upend<SHEEP_SPROUT(240)>::Road<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 

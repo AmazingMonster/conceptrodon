@@ -25,7 +25,7 @@ struct TypicalPaste
 };
 ```
 
-## Example
+## Examples
 
 Here, we paste `std::tuple<int>`,  `std::tuple<float, float*>` and `std::tuple<double>` together:
 

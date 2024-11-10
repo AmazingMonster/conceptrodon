@@ -27,7 +27,7 @@ struct LaboriousPress
 }
 ```
 
-## Example
+## Examples
 
 We will laboriouspress the following operation:
 

@@ -25,7 +25,7 @@ struct TypicalPaste
 };
 ```
 
-## Example
+## Examples
 
 Here, we paste `Stockroom_0<Seq_0>`,  `Stockroom_1<Seq_1, Seq_2>` and `Stockroom_2<Seq_3>` together:
 

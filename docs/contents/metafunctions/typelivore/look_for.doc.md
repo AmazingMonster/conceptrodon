@@ -40,7 +40,7 @@ struct LookFor
 };
 ```
 
-## Example
+## Examples
 
 We will lookfor the indices of `int**` and `void` in list `int`, `int*`, `int**`, `int***`.
 

@@ -22,7 +22,7 @@ template<typename...>
 alias Flip = RESULT;
 ```
 
-## Example
+## Examples
 
 We will flip `int, int*, int**, int**`.
 

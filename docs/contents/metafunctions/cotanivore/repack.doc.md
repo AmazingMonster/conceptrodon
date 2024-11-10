@@ -30,7 +30,7 @@ struct Repack
 };
 ```
 
-## Example
+## Examples
 
 Here, we first concatenate `std::tuple<int>`,  `std::tuple<float, float*>` and `std::tuple<double>`. Then we pack the result into `Container`:
 

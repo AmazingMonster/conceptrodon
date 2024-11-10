@@ -139,7 +139,7 @@ struct Skip
 };
 ```
 
-## Example
+## Examples
 
 We will move the *0*th layer of `Operation` to the end of its invocation order.
 

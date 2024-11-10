@@ -33,7 +33,7 @@ struct Has
 };
 ```
 
-## Example
+## Examples
 
 We will check whether `int*, void`  is contained in `int, int*, int**`.
 Then, we will check whether `int, int**`  is contained in `int, int*, int**`.

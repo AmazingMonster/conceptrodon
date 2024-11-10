@@ -26,7 +26,7 @@ struct TypicalFlip
 };
 ```
 
-## Example
+## Examples
 
 We will flip `int, int*, int**, int**`.
 

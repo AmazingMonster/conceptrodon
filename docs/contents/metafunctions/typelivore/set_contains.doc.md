@@ -38,7 +38,7 @@ struct SetContains
 };
 ```
 
-## Example
+## Examples
 
 We will check whether `int*` or `void`  is inside `int, int*, int**`.
 

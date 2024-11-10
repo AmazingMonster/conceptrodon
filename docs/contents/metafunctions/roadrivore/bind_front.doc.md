@@ -35,7 +35,7 @@ struct BindFront
 };
 ```
 
-## Example
+## Examples
 
 We will bind `Con_0` and `Con_1` to the front of `Operation`.
 

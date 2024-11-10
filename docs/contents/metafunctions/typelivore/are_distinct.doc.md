@@ -25,7 +25,7 @@ struct AreDistinct
 };
 ```
 
-## Example
+## Examples
 
 We will check if `int, int*, int**, void` are distinct. Then, we will append `int*` and check again.
 

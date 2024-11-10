@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_MAKE_SET_H
 #define CONCEPTRODON_TYPELIVORE_MAKE_SET_H
 
-#include "conceptrodon/descend/typelivore/typical_diversity.hpp"
+#include "conceptrodon/descend/typelivore/diversity.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

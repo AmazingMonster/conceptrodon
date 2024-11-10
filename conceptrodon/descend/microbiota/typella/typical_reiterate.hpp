@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_TYPELLA_REITERATE_H
-#define CONCEPTRODON_TYPELLA_REITERATE_H
+#ifndef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_H
+#define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_H
 /******************************************************************************************************/
-
 
 
 
@@ -91,23 +90,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME
-#error "CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_FUNCTION_NAME
+#error "CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME   \
-    Reiterate
+#define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_FUNCTION_NAME   \
+    TypicalReiterate
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_REITERATE_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_REITERATE_PARAMETER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_REITERATE_PARAMETER_IDENTIFIER   \
+#define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER   \
     Elements
 /******************************************************************************************************/
 
@@ -115,11 +114,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_REITERATE_PASTE_FUNCTION
-#error "CONCEPTRODON_TYPELLA_REITERATE_PASTE_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PASTE_FUNCTION
+#error "CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PASTE_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_REITERATE_PASTE_FUNCTION   \
+#define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PASTE_FUNCTION   \
     Cotanivore::TypicalPaste
 /******************************************************************************************************/
 
@@ -127,11 +126,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_REITERATE_SELECT_SCALE_FUNCTION
-#error "CONCEPTRODON_TYPELLA_REITERATE_SELECT_SCALE_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION
+#error "CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_REITERATE_SELECT_SCALE_FUNCTION   \
+#define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION   \
     Cytoplasm::selectScale
 /******************************************************************************************************/
 
@@ -150,11 +149,11 @@ namespace Typella {
 template
 <
     CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-    ... CONCEPTRODON_TYPELLA_REITERATE_PARAMETER_IDENTIFIER
+    ... CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
 >
-struct CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME
+struct CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_FUNCTION_NAME
 {
-#include "conceptrodon/descend/microbiota/typella/reiterate/reiterate.hpp"
+#include "conceptrodon/descend/microbiota/typella/typical_reiterate/typical_reiterate.hpp"
 };
 /******************************************************************************************************/
 
@@ -182,10 +181,10 @@ struct CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_TYPELLA_REITERATE_FUNCTION_NAME
-#undef CONCEPTRODON_TYPELLA_REITERATE_PARAMETER_IDENTIFIER
-#undef CONCEPTRODON_TYPELLA_REITERATE_PASTE_FUNCTION
-#undef CONCEPTRODON_TYPELLA_REITERATE_SELECT_SCALE_FUNCTION
+#undef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_FUNCTION_NAME
+#undef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
+#undef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_PASTE_FUNCTION
+#undef CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION
 /******************************************************************************************************/
 
 

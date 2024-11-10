@@ -35,7 +35,7 @@ struct Repack
 };
 ```
 
-## Example
+## Examples
 
 Here, we first concatenate `std::integer_sequence<int, 0>`,  `std::index_sequence<1, 2>` and `std::index_sequence<3>`. Then we pack the result into `Sequence`:
 

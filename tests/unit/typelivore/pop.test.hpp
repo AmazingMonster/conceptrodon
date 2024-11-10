@@ -35,7 +35,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(239)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Pop<SHEEP_SPROUT(240)>::type);
+SAME_TYPE(Pop<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

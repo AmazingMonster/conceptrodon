@@ -1,7 +1,7 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `Typelivore::Contains`
+# `Typelivore::Duplicate`
 
 ## Description
 
@@ -38,7 +38,7 @@ struct Duplicate
 };
 ```
 
-## Example
+## Examples
 
 We will instantiate `Operation` with four `int`:
 

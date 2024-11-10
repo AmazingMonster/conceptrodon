@@ -24,7 +24,7 @@ struct Press
 }
 ```
 
-## Example
+## Examples
 
 We will press the following operation:
 

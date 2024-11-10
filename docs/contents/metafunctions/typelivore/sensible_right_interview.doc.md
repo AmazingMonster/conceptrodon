@@ -42,7 +42,7 @@ struct SensibleRightInterview
 };
 ```
 
-## Example
+## Examples
 
 We will find the indices of `int**` and `void` in list `int`, `int*`, `int**`, `int***`.
 

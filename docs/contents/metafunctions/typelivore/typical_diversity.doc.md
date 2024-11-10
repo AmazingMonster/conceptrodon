@@ -43,7 +43,7 @@ struct TypicalDiversity
 };
 ```
 
-## Example
+## Examples
 
 We will use `TypicalDiversity` to append `int, int*, int**` to `int*, void`:
 
