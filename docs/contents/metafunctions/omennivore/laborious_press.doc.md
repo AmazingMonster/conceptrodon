@@ -30,7 +30,7 @@ struct LaboriousPress
 
 ## Examples
 
-We will laboriouspress the following operation:
+We will press the following operation:
 
 ```C++
 struct Operation

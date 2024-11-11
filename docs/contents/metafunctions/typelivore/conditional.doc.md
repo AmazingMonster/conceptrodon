@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Conditional` accepts two elements and returns several functions.
+`Typelivore::Conditional` accepts two elements and returns several functions.
 Check out **Examples** for more details.
-Overall, `Typelivore::Conditional` yields one of the two elements according to the boolean evaluation of a condition.
+Overall, `Conditional` yields one of the two elements according to the boolean evaluation of a condition.
 <pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
 <pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse

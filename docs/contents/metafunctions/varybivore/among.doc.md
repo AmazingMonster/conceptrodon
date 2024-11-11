@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Varybivore::Among` picks out the variable at a given index from a list.
+`Varybivore::Among` accepts a list of variables and returns a function.
+When invoked by an index, the function returns the variable at the index from the list.
 <pre><code>...Variable<sub><i>i</i></sub>... -> I -> Variable<sub><i>i</i></sub></code></pre>
 
 ## Type Signature

@@ -10,19 +10,19 @@ namespace Varybivore {
 template<auto LowerBound, auto UpperBound>
 struct IsBoundedByClosedInterval
 {
-    template<auto Variable>
+    template<auto...Variables>
     struct ProtoPage
     {
         static constexpr bool value
-        { not (Variable < LowerBound) && not (UpperBound < Variable) };
+        { (...&&(not (Variables < LowerBound) && not (UpperBound < Variables))) };
     };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 
-    template<auto Variable>
+    template<auto...Variables>
     static constexpr bool Page_v 
-    { not (Variable < LowerBound) && not (UpperBound < Variable) };
+    { (...&&(not (Variables < LowerBound) && not (UpperBound < Variables))) };
 };
 
 }}

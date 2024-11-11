@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FOLD_LEFT_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FOLD_LEFT_2ND_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_FOLD_LEFT_2ND_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CLASSIC_FOLD_LEFT_2ND_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/fold_left.hpp"
+#include "conceptrodon/typelivore/classic_fold_left.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -80,7 +80,7 @@ SAME_TYPE(boost::mp11::mp_fold<CapsuleTester, std::integral_constant<int, 1>, Bi
     std::integral_constant<int, 1 + 239 * 240 / 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldLeft<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>::UniRoad<BinaryOperation>);
+SAME_TYPE(ClassicFoldLeft<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>::UniRoad<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

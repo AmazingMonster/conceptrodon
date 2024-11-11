@@ -5,8 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-Different inputs can lead to different metafunctions returned by `Varybivore::Conditional`.
-Overall, `Varybivore::Conditional` yields a result according to the boolean evaluation of a condition. Check out **Example** for more details.
+`Varybivore::Conditional` accepts two variables and returns several functions.
+Check out **Examples** for more details.
+Overall, `Conditional` yields one of the two variables according to the boolean evaluation of a condition.
 <pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
 <pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse

@@ -7,16 +7,16 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto I, auto J>
+template<auto First, auto...Variables>
 struct Add
 { 
     static constexpr auto value 
-    {I + J}; 
+    {(First+...+Variables)}; 
 };
 
-template<auto I, auto J>
+template<auto First, auto...Variables>
 constexpr auto Add_v 
-{I + J};
+{(First+...+Variables)}; 
 
 template<auto J>
 struct AddTo
