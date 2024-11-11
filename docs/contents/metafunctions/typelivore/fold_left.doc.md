@@ -17,7 +17,7 @@ The function left-folds the list with the operation and the initiator.
        Initiator, E<sub>0</sub>
    &gt;, E<sub>1</sub>
    &gt;
-   ..., E<sub>n</sub>&gt::type</code></pre>
+   ..., E<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 
@@ -47,48 +47,40 @@ struct FoldLeft
 
 ## Examples
 
-We will left-fold 2, 3, 4 and 3 using a power operation.
+We will left-fold 2, 3, 4 and 3 using subtraction.
 The process can be described as follows:
 
 ```C++
-   ((2^3)^4)^2
--> ((8)^4)^2
--> (4096)^2
--> 16777216
+   ((1-3)-4)-3
+-> (-2-4)-3
+-> (-6)-3
+-> -9
 ```
 
 ```C++
-consteval int power(int a, int b)
-{
-    int c {a};
-    for(;b!=1;b--)
-    { c*=a; }
-    return c;
-}
-
 template<typename A, typename B>
-struct Power
+struct Subtract
 {
     using type
-    = std::integral_constant<int, power(A::value, B::value)>;
+    = std::integral_constant<int, A::value-B::value>;
 };
 
 template<typename...Args>
-using Power_t = Power<Args...>::type;
+using Subtract_t = Subtract<Args...>::type;
 
 template<typename...Args>
 using Metafunction 
 = FoldLeft<
     std::integral_constant<int, 3>,
     std::integral_constant<int, 4>,
-    std::integral_constant<int, 2>
+    std::integral_constant<int, 3>
   >::Mold<Args...>;
 
 using SupposedResult
-= std::integral_constant<int, 16777216>;
+= std::integral_constant<int, -9>;
 
-using Result = Metafunction<std::integral_constant<int, 2>>
-::Road<Power_t>;
+using Result = Metafunction<std::integral_constant<int, 1>>
+::Road<Subtract_t>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```
@@ -108,6 +100,9 @@ Here's a simplified version of it:
 template<typename...Elements>
 struct FoldLeft {};
 
+// Base Case:
+
+// Fold once.
 template<typename Element>
 struct FoldLeft<Element>
 {
@@ -129,6 +124,7 @@ struct FoldLeft<Element>
     using Mold = ProtoMold<Agreements...>;
 };
 
+// Fold twice.
 template<typename First, typename Second>
 struct FoldLeft<First, Second>
 {
@@ -154,6 +150,10 @@ struct FoldLeft<First, Second>
     using Mold = ProtoMold<Agreements...>;
 };
 
+// Recursive Case:
+
+// Fold twice, handle the first two parameters,
+// and recurse using the rest.
 template<typename First, typename Second, typename...Others>
 struct FoldLeft<First, Second, Others...>
 {
@@ -183,7 +183,7 @@ struct FoldLeft<First, Second, Others...>
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEElwAbKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJXCm2mPalDEIETMQEeT5%2BQfWNOS1tBOXRcQlJqQqt7Z0FPZODw5XV4wCUtqhexMjsHASYLGkGeyaBbgQAnmmMrJgAdPfY9GyCCifYJhoAgpPEXg4A1AAxTzoUKYKgEf4mADsVmhABETlYvh9PnsDkdMCczpdrmx/o99owCG9UT8/pDgbRQeCSadCc86e8UbDUf92f90YcmMdThcrsx8QBJBjZHkkUlfDn/ckA5TEVBEACyILZHJhyM%2B0ulXMx2N1PKxfNxgru9ze/2QBgUCn%2BAHkrsQeTlJVrtezZZD4ZhWnQ1e6Nf73RyvFkjJzcVCpcHpSd4fbHc6BNiRWKiGQCU9iaTApqYzDEbnUUGdftubyzmW9caBTd7rcLVamDb659gMRMESXq6Y6GIsB/gAlVBMdBQwLx72%2B2jYtsdrsEBT1t4gED8o159UIpHF6Psg0V9em1vtzuM16BZlu9l98Mq6nj%2BPyxWoe/oWenhdL82XncswuaqiB5Gjitb4oCeDEJMpARmBmD/EImBoAw76/l8npAiCYIQtiEFQQQMGIchqFXoGe6clWhr6iaNz/KmjjisQPYchhz7Kqq5Fkde2rAfqlGHjRbDLpelrWraDoJEmDDMe6GFTkwfrkbGrJKcGt4DuuUbcfmE4JpJTTYiWMZ6U6BmnEZxl0aKDHpjBeGTBZwZvIRSECO%2Bqk6e8RYeVC27eZ8jm8Xy/EgUedY/tgonNt%2BtxzmexIXlevZhgOw6jo%2B/zyX6pxxV%2BwnYKu65/txBbFUGQWgXiZqxZ%2B54yf86n/G%2BGVsa%2Bqo5bVCX5WVfmAV8FVheBkHQbBVUIa5KEwYN1V2gQCAJIlZIEL8AJUjSOGnPZBHjcRMGzfNUHdSym77iF1FwVZaYSmh3GsQq7HUkGXExgNZ01lV%2BVRTaJlSfV0pyT6Ckzj5z2WQ1KWjVpYMZWt2F0m4%2B0LUd2nBoVIVNe1biOTGEmmS65k%2BTjiZmVjhNg/ReCMXZw0kmTAaXi5xHY05N3Qyua7o2lqEI8T%2BNeSd2qlf5gVvZWGJUe9x4RV9MW5XVrNqRDXMZVlM4dfO575YVuLFcpAG7txA2CdVcsJfVjXNXG/ytW%2BH4a11EU9frKJfAA9AAVJ7Xve67qIe57AAq2BCAHXu%2B273uR%2B74cBSiZiBBEVpeFg45uMh2xpIurqoshkyYAAbmI/wRJCGQAO4JBAJf/EwMHV7EKzFip3HV8gvkWEwQsC/wxAQEisRgGAcZcP3AC0o%2BN5xsKWu7cad7mvmIuRHYEJsDCWk7BtGxdnxTcb/xWDdrGoBXTHHUGjVFZxumTOgq4l5g7ZiAA%2BrnrSCNiJcweXlefKuhfeEwDBCw/8xBeEwI3X8wtepb1FtNVsxBgCLS%2BI1ZQJ8EjP0hFbNBp9ZyIJiuzIqwt%2BpwONggpBroLaAyoF4BgDgchaStrDWkhlyK33voIR%2BTpaCvwEPMD%2Bpwv7/ECM5IM7CQAPyfjwt%2Bhh4ZCMkKIthBA74SM4VI3hDB%2BFyMEDBMwzF2a2xyvg7qxDPiNSEF4NIxRMDoEHJgBQXhaC0wCjfZRHC9jqJkQItwQiUjQn8WYFIOY%2BpmKVvYxxWDdJKmobQ%2BhyZTjiMkdwjRWjP46P%2BHoqBV5Vxc2xDgjBTIyroVaI4ZAz9ooJAIBAcRCgbjlIvG4OxDinGEUsdY2x4SnFvEgRYDgaxaCcH8LwPw3BeCoE4FjSw1gZQbC2PBcwgQeCkAIJoPpawADWARJC3A0JILg0JAgaH8BoMwyRkhmAABwXP0JwSQvAWASA0BoUgIytCkHGRwXgCgQDPJWRwLQaw4CwBgIgEAGwCBpC8ARCgEA0AHDoAkKINxOCqAuckUeyRJD/GAMgNuUhbhmF4DYwgJA8B3y4DIQQIgxDsCkJS%2BQSg1CrNILoClZcnRpE4DwfpgzhnMo%2BXaKFkLISoCoP8VF6LMXYtxf8fFZh/gQA8PC%2BgxAoTxy4CsXgfyAWkAgEgOFaQEVkBhQao1IBgBSDMHwOgewoKUFiMy2IEQ2jnC5bwJ1zBiDnDtLEbQSE/lLLhYyO0DBaCuv%2BbwLAsQvDADcGIWg3zRmkCwCwQwwBxARuTZBf1eB872OZZgVQSEoU7CWQ/AZmbaB4FiE6L1HgsDMuWngB5Sa83EFiJkTA3pU1GCrUYVZawqAGCQQANTwJgMuEkRlLP4FS0Q4g6WzoZSodQmbWX6DTSgaw1h9DVu%2BZANYqBM45ETaPW%2BcZTBTMsGYN5qA23EDJfmg9vQc3OAgK4GYfgKVhAiCMKoYwKXFGyAIT9eggNNEWKMGoL64nNCmB0TwXQ9B2FfXBhYv6lgAdsPB0DFL5jtEg/%2BmoawFCzO2BIHlHAhkvP5ZwcVaKMVYpxXi7Z8qIC4BJaqhZGqtUDrWPNUcYwIAbJAJIQItwACcgRoSSF2WYSQyQnn%2BGSBJm5HA7mkAeYs24yQUgXIkxclI/g9n%2BCk6kV5YzOBfJ%2BcsgduqQV6rBUKqF5BKCmpVUitgnA2gsHztCUeTAorhi4BJ24XAdlEvwOmMlegl3UoXdIJdigV3Mt0Fa9lTBOWjMo9Riz7zOCCohVC/4oqa7EF8/5wLTZguhfCxoBVSrDUqrVYEMwmrbMRsBfq1AyqEiudhT1prYwfN%2BdHtVi1EmuDPJoE4ha9rHXOq9W60gHqXU%2Br9Q4ZbQbiQhrDcyqNMa420ATctlNaaM1vPwB2ehebE1vMLcWvYy3y3MqrTWl19adhvKbS2pZbaO1KG7ed/sdmh1MFHeOydApltxfnbSxLshktMrXSAK1Bh%2B2XqsJYXdsR93CfecevhnAz3KIvdu69t772PrxyRhoqGXAoVwyEFChHliAcyMB3IiGCjs5KDkVnWGUOwYGNMbnX6YNNBF0MDDUHkM4bF3L9DFRZcavWJscjquK25doxwMrFWAtBYHCFsLOyFUcfTC1njHWAX8cwIJxI%2BOK0aa06F3Z0JTP%2BMCJIeTmKKV5Y%2BdZ35dmgWgvBcK/r7nEXIo4D5qVLAFD5zbvnY3mJJiRc4zFilsOaUSAR4IJHq63m6GCBlrL3K1Pa8zQK5zIqxWx6xfHxP/xk%2BhdT5CRVg2jUtcCO17VfTdXdd68atzneVUgET1Y5%2BLfn5t/KeVzF1rZt2ogA6zNq2ltJvX9631/qts9eDaG8Nl3MDRtjfGxNSyzu9q%2B5G7NN382Zoe8gEtz3OEVreW92t5xPuNofb93g/2naQOvaIOnWfAw6CgY6E6U6MOsg8W8O9KBeqWIAwQ6Oxg5ONgb2NOBOTQiars7CmO1gN6YyVOWA2BQuTQDO7gCu36LOMuRGYGHOTQTO4G/O9BbOEu/Q8u%2BQ4uFBXBSuf6HB%2BGCGPBiuBG7BAGJGZGtKOWfKVedG9e/wjeSeKehokwZuUWJAluvefGpAAmWADulGzuqOoWgQgQ/gxyeyTyZh0IyQ1y/uVmtgNmfeKwImkg/gkm/gFypyEmkgEmBy0mXAqBnAgQcht6jhLhlGhKNG8hny1uaypAbaWQzgkgQAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEEhoAHKQADqgKhE4MHt6%2BehlZjgLhkTEs8YnJ0naYDjlCBEzEBHk%2BfkG2mPYlDE0tBGXRcQlJqQrNre0FXLZTQxEjlWM1AJS2qF7EyOwcBJgsaQYHJoFuBACeaYysmAB0j9j0bIIKZ9gmGgCCk8ReDgA1AAxTzoUKYKgEQEmADsVlhABEzlYfl9vgcjidMGcLtdbmxAc9DowCB90X8AdDQbRwZCyedia8GZ80fD0YDOYDMccmKdzlcbsxCQBJBjZPkkck/LmAylA5TEVBEACyYI5XLhqO%2BstlPOxuP1fJxAvxwoejw%2BgOQBgUCkBAHkbsQ%2BTlpTrdZz5dDEZhmnQNZ6tYHPVyvFkjNz8TCZaHZWdEY7na6BLixRKiGQiS9SeTAtq43Dkfn0SG9YdefyLhWDaahXdHvcrTamHbG99gMRMCS3u64%2BGIsBAQAlVBMdAwwKJ33%2B2i4jtdnsEBSNj4gECCk0FzVIlGl2Oco1Vzfm9ud7vM96BVkezkDyNq2mTxOK5WoR/oefnpcry3XvdssW2rokeJp4vWhLAngxCTKQUYQZggJCPUAifv%2BPzeiCYIQlCuJQTBBBwchaAMGhN7Bge3I1sahpmncgLpo4krEH2XKYa%2BqrqpRFG3rqoGGtRx50Wwq7Xtatr2k6CQpgwrGephM5MAGlHxuyKmhveQ6bjGvGFlOSbSX0uJlnGBkukZ5wmaZDHikxmZwfhkxWaGHxEShpHOUG/4lupnJFgB3zOfxAqCWBJ4Nn%2B2Dia2v73AuF6kleN79hGQ6juOz6AopAbnPFP6idg66bgFqlAfuvHBeBBIWnF36XnJgKaYCH6ZRx77qrldWJQVAX%2BT5gU/JV4WQdBsHwdVSHuegcHDTVDoEAgCRJRSBD/ECNJ0rh5yOYRk0kdNjoLUtPVstuh6hbRCE2RmUrobx7FKpxtIhjxcZDRddbVQV0V2mZMkNbKCl%2Bkpc6%2BTCam6RpqXjTp1l%2BfpG04QybjzYtMEnZDnpFaFzUdW4nmhlJ5lupZYNxkT/2k5jcOcoxeDMQ5o1kmTLnXm5%2B0E15yVw2uG44%2BlaEo8mFmfP1ha7v1QUfdWWI0Z9p6RT9sV5fVd0pYOI5jhOCZZcDOVuCr3WRUV%2BIlTuZVopRQ3CTVhu9mrYbQy1OttR%2BX6LpePWSxLwE/AA9AAVEHwch376KB0HAAq2BCJHwdh/7IdJwHCcDYFZiBBENpeFgk5uCRuxpMu7ogdLs2At8M024CVh3ZhQheLEq1MA4pYQ7KTXFdx%2BmTOg64RAcnZiAA%2BiRkyGMjA9wd864AG5iF4mAALQWHPC8mqLwE%2B%2BV1sIe2xDAMtPxNQ3Tcug4w/Qjrp/N63uUH7FvPFZLg1lzb%2B%2BH%2B6TUqsDVBeAwDQBA6R1ojekxlKK937oITAQ9aCjwEOPQQuIp6AkCK5EMkCQADxgS6OBY9mhIPOCgyQ6CIEED7lg6BsD4EMEQZPQQcE0EO15m7e%2Bh8va%2B2%2BCfLwaQiiYHQMOTACgvC0GZoFHu5CoGD1wTQuhyCGGAiXgATjzJwpqgjhGiMyj/Zof8AEWTcJg7B1D8ET3kbtLgeYbzrgFriG%2B58CCX1UeVcejhkDDxigkAgEBMEKDuB4q8bgNEiN2g3XhmR%2BHBNER8NYKIOAbFoJwfwvA/AcC0KQVAnB8aWGsHKLYOxELmECDwUgBBNDxI2AAawCJIe4GhJBcFhIEDQ/gNBmAAGztLMMkVIiSOCSF4CwJIGhSCpPSZkjgvAFAgBGWUtJ8TSBwFgDARAIAtgEDSF4QiFAIBoCOHQBIUQ7icFUMkdpS92mSEBMAZAyBARSHuGYXg/DCAkDwH3OY/BBAiDEOwKQMhBCKBUOoeZpBdBzAAO4ujSJwHgCSkkpPKRkzgDotmbOhKgKggJTnnMudc259zalmEBBADw%2Bz6DEBhBnLgaxeBzK0BsCASA9lpAOWQHZLK2UgGAFIMwfA6AHBgpQWISLYgRBaJcWFvAxXMGIJcB0sRtD1DmSUvZzIHQMFoJK0FWBYheGAG4MQtBpncF4FgFghhgDiB1dBZVeBZ5CKRZgVQ9Qtl7BKdgvp6TaB4FiC6OVHgsBItWngIZprSAOuILECJvoLVGB9UYcpGwqAGEPgANTwJgCFUlUklK%2BcIUQ4h/n5qBWoJF4L9CWpQNYaw%2BhfXTMgBsVARccgmqXr3BMpgcmWDMOMyNxB3mOsbd0XoOQXCkRmH4OYYQlgVCqIUTI2QBCToXcUHIww51jDmHUQB/QFgru3T0O1AgBitA3aMRI2792eA6HoceZ7Z0XokBsBQ%2BTdjPv0Ai0ZSKJnYrORcq5Ny7kPOJRAXArzKVFJpXSpNGxFrjjGBAKpIBJCBHuEowIsJJD1LMJIdpGgWntKUZ%2B/pgyQDFPuO0rg7TkhKOSNR/wDT/AYfad%2B0FEypkzNKUmxZKymVrLRVs8glBOUUqOWwTgLQWCz1hEvJg0VIxcCUfcLgdTnn4EzO8vQ%2BaflFukCWpQZbQW6D5VCpgMLTXwo4Mktj4yUWCYxViqTMm5MKaHEplTdSSVktZRSqlgQzC0u4/MxlzLUDkoSMJ3Z4XfNjGc7JlsRglNcBGTQURS1hWivFXKqVpAZUSoVUqhwuW1Wkg1VqpFur9WGtoMa3L5rLXWvSfgLsDQHUmvSc611BxcueqRT6v1ErA17HSSGsNJTI3RqULGxrg4eMpqYOmzN2ahS5Z04Wv5%2BnZClpBekkzlbE1dqsJYOtsQG1IYyS2hBnB23kM7TWntfaEgDqwOdl9R7d3jvcDe2YIRSLnpWJe9Ii6%2BgHuB2u0oj7Ad3o%2B30U9bQftTpHcevdgwAfzqvYMMH97FjlCfTSzY2x30E76TZsZvBf3xdc4l9zynVMaBJeBzM/noPBYZXBzACHEgXb6QM0gQzAjKfqbCZjsImmSFw5cuY5PkWTNsFx%2BlCylmrPWeiqLonDnHI4FJvFLAFCzzubPDz2JJjqYg1pz5shdObYBfIQzu2dDkdIGZizcKSNk5/fZjZWzASYsBDrq5euDeAiN8pk30JSUxbZf5wIQXFehZQFHil6uk9jAN7w4eofh7h48cQFglz%2BXpaFRAEVoL8s5fDeX%2BVirlUlfC%2BqzV2rmuYD1Qao1JqSkNfjSNs1tq2uOtBV15AbrevQK9bwAb/rLjDeDQO8bvBJsxsOLNxNIW%2BCpoUBmrNOa1tW42xILbgL7flqdwYQ7D2bADbe5dvoJq/aQKO9YXtFP%2B2DuvzuvoX2wczrx9DuYRQl1chEdV1AD0ct1kdd14dsdYdGgFgwCgccdsc4CocMcX030/krMPd2NOB/c89dd9dDdjdjRJhGcNMSAWc49YNSB4MsBucrM%2BchkzBlNAhAh/BWkGkCMWDYQaNbMKdOBONZkqDqlJB/B0N/BkgOklFJAlEmlMMuBgg%2BlAhEVsC5d48rMnleDZcYMQsNhI0shnBJAgA)
 
 ## Links
 

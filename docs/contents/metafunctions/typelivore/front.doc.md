@@ -6,7 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Front` accepts a list of elements.
-Its first layer accepts the number of elements we want and returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided number of elements from the front of the list.
+Its first layer accepts an amount and returns a function.
+When invoked by an operation, the function collects elements of the amount from the front of the list and instantiates the operation with the collection.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation

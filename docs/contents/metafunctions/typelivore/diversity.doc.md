@@ -5,15 +5,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Diversity` accepts a variable number of nonrepetitive elements and returns a function.
-When invoked, the function appends the argument list to the previously provided elements such that the resulting list:
+`Typelivore::Diversity` accepts a set of nonrepetitive elements and returns a function.
+When invoked, the function appends the arguments to the previously provided elements such that the resulting list:
 
-- contains every element from the previously provided elements and the argument list;
+- contains every element from the previously provided elements and the arguments;
 - doesn't contain repetitive elements;
 - preserves the relative order of every element;
 
-The resulting list will be held inside `Capsule` and returned by alias member `type`.
-
+The resulting list will be held inside `Capsule`.
 <pre><code>   Elements...
 -> Arguments...
 -> MakeMathematicalSet(Elements..., Arguments...)</code></pre>

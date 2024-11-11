@@ -5,8 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Duplicate` accepts an element, which we will duplicate.
-Its first layer accepts the number of copies we want and returns a function such that when invoked with an operation, the function becomes the operation instantiated with the number of copies of the element.
+`Typelivore::Duplicate` accepts an element.
+Its first layer accepts an amount and returns a function.
+When invoked by an operation, the function creates copies of the element of the amount and instantiates the operation with the result.
 <pre><code>   Element
 -> N
 -> Operation

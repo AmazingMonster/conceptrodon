@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Amid` picks out the element at a given index from a list.
+`Typelivore::Amid` accepts a list of elements and returns a function. When invoked by an index, the function returns the element at the index from the list.
 <pre><code>...Element<sub><i>i</i></sub>... -> I -> Element<sub><i>i</i></sub></code></pre>
 
 ## Type Signature
@@ -55,7 +55,7 @@ struct Label
 };
 ```
 
-We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked with `std::integral_constant<size_t, I>`.
+We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked by `std::integral_constant<size_t, I>`.
 Here, `std::integral_constant` helps us create a type with an index for argument-dependent lookup.
 
 Now, we will assemble an overload set and instruct compilers to pull the element out when provided with an index. Here's the entire implementation:

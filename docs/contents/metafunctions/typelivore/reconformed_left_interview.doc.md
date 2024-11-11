@@ -5,9 +5,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::ReconformedLeftInterview` accepts a list of elements and produces a function.
-When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if the element is not found.
-This function is a flattened version of `Typelivore::Find` underline. It is created to compare with `Typelivore::Find.`
+`Typelivore::ReconformedLeftInterview` accepts a list of elements.
+Its first layer accepts another list of elements and returns a function.
+When invoked by predicates, the function first binds the second list to the front of every predicate;
+then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if it cannot find the element.
+
+This function internally is the flattened version of `Typelivore::LeftInterview`.
 <pre><code>   Arguments...
 -> LeftSides
 -> Predicates...

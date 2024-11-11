@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Cotanivore::TypicalPaste` concatenates a list of packed containers. The first container will be used to hold the result. The result will be returned via the type alias member `type`.
+`Cotanivore::TypicalPaste` accepts a list of packed containers.
+It concatenates them together and uses the first container to hold the result.
 <pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
 -> Container<sub><i>0</i></sub>&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>
 
@@ -48,7 +49,7 @@ We will implement `TypicalPaste` using recursion over the total number of packed
 
 - **Base Case:** Handle several amounts directly;
 - **Recursive Case:**
-  1. Concatenate several packed containers from the front directly and place the result into the first container;
+  1. Concatenate several packed containers at the front directly and place the result into the first container;
   2. Invoke `TypicalPaste` with the newly packed first container and the unhandled containers.
 
 A simplified version will be as follows:

@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Stockivore::TypicalPaste` concatenates a list of packed stockrooms. The first stockroom will be used to hold the result. The result will be returned via the type alias member `type`.
+`Stockivore::TypicalPaste` accepts a list of packed stockrooms.
+It concatenates them together and uses the first stockroom to hold the result.
 <pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...
 -> Stockroom<sub><i>0</i></sub>&lt;Sequences<sub><i>0</i></sub>..., Sequences<sub><i>1</i></sub>..., ...></code></pre>
 
@@ -69,7 +70,7 @@ We will implement `TypicalPaste` using recursion over the total number of packed
 
 - **Base Case:** Handle several amounts directly;
 - **Recursive Case:**
-  1. Concatenate several packed stockrooms from the front directly and place the result into the first stockroom;
+  1. Concatenate several packed stockrooms at the front directly and place the result into the first stockroom;
   2. Invoke `TypicalPaste` with the newly packed first stockroom and the unhandled stockrooms.
 
 A simplified version will be as follows:

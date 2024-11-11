@@ -6,8 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Roadrivore::BindBack` accepts an operation.
-Its first layer accepts a list of containers and returns a metafunction such that when invoked, the previously provided containers will be concatenated to the end of the argument list;
-then, the metafunction becomes the operation previously provided and invoked by the newly formed argument list.
+Its first layer accepts a list of containers and returns a function.
+When invoked, the function adds the containers to the end of the argument list and instantiates the operation with the result.
 <pre><code>   Operation
 -> Containers...
 -> Operation&lt;*, Containers...&gt;</code></pre>

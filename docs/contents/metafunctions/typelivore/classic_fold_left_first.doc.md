@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::ClassicFoldLeftFirst` accepts a list of elements and produces a function.
-When invoked with an operation, the function left-folds the list with the first element as the initiator.
+When invoked by an operation, the function left-folds the list with the first element as the initiator.
 The type result of the operation is used for continuation.
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
 -> Operation
@@ -16,7 +16,7 @@ The type result of the operation is used for continuation.
        E<sub>0</sub>, E<sub>1</sub>
    &gt;::type, E<sub>2</sub>
    &gt;::type
-   ..., E<sub>n</sub>&gt::type</code></pre>
+   ..., E<sub>n</sub>&gt;::type</code></pre>
 
 ## Type Signature
 
@@ -41,45 +41,37 @@ struct ClassicFoldLeftFirst
 
 ## Examples
 
-We will left-fold 2, 3, 4 and 3 using a power operation.
+We will left-fold 1, 3, 4 and 3 using subtraction.
 The process can be described as follows:
 
 ```C++
-   ((2^3)^4)^2
--> ((8)^4)^2
--> (4096)^2
--> 16777216
+   ((1-3)-4)-3
+-> (-2-4)-3
+-> (-6)-3
+-> -9
 ```
 
 ```C++
-consteval int power(int a, int b)
-{
-    int c {a};
-    for(;b!=1;b--)
-    { c*=a; }
-    return c;
-}
-
 template<typename A, typename B>
-struct Power
+struct Subtract
 {
     using type
-    = std::integral_constant<int, power(A::value, B::value)>;
+    = std::integral_constant<int, A::value-B::value>;
 };
 
 template<template<typename...> class...Args>
 using Metafunction 
 = ClassicFoldLeftFirst<
-    std::integral_constant<int, 2>,
+    std::integral_constant<int, 1>,
     std::integral_constant<int, 3>,
     std::integral_constant<int, 4>,
-    std::integral_constant<int, 2>
+    std::integral_constant<int, 3>
   >::Road<Args...>;
 
 using SupposedResult
-= std::integral_constant<int, 16777216>;
+= std::integral_constant<int, -9>;
 
-using Result = Metafunction<Power>;
+using Result = Metafunction<Subtract>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```
@@ -99,6 +91,9 @@ Here's a simplified version of it:
 template<typename...Elements>
 struct ClassicFoldLeftFirst {};
 
+// Base Case:
+
+// Fold once.
 template<typename Initiator, typename Element>
 struct ClassicFoldLeftFirst<Initiator, Element>
 {
@@ -113,6 +108,7 @@ struct ClassicFoldLeftFirst<Initiator, Element>
     using Road = Detail<Agreements...>::type;
 };
 
+// Fold twice.
 template<typename Initiator, typename First, typename Second>
 struct ClassicFoldLeftFirst<Initiator, First, Second>
 {
@@ -131,6 +127,10 @@ struct ClassicFoldLeftFirst<Initiator, First, Second>
     using Road = Detail<Agreements...>::type;
 };
 
+// Recursive Case:
+
+// Fold twice, handle the first three parameters,
+// and recurse using the rest.
 template<typename Initiator, typename First, typename Second, typename...Others>
 struct ClassicFoldLeftFirst<Initiator, First, Second, Others...>
 {
@@ -152,7 +152,7 @@ struct ClassicFoldLeftFirst<Initiator, First, Second, Others...>
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEIACcXKQADqgKhE4MHt6%2BehlZjgLhkTEs8YkAbGa2mPYlDEIETMQEeT5%2BQfWNOS1tBGXRcQnJqQqt7Z0FE1NDESOVY7UAlLaoXsTI7BwEmCxpBvsmgW4EAJ5pjKyYAHQP2PRsggqn2CYaAIKTxF4OAGo3AYFFlkAAxTzoUKYKgEcF4YiTAEmADsVlRABFTlZvp8vvtDsdMKdzlcbmwAQBJBjZJhEMgAy7XZiUp4HRgEd7437/AhAkFgyG0aGw%2BGIyakml0hmkAHsl5cwIfPHo/EAjVMg5Hekks6EnUnfXk1n3B7vAHIQUAgDy12I9Jy3O%2BmoBvMBmMwrTo6s1aNxX1drq8WSMTPJKJdQY1p0xtvtjoEUtpjnpJDlCs57xAIGZeoDrrR2MCAd9GoNxNJFd1VZNtwedwtVqYoIbX2AxEwHNezsDmpDEWAAIASqgmOgUYE457vbRSe3O92CAoG9nc%2BScfii5u8d9q0aySzbtSU3g04y86aAQikQQ5Zfj0JMGgGOhe%2B7%2BcCW0KoTC4TfJTOaVU1la8JTvAEnxfN9lS3NUo3LbVK31JCa2NI82FXZVLWtO0EkTBhe1dD8ARnJgfQQlF4L7aMBzDPNIxooNY3jfCmlJMto3DDDMFYh12LOTiuJPGV0zA28hOY5UczzOUoIEN9KOjNc8x3JjtxLLdKP3PVzlQg8H0w81sObVsHgXLtFTeWDKLoodR3HSdpy9ci5zOCylxXYzsBkjdNNVYtSz3fTdMM3jgLPUCwvEyZ7zrSl5NfOKeIbG0CAQBJrJVH4CD%2BQEv1BPAIV/MUAKVNwIvPOUyrk58FLlNKMqRLDsv9TidKrELaxS7ycO/PiCKIzUSLIij1Oo4S7O43jJJjKcBW/IrhVFf9wI4pSuOivD%2BKdQSNujLaEwEtxZuEkSQLEsrTsLaT12uWroOuv1btk210sy1d9snHzcxCkcxxgtxtsG2D/PGwKtKYjqUKJNDDwpM1GxMwU2w7SzOSyzipocicWNGty3A8qyWt8641I0oKvgAegAKjp%2BmGap/FabpgAVbAhFZ%2Bmme%2BFmGcZyHzECCIrS8LBJzcF8djSZde3xF9JkwAA3MQAQifkMgAdwSCB1YBJg5T12JVjggtNT15AqIsJgKc4/hiAgHFYjAMBYy4J2AFoPZNyj/UtGnYxtksqOxSjOwILYGEtcmsUh6H4avL5koRgErBsnK8v5ZRUG14hTax0Mh1U335smdAc3VzAOzEAB9BXWkEUl1blLWda%2BHMVe8TA5QsDuxC8TATdB0tY7B/F44n%2BLEabFHzOIYBMe%2BKaAFkXKoLwGAcHJGJYgqfxFP9xQkvamLLivBCrh1aDrgRJkMcrm4BMx3lITiz5ASvq%2Bv%2Bv76bwQ5UCC/N%2BBBy4fwvl/G%2BDA76NzOI/SQQDKLv0/lfSB0CH7/yfkNNcON5zzy8kjD4Y8l6F0gl4NIRRMDoGHJgBQXhaBcjxKXEB599gQJ/jAtwj8uDVFRLwsw3DuREK%2BNjGhdD%2BQsVXq0dem9jrZ1zoIymd9HDIBrt%2BBIBAIDvwULcVR1k3DUNofQuSZCKFUNEfQ94Q8LAcHWLQTg/heB%2BG4LwVAnATqWGsG6TY2wZpmECDwUgBBNA2PWAAawCJIO4GhJBcFRIEDQ/gNBmGqLUAAHKk/QnBJC8BYBIDQGhSBOK0KQVxHBeAKBAAUoJHAtDrDgLAGAiAQCbAIGkLwd4KAQDQIcOgCQoi3E4KoVJ1QPbVEkACYAyBLZSDuGYXglDCAkDwOXVI/BBAiDEOwKQMhBCKBUOoGpOg9CawdGkTgPBbH2MccEkpnAbTtLafyVAVAARDJGWMiZUyAQzLMACCAHgen0GICiPxXBVi8GqbU0gEAkDdLSL0sgnS4UIpAMAKQdQaD0MypQWINzYgRDaBcc5vB8XMGIBcG0sRtDPmqQE7piobQMFoESw5pAsCxC8MANwYhaAVOcWyg4hhgDiFZfgTsW8lY0JuZgVQz52m7ACZXOxrLaB4FiA6clHgsA3NyngXJ/LJXEFiJkTAnoWBCtVUYYJ6wqAGAXgANTwJgTWeEnEBLWcIUQ4htker2WoG5uhUgGCtaYDxlh9BqoqZAdYqAZY5D5R7MusZQ1WEsGYYpqBDXEGWVK6NvQaU5BcK%2BGYfhUhhEWBUKohRMjZAECW6txQcjDErWMCYDQC0CAGNMTwXQ9B2A7c0eYzbRiJDmIMetY72jDuWKO9YChvE7AkJcjgDjCk3NKa84ZozxmTOmZE35EBcCLOBULMFELrXrAyuOMYEAwkgEkIEO4SRAiokkNEswkhqj5P8NUJImSODZNILk/xdxqjcNSUkVJ3D/AxP8M%2B6oa7WWlPKZUwJ1roWNJhc0h57TyCUGRUC/pbBOBtBYErVEHsmB9TDFwJIdwuBRPmfgBkyy9Aeo2d66QvqlD%2BtZboOoJymBnOccu1dRSXF3Jw08l5pHyOUeo0OWj9Gol/IBfCoFILAhmHBWhw5dTYWoEBQkPDXTDPqbGLJijzYjC0a4AUzF%2BwkQ4rxQS8lxLSCksJZS6lDh3P0s5Iy5lNz2Wcu5bQXl7msDmqMCK4pYqC2Sr5cUmVcr9juaVTc1V6rCVat2MU3V%2BqAmGuNUoM1FrBzodtUwB1TqXUsnc%2Bxr1WyuOyD9Qc4p/H9BCpQNYawEbYhRtvSUuNt9OCJpAcm3raaM1ZpzYNud7at7OAgK4CdIRXzTqrakIotbcg9tmOkGtTRNutvzUtwd479ulrO00LtCxygjr7fMNbd8p0Vse2CjYWxF2feVWJ9dnB9bEDIxRqj1nFN0YYxoP5R6GSabPbp2pl7MDXsSEN5VgHgN0eiaiODvDAiSA/WM1I4nbllNsKhyFNiMPwCwy0x5JmCN9IGRwUjHyWAKCVpbJWSniSTCY8e1jqzZAceazs%2BQPH2tHOCIJ4TFz/3/aQ5J1p7SATPKBywdnnPue891Mif5ZmEWacCDpqn%2BmUCG6BYzy3YwufkJrjzpINc%2BcEFUcDsZfA6COYqRAXFrLPNuf5QHilVKaV%2BcMwyplLK4uYA5VynlfKAlRYtXl3g8WJVStZSl5A8r0sX2VcUrLGqLi5Z1dmwrvBismrKzFirem%2BB2oUI651rqGsi6axIFruzJcBpAMEYNxgps2Cy/N4bTQ%2BVUzPim6w6aXGzawKP/t52i3uCu3octD2Z0Nt22tnbx33tb7bX0Ttz219H4HXdk7o7bCn/yNd1792lhbbnQurZonrlK44BrrXXOASO7uC7jDsxiQPDqbheqQFelgGjsupjiAGYHRoEIEP4IkjEvkogaiNUBkqTshhTlUuAeEpIP4E%2Bv4KkskkkJIEkHEi%2BlwP3pwIEB/hmpwOenpsunMohoweTmbusIalkM4JIEAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEIACcXKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCcmpCi1tHQXdEwNDldVjAJS2qF7EyOwcBJgsaQa7JoFuBACeaYysmAB0d9j0bIIKx9gmGgCCE8ReDgDUbgMCiyyAAYp50KFMFQCKC8MQJn8TAB2KzIgAixysn3eHwA9Hi/hYmEoAST2LjcQS/uDaOg/gItjdcbt9odMMdThcrmw/gBJBjZJhEMh/c6XZi8h57RgEV6476/AgAoEg2mQ6Gw%2BETTkCoUi0h/aVPOWBN441G4v7WsV7A7CjknVn2o5O7mS253V5/ZCqv4AeUuxGFOXlnxtf0V/3RmBadCtNpR2I%2BEYjXiyRjF3KR4dT1uO6IDQZDAl1gscwpIhuNsteIBA4sdyYjKMxgWTCetzvZnO7Dt77uud2ZZp9quHH2AxEwMueYZTNvTEWAfwASqgmPSC38Y3HaJzJ9PZwQFMO6w3uVjKRirzjPtT1WKAO54Jksu09t0S6788t4Suio2Ho0tqBCGkBP5CJgaAMOg85RsqgIkmqEJQjCcIIqabh6hWBogZhhpQTBcFmtezY2n2rqnB%2B/ZfjynojtgY7IUWCQlgw84RghO6xkw8a5vmloCamS6Zo2OYLnm26BmxjScp2eZZt%2BvIycGcknApim/vqVb4TqwlSWa9aNoR0ECHBBmpueja3pJSI3u2lLCZRjrUWytFcspDHer6yETlOM4mi8pHCaJK7rpuSKBIWu58fuJyHoFsqnl6RkXpctmtpl96Equ0EbFkABumBkkoIBOfihKPgQL5bIaCCGOg9BiggJU0JhLVHn8aStNcuwIqQVKEo1fzTsgBUlWFLUldOEzMp8LkDl52m4bpEG8hhEzgYOvJEeZ21ecO/oEK1CLwQQPz/EhwKvuqaFaphZY6aKm1gX8e2wYax2nSljFkQpi1OjRVHrd5o6%2BcCrFqaGIV2dxsX8XZSaaYuGYruJKP5tFKrIbdqGaq98mWXmoNQ%2BxRN2VppOqeTGnE1pK3/nhhP0y2aUme9ZmwZjVns9yX0nQkv089ZwMlRFJFuDT6lvI5wlZXLHwA2LvYq3RHpnuD453Ilx7BeadlTRLUUxbx8YJQFeua9gxmXorCsdveABULuu27eJUq7AAq2BCF7rse87bvB4HSs4mYgQRL6XhYFFbgwVsaQnvO77uSDO0lR8B30US52XcqQheLEF1MA4/2hWjSkcvL2MTOg9YRLsU5iAA%2BjBcyCJyjeGh89aFWIXiYAAtBYfcD46ssdg5jsfIDbkuq5oPW8xwITsQwD67iU0ALK8VQXgMA4OQSdu10oXS92E3TcMEPXICN5gze0G3Agd1h3d/FwryDcJdcN4Ij9gzP3bi0TuJwP6BG/gpP%2B98AFPxfgwN%2BXdBCGkkFA3%2Bt9/5NyAQgpB4CUF/EgbDLGNsQASwPOvYWpF7afCmoXNIxRMDoDygoLwtA5Q4lrpg2B2DW4gMMO/AhQ8kjyhoR8I2mBWHsJNn8XeLR96H3Um4Quxdgxl2oTPOYjhkAt2QgkAgEAYEKGuLo4KbgWFsLevQxhzDJGWNeMsLEHBVi0E4P4XgfgOBaFIKgTgbhrDWEjOsTYJVzCBB4KQAgmhnGrAANYBAABw3H8AANgSSkqQ/hkQpMkEkQI2T9CcEkLwFgEgNAaFIJ47xviOC8AUCACpUSvHONIHAWAMBEAgHWAQNIXgwIUAgGgfYdAEhRGuJwVQ6Sh45L%2BMAZAyBP6SBuGYXgTDCAkDwPXVI/BBAiDEOwKQMhBCKBUOoZppBdCpCfMGNInAeAuLcR46JPjOD%2Bj6b05UqAqB/EmSk6ZkhZnzMWcsv4EAPDDPoMQJEEcuDLF4E0rQqwIBICGWkEZZABmovRSAYAUgzB8DoP1epEBYjPNiBEVoZw7m8HJcwYgZx/SxG0NBJpEShkmn9AwWgVLzlYFiF4YAbgxC0HqdwXgWAWCGGAOIXl8IWV4GKqK7xmBVD5V2NS8gADXHnNoHgWIwZ6UeCwM8i6eBSlitIMVYgsRMiYBjJKowuqjDRNWFQAwG8ABqeBMBPhkp4iJOzhCiHEIcwNJy1DPMufoKVKAAmWH0Hq%2BpkBVioCTjkUVQ864FlMJYawZhqlWuIJsyR8BVh2Hlc4CArhph%2BFSGECIwwqijFSMUbIAga16FbY0BYIxEjjHqBWpokx2ieE6HoctR8BD9DaD2ptfbbDDo7eMYds6liwrWBsLYEgHkcHcZU55NSflTJmXMhZUgQUQFwOsqFYTYXwpdasVqm5RgQDiSASQgQbh5ORJIDQkgzCSBSeU1JSRCkcGKaQUp4SbgZLSUkBJXAUn%2BEkFwfweSUn7vOTUupDTIkutaR05FXT3l9PIJQLFkKxlsE4K0FghVkRDyYMxTMXAkg3C4DcZV%2BARSbL0IGvZIbpBhqUBG85uh8XXKYLcsVO691VN4DUt5PS%2BkMm%2BbR%2BjjHmMrlY%2BxzjoLwVoshdCwIZg4V4eaUilFqAIUJDI4M6zhnRjqYY75IwrGuAVJoOwoWlBSXnNpZSjVAX6WMuZQ4DV7LZScu5c8vlAqhW0BFRqiVUqZXePwGNRwirnkqrVdsCJD9tXeN1fqylRrtjeNNeaiJVqbVKHtal5c%2BG3VME9d631EoNX8eDQcoTshw1nO8eJ6Nzqc1WHjSVpNr6fFptfpwTNt9s1xosPmhThbi1TbLQOydfgq2wSXSEWCq7m3pEyG23Io6CgtrO92htiwTsTsaNOkd%2BRa09EHc947865hTEu29n7gw7u9u3RukJIPtVyYPZwP4znNOue02xjjGhQVXpFMZu95nEWPswM%2BxI03tUQag2xjQ2SND%2BAQykVjGhajyZebU2wuGEUtLaZ07pHy7MUdGeMjgtGZksAUIVBZhUdPsgmKs7jGytlHKDfsiQfXjkicGzoEAwRJPSfuWByHWHXkkc%2BWp4gLA%2BcC6FyLh0iIwUOfRcZwIZmmeWZQJbyFHPHejEFwwluwukgt1FwQXRBuckEu8wiXzZKKX0qC2HhlTKWUResxyrlPL0uYH5YK4VoqIkpcdRV8Vcqj7ZfObl8a6qLWFeeSVg1ZxysmqLdV3gtXbUNcdU1izfB3UKC9T6v1XXZACd69LgbkaVcjeMMthNsRNszcaKKvEf8xt5oLQkItWAJ%2BPZyC4fbf29D1oqMD67JQcgHa7TkL747ttPcXZv/tvQp0rqB3O8dF/XsP/mHftdZbglbvXRDp52uOAw/9wCvzoLn8J7jcD7ijhLjejCrbg%2BqQE%2BlgHjjuoTiAGYGxoECTn%2BoEDkoEIEHklwOkphtUpwDho0rAfEihjcB%2BlwIEAkshhHP4BoCkgBmBoED/kQfTnbjuisoQQpsQZjjEpakLGvpIEAA%3D)
 
 ## Links
 

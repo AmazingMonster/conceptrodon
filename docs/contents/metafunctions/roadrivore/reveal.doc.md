@@ -5,7 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Roadrivore::Reveal` accepts an operation and returns a metafunction such that when invoked, the metafunction becomes the member `type` of the previously provided operation invoked by the arguments.
+`Roadrivore::Reveal` accepts an operation and returns a function.
+When invoked, the function instantiates the operation with the arguments and becomes the alias member `type` of the operation.
+Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
 <pre><code>Operation -> Road&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
 
 ## Type Signature

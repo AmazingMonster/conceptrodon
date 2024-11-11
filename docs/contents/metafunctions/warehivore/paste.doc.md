@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Warehivore::Paste` is an alias template. It concatenates a list of packed warehouses. The first warehouse will be used to hold the result.
+`Warehivore::Paste` accepts a list of packed warehouses.
+It concatenates them together and uses the first warehouse to hold the result.
 <pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
 -> Warehouse<sub><i>0</i></sub>&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>
 

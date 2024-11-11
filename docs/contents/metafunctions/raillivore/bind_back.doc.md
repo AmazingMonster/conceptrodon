@@ -6,8 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Raillivore::BindBack` accepts an operation.
-Its first layer accepts a list of sequences and returns a metafunction such that when invoked, the previously provided sequences will be concatenated to the end of the argument list;
-then, the metafunction becomes the operation previously provided and invoked by the newly formed argument list.
+Its first layer accepts a list of sequences and returns a function.
+When invoked, the function adds the sequences to the end of the argument list and instantiates the operation with the result.
 <pre><code>   Operation
 -> Sequences...
 -> Operation&lt;*, Sequences...&gt;</code></pre>

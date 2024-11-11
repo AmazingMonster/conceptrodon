@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Upend` accepts a list of elements and returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided elements but in reversed order.
+`Typelivore::Upend` accepts a list of elements and returns a function.
+When invoked by an operation, the function instantiates the operation with the previously provided elements but in reversed order.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n</sub>
 -> Operation
 -> Operation&lt;Element<sub>n</sub>, Element<sub>n-1</sub>, ..., Element<sub>0</sub>&gt;</code></pre>
@@ -60,7 +61,7 @@ struct Label
 };
 ```
 
-We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked with `std::integral_constant<size_t, I>`.
+We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked by `std::integral_constant<size_t, I>`.
 Here, `std::integral_constant` helps us create a type with an index for argument-dependent lookup.
 
 Now, we will assemble an overload set and instruct compilers to pull the elements out in reversed order. Here's the entire implementation:

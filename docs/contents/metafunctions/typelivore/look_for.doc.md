@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::LookFor` accepts a list of elements and produces a function.
-When provided with a predicate, the function returns the index of the first element that satisfies the predicate, or `-1` if the element is not found.
+When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
 This function is created to exhibit the capability of fold expression and to compare with `Typelivore::Find`.
 <pre><code>   Arguments...
 -> Predicate

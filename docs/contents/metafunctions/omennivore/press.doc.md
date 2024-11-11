@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Omennivore::Press` accepts an operation and flattens its inner structure. It returns an uncurried version of the operation. Check out **Example** for a detailed description.
+`Omennivore::Press` accepts an operation and flattens its inner structure. It returns an uncurried version of the operation. Check out **Examples** for a detailed description.
 
 ## Type Signature
 

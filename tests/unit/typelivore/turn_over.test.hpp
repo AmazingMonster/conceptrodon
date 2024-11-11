@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_FLIP_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_FLIP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TURN_OVER_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TURN_OVER_H
 
 #include "concepts"
-#include "conceptrodon/descend/typelivore/flip.hpp"
+#include "conceptrodon/descend/typelivore/turn_over.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
@@ -21,7 +21,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestTypicalFlip {
+namespace TestTurnOver {
 
 
 
@@ -37,7 +37,7 @@ using OrderedCapsule = Capsule<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep_reversed.hpp"
-using SuppesedCapsule = Capsule<SHEEP_REVERSED_SPROUT(240)>;
+using SuppesedResult = Capsule<SHEEP_REVERSED_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep_reversed.hpp"
 /******************************************************************************************************/
 
@@ -69,10 +69,10 @@ SAME_TYPE(boost::mp11::mp_reverse<OrderedCapsule>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    SuppesedCapsule
+    SuppesedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(TypicalFlip<SHEEP_SPROUT(240)>::type);
+SAME_TYPE(TurnOver<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -7,11 +7,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Erase` accepts a list of elements.
 
-Suppose its first layer is instantiated with an index.
-In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided list modified by removing the element at the index.
+- Suppose its first layer is instantiated by an index.
+In that case, it returns a function.
+When invoked by an operation, the function removes the element at the index from the list and instantiates the operation with the result.
+- Suppose its first layer is instantiated by two indices where the first is less or equal to the second.
+In that case, it returns a function.
+When invoked by an operation, the function removes the elements between the indices from the list and invokes the operation with the result.
 
-Suppose its first layer is instantiated with two indices where the first is less or equal to the second.
-In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the previously provided list modified by removing elements between the indices.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation

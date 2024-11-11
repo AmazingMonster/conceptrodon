@@ -5,7 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Roadrivore::Conceal` accepts an operation and returns a metafunction such that when invoked, the alias member `type` becomes the previously provided operation invoked by the arguments.
+`Roadrivore::Conceal` accepts an operation and returns a function.
+When invoked, the function instantiates the operation with the arguments and returns the result using alias member `type`.
+Overall, `Conceal` turns an operation into its `Typical` counterpart.
 <pre><code>Operation -> Road&lt;&ast;&gt;{type=Operation&lt;&ast;&gt;}</code></pre>
 
 ## Type Signature

@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Omennivore::LaboriousPress` accepts an operation and flattens its inner structure. It returns an uncurried version of the operation. Check out **Example** for a detailed description.
+`Omennivore::LaboriousPress` accepts an operation and flattens its inner structure. It returns an uncurried version of the operation. Check out **Examples** for a detailed description.
+
 `Omennivore::LaboriousPress` functions the same way as `Omennivore::Press`.
 The only difference is that `Omennivore::LaboriousPress` has more base cases.
 This function is provided to compare against `Omennivore::Press`.

@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Find` accepts a list of elements and produces a function.
-When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if the element is not found.
+When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
 <pre><code>   Arguments...
 -> Predicates...
 -> Found ?
@@ -37,7 +37,7 @@ struct Find
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int`, `int*`, `int**`, `int***`.
+We will find the indices of `int**` and `void` in list `int，int*，int**，int***`.
 
 ```C++
 template<typename Element>

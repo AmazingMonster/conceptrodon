@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Raillivore::Sink` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.
+
 In contrast to `Skip` and `Skid,` `Sink` introduces a new scope to avoid name collision. Hence, it uses the name `Rail` for both initiation and recursion.
 <pre><code>   Operation{FirstLayer{...LastLayer}}
 -> FirstLayer{...LastLayer{Operation}}</code></pre>

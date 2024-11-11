@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Sequnivore::Paste` is an alias template. It concatenates a list of packed sequences. The first sequence will be used to hold the result.
+`Sequnivore::Paste` accepts a list of packed sequences.
+It concatenates them together and uses the first sequence to hold the result.
 <pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
 -> Sequence<sub><i>0</i></sub>&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>
 

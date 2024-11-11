@@ -6,7 +6,6 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::IsDifferent` accepts two elements and checks whether they are different.
-The result is returned through member `value`.
 <pre><code>Left, Right -> Left != Right ? true : false</code></pre>
 
 ## Type Signature

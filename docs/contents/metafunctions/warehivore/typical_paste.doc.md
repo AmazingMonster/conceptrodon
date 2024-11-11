@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Warehivore::TypicalPaste` concatenates a list of packed warehouses. The first warehouse will be used to hold the result. The result will be returned via the type alias member `type`.
+`Warehivore::TypicalPaste` accepts a list of packed warehouses.
+It concatenates them together and uses the first warehouse to hold the result.
 <pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
 -> Warehouse<sub><i>0</i></sub>&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>
 
@@ -69,7 +70,7 @@ We will implement `TypicalPaste` using recursion over the total number of packed
 
 - **Base Case:** Handle several amounts directly;
 - **Recursive Case:**
-  1. Concatenate several packed warehouses from the front directly and place the result into the first warehouse;
+  1. Concatenate several packed warehouses at the front directly and place the result into the first warehouse;
   2. Invoke `TypicalPaste` with the newly packed first warehouse and the unhandled warehouses.
 
 ```C++

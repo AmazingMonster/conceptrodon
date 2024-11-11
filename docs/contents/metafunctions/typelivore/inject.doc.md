@@ -6,9 +6,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Inject` accepts a list of elements.
-Its first layer accepts an index.
-Its second layer accepts a list of new elements and returns a function such that when invoked with an operation,
-the function becomes the operation instantiated with the list created by injecting new elements into the index of the previously provided list.
+Its first layer accepts an index. Its second layer accepts a list of new elements and returns a function.
+When invoked by an operation, the function injects new elements into the index of the previously provided list and instantiates the operation with the result.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> NewElements...

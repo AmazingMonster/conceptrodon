@@ -1,18 +1,18 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `Typelivore::TypicalFlip`
+# `Typelivore::TypicalTurnOver`
 
 ## Description
 
-`Typelivore::TypicalFlip` accepts a list of elements and returns a `Capsule` packed with the previously provided elements but in reversed order.
+`Typelivore::TypicalTurnOver` accepts a list of elements and returns a `Capsule` packed with the previously provided elements but in reversed order.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n</sub>
 -> Element<sub>n</sub>, Element<sub>n-1</sub>, ..., Element<sub>0</sub></code></pre>
 
 ## Type Signature
 
 ```Haskell
-TypicalFlip ::   typename...
+TypicalTurnOver ::   typename...
               -> typename
 ```
 
@@ -20,7 +20,7 @@ TypicalFlip ::   typename...
 
 ```C++
 template<typename...>
-struct TypicalFlip
+struct TypicalTurnOver
 {
     using type = RESULT;
 };
@@ -28,7 +28,7 @@ struct TypicalFlip
 
 ## Examples
 
-We will flip `int, int*, int**, int**`.
+We will turnover `int, int*, int**, int**`.
 
 ```C++
 template<typename...>
@@ -36,7 +36,7 @@ struct Capsule;
 
 using SupposedResult = Capsule<int**, int**, int*, int>;
 
-using Result = TypicalFlip<int, int*, int**, int**>
+using Result = TypicalTurnOver<int, int*, int**, int**>
 ::type;
 
 static_assert(std::same_as<SupposedResult, Result>);
@@ -44,18 +44,18 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-We will implement `TypicalFlip` using recursion over the total number of parameters.
+We will implement `TypicalTurnOver` using recursion over the total number of parameters.
 
 - **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
-  1. Flip the several elements from the front of the list;
-  2. Invoke `TypicalFlip` by the rest to flip them over;
-  3. Switch the positions of these two flipped parts and concatenate them together.
+  1. TurnOver the several elements from the front of the list;
+  2. Invoke `TypicalTurnOver` by the rest to turnover them over;
+  3. Switch the positions of these two turnoverped parts and concatenate them together.
 
 Here's a simplified version of the implementation:
 
 ```C++
-// We will use this function to concatenate two flipped parts.
+// We will use this function to concatenate two turnoverped parts.
 template<typename>
 struct ExtendBack {};
 
@@ -70,24 +70,24 @@ template<typename...>
 struct Capsule;
 
 template<typename...>
-struct TypicalFlip {};
+struct TypicalTurnOver {};
 
 template<typename First>
-struct TypicalFlip<First>
+struct TypicalTurnOver<First>
 {
     using type = Capsule<First>;
 };
 
 template<typename First, typename Second>
-struct TypicalFlip<First, Second>
+struct TypicalTurnOver<First, Second>
 {
     using type = Capsule<Second, First>;
 };
 
 template<typename First, typename Second, typename...Others>
-struct TypicalFlip<First, Second, Others...>
+struct TypicalTurnOver<First, Second, Others...>
 {
-    using type = ExtendBack<typename TypicalFlip<Others...>::type>
+    using type = ExtendBack<typename TypicalTurnOver<Others...>::type>
     ::template Mold<Second, First>;
 };
 ```
@@ -96,5 +96,5 @@ struct TypicalFlip<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/flip.hpp)
-- [unit test](../../../../tests/unit/typelivore/typical_flip.test.hpp)
+- [source code](../../../../conceptrodon/descend/typelivore/turn_over.hpp)
+- [unit test](../../../../tests/unit/typelivore/typical_turn_over.test.hpp)

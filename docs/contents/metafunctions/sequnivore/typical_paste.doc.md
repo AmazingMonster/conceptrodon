@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Sequnivore::TypicalPaste` concatenates a list of packed sequences. The first sequence will be used to hold the result. The result will be returned via the type alias member `type`.
+`Sequnivore::TypicalPaste` accepts a list of packed sequences.
+It concatenates them together and uses the first sequence to hold the result.
 <pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
 -> Sequence<sub><i>0</i></sub>&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>
 
@@ -52,7 +53,7 @@ We will implement `TypicalPaste` using recursion over the total number of packed
 
 - **Base Case:** Handle several amounts directly;
 - **Recursive Case:**
-  1. Concatenate several packed sequences from the front directly and place the result into the first sequence;
+  1. Concatenate several packed sequences at the front directly and place the result into the first sequence;
   2. Invoke `TypicalPaste` with the newly packed first sequence and the unhandled sequences.
 
 A simplified version will be as follows:

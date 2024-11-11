@@ -7,11 +7,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Slice` accepts a list of elements.
 
-Suppose its first layer is instantiated with an amount.
-In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the list created by removing elements of the given amount from the front of the previously provided list.
+Suppose its first layer is instantiated with an index.
+In that case, it returns a function.
+When invoked by an operation, the function collects all elements with indices greater than the given index from the list and instantiates the operation with the collection.
 
 Suppose its first layer is instantiated with two indices where the first is less or equal to the second.
-In that case, it returns a function such that when invoked with an operation, the function becomes the operation instantiated with the list created by collecting elements between the indices from the previously provided list.
+In that case, it returns a function.
+When invoked by an operation, the function collects all elements with indices between the previously provided two indices from the list and instantiates the operation with the collection.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation

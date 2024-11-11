@@ -6,8 +6,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::RightInterview` accepts a list of elements.
-Its first layer accepts another list of elements and produces a function such that when invoked with predicates, the function first binds the second list to the back of every predicate;
-then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if the element is not found.
+Its first layer accepts another list of elements and returns a function.
+When invoked by predicates, the function first binds the second list to the end of every predicate;
+then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if it cannot find the element.
 <pre><code>   Arguments...
 -> RightSides
 -> Predicates...
