@@ -4,7 +4,6 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_RIGHT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_RIGHT_INTERVIEW_H
 
-#include <concepts>
 #include <type_traits>
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/varybivore/sensible_right_interview.hpp"

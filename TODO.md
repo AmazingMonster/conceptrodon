@@ -37,3 +37,4 @@
 - Kind
 - Nil
 - Adverse
+- Rote

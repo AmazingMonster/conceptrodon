@@ -20,9 +20,9 @@ then, it returns the index of the first element that satisfies all newly formed 
 
 ```Haskell
 SensibleRightInterview ::   typename...
-                        -> template<typename...> class...
-                        -> typename...
-                        -> auto
+                         -> template<typename...> class...
+                         -> typename...
+                         -> auto
 ```
 
 ## Structure
@@ -46,7 +46,7 @@ struct SensibleRightInterview
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int, int*, int**, int***`.
+We will find the indices of `int**` and `void` in list `int, int*, int**, int**`.
 
 ```C++
 template<typename...Args>
@@ -174,5 +174,5 @@ struct SensibleRightInterview<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/right_interview.hpp)
-- [unit test](../../../../tests/unit/typelivore/right_interview.test.hpp)
+- [source code](../../../../conceptrodon/typelivore/sensible_right_interview.hpp)
+- [unit test](../../../../tests/unit/typelivore/sensible_right_interview.test.hpp)

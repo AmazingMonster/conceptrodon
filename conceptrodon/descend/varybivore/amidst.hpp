@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_MIDST_H
-#define CONCEPTRODON_VARYBIVORE_MIDST_H
+#ifndef CONCEPTRODON_VARYBIVORE_AMIDST_H
+#define CONCEPTRODON_VARYBIVORE_AMIDST_H
 
 #include "conceptrodon/prefix.hpp"
 #include <utility>

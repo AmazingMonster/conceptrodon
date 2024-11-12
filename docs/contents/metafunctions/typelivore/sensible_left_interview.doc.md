@@ -46,7 +46,7 @@ struct SensibleLeftInterview
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int, int*, int**, int***`.
+We will find the indices of `int**` and `void` in list `int, int*, int**, int**`.
 
 ```C++
 template<typename...Args>
@@ -174,5 +174,5 @@ struct SensibleLeftInterview<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/left_interview.hpp)
-- [unit test](../../../../tests/unit/typelivore/left_interview.test.hpp)
+- [source code](../../../../conceptrodon/typelivore/sensible_left_interview.hpp)
+- [unit test](../../../../tests/unit/typelivore/sensible_left_interview.test.hpp)

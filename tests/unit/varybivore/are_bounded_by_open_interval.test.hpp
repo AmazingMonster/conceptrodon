@@ -1,12 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_BOUNDED_BY_OPEN_INTERVAL_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_BOUNDED_BY_OPEN_INTERVAL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_OPEN_INTERVAL_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_OPEN_INTERVAL_H
 
-#include <concepts>
 #include <type_traits>
-#include "conceptrodon/varybivore/is_bounded_by_open_interval.hpp"
+#include "conceptrodon/varybivore/are_bounded_by_open_interval.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -18,10 +17,10 @@ namespace Varybivore {
 namespace UnitTests {
 namespace TestIsBoundedByOpenInterval {
 
-INVALID(IsBoundedByOpenInterval<0, 1>::Page_v<0>);
-VALID(IsBoundedByOpenInterval<0, 1>::Page_v<0.5>);
-INVALID(IsBoundedByOpenInterval<0, 1>::Page_v<1>);
-INVALID(IsBoundedByOpenInterval<0, 1>::Page_v<2>);
+INVALID(AreBoundedByOpenInterval<0, 1>::Page_v<0, 0.3>);
+VALID(AreBoundedByOpenInterval<0, 1>::Page_v<0.5, 0.3>);
+INVALID(AreBoundedByOpenInterval<0, 1>::Page_v<1, 2>);
+INVALID(AreBoundedByOpenInterval<0, 1>::Page_v<2, -1>);
 
 }}}}
 

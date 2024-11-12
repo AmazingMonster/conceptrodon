@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Positive` accepts a variable and applies unary `+` to it.
 
-<pre><code>V -> -V</code></pre>
+<pre><code>V -> +V</code></pre>
 
 ## Type Signature
 
