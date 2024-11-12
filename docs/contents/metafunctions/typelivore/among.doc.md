@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Among` accepts a list of elements and returns a function.
 When invoked by an index, the function returns the element at the index from the list.
+
 <pre><code>...Element<sub><i>i</i></sub>... -> I -> Element<sub><i>i</i></sub></code></pre>
 
 ## Type Signature
@@ -21,7 +22,7 @@ Among :: typename... -> template<auto...>
 template<typename...>
 struct Among
 {
-    template<auto...>
+    template<auto>
     alias Page = RESULT;
 };
 ```

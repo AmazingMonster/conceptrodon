@@ -15,25 +15,6 @@ template<auto Variable>
 struct IsSame<Variable, Variable>
 { static constexpr bool value {true}; };
 
-template<auto RightSide>
-struct IsSameAs
-{
-    template<auto LeftSide>
-    struct ProtoPage
-    { static constexpr bool value {false}; };
-
-    template<>
-    struct ProtoPage<RightSide>
-    { static constexpr bool value {true}; };
-
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto...Args>
-    static constexpr auto Page_v 
-    {ProtoPage<Args...>::value};
-};
-
 template<auto LeftSide, auto RightSide>
 constexpr auto IsSame_v
 {IsSame<LeftSide, RightSide>::value};

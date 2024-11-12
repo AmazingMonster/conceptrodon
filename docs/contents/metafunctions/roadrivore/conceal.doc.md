@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Roadrivore::Conceal` accepts an operation and returns a function.
 When invoked, the function instantiates the operation with the arguments and returns the result using alias member `type`.
 Overall, `Conceal` turns an operation into its `Typical` counterpart.
+
 <pre><code>Operation -> Road&lt;&ast;&gt;{type=Operation&lt;&ast;&gt;}</code></pre>
 
 ## Type Signature
@@ -21,7 +22,7 @@ Conceal ::   template<template<typename...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<typename...> class...> class...>
+template<template<template<typename...> class...> class>
 struct Conceal
 {
     template<template<typename...> class...>

@@ -5,8 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Find` accepts a list of elements and produces a function.
-When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
+`Typelivore::Find` accepts a list of elements and returns a function.
+When invoked by predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
+
 <pre><code>   Arguments...
 -> Predicates...
 -> Found ?

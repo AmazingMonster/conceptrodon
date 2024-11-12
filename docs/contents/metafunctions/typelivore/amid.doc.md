@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Amid` accepts a list of elements and returns a function. When invoked by an index, the function returns the element at the index from the list.
+
 <pre><code>...Element<sub><i>i</i></sub>... -> I -> Element<sub><i>i</i></sub></code></pre>
 
 ## Type Signature
@@ -20,7 +21,7 @@ Amid :: typename... -> template<auto...>
 template<typename...>
 struct Amid
 {
-    template<auto...>
+    template<auto>
     alias Page = RESULT;
 
     template<auto>

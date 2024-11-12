@@ -11,6 +11,7 @@ When invoked by containers, the function places the elements into the containers
 then, it collects the value result of each packed container and invokes the operation with the collection.
 
 Check out **Examples** for more information.
+
 <pre><code>   Element
 -> Operation
 -> ...Container<sub><i>i</i></sub>...
@@ -35,10 +36,36 @@ SensibleGauge ::   typename...
 ## Structure
 
 ```C++
+template<typename>
+struct SensibleGauge
+{
+    template<template<auto...> class>
+    alias Rail
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
 template<typename...>
 struct SensibleGauge
 {
-    template<template<auto...> class...>
+    template<template<auto...> class>
+    alias Rail
+    {
+        template<template<typename...> class>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct SensibleGauge
+{
+    template<template<auto...> class>
     alias Rail
     {
         template<template<typename...> class...>

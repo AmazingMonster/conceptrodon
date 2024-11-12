@@ -5,8 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Varybivore::Find` accepts a list of variables and produces a function.
-When provided with predicates, the function returns the index of the first variable that satisfies all predicates, or `-1` if it cannot find the variable.
+`Varybivore::Find` accepts a list of variables and returns a function.
+When invoked by predicates, the function returns the index of the first variable that satisfies all predicates, or `-1` if it cannot find the variable.
+
 <pre><code>   Arguments...
 -> Predicates...
 -> Found ?
@@ -35,7 +36,7 @@ struct Find
 
     template<template<auto...> class...>
     static constexpr std::make_signed_t<size_t>
-    Road_v {RESULT};
+    Rail_v {RESULT};
 };
 ```
 

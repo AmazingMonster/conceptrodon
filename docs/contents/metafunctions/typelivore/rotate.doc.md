@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Rotate` accepts a list of elements.
 Its first layer accepts an amount and returns a function.
 When invoked by an operation, the function relocates elements of the given amount from the front to the end of the previously provided list and instantiates the operation with the result.
+
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation
@@ -30,7 +31,7 @@ Rotate ::   typename...
 template<typename...>
 alias Rotate
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
         template<template<typename...> class...>

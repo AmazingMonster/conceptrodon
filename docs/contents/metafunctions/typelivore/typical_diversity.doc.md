@@ -13,6 +13,7 @@ When invoked, the function appends the arguments to the previously provided elem
 - preserves the relative order of every element;
 
 The resulting list will be held inside `Capsule`.
+
 <pre><code>   Elements...
 -> Arguments...
 -> MakeMathematicalSet(Elements..., Arguments...)</code></pre>

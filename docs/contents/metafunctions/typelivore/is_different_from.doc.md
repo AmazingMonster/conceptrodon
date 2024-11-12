@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::IsDifferentFrom` accepts an element and returns a function.
 When invoked by an argument, the function will check whether the argument differs from the previously provided element.
+
 <pre><code>Right -> Left -> Left != Right ? true : false</code></pre>
 
 ## Type Signature
@@ -20,10 +21,10 @@ IsDifferentFrom ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct IsDifferentFrom
 {
-    template<typename...>
+    template<typename>
     alias Mold
     {
         static constexpr bool value
@@ -75,5 +76,5 @@ struct IsDifferentFrom
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/is_different.hpp)
-- [unit test](../../../../tests/unit/typelivore/is_different.test.hpp)
+- [source code](../../../../conceptrodon/typelivore/is_different_from.hpp)
+- [unit test](../../../../tests/unit/typelivore/is_different_from.test.hpp)

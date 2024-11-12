@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Roadrivore::Reveal` accepts an operation and returns a function.
 When invoked, the function instantiates the operation with the arguments and becomes the alias member `type` of the operation.
 Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
+
 <pre><code>Operation -> Road&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
 
 ## Type Signature
@@ -20,7 +21,7 @@ Reveal ::   template<template<typename...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<typename...> class...> class...>
+template<template<template<typename...> class...> class>
 struct Reveal
 {
     template<template<typename...> class...>

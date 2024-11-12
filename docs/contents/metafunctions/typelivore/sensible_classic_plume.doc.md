@@ -11,6 +11,7 @@ When invoked by containers, the function places the elements into the containers
 then, it collects every packed container and instantiates the operation with the collection.
 
 Check out **Examples** for more information.
+
 <pre><code>   Element
 -> Operation
 -> ...Container<sub><i>i</i></sub>...
@@ -35,10 +36,36 @@ SensibleClassicPlume ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct SensibleClassicPlume
 {
     template<template<typename...> class...>
+    alias Road
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct SensibleClassicPlume
+{
+    template<template<typename...> class>
+    alias Road
+    {
+        template<template<typename...> class>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct SensibleClassicPlume
+{
+    template<template<typename...> class>
     alias Road
     {
         template<template<typename...> class...>

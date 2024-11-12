@@ -45,7 +45,7 @@ Conditional ::   auto...
 ## Structure
 
 ```C++
-template<auto...>
+template<auto, auto>
 struct Conditional
 {
     template<auto...>
@@ -123,7 +123,8 @@ static_assert(
 );
 ```
 
-- We can pass predicates to `Select::Road`. It returns a function such that when invoked, the function returns `1` if the arguments satisfy all predicates;
+- `Select::Road` accepts a list of predicates and returns a function.
+When invoked, the function returns `1` if the arguments satisfy all of the predicates;
 otherwise, the function returns `0`.
 
 ```C++
@@ -158,8 +159,9 @@ static_assert(Metafunction<VoidInt>::value == 1);
 static_assert(Select::Road<>::Mold<>::value == 1);
 ```
 
-- We can pass predicates to `Select::Rail`. It returns a function such that when invoked, the function becomes `1` if the arguments satisfy all predicates;
-otherwise, the function becomes `0`.
+- `Select::Rail` accepts a list of predicates and returns a function.
+When invoked, the function returns `1` if the arguments satisfy all of the predicates;
+otherwise, the function returns `0`.
 
 ```C++
 template<auto...>

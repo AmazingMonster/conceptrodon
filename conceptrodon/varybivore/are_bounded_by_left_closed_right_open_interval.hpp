@@ -1,28 +1,28 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_IS_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
-#define CONCEPTRODON_VARYBIVORE_IS_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
+#ifndef CONCEPTRODON_VARYBIVORE_ARE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
+#define CONCEPTRODON_VARYBIVORE_ARE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto LowerBound, auto UpperBound>
-struct IsBoundedByLeftClosedRightOpenInterval
+struct AreBoundedByLeftClosedRightOpenInterval
 {
-    template<auto Variable>
+    template<auto...Variables>
     struct ProtoPage
     {
         static constexpr bool value
-        { not (Variable < LowerBound) && Variable < UpperBound };
+        { (...&&(not (Variables < LowerBound) && Variables < UpperBound)) };
     };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 
-    template<auto Variable>
+    template<auto...Variables>
     static constexpr bool Page_v
-    { not (Variable < LowerBound) && Variable < UpperBound };
+    { (...&&(not (Variables < LowerBound) && Variables < UpperBound)) };
 };
 
 }}

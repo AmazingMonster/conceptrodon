@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Upend` accepts a list of elements and returns a function.
 When invoked by an operation, the function instantiates the operation with the previously provided elements but in reversed order.
+
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n</sub>
 -> Operation
 -> Operation&lt;Element<sub>n</sub>, Element<sub>n-1</sub>, ..., Element<sub>0</sub>&gt;</code></pre>
@@ -24,7 +25,7 @@ Upend ::   typename...
 template<typename...>
 struct Upend
 {
-    template<template<typename...> class...>
+    template<template<typename...> class>
     alias Road = RESULT;
 };
 ```

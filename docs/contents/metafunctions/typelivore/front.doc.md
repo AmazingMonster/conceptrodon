@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Front` accepts a list of elements.
 Its first layer accepts an amount and returns a function.
 When invoked by an operation, the function collects elements of the amount from the front of the list and instantiates the operation with the collection.
+
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation
@@ -27,10 +28,10 @@ Front ::   typename...
 template<typename...>
 alias Front
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
         alias Road = RESULT;
     };
 }；

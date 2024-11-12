@@ -7,7 +7,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::FoldLeft` accepts a list of elements.
 It produces a function that accepts an initiator and whose first layer accepts an operation.
-The function left-folds the list with the operation and the initiator.
+The function left-folds the list using the operation and the initiator.
+
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
 -> Initiator
 -> Operation
@@ -33,10 +34,10 @@ FoldLeft ::   typename...
 template<typename...>
 struct FoldLeft
 {
-    template<typename...>
+    template<typename>
     alias Mold
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
         alias Road = RESULT;
         
         template<template<typename...> class>

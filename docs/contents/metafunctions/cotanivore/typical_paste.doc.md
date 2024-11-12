@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Cotanivore::TypicalPaste` accepts a list of packed containers.
 It concatenates them together and uses the first container to hold the result.
+
 <pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
 -> Container<sub><i>0</i></sub>&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>
 

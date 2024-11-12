@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Has` accepts a list of elements and returns a predicate.
 When invoked, the predicate checks whether the previously provided elements contain all its arguments.
+
 <pre><code>   Elements...
 -> Arguments...
 -> Arguments... &in; Elements... ?

@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Roadrivore::Flip` accepts an operation and flips its *0*th layer and the *1*th layer.
+
 <pre><code>ZerothLayer{FirstLayer} -> FirstLayer{ZerothLayer}</code></pre>
 
 ## Type Signature
@@ -51,7 +52,7 @@ Flip ::   template<template<typename...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<typename...> class...> class...>
+template<template<template<typename...> class...> class>
 struct Flip
 {
     template<typename...>

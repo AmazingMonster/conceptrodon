@@ -5,8 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::FoldLeftFirst` accepts a list of elements and produces a function.
-When invoked by an operation, the function left-folds the list with the first element as the initiator.
+`Typelivore::FoldLeftFirst` accepts a list of elements and returns a function.
+When invoked by an operation, the function left-folds the list using the operation with the first element as the initiator.
+
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
 -> Operation
 -> Operation&lt;...
@@ -30,7 +31,7 @@ FoldLeftFirst ::  typename...
 template<typename...>
 struct FoldLeftFirst
 {
-    template<template<typename...> class...>
+    template<template<typename...> class>
     alias Road = RESULT;
         
     template<template<typename...> class>

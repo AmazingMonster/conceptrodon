@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::AreOverlapping` accepts a list of nonrepetitive elements and returns a predicate.
 When invoked, the predicate checks if the list created by appending arguments to the previously provided elements contains repetitive members.
+
 <pre><code>   Elements...
 -> Arguments...
 -> IsMathematicalSet(Elements..., Arguments...) ?

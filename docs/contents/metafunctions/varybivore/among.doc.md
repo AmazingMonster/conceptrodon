@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Among` accepts a list of variables and returns a function.
 When invoked by an index, the function returns the variable at the index from the list.
+
 <pre><code>...Variable<sub><i>i</i></sub>... -> I -> Variable<sub><i>i</i></sub></code></pre>
 
 ## Type Signature
@@ -21,11 +22,16 @@ Among :: typename... -> auto... -> auto
 template<typename...>
 struct Among
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
-        using type = RESULT;
+        static constexpr auto value 
+        {RESULT};
     };
+
+    template<auto>
+    static constexpr auto Page_v
+    {RESULT};
 };
 ```
 

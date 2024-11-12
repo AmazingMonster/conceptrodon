@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Reiterate` accepts a list of elements and returns a function. When invoked by the times of repetitions, the function repeats the list the given number of times and stores the result inside `Capsule`.
+
 <pre><code>   Elements...
 -> N
 -> Elements...<sub>1</sub>, Elements...<sub>2</sub>, ..., Elements...<sub>N</sub></code></pre>
@@ -23,7 +24,7 @@ Reiterate ::   typename...
 template<typename...>
 struct Reiterate
 {
-    template<auto...>
+    template<auto>
     alias Page = RESULT;
 };
 ```

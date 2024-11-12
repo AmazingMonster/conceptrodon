@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::IsDifferent` accepts two elements and checks whether they are different.
+
 <pre><code>Left, Right -> Left != Right ? true : false</code></pre>
 
 ## Type Signature
@@ -17,7 +18,7 @@ IsDifferent :: typename... -> auto
 ## Structure
 
 ```C++
-template<typename...>
+template<typename, typename>
 struct IsDifferent
 {
     static constexpr bool value

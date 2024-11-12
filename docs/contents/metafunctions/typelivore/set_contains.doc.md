@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::SetContains` accepts a set of nonrepetitive elements and returns a predicate.
 When invoked by an argument, the function checks if the argument is in the previously provided set.
+
 <pre><code>   Arguments...
 -> Element
 -> Element &in; Arguments... ?
@@ -26,7 +27,7 @@ SetContains ::   typename...
 template<typename...>
 struct SetContains
 {
-    template<typename...>
+    template<typename>
     alias Mold
     {
         static constexpr bool value

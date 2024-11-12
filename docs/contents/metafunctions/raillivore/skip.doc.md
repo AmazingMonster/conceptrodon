@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Raillivore::Skip` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.
 
 The only difference between `Skip` and `Skid` is that `Skip` uses `R_il` for initiation and `Rail` for recursion, while `Skid` uses `Rail` for initiation and `R_il` for recursion.
+
 <pre><code>   Operation{FirstLayer{...LastLayer}}
 -> FirstLayer{...LastLayer{Operation}}</code></pre>
 
@@ -90,7 +91,7 @@ Skip ::   template<template<auto...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<auto...> class...> class...>
+template<template<template<auto...> class...> class>
 struct Skip
 {
     template<template<auto...> class...>

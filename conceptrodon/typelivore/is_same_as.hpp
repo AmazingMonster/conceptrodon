@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_IS_SAME_H
-#define CONCEPTRODON_TYPELIVORE_IS_SAME_H
+#ifndef CONCEPTRODON_TYPELIVORE_IS_SAME_AS_H
+#define CONCEPTRODON_TYPELIVORE_IS_SAME_AS_H
 
 namespace Conceptrodon {
 namespace Typelivore {

@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Warehivore::Repack` accepts a list of packed warehouses and returns a function.
 When invoked by an operation, the function concatenates the packed warehouses and instantiates the operation with the result.
+
 <pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>
@@ -24,7 +25,7 @@ Repack ::   typename...
 template<typename...>
 struct Repack
 {
-    template<template<template<typename...> class...> class...>
+    template<template<template<typename...> class...> class>
     alias Flow = RESULT;
 
     template<template<template<typename...> class...> class>

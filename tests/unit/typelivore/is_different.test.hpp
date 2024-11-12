@@ -29,14 +29,6 @@ VALID(IsDifferent_v<int, float>);
 
 
 
-/******************************************************************************************************/
-INVALID(IsDifferentFrom<int>::Mold_v<int>);
-VALID(IsDifferentFrom<int>::Mold_v<float>);
-/******************************************************************************************************/
-
-
-
-
 }}}}
 
 #include "macaron/judgmental/amenity/undef_valid.hpp"

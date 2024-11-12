@@ -11,6 +11,7 @@ When invoked by containers, the function places the elements into the containers
 then, it collects every packed container and instantiates the operation with the collection.
 
 Check out **Example** for more information.
+
 <pre><code>   Element
 -> Operation
 -> ...Container<sub><i>i</i></sub>...
@@ -28,17 +29,43 @@ Check out **Example** for more information.
 
 ```Haskell
 SensiblePlume ::   typename... 
-           -> template<typename...> class...
-           -> template<template<typename...> class...>
+                -> template<typename...> class...
+                -> template<template<typename...> class...>
 ```
 
 ## Structure
 
 ```C++
+template<typename>
+struct SensiblePlume
+{
+    template<template<typename...> class>
+    alias Road
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
 template<typename...>
 struct SensiblePlume
 {
-    template<template<typename...> class...>
+    template<template<typename...> class>
+    alias Road
+    {
+        template<template<typename...> class>
+        alias Road = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct SensiblePlume
+{
+    template<template<typename...> class>
     alias Road
     {
         template<template<typename...> class...>

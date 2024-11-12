@@ -11,6 +11,7 @@ When invoked by an operation, the function places the elements into the containe
 then, it collects the value result of each packed container and invokes the operation with the collection.
 
 Check out **Examples** for more information.
+
 <pre><code>   Element
 -> ...Container<sub><i>i</i></sub>...
 -> Operation
@@ -35,13 +36,45 @@ Gauge ::   typename...
 ## Structure
 
 ```C++
+template<typename>
+struct Gauge
+{
+    template<template<typename...> class...>
+    alias Road
+    {
+        template<template<auto...> class>
+        alias Rail = RESULT;
+
+        template<template<auto...> class>
+        alias UniRail = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct Gauge
+{
+    template<template<typename...> class>
+    alias Road
+    {
+        template<template<auto...> class>
+        alias Rail = RESULT;
+
+        template<template<auto...> class>
+        alias UniRail = RESULT;
+    };
+};
+```
+
+```C++
 template<typename...>
 struct Gauge
 {
     template<template<typename...> class...>
     alias Road
     {
-        template<template<auto...> class...>
+        template<template<auto...> class>
         alias Rail = RESULT;
 
         template<template<auto...> class>

@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Contains` accepts a list of elements and returns a predicate.
 When invoked by an argument, the predicate checks if the argument is in the previously provided elements.
 It returns true if it does and false if otherwise.
+
 <pre><code>   Elements...
 -> Argument
 -> Argument &in; Elements... ?
@@ -27,7 +28,7 @@ Contains ::   typename...
 template<typename...>
 struct Contains
 {
-    template<typename...>
+    template<typename>
     alias Mold = RESULT;
 
     template<typename>

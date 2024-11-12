@@ -7,34 +7,16 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto LeftSide, auto RightSide>
+template<auto Target, auto...Variables>
 struct IsUnequal
 {
     static constexpr auto value
-    { LeftSide < RightSide || RightSide < LeftSide };
+    { (...&&(Target < Variables || Variables < Target)) };
 };
 
-template<auto LeftSide, auto RightSide>
+template<auto Target, auto...Variables>
 constexpr bool IsUnequal_v
-{ LeftSide < RightSide || RightSide < LeftSide };
-
-template<auto RightSide>
-struct IsUnequalTo
-{
-    template<auto LeftSide>
-    struct ProtoPage
-    {
-        static constexpr auto value
-        { LeftSide < RightSide || RightSide < LeftSide };
-    };
-    
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto LeftSide>
-    static constexpr bool Page_v 
-    { LeftSide < RightSide || RightSide < LeftSide };
-};
+{ (...&&(Target < Variables || Variables < Target)) };
 
 }}
 

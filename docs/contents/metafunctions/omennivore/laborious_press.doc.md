@@ -20,7 +20,7 @@ LaboriousPress :: typename... -> template<typename...>
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct LaboriousPress
 {
     template<typename...>

@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Duplicate` accepts an element.
 Its first layer accepts an amount and returns a function.
 When invoked by an operation, the function creates copies of the element of the amount and instantiates the operation with the result.
+
 <pre><code>   Element
 -> N
 -> Operation
@@ -24,13 +25,13 @@ Duplicate ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct Duplicate
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
         alias Road = RESULT;
 
         template<template<typename...> class>

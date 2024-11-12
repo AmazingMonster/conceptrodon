@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::AnyConditional` accepts two elements and returns several functions.
 Check out **Examples** for more details.
 Overall, `AnyConditional` yields one of the two elements according to the boolean evaluation of a condition.
+
 <pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
 <pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse
@@ -43,7 +44,7 @@ AnyConditional ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename, typename>
 struct AnyConditional
 {
     template<auto...>
@@ -80,7 +81,7 @@ struct IfFalse;
 using Select = AnyConditional<IfTrue, IfFalse>;
 ```
 
-- The template member `Page` of `Select` is a function that returns `IfTrue` if any argument can be evaluated as `true`.
+- The template member `Page` of `Select` is a function that returns `IfTrue` if any of its arguments can be evaluated as `true`.
 Otherwise, it returns `IfFalse`.
 
 ```C++
@@ -89,7 +90,7 @@ static_assert(std::same_as<Select::Page<0, 2>, IfTrue>);
 static_assert(std::same_as<Select::Page<0, 0>, IfFalse>);
 ```
 
-- The template member `Mold` of `Select` is a function that returns `IfTrue` if the value results of the arguments can all be evaluated as `true`.
+- The template member `Mold` of `Select` is a function that returns `IfTrue` if the value result of any of its arguments can be evaluated as `true`.
 Otherwise, it returns `IfFalse`.
 
 ```C++
@@ -124,8 +125,9 @@ static_assert(std::same_as
 >);
 ```
 
-- We can pass predicates to `Select::Road`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Road` accepts a list of predicates and returns a function.
+When invoked, the function returns `IfTrue` if the arguments satisfy any of the predicates;
+otherwise, the function returns `IfFalse`.
 
 ```C++
 struct VoidInt;
@@ -160,8 +162,9 @@ static_assert(std::same_as<Metafunction<double>, IfFalse>);
 static_assert(std::same_as<Select::Road<>::Mold<>, IfFalse>);
 ```
 
-- We can pass predicates to `Select::Rail`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Rail` accepts a list of predicates and returns a function.
+When invoked, the function returns `IfTrue` if the arguments satisfy any of the predicates;
+otherwise, the function returns `IfFalse`.
 
 ```C++
 template<auto...>

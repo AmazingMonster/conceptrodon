@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Raillivore::BindBack` accepts an operation.
 Its first layer accepts a list of sequences and returns a function.
 When invoked, the function adds the sequences to the end of the argument list and instantiates the operation with the result.
+
 <pre><code>   Operation
 -> Sequences...
 -> Operation&lt;*, Sequences...&gt;</code></pre>
@@ -23,7 +24,7 @@ BindBack ::   template<template<auto...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<auto...> class...> class...>
+template<template<template<auto...> class...> class>
 struct BindBack
 {
     template<template<auto...> class...>

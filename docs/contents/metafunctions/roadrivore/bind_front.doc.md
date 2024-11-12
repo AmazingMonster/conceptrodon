@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Roadrivore::BindFront` accepts an operation.
 Its first layer accepts a list of containers and returns a function.
 When invoked, the function adds the containers to the beginning of the argument list and instantiates the operation with the result.
+
 <pre><code>   Operation
 -> Containers...
 -> Operation&lt;Containers..., *&gt;</code></pre>
@@ -23,7 +24,7 @@ BindFront ::   template<template<typename...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<typename...> class...> class...>
+template<template<template<typename...> class...> class>
 struct BindFront
 {
     template<template<typename...> class...>

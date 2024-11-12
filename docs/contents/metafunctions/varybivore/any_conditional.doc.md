@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::AnyConditional` accepts two variables and returns several functions.
 Check out **Examples** for more details.
 Overall, `AnyConditional` yields one of the two variables according to the boolean evaluation of a condition.
+
 <pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
 <pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse
@@ -45,7 +46,7 @@ AnyConditional ::   auto...
 ## Structure
 
 ```C++
-template<auto...>
+template<auto, auto>
 struct AnyConditional
 {
     template<auto...>
@@ -103,7 +104,7 @@ static_assert(Select::Page<0, 2>::value == 1);
 static_assert(Select::Page<0, 0>::value == 0);
 ```
 
-- The template member `Mold` of `Select` is a function that returns `1` if the value results of the arguments can all be evaluated as `true`.
+- The template member `Mold` of `Select` is a function that returns `1` if the value result of any of its arguments can be evaluated as `true`.
 Otherwise, it returns `0`.
 
 ```C++
@@ -132,8 +133,9 @@ static_assert(
 );
 ```
 
-- We can pass predicates to `Select::Road`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Road` accepts a list of predicates and returns a function.
+When invoked, the function returns `1` if the arguments satisfy any of the predicates;
+otherwise, the function returns `0`.
 
 ```C++
 struct VoidInt;
@@ -168,8 +170,9 @@ static_assert(Metafunction<double>::value == 0);
 static_assert(Select::Road<>::Mold<>::value == 0);
 ```
 
-- We can pass predicates to `Select::Rail`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Rail` accepts a list of predicates and returns a function.
+When invoked, the function returns `1` if the arguments satisfy any of the predicates;
+otherwise, the function returns `0`.
 
 ```C++
 template<auto...>

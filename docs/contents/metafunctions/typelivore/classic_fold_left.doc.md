@@ -7,8 +7,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::ClassicFoldLeft` accepts a list of elements.
 Its first layer accepts an initiator and returns a function.
-When invoked by an operation, the function left-folds the list with the operation and the initiator.
+When invoked by an operation, the function left-folds the list using the operation and the initiator.
 The type result of the operation is used for continuation.
+
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
 -> Initiator
 -> Operation
@@ -37,7 +38,7 @@ struct ClassicFoldLeft
     template<typename...>
     alias Mold
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
         alias Road = RESULT;
         
         template<template<typename...> class>

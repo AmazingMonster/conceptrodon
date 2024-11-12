@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::ClassicFoldLeftFirst` accepts a list of elements and produces a function.
 When invoked by an operation, the function left-folds the list with the first element as the initiator.
 The type result of the operation is used for continuation.
+
 <pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
 -> Operation
 -> Operation&lt;...
@@ -31,7 +32,7 @@ ClassicFoldLeftFirst ::  typename...
 template<typename...>
 struct ClassicFoldLeftFirst
 {
-    template<template<typename...> class...>
+    template<template<typename...> class>
     alias Road = RESULT;
         
     template<template<typename...> class>

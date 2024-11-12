@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Raillivore::Reveal` accepts an operation and returns a function.
 When invoked, the function instantiates the operation with the arguments and becomes the alias member `type` of the operation.
 Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
+
 <pre><code>Operation -> Rail&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
 
 ## Type Signature
@@ -20,7 +21,7 @@ Reveal ::   template<template<auto...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<auto...> class...> class...>
+template<template<template<auto...> class...> class>
 struct Reveal
 {
     template<template<auto...> class...>

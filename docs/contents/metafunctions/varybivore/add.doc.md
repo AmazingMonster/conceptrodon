@@ -5,8 +5,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Varybivore::Add` accepts two variables and sums them up.
-<pre><code>I, J -> I + J</code></pre>
+`Varybivore::Add` accepts a list of variables and sums them up.
+
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> V<sub>0</sub> + V<sub>1</sub> + ... + V<sub>n</sub></code></pre>
 
 ## Type Signature
 
@@ -31,30 +33,40 @@ static constexpr auto Add_v
 
 ## Examples
 
-We will add up one and two.
+We will sum up `1, 2, 3`.
 
 ```C++
-static_assert(Add<1, 2>::value == 3);
+static_assert(Add<1, 2, 3>::value == 6);
 ```
 
 ## Implementation
 
+We will implement `Add` using a fold expression.
+
+Note that the initiator is on the left side of the expression. This means we are doing a left-fold.
+
+<pre><code>   Init + ... + Variables
+-> (...((Init + Variable<sub>0</sub>) + Variable<sub>1</sub>) + ...) + Variable<sub>Last</sub>
+</code></pre>
+
+In our case, left-fold and right-fold produce the same result since `+` is commutative.
+
 Here's the entire implementation:
 
 ```C++
-template<auto I, auto J>
+template<auto Init, auto...Variables>
 struct Add
 { 
     static constexpr auto value 
-    {I + J}; 
+    { Init+...+Variables }; 
 };
 
-template<auto I, auto J>
+template<auto Init, auto...Variables>
 constexpr auto Add_v 
-{I + J};
+{ Init+...+Variables }; 
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBIAbKQADqgKhE4MHt6%2BekkpjgJBIeEsUTFc8XaYDmlCBEzEBBk%2Bfly2mPZ5DDV1BAVhkdFxtrX1jVktCsM9wX3FA2UAlLaoXsTI7BwEmCwJBpsmAMxuTF5EANQAkqSnx2cAUgfYJhoAghPEXg6nz%2BjoT88mAHYLKc/qcwacJkxHMhTmgGBNMKoEsRridUKcAG5iLyYEEvcEgoHnEGWU73AEAEQOwL%2BgKp%2BysLz%2Bm22u0wByOaIuVxu6Pu%2B0eLzhCKRKN5Xx%2BAH0MXj/kSScDyfTGf8XgB6ABUWu1OrVf01WoAKtghIbtXr1TqrRqLarXrVoZKmAolPUIN9focWqczA8QCAsd5cQd6RTTvt5tSOItaJwAKy8PwcLSkVCcNzWawQ5arYNmfY8UgETTRxYAaxAcbMADoAWZJAAOBtxjQATirGliDf2%2Bk4kl4LAkGg0pCTKbTHF4ChAI%2BLyejpDgsBgiBAywICRO5EoaG2dGioVY61UDdiAFpYpJTsBkDCpNWzLxMPgiMQ8Og9PxBCIxOwpDJBEUFR1HnUhdBaAB3YgmASTgeBjeNExLVNOAAeROTcCFOVAqFOE9z0va9b1Oe8zFOCAPD3egUXMAt5l4OctEWCAkF3BJ9zICgIDYjiQGAKQzD4OhNmIacIAiZCImCOoAE84N4KTmGIGTUIibRKjnQtdzYQRUIYWg5NArAIi8YAjloWhp24XgsBYQxgHEIy8GIDS8AxTArJTRFKhOdZC2CTZY1A2g8AiaDlI8LBkIIN9B2s0h3OICJkkwCktnskKjBLRYqAMYAFAANTwTAINQhJGHkgDhFEcR/y/eQlDUZDwP0eyUEzSx9FC6dIEWVAEg6KyzwmT0KVMSxrDMcdErfLAeogRYKiqZwIFcUZmlIQJpiKEpsmSVIBHWvbcjSXodrmVp2mqSYjvGNpXIELp6jO/pSiGbpbve57tteiRFpzNY/t7DgE1HZCJzw08LyvG870kB9yNwQgSBJOiGOyxYEEwJgsBiBbSArSR9mrVt9gBSQNEketYmHONYlbYH%2B1IQcC2rWIygbVsGzKONJC4ONSfiMdeAnKcZyLbLFxXFi1wwrcuJ46jDzYTg6hYDEATPJhYQMIwSNbasuGrLyXxId9P1kH9aukeqgKa0DdEEqCYPkhCQaQ0CJ3QjcTmw3C1Y1rWdfs/XDeN8jKPY6jUbMeiJfnZjWNQKjom3bjk6jgYA815Bdf41suBHGhaBEsSJNAxTZMqyvlNU9SHEq7TGAIPSDOQ4zTPMyzKtsjL1hTfAXKqdzPKfVQfM2SqAraZCQrC2TIv7hjYsqxLkqUNK7KMTLQATvg8sK4rSvKpNC3qq2/xt2Q7ZAlNHdarLxqsTq5/mvqBrSIaRpDJ/Jum6JZoeXgIte6y0/CrQYO4TwTR/CQJerMN6OQDrpGgWMRI%2B0OjwN2ndK6j0bqoI2ktDoT0piFF%2BuMfBmRCGTCwXMf6KxAZcDdqDYWKEODXGIOrTW2tc4hy4AbI2GhEamxovmJh6ME6Y2xrjSgbsmYswNpTAEAsAQAn2FTSQl4WisNFrYcWjEFxLlXOuTCadFYHiPKrThhEWAKAxDCDE/DqxsgmE%2BER5sWjnxqpfKqN9mogB7M7WC1lmEe3HGhOWWEcIcJYDYuxDinEuKwhRDOHFUYRgkUxRcScU6cR3Kk6iAZkAJASNKfhkoklOmsTbYS0Qy6SWkspaujSVJqQ0o3ZOOkW76UMgPTAJkzJiG7vFXu28l6kEHq5EeyFvLIF8lPQQM9gqhXCjJRe0UV7xTXilTeGVgi7yyblJg%2BUiolTKhVeKXjfwSCvoBRqt8dABIfsYDqNhX7ANTB/AQVk1QjXahNSwU0RYzXfEA3ql0HrgLWgQ2B6BaGIIwWkT6SDME/QQXoIh10PowpwZCkh8KMWUJgRQ7oBKmFLAYX%2BUJYNPacBiXE%2BxmJElQg8skpGr5UbiPjkxKROMBj4yCvIkAZgDb7H2HGFsfNhxioBF2Gl4TJx6NnBjAmIBJAAgfMorgUhWxKNJlwAEwN9hhJFpwTJpZgaPnlaaxVBj5iLESikZwkggA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBIArKQADqgKhE4MHt6%2BekkpjgJBIeEsUTFc8XaYDmlCBEzEBBk%2Bfly2mPZ5DDV1BAVhkdFxtrX1jVktCsM9wX3FA2UAlLaoXsTI7BwEmCwJBpsmAMxuTF5EANQAkgyEpKfHRAB0jwBqdXhMEfQKB9gmGgCCE2IXgcpz%2B6HQvz%2BJgA7BZTpDTojThMmI5kKc0AwJphVAliLcTqhTgA3MReTDw/5I%2BGw04QS6EayPe7WF7EN4fTAKeY0gAiBzhkJh/P2Vn%2BkM2212mAOR0JFyuBBud1QzLZHM%2B30hmOxuPxKtB4IA%2BsTKVDafTFUzHqzXu9PjzhQKzZCAPQAKk9Xu9rrdXoAKtghP6vb7/h7vZGw1D/ii0UamAolPUIGCIYcWqczDd9t8QCBSd4KQcRbzTgA2eYCjiLWicWK8PwcLSkVCcNzWazI5arYtmfY8UgETQ1xYAaxAsTM92hZkkAA557ENABOKcacvz/b6TiSXgsCQaDSkJsttscXgKEDH4fNmukOCwGCIEDLAgJE7kShobZ0aKhVh1lUedywAWnLSRTmAZB0Ske4zF4TB8CIdl0D0fhBBEMR2CkGRBEUFR1DvUhdBaAB3YgmASTgeFretGxHVtOAAeROD8CFOVAqFOYCwIgqCYNOOCzDpDxf3ofFzAHeZeFvLRFggJAfwSP8yAoCBlNUkBgCkbMaFoTZiCvCAIkYiJgjqABPGjeHM5hiEs5iIm0Spb0HH82EEZiGFoaziKwCIvGAI5aFoK9uF4LAWEMYBxH8vBiFcvBiS5RicUqE51kHYJNjrYjaDwCJKIcjwsEYgh2QPCLSBS4gImSTBeS2GKCqMEdFioAxgAUJ48EwMjmISRgbLw4RRHEXCMPkJQ1EY0j9BilBO0sfRCqvSBFlQBIOnC0CJnTXlTEsawzDPWrUNSjbWnaNIXAYdxPCafx7t6IoSmyZJUgEUZmkST6Ole/pSmupKBC6EZHrGEGqjByZAdmYGUQhzJfqRqZCiBiRFgUHs1ixncOAbE9GPPHiQPAyDoNgyR4LpXBCBIeF%2By4GSh3axYEEwJgsBiCBxxASR9nuFd9mhSQNEkOdyyPWJyxXAm91IA8B3ucsuE3Fd53V2JJDKEXy2J4jz0va82bvBTn0U182M/dTNIkgC2E4OoWGJaFQKYDEDCMISV3uLh7hbJCGdQ9DZCwibpCmgjZuI3RswoqibLowmGKNlibY4rjbmIV33c95BveAX3/cD0TUHE6Imf2MxWbk%2B8rft6Ivw0iuVIkkAXbd0DC5irgVy4Y99MM4zTOIuyrJGieHKclyHBGjzGAIbzfMYgKgpCsKRqilr1hbfBEqqFLwqD1QMs2EacraRiCqKqzSr32TKpG2r6qUJroqMVrQHNvgup6vqA0hpNkHFNCOOEo6yBjkRFs8cFptSOlYFat91p81bNtNIu19olkQSdM60QLqoOxm0UGfgICuB%2Bs9dA8N3otByF9dIkNfr0IBtMN6cxoYdHBg0JhegKgw06HDNhmNxiTEoaI7oNC5jY1xjhFORNTy8FJl3fOXsYolwDhoOmyFGZSRZrJdmpBObcwGGgvKitlZ%2BwltCWIK5oTQn2JLSQEEWiKKYheWwpt64W3gFbN87EW5N2II7dYLt%2BIsAUMSdExJ%2B73GlBMRCOjQ4tDAeNCBo1oFzRANuRO1EIryLTmeDO74TicW4mEyCESokklifEjiEAxLtyrlJfYdd2oPiUm3VSgSukdyiQkBIJp%2B5GjqQmXOEE%2BB0BHpQMeLZp5%2BUHPM2erkF4V08svHyfl96YECsFMQW9qo7y/o/UgB8krHzSmfZAmVL6CGvvlQqxVLIP3Ks/aqr8GofxasEH%2B8k/5MG6r1fqg1hrVVSdhCQkD8IzRgTobJ8DjDLRsCg%2BAm0MECHCq6faS1jqWFOko86eAsBEM4bdch91xGkECMIhGH1chpEpSwtIUjEYkIEdwyl/CuFCIxrSiRyMnr8vRjMWhMiVh4xZgTBRJNOA5xYOEyJ0Tamoi5PU%2BmKFq76LNvJDmXMeaUBThYkAZg/b7H2LEZcusjxmuhJuQ2RSPFXhvIYickhoTwRsVwKQK5rEiy4NCAm%2BxClKM4AY82KcEL2pDR47xixaopGcJIIAA%3D%3D%3D)
 
 ## Links
 

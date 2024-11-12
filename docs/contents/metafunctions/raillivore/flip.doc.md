@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Raillivore::Flip` accepts an operation and flips its *0*th layer and the *1*th layer.
+
 <pre><code>ZerothLayer{FirstLayer} -> FirstLayer{ZerothLayer}</code></pre>
 
 ## Type Signature
@@ -51,7 +52,7 @@ Flip ::   template<template<auto...> class...> class...
 ## Structure
 
 ```C++
-template<template<template<auto...> class...> class...>
+template<template<template<auto...> class...> class>
 struct Flip
 {
     template<typename...>

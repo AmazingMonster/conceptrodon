@@ -11,6 +11,7 @@ When invoked by predicates, the function first binds the second list to the fron
 then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if it cannot find the element.
 
 This function internally is the flattened version of `Typelivore::LeftInterview`.
+
 <pre><code>   Arguments...
 -> LeftSides
 -> Predicates...

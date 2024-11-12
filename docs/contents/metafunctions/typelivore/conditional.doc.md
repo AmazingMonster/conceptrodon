@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Conditional` accepts two elements and returns several functions.
 Check out **Examples** for more details.
 Overall, `Conditional` yields one of the two elements according to the boolean evaluation of a condition.
+
 <pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
 <pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
 <pre><code>   IfTrue, IfFalse
@@ -43,7 +44,7 @@ Conditional ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename, typename>
 struct Conditional
 {
     template<auto...>
@@ -113,8 +114,9 @@ static_assert(std::same_as
 >);
 ```
 
-- We can pass predicates to `Select::Road`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Road` accepts a list of predicates and returns a function.
+When invoked, the function returns `IfTrue` if the arguments satisfy all of the predicates;
+otherwise, the function returns `IfFalse`.
 
 ```C++
 struct VoidInt;
@@ -148,8 +150,9 @@ static_assert(std::same_as<Metafunction<VoidInt>, IfTrue>);
 static_assert(std::same_as<Select::Road<>::Mold<>, IfTrue>);
 ```
 
-- We can pass predicates to `Select::Rail`. It returns a function such that when invoked, the function becomes `IfTrue` if the arguments satisfy all predicates;
-otherwise, the function becomes `IfFalse`.
+- `Select::Rail` accepts a list of predicates and returns a function.
+When invoked, the function returns `IfTrue` if the arguments satisfy all of the predicates;
+otherwise, the function returns `IfFalse`.
 
 ```C++
 template<auto...>

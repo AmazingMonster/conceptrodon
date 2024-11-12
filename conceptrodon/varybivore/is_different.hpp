@@ -15,25 +15,6 @@ template<auto Variable>
 struct IsDifferent<Variable, Variable>
 { static constexpr bool value {false}; };
 
-template<auto RightSide>
-struct IsDifferentAs
-{
-    template<auto LeftSide>
-    struct ProtoPage
-    { static constexpr bool value {true}; };
-
-    template<>
-    struct ProtoPage<RightSide>
-    { static constexpr bool value {false}; };
-
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto...Args>
-    static constexpr auto Page_v 
-    {ProtoPage<Args...>::value};
-};
-
 template<auto LeftSide, auto RightSide>
 constexpr auto IsDifferent_v 
 {IsDifferent<LeftSide, RightSide>::value};

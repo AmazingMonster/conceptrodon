@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::IsSameAs` accepts an element and returns a function.
 When invoked by an argument, the function will check whether the argument is the same as the previously provided element.
+
 <pre><code>Right -> Left -> Left == Right ? true : false</code></pre>
 
 ## Type Signature
@@ -20,10 +21,10 @@ IsSameAs ::   typename...
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct IsSameAs
 {
-    template<typename...>
+    template<typename>
     alias Mold
     {
         static constexpr bool value

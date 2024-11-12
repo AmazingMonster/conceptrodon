@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_IS_BOUNDED_BY_CLOSED_INTERVAL_H
-#define CONCEPTRODON_VARYBIVORE_IS_BOUNDED_BY_CLOSED_INTERVAL_H
+#ifndef CONCEPTRODON_VARYBIVORE_ARE_BOUNDED_BY_CLOSED_INTERVAL_H
+#define CONCEPTRODON_VARYBIVORE_ARE_BOUNDED_BY_CLOSED_INTERVAL_H
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto LowerBound, auto UpperBound>
-struct IsBoundedByClosedInterval
+struct AreBoundedByClosedInterval
 {
     template<auto...Variables>
     struct ProtoPage

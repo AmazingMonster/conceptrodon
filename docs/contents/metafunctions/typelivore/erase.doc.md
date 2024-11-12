@@ -10,14 +10,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 - Suppose its first layer is instantiated by an index.
 In that case, it returns a function.
 When invoked by an operation, the function removes the element at the index from the list and instantiates the operation with the result.
-- Suppose its first layer is instantiated by two indices where the first is less or equal to the second.
-In that case, it returns a function.
-When invoked by an operation, the function removes the elements between the indices from the list and invokes the operation with the result.
 
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation
 -> Operation&lt;Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I+1</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+
+- Suppose its first layer is instantiated by two indices where the first is less or equal to the second.
+In that case, it returns a function.
+When invoked by an operation, the function removes the elements between the indices from the list and invokes the operation with the result.
+
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>J-1</sub>, ..., Element<sub>n</sub>
 -> I, J
 -> Operation
@@ -37,10 +39,23 @@ Erase ::   typename...
 template<typename...>
 alias Erase
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
+        alias Road = RESULT;
+    };
+}；
+```
+
+```C++
+template<typename...>
+alias Erase
+{
+    template<auto, auto>
+    alias Page
+    {
+        template<template<typename...> class>
         alias Road = RESULT;
     };
 }；

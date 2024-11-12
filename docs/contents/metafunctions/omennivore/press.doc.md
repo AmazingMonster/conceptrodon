@@ -16,7 +16,7 @@ Press :: typename... -> template<typename...>
 ## Structure
 
 ```C++
-template<typename...>
+template<typename>
 struct Press
 {
     template<typename...>

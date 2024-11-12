@@ -7,17 +7,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Slice` accepts a list of elements.
 
-Suppose its first layer is instantiated with an index.
+- Suppose its first layer is instantiated with an index.
 In that case, it returns a function.
 When invoked by an operation, the function collects all elements with indices greater than the given index from the list and instantiates the operation with the collection.
 
-Suppose its first layer is instantiated with two indices where the first is less or equal to the second.
-In that case, it returns a function.
-When invoked by an operation, the function collects all elements with indices between the previously provided two indices from the list and instantiates the operation with the collection.
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I</sub>, ..., Element<sub>n</sub>
 -> I
 -> Operation
 -> Operation&lt;Element<sub>I</sub>, Element<sub>I+1</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+
+- Suppose its first layer is instantiated with two indices where the first is less or equal to the second.
+In that case, it returns a function.
+When invoked by an operation, the function collects all elements with indices between the previously provided two indices from the list and instantiates the operation with the collection.
+
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>J-1</sub>, ..., Element<sub>n</sub>
 -> I, J
 -> Operation
@@ -37,7 +39,20 @@ Slice ::   typename...
 template<typename...>
 alias Slice
 {
-    template<auto...>
+    template<auto>
+    alias Page
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+}；
+```
+
+```C++
+template<typename...>
+alias Slice
+{
+    template<auto, auto>
     alias Page
     {
         template<template<typename...> class...>

@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Cotanivore::Repack` accepts a list of packed containers and returns a function.
 When invoked by an operation, the function concatenates the packed containers and instantiates the operation with the result.
+
 <pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>
@@ -23,7 +24,7 @@ Repack :: typename... -> template<typename...>
 template<typename...>
 struct Repack
 {
-    template<template<typename...> class...>
+    template<template<typename...> class>
     alias Road = RESULT;
 
     template<template<typename...> class>

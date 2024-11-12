@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Sequnivore::Repack` accepts a list of packed sequences and returns a function.
 When invoked by an operation, the function concatenates the packed sequences and instantiates the operation with the result.
+
 <pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>
@@ -28,7 +29,7 @@ Repack :: typename... -> template<auto...>
 template<typename...>
 struct Repack
 {
-    template<template<auto...> class...>
+    template<template<auto...> class>
     alias Rail = RESULT;
 
     template<template<auto...> class>

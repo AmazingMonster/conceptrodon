@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::AreDistinct` checks if its arguments are distinct.
+
 <pre><code>Elements... -> AreDistinct ? true : false</code></pre>
 
 ## Type Signature

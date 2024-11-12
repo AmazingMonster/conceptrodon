@@ -11,6 +11,7 @@ When invoked by an operation, the function places the elements into containers v
 then, it collects the type result of each packed container and invokes the operation with the collection.
 
 Check out **Examples** for more information.
+
 <pre><code>   Element
 -> ...Container<sub><i>i</i></sub>...
 -> Operation
@@ -35,13 +36,45 @@ ClassicPlume ::   typename...
 ## Structure
 
 ```C++
+template<typename>
+struct ClassicPlume
+{
+    template<template<typename...> class...>
+    alias Road
+    {
+        template<template<typename...> class>
+        alias Road = RESULT;
+
+        template<template<typename...> class>
+        alias UniRoad = RESULT;
+    };
+};
+```
+
+```C++
+template<typename...>
+struct ClassicPlume
+{
+    template<template<typename...> class>
+    alias Road
+    {
+        template<template<typename...> class>
+        alias Road = RESULT;
+
+        template<template<typename...> class>
+        alias UniRoad = RESULT;
+    };
+};
+```
+
+```C++
 template<typename...>
 struct ClassicPlume
 {
     template<template<typename...> class...>
     alias Road
     {
-        template<template<typename...> class...>
+        template<template<typename...> class>
         alias Road = RESULT;
 
         template<template<typename...> class>
