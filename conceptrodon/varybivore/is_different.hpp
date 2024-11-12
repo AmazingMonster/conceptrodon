@@ -7,7 +7,7 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto LeftSide, auto RightSide>
+template<auto, auto>
 struct IsDifferent
 { static constexpr bool value {true}; };
 

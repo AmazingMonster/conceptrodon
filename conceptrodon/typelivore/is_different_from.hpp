@@ -7,15 +7,15 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename RightSide>
+template<typename Target>
 struct IsDifferentFrom
 {
-    template<typename LeftSide>
+    template<typename Element>
     struct ProtoMold
     { static constexpr bool value {true}; };
 
     template<>
-    struct ProtoMold<RightSide>
+    struct ProtoMold<Target>
     { static constexpr bool value {false}; };
 
     template<typename...Agreements>

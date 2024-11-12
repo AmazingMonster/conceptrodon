@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_PLUS_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_PLUS_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_POSITIVE_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_POSITIVE_H
 
 #include <concepts>
-#include "conceptrodon/varybivore/plus.hpp"
+#include "conceptrodon/varybivore/positive.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -13,7 +13,7 @@
 namespace Conceptrodon {
 namespace Varybivore {
 namespace UnitTests {
-namespace TestPlus {
+namespace TestPositive {
 
 
 
@@ -21,8 +21,8 @@ namespace TestPlus {
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     -10
-EQUAL_VALUE(Plus_v<-10>);
-EQUAL_VALUE(Plus_v<-10.0>);
+EQUAL_VALUE(Positive_v<-10>);
+EQUAL_VALUE(Positive<-10.0>::value);
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/
 
@@ -32,8 +32,8 @@ EQUAL_VALUE(Plus_v<-10.0>);
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     10
-EQUAL_VALUE(Plus_v<10>);
-EQUAL_VALUE(Plus_v<10.0>);
+EQUAL_VALUE(Positive_v<10>);
+EQUAL_VALUE(Positive_v<10.0>);
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/
 

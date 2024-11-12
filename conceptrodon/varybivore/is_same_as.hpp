@@ -7,22 +7,22 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto RightSide>
+template<auto Target>
 struct IsSameAs
 {
-    template<auto LeftSide>
+    template<auto Variable>
     struct ProtoPage
     { static constexpr bool value {false}; };
 
     template<>
-    struct ProtoPage<RightSide>
+    struct ProtoPage<Target>
     { static constexpr bool value {true}; };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 
     template<auto...Args>
-    static constexpr auto Page_v 
+    static constexpr bool Page_v 
     {ProtoPage<Args...>::value};
 };
 

@@ -7,7 +7,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename LeftSide, typename RightSide>
+template<typename, typename>
 struct IsDifferent
 { static constexpr bool value {true}; };
 
@@ -16,7 +16,7 @@ struct IsDifferent<Element, Element>
 { static constexpr bool value {false}; };
 
 template<typename LeftSide, typename RightSide>
-constexpr auto IsDifferent_v 
+constexpr bool IsDifferent_v 
 {IsDifferent<LeftSide, RightSide>::value};
 
 }}

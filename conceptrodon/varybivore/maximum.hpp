@@ -18,7 +18,7 @@ struct Maximum
         []()
         {
             std::array array {Variables...};
-            return *std::ranges::max_element(array);
+            return std::ranges::max(array);
         }()
     }; 
 };
@@ -29,7 +29,7 @@ constexpr auto Maximum_v
     []()
     {
         std::array array {Variables...};
-        return *std::ranges::max_element(array);
+        return std::ranges::max(array);
     }()
 }; 
 

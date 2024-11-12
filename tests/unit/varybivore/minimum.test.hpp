@@ -22,6 +22,7 @@ namespace TestMinimum {
 #define SUPPOSED_VALUE  \
     -10
 EQUAL_VALUE(Minimum_v<-10, 11, 12>);
+EQUAL_VALUE(Minimum<-10, 11, 12>::value);
 EQUAL_VALUE(Minimum_v<-10.0, -9.0, -8.5, static_cast<double>(7)>);
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/

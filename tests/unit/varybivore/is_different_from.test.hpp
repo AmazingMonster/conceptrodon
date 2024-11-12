@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_DIFFERENT_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_DIFFERENT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_DIFFERENT_FROM_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_DIFFERENT_FROM_H
 
 #include <concepts>
-#include "conceptrodon/varybivore/is_different.hpp"
+#include "conceptrodon/varybivore/is_different_from.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -21,9 +21,9 @@ namespace TestIsDifferent {
 
 
 /******************************************************************************************************/
-INVALID(IsDifferent_v<1, 1>);
-VALID(IsDifferent<1, 2>::value);
-VALID(IsDifferent_v<1, static_cast<size_t>(1)>);
+INVALID(IsDifferentFrom<1>::Page_v<1>);
+VALID(IsDifferentFrom<1>::Page<2>::value);
+VALID(IsDifferentFrom<1>::Page_v<static_cast<size_t>(1)>);
 /******************************************************************************************************/
 
 

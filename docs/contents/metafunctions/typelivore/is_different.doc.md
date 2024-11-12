@@ -5,7 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::IsDifferent` accepts two elements and checks whether they are different.
+`Typelivare::IsDifferent` accepts two elements.
+It returns true if they are different and returns false otherwise.
 
 <pre><code>Left, Right -> Left != Right ? true : false</code></pre>
 
@@ -24,6 +25,10 @@ struct IsDifferent
     static constexpr bool value
     {RESULT};
 };
+
+template<typename, typename>
+constexpr bool IsDifferent_v
+{RESULT};
 ```
 
 ## Examples
@@ -40,7 +45,7 @@ We will use partial template specialization to detect if the two arguments are i
 If two arguments are identical, the compiler will select the partial specialization instead of the primary template.
 
 ```C++
-template<typename LeftSide, typename RightSide>
+template<typename, typename>
 struct IsDifferent
 { static constexpr bool value {true}; };
 

@@ -18,7 +18,7 @@ struct Minimum
         []()
         {
             std::array array {Variables...};
-            return *std::ranges::min_element(array);
+            return std::ranges::min(array);
         }()
     }; 
 };
@@ -29,7 +29,7 @@ constexpr auto Minimum_v
     []()
     {
         std::array array {Variables...};
-        return *std::ranges::min_element(array);
+        return std::ranges::min(array);
     }()
 }; 
 

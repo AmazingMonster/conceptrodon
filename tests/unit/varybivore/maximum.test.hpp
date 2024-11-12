@@ -22,6 +22,7 @@ namespace TestMaximum {
 #define SUPPOSED_VALUE  \
     12
 EQUAL_VALUE(Maximum_v<-10, 11, 12>);
+EQUAL_VALUE(Maximum<-10, 11, 12>::value);
 EQUAL_VALUE(Maximum_v<-10.0, -9.0, -8.5, static_cast<double>(12)>);
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/

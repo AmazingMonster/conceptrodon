@@ -5,9 +5,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::LookFor` accepts a list of elements and produces a function.
-When provided with predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
-This function is created to exhibit the capability of fold expression and to compare with `Typelivore::Find`.
+`Typelivore::LookFor` accepts a list of elements and returns a function.
+When invoked by predicates, the function returns the index of the first element that satisfies all the predicates, or `-1` if it cannot find the element.
+This function is created to exhibit the power of fold expression and to compare with `Typelivore::Find`.
 
 <pre><code>   Arguments...
 -> Predicate
@@ -43,7 +43,7 @@ struct LookFor
 
 ## Examples
 
-We will lookfor the indices of `int**` and `void` in list `int`, `int*`, `int**`, `int***`.
+We will lookfor the indices of `int**` and `void` in list `int, int*, int**, int***`.
 
 ```C++
 template<typename Element>
@@ -71,7 +71,7 @@ The central part of the implementation is this immediately invoked lambda expres
 {
     std::make_signed_t<size_t> counter {-1};
     return
-    (...||((++counter, Predicate<Elements>::value) ? true : false)) ? 
+    (...||(++counter, Predicate<Elements>::value)) ? 
     counter : -1;
 }()
 ```
@@ -84,6 +84,8 @@ The function contains two main components:
 The comma operator discards the result of counter incrementation, leaving the predicate's result to the fold expression.
 The fold expression will short-circuit as soon as `true` is obtained.
 Hence, the counter will stop incrementing once the right element is found.
+
+If no element satisfies all the predicates, then the fold expression is evaluated to `false`. In that case, `-1` is returned.
 
 Here's the entire implementation:
 
@@ -100,7 +102,7 @@ struct LookFor
             {
                 std::make_signed_t<size_t> counter {-1};
                 return
-                (...||( (++counter, Predicate<Elements>::value) ? true : false)) ? 
+                (...||(++counter, Predicate<Elements>::value)) ? 
                 counter : -1;
             }()
         };
@@ -108,22 +110,10 @@ struct LookFor
 
     template<template<typename...> class...Agreements>
     using Road = ProtoRoad<Agreements...>;
-
-    template<template<typename...> class Predicate>
-    static constexpr auto Road_v
-    {
-        []() -> std::make_signed_t<size_t>
-        {
-            std::make_signed_t<size_t> counter {-1};
-            return
-            (...||( (++counter, Predicate<Elements>::value) ? true : false)) ? 
-            counter : -1;
-        }()
-    };
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwA7KSuADJ4DJgAcj4ARpjEIJIAbKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCUmpCi1tHQXdEwNDldVjAJS2qF7EyOwc5v4RyN5YANQm/m5ejrSEAJ6n2CYaAIK7%2B4eYJ2fIE%2BhYVHcPzyeBEwLDSBmBpzcBGuaUYrEwADokdh6GxBAp/k8JsQvA4jqFUKgANYAMRIAJMgSsTyOtKOwNB4MwkIZYKYELO0NhzDYSIRdyOByYCgUR2UxEw%2BFEHPuNLp2NxBDFxFQRAASqgmOgAXSTlSdbr5S1HMhBQIJphVGliEcmBdUEcAG5iLzMuWGvXUx4ej0mACsVj9ABEIMsjgBaAXfEAgFhMImYAD6WWAkXQiYIkKyAC8k5n/LLvT7dZSvcXi9HY/Gkym0xms3hc/WC2avIIEp7w1xKUHTmXyx6JQQNgwDQPdRA%2BZS3NOIEcINZrGg28CyMrJXhpcyziiQYwCBiCzHnd5MGHTiT6Tj3iAjlQxEpluf/Jex%2BPacv2zbb12%2B2/iz2ob/nSPZ/u6eq9v4XpvqyTIsiCbIclCMJwrySICkKIp8o8wASnu6KYkWtJeFkRhHBqWofEGyqqqgFHamcOF4WiB5TgWYGAkR9IIXBnI8ey27Idy8JsdggoGCK65SgJhG6nMJpmgwFpWjadpEORmrpo6b6lsBtL%2BoGIZhpGLaVnGCbJngqaSs2bg5nmsk%2Brp4EVgQ6AxuZNZWXW%2BZ2Y2Dktp%2Bq6dt2gSQf2A5DiOemGpO6GBDOCVzgulhLusX6kFJm4yTuqL7oe2DHi6Z4fJeBDXkct73rQj7Pq%2BLk%2BkFHY/t2UExYByw6WFHGgW1TwAgA9AAVCNo1jQNg2jQAKtgQhTaNE1PMNY0rYtnEvAwBxeMckIXHQNyEQCsE5UJqHvLuLGEQqeIAJIKDdghBussT0P0xAAreaReC9m5HJWeAKMm8KQhd%2B6ZREBAjQKundX1nHHUhXJnUcoOCFd5WKkcd0AGqoHg2pPJ931XKa/2AwowO5fhBCZY6eMMWJMPhRSQL8YjbOCUjPKIuhgUSQo2HEMABUAiRETAEcACymAtFQbYODkVH4oSpLkmcEPg4IQ2a5D2tHBDUPsYTID0ZCjxCwLvP3HDALyZuibCkobQQNLsvy40kJ3Q9BBPcTmBvXcRWnlRpzUWYnVw3byAOyKCQEC7MtMHLm0e2cOP04HIAnq6If%2BNRXYRxYHCrLQnB%2BrwfjcLwqCcDOqWWH96ybO8uw8KQBCaMXqxEiAfqBAi/gABzJIE/gjxoQ%2BjwAnP4%2BicJIvAsBIGgaKQldaKQNccLwCggKvHccFoqxwLAMCICA6wEF9NMUBAaCgnQCRRPCnCqMP4bJJIRzAMgppSAiZheAbiIMQfGeh%2BCCBEGIdgUgZCCEUCodQh8dB6AAO7ECYGkTgPAS5lwrp3TenAADyFxr5HFQFQI4b9kgfy/j/P%2BkgAHzg8A/egNpW7LF4AfI%2BpAIBIHvmkR%2BZBb4CKESAYAUgzB8DoKuXeEBYgENiBEVo1xsG8CUcwYg1wiGxG0JgBwajSD3xYkQhgtBVHINIFgWIXhgBuDEDVQxWA4xGHEJY/AEoFaOkwLvSxlp9EXG2G3CG9QCFXFiBgrRHgsAEPKngJeVdSDeOILETImAgwgkMMAK4RhO6rCoAYYW2M8CYFQUQ7khiIHCFEOIWBVSEFqAIboLg%2BgskoEXJYfQeBYi70gKsVAaRGi%2BPDN8UOph64WDMBvVAyTQFYF6aGHo%2BjGguAYO4TwnQ9BhAiMMKoowWnFGyAIaYfgDmZCOQwBYIxEgtLsMsvokx2gbIKLc%2Bo9yBBvUGDsxY%2BzbCPJOXoOYbQrl7JuasBQTctgSFwRwcua8CFbyoe/T%2B39f5HH/mYecuBCAkBOGYfwXBOHtzyasBAmAtSjEWT3SQ/gEQz0CJIDQkgzApBXn6ZIU854cAXqQJeBKETJC4MkQeU9B5Cr9JILgfoZ6pHXtXTgO897EuQcfM%2BfCL6kIuOQSgoi2HPzYJwVoLBHSBHDEwcSWT0VTwRFwBEG9gEkDAS0qpUDanSHqUoRpljdBSPQZgtRMK4VysIRwEhV8LjkMoUak1ZqLVkS4Na21GhmGoFYR2XY4cuF5N4fw1Ngi2HarvnmsR0bTVCiMAmrgq8aC0FkZQBRliNEqMMU2rROi9EGMScY/cpjzEEOsbY%2BxtBHGJOcVktxG8PH3O8b4%2B1qgAnAkMSE0uljwmROuNE7YG84kJLbsk1JSgMkuOyeLbNBSmBFJKWUipiSXU1Jge62QDSkEbx9a03J4yrCdPCQs/pgycjDNGXnT91gpnV1mfjHx8BwVvIVs4CArgAUtO2RUa5ehDmNCQ%2Bkc5jQQVLFeb0D5/znmnKWXBpojy8O/KBU8/IpGaNUbBWsDYULCVcqDQizgtpiDGtNea8tEsE02rtVi/AIC8UEqJdwrupAyUUsSIsldPK%2BXWqZYEaVgRR7MpSJK%2BFlit6Kv3tmk%2B59L7X0Lbqp%2BL8OBGpRSwBQjpTSOiE0yCYQCxOOvcs62QrqH1wPkJ6l9KDZ5%2BqwVXQN%2BD9PEM1UqCh3GWB2Yc05lzAkJgprTew/F/gpPGdzRlizxa2FZ2QGkNIiZnNT0TK5ggDseOf2kbWhIciG0b1bRYtubX23LMMd2wQvaLGTswDYuxDjfFtzHa4rdvAp1eKg34%2BdyBAlLvbCujea6VGbtiaA3dvB91pKPeO09Kq%2BCFIUMU0p5TGCVJ8/eiQj74GBaaQEd9xgOk2B/dBze/7zScAGtGEDlgwObwg/Mz7dzyOrPWXRrZazGPoZwzkLDGGchw4I%2B8ijAwsPg8aJ81HfzMckcBZR75aG2MQpYzAiLenplcds1/ezjmnQpeBGliA2LxMcKzSq0l5KsAKZhcpkAZhrX%2BH8H6P0TKq0TyCMK6n8rt62CVdJp8pBqVmAFVwfwZhkha6noK7XGhggrv8JFmnCvlcwsAXLkNXOj6rGSVkZwkggA)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCBm0gAOqAqETgwe3r4BpClpjgKh4VEssfGJtpj2hQxCBEzEBFk%2BfoF2mA4Z9Y0ExZExcQnSCg1NLTntY31hA2VDiQCUtqhexMjsHOb%2BYcjeWADUJv5uXo60hACex9gmGgCC27v7mEcnyKPoWFQ3d48PBEwLCSBkBxzcBEuSUYrEwADoEdh6GxBApfg9RsQvA4DsFUKgANYAMRIfxMAHYrA8DjSDoDgaDMOD6SCmGCTpDocw2Ai4TcDnsmAoFAdlMRMPhROzbtTaZjsQRRcRUEQAEqoJjoP60o6U7U6uUNRzIAUCUaYVRJYgHJhnVAHABuYi8TNlBt1VPu7vdJgArFZfQARCCLA4AWn5nxAIBYTAJmAA%2BmlgOF0AmCOC0gAvRMZ/wyr3enUUz1FotRmNxxPJ1PpzN4HN1/OmryCOIesNcCmB46lsvu8UENYMfX9nUQXkUtxTiDWaxoVuAshKiV4KVMk5IoGMAho/PRp3eTCLUPHIlHN1jmkLtvWkDhrv%2BPv97sh0cG7u99%2Bfp9ky8sxlmSBVl2QhKEYR5BF%2BUFYVeXuYBxW3VF0ULGkvDSIwDnVTU3kDJUVVQbCtROeDEJRXdJ3zL8Hh/T0/gAegAKmYljWPohiWIAFWwIROJY9iHiY1jhIE/5HjMHYGD2LxDnBM46CuFC/gAtkNzArlYQOLdyJQ%2BUcQASQUfTBEDVZonoHpiD%2Be8ki8cy1wOCs8AUJNYXBbSd1IA4wgIZj%2BRLWi/3uFTQM5CDXg8wRdIILEDIUAA1VA8C1B4bLsi4TSclyFDczdkU8x0kuI7APUCmiAWAwCOUq1TmXA7l4Sg5sYIUODiGAPcC3QsJgAOABZTAGioVsugEXDcXxYlSROHyvJ8xi5sEZjFt8xiUOjIjwXudrWqa25f3K%2B5RjZNcEyFJQmggAahpG2pwUM4yCFM9LMEsm4D2dV5jh7fw8LMRZqKOo1TvOuICCuwamGGqS7pOQzEuS96QEPF1cO%2Bh8AafDhlloThfV4PwOC0UhUE4adLGsRzVnWL6JJ4UgCE0bHlgJEBfXJOF/AADgANnJfw%2BY0bn%2BYATkCXGOEkXgWAkDQNFIQnidJjheAUEB5cZonsdIOBYBgRAQFWAhbIIchKDQYE6DiCJYU4VRebDHnJAOYBkBNKQ4TMXhVyIYhkr0fhBBEMR2CkGRBEUFR1C10hdC4UgAHdiCYJJOB4HG8YJpmSc4AB5M4TYOVAqAOe2ecd53XfdyRPYOCAPEt%2BhrW2LhFl4TWtGWCAkAtpIrbICgIF7/uQGAKQzD4OglzViBomz6IwkaS4094BfmGIS5c%2BibROk1%2BmLfI3OGFoZeY6waIvGANwxFoNXuF4LBYyMcQz7wcUugdTA7%2BJi1OjOTZ6Y%2BWqNnC40Rk4bw8FgbOMU8Ay3vqQT%2BxBoipEwIGIEhhgAXCMEzZYVADAdXingTACdc5chXuHYQohxBh0DvIJQahs5x30BglAc5LD6DwNENWkBlioCSLUO%2BYZPjfVMBTSwZglaIL9lgbhIYqg1AyC4Bg7hPCtD0CEWYpRyh6HyOkAQEw/Dx10bUfoWihjxw6KNOo0wDF6EsbUSyMwSiDHiBYmxqichuN6KYlxEhlgKGphsPx%2BhM4K2zsrUuDsnYuzdgcD2Zg664EICQI4dM24MxwcsBAmBNRDDkazSQ/g4Ri3JJIDQkhEg8zlr6HmIsQmS2lgELgcIeZcB5lzEWXM2m%2BkkFwX0YseZhJjsrVW6sMlay7vrbuhsC5nDNkPVAjdra2w4I0FgDpyRhiYAKAwmEuAizhM0n%2B%2BBfb%2B3jrQ4O1DpC0MjgwmOugJ5JxTivDOHB8ZDKVnnWZipi42mIOszZ2zBR7IOUcuuDc%2B5N1Sf4f67ccE6x7osyFcR5nDybiANZGywzArHiLLg8saC0GnpQOeMc15L3IeSjeW8d4OHIQfHcR8T7Z3Ppfa%2BtBb7kMfhgl%2BxN8Dv0cJ/b%2B3tVB/0BOQoBEtiagPAZcSBmxiYwLgfTRByClBoKfpgnq8K8FMAIUQkhZD4EXKoaHa5shbnR2Jg85h2DRFWHYaA2RvD%2BEZEEcI369rrASN4KgKRyUv7wH8dUXeiiICuFsfHDRzj5iuLyKkPRmQPGGPjQUDIPjY12JDVYxxkb5GhoEI4jN2ivHjGTXY6YxbzH%2BMCaHV57zFa%2Bs4H8gFWydkYLiaCuEGhEknJSS3dJHdmakGybk%2BIciJZS1IDLfwBzynkn6eSfmFTJBO3jo2nOKtbBjKHZM%2BA0yjYm1RUi/uNs2CcDWdElgCgHQmgdPsuEjJRjez7dIgOshLlmooZaxhuQnmp3vvWrOwyvnGzOEXEul7nbXtvY6B9T7FT1xPVC7Y/hB3wumWilFg8sPxFvUkJICZ70iwTAhs6/ynaTyJXEGepLiZUtPvTBjNLd70sWYfY%2Bp8%2BWYAvlfG%2Bd96bcufgqh%2Bb9Q1Cuzr/ZA/8JVtilbwGVS95XQL9sq3gqqUEap5dqiZfB8EJQNaQxg5CTUhwkOaiO9CrU6FyLs4wbCbBOqDSTV1ZpOD0SjF68Rki4jSMDTw/NVilEqOyCm6NcwS2psTXm4x6bNG%2BIsdmhx7jQtZoUYWyt8XM2luaOWnLVbXE1rWEE1u9SG3hObVBg4MG73wdUqMXtyTm5pLhRMrJOSsDjteVOmWZgDn%2BH8L6X05T8VC38OSdpHym1brVhrTJpAClmBaVwGFPMYUi1aWYKp5J6n%2BGA58rdu7Xleym5u1rndliILSM4SQQA%3D%3D)
 
 ## Links
 

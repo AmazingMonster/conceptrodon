@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_UNCONFORMED_LEFT_INTERVIEW_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_UNCONFORMED_LEFT_INTERVIEW_2ND_H
+#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_LEFT_INTERVIEW_2ND_H
+#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_LEFT_INTERVIEW_2ND_H
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/microbiota/typella/unconformed_left_interview.hpp"
@@ -22,7 +22,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
-namespace TestUnconformedLeftInterview2nd {
+namespace TestReconformedLeftInterview2nd {
 
 
 

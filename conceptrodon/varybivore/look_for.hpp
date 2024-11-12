@@ -21,7 +21,7 @@ struct LookFor
             {
                 std::make_signed_t<size_t> counter {0};
                 return
-                (...||( (++counter, Predicate<Variables>::value) ? true : false)) ? 
+                (...||(++counter, Predicate<Variables>::value)) ? 
                 counter : -1;
             }()
         };
@@ -37,7 +37,7 @@ struct LookFor
         {
             std::make_signed_t<size_t> counter {-1};
             return
-            (...||( (++counter, Predicate<Variables>::value) ? true : false)) ? 
+            (...||(++counter, Predicate<Variables>::value)) ? 
             counter : -1;
         }()
     };

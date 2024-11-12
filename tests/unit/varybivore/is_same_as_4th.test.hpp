@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_4TH_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_4TH_H
+#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_4TH_H
+#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_4TH_H
 
 #include <concepts>
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same.hpp"
+#include "conceptrodon/varybivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -17,7 +17,7 @@
 namespace Conceptrodon {
 namespace Varybivore {
 namespace UnitTests {
-namespace TestIsSame4th {
+namespace TestIsSameAs4th {
 
 
 

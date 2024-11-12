@@ -7,7 +7,7 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename Known>
+template<typename Target>
 struct IsSameAs
 {
     template<typename>
@@ -15,7 +15,7 @@ struct IsSameAs
     { static constexpr bool value {false}; };
 
     template<>
-    struct ProtoMold<Known> 
+    struct ProtoMold<Target> 
     { static constexpr bool value {true}; };
 
     template<typename...Agreements>

@@ -8,7 +8,7 @@
 #include <type_traits>
 #include "conceptrodon/varybivore/look_for.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same.hpp"
+#include "conceptrodon/varybivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
