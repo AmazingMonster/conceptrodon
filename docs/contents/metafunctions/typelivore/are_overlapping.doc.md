@@ -5,8 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::AreOverlapping` accepts a list of nonrepetitive elements and returns a predicate.
-When invoked, the predicate checks if the list created by appending arguments to the previously provided elements contains repetitive members.
+`Typelivore::AreOverlapping` accepts a set of nonrepetitive elements and returns a predicate.
+When invoked, the predicate returns true if the list created by appending arguments to the previously provided set contains repetitive members and returns false otherwise.
 
 <pre><code>   Elements...
 -> Arguments...
@@ -34,7 +34,7 @@ struct AreOverlapping
         {RESULT};
     };
 
-    template<typename>
+    template<typename...>
     static constexpr bool Mold_v 
     {RESULT};
 };
@@ -72,22 +72,28 @@ The name `AreOverlapping` is probably a bit misleading.
 This function used to be a helper class for `Typelivore::AreUnique`.
 It becomes a standalone function since its functionality is intuitive enough that it might be helpful on other occasions.
 
-After instantiating two layers, `AreOverlapping` has two lists of elements to work with.
+After instantiating the first two layers, `AreOverlapping` has two lists of elements to work with.
 The first list must be a set, meaning repetitive elements are prohibited. The reason for this will be apparent later on.
 For the function to return true, the second list must satisfy two properties:
 
-- Every element in the second list is not also contained in the first one.
+- Every element in the second list is not contained in the first.
 - The second list does not contain repetitive elements.
 
-To check if an element is in the first list, we use a method that is described in `Typelivore::SetContains`.
-Namely, we will create a class that inherits every element we would like to check against and use `std::is_base_of` to inspect whether an element is a base of our class.
+To check if an element is in the first list, we use a method described in `Typelivore::SetContains`.
+Namely, we will create a class that inherits every 'element' we would like to check against and use `std::is_base_of` to inspect whether an argument is a base of our class, subsequently determining if it is one of the elements our class inherited early on.
+
 Since inheriting the same type multiple times is illegal in C++, elements in the first list must be nonrepetitive.
 
-We will implement `AreOverlapping` using recursion over the second list:
+We will implement `AreOverlapping` using recursion over the length of the second list:
 
-- **Base Case:** When only one element exists, the function returns true if it is in the first list and false otherwise.
+- **Base Case:** When only one element exists, the function returns true if the element is in the first list and returns false otherwise.
 
-- **Recursive Case:** Pop the first element from the list. The function returns true if the element is in the first list. Otherwise, we append the element to the first list and pass the result back to the function for recursion.
+- **Recursive Case:** Pop the first element from the list.
+The function returns true if the element is in the first list.
+Otherwise, we append the element to the first list and pass the result back to `AreOverlapping`.
+Then, we invoke the second layer by the popped second list.
+
+To 'inherit' fundamental types, we wrap every element into `std::type_identity`.
 
 Here's the entire implementation:
 
@@ -137,17 +143,10 @@ struct AreOverlapping
 
     template<typename...Elements>
     using Mold = ProtoMold<Elements...>;
-
-    template<typename...Elements>
-    using Mold_t = ProtoMold<Elements...>::type;
-    
-    template<typename...Elements>
-    static constexpr bool Mold_v 
-    {not std::is_same_v<typename ProtoMold<Elements...>::type, void>};;
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCAArADspAAOqAqETgwe3r566ZmOAqHhUSyx8Qm2mPbFDEIETMQEuT5%2BgXaYDtmNzQSlkTFxiSkKTS1t%2BVy2EwNhQxUjCQCUtqhexMjsHOb%2BYcjeWADUJv5uXo60hACeZ9gmGgCCewdHmKfnBDepmAD6BGITEICnujxeZn2DEOXhOZzcyHG6CwVDBz3BBEwLFSBkx8O%2Bv2YbAAdKS0U9xsQvA5jm4mKkFF56GcrOjnpjsbjMPifoxWJhScSAJIMBS/ByYdDYehsQSg/wPZ6U6kEY5PYiYADyADc4gZUqkwsBwSBjqkvNFrshjkiQCACf88FhBLd4SKxd1MVKZYwCPLsILwSYkqynsdwzbASrjgARTBNOjgiOnENJ5MRjk4ph4r68okCskKtPpyNUmnKYioIgAWU86GL6eDFmOXkyRmODs%2BMeO2tQTpZKZjLIbwaH/lD4IA9JPjgAlbqbTK646NTCpEANzNcnmE/nHd3ixxGaVY32kDt5/mC%2BfjE%2Byv3k5PK8uVmt1kep54l8PT04ANg0OME1oEwAOOAB3OhaEjVBUmODVkEXbJzyYZAEDwTBtSNG0EBIAgAFpkDwLYvEIYkG2TVtsM7M5u1tFABHweoxAoiN4VYkt6LwBQ/miJglD%2BVBUXOeiHT%2BJ1fVdc4D09I0719e5SHVLVdWIfVDSMe47W1MQvEwc8OPTIDgVoAyv2/ZNlJ1PV6Q041pNFQ9JXkuVBXPGSemPH1BEfb8tPtXk7S3bMPgrKtUFrWh63OG8CBcv1AwVILeWHNkw2/cZszwa00FFTFVFSYhjmiVBPB7XSPibLieIUfk/m1Hd9J7PtooeJIx1DZNR1Sl5nl/Cx%2BI%2BVd103LEsxzNwHXzfdHNkrzTx8otzPDZ9VTCt8ordWbPOAeLfPDJtDKo9saP8OiCHQO1cqY7IWOWxtzkMp8LrtbjeMGwThLcUTeXE51HG%2BLaPR2vaFXPKzVPUo1/J07wmqeiNeydUgEfDOkGSZbkHOBr14oUNyZpxuTvIIfaHuwZLfh6izDMyxwcoEcZMAKoqSrK2G9JTCwGCrSNLpAN7arYerGvPJHWu68cPw6oN7uCiapqvUk8bJ47gGOSL0C7Y51oi99zjxxKHiltLk3lrHJsvEllZJ/0GzVjW6wBbXdc1%2BFDcLCmAqpk30oOuWxu3XNd2t4kVaWv3Iyyhm8uZwritK6DNfq057qbHnVWqv4hf%2BBrg75NgddfPXNoN22jcpprxbBdrh19yWJz6gAqFvW7bycp1bgAVbAhC71uO%2Bbtvh8H3qIShGE4XOXLtlSB8I4xQOQsa/NBXVYA7eeB3q3jJgqC8aF6m1iGbINaHzjCAgm7FlryTtN3znX/HPZ68E6eyv5%2BKUFoIB3pp98PtkeEl9zyX2vscMBTcYYVRWD1d%2ByBP4KG/gQX%2Bu8AE9AEMAwQoDBAtxwVfKBSUQAc0wLA328DEHIIgGAMAGs0EHwwQwLBBB8Gt1YYQr2JCyEWA4GsWgnAEi8D8NwXgqBOBuGsNYG0GwtiVUhDwUgBBNC8LWAAaxAH%2BfwxIAAc2ikgaD/AkDQGh/BmG0WYAAnBY/QnBJC8BYBIYxpBhFaFIGIjgvAFAgA0Io5Raw4CwBgIgEAGwCDmhYRQCAaBsR0DiBEfknBVDaL/PhP8khjjAGQNaKQxIzC8ElIQEgTo9D8EECIMQ7ApAyEEIoFQ6gOCuN0DMcCQJ1wiL4QIoRyi3GcE1JccJxwhLHCSSktJGSsnHByWYY4EAPAxPoEVPYXAVi8CUQ03hpAIBIGiYaBZ5BKA7NifEYAUgzB8DoJiYgXiIDRG6dEMIzQbicAUfc5gxAbiamiNoT0zzeDRPvJqBgtAnnrNIFgaIXhgB0loLQLxIiwVYkMMAcQoL8AIUcLqOFrjmYLkxL88gghajdOuNEIE7yPBYG6YCPADj4WqRKkoOMLAkXXCMH4vgBgN4ADUMLgU1ISfFpThCiHEFUoVtS1DdKafoJFKBJGWH0HgaIXjIBrFgvUOF%2BEkS0VMJYawZhXGoFUsQCSKqIBrC6IwlwDB3CeHaHoEICxyiVAKBkLIAgph%2BBmIUd1DBBjOpGDMS19Q%2BiTDtdMGodRehzH9cMeIQa5ier0JlFosaljxotTI7YEgOkcEEc47p7jhnJNSekzJ2TJC5JmbgQpiz5ErN8eslYawECYCYFgeI5rSDqMkFoix/gkiSA0JIMwkgAIaASH%2Bax/COB2NIA4/wXBiR/i4H%2BbRFjtGroSJILgCR%2B1/gLaC9xnjvGNq0P4oJWyQn9MuPsqJqB5lxISRwZoLBtRJHwkwY4hwkWTIscSJd2KmJFMujMIV5TRXSHFUoSVoLdBnJafSX5ub80uNEb0m9qohmvvfZ%2B79Bh2xcH/YBmZczdlxFOJCMwDa1nns2dsh95GyCRMOQskAOGP0/qMERrgPiaC0Eudc25oLXmPPxaJ95nzvkOHxf830gLgXdPBZC6FsL8VYGZUYFFri0WyUxd0nFiE8XwsvkS0FJKyU3ApTsVx1LaUKPpRkTATKWVGnZVQTlCgeWYD5QK%2BF4GRWVKg7ICV9TGkgDOQR4w8qbAkrNWque2RNXarOrqqwlgDWiONaa%2BAFraiyWcBAVwSaZiOrKHG11RRsglbSG6%2BoaaXVBvy4w0NrRw1esjQVhoManUVYTf0GrKb5jlfTTm9Ymxs3LJsXmrpR7ODHA43hrj6siMAeJBoatwG62Lpo34ltbaO2UFzXOhd/7h1JD3UkJI/gR1jp3Yew1nAT0%2BNoxsgJwTQnhLvaxp9bBOCvrGSwBQ2prTalW1ycY%2BStvFLA7ICDQXqnyBg2FnQARSCIbaTwFDs3HscD6WEy4gyqALeICwQHwPQfg5CuMUjjGjmUf8P4XbTb6MMUfcxg5dO2Mg4NPVIjfwIcEE/qTtJ5yBNxCE3ch57zxPS4%2BV8n58K5OCAUyCnTmAIVQrEGp%2BFGmWU2d4Lpno%2BnQWGcuDsBRpmZ2uIs486zVKTX2d4I5xliKtNuZZx5pg3LeX8sYIKuHgWJDBZqcjqVaOotyr1QquLuW3GJcZpwScto0v6sNdlrA8XOtWqKzamrZXFiNdq1Vj17XKu%2Boa4G7PIbE1l6a1GgQrXK/xtmANuvrfU29dG1NhQWbKnY4e%2BhjgJOyfpKByDnsVPMQ04gDWog23lmrL26QVt7aRhdpnSdiL/7GcJCMTu4xjOkhrsHz0jxthT2vebd2gIf4ANcEsTdqxf4khcH0TMGd/gcdD6X023NeTT9j0z0VFSBVJMhnBJAgA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCAArBqkAA6oCoRODB7evgGp6ZkCoeFRLLHxSbaY9o4CQgRMxAQ5Pn6BdpgOWQ1NBCWRMXGJyQqNza15HeP9YYPlw0kAlLaoXsTI7Bzm/mHI3lgA1Cb%2Bbl6OtIQAnifYJhoAgjt7B5jHpwRXKZgA%2BgTETEIClu9yeZl2DH2XiOJzcyDG6CwVBBj1BBEwLBSBnRsM%2B32YbAAdMSUQ8xsQvA5Dm4mCkFF56CcrKjHujMdjMLivoxWJhiYSAJIMBTfByYdDYehsQTA/x3R7kykEQ4PYiYADyADc4gYUikwsBQSBDikvNFLshDgiQCA8b88FhBNdYUKRV10RKpYwCLLsPzQSYAOzMh6HMNW/5Kw4AEUwjTooPDx2DiaT4bZWKYOI%2B3IJfJJctTaYjFKpymIqCIAFlPOgi2mgxZDl4MkZDnb3tHDprUA6mcno0z60HB/4Q6CAPQTw4AJS66wy2upTCUIHrGY5XPxvMOrtFjiMkox3tI7dzvP5c7GR%2BlPtJScVZYr1drw5Tj2LYanxwAbBpY/GtAmH%2BhwAO50LQEaoCkhxqsgC5ZKeTDIAgeCYJqBpWggJAEAAtMgeAbF4hCEvWSYtphHYnF21ooAI%2BB1MwQEfp%2BsJkZ%2BtF4AoPzRCuvyoMipy0XaPwOt6zqnHu7oGje3q3KQqoatqxC6vqRi3DampiF4mCnuxxYAYCtB6Sxn7hopWo6rSamGpJwr7uKskyvyp5Sd0h5eoI96sXKNp2n5GKZuihzlpWqA1rQdanFeBBOT6/q%2Bba3JDiyoYcY0jiWmgwroqoKTEIc0SoJ43baW8jacdxCi8j8mpbrp3a9lFdyBqOIZJiOKVPI834WHxy6ruugWbjm25sLu9nSR5x5eYWpkllGoUvpFLqTe5wBxd5YaNvpzatsAZ7fJ2EboDa2UMVkYi7Wx81mZVPF8T8AmwsJ3KiY6jifKtbrrZtcqnhZymqQaGkgFp3gNbtSY9g6pBQ%2BGNJ0gynJ2T9HpxQoLkTWjMmeQQW0NoldpdWZu1jFmeBZQIYyYHlBVFSV4M6cmFgMJWJ02lxPzVWwtX1aeMPNZ1Y5vm1AbzRuWYo24dp5vyGMExRbYRegx1LeFr6nBjCV3CLqKtV1k4AFQm6bZsTsbJsACrYEIVumxbPVm87RuO91YIQlCMKnNlmwpHec3u5L2Yy%2BeRLEqqwC%2BqCSsHVWcZMFQXiQoxx2A1Zeog6cYQEEbAtNaSNoq7CkeYwWuvjgqGWUz8K5KM0EDx40Scp1ksI56eOd54cXdG6DTOYEsXXk5ltcKPXBCNwnLfdAI7eCJ3ggm4vud94lA9D3rZLV8gY8TxAYBgIcTeJ8ns8MPPBAr6b19r9gmllZvFgcCstCcAkvB%2BBwWikKgnBuNYawVo1gbHKuCHgpACCaBfisAA1iAH8/hCQAA5kGBg0D%2BJIGh/BmGQWYAAnPg/QnBJC8BYBIDQyQv4/z/hwXgCgQDJCgd/F%2BpA4CwBgIgEAawCCmivhQCAaBMR0DiBEXknBVDIJ/LhH8khDjAGQJaKQhIzC8HFIQEgDo9D8EECIMQ7ApAyEEIoFQ6gWGkF0FwUgoEAQpE4DwV%2B79P7QN/pwdU5w%2BGHAEocSR0jZHyMUYcZRZhDgQA8MI%2BgBUdhcCWLwZhWgVgQCQEI/UkTyCUBSSI%2BIwApBmD4HQdExAGEQGiC46IYQmhXHsbwcpzBiBXHVNEbQ7pqmkCEbedUDBaBVPMVgaIXhgA0loLQBh3BeBYBYIYYA4hemEWktqUZP9abznRK0nONQXGXGiACepHgsAuP%2BHgchYzSDKSKkoWMkyjCXCMNAlYVADBRwAGpoVAuqfErSdHCFEOIQxXyTFqBcZY/QUyUCAMsPoPA0QGGQBWNBRiozcIImoqYSw1gzA0OUsQMSMKIArE6OfFwDB3CeDaHoEIcwygVD0GkDIjFJh%2BCsbSooDABhUuGFYgljFegTFJXkTlNRpL1BmGyoY8ROUzAZXocmzRRULHFfikBmwJCOI4B/Ug1DeC0J8VImRciFFKMkCo0JuANFRPAbEyBdyVgIEwEwLA8Q8WkHgZIJB%2BD/CBkkBoSQZhJB/g0AkH8RC34cFIaQch/guCEh/FwH8yD8HINjQkSQXAEjup/BqlxtD6GMKtSwxJnCkncI8ecdJgjUARNEeIjgTQWCakDLhJghx9hTKCfgwkUalkMU0adKxXy9G/OkP8pQgLzG6DyTY2k1TVXqs1a4jg7jeHnC8VQQ4tb62NubQYNsXB22dtCeE1JcRjjgjMJa%2BJrCi2ZLSQI69wx10NpbUYXdXBkg0FoIU4ppTzG1Mqa0399TGnNIcK09p3pOndJcX0gZQyRmtImVMmZP98BwUcAslxyz4KrJOeskNP8tk7KuHsrYP9DnHIgWc9ImBLmIYNHcvgjyFAvMwG8j5Jz%2B0/IMUO2QAKzE/3HSC25qKrAQq2biuF/ssiIuRf4aMwn0WYriNirA4nqi1CyESkluRGVBGJXK6lTLCj0r5Tp5ljF9McrU0KhgPKWgmelYK8%2BtmLPitsJK%2BzEq%2BguZVasdYyqYnELVc48x2qH2bqfQdXdHbCQaBNd281kbz3WtILa%2B1wwnUhrDRG9t3rAxpsDIGfwPq/UpszSFzgOamH0fYVwnhfCy13uIGItgnBa3%2BJYAoTUlpNRRY5GMNR8WtF9tkAOrjRj5Ajr4zofIk67FjJncFmhbiS3Km8W1uRHWuvdl61LMYB6K1HoS/4JL%2Ba2HJIO1khrF3Ilg2QHqWqu6fh9YILXYgLBZH5I/XEL9ZSKn1P/X9hpTSWknLA4ICDPTkOYH6YMsQcGTkIeuSR8ZczujofMZh84WwIG4c2VCwjxGDnYvI7wSjFyMS0duadh5TBnmvPeYwT5I3OMSG48YybQL8jbuMOCmwYn4ASYRZwCc1p5OWAxVqrFOKBdWcJRAVwUqrEUtKGKmlRmsiK4KHSrI3mBXqeFX0TXXKegisparzzvLtPStNyr%2BVPmFBKoMQtsrS2OBrre%2B1zr3Wdvoj2xAU1RAEsxLicl1LDrKCqqyyAAhhJ/D%2BASEkFNlC4%2BBjjS7rVFXbC5ovUsOBAQfwdq4AQorhCfyBi4OgqxIb/CLYz3QvNCTVWqPT/OkP%2BaVjKQyM4SQQA%3D%3D)
 
 ## Links
 

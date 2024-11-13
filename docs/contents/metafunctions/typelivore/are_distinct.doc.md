@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::AreDistinct` checks if its arguments are distinct.
+`Typelivore::AreDistinct` accepts a list of elements. It returns true if no two elements in the list are the same and returns false if otherwise.
 
 <pre><code>Elements... -> AreDistinct ? true : false</code></pre>
 
@@ -38,13 +38,14 @@ static_assert(! AreDistinct<int, int*, int**, void, int*>::value);
 ## Implementation
 
 We will use a technique called SFINAE, which stands for 'substitution failure is not an error.'
-It roughly means we are going to create an 'if statement' for template instantiation, where the condition will be the legitimacy of an action.
+It roughly means we will create an 'if statement' for template instantiation, where the condition will be the legitimacy of an action.
+
 In this case, the action we will be using is accessing a function in an overload set.
 The compiler will select different partial template specializations depending on if it can find the requested function.
 
 We will use `Label` to create an overload set for `lark`.
 We add a second parameter in the template head to distinguish identical elements.
-It is essential since inheriting the same class multiple times is an error.
+This is essential since inheriting the same class multiple times is an error.
 Unfortunately, using this error for SFINAE is impossible based on my testing.
 
 ```C++
@@ -66,31 +67,36 @@ struct AreDistinct
     struct Detail<std::index_sequence<I...>>
     // We create an overload set through inheritance.
     // Since arguments are not allowed to have the type `void`,
-    // we declare the parameter using `Element*`.
+    // which shall be a valid argument for `AreDistinct`,
+    // we declare the parameters using `Elements*`.
     : public Label<Elements*, I>...
     {
-        // We bring every `lark` from its base class to the current scope.
+        // We bring every `lark` from its base class
+        // to the current scope.
         using Label<Elements*, I>::lark...;
 
         // We will do SFINAE on the second parameter.
         // The default argument `void` ensures
-        // the compiler checks the specialization before the primary template.
+        // the compiler checks the specialization
+        // before the primary template.
         template<typename, typename=void>
         struct Hidden
         { static constexpr bool value {false}; };
 
+        // This function checks if an element
+        // is in the previously provided list.
         // We ask the compiler to find a `lark` that
-        // declares a parameter of type `Element`.
+        // declares a parameter of type `Element*`.
         // If the compiler finds the `lark,`
         // this specialization will be used.
         // Otherwise, the primary template will be used.
-        // This function checks if an element
-        // is in the previously provided elements.
         template<typename Element>
         struct Hidden<Element, decltype(lark(std::declval<Element*>()))>
         { static constexpr bool value {true}; };
 
-        // We check every element in the previously provided elements.
+        // We check every element using a fold expression.
+        // It returns true if and only if each element
+        // appears only once in the list.
         static constexpr bool value
         {(...&&Hidden<Elements>::value)};
     };
@@ -100,7 +106,7 @@ struct AreDistinct
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCCSAJykAA6oCoRODB7evnppGY4CoeFRLLHxABy2mPZFDEIETMQEOT5%2BgXaYDlmNzQQlkTFxCckKTS1teVy2EwNhQ%2BUjlQCUtqhexMjsHOb%2BYcjeWADUJv5uXo60hACeZ9gmGgCCewdHmKfnyOPoWFT3jxezwImBYKQMILObgINxSjFYH2w9DYglIxwyAC9MAB9AjHACSAOe42IXgcx2CTFitEBJgA7BZ0U1HMhjmgGONMKoUsRjgA3VB4dDHAzEADWECRoMYBBWZ0Z9IAIvLacDQeCmJDzjC4cw2AA6Q1SlEEBREp4ksl4p7ETCKvDjA4EWkMwHHd3HEFgiGYKE6%2BFsc0epmk8mKzBNOinV105X%2BKzPN0er0arVuTE4giG/WE/wPZ7By1hiNMOhQn4gEBhLCqbFKACOXkY2yh%2BOzALzSfdAHpu8cAOofZC2zUfQzHVB8uK0VBMYVKPEEBDEDbABDHMIIOKEQzbfVd46945CA5j4jAHwyhTHZofBioPFiGcAd0wwqIxwQTCnnq3nthHwmAAbBoApCsBGikAeR6vscWCHLev4fCkzQIiCvJeBkRinCBxoygAVBB%2B4Fh6IDHCkXjRNcrKUtSUJ4YICj4WiubYO2JHuvSCZPMGwZHoOxzRMQYTAMcmBTsQNw4RoopihBxxUCuLAbqaglMEobIGAo14fkuQ6bLagjomgcLETxvHuphIkUlStT0ciV7MQS9yVrJ7bxqq5kWfxHzPnQtBwagx4AGL4hETzYBODBIei3QCMKKHEGhcRmRZPZ9gAKn%2BfxMF4tCPuel5GRBYHoPJjAKJsmBmhxvFHnpbKoGCdBxGyW7IGKOl/gocLIHgYh4BimpZIJmD8LaMU8ngLDNFJKY%2BqlaXzaOfoAXqmBov661nIqpVBmlRZ4gAEkKWAMAewZcUyw2suynLcry0SoJ4/JiE20YWFQYhKEq8rRnG3EXR6Pk3goYoxWgzX0LyH40AwwpMNJsnyUumpA%2BlcHdKK1U3uRqFsOhE5UP%2BcLSQxzogYt3l9vixMNZDKQtbycPoF1gEgbJUEgejh59kuDror1/XXEN9THH5tABbExyYW%2BVN1X2ADyenEH5SibX%2BU0zZJnrqj64v%2BaNMtKOg8t8ZlCAC1QXgMD0Ahtd0nUbsT461NKgg80eAthJNtp8k4mG0FJPKTkKb5iQ5jFm8mesrdqa0Isc5P7RZh3HCdvyMPZ7sEGi8H5QBECyRAFYgPnfJiNnJqEXmEArPXKe8Vd4w3Y1HIgg9gnPQFFfeIBDIEKSvqxn9v0eYmtXmwOQ7teD4lxFJbsmhu0UNTy4kBwoQfkSu/tYMKS9XtH7otyybf3TyXcvb3TY81xEDtmYQHmEBGdnVXV4uSAN%2BYHKI/j15f6KoJ6ANPngW6AgL6PW7q9PuB4uLhkjDSc4pdqxcjrJgRszYcTjQ/lHQ0HZsCVh/mPQG/9AbPG7PhahNDaHdkBFQ6hGVsBCAyjQ%2BhlDaFcPwhwoELwzD7Ftu8T4bh2TbBSKac0gIwHIGxOpJQLQIA2jtA6RwttnTnDCLnFeBAnJaOoWiPaeZiFvV/sAi0zJwFyO0nEAgEAwBgGOMo%2B0jp1FQi0WifRnjBAGP5IKdA3jdFfx/nKeMHA1i0E4AAVl4H4DgWhSCoE4G4aw1h0QbC2IBARPBSAEE0OEtYYoQBAX8PqSolQ6QaCAlEjQGh/BmEqGYRIyRIkcEkLwFgEhamkDiQkpJHBeAKBAJBPJ8TwmkDgLAGAiAQAbAIBRXOFAIAMyZhEBEnBVCVCAgAWiApIY4wBkCsikPqMwvA3yEBIEKPQ/BBAiDEOwKQMhBCKBUOoMZpBdAzGfElFInAeAROibE/JiTOCK0uAsomxxNk7L2Qco5xwTlmGOBADwUNWp7C4CsXgoytBrAgEgFZ0NyCUCJSMYAUgzB8DoOhIZEBogguiGEWa/zeBMuYJJRW0RtDdFGTkyGJpFYMCDiCrA0QvDADcE%2BIZ3BeBYBmkYcQHz8C2h6FOGVCSuTdEuDsHJWjagguuEJWaHgsAgsHtNVlpAJJPSUOGBVwBrhGHyWsKgBhgAKAAGp4EwM%2BRWuorW3OEKIcQTyg2vLUCCr5%2BhDDGFSZYfQeBohDMgGsVAEisgyu2T8HaphLDWDMH0iSwksAprrjUOoWQXDwymH4GYIQFhlAqPkdImQBC1pbYULIgwm0jBmF0O2DQ5gdv7W7QdfQWg9uGPEftw7PDtD0C3Sdjbp0SDWAoDJ2w136CBT0kF/ToVbN2fsw5xzJCnJRbgS5vJMXYtyS6tYW45wjHLUUyQpTEj%2BDpJIDQkgzCSBAhoKJQEWmcHaaQTp/guD6iAlwIClREiVDg1EyQXAomfqAnuj5/TBnDPvWM/F0yCWzIhZcElyymqM2hmstgnBmgsD5HSbZiMELYS4IkfU0HNX4CICWm5sh7mhukOGpQkaPm6CpT8pgfzZWAo4DErDfSwWkbxKgF2xAGNMZYwYNjHGuMorRVRjFAizB3txeM4jZKyBLKsyAejjHtmsYpYkLgkEaD5TiHShlHz2UstlaQXznLuW8qtQKmUQqRXKswOKyV0qrXytjUqhJKreV4HVSCrVyAdVWv1a0hJRqkqSVNTsBJFrOn%2BZtekO0oJEsiRdXwd1XqfV%2BoDf5oNgnHnCdkBG95CSJMxudXmqwCajVlrTRmyBnBs0EDKv4RUQ2C1FriCW6q8B11jvqNW9w87phBHhlOpYM7UitvqCO47XbigrsO4ujbvQ525DrRW1LAgJ3zFKKu2d/QztLre4sZtWL1ibC3QD1pCnem8APfZrTmlY2Ir0/qDQl6eMkFONkszD7SBPqwPEctrTwOQY47%2Buk6G6R0n8H%2BgDqHFMQ84LhkZ9XJkzLmQs8jVmaM7Ho3ClgCg%2BSsj5Ox/UPpxjnOR3xmY7WQ2deefIUTvWdABFIFJmTAKd3yeBdh5T8zLhQs5/s7nvP%2BQC6F3iVFlGmao/8P4dHBGJmErN8Smz9uRi85SCkbE/PEjYmN3IjTezqUeeIF5xlzLJJWsCzcLlPKHChaaoK4VNxRXRYlVKyWMqckJcVSVuVeBVWOHSx8zL2X/O5cNUmwrNxivmuEuVnJlW7U1cVXVm3bqmAeu9b6/1jBA0CclxILrLzZdRoVzpuN%2BaRtJrG4kibHJODdgrAtywhaIfFrDpPgdm2ICuDOw29712ZgFDbdkHbj2D/1AO/9p7477sLtHZWl7cxz99tmF94/i6H9Xf%2B%2Buzdjy5Ng/3ZwG8X3PXHnPnI3UccYJHa9C3LFHFDHLHF9OTfHEAJpfUS3KJGpVDWpS3OkeDanUFAZWwPDczeuUgIpfwICTjLgJpcnZpICOkLgSpGYVpfwdXJTAg4guTM5PAnDfDPFNYCSDIZwSQIAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGwA7KSuADJ4DJgAcj4ARpjEAQDMpAAOqAqETgwe3r4BwemZjgLhkTEs8Yn%2BKXaYDtlCBEzEBLk%2BfkG2mPYlDE0tBGXRcQnJts2t7fldCpNDESOVYzUAlLaoXsTI7BzmSRHI3lgA1CZJbl6OtIQAnufYJhoAgvuHx5hnF8hz6FhUDyerxeBEwLFSBlB5zcBFuqUYrE%2B2HobEEpBOmQAXpgAPoEE4ASUBLzmxC8DhOoSY8VoQJMgQsGOajmQJzQDDmmFUqWIJwAbqg8OgTgZiABrCDIsGMAirc6M%2BkAEXldJBYIhTChF1h8OYbAAdIapaiCApic9SeT8c9iJhFXg5ocCHSGUCTu6TqDwZDMNCdQi2OaPUyyRTFZhmnQzq7AsqklYXm6PV6NVq3FjcQRDfqiUlHi9g5awxGmHRob8QCAIlhVDilABHLyMHbQgnZwF5pPugD03ZOAHVPshbZrPoYTqg%2BQlaKgmMKlPiCAhiJtgAgThEEAlCIYdvquydeychIcx8RgD4ZQoTi1PgxUPixDOAO6YYVEE4IJhTz1bz1wz4TH8DQBSFICNFIA8j2fBA8GQdcFC/WhaBOeIb35MQhRvc9L0EE5%2BF5cCbTtB1HAYBxwMggsPWgz4sCOW9f0%2BVIWkRUFiGvLxMiMM5gONK8ACpwP3aj3RAE5Ui8WIblZKkaWhfjBAUAT0VzbB21E6ME2eYNgyPQdUOICJgBOTAp2IW5eI0UUxXA/CVxYDdTVQpglDZAwFDNTS9L7D8lyHLZbTwhQ0HhESdN090uOMylqR6BSUUE1SHkrGz23jVUIsi/TPmfOgUPQVBjwAMQJKJnmwCcGCYjF6gEYUWOINiEnCyKez7AAVP9/iYLxaEfHCTSs0D0DsxgFC2TAvKy3Sj38tlUHBOgEjZLdkDFa95oUeFkDwTDMU1bIDx81DMAIz55p5PAWBaSyUx9Vq2vu0c/QAvVMHRf13vORURqDNqi3xAAJIUsAYY6PXpRk5kO1l2U5bleViVBPAw7xAIZKgxCUJV5WjONtIh9qTi6h18K8ci%2BlW%2BoNo3Kgb2qnppUEInDz7MmIhqnkzKcLjaEsnlJyFN8RVIx7sr7AzXLFGq0CW%2BheQ/GgGGFJgrJsuyl01Vmj3o0UpvQxrmt5VB6f9KzFIIITgPF2a%2BwJM2/zl1Jlt5ZX0E2v9wJsyDgJ13zYOvbb6j2m4DqpvLkNOk4uLfW2ToAeX84g8qUT6/yum6LM9dUfROSOULQ2P0Hj5Nc5e7U3sRE5Lf%2ByLAZOEG/kYBLmYIdE9f9CAbIgCsQD1vkxFbk0hLzCBVgnuvdKhplYYWjlQUR1CUZQwf0a0ggyV9WM8dxjLE28mjJaHNaZbMhJLKZobop4tX%2BFoYUuW5zzslL4mCXxW0CC2DlPS3umGbCgEPzABmAmDwVMolFmh9iZMFSPCFo15gGWQEDsDc1V5o3DmG/WeLJ54Ix5MvVGa8mysyhhAdsZh/DmH8E3MGw8rwpRACQzAcod77xmnvQmmkYZ4PhovQhyNiFiFIZpKG4ZIy0guH3asXI6yYEbM2XEBEGFKXSo8PMlYWFcJdATTK3YBKGKMcY7sQIDGGI6tgIQHUjGmJeOY4xJjMpvHIh8L4bh2Q7FSKac0QJeFwRxK5JQrQIDEXtI6Sm0IIjt3QVbdE0TDHoj%2Bpo5hIjWEqhJMyAJQSEgEAgGAMAJwwmkSdFEtEsSVIVMqSNeJghR7YC0WkuU8YODrFoJwAArLwPwHAtCkFQJwNw1hrAYk2NsQCZgkg8FIAQTQrT1himSPqAAHMswIGh/AdI0BoJIZhllmAAJwHP0JwSQvAWASG2aQHpfSBkcF4AoEAEFZm9NaaQOAsAYCIBAJsAgkl24UAgM7V2UREScFUMs/wABafwkgTjAGQKyKQ%2BozC8DfIQEgQo9D8EECIMQ7ApAyEEIoFQ6hXmkF0FwUgz4mqpE4DwNpnTulzP6ZwBOVx/kTnphC6FsL4WIpOMiswJwIAeHlitfYXBVi8BeVodYEAkDAoVuQSgSqxjACkGYPgdB2KPIgLEFlsQIi3XpbwI1zALIJ1iNoeoLzplyxNAnBg/MWVYFiF4YAbgnyPO4LwLAN0jDiHJfgW0DQpw%2Br6VyeoVxdjTOiT0FlNxYhNQsh4LALLN7XVNaQcyyMlDhgDcAG4Rg5nrCoAYYACgABqeBMDPgTrqbNOLhCiHEIS5tJK1AsspfoQwxhhmWH0HgWIjzIDrFQN47IPqoW/B%2BqYSw1gzC3PMkZLAo7x7dF6NkFwKtph%2BCpWERYFQqh6CKFkAQe7T0ZHPQwYYx6xhUrqA0AQAwpieA6HoJ9fRX0LHKKMRIj75iXsA4MO9/6JDrAUGMnYEGTkcC6dclldyTg8phXChFSLJAopFbgDFhFJlSplaW9YW45xjA3YsyQSR9QHKSIESQGhJBmEkMBDQHT/DHPaRwM5pALlTP1P4Lg/hlkHOWUJjpkguAdNo/4RD5K7kPKeTM0t7yvkKp%2BRyq4KqgWLRdgrUFbBOAtBYHyQIUK1YMR4lwA5%2BouD6kjfgIgq7sWyDxW26QHalBdvJboLVNK4GmsZfB5l8m2WafxKbbCJmzMWYMFZmzdmNAirFXpiVkyzDSuU68%2BVirdOu202qxIxnTNQssxqg5XAII0H6gkPVBryXmpNb60gjXLXWttdmh1MonUuuDZgd1nrvXZv9X2oNfSQ22rwOGllUbkAxuzfGrjfSk0ptuGm3YfTM0XOa7mjIdowSjeMip8tTBK01rrQ2xgTbXOtoJR52QnayV9N872kt86rCDqTeu8dk6BDTtnUkRU73F3LoSKuqa8BINM2fX4CArhgMhBVmB5YAG0jXr6Ajs9fRkcnsfdD79QH335Dx1ul98wccPomIMBHMNWgU4A5B6DBKgsIZubwZDxWYvuT7YKhL9mcOOZIGcAjmXZXzNIKRrAiQN1cZ43xmzjHAjScCIEJITGWOSbk7czginnkqY%2Bd835/yCt5f02Cjgxm%2BUsAUHyVkfJrP6h9HMNFgvnNUubW5u7RL5BeaezoEAKR/N0t9SzkL2uODsr%2BVcLlUWrc27tw7p3%2BJRWm7S0kJIov9e5fFWQQFhXmHIHgTie3BycRJ8CcQFgsLtU1Y4pQerfTWu3GzU3q1NqHCdcWo651ze%2BsDa9chH10yRuBo236vAobHDTfJbN%2BbzXFuJuHat9bGajLbembt/NB3A1Hey3wCt1ba31sbc1j3t2JD3eJb77tAfXv9oXZ94d33%2Bm/Y5JwbsFZgeWCXezldwtn9frbpw67pE77qI7oD05XrFDZCY7o7ZCQEk6TZk7U6gGfr46NDk5HrgYgZvp5BgG06/pLC46M5bAwZSpwas5IacCx5wrW6278iJ6jhzAC54bC5TKZ7ZYkZgJS6UBBZy4gCHL6jp4dJbKSbbLp6BDCZa7s4662BKZi4TykCLJJD%2BC2ZcCHJq5HJBBcDrJUpcZJBh4yH3JZZypBaorSGsrGEKHrDmSZDOCSBAA%3D%3D)
 
 ## Links
 

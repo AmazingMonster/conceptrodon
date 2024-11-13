@@ -14,7 +14,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ```Haskell
 TypicalTurnOver ::   typename...
-              -> typename
+                  -> typename
 ```
 
 ## Structure
@@ -29,7 +29,7 @@ struct TypicalTurnOver
 
 ## Examples
 
-We will turnover `int, int*, int**, int**`.
+We will turn over `int, int*, int**, int**`.
 
 ```C++
 template<typename...>
@@ -49,14 +49,14 @@ We will implement `TypicalTurnOver` using recursion over the total number of par
 
 - **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
-  1. TurnOver the several elements from the front of the list;
-  2. Invoke `TypicalTurnOver` by the rest to turnover them over;
-  3. Switch the positions of these two turnoverped parts and concatenate them together.
+  1. Turn over several elements in the front of the list;
+  2. Invoke `TypicalTurnOver` by the rest to turn them over;
+  3. Switch the positions of these two flipped parts and concatenate them together.
 
 Here's a simplified version of the implementation:
 
 ```C++
-// We will use this function to concatenate two turnoverped parts.
+// We will use this function to concatenate two flipped parts.
 template<typename>
 struct ExtendBack {};
 
@@ -88,7 +88,8 @@ struct TypicalTurnOver<First, Second>
 template<typename First, typename Second, typename...Others>
 struct TypicalTurnOver<First, Second, Others...>
 {
-    using type = ExtendBack<typename TypicalTurnOver<Others...>::type>
+    using type 
+    = ExtendBack<typename TypicalTurnOver<Others...>::type>
     ::template Mold<Second, First>;
 };
 ```

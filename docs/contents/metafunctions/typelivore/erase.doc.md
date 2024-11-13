@@ -16,9 +16,9 @@ When invoked by an operation, the function removes the element at the index from
 -> Operation
 -> Operation&lt;Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I+1</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
 
-- Suppose its first layer is instantiated by two indices where the first is less or equal to the second.
+- Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
-When invoked by an operation, the function removes the elements between the indices from the list and invokes the operation with the result.
+When invoked by an operation, the function removes the elements of indices within the interval from the list and invokes the operation with the result.
 
 <pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>J-1</sub>, ..., Element<sub>n</sub>
 -> I, J
@@ -128,9 +128,6 @@ In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 In the case where the second layer of `Erase` accepts two indices, we want to remove the elements between them.
 
 ```C++
-template<typename, auto>
-concept Prefix = true;
-
 template<typename, typename>
 struct Expunge {};
 

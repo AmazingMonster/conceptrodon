@@ -6,13 +6,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::Diversity` accepts a set of nonrepetitive elements and returns a function.
-When invoked, the function appends the arguments to the previously provided elements such that the resulting list:
+When invoked, the function appends the arguments to the previously provided set such that the resulting list:
 
-- contains every element from the previously provided elements and the arguments;
+- contains every element from the previously provided set and the arguments;
 - doesn't contain repetitive elements;
 - preserves the relative order of every element;
 
-The resulting list will be held inside `Capsule`.
+The resulting list will be held inside a `Capsule`.
 
 <pre><code>   Elements...
 -> Arguments...
@@ -61,7 +61,13 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ```C++
 template<typename...Elements>
-using Diversity = TypicalDiversity<Elements...>::type;
+struct Diversity
+{
+    template<typename...Agreements>
+    using Mold = TypicalDiversity<Elements...>
+    ::template ProtoMold<Agreements...>
+    ::type;
+};
 ```
 
 ## Links

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_DIVERSITY_H
-#define CONCEPTRODON_VARYBIVORE_DIVERSITY_H
+#ifndef CONCEPTRODON_VARYBIVORE_TYPICAL_DIVERSITY_H
+#define CONCEPTRODON_VARYBIVORE_TYPICAL_DIVERSITY_H
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/monotony.hpp"
@@ -12,16 +12,16 @@ namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto...InspectedVariables>
-struct Diversity: public Monotony<InspectedVariables>...
+struct TypicalDiversity: public Monotony<InspectedVariables>...
 {
     template<auto InspectingVariable, auto...RestVariables>
     struct ProtoPage
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, Diversity>::value, 
-            Diversity, 
-            Diversity<InspectedVariables..., InspectingVariable>
+            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
+            TypicalDiversity, 
+            TypicalDiversity<InspectedVariables..., InspectingVariable>
         >::type::template ProtoPage<RestVariables...>::type;
     };
 
@@ -30,7 +30,7 @@ struct Diversity: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, Diversity>::value, 
+            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
             Shuttle<InspectedVariables...>, 
             Shuttle<InspectedVariables..., InspectingVariable>
         >::type;
@@ -44,12 +44,12 @@ struct Diversity: public Monotony<InspectedVariables>...
 };
 
 template<>
-struct Diversity<>
+struct TypicalDiversity<>
 {
     template<auto InspectingVariable, auto...RestVariables>
     struct ProtoPage
     {
-        using type = Diversity<InspectingVariable>::template ProtoPage<RestVariables...>
+        using type = TypicalDiversity<InspectingVariable>::template ProtoPage<RestVariables...>
         ::type;
     };
 
@@ -60,6 +60,14 @@ struct Diversity<>
     using Page_t = ProtoPage<Variables...>::type;
 };
 
+template<auto...Variables>
+struct Diversity
+{
+    template<auto...Agreements>
+    using Page = TypicalDiversity<Variables...>
+    ::template ProtoPage<Agreements...>
+    ::type;
+};
 
 }}
 

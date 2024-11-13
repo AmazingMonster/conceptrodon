@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_VARBOLA_FLIP_H
-#define CONCEPTRODON_VARBOLA_FLIP_H
+#ifndef CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_H
+#define CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_H
 /******************************************************************************************************/
 
 
@@ -62,23 +62,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_FLIP_FUNCTION_NAME
-#error "CONCEPTRODON_VARBOLA_FLIP_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_FUNCTION_NAME
+#error "CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_FLIP_FUNCTION_NAME   \
-    Flip
+#define CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_FUNCTION_NAME   \
+    TypicalTurnOver
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_FLIP_EXTEND_BACK_FUNCTION
-#error "CONCEPTRODON_VARBOLA_FLIP_EXTEND_BACK_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_EXTEND_BACK_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_EXTEND_BACK_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_FLIP_EXTEND_BACK_FUNCTION   \
+#define CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_EXTEND_BACK_FUNCTION   \
     Omennivore::ExtendBack
 /******************************************************************************************************/
 
@@ -94,7 +94,7 @@ namespace Varbola {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/descend/microbiota/varbola/flip/flip.hpp"
+#include "conceptrodon/descend/microbiota/varbola/typical_turn_over/typical_turn_over.hpp"
 /******************************************************************************************************/
 
  
@@ -118,14 +118,14 @@ namespace Varbola {
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_FLIP_FUNCTION_NAME
+#undef CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_FUNCTION_NAME
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_FLIP_EXTEND_BACK_FUNCTION
+#undef CONCEPTRODON_VARBOLA_TYPICAL_TURN_OVER_EXTEND_BACK_FUNCTION
 /******************************************************************************************************/
 
 
