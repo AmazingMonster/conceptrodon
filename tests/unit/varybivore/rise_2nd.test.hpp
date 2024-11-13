@@ -80,7 +80,7 @@ SAME_TYPE(boost::mp11::mp_sort<Unsorted, boost::mp11::mp_less>);
 #define SUPPOSED_TYPE   \
     SupposedShuttle
 
-SAME_TYPE(Rise_t<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>);
+SAME_TYPE(Rise<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>::Rail<Shuttle>);
 
 #undef SUPPOSED_BASE
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"

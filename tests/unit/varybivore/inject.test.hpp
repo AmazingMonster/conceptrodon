@@ -34,7 +34,6 @@ using SupposedShuttleA = Shuttle<SHEEP_SPROUT(40), SHEEP_SPROUT(100), SHEEP_SPRO
     SupposedShuttleA
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Page<SHEEP_SPROUT(100)>::UniRail<>);
 SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Page<SHEEP_SPROUT(100)>::Rail<Shuttle>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
@@ -67,7 +66,6 @@ using SupposedResultB = Tester<SHEEP_SPROUT(40), SHEEP_SPROUT(100), SHEEP_SPROUT
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Page<SHEEP_SPROUT(100)>::UniRail<Tester>);
 SAME_TYPE(Inject<SHEEP_SPROUT(140)>::Page<40>::Page<SHEEP_SPROUT(100)>::Rail<Tester>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 

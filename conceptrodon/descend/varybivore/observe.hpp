@@ -4,24 +4,24 @@
 #ifndef CONCEPTRODON_VARYBIVORE_OBSERVE_H
 #define CONCEPTRODON_VARYBIVORE_OBSERVE_H
 
-#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/descend/microbiota/varbola/stare.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<bool...Phenomena>
+template<auto...Phenomena>
 struct Observe
 {
     template<template<auto...> class...Agreements>
-    using Rail = decltype(Varbola::stare<Agreements..., Phenomena...>())::type;
-
-    template<template<auto...> class Operation=Ark>
-    using UniRail = decltype(Varbola::stare<Operation, Phenomena...>())::type;
+    using Rail = decltype
+    (
+        Varbola::stare
+        <
+            Agreements...,
+            static_cast<bool>(Phenomena)...
+        >()
+    )::type;
 };
-
-template<bool...Phenomena>
-using Observe_t = Observe<Phenomena...>::template UniRail<>;
 
 }}
 

@@ -113,7 +113,7 @@ using Result_1 = SensiblePlume<int, float, double>
 ::Road<Operation>
 ::Road<OneStar>;
 
-static_assert(std::same_as<Result, SupposedResult>);
+static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
 - We will pack `int`, `float`, and `double` into `ZeroStar`, `OneStar`, and `TwoStars` separately.
@@ -126,7 +126,7 @@ using Result_2 = SensiblePlume<int, float, double>
 ::Road<Operation>
 ::Road<ZeroStar, OneStar, TwoStars>;
 
-static_assert(std::same_as<Result, SupposedResult>);
+static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
 ## Implementation
@@ -141,7 +141,57 @@ The goal is to mimic the behavior of pack expansion in C++:
 - Otherwise, the number of elements shall match the number of containers.
 We pack each element into its corresponding container.
 
-[*Check out this test to see how it works.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEIAAcAOykAA6oCoRODB7evgHBmdmOAuGRMSzxiam2mPZlDEIETMQE%2BT5%2BQfWNuS1tBBXRcQnJaQqt7Z2FPZODw1U14wCUtqhexMjsHASYLOkGeyaBbgQAnumMrJgAdPfY9GyCCifYJhoAgpPEXg4A1EJGNlYvRlAVMB9PiYUlYvv8Ef89gcjpDTsjDkxjujLtc2Pdbm9/sgDAoFP8APJXYhY3JvKGI/4/P4Ef7KYioIgAJVQTHQ/wZiJhcM%2BjMZGNRJzO%2B0x2LOuOY%2BPuRJJTDJBI8CjYjmQr0C73hYoRzIBABFMK06IKjcLrUbEV5skYkbiBYFTZTqbSBFLNdq8LqpY99owCHrsAT6YERfaBSlTScRXbxTLJejU1i0fKroq7sr9cTSeS/RaA/TDUaTazzZbaL6sv7TPrk0LYS2jY6IsAXVc3R6qQlvQx61rS023MHnmG3pHm9H23GE/OvguJZmpWu5RcczdZ9hC2qFBqG2PwwvO86eXy%2B/8a0wracSzqj/nsCAQNu0THW0ukxWkRmW6AVmn65nuB7qvcnzAMQmAhi85aig6Trdle/InB67KcqgaFStBsHwWGe6JlCMK/qRXybiBCo3P8k6hohVaAsCeCgioEJBk8DHNiubb/lRG7ARuNFKoSBaqmSnqDk0iGMkxWHcry6H/ra/4pii67phpW4iXmYn7hJL63E%2BAZnmpyFdv8aE3gONIyY%2BJ7PpxhEzq%2BJEqfG7nQvxQlabK1E7qJKpFgS%2BFwVOZlIQiF6oUpN4KThSl4TB4WhkZUZJp5y7eZ8AD0ABUhVFcVuVQgVhUACrYEIFVFaVXzlcVJUUdCZiBBEJJeFgbpuGgDDbOk048TlAk4oFmB0VxgiITF/wAFoJKgAzEAiGGTS52VQqN2Z4hN9HTcNs0UpEy03vtBD5V5W2%2BTtubrVOM0of8FUAO5LVM5JredhVXZRN2gbublfExtlDr9eW5c9mCTP8GgtbNQheOkJSYOgXLQ14tCsmtoP2W4EQEKQ/wE/lRMk5dc5/p8s3owomPY%2B6zEMCCYIcacBOIe%2BuGnLjdLDVzSWnAtHLLUTx2YKLz1vctZ6bcDrQ6gA%2BoeCQEBAkzoO%2BCg3MrepuLT9NE4jyNZKjBtY28Kzg7lkMVdDrJcPDT3GyjaMY1jitcDZXp4yTRNULQvIXUT6AbGxFPvHL1NPebBCezeQLM6xrM%2BFmBP%2B4HWIh2H9CcyA3NuLzPr8/nguFydUwZS18xKyr7TqwQmsgNrbC61KsdG0jrux5b1u2/b/xmE7lku6bbt0x7Zje9JfP44IGdB6T/yh144cR%2BDNPu3HU9rYnLPsanUrp/8AdB9nq%2B5yXBdF8OV9l8L71tGLFdP1Lj/ELLVM1wGutKPXGtax1mqduW9O4myUOPemvdowcDWLQTg/heB%2BG4LwVAnA3DWGsEyDYWwJrmECDwUgBBNCwLWAAawCJIW4GhJBcBSIEDQ/gNBmAAGwsLMEkJI%2BhOCSF4CwCQGgNCkGQVoUgaCOC8AUCAIRxCOBaDWHAWAMBEAgA2AQdIXhCYUAgGgA4dAEhRBuJwVQSQWEAFoWGSH%2BMAZAyB/hSFuGYXgqNCAkDwJrLgMhBAiDEOwKQXj5BKDUCQ0guhPEvRpOkTgPA4EIKQSE8RFJNEaNZKgKg/wTHmMsdY2x9iqFTwgB4PR9AVr4K4CsXgsj5GkAgEgXR6R9FkG0fUxpIBgBSDMHwOgewP6UFiCE2IEQ2jnGibwQZzBiDnApLEbQmAHCjNILoqcx1aAjLkbwLAsQvDADcGIWgUiUGkCwCwQwwBxDrKOXgWCDg8AADdoYhMwKoOZmidiEIJg0EJtBWI0kmR4LAISCDEDwPww59ziCxFNuaE5RhvlGBIWsAOTBgAKAAGp4EwC9AcyDCH8G8aIcQ/i8WBJUOoC5YT9CnJQJgyw%2BhWJSMgGsVAg1cgHLMRrDCphLDWDMKI1A4LgVYAZRANYdg5lNBcAwdwnguh6DCBEEY1QxieJKDkAQMw/AqqyGqhgixRiJE8WKm5AhlodBlYUQ1DRxX9CmEMBVSxlW2FtRqvQ8x2h6qVQa0VODtgSFiRwRBwiEmcAyaYixVibF2IcQU3ArjSltXKZUhFawECYD5GMEVpAKGSECLcAAnIEFIkgaFmEkCwwR/gWF5u4RwXhpB%2BEENuCwrgLCkh5qSC2/wtD/AFpYUGi54jJHSKIQimpyjamqOSZo8glAWklMMWwTgbQWC3JSGYpgB5nRcDzbcLg1DnH4CIIKvQxKfGEukMSxQpKQm6E6REpgUSUH%2BsDSI1BnAknqM0f8NJ/xl2rvXZu7s27d3UP%2BIU1AxSEgCjamYCpI71kKLqRBhpJSZ06OQ60v9a7VRGG3VwIRNAsYJCkRAfpFzxnDIWRRyZ0zZnzMOUs0MKy1miM2ds3ZtB9kLOOac85rGrnWvuQc0RTyXl7AWR8%2BBFzvmxF%2Becf5OxRFApBQs8FkKlDQt412UdSKUXosxdihZp6CV%2BIvbIK9wTyUgE6QYeFXKrC0pk8KplLKBBso5e6ezPK%2BUCvcQ8xlvRrXOAgK4F1nj5WVH1XoVVTQwsZG1U0D1yxLV9BNc681mrAvGuaLapLjq3VmoKJlgreWvXrE2L68pNaX3Bo4L%2B4gK610bpw0Bnde6NBgdjUe6DBC4NVNIaQVN6bEiZqk3WhtO6aEpB7SkehkhS2WM8a%2BsRnAh0yNHYolRaiUlobnQYoxHBl3ZJYAoW5djbnAdRJMA9cb3EntkGe0zASLNktEboYI97H0xOq/Egd76p2pPSUdqxJ2zv/Auzuq7rJwOQfjYEQIfWNtIdh7tjDJSQBneRorCHisofKwa5YrpRHemkYGUMyZVHydTJmeKhZjHBDMZCWxnZeyDmEJ47CxTGyBM3KE4855yBXkScEJ86TPzhkKcBcC0FhC1NQv2Fp%2BFCG%2BAGD0xirFOYjMPZMxIMzggXs3pAMEWzxgaU2Cc/AFzTQDm5QAV5ywvLUG%2BaFZbrLEqQtSrixFxVyX4ulFyHFmLuRSuuqtdl01cWjVNFNSHw16Wiuuty/aqLVWFA%2Br8c%2B37fKQ3A/%2BKD87l3MwwwgF1kgPXE3wfkSmtNWARv%2BvG9Znd8P/BMNoYI%2BHKRW39uzxI2ww7%2BsrHISASQ/h83%2BCSKwvNkg830MLVwY3nBAhZ7fb3gf/qnHd5X0mhDaxwXZGcJIIAA%3D%3D)
+Here's the entire implementation:
+
+```C++
+template<typename...Elements>
+struct SensiblePlume
+{
+    template<template<typename...> class Operation>
+    struct ProtoRoad 
+    {
+        // Multiple Elements
+        // Multiple Containers
+        template<template<typename...> class...Cosmetics>
+        struct Detail
+        {
+            using type = Operation<Cosmetics<Elements>...>;
+        };
+
+        // Multiple Elements
+        // One Container
+        template<template<typename...> class Cosmetic>
+        struct Detail<Cosmetic>
+        {
+            using type = Operation<Cosmetic<Elements>...>;
+        };
+
+        template<template<typename...> class...Cosmetics>
+        using Road = Detail<Cosmetics...>::type;
+    };
+
+    template<template<typename...> class...Agreements>
+    using Road = ProtoRoad<Agreements...>;
+};
+
+template<typename Element>
+struct SensiblePlume<Element>
+{
+    template<template<typename...> class Operation>
+    struct ProtoRoad 
+    {
+        // One Element
+        // Multiple Containers
+        template<template<typename...> class...Cosmetics>
+        using Road = Operation<Cosmetics<Element>...>;
+    };
+
+    template<template<typename...> class...Agreements>
+    using Road = ProtoRoad<Agreements...>;
+};
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCCSAKykAA6oCoRODB7evnppGY4CoeFRLLHxXLaY9kUMQgRMxAQ5Pn6BdpgOWQ1NBCWRMXEJyQqNza15VWN9A2UVEgCUtqhexMjsHASYLCkG2yb%2BbgQAnimMrJgAdDfY9GyCCofYJhoAgmPEXg4A1EKMGWi9GUuUwrzeJgA7FZ3j84T9trt9mCjoi9kwDqizhc2Dcrs8fsgDAoFD8APLnYgYrLPcHwn6fb4EH7KYioIgAJVQTHQPzp8KhMLe9PpAHpRT8ALJeWiOPaYH53HaMAhPWEiuHiqUyuX0H4eQRMMJxNXCjUInbozHHS3Iw7HbHMXE3AlEpgkvEeBRsRzIJ7%2BF7qjWM34AEUwjTo/I1guj5rhXgyRgR2L5/lD5Mp1IE9q9PrwfvtSoequeeNp/iF8ahocOQrjYol0tleHlivuKtN8a1ZPC%2BtkRvCxAb8LRdtRtoxKId5yd1xdAcJxNJeYjBdpQZFIeZ4cjtFz6XzpgDI7hsc38cTYWAKfOaYzFLi2YYB%2B9a%2BPbmLnbLC5eldPfKQrW/7vABY5Tva4HWqcs6XOWi5uh6Nyrr6/qBmaGpXsmXI8vePy7ka%2B5HChBYKPB2AgCAMEolWApAXW4JxlB07MZBjpwb%2BS7umRNxvMAxCYMqjwbhhPxYTeOG8ocGasuyqCSfafECUJqrkQxoH0SBELvKxWKwWw7YqSJ25/ACeBAiooJFh2ggieeom6TaSIQXpOLzviCHLpmT51CJ9ImbJnLclJm72d2Eq9gqX62Re8Jas2uoKgakZDl25qORl7HOh52BcUhVwkYWJ6xQmSYScFeGPlSvnEYe77%2Bp%2BNkED%2BOXqaJNZtUxk7Qd1LFZe5rrLniSmCSWaFxuJPySXhgXycFin8aNnZqVpHWre8ooAFTbTtu2iuCW3bQAKtgQhHTt%2B0bbt12bZd2kQmY/hhESXhYGmbhoAwGwpKWxX3Zl%2BlRU1ImTQAWnEqC9MQZ7poZJadTpvVsYDcMqiDZXkuEUN4dFBCbQjbwA25qO2X9k1HQA7pD4yktJJN4/j62E0jrlzmp7wmVVz4E1qR2YGMPwaIx7yTUIXgpAUmDoBy/M6pVWY1W4YQEKQPzK5tqvq4zf71iLGMywoct0/8DCAsCVlHMrImUQpRxczV6E2/NRzg2yUOq5F7s/JT1NNONTMzL6AD63FxAQEBjOglEKJcIcNQbOqq2LEvpFLCeys8iw8xKfMC1wwtvKL4uS9LsuykHXDyz5NKW4IGs/FQtDcnjqvoKsFnawTk3pwQFd4SbZuWT407K6rjfN637f0NbIC2249s147s/O/PWPjBWusfI0weh80EcEFHIAx2wcf2j3FdJ8Xqel4b5f5wGWdM7z/PMmYBdFynSg3zqQdmFX1U1yVoIMeTcMT1zbl4DuncmbdzLr3P%2BxszIWRBMPe0o8G6gJVj8CBFkZ5zwXjmP6TseT2ldr7MgmNMBex9lDf2m9A4FjjkoPekdo6x3dGfOBv9L6fzTlwt%2BD86wcGWLQTgiReB%2BA4FoUgqBOBuGsNYBkqx1gKnMP4HgpACCaGEcsAA1iARIkgrgaEkFwSE/gNCJA0GYAAbDYswAAOBx%2BhOCSF4CwCQGgNCkEkdI2RHBeAKBAN4rRUjhGkDgLAGAiAQCrAICkLwKsKAQDQLsOgcQIiXE4KoBxNiAC0NjJA/GAMgZAPwpBXDMLwKWhASB4CjlUfgggRBiHYFIGQghFAqHUGE0gugqgUypCkTgPARFiIkdomRnAySJIScyVAVAfg5PyYU4ppTylGL/hADwaT6DQzUVwRYvBQlaGWBAJAqSUjpLIMky51yQDACkGYPgdBtjECCRAaIkzohhCaCcEZvAfnMGICcMk0RtBdFCRo1JJZey0H%2Bb0rA0QvDADcGIWgQTuC8CwCwQwwBxCIrwAJboAA3fmkzMCqC6IkzYGjlY1EmbQcyVIQUeCwJMggxA8AeKxaQMlxBoip3DLiowTKjDaOWI3JgwAFAADU8CYApo%2BSRGimnCFEOIdpaqulqEmf0/QeKUAKMsPocyQTIDLFQD9LImK8mR2kqYSw1gzB%2BP5VyrA5qIDLE6N0ZwEBXCTD8FUEIxp5jDCqAUTIAhA35HSFGhgcwhiVGqLUHo4wWieDaHoH1dQob9FDUm7N6aY3THTYm8o4bvXKI2EsFxHBxE%2BMmf4pZuSClFJKWUipWzcC1P2Y9Q5xyJXLAQJgHkwwvWkH0ZIfwVwACc/hISSBMWYSQNivGJBsbOutbjSAePUVcGxXAbEONnQ4o9hiuCJHnTYxtvT/GBOCZoiVETonnNibMxJ5BKB3L2ZktgnAmgsBJZCPJTAuLJi4LOq4XBjHVPwEQd1eg1UtM1dIbVShdW9N0M8wZTBhlYrGfWiZd7pkfvmYswDwHQPgZvJB6DxifjbNQLsuIfJHpmCOU%2BsJZyLnMauXsr9KS%2BP3MoyBt0RhINcG8TQWUJpKBfN6UCv5ALSBKZBWCiFDgVMwpVHChF0ikUorRbQDFKmcV4oJQZolkK8BksxdIyl1LtgqfpaI3pTLogspOGyzY0jOXcpU/ywVShhUWevM%2BqVMr5WKuVSp5DGq2lodkDqnp0jsMGvFY6qwJqPOestdagQtr7Xpiy8611cR3XkotSmmzfqA2ZqmEEBg6By0LAjXGuoJbUgdayK18NNXfX1GLQ1oNA3c1loLRW5NMwJgjaLbMSbbWq1rBrYcutDbfG8GbaJ6j4naNQZgxoRjPaENsfUZxk5OjSAjrHfECdbmd17qgyYyEV7ITmMkCuwpVRNtTICbYR9l2zmvqQHEuZgmf0ZKyRwQDqyWAKBJWUkldHkRjDg72%2BpSHZAocSx0%2BQGHUs6ACKQXD%2BHRnreI340j8TEk/AWT8WHRT4eI5%2BMjqDqPmRMZY32/w/gLvPrfZDm537hN7JAIjiWQc2dBw5yHYgLBCkvNk%2B8%2BT3zfkgpU2p0F4LIXaeY7Chg8LJmGdReizFGjzOit89i6zpLyW9Mc8gGlLnBAMvc8yv5PmOVcp5RooLQqdhhfFdxvgBgosKqVbOOL2OEsSCS50gnericGEy8amwuX4D5bqJi0UrDSuWBdVtt19SqsTpzVkFwzWushtKIW9rhQshdcjXUPr02ai1aG30Lr5eBB5tb/N2buRRszfzbXqbtaFDVraYRjbTbOAM/l3DhHSOUdTgFhAE7JAzsDq46c4do6sB3cI49kAZgoO88SFY0xXjeeQmPbeqn/2gkhKHZOkYc7EgONsbOyQs7zELq4ECDc38Epy204EHW40IyqQfzAP%2ByB2WH5QyGcEkCAA%3D%3D)
 
 ## Links
 

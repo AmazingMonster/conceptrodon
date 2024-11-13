@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_VARBOLA_POP_H
-#define CONCEPTRODON_VARBOLA_POP_H
+#ifndef CONCEPTRODON_VARBOLA_TYPICAL_POP_H
+#define CONCEPTRODON_VARBOLA_TYPICAL_POP_H
 /******************************************************************************************************/
 
 
@@ -62,23 +62,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_POP_FUNCTION_NAME
-#error "CONCEPTRODON_VARBOLA_POP_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_POP_FUNCTION_NAME
+#error "CONCEPTRODON_VARBOLA_TYPICAL_POP_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_POP_FUNCTION_NAME   \
-    Pop
+#define CONCEPTRODON_VARBOLA_TYPICAL_POP_FUNCTION_NAME   \
+    TypicalPop
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_POP_EXTEND_FRONT_FUNCTION
-#error "CONCEPTRODON_VARBOLA_POP_EXTEND_FRONT_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_POP_EXTEND_FRONT_FUNCTION   \
+#define CONCEPTRODON_VARBOLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION   \
     Omennivore::ExtendFront
 /******************************************************************************************************/
 
@@ -94,7 +94,7 @@ namespace Varbola {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/descend/microbiota/varbola/pop/pop.hpp"
+#include "conceptrodon/descend/microbiota/varbola/typical_pop/typical_pop.hpp"
 /******************************************************************************************************/
 
 
@@ -118,8 +118,8 @@ namespace Varbola {
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_POP_FUNCTION_NAME
-#undef CONCEPTRODON_VARBOLA_POP_EXTEND_FRONT_FUNCTION
+#undef CONCEPTRODON_VARBOLA_TYPICAL_POP_FUNCTION_NAME
+#undef CONCEPTRODON_VARBOLA_TYPICAL_POP_EXTEND_FRONT_FUNCTION
 /******************************************************************************************************/
 
 

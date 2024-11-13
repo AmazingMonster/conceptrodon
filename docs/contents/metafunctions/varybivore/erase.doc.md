@@ -99,7 +99,7 @@ We will use variadic functions for this purpose.
 Note that using `void*` like when we implement `Varybivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `Erase` using concept expansion.
 
-We will transform variables into types so that we can avoid defining the bodies of helper functions.
+We will transform variables into types so that we can avoid defining the bodies of helper functions `idyl`.
 
 ```C++
 template<auto Variable>

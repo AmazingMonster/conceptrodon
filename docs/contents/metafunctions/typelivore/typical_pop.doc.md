@@ -43,14 +43,14 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We will implement `TypicalPop` using recursion over the number of parameters.
+We will implement `TypicalPop` using recursion over the total number of parameters.
 
-- **Base Case:** Pop the last element from a fixed-length list.
+- **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
 
   1. Preserve several elements from the beginning of the list.
   2. Invoke `TypicalPop` with the rest.
-  3. Extend the front of the resulting list with the preserved elements.
+  3. Extend the front of the resulting list by the preserved elements.
 
 Here is a simplified version of the implementation:
 

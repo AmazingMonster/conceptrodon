@@ -6,8 +6,8 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/descend/varybivore/plume.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/varybivore/plume.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -27,21 +27,27 @@ namespace TestPlume {
 
 /******************************************************************************************************/
 template<auto I>
-struct Tester
+struct Dummy
 {
-    template<auto J>
-    struct ProtoPage
+    template<auto V>
+    struct Detail
     {
-        using type = std::integral_constant<int, I + J>;
+        using type = std::integral_constant<int, I + V>;
     };
 
     template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
+    using Page = Detail<Agreements...>::type;
 };
 /******************************************************************************************************/
 
-
-
+// In this example,
+// we will place
+//  0, ..., 239
+// into
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<239>::Page.
+// The result will be collected in a Capsule.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
@@ -57,15 +63,81 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Rail_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Rail<SHEEP_SPROUT(240)>::Road<Capsule>);
+SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Rail<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+// In this example,
+// we will pack each
+//  0, ..., 239
+// into
+//  Dummy<1>::Page.
+// The result will be collected in a Capsule.
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResult_1 = Capsule<SHEEP_SPROUT(240, +1)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_1
+
+#include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
+SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Rail<Dummy<1>::Page>::Road<Capsule>);
+SAME_TYPE(Plume<LLAMA_SPROUT(240)>::Rail<Dummy<1>::Page>::UniRoad<Capsule>);
+#include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+// In this example,
+// we will pack each 1 into
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<239>::Page.
+// The result will be collected in a Capsule.
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_2
+
+#define SHEEP_PREFIX    \
+    Dummy<
+#define SHEEP_SUFFIX    \
+    >::Page
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Plume<1>::Rail<SHEEP_SPROUT(240)>::Road<Capsule>);
+SAME_TYPE(Plume<1>::Rail<SHEEP_SPROUT(240)>::UniRoad<Capsule>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -24,7 +24,7 @@ namespace TestObserve {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedShuttle = Ark<SHEEP_SPROUT(120, *2+1)>;
+using SupposedResult = Ark<SHEEP_SPROUT(120, *2+1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 /******************************************************************************************************/
@@ -34,12 +34,10 @@ using SupposedShuttle = Ark<SHEEP_SPROUT(120, *2+1)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedShuttle
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_boolean_sheep.hpp"
-SAME_TYPE(Observe_t<BINARY_SHEEP_SPROUT(240)>);
 SAME_TYPE(Observe<BINARY_SHEEP_SPROUT(240)>::Rail<Ark>);
-SAME_TYPE(Observe<BINARY_SHEEP_SPROUT(240)>::UniRail<>);
 #include "macaron/fragmental/amenity/instances/undef_boolean_sheep.hpp"
 
 #undef SUPPOSED_TYPE

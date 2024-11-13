@@ -50,7 +50,6 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedResult
 
-SAME_TYPE(Rise<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>::UniRail<Tester>);
 SAME_TYPE(Rise<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>::Rail<Tester>);
 
 #undef SUPPOSED_BASE

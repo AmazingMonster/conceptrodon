@@ -5,6 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_INJECT_H
 
 #include "conceptrodon/descend/microbiota/varbola/enrich.hpp"
+#include "conceptrodon/monotony.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -25,15 +26,7 @@ struct Inject
                 (
                     Varbola::Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template lark<Agreements..., Monotony<Variables>...>()
-                );
-
-                template<template<auto...> class Operation=Shuttle>
-                using UniRail = decltype
-                (
-                    Varbola::Enrich<std::make_index_sequence<Index>>
-                    ::template ProtoPage<NewVariables...>
-                    ::template lark<Operation, Monotony<Variables>...>()
+                    ::template idyl<Agreements..., Monotony<Variables>...>()
                 );
             };
         };

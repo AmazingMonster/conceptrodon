@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_VARBOLA_REITERATE_H
-#define CONCEPTRODON_VARBOLA_REITERATE_H
+#ifndef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_H
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_H
 /******************************************************************************************************/
 
 
@@ -86,23 +86,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME
-#error "CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME   \
-    Reiterate
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME   \
+    TypicalReiterate
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_REITERATE_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_REITERATE_PARAMETER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_REITERATE_PARAMETER_IDENTIFIER   \
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER   \
     Variables
 /******************************************************************************************************/
 
@@ -110,23 +110,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_REITERATE_PASTE_FUNCTION
-#error "CONCEPTRODON_VARBOLA_REITERATE_PASTE_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_REITERATE_PASTE_FUNCTION   \
-    Sequnivore::Paste
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION   \
+    Sequnivore::TypicalPaste
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_REITERATE_SELECT_SCALE_FUNCTION
-#error "CONCEPTRODON_VARBOLA_REITERATE_SELECT_SCALE_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_REITERATE_SELECT_SCALE_FUNCTION   \
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION   \
     Cytoplasm::selectScale
 /******************************************************************************************************/
 
@@ -145,11 +145,11 @@ namespace Varbola {
 template
 <
     CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-    ... CONCEPTRODON_VARBOLA_REITERATE_PARAMETER_IDENTIFIER
+    ... CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
 >
-struct CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME
+struct CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
 {
-#include "conceptrodon/descend/microbiota/varbola/reiterate/reiterate.hpp"
+#include "conceptrodon/descend/microbiota/varbola/typical_reiterate/typical_reiterate.hpp"
 };
 /******************************************************************************************************/
 
@@ -176,10 +176,10 @@ struct CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_REITERATE_FUNCTION_NAME
-#undef CONCEPTRODON_VARBOLA_REITERATE_PARAMETER_IDENTIFIER
-#undef CONCEPTRODON_VARBOLA_REITERATE_PASTE_FUNCTION
-#undef CONCEPTRODON_VARBOLA_REITERATE_SELECT_SCALE_FUNCTION
+#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
+#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
+#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
+#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION
 /******************************************************************************************************/
 
 

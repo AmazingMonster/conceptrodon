@@ -5,6 +5,8 @@
 #define CONCEPTRODON_VARYBIVORE_SLICE_H
 
 #include "conceptrodon/descend/microbiota/varbola/incise.hpp"
+#include "conceptrodon/descend/microbiota/varbola/shear.hpp"
+#include "conceptrodon/monotony.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -12,22 +14,29 @@ namespace Varybivore {
 template<auto...Variables>
 struct Slice
 {
+    template<auto...>
+    struct ProtoPage {};
+
+    template<size_t Amount>
+    struct ProtoPage<Amount>
+    {
+        template<template<auto...> class...Agreements>
+        using Rail = decltype
+        (
+            Varbola::Shear<std::make_index_sequence<Amount>>
+            ::template idyl<Agreements..., Monotony<Variables>...>()
+        );
+    };
+
     template<size_t Start, size_t End>
     requires (Start <= End)
-    struct ProtoPage
+    struct ProtoPage<Start, End>
     {
         template<template<auto...> class...Agreements>
         using Rail = decltype
         (
             Varbola::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Agreements..., Monotony<Variables>...>()
-        );
-        
-        template<template<auto...> class Operation=Shuttle>
-        using UniRail = decltype
-        (
-            Varbola::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Monotony<Variables>...>()
+            ::template idyl<Agreements..., Monotony<Variables>...>()
         );
     };
 

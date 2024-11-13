@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_GAUGE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_GAUGE_H
 
-#include <concepts>
 #include <type_traits>
-#include "conceptrodon/descend/varybivore/gauge.hpp"
+#include "conceptrodon/varybivore/gauge.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -27,12 +26,12 @@ namespace TestGauge {
 
 /******************************************************************************************************/
 template<auto I>
-struct Tester
+struct Dummy
 {
-    template<auto J>
+    template<auto V>
     struct ProtoPage
     {
-        static constexpr auto value {I + J};
+        static constexpr auto value {I + V};
     };
 
     template<auto...Agreements>
@@ -40,8 +39,14 @@ struct Tester
 };
 /******************************************************************************************************/
 
-
-
+// In this example,
+// we will place
+//  0, ..., 239
+// into
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<239>::Page.
+// The result will be collected in a Shuttle.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
@@ -57,15 +62,80 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Tester<
+    Dummy<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Rail_t<SHEEP_SPROUT(240)>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Rail<SHEEP_SPROUT(240)>::Rail<Shuttle>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Rail<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+// In this example,
+// we will pack each
+//  0, ..., 239
+// into Dummy<1>::Page.
+// The result will be collected in a Shuttle.
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+using SupposedResult_1 = Shuttle<SHEEP_SPROUT(240, +1)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_1
+
+#include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Rail<Dummy<1>::Page>::Rail<Shuttle>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Rail<Dummy<1>::Page>::UniRail<Shuttle>);
+#include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+// In this example,
+// we will pack 1 into
+//  Dummy<0>::Page,
+//  ...,
+//  Dummy<239>::Page.
+// The result will be collected in a Shuttle.
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+using SupposedResult_2 = Shuttle<SHEEP_SPROUT(240, +1)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_2
+
+#define SHEEP_PREFIX    \
+    Dummy<
+#define SHEEP_SUFFIX    \
+    >::Page
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Gauge<1>::Rail<SHEEP_SPROUT(240)>::Rail<Shuttle>);
+SAME_TYPE(Gauge<1>::Rail<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

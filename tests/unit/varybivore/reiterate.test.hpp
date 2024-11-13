@@ -43,7 +43,7 @@ using SupposedShuttle = Shuttle<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedShuttle
 
-SAME_TYPE(Reiterate<1, 2, 3>::Page_t<240>);
+SAME_TYPE(Reiterate<1, 2, 3>::Page<240>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
