@@ -107,7 +107,7 @@ struct Monotony
 { static constexpr auto value {Variable}; };
 ```
 
-In the case where the second layer of `Erase` only accepts one index, we want to remove the variable at the index from the list.
+- In the case where the second layer of `Erase` only accepts one index, we want to remove the variable at the index from the list.
 
 ```C++
 template<typename, auto>
@@ -129,6 +129,8 @@ struct Ditch<std::index_sequence<I...>>
     static consteval auto idyl() -> 
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
+    // This is because we will pack every item
+    // of `Variables...` into `Monotony`.
     Operation<FrontTargets::value..., BackTargets::value...>;
 };
 ```
@@ -136,7 +138,7 @@ struct Ditch<std::index_sequence<I...>>
 `Prefix<I>...FrontTargets` tells compilers that this function template is only allowed when `FrontTargets` satisfies `Prefix<FrontTargets, I>...`
 In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 
-In the case where the second layer of `Erase` accepts two indices, we want to remove the variables between them.
+- In the case where the second layer of `Erase` accepts two indices, we want to remove the variables between them.
 
 ```C++
 template<typename, typename>
@@ -157,6 +159,8 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     static consteval auto idyl() ->
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
+    // This is because we will pack every item
+    // of `Variables...` into `Monotony`.
     Operation<FrontTargets::value..., BackTargets::value...>;
 };
 ```

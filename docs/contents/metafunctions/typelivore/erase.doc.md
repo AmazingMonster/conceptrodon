@@ -96,10 +96,10 @@ We want to count elements one by one up to the desired number.
 We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the elements to enumerate.
 
 We will use variadic functions for this purpose.
-Note that using `void*` like when we implement `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
+Note that using `void*` as in the implementation of `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `Erase` using concept expansion.
 
-In the case where the second layer of `Erase` only accepts one index, we want to remove the element at the index from the list.
+- In the case where the second layer of `Erase` only accepts one index, we want to remove the element at the index from the list.
 
 ```C++
 template<typename, auto>
@@ -125,7 +125,7 @@ struct Ditch<std::index_sequence<I...>>
 `Prefix<I>...FrontTargets` tells compilers that this function template is only allowed when `FrontTargets` satisfies `Prefix<FrontTargets, I>...`
 In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 
-In the case where the second layer of `Erase` accepts two indices, we want to remove the elements between them.
+- In the case where the second layer of `Erase` accepts two indices, we want to remove the elements between them.
 
 ```C++
 template<typename, typename>

@@ -10,7 +10,7 @@ namespace Conceptrodon {
 namespace Typella {
 
 template<typename Element, auto>
-using Bundle = Element;
+using Bundle_t = Element;
 
 }
 
@@ -29,7 +29,7 @@ struct Duplicate
         struct Detail
         {
             using type = Operation
-            <Typella::Bundle<Element, I>...>;
+            <Typella::Bundle_t<Element, I>...>;
         };
 
         template<template<typename...> class...Agreements>
@@ -37,7 +37,7 @@ struct Duplicate
 
         template<template<typename...> class Operation>
         using UniRoad = Operation
-        <Typella::Bundle<Element, I>...>;
+        <Typella::Bundle_t<Element, I>...>;
     };
 
     template<typename...Agreements>

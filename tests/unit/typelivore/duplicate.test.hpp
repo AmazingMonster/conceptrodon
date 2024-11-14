@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DUPLICATE_H
 
 #include <concepts>
-#include "conceptrodon/descend/typelivore/duplicate.hpp"
+#include "conceptrodon/typelivore/duplicate.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"

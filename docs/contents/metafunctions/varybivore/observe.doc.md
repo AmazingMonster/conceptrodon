@@ -68,7 +68,7 @@ static consteval auto stare()
             constexpr auto result = []()
             {
                 // We make `std::array phenomena` so that
-                // we can access members of `Phenomena...` using [index].
+                // we can access items of `Phenomena...` using [index].
                 std::array phenomena {Phenomena...};
 
                 // We will sort `std::array indices`.

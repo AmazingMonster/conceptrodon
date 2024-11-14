@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DUPLICATE_H
 
 #include <concepts>
-#include "conceptrodon/descend/descend/varybivore/duplicate.hpp"
+#include "conceptrodon/varybivore/duplicate.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"
@@ -34,7 +34,7 @@ using SupposedResultA = Shuttle<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedResultA
 
-SAME_TYPE(Duplicate<0>::Page<240>::UniRail<>);
+SAME_TYPE(Duplicate<0>::Page<240>::UniRail<Shuttle>);
 SAME_TYPE(Duplicate<0>::Page<240>::Rail<Shuttle>);
 
 #undef SUPPOSED_TYPE

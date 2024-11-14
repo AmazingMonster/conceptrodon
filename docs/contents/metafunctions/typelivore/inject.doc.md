@@ -47,7 +47,7 @@ alias Inject
 
 ## Examples
 
-We will inject `double, double*` into index 1 of `int, int*, int**, int**`. Then, we will instantiate `Operation` with the resulting list.
+We will inject `double, double*` into one of `int, int*, int**, int**`. Then, we will instantiate `Operation` with the resulting list.
 
 ```C++
 template<typename...>
@@ -70,7 +70,7 @@ We want to count elements one by one up to the desired number.
 We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the elements to enumerate.
 
 We will use variadic functions for this purpose.
-Note that using `void*` like when we implement `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
+Note that using `void*` as in the implementation of `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `Inject` using concept expansion.
 
 ```C++

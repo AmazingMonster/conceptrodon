@@ -25,7 +25,10 @@ struct Amid
     struct Hidden
     {
         using type = decltype
-        (Detail<std::make_index_sequence<sizeof...(Elements)>>::idyl(std::integral_constant<size_t, I>{}));
+        (
+            Detail<std::make_index_sequence<sizeof...(Elements)>>
+            ::idyl(std::integral_constant<size_t, I>{})
+        );
     };
 
     template<auto...Agreements>
@@ -33,7 +36,10 @@ struct Amid
 
     template<size_t I>
     using UniPage = decltype
-    (Detail<std::make_index_sequence<sizeof...(Elements)>>::idyl(std::integral_constant<size_t, I>{}));
+    (
+        Detail<std::make_index_sequence<sizeof...(Elements)>>
+        ::idyl(std::integral_constant<size_t, I>{})
+    );
 };
 
 }}

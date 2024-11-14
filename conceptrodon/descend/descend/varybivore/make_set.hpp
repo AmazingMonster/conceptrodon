@@ -9,12 +9,10 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto FirstVariable, auto...Variables>
-struct MakeSet
-{
-    using type = Diversity<FirstVariable>::template ProtoPage<Variables...>
-    ::type;
-};
+template<auto...Variables>
+using MakeSet = TypicalDiversity<>
+::ProtoPage<Variables...>
+::type;
 
 }}
 

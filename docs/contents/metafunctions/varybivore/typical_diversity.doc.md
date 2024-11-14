@@ -86,8 +86,6 @@ We will implement the function using recursion over the length of the second lis
 To check if an variable is in the first list, we use a method described in `Varybivore::SetContains`.
 Namely, we will create a class that inherits every 'variable' we would like to check against and use `std::is_base_of` to inspect whether an argument is a base of our class, subsequently determining if it is one of the variables our class inherited early on.
 
-Since inheriting the same type multiple times is illegal in C++, variables in the first list must be nonrepetitive.
-
 To 'inherit' variables, we need a helper class that transforms variables into types.
 
 ```C++
@@ -95,6 +93,8 @@ template<auto Variable>
 struct Monotony
 { static constexpr auto value {Variable}; };
 ```
+
+Since inheriting the same type multiple times is illegal in C++, variables in the first list must be nonrepetitive.
 
 Here's the entire implementation:
 

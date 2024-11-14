@@ -27,16 +27,22 @@ struct Amid
     {
         static constexpr auto value 
         {
-            Detail<std::make_index_sequence<sizeof...(Elements)>>
-            ::idyl(std::integral_constant<size_t, I>{})
+            decltype
+            (
+                Detail<std::make_index_sequence<sizeof...(Elements)>>
+                ::idyl(std::integral_constant<size_t, I>{})
+            )::value
         };
     };
 
     template<size_t I>
     static constexpr auto Page_v
     {
-        Detail<std::make_index_sequence<sizeof...(Elements)>>
-        ::idyl(std::integral_constant<size_t, I>{})
+        decltype
+        (
+            Detail<std::make_index_sequence<sizeof...(Elements)>>
+            ::idyl(std::integral_constant<size_t, I>{})
+        )::value
     };
 };
 

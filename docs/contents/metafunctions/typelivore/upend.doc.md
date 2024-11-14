@@ -49,7 +49,8 @@ static_assert(std::same_as<SupposedResult, Result>);
 ## Implementation
 
 The implementation is similar to `Typelivore::Amid`.
-We want to label each element to record its index and instruct compilers to pull the element from a set by the index on its label.
+We will label each element by its index in the list and collect them into a roster.
+When provided with an index, we instruct compilers to pull its corresponding element from the roster.
 
 First, we need to create a label class:
 
@@ -63,7 +64,7 @@ struct Label
 ```
 
 We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked by `std::integral_constant<size_t, I>`.
-Here, `std::integral_constant` helps us create a type with an index for argument-dependent lookup.
+Here, we convert an index into a type via `std::integral_constant` for argument-dependent lookup.
 
 Now, we will assemble an overload set and instruct compilers to pull the elements out in reversed order. Here's the entire implementation:
 

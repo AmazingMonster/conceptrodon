@@ -12,11 +12,11 @@ namespace Conceptrodon {
 template<template<auto...> class Sequence, size_t I>
 struct Badge
 { 
-    static consteval auto idyl(std::integral_constant<size_t, I>)
-    -> Diplomat<Sequence>;
+    static consteval auto idyl
+    (std::integral_constant<size_t, I>) -> Diplomat<Sequence>;
 
-    static constexpr size_t lark(Diplomat<Sequence>)
-    { return I; }
+    static constexpr auto lark
+    (Diplomat<Sequence>) -> std::integral_constant<size_t, I>;
 };
  
 }

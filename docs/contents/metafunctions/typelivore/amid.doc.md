@@ -43,7 +43,8 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We want to label each element to record its index and instruct compilers to pull the element from a set by the index on its label.
+We will label each element by its index in the list and collect them into a roster.
+When provided with an index, we instruct compilers to pull its corresponding element from the roster.
 
 First, we need to create a label class:
 
@@ -57,7 +58,7 @@ struct Label
 ```
 
 We can pull out the element of a given index by asking `decltype` the return type of `idyl` if invoked by `std::integral_constant<size_t, I>`.
-Here, `std::integral_constant` helps us create a type with an index for argument-dependent lookup.
+Here, we convert an index into a type via `std::integral_constant` for argument-dependent lookup.
 
 Now, we will assemble an overload set and instruct compilers to pull the element out when provided with an index. Here's the entire implementation:
 
@@ -90,10 +91,6 @@ struct Amid
 
     template<auto...Agreements>
     using Page = Hidden<Agreements...>::type;
-
-    template<size_t I>
-    using UniPage = decltype
-    (Detail<std::make_index_sequence<sizeof...(Elements)>>::idyl(std::integral_constant<size_t, I>{}));
 };
 ```
 

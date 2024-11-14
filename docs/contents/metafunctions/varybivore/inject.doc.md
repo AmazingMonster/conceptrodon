@@ -47,7 +47,7 @@ alias Inject
 
 ## Examples
 
-We will inject `10, 11` into index 1 of `0, 1, 2`. Then, we will instantiate `Operation` with the resulting list.
+We will inject `10, 11` into index one of `0, 1, 2`. Then, we will instantiate `Operation` with the resulting list.
 
 ```C++
 template<auto...>
@@ -105,6 +105,8 @@ struct Enrich<std::index_sequence<I...>>
         // `NewVariables...` are injected in the return type.
         // Note that `Operation` is invoked by values
         // extracted from the template parameters.
+        // This is because we will pack every item
+        // of `Variables...` into `Monotony`.
         Operation<FrontTargets::value..., NewVariables..., BackTargets::value...>;
     };
 

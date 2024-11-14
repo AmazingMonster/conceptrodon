@@ -82,6 +82,14 @@ For the function to return true, the second list must satisfy two properties:
 To check if a variable is in the first list, we use a method described in `Typelivore::SetContains`.
 Namely, we will create a class that inherits every 'variable' we would like to check against and use `std::is_base_of` to inspect whether an argument is a base of our class, subsequently determining if it is one of the elements our class inherited early on.
 
+To 'inherit' variables, we need a helper class that transforms variables into types.
+
+```C++
+template<auto Variable>
+struct Monotony
+{ static constexpr auto value {Variable}; };
+```
+
 Since inheriting the same type multiple times is illegal in C++, variables in the first list must be nonrepetitive.
 
 We will implement `AreOverlapping` using recursion over the length of the second list:
@@ -92,14 +100,6 @@ We will implement `AreOverlapping` using recursion over the length of the second
 The function returns true if the variable is in the first list.
 Otherwise, we append the variable to the first list and pass the result back to `AreOverlapping`.
 Then, we invoke the second layer by the popped second list.
-
-To 'inherit' variables, we need a helper class that transforms variables into types.
-
-```C++
-template<auto Variable>
-struct Monotony
-{ static constexpr auto value {Variable}; };
-```
 
 Here's the entire implementation:
 

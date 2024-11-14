@@ -4,11 +4,16 @@
 #ifndef CONCEPTRODON_VARYBIVORE_DUPLICATE_H
 #define CONCEPTRODON_VARYBIVORE_DUPLICATE_H
 
-#include "conceptrodon/descend/stamp.hpp"
-#include "conceptrodon/shuttle.hpp"
 #include <utility>
 
 namespace Conceptrodon {
+namespace Varbola {
+
+template<auto Variable, auto>
+static constexpr auto Bundle_v = Variable;
+
+}
+
 namespace Varybivore {
 
 template<auto Variable>
@@ -19,23 +24,20 @@ struct Duplicate
 
     template<size_t...I>
     struct ProtoMold<std::index_sequence<I...>>
-    : public Stamp<Variable, I>...
-    { 
-        using Stamp<Variable, I>::idyl...;
-
-        template<template<auto...> class Operation=Shuttle>
+    {
+        template<template<auto...> class Operation>
         struct Detail
         {
             using type = Operation
-            <idyl(std::integral_constant<size_t, I>{})...>;
+            <Varbola::Bundle_v<Variable, I>...>;
         };
 
         template<template<auto...> class...Agreements>
         using Rail = Detail<Agreements...>::type;
 
-        template<template<auto...> class Operation=Shuttle>
+        template<template<auto...> class Operation>
         using UniRail = Operation
-        <idyl(std::integral_constant<size_t, I>{})...>;
+        <Varbola::Bundle_v<Variable, I>...>;
     };
 
     template<typename...Agreements>

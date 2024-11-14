@@ -94,6 +94,8 @@ struct Swivel<std::index_sequence<J...>>
     // Note the position change of `FrontTargets...` and `BackTargets.`
     // Note that `Operation` is invoked by values extracted from
     // the template parameters.
+    // This is because we will pack every item
+    // of `Variables...` into `Monotony`.
     -> Operation<BackTargets::value..., FrontTargets::value...>;
 };
 ```

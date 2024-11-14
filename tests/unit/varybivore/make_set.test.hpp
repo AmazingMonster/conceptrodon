@@ -39,7 +39,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(MakeSet<SHEEP_SPROUT(240), 39>::type);
+SAME_TYPE(MakeSet<SHEEP_SPROUT(240), 39>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::AreUnique` checks if its arguments are unique.
+`Typelivore::AreUnique` accepts a list of elements. It returns true if no two elements in the list are the same and returns false if otherwise.
 
 <pre><code>Elements... -> AreUnique ? true : false</code></pre>
 

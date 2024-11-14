@@ -12,11 +12,11 @@ namespace Conceptrodon {
 template<auto Variable, size_t I>
 struct Stamp
 { 
-    static consteval auto idyl(std::integral_constant<size_t, I>)
-    { return Variable; }
+    static consteval auto idyl
+    (std::integral_constant<size_t, I>) -> Monotony<Variable>;
 
-    static constexpr size_t lark(Monotony<Variable>)
-    { return I; }
+    static constexpr auto lark
+    (Monotony<Variable>) -> std::integral_constant<size_t, I>;
 };
  
 }

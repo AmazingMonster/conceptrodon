@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UPEND_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UPEND_H
 
+#include "conceptrodon/shuttle.hpp"
 #include "concepts"
 #include "conceptrodon/descend/descend/varybivore/upend.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -36,7 +37,6 @@ using SupposedResultA = Shuttle<SHEEP_REVERSED_SPROUT(240)>;
     SupposedResultA
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Upend<SHEEP_SPROUT(240)>::UniRail<>);
 SAME_TYPE(Upend<SHEEP_SPROUT(240)>::Rail<Shuttle>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
@@ -69,7 +69,6 @@ using SupposedResultB = Tester<SHEEP_REVERSED_SPROUT(240)>;
     SupposedResultB
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Upend<SHEEP_SPROUT(240)>::UniRail<Tester>);
 SAME_TYPE(Upend<SHEEP_SPROUT(240)>::Rail<Tester>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 

@@ -1,62 +1,62 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `Typelivore::Slice`
+# `Varybivore::Slice`
 
 ## Description
 
-`Typelivore::Slice` accepts a list of elements.
+`Varybivore::Slice` accepts a list of variables.
 
 - Suppose its first layer is instantiated with an index.
 In that case, it returns a function.
-When invoked by an operation, the function collects all elements with indices greater than the given index from the list and instantiates the operation with the collection.
+When invoked by an operation, the function collects all variables with indices greater than the given index from the list and instantiates the operation with the collection.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I</sub>, ..., Element<sub>n</sub>
+<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>, Variable<sub>I</sub>, ..., Variable<sub>n</sub>
 -> I
 -> Operation
--> Operation&lt;Element<sub>I</sub>, Element<sub>I+1</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+-> Operation&lt;Variable<sub>I</sub>, Variable<sub>I+1</sub>, ..., Variable<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
-When invoked by an operation, the function collects all the elements of indices within the interval from the list and instantiates the operation with the collection.
+When invoked by an operation, the function collects all the variables of indices within the interval from the list and instantiates the operation with the collection.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>J-1</sub>, ..., Element<sub>n</sub>
+<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>J-1</sub>, ..., Variable<sub>n</sub>
 -> I, J
 -> Operation
--> Operation&lt;Element<sub>I</sub>, ..., Element<sub>J-1</sub>&gt;</code></pre>
+-> Operation&lt;Variable<sub>I</sub>, ..., Variable<sub>J-1</sub>&gt;</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Slice ::   typename...
+Slice ::   auto...
         -> auto...
-        -> template<template<typename...> class...>
+        -> template<template<auto...> class...>
 ```
 
 ## Structure
 
 ```C++
-template<typename...>
+template<auto...>
 alias Slice
 {
     template<auto>
     alias Page
     {
-        template<template<typename...> class...>
-        alias Road = RESULT;
+        template<template<auto...> class...>
+        alias Rail = RESULT;
     };
 }；
 ```
 
 ```C++
-template<typename...>
+template<auto...>
 alias Slice
 {
     template<auto, auto>
     alias Page
     {
-        template<template<typename...> class...>
-        alias Road = RESULT;
+        template<template<auto...> class...>
+        alias Rail = RESULT;
     };
 }；
 ```
@@ -65,41 +65,53 @@ alias Slice
 
 We will see two examples that demonstrate two different use cases.
 
-In the first example, we will collect all elements from `int, int*, int**, int**` starting from index two.
+In the first example, we will collect all variables from `0, 1, 2 ,2` starting from index two.
 Then, we instantiate `Operation` with the resulting list.
 
 ```C++
-template<typename...>
+template<auto...>
 struct Operation;
 
-using SupposedResult = Operation<int**, int**>;
+using SupposedResult = Operation<2, 2>;
 
-using Result = Slice<int, int*, int**, int**>::Page<2>::Road<Operation>;
+using Result = Slice<0, 1, 2, 2>
+::Page<2>
+::Rail<Operation>;
 
 static_assert(std::same_as<SupposedResult, Result>);
 ```
 
-In the second example, we will collect elements between indices one and three from `int, int*, int**, int**`. Then, we instantiate `Operation` with the resulting list.
+In the second example, we will collect variables between indices one and three from `0, 1, 2, 2`. Then, we instantiate `Operation` with the resulting list.
 
 ```C++
-using SupposedResult_1 = Operation<int*, int**>;
+using SupposedResult_1 = Operation<1, 2>;
 
-using Result_1 = Slice<int, int*, int**, int**>::Page<1, 3>::Road<Operation>;
+using Result_1 = Slice<0, 1, 2, 2>
+::Page<1, 3>
+::Rail<Operation>;
 
 static_assert(std::same_as<SupposedResult_1, Result_1>);
 ```
 
 ## Implementation
 
-The implementation is similar to `Typelivore::Amidst`.
-We want to count elements one by one up to the desired index.
-We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the elements to enumerate.
+The implementation is similar to `Varybivore::Amidst`.
+We want to count variables one by one up to the desired index.
+We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the variables to enumerate.
 
 We will use variadic functions for this purpose.
-Note that using `void*` as in the implementation of `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
+Note that using `void*` as in the implementation of `Varybivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `Slice` using concept expansion.
 
-- In the case where the second layer of `Slice` only accepts an amount, we want to remove the elements of the given amount from the front of the list.
+We will transform variables into types so that we can avoid defining the bodies of helper functions `idyl`.
+
+```C++
+template<auto Variable>
+struct Monotony
+{ static constexpr auto value {Variable}; };
+```
+
+- In the case where the second layer of `Slice` only accepts an amount, we want to remove the variables of the given amount from the front of the list.
 
 ```C++
 template<typename, auto>
@@ -113,20 +125,25 @@ struct Shear<std::index_sequence<I...>>
 {
     template
     <
-        template<typename...> class Operation,
+        template<auto...> class Operation,
         // We use `Prefix<I>...` to enumerate the
         // unwanted arguments.
         Prefix<I>...Unwanted,
         typename...Targets
     >
-    static consteval auto idyl() -> Operation<Targets...>;
+    static consteval auto idyl()
+    // Note that `Operation` is invoked by values
+    // extracted from the template parameters.
+    // This is because we will pack every item
+    // of `Variables...` into `Monotony`.
+    -> Operation<Targets::value...>;
 };
 ```
 
 `Prefix<I>...Unwanted` tells compilers that this function template is only allowed when `Unwanted` satisfies `Prefix<Unwanted, I>...`
 In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 
-- In the case where the second layer of `Slice` accepts two indices, we want to collect the elements between them.
+- In the case where the second layer of `Slice` accepts two indices, we want to collect the variables between them.
 
 ```C++
 template<typename, typename>
@@ -137,22 +154,27 @@ struct Incise<std::index_sequence<I...>, std::index_sequence<J...>>
 {
     template
     <
-        template<typename...> class Operation,
+        template<auto...> class Operation,
         // We use `Prefix<I>...` to reach the start of `Targets`.
         Prefix<I>...,
-        // We use `Prefix<J>...` to enumerate the elements
+        // We use `Prefix<J>...` to enumerate the variables
         // we want to collect.
         Prefix<J>...Targets,
         typename...
     >
-    static consteval auto idyl() -> Operation<Targets...>;
+    static consteval auto idyl()
+    // Note that `Operation` is invoked by values
+    // extracted from the template parameters.
+    // This is because we will pack every item
+    // of `Variables...` into `Monotony`.
+    -> Operation<Targets::value...>;
 };
 ```
 
 Finally, we will make an interface to accept arguments and generate the `std::index_sequence`:
 
 ```C++
-template<typename...Elements>
+template<auto...Variables>
 struct Slice
 {
     template<auto...>
@@ -161,11 +183,11 @@ struct Slice
     template<size_t Amount>
     struct ProtoPage<Amount>
     {
-        template<template<typename...> class...Agreements>
-        using Road = decltype
+        template<template<auto...> class...Agreements>
+        using Rail = decltype
         (
             Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements..., Variables...>()
         );
     };
 
@@ -173,11 +195,11 @@ struct Slice
     requires (Start <= End)
     struct ProtoPage<Start, End>
     {   
-        template<template<typename...> class...Agreements>
-        using Road = decltype
+        template<template<auto...> class...Agreements>
+        using Rail = decltype
         (
             Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements..., Variables...>()
         );
     };
 
@@ -190,5 +212,5 @@ struct Slice
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/slice.hpp)
-- [unit test](../../../../tests/unit/typelivore/slice.test.hpp)
+- [source code](../../../../conceptrodon/descend/varybivore/slice.hpp)
+- [unit test](../../../../tests/unit/varybivore/slice.test.hpp)

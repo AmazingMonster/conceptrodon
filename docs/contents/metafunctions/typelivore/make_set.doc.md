@@ -11,6 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 - doesn't contain repetitive elements;
 - preserves the relative order of the list.
 
+The result will be stored in a `Capsule`.
+
 <pre><code>   Elements...
 -> MakeMathematicalSet(Elements...)</code></pre>
 
