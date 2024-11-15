@@ -195,7 +195,17 @@ struct Exemplar
 
 
     template<typename...Elements>
-    struct ProtoMold {};
+    struct ProtoMold
+    {
+        struct Slash
+        {
+            template<typename...Arguments>
+            struct ProtoMold{};
+        };
+
+        template<typename...Agreements>
+        using Mold = Slash::template ProtoMold<Agreements...>;
+    };
     
     template<typename...Agreements>
     using Mold = ProtoMold<Agreements...>;
@@ -211,12 +221,6 @@ struct Exemplar
 
     template<typename...Args>
     static constexpr auto Mold_v {Mold<Args...>::value};
-    
-    template<typename...Elements>
-    using M_ld = IMPLEMENTATION;
-    
-    template<typename...Elements>
-    using Mo_d = IMPLEMENTATION;
 
 
 
@@ -239,12 +243,6 @@ struct Exemplar
     template<auto...Args>
     static constexpr auto Page_v {Page<Args...>::value};
 
-    template<auto...Variables>
-    using P_ge = IMPLEMENTATION;
-
-    template<auto...Variables>
-    using Pa_e = IMPLEMENTATION;
-
 
 
 
@@ -265,12 +263,6 @@ struct Exemplar
 
     template<template<typename...> class...Args>
     static constexpr auto Road_v {Road<Args...>::value};
-
-    template<template<typename...> class...Containers>
-    using R_ad = IMPLEMENTATION;
-
-    template<template<typename...> class...Containers>
-    using Ro_d = IMPLEMENTATION;
     
 
 
@@ -292,12 +284,6 @@ struct Exemplar
 
     template<template<auto...> class...Args>
     static constexpr auto Rail_v {Rail<Args...>::value};
-
-    template<template<auto...> class...Sequences>
-    using R_il = IMPLEMENTATION;
-
-    template<template<auto...> class...Sequences>
-    using Ra_l = IMPLEMENTATION;
     
 
 
@@ -320,12 +306,6 @@ struct Exemplar
     template<template<template<typename...> class...> class...Args>
     static constexpr auto Flow_v {Flow<Args...>::value};
 
-    template<template<template<typename...> class...> class...Warehouses>
-    using F_ow = IMPLEMENTATION;
-
-    template<template<template<typename...> class...> class...Warehouses>
-    using Fl_w = IMPLEMENTATION;
-
 
 
 
@@ -346,12 +326,6 @@ struct Exemplar
 
     template<template<template<auto...> class...> class...Args>
     static constexpr auto Sail_v {Sail<Args...>::value};
-
-    template<template<template<auto...> class...> class...Stockrooms>
-    using S_il = IMPLEMENTATION;
-
-    template<template<template<auto...> class...> class...Stockrooms>
-    using Sa_l = IMPLEMENTATION;
 
 
 
@@ -378,12 +352,6 @@ struct Exemplar
     template<template<template<template<typename...> class...> class...> class...Args>
     static constexpr auto Snow_v {Snow<Args...>::value};
 
-    template<template<template<template<typename...> class...> class...> class...Sorrow>
-    using S_ow = IMPLEMENTATION;
-
-    template<template<template<template<typename...> class...> class...> class...Sorrow>
-    using Sn_w = IMPLEMENTATION;
-
 
 
 
@@ -408,12 +376,6 @@ struct Exemplar
 
     template<template<template<template<auto...> class...> class...> class...Args>
     static constexpr auto Hail_v {Hail<Args...>::value};
-
-    template<template<template<template<auto...> class...> class...> class...Melancholy>
-    using H_il = IMPLEMENTATION;
-
-    template<template<template<template<auto...> class...> class...> class...Melancholy>
-    using Ha_l = IMPLEMENTATION;
 
 
 
@@ -440,12 +402,6 @@ struct Exemplar
     template<template<template<template<template<typename...> class...> class...> class...> class...Args>
     static constexpr auto Lull_v {Lull<Args...>::value};
 
-    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using SubL_ll = IMPLEMENTATION;
-
-    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using SubLu_l = IMPLEMENTATION;
-
 
 
 
@@ -470,12 +426,6 @@ struct Exemplar
 
     template<template<template<template<template<auto...> class...> class...> class...> class...Args>
     static constexpr auto Calm_v {Calm<Args...>::value};
-
-    template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using C_lm = IMPLEMENTATION;
-
-    template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using Ca_m = IMPLEMENTATION;
 
 
 
@@ -502,12 +452,6 @@ struct Exemplar
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Args>
     static constexpr auto Grit_v {Grit<Args...>::value};
 
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using G_it = IMPLEMENTATION;
-
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Gr_t = IMPLEMENTATION;
-
 
 
 
@@ -532,12 +476,6 @@ struct Exemplar
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Args>
     static constexpr auto Will_v {Will<Args...>::value};
-
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using W_ll = IMPLEMENTATION;
-
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Wi_l = IMPLEMENTATION;
 
 
 
@@ -564,12 +502,6 @@ struct Exemplar
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Args>
     static constexpr auto Glow_v {Glow<Args...>::value};
 
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
-    using G_ow = IMPLEMENTATION;
-
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Gl_w = IMPLEMENTATION;
-
 
 
 
@@ -594,12 +526,57 @@ struct Exemplar
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Args>
     static constexpr auto Dawn_v {Dawn<Args...>::value};
+    
 
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
-    using D_wn = IMPLEMENTATION;
 
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Da_n = IMPLEMENTATION;
+
+    struct Commit
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+
+    struct Launch
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+
+    struct Ignite
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Kindle
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Prompt
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Propel
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Settle
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Finish
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
 
 
 

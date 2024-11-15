@@ -21,11 +21,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-#error "CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
+#error "CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_identifiers/separator.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_separators/slash.hpp"
 /******************************************************************************************************/
 
 
@@ -188,7 +188,7 @@ namespace Ominuci {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_identifiers/separator.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_separators/slash.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/value.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_functions/idyl.hpp"

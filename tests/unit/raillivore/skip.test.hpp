@@ -160,9 +160,9 @@ struct Tester<std::index_sequence>
 };
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Lull<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::R_il<>::value);
-VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::R_il<>::value);
-VALID(Skip<Tester>::Page<true>::R_il<std::index_sequence>::value);
+VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Lull<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Rail<>::value);
+VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Rail<>::value);
+VALID(Skip<Tester>::Page<true>::Commit::Rail<std::index_sequence>::value);
 
 
 }}}}

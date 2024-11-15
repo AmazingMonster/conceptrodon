@@ -10,7 +10,6 @@
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Roadrivore {
@@ -160,9 +159,9 @@ struct Tester<std::tuple>
 };
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Lull<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::R_ad<>::value);
-VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::R_ad<>::value);
-VALID(Skip<Tester>::Page<true>::R_ad<std::tuple>::value);
+VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Lull<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Road<>::value);
+VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Road<>::value);
+VALID(Skip<Tester>::Page<true>::Commit::Road<std::tuple>::value);
 
 
 }}}}

@@ -14,8 +14,8 @@
 #include "conceptrodon/halcyon.hpp"
 #include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/persist.hpp"
-#include "conceptrodon/morning.hpp"
 #include "conceptrodon/sunrise.hpp"
+#include "conceptrodon/morning.hpp"
 #include "conceptrodon/arcadia.hpp"
 #include "conceptrodon/nirvana.hpp"
 
@@ -27,8 +27,11 @@ namespace Raileus {
 template<template<template<auto...> class...> class Operation, typename...Items>
 struct LoadSkip
 {
-    template<template<auto...> class...Sequences>
-    using R_il = Omennivore::Press<Operation<Sequences...>>::template Mold<Items...>;
+    struct Commit
+    {
+        template<template<auto...> class...Sequences>
+        using Rail = Omennivore::Press<Operation<Sequences...>>::template Mold<Items...>;
+    };
 
     template<typename...Elements>
     using Mold = LoadSkip<Operation, Items..., Capsule<Elements...>>;
@@ -61,10 +64,10 @@ struct LoadSkip
     using Calm = LoadSkip<Operation, Items..., Persist<Tranquil...>>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Grit = LoadSkip<Operation, Items..., Morning<Sunshines...>>;
+    using Grit = LoadSkip<Operation, Items..., Sunrise<Sunshines...>>;
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = LoadSkip<Operation, Items..., Sunrise<Sunshines...>>;
+    using Will = LoadSkip<Operation, Items..., Morning<Sunshines...>>;
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
     using Glow = LoadSkip<Operation, Items..., Arcadia<Sunshines...>>;
@@ -72,6 +75,7 @@ struct LoadSkip
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
     using Dawn = LoadSkip<Operation, Items..., Nirvana<Sunshines...>>;
 };
+
 }
 
 namespace Raillivore {

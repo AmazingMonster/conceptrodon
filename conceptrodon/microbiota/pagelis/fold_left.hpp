@@ -10,11 +10,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-#error "CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
+#error "CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_identifiers/separator.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_separators/slash.hpp"
 /******************************************************************************************************/
 
 
@@ -139,7 +139,7 @@ struct CONCEPTRODON_PAGELIS_FOLD_LEFT_FUNCTION_NAME
     >
     struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
     {
-        struct CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
+        struct CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
         {
 #include "conceptrodon/microbiota/pagelis/fold_left/fold_left.hpp"
         };
@@ -150,7 +150,7 @@ struct CONCEPTRODON_PAGELIS_FOLD_LEFT_FUNCTION_NAME
             ...Agreements
         >
         using CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE
-        =   CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER 
+        =   CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR 
             ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <Agreements...>;
 
         template
@@ -159,7 +159,7 @@ struct CONCEPTRODON_PAGELIS_FOLD_LEFT_FUNCTION_NAME
             ...Args
         >
         static constexpr auto CONCEPTRODON_NUCLEOLUS_PAGE_VARIABLE_TEMPLATE
-        =   CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER 
+        =   CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR 
             ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <Args...>
             :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT;
     };
@@ -186,7 +186,7 @@ struct CONCEPTRODON_PAGELIS_FOLD_LEFT_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_identifiers/separator.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_separators/slash.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/value.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
