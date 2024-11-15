@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_RAIL_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_RAIL_PROBE_H
 
-#include "conceptrodon/travail.hpp"
+#include "conceptrodon/delegacy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept RailProbe = requires
-{typename Travail<Structure::template Rail>;};
+{typename Delegacy<Structure::template Rail>;};
 
 }}
 

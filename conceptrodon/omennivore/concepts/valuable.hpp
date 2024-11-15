@@ -5,14 +5,9 @@
 #define CONCEPTRODON_OMENNIVORE_VALUABLE_H
 
 #include <type_traits>
+#include "conceptrodon/microbiota/ominuci/is_value_immediate.hpp"
 
 namespace Conceptrodon {
-namespace Ominuci {
-
-consteval bool isValueImmediate(auto value) { return true; }
-
-}
-
 namespace Omennivore {
 
 template<typename Structure>

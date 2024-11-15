@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_FLOW_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_FLOW_PROBE_H
 
-#include "conceptrodon/lullaby.hpp"
+#include "conceptrodon/florican.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept FlowProbe = requires 
-{typename Lullaby<Structure::template Flow>;};
+{typename Florican<Structure::template Flow>;};
 
 }}
 

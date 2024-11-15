@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ROAD_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_ROAD_PROBE_H
 
-#include "conceptrodon/forlorn.hpp"
+#include "conceptrodon/legation.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept RoadProbe = requires 
-{typename Forlorn<Structure::template Road>;};
+{typename Legation<Structure::template Road>;};
 
 }}
 

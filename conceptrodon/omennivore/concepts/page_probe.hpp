@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_PAGE_PROBE_H
 #define CONCEPTRODON_OMENNIVORE_PAGE_PROBE_H
 
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/diplomat.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept PageProbe = requires 
-{typename Phantom<Structure::template Page>;};
+{typename Diplomat<Structure::template Page>;};
 
 }}
 

@@ -166,8 +166,8 @@ VALID
         Halcyon<>,
         Pursuit<>,
         Persist<>,
-        Morning<>,
         Sunrise<>,
+        Morning<>,
         Arcadia<>,
         Nirvana<>
     >::value

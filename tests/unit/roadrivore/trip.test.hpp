@@ -6,14 +6,12 @@
 
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/capsule.hpp"
+#include "conceptrodon/monotony.hpp"
 #include "conceptrodon/roadrivore/trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/emissary.hpp"
-#include "conceptrodon/diplomat.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -27,64 +25,85 @@ namespace TestTrip {
 
 
 /******************************************************************************************************/
-template<template<typename...> class Warehouse>
+template<typename...>
+struct DummyContainer {};
+
+template<auto I>
 struct TesterA
 {
-    template<typename...Agreements>
-    using Mold = Warehouse<int, Agreements...>;
-
-    using type = Warehouse<int>;
-
-    static constexpr auto value {0};
-};
-
-template<>
-struct TesterA<Capsule>
-{
-    template<typename...Agreements>
-    using Mold = Capsule<void, Agreements...>;
-
-    using type = Capsule<void>;
-};
-
-
-template<typename Element>
-struct TesterB
-{
-    using type = Element*;
-
-    template<typename, typename Target, typename...>
-    struct ProtoMold
+    template<template<typename...> class Container>
+    struct ProtoRoad
     {
-        using type = std::tuple<TesterB::type, Target>;
+        template<typename...Agreements>
+        using Mold = Container<Monotony<I>, Agreements...>;
+
+        using type = Container<Monotony<I>>;
+
+        static constexpr auto value {I};
     };
 
-    template<typename...Elements>
-    using Mold = ProtoMold<Elements...>;
+    template<>
+    struct ProtoRoad<DummyContainer>
+    {
+        template<typename...Agreements>
+        using Mold = DummyContainer<Monotony<-I>, Agreements...>;
+
+        using type = DummyContainer<Monotony<-I>>;
+
+        static constexpr auto value {-I};
+    };
+
+    template<template<typename...> class...Containers>
+    using Road = ProtoRoad<Containers...>;
 };
 
 template<typename Element>
-requires Omennivore::Valuable<Element>
-struct TesterC
+struct TesterBHelper {};
+
+template<template<typename...> class Container, typename...E>
+struct TesterBHelper<Container<E...>>
 {
-    using type = TesterC;
-    static constexpr auto value {Element::value + 1};
+    template<typename...Agreements>
+    using Mold = Container<Monotony<(0 +...+ (2 * E::value))>, Agreements...>;
+
+    using type = Container<Monotony<(0 +...+ (2 * E::value))>>;
+    
+    template<auto...I>
+    using Page = Container<Monotony<(0 +...+ (2 * E::value)) + (0 +...+ I)>>;
+
+    static constexpr auto value { (0 +...+ (2 * E::value)) };
+
 };
 
-template<auto Variable>
-struct TesterD
+template<typename...Elements>
+using TesterB = TesterBHelper<typename Elements::type...>;
+
+template<typename Element>
+struct TesterCHelper {};
+
+template<template<typename...> class Container, typename...E>
+struct TesterCHelper<Container<E...>>
 {
-    using type = TesterD;
-    static constexpr auto value {Variable + 1};
+    template<typename...Agreements>
+    using Mold = Container<Monotony<(0 +...+ (E::value - 1))>, Agreements...>;
 
-    template<auto, auto Target, auto...>
-    struct ProtoPage
-    {
-        using type = std::index_sequence<TesterD::value, Target>;
-    };
+    using type = Container<Monotony<(0 +...+ (E::value - 1))>>;
+    
+    template<auto...I>
+    using Page = Container<Monotony<(0 +...+ (E::value - 1)) + (0 +...+ I)>>;
 
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
+    static constexpr auto value { (0 +...+ (E::value - 1)) };
+
+};
+
+template<typename...Elements>
+using TesterC = TesterCHelper<typename Elements::type...>;
+
+template<template<template<typename...> class...> class R>
+struct RoadHolder
+{
+    static constexpr auto value
+    {R<Capsule>::value};
 };
 /******************************************************************************************************/
 
@@ -93,14 +112,15 @@ struct TesterD
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Capsule<void>***
+    Capsule<Monotony<2*2*2*4>>
 
 SAME_TYPE
 (
-    Trip<TesterA>
+    Trip<TesterA<4>::Road>
     ::Road<TesterB>
-    ::SubRoad<TesterB>
-    ::SubRoad<TesterB>
+    ::Road<TesterB>
+    ::Road<TesterB>
+    ::Commit
     ::Road<Capsule>
     ::type
 );
@@ -113,16 +133,18 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Capsule<void, int, int, int, double>
+    Capsule<Monotony<2*4 + 2*3 + 2*2 + 2*1>, int>
 
 SAME_TYPE
 (
-    Trip<TesterA>
-    ::Flow<TesterA>
-    ::Flow<TesterA>
-    ::Flow<TesterA>
+    Trip<TesterA<1>::Road>
+    ::Flow<TesterA<2>::Road>
+    ::Flow<TesterA<3>::Road>
+    ::Flow<TesterA<4>::Road>
+    ::Road<TesterB>
+    ::Commit
     ::Road<Capsule>
-    ::Mold<double>
+    ::Mold<int>
 );
 
 #undef SUPPOSED_TYPE
@@ -132,42 +154,97 @@ SAME_TYPE
 
 
 /******************************************************************************************************/
-#define SUPPOSED_VALUE   \
-    3
+#define SUPPOSED_TYPE  \
+    Capsule<Monotony<2*4 + 2*3 + 2*2 + 2*1 - 1 - 1>, int>
+
+SAME_TYPE
+(
+    Trip<TesterA<1>::Road>
+    ::Flow<TesterA<2>::Road>
+    ::Flow<TesterA<3>::Road>
+    ::Flow<TesterA<4>::Road>
+    ::Road<TesterB>
+    ::Road<TesterC>
+    ::Road<TesterC>
+    ::Commit
+    ::Road<Capsule>
+    ::Mold<int>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE  \
+    DummyContainer<Monotony<2*4 + 2*3 + 2*2 + 2*(-1) - 1 - 1>, int>
+
+SAME_TYPE
+(
+    Trip<TesterA<1>::Road>
+    ::Flow<TesterA<2>::Road>
+    ::Flow<TesterA<3>::Road>
+    ::Flow<TesterA<4>::Road>
+    ::Road<TesterB>
+    ::Road<TesterC>
+    ::Road<TesterC>
+    ::Commit
+    ::Road<DummyContainer>
+    ::Mold<int>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE  \
+    Capsule<Monotony<((4-1) + (3-1) + (2-1) + (1-1) - 1) * 2>, int>
+
+SAME_TYPE
+(
+    Trip<TesterA<1>::Road>
+    ::Flow<TesterA<2>::Road>
+    ::Flow<TesterA<3>::Road>
+    ::Flow<TesterA<4>::Road>
+    ::Road<TesterC>
+    ::Road<TesterC>
+    ::Road<TesterB>
+    ::Commit
+    ::Road<Capsule>
+    ::Mold<int>
+);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_VALUE  \
+    ((4-1) + (3-1) + (2-1) + (1-1) - 1) * 2
+
 
 EQUAL_VALUE
 (
-    Trip<TesterA>
-    ::Rail<TesterD>
-    ::Rail<TesterD>
-    ::SubRoad<TesterC>
-    ::Road<std::tuple>
+    Trip<TesterA<1>::Road>
+    ::Flow<TesterA<2>::Road>
+    ::Flow<TesterA<3>::Road>
+    ::Flow<TesterA<4>::Road>
+    ::Road<TesterC>
+    ::Road<TesterC>
+    ::Road<TesterB>
+    ::Commit
+    ::Snow<RoadHolder>
     ::value
 );
 
 #undef SUPPOSED_VALUE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    std::tuple<std::tuple<int>***, double*>
-
-SAME_TYPE
-(
-    Trip<TesterA>
-    ::Road<TesterB>
-    ::SubRoad<TesterB>
-    ::SubRoad<TesterB>
-    ::Flow<Emissary>
-    ::Road<std::tuple>
-    ::Mold<double, double*, double**>
-    ::type
-);
-
-#undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
