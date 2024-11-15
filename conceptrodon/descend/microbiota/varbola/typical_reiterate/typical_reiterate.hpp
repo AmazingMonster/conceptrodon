@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
-#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION has not been defined"
+#ifndef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -33,7 +33,7 @@ template<size_t Amount>
 struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 {
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-    = CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
+    = CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION
     <
         typename CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
         <

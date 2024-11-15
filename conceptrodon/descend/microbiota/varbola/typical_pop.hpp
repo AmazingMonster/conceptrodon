@@ -29,11 +29,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE
+#error "CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/page.hpp"
 /******************************************************************************************************/
 
 
@@ -110,7 +110,7 @@ namespace Varbola {
 /******************************************************************************************************/
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/page.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_transports/page.hpp"
 /******************************************************************************************************/
 

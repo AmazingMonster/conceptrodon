@@ -29,11 +29,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE
+#error "CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/mold.hpp"
 /******************************************************************************************************/
 
 
@@ -110,7 +110,7 @@ namespace Typella {
 /******************************************************************************************************/
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_transports/mold.hpp"
 /******************************************************************************************************/
 

@@ -110,11 +110,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
-#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION
+#error "CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION   \
+#define CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION   \
     Sequnivore::TypicalPaste
 /******************************************************************************************************/
 
@@ -178,7 +178,7 @@ struct CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
 /******************************************************************************************************/
 #undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
 #undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PARAMETER_IDENTIFIER
-#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_PASTE_FUNCTION
+#undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_TYPICAL_PASTE_FUNCTION
 #undef CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION
 /******************************************************************************************************/
 
