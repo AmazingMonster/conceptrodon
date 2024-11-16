@@ -198,7 +198,7 @@ struct CONCEPTRODON_OMINUCI_INSERT_VARIABLES_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_COUNT
 
-            , typename...RestVariables
+            , typename...RestMonotonyVariables
         >
         static consteval auto CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION()
 
@@ -224,27 +224,8 @@ struct CONCEPTRODON_OMINUCI_INSERT_VARIABLES_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_RIVER_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_RIVER_COUNT
 
-            , RestVariables:: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ...
+            , RestMonotonyVariables:: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ...
         >;
-
-        struct CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
-        {
-            template
-            <
-                CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-                ...Variables
-            >
-            struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
-            {
-                using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT = decltype
-                (
-                    CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 
-                    <
-                        CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY <Variables>...
-                    >()
-                );
-            };
-        };
 
         template
         <
@@ -252,15 +233,6 @@ struct CONCEPTRODON_OMINUCI_INSERT_VARIABLES_FUNCTION_NAME
             ...Variables
         >
         using CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE 
-        = CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
-        ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <Variables...>;
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            ...Variables
-        >
-        using CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE 
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 

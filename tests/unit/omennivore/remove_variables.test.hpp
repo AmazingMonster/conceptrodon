@@ -44,7 +44,11 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(120, *2+1)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(RemoveVariables<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Page_t<SHEEP_SPROUT(240)>);
+SAME_TYPE
+(
+    RemoveVariables<std::make_index_sequence<0>,ALKANE_SPROUT(119)>
+    ::Page<SHEEP_SPROUT(240)>
+);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef ALKANE_PREFIX

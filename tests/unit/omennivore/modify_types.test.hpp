@@ -28,10 +28,7 @@ namespace TestModifyTypes {
 
 /******************************************************************************************************/
 template<typename Integer>
-struct PlusOne
-{
-    using type = std::integral_constant<int, Integer::value + 1>;
-};
+using PlusOne = std::integral_constant<int, Integer::value + 1>;
 /******************************************************************************************************/
 
 
@@ -70,7 +67,12 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(120)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(ModifyTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Road<PlusOne>::Mold_t<SHEEP_SPROUT(240)>);
+SAME_TYPE
+(
+    ModifyTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>
+    ::Road<PlusOne>
+    ::Mold<SHEEP_SPROUT(240)>
+);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef ALKANE_PREFIX

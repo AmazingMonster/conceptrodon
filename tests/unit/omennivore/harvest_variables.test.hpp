@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_VARIABLES_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_VARIABLES_H
 
+#include <concepts>
 #include <type_traits>
 #include "conceptrodon/descend/omennivore/harvest_variables.hpp"
 #include "macaron/judgmental/same_type.hpp"

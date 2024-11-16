@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_PRESS_H
 
 #include "conceptrodon/omennivore/press.hpp"
+
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/reverie.hpp"
@@ -19,6 +20,7 @@
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/arcadia.hpp"
 #include "conceptrodon/nirvana.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

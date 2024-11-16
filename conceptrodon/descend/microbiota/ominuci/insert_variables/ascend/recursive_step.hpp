@@ -226,7 +226,7 @@ struct CONCEPTRODON_OMINUCI_INSERT_VARIABLES_FUNCTION_NAME
                 ::template CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <RestMonotonyVariables...>()
             )
         >
-        ::template CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE
+        ::template CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE
         <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_RIVER_PREFIX_SYMBOLS
@@ -250,40 +250,12 @@ struct CONCEPTRODON_OMINUCI_INSERT_VARIABLES_FUNCTION_NAME
 
         >;
 
-        struct CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
-        {
-            template
-            <
-                CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-                ...Variables
-            >
-            struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
-            {
-                using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT = decltype
-                (
-                    CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 
-                    <
-                        CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY <Variables>...
-                    >()
-                );
-            };
-        };
-
         template
         <
             CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
             ...Variables
         >
-        using CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE 
-        = CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
-        ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <Variables...>;
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            ...Variables
-        >
-        using CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE 
+        using CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 

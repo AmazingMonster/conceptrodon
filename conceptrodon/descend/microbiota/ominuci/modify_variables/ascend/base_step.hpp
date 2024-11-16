@@ -202,31 +202,7 @@ struct CONCEPTRODON_OMINUCI_MODIFY_VARIABLES_FUNCTION_NAME
             CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
             ...Variables
         >
-        struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
-        {
-            using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT = decltype
-            (
-                CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 
-                <
-                    CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY <Variables>...
-                >()
-            );
-        };
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            ...Variables
-        >
         using CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE 
-        = CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <Variables...>;
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            ...Variables
-        >
-        using CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE 
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION

@@ -20,17 +20,6 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-#error "CONCEPTRODON_NUCLEOLUS_TYPE_RESULT has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_results/type.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
 #ifdef CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION
 #error "CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION has already been defined"
 #endif
@@ -90,17 +79,6 @@
 
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/road.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/mold.hpp"
 /******************************************************************************************************/
 
 
@@ -181,7 +159,6 @@ namespace Ominuci {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_functions/idyl.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_utilities/prefix.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_transports/mold.hpp"
@@ -189,7 +166,6 @@ namespace Ominuci {
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/road.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/road.hpp"
 /******************************************************************************************************/

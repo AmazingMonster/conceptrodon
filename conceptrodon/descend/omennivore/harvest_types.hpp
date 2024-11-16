@@ -4,15 +4,13 @@
 #ifndef CONCEPTRODON_OMENNIVORE_HARVEST_TYPES_H
 #define CONCEPTRODON_OMENNIVORE_HARVEST_TYPES_H
 
-#include "conceptrodon/capsule.hpp"
-
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Crops>
 struct HarvestTypes
 { 
-    template<template<typename...> class Operation=Capsule>
+    template<template<typename...> class Operation>
     struct Detail
     {
         using type = Operation<typename Crops::type...>; 
@@ -21,7 +19,7 @@ struct HarvestTypes
     template<template<typename...> class...Agreements>
     using Road = Detail<Agreements...>::type;
 
-    template<template<typename...> class Operation=Capsule>
+    template<template<typename...> class Operation>
     using UniRoad = Operation<typename Crops::type...>;
 };
 

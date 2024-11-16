@@ -21,15 +21,10 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-#error "CONCEPTRODON_NUCLEOLUS_TYPE_RESULT has already been defined"
-#endif
-
 #ifdef CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
 #error "CONCEPTRODON_NUCLEOLUS_VALUE_RESULT has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_results/value.hpp"
 /******************************************************************************************************/
 
@@ -101,17 +96,6 @@
 
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/rail.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_PAGE_ALIAS_TEMPLATE has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/page.hpp"
 /******************************************************************************************************/
 
 
@@ -192,7 +176,6 @@ namespace Ominuci {
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_results/value.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_functions/idyl.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_utilities/prefix.hpp"
@@ -202,7 +185,6 @@ namespace Ominuci {
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/rail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/rail.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/rail.hpp"
 /******************************************************************************************************/

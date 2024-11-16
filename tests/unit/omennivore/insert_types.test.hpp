@@ -45,7 +45,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(InsertTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Mold<SHEEP_SPROUT(120, *2)>::Mold_t<SHEEP_SPROUT(120, *2+1)>);
+SAME_TYPE(InsertTypes<std::make_index_sequence<0>, ALKANE_SPROUT(119)>::Mold<SHEEP_SPROUT(120, *2)>::Mold<SHEEP_SPROUT(120, *2+1)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef ALKANE_PREFIX
