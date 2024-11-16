@@ -10,7 +10,7 @@ template<template<template<template<template<template<auto...> class...> class..
 struct Camellia
 {
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using Lull = Sunshine<Tranquil...>;
+    using Calm = Sunshine<Tranquil...>;
 };
 
 }

@@ -30,6 +30,21 @@ namespace Omennivore {
 namespace UnitTests {
 namespace TestTotal {
 
+
+
+
+/******************************************************************************************************/
+template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...>
+struct GlowHolder {};
+
+template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...>
+struct DawnHolder {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     4
 
@@ -48,6 +63,11 @@ EQUAL_VALUE(Total<Sunrise<Pursuit, Pursuit, Pursuit, Pursuit>>::value);
 EQUAL_VALUE(Total<Morning<Persist, Persist, Persist, Persist>>::value);
 EQUAL_VALUE(Total<Arcadia<Sunrise, Sunrise, Sunrise, Sunrise>>::value);
 EQUAL_VALUE(Total<Nirvana<Morning, Morning, Morning, Morning>>::value);
+EQUAL_VALUE(Total<GlowHolder<Arcadia, Arcadia, Arcadia, Arcadia>>::value);
+EQUAL_VALUE(Total<DawnHolder<Nirvana, Nirvana, Nirvana, Nirvana>>::value);
+
+#undef SUPPOSED_VALUE
+/******************************************************************************************************/
 
 }}}}
 

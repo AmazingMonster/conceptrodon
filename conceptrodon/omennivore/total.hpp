@@ -146,6 +146,25 @@ template
 struct Total<Sunshine<Sunshines...>>
 { static constexpr size_t value = sizeof...(Sunshines); };
 
+// Glow
+template
+<
+    template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunshines
+>
+struct Total<Sunshine<Sunshines...>>
+{ static constexpr size_t value = sizeof...(Sunshines); };
+
+
+// Dawn
+template
+<
+    template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...Sunshines
+>
+struct Total<Sunshine<Sunshines...>>
+{ static constexpr size_t value = sizeof...(Sunshines); };
+
 
 }}
 

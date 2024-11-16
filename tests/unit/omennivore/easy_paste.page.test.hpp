@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_PAGE_H
 
 #include <concepts>
-#include "conceptrodon/descend/omennivore/easy_paste.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

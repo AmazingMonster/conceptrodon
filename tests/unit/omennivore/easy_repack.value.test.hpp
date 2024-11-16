@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_VALUE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_VALUE_H
 
-#include "conceptrodon/descend/omennivore/easy_repack.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
