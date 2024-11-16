@@ -5,11 +5,9 @@
 #define CONCEPTRODON_TOTEM_H
 
 #include <type_traits>
+#include "conceptrodon/emissary.hpp"
 
 namespace Conceptrodon {
-
-template<template<typename...> class Container>
-struct Emissary;
 
 template<template<typename...> class Container, size_t I>
 struct Totem
