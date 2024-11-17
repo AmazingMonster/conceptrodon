@@ -15,8 +15,8 @@
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -83,14 +83,14 @@ struct TesterDHelper {};
 template<template<typename...> class...Containers, typename...E>
 struct TesterDHelper<Containers<E>...>
 {
-    using type = Reverie<IndexedContainer<E::value>::template Mold...>;
+    using type = Vehicle<IndexedContainer<E::value>::template Mold...>;
 };
 
 template<typename...Agreements>
 using TesterD = TesterDHelper<Agreements...>::type;
 
 template<template<template<typename...> class...> class R>
-struct RoadHolder
+struct RoadVessel
 {
     using type = R<Capsule, Capsule, Capsule>;
 };
@@ -126,7 +126,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Reverie \
+    Vehicle \
     <   \
         IndexedContainer<2*2*2*4-1>::Mold,   \
         IndexedContainer<2*2*2*4-1>::Mold,   \
@@ -200,7 +200,7 @@ SAME_TYPE
     ::Road<TesterD>
     ::Flow<TesterA<2>::Road>
     ::Commit
-    ::Snow<RoadHolder>
+    ::Snow<RoadVessel>
     ::type
 );
 

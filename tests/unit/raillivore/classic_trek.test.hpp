@@ -15,8 +15,8 @@
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -77,11 +77,11 @@ struct TesterD {};
 template<template<auto...> class...Sequences, auto...I>
 struct TesterD<Sequences<I>...>
 {
-    using type = Phantom<IndexedSequence<I>::template Page...>;
+    using type = Carrier<IndexedSequence<I>::template Page...>;
 };
 
 template<template<template<auto...> class...> class R>
-struct RailHolder
+struct RailVessel
 {
     using type = R<Shuttle, Shuttle, Shuttle>::type;
 };
@@ -113,7 +113,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Phantom \
+    Carrier \
     <   \
         IndexedSequence<2*2*2*4-1>::Page,   \
         IndexedSequence<2*2*2*4-1>::Page,   \
@@ -189,7 +189,7 @@ SAME_TYPE
     ::Road<TesterD>
     ::Sail<TesterA<2>::Rail>
     ::Commit
-    ::Hail<RailHolder>
+    ::Hail<RailVessel>
     ::type
 );
 

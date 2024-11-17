@@ -6,18 +6,18 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
 #include "conceptrodon/travail.hpp"
 #include "conceptrodon/lullaby.hpp"
 #include "conceptrodon/halcyon.hpp"
-#include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/persist.hpp"
-#include "conceptrodon/morning.hpp"
+#include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/sunrise.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
+#include "conceptrodon/morning.hpp"
 
 #include "conceptrodon/omennivore/flatten.hpp"
 
@@ -38,40 +38,40 @@ struct Preload
     using Page = Preload<Operation, Items..., Shuttle<Variables...>>;
 
     template<template<typename...> class...Containers>
-    using Road = Preload<Operation, Items..., Reverie<Containers...>>;
+    using Road = Preload<Operation, Items..., Vehicle<Containers...>>;
 
     template<template<auto...> class...Sequences>
-    using Rail = Preload<Operation, Items..., Phantom<Sequences...>>;
+    using Rail = Preload<Operation, Items..., Carrier<Sequences...>>;
 
     template<template<template<typename...> class...> class...Warehouses>
-    using Flow = Preload<Operation, Items..., Forlorn<Warehouses...>>;
+    using Flow = Preload<Operation, Items..., Reverie<Warehouses...>>;
 
     template<template<template<auto...> class...> class...Stockrooms>
-    using Sail = Preload<Operation, Items..., Travail<Stockrooms...>>;
+    using Sail = Preload<Operation, Items..., Phantom<Stockrooms...>>;
 
     template<template<template<template<typename...> class...> class...> class...Sorrow>
-    using Snow = Preload<Operation, Items..., Lullaby<Sorrow...>>;
+    using Snow = Preload<Operation, Items..., Forlorn<Sorrow...>>;
 
     template<template<template<template<auto...> class...> class...> class...Melancholy>
-    using Hail = Preload<Operation, Items..., Halcyon<Melancholy...>>;
+    using Hail = Preload<Operation, Items..., Travail<Melancholy...>>;
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using Lull = Preload<Operation, Items..., Pursuit<Silence...>>;
+    using Cool = Preload<Operation, Items..., Lullaby<Silence...>>;
 
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using Calm = Preload<Operation, Items..., Persist<Tranquil...>>;
+    using Calm = Preload<Operation, Items..., Halcyon<Tranquil...>>;
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Grit = Preload<Operation, Items..., Morning<Sunshines...>>;
+    using Grit = Preload<Operation, Items..., Persist<Sunshines...>>;
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = Preload<Operation, Items..., Sunrise<Sunshines...>>;
+    using Will = Preload<Operation, Items..., Pursuit<Sunshines...>>;
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Glow = Preload<Operation, Items..., Arcadia<Sunshines...>>;
+    using Glow = Preload<Operation, Items..., Sunrise<Sunshines...>>;
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
-    using Dawn = Preload<Operation, Items..., Nirvana<Sunshines...>>;
+    using Dawn = Preload<Operation, Items..., Morning<Sunshines...>>;
 };
 }
 

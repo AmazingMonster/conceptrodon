@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/descend/stockivore/repack.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -20,9 +20,9 @@ namespace UnitTests {
 namespace TestRepack {
 
 // In this test, we will paste
-//  Phantom<Dummy<0>::Page>,
+//  Carrier<Dummy<0>::Page>,
 //  ...,
-//  Phantom<Dummy<239>::Page>
+//  Carrier<Dummy<239>::Page>
 // together and place the result in Tester.
 
 /******************************************************************************************************/
@@ -72,7 +72,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Phantom<Dummy<
+    Carrier<Dummy<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \

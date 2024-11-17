@@ -110,7 +110,7 @@ template
 struct Total<Sunshine<Silence...>>
 { static constexpr size_t value = sizeof...(Silence); };
 
-// Lull
+// Cool
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,

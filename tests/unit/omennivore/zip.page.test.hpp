@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_4TH_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -53,18 +53,18 @@ struct TesterC {};
 
 template
 <
-    template<template<auto...> class...> class Holder,
+    template<template<auto...> class...> class Vessel,
     template<auto...> class A,
     template<auto...> class B
 >
-struct TesterC<Holder<A, B>>
+struct TesterC<Vessel<A, B>>
 { using type = Capsule<A<0>, B<0>>; };
 
 template<typename>
 struct TesterD {};
 
-template<template<typename...> class Holder, typename...Args>
-struct TesterD<Holder<Args...>>
+template<template<typename...> class Vessel, typename...Args>
+struct TesterD<Vessel<Args...>>
 {
     using type = Capsule<typename TesterC<Args>::type...>;
 };
@@ -102,7 +102,7 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Phantom<SHEEP_SPROUT(240)>;
+using ArgA = Carrier<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -120,7 +120,7 @@ using ArgA = Phantom<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Phantom<SHEEP_SPROUT(300)>;
+using ArgB = Carrier<SHEEP_SPROUT(300)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -134,10 +134,10 @@ using ArgB = Phantom<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Sail<Phantom>::Road<Capsule>>::type);
+SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Sail<Carrier>::Road<Capsule>>::type);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Sail<Phantom>::Page<
+    TesterC<Zip<ArgA, ArgB>::Sail<Carrier>::Page<
 #define SHEEP_SUFFIX \
     >>::type
 #define SHEEP_SEPARATOR  \

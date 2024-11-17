@@ -44,7 +44,7 @@ struct Tester
                                 struct ProtoHail
                                 {
                                     template<template<template<template<template<typename...> class...> class...> class...> class...>
-                                    struct ProtoLull
+                                    struct ProtoCool
                                     {
                                         template<template<template<template<template<auto...> class...> class...> class...> class...>
                                         struct ProtoCalm
@@ -85,7 +85,7 @@ struct Tester
                                     };
 
                                     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-                                    using Lull = ProtoLull<Agreements...>;
+                                    using Cool = ProtoCool<Agreements...>;
                                 };
 
                                 template<template<template<template<auto...> class...> class...> class...Agreements>
@@ -159,7 +159,7 @@ struct Tester<std::tuple>
 };
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Lull<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Road<>::value);
+VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Road<>::value);
 VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Road<>::value);
 VALID(Skip<Tester>::Page<true>::Commit::Road<std::tuple>::value);
 

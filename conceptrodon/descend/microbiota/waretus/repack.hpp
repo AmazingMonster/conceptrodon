@@ -10,7 +10,7 @@
 
 
 /******************************************************************************************************/
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 /******************************************************************************************************/
 
 
@@ -77,11 +77,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_ROAD_PARALLEL_TRANSPORT
-#error "CONCEPTRODON_NUCLEOLUS_ROAD_PARALLEL_TRANSPORT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_ROAD_PARALLEL_VESSEL
+#error "CONCEPTRODON_NUCLEOLUS_ROAD_PARALLEL_VESSEL has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_transports/road.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parallel_vessels/road.hpp"
 /******************************************************************************************************/
 
 
@@ -128,7 +128,7 @@ namespace Waretus {
 #include "conceptrodon/microbiota/nucleolus/undef_uni_templates/flow.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/flow.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_transports/road.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/road.hpp"
 /******************************************************************************************************/
 
 

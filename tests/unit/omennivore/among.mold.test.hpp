@@ -8,6 +8,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -18,8 +20,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -84,7 +84,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-using Amongus = Among<Reverie<SHEEP_SPROUT(240)>>;
+using Amongus = Among<Vehicle<SHEEP_SPROUT(240)>>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

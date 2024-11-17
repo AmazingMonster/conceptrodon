@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -63,7 +63,7 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Phantom<Tester<
+    Carrier<Tester<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \

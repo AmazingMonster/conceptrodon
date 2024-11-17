@@ -77,11 +77,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL
+#error "CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_transports/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parallel_vessels/mold.hpp"
 /******************************************************************************************************/
 
 
@@ -128,7 +128,7 @@ namespace Cotanis {
 #include "conceptrodon/microbiota/nucleolus/undef_uni_templates/road.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/road.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_transports/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/mold.hpp"
 /******************************************************************************************************/
 
 

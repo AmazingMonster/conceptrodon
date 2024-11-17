@@ -100,7 +100,7 @@ template<typename...Elements>
 using TesterC = TesterCHelper<typename Elements::type...>;
 
 template<template<template<typename...> class...> class R>
-struct RoadHolder
+struct RoadVessel
 {
     static constexpr auto value
     {R<Capsule>::value};
@@ -240,7 +240,7 @@ EQUAL_VALUE
     ::Road<TesterC>
     ::Road<TesterB>
     ::Commit
-    ::Snow<RoadHolder>
+    ::Snow<RoadVessel>
     ::value
 );
 

@@ -5,8 +5,8 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_ROAD_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/forlorn.hpp"
 #include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -53,18 +53,18 @@ struct TesterC {};
 
 template
 <
-    template<template<template<typename...> class...> class...> class Holder,
+    template<template<template<typename...> class...> class...> class Vessel,
     template<template<typename...> class...> class A,
     template<template<typename...> class...> class B
 >
-struct TesterC<Holder<A, B>>
+struct TesterC<Vessel<A, B>>
 { using type = Capsule<A<Capsule>, B<Capsule>>; };
 
 template<typename>
 struct TesterD {};
 
-template<template<typename...> class Holder, typename...Args>
-struct TesterD<Holder<Args...>>
+template<template<typename...> class Vessel, typename...Args>
+struct TesterD<Vessel<Args...>>
 {
     using type = Capsule<typename TesterC<Args>::type...>;
 };
@@ -102,7 +102,7 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Forlorn<SHEEP_SPROUT(240)>;
+using ArgA = Reverie<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -120,7 +120,7 @@ using ArgA = Forlorn<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Forlorn<SHEEP_SPROUT(300)>;
+using ArgB = Reverie<SHEEP_SPROUT(300)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -134,10 +134,10 @@ using ArgB = Forlorn<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Snow<Forlorn>::Road<Capsule>>::type);
+SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Snow<Reverie>::Road<Capsule>>::type);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Snow<Forlorn>::Page<
+    TesterC<Zip<ArgA, ArgB>::Snow<Reverie>::Page<
 #define SHEEP_SUFFIX \
     >>::type
 #define SHEEP_SEPARATOR  \

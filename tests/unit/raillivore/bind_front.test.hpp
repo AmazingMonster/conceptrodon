@@ -7,7 +7,7 @@
 #include <concepts>
 #include "conceptrodon/raillivore/bind_front.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,7 +24,7 @@ namespace TestBindFront {
 //  Dummy<0>::Page,
 //  ...,
 //  Dummy<99>::Page
-// to the back of Phantom.
+// to the back of Carrier.
 // Then, we will invoke the resulting metafunction by
 //  Dummy<0>::Page,
 //  ...,
@@ -50,7 +50,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Phantom<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+using SupposedResult = Carrier<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -71,7 +71,7 @@ using SupposedResult = Phantom<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BindFront<Phantom>::Rail<SHEEP_SPROUT(100)>::Rail<SHEEP_SPROUT(140)>);
+SAME_TYPE(BindFront<Carrier>::Rail<SHEEP_SPROUT(100)>::Rail<SHEEP_SPROUT(140)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -15,7 +15,7 @@
 #include "conceptrodon/sailfish.hpp"
 #include "conceptrodon/snowfall.hpp"
 #include "conceptrodon/halfmoon.hpp"
-#include "conceptrodon/lungfish.hpp"
+#include "conceptrodon/coalfish.hpp"
 #include "conceptrodon/camellia.hpp"
 #include "conceptrodon/graphite.hpp"
 #include "conceptrodon/wildfire.hpp"
@@ -178,8 +178,8 @@ struct TypicalAmong<Sunshine<Sunshines...>>
     struct ProtoPage
     {
         template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-        using Lull = Typella::TypicalAmong<Lungfish<Sunshines>...>
-        ::template Page<I>::type::template Lull<Agreements...>;
+        using Cool = Typella::TypicalAmong<Coalfish<Sunshines>...>
+        ::template Page<I>::type::template Cool<Agreements...>;
     };
 
     template<auto...Agreements>
@@ -281,9 +281,9 @@ struct TypicalAmong<Sunshine<Sunshines...>>
     using Page = ProtoPage<Agreements...>;
 };
 
-template<typename...PackedHolders>
+template<typename...PackedVessels>
 struct Among
-: public TypicalAmong<PackedHolders...>
+: public TypicalAmong<PackedVessels...>
 {};
 
 template<template<typename...> class Container, typename...Elements>

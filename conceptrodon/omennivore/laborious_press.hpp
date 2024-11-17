@@ -84,7 +84,7 @@ struct LaboriousPress
         template<template<template<template<typename...> class...> class...> class...> class...Contents
     >
     struct Detail<Sunshines<Contents...>>
-    { using type = Operation::template Lull<Contents...>; };
+    { using type = Operation::template Cool<Contents...>; };
 
     template
     <
@@ -235,7 +235,7 @@ struct LaboriousPress
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = LaboriousPress<typename Operation::template Lull<Contents...>>
+        using type = LaboriousPress<typename Operation::template Cool<Contents...>>
         ::template Detail<Others...>::type;
     };
 

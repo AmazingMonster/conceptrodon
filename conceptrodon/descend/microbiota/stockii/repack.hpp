@@ -10,7 +10,7 @@
 
 
 /******************************************************************************************************/
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 /******************************************************************************************************/
 
 
@@ -77,11 +77,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_RAIL_PARALLEL_TRANSPORT
-#error "CONCEPTRODON_NUCLEOLUS_RAIL_PARALLEL_TRANSPORT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_RAIL_PARALLEL_VESSEL
+#error "CONCEPTRODON_NUCLEOLUS_RAIL_PARALLEL_VESSEL has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_transports/rail.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parallel_vessels/rail.hpp"
 /******************************************************************************************************/
 
 
@@ -128,7 +128,7 @@ namespace Stockii {
 #include "conceptrodon/microbiota/nucleolus/undef_uni_templates/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/rail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/sail.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_transports/rail.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/rail.hpp"
 /******************************************************************************************************/
 
 

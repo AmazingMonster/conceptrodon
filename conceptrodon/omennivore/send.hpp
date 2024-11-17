@@ -109,10 +109,10 @@ struct Send<Silence<Sorrow...>>
     { using type = Operation<Sorrow...>; };
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Lull = Detail<Agreements...>::type;
+    using Cool = Detail<Agreements...>::type;
 
     template<template<template<template<template<typename...> class...> class...> class...> class Operation>
-    using UniLull = Operation<Sorrow...>;
+    using UniCool = Operation<Sorrow...>;
 };
 
 template

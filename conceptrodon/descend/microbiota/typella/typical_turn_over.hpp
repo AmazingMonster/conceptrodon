@@ -51,11 +51,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL
+#error "CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_transports/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parallel_vessels/mold.hpp"
 /******************************************************************************************************/
 
 
@@ -111,7 +111,7 @@ namespace Typella {
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/mold.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_transports/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/mold.hpp"
 /******************************************************************************************************/
 
 

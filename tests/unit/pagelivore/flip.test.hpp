@@ -8,8 +8,8 @@
 #include "conceptrodon/pagelivore/flip.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 
@@ -65,7 +65,7 @@ struct Tester
     struct ProtoFlow {};
 
     template<>
-    struct ProtoFlow<Reverie> { static constexpr bool value {true}; };
+    struct ProtoFlow<Vehicle> { static constexpr bool value {true}; };
 
     template<template<template<typename...> class...> class...Agreements>
     using Flow = ProtoFlow<Agreements...>;
@@ -74,7 +74,7 @@ struct Tester
     struct ProtoSail {};
 
     template<>
-    struct ProtoSail<Phantom> { static constexpr bool value {true}; };
+    struct ProtoSail<Carrier> { static constexpr bool value {true}; };
 
     template<template<template<auto...> class...> class...Agreements>
     using Sail = ProtoSail<Agreements...>;
@@ -89,8 +89,8 @@ VALID(Flip<Tester>::Mold<int>::Page<>::value);
 VALID(Flip<Tester>::Page<0>::Page<>::value);
 VALID(Flip<Tester>::Road<std::tuple>::Page<>::value);
 VALID(Flip<Tester>::Rail<std::index_sequence>::Page<>::value);
-VALID(Flip<Tester>::Flow<Reverie>::Page<>::value);
-VALID(Flip<Tester>::Sail<Phantom>::Page<>::value);
+VALID(Flip<Tester>::Flow<Vehicle>::Page<>::value);
+VALID(Flip<Tester>::Sail<Carrier>::Page<>::value);
 /******************************************************************************************************/
 
 

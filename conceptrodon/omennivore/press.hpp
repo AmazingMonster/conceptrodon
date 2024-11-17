@@ -84,7 +84,7 @@ struct Press
         template<template<template<template<typename...> class...> class...> class...> class...Contents
     >
     struct Detail<Sunshines<Contents...>>
-    { using type = Operation::template Lull<Contents...>; };
+    { using type = Operation::template Cool<Contents...>; };
 
     template
     <
@@ -235,7 +235,7 @@ struct Press
     >
     struct Detail<Sunshines<Contents...>, Others...>
     {
-        using type = Press<typename Operation::template Lull<Contents...>>
+        using type = Press<typename Operation::template Cool<Contents...>>
         ::template Detail<Others...>::type;
     };
 

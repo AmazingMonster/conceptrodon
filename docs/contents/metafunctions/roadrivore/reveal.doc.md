@@ -47,13 +47,13 @@ template<typename...>
 struct Con_3;
 
 template<template<typename...> class...>
-struct Reverie;
+struct Vehicle;
 
 template<template<typename...> class...Args>
 struct Operation
-{ using type = Reverie<Args...>; };
+{ using type = Vehicle<Args...>; };
 
-using SupposedResult = Reverie<Con_2, Con_3, Con_0, Con_1>;
+using SupposedResult = Vehicle<Con_2, Con_3, Con_0, Con_1>;
 
 template<template<typename...> class...Args>
 using Metafunction = Reveal<Operation>

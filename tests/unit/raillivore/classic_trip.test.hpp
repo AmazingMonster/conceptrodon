@@ -120,7 +120,7 @@ struct TesterC<Sequence<I...>>
 };
 
 template<template<template<auto...> class...> class R>
-struct RailHolder
+struct RailVessel
 {
     static constexpr auto value
     { R<Shuttle>::value };
@@ -260,7 +260,7 @@ EQUAL_VALUE
     ::Road<TesterC>
     ::Road<TesterB>
     ::Commit
-    ::Hail<RailHolder>
+    ::Hail<RailVessel>
     ::value
 );
 

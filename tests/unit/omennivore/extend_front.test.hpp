@@ -13,6 +13,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -23,8 +25,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 
@@ -103,21 +103,9 @@ SAME_TYPE(ExtendFront<Shuttle<0>>::Page<1>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Reverie<Capsule, TesterA>
+    Vehicle<Capsule, TesterA>
 
-SAME_TYPE(ExtendFront<Reverie<TesterA>>::Road<Capsule>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    Phantom<Shuttle, TesterB>
-
-SAME_TYPE(ExtendFront<Phantom<TesterB>>::Rail<Shuttle>);
+SAME_TYPE(ExtendFront<Vehicle<TesterA>>::Road<Capsule>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -127,21 +115,9 @@ SAME_TYPE(ExtendFront<Phantom<TesterB>>::Rail<Shuttle>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Forlorn<Reverie, TesterC>
+    Carrier<Shuttle, TesterB>
 
-SAME_TYPE(ExtendFront<Forlorn<TesterC>>::Flow<Reverie>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    Travail<Phantom, TesterD>
-
-SAME_TYPE(ExtendFront<Travail<TesterD>>::Sail<Phantom>);
+SAME_TYPE(ExtendFront<Carrier<TesterB>>::Rail<Shuttle>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -151,21 +127,9 @@ SAME_TYPE(ExtendFront<Travail<TesterD>>::Sail<Phantom>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Lullaby<Forlorn, TesterE>
+    Reverie<Vehicle, TesterC>
 
-SAME_TYPE(ExtendFront<Lullaby<TesterE>>::Snow<Forlorn>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    Halcyon<Travail, TesterF>
-
-SAME_TYPE(ExtendFront<Halcyon<TesterF>>::Hail<Travail>);
+SAME_TYPE(ExtendFront<Reverie<TesterC>>::Flow<Vehicle>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -175,21 +139,9 @@ SAME_TYPE(ExtendFront<Halcyon<TesterF>>::Hail<Travail>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Pursuit<Lullaby, TesterG>
+    Phantom<Carrier, TesterD>
 
-SAME_TYPE(ExtendFront<Pursuit<TesterG>>::Lull<Lullaby>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    Persist<Halcyon, TesterH>
-
-SAME_TYPE(ExtendFront<Persist<TesterH>>::Calm<Halcyon>);
+SAME_TYPE(ExtendFront<Phantom<TesterD>>::Sail<Carrier>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -199,21 +151,9 @@ SAME_TYPE(ExtendFront<Persist<TesterH>>::Calm<Halcyon>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Sunrise<Pursuit, TesterI>
+    Forlorn<Reverie, TesterE>
 
-SAME_TYPE(ExtendFront<Sunrise<TesterI>>::Grit<Pursuit>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    Morning<Persist, TesterJ>
-
-SAME_TYPE(ExtendFront<Morning<TesterJ>>::Will<Persist>);
+SAME_TYPE(ExtendFront<Forlorn<TesterE>>::Snow<Reverie>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -223,9 +163,9 @@ SAME_TYPE(ExtendFront<Morning<TesterJ>>::Will<Persist>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Arcadia<Sunrise, TesterK>
+    Travail<Phantom, TesterF>
 
-SAME_TYPE(ExtendFront<Arcadia<TesterK>>::Glow<Sunrise>);
+SAME_TYPE(ExtendFront<Travail<TesterF>>::Hail<Phantom>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -235,9 +175,69 @@ SAME_TYPE(ExtendFront<Arcadia<TesterK>>::Glow<Sunrise>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Nirvana<Morning, TesterL>
+    Lullaby<Forlorn, TesterG>
 
-SAME_TYPE(ExtendFront<Nirvana<TesterL>>::Dawn<Morning>);
+SAME_TYPE(ExtendFront<Lullaby<TesterG>>::Cool<Forlorn>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    Halcyon<Travail, TesterH>
+
+SAME_TYPE(ExtendFront<Halcyon<TesterH>>::Calm<Travail>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    Pursuit<Lullaby, TesterI>
+
+SAME_TYPE(ExtendFront<Pursuit<TesterI>>::Grit<Lullaby>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    Persist<Halcyon, TesterJ>
+
+SAME_TYPE(ExtendFront<Persist<TesterJ>>::Will<Halcyon>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    Sunrise<Pursuit, TesterK>
+
+SAME_TYPE(ExtendFront<Sunrise<TesterK>>::Glow<Pursuit>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    Morning<Persist, TesterL>
+
+SAME_TYPE(ExtendFront<Morning<TesterL>>::Dawn<Persist>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

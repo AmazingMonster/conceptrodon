@@ -9,6 +9,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -19,8 +21,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 
@@ -153,8 +153,8 @@ SAME_TYPE(Send<Shuttle<0, 0>>::UniRail<TesterB>);
 #define SUPPOSED_TYPE   \
     TesterC<Capsule, Capsule>
 
-SAME_TYPE(Send<Reverie<Capsule, Capsule>>::Flow<TesterC>);
-SAME_TYPE(Send<Reverie<Capsule, Capsule>>::UniFlow<TesterC>);
+SAME_TYPE(Send<Vehicle<Capsule, Capsule>>::Flow<TesterC>);
+SAME_TYPE(Send<Vehicle<Capsule, Capsule>>::UniFlow<TesterC>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -166,8 +166,8 @@ SAME_TYPE(Send<Reverie<Capsule, Capsule>>::UniFlow<TesterC>);
 #define SUPPOSED_TYPE   \
     TesterD<Shuttle, Shuttle>
 
-SAME_TYPE(Send<Phantom<Shuttle, Shuttle>>::Sail<TesterD>);
-SAME_TYPE(Send<Phantom<Shuttle, Shuttle>>::UniSail<TesterD>);
+SAME_TYPE(Send<Carrier<Shuttle, Shuttle>>::Sail<TesterD>);
+SAME_TYPE(Send<Carrier<Shuttle, Shuttle>>::UniSail<TesterD>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -177,23 +177,10 @@ SAME_TYPE(Send<Phantom<Shuttle, Shuttle>>::UniSail<TesterD>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterE<Reverie, Reverie>
+    TesterE<Vehicle, Vehicle>
 
-SAME_TYPE(Send<Forlorn<Reverie, Reverie>>::Snow<TesterE>);
-SAME_TYPE(Send<Forlorn<Reverie, Reverie>>::UniSnow<TesterE>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    TesterF<Phantom, Phantom>
-
-SAME_TYPE(Send<Travail<Phantom, Phantom>>::Hail<TesterF>);
-SAME_TYPE(Send<Travail<Phantom, Phantom>>::UniHail<TesterF>);
+SAME_TYPE(Send<Reverie<Vehicle, Vehicle>>::Snow<TesterE>);
+SAME_TYPE(Send<Reverie<Vehicle, Vehicle>>::UniSnow<TesterE>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -203,23 +190,10 @@ SAME_TYPE(Send<Travail<Phantom, Phantom>>::UniHail<TesterF>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterG<Forlorn, Forlorn>
+    TesterF<Carrier, Carrier>
 
-SAME_TYPE(Send<Lullaby<Forlorn, Forlorn>>::Lull<TesterG>);
-SAME_TYPE(Send<Lullaby<Forlorn, Forlorn>>::UniLull<TesterG>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    TesterH<Travail, Travail>
-
-SAME_TYPE(Send<Halcyon<Travail, Travail>>::Calm<TesterH>);
-SAME_TYPE(Send<Halcyon<Travail, Travail>>::UniCalm<TesterH>);
+SAME_TYPE(Send<Phantom<Carrier, Carrier>>::Hail<TesterF>);
+SAME_TYPE(Send<Phantom<Carrier, Carrier>>::UniHail<TesterF>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -229,23 +203,10 @@ SAME_TYPE(Send<Halcyon<Travail, Travail>>::UniCalm<TesterH>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterI<Lullaby, Lullaby>
+    TesterG<Reverie, Reverie>
 
-SAME_TYPE(Send<Pursuit<Lullaby, Lullaby>>::Grit<TesterI>);
-SAME_TYPE(Send<Pursuit<Lullaby, Lullaby>>::UniGrit<TesterI>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    TesterJ<Halcyon, Halcyon>
-
-SAME_TYPE(Send<Persist<Halcyon, Halcyon>>::Will<TesterJ>);
-SAME_TYPE(Send<Persist<Halcyon, Halcyon>>::UniWill<TesterJ>);
+SAME_TYPE(Send<Forlorn<Reverie, Reverie>>::Cool<TesterG>);
+SAME_TYPE(Send<Forlorn<Reverie, Reverie>>::UniCool<TesterG>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -255,10 +216,10 @@ SAME_TYPE(Send<Persist<Halcyon, Halcyon>>::UniWill<TesterJ>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterK<Pursuit, Pursuit>
+    TesterH<Phantom, Phantom>
 
-SAME_TYPE(Send<Sunrise<Pursuit, Pursuit>>::Glow<TesterK>);
-SAME_TYPE(Send<Sunrise<Pursuit, Pursuit>>::UniGlow<TesterK>);
+SAME_TYPE(Send<Travail<Phantom, Phantom>>::Calm<TesterH>);
+SAME_TYPE(Send<Travail<Phantom, Phantom>>::UniCalm<TesterH>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -268,10 +229,49 @@ SAME_TYPE(Send<Sunrise<Pursuit, Pursuit>>::UniGlow<TesterK>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    TesterL<Persist, Persist>
+    TesterI<Forlorn, Forlorn>
 
-SAME_TYPE(Send<Morning<Persist, Persist>>::Dawn<TesterL>);
-SAME_TYPE(Send<Morning<Persist, Persist>>::UniDawn<TesterL>);
+SAME_TYPE(Send<Lullaby<Forlorn, Forlorn>>::Grit<TesterI>);
+SAME_TYPE(Send<Lullaby<Forlorn, Forlorn>>::UniGrit<TesterI>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    TesterJ<Travail, Travail>
+
+SAME_TYPE(Send<Halcyon<Travail, Travail>>::Will<TesterJ>);
+SAME_TYPE(Send<Halcyon<Travail, Travail>>::UniWill<TesterJ>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    TesterK<Lullaby, Lullaby>
+
+SAME_TYPE(Send<Pursuit<Lullaby, Lullaby>>::Glow<TesterK>);
+SAME_TYPE(Send<Pursuit<Lullaby, Lullaby>>::UniGlow<TesterK>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    TesterL<Halcyon, Halcyon>
+
+SAME_TYPE(Send<Persist<Halcyon, Halcyon>>::Dawn<TesterL>);
+SAME_TYPE(Send<Persist<Halcyon, Halcyon>>::UniDawn<TesterL>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

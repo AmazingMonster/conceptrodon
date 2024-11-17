@@ -6,7 +6,7 @@
 
 namespace Conceptrodon {
     
-template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
+template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunshines>
 struct Arcadia {};
  
 }

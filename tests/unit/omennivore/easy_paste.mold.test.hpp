@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -45,7 +45,7 @@ struct Tester
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Reverie<SHEEP_SPROUT(240)>;
+using SupposedResult = Vehicle<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -60,7 +60,7 @@ using SupposedResult = Reverie<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Reverie<Tester<
+    Vehicle<Tester<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \

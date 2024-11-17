@@ -12,7 +12,7 @@
 #include "conceptrodon/descend/omennivore/concepts/sailful.hpp"
 #include "conceptrodon/omennivore/is_snowful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/hailful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/lullful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/coolful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/calmful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/gritful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/willful.hpp"
@@ -34,7 +34,7 @@ concept Unsnowful
 ||  Flowful<Arg>
 ||  Sailful<Arg>
 ||  Hailful<Arg>
-||  Lullful<Arg>
+||  Coolful<Arg>
 ||  Calmful<Arg>
 ||  Gritful<Arg>
 ||  Willful<Arg>

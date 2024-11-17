@@ -381,26 +381,26 @@ struct Exemplar
 
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    struct ProtoLull {};
+    struct ProtoCool {};
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Lull = ProtoLull<Agreements...>;
+    using Cool = ProtoCool<Agreements...>;
 
     template<template<template<template<template<typename...> class...> class...> class...> class Silence>
-    using UniLull = Silence<CONTENTS>;
+    using UniCool = Silence<CONTENTS>;
 
     template
     <
         template<template<template<template<typename...> class...> class...> class...> class First, 
         template<template<template<template<typename...> class...> class...> class...> class Second
     >
-    using DuoLull = IMPLEMENTATION;
+    using DuoCool = IMPLEMENTATION;
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Args>
-    using Lull_t = Lull<Args...>::type;
+    using Cool_t = Cool<Args...>::type;
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Args>
-    static constexpr auto Lull_v {Lull<Args...>::value};
+    static constexpr auto Cool_v {Cool<Args...>::value};
 
 
 

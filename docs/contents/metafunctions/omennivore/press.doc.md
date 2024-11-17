@@ -99,7 +99,7 @@ The type signature of the resulting metafunction will be like this:
 Metafunction :: (typename..., auto..., auto...) -> typename
 ```
 
-Since in C++, parameter packs are not transportable notation-wise, we place them inside suitable holders, which will yield `typename...`. Since `typename...` corresponds to template member `Mold`, we will invoke `Press<Operation>::Mold` with the results.
+Since in C++, parameter packs are not transportable notation-wise, we place them inside suitable vessels, which will yield `typename...`. Since `typename...` corresponds to template member `Mold`, we will invoke `Press<Operation>::Mold` with the results.
 
 ```C++
 template<typename...>

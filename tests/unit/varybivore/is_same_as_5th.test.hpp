@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_5TH_H
 
 #include <concepts>
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/varybivore/is_same_as.hpp"

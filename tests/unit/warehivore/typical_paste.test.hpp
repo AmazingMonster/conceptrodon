@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/warehivore/paste.hpp"
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,8 +21,8 @@ namespace TestTypicalPaste {
 
 // In this test, we will paste
 //  Tester<>,
-//  Reverie<Dummy<0>::Mold>,
-//  Reverie<Dummy<239>::Mold>
+//  Vehicle<Dummy<0>::Mold>,
+//  Vehicle<Dummy<239>::Mold>
 // together.
 
 /******************************************************************************************************/
@@ -66,7 +66,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Reverie<Dummy<
+    Vehicle<Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \

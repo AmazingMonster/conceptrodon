@@ -123,7 +123,7 @@ struct Skip
     alias Hail = RECURSION;
 
     template<template<template<template<template<typename...> class...> class...> class...> class...>
-    alias Lull = RECURSION;
+    alias Cool = RECURSION;
 
     template<template<template<template<template<auto...> class...> class...> class...> class...>
     alias Calm = RECURSION;

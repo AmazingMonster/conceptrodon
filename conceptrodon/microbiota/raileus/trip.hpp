@@ -72,8 +72,8 @@
 #error "CONCEPTRODON_NUCLEOLUS_HAIL_PARAMETER_CATEGORY has already been defined"
 #endif
 
-#ifdef CONCEPTRODON_NUCLEOLUS_LULL_PARAMETER_CATEGORY
-#error "CONCEPTRODON_NUCLEOLUS_LULL_PARAMETER_CATEGORY has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_COOL_PARAMETER_CATEGORY
+#error "CONCEPTRODON_NUCLEOLUS_COOL_PARAMETER_CATEGORY has already been defined"
 #endif
 
 #ifdef CONCEPTRODON_NUCLEOLUS_CALM_PARAMETER_CATEGORY
@@ -102,7 +102,7 @@
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/define_parameter_categories/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parameter_categories/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_parameter_categories/will.hpp"
@@ -138,8 +138,8 @@
 #error "CONCEPTRODON_NUCLEOLUS_HAIL_PROTO_TEMPLATE has already been defined"
 #endif
 
-#ifdef CONCEPTRODON_NUCLEOLUS_LULL_PROTO_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_LULL_PROTO_TEMPLATE has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_COOL_PROTO_TEMPLATE
+#error "CONCEPTRODON_NUCLEOLUS_COOL_PROTO_TEMPLATE has already been defined"
 #endif
 
 #ifdef CONCEPTRODON_NUCLEOLUS_CALM_PROTO_TEMPLATE
@@ -168,7 +168,7 @@
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/define_proto_templates/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_proto_templates/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_proto_templates/will.hpp"
@@ -212,8 +212,8 @@
 #error "CONCEPTRODON_NUCLEOLUS_HAIL_SYNOPSIS_TEMPLATE has already been defined"
 #endif
 
-#ifdef CONCEPTRODON_NUCLEOLUS_LULL_SYNOPSIS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_LULL_SYNOPSIS_TEMPLATE has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_COOL_SYNOPSIS_TEMPLATE
+#error "CONCEPTRODON_NUCLEOLUS_COOL_SYNOPSIS_TEMPLATE has already been defined"
 #endif
 
 #ifdef CONCEPTRODON_NUCLEOLUS_CALM_SYNOPSIS_TEMPLATE
@@ -244,7 +244,7 @@
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/will.hpp"
@@ -393,7 +393,7 @@ struct CONCEPTRODON_RAILEUS_TRIP_FUNCTION_NAME
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/will.hpp"
@@ -405,7 +405,7 @@ struct CONCEPTRODON_RAILEUS_TRIP_FUNCTION_NAME
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/will.hpp"
@@ -419,7 +419,7 @@ struct CONCEPTRODON_RAILEUS_TRIP_FUNCTION_NAME
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/sail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/snow.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/hail.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/lull.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/cool.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/calm.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/grit.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/will.hpp"

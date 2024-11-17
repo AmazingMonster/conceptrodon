@@ -11,8 +11,8 @@
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -57,7 +57,7 @@ struct TesterC
         
     };
 
-    using type = Reverie<Detail<Elements>::template Hidden...>;
+    using type = Vehicle<Detail<Elements>::template Hidden...>;
 };
 
 template<template<typename...> class...Containers>
@@ -85,7 +85,7 @@ struct TesterE
         
     };
 
-    using type = Phantom<Detail<Variables>::template Hidden...>;
+    using type = Carrier<Detail<Variables>::template Hidden...>;
 };
 
 template<template<auto...> class...Sequences>

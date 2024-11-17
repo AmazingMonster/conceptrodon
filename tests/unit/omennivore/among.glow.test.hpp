@@ -8,6 +8,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -18,8 +20,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -38,7 +38,7 @@ namespace TestAmongGlow {
 
 /******************************************************************************************************/
 template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...>
-struct GlowHolder {};
+struct GlowVessel {};
 
 template<size_t>
 struct Tester 
@@ -58,7 +58,7 @@ struct Tester
 #define SHEEP_PREFIX    \
     Tester<
 #define SHEEP_SUFFIX    \
-    >::Glow<Sunrise>
+    >::Glow<Pursuit>
 #define SHEEP_SEPARATOR \
     ,
 
@@ -87,7 +87,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-using Amongus = Among<GlowHolder<SHEEP_SPROUT(240)>>;
+using Amongus = Among<GlowVessel<SHEEP_SPROUT(240)>>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -97,7 +97,7 @@ using Amongus = Among<GlowHolder<SHEEP_SPROUT(240)>>;
 #define SHEEP_PREFIX    \
     Amongus::Page<
 #define SHEEP_SUFFIX    \
-    >::Glow<Sunrise>
+    >::Glow<Pursuit>
 #define SHEEP_SEPARATOR \
     ,
 

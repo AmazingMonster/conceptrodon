@@ -8,6 +8,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -18,8 +20,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -38,6 +38,12 @@ INVALID(IsHailful_v<Capsule<>>);
 INVALID(IsHailful<Shuttle<>>::value);
 INVALID(IsHailful_v<Shuttle<>>);
 
+INVALID(IsHailful<Vehicle<>>::value);
+INVALID(IsHailful_v<Vehicle<>>);
+
+INVALID(IsHailful<Carrier<>>::value);
+INVALID(IsHailful_v<Carrier<>>);
+
 INVALID(IsHailful<Reverie<>>::value);
 INVALID(IsHailful_v<Reverie<>>);
 
@@ -47,14 +53,14 @@ INVALID(IsHailful_v<Phantom<>>);
 INVALID(IsHailful<Forlorn<>>::value);
 INVALID(IsHailful_v<Forlorn<>>);
 
-INVALID(IsHailful<Travail<>>::value);
-INVALID(IsHailful_v<Travail<>>);
+VALID(IsHailful<Travail<>>::value);
+VALID(IsHailful_v<Travail<>>);
 
 INVALID(IsHailful<Lullaby<>>::value);
 INVALID(IsHailful_v<Lullaby<>>);
 
-VALID(IsHailful<Halcyon<>>::value);
-VALID(IsHailful_v<Halcyon<>>);
+INVALID(IsHailful<Halcyon<>>::value);
+INVALID(IsHailful_v<Halcyon<>>);
 
 INVALID(IsHailful<Pursuit<>>::value);
 INVALID(IsHailful_v<Pursuit<>>);
@@ -67,12 +73,6 @@ INVALID(IsHailful_v<Sunrise<>>);
 
 INVALID(IsHailful<Morning<>>::value);
 INVALID(IsHailful_v<Morning<>>);
-
-INVALID(IsHailful<Arcadia<>>::value);
-INVALID(IsHailful_v<Arcadia<>>);
-
-INVALID(IsHailful<Nirvana<>>::value);
-INVALID(IsHailful_v<Nirvana<>>);
 
 }}}}
 

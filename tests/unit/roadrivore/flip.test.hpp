@@ -11,6 +11,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -19,8 +21,6 @@
 #include "conceptrodon/halcyon.hpp"
 #include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/persist.hpp"
-#include "conceptrodon/sunrise.hpp"
-#include "conceptrodon/morning.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 
@@ -81,7 +81,7 @@ struct Tester
     struct ProtoFlow {};
 
     template<>
-    struct ProtoFlow<Reverie> { static constexpr bool value {true}; };
+    struct ProtoFlow<Vehicle> { static constexpr bool value {true}; };
 
     template<template<template<typename...> class...> class...Agreements>
     using Flow = ProtoFlow<Agreements...>;
@@ -91,7 +91,7 @@ struct Tester
     struct ProtoSail {};
 
     template<>
-    struct ProtoSail<Phantom> { static constexpr bool value {true}; };
+    struct ProtoSail<Carrier> { static constexpr bool value {true}; };
 
     template<template<template<auto...> class...> class...Agreements>
     using Sail = ProtoSail<Agreements...>;
@@ -101,7 +101,7 @@ struct Tester
     struct ProtoSnow {};
 
     template<>
-    struct ProtoSnow<Forlorn> { static constexpr bool value {true}; };
+    struct ProtoSnow<Reverie> { static constexpr bool value {true}; };
 
     template<template<template<template<typename...> class...> class...> class...Agreements>
     using Snow = ProtoSnow<Agreements...>;
@@ -111,27 +111,27 @@ struct Tester
     struct ProtoHail {};
 
     template<>
-    struct ProtoHail<Travail> { static constexpr bool value {true}; };
+    struct ProtoHail<Phantom> { static constexpr bool value {true}; };
 
     template<template<template<template<auto...> class...> class...> class...Agreements>
     using Hail = ProtoHail<Agreements...>;
 
-// Lull
+// Cool
     template<template<template<template<template<typename...> class...> class...> class...> class...>
-    struct ProtoLull {};
+    struct ProtoCool {};
 
     template<>
-    struct ProtoLull<Lullaby> { static constexpr bool value {true}; };
+    struct ProtoCool<Forlorn> { static constexpr bool value {true}; };
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Lull = ProtoLull<Agreements...>;
+    using Cool = ProtoCool<Agreements...>;
 
 // Calm
     template<template<template<template<template<auto...> class...> class...> class...> class...>
     struct ProtoCalm {};
 
     template<>
-    struct ProtoCalm<Halcyon> { static constexpr bool value {true}; };
+    struct ProtoCalm<Travail> { static constexpr bool value {true}; };
 
     template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
     using Calm = ProtoCalm<Agreements...>;
@@ -141,7 +141,7 @@ struct Tester
     struct ProtoGrit {};
 
     template<>
-    struct ProtoGrit<Pursuit> { static constexpr bool value {true}; };
+    struct ProtoGrit<Lullaby> { static constexpr bool value {true}; };
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
     using Grit = ProtoGrit<Agreements...>;
@@ -151,7 +151,7 @@ struct Tester
     struct ProtoWill {};
 
     template<>
-    struct ProtoWill<Persist> { static constexpr bool value {true}; };
+    struct ProtoWill<Halcyon> { static constexpr bool value {true}; };
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
     using Will = ProtoWill<Agreements...>;
@@ -161,7 +161,7 @@ struct Tester
     struct ProtoGlow {};
 
     template<>
-    struct ProtoGlow<Sunrise> { static constexpr bool value {true}; };
+    struct ProtoGlow<Pursuit> { static constexpr bool value {true}; };
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
     using Glow = ProtoGlow<Agreements...>;
@@ -171,7 +171,7 @@ struct Tester
     struct ProtoDawn {};
 
     template<>
-    struct ProtoDawn<Morning> { static constexpr bool value {true}; };
+    struct ProtoDawn<Persist> { static constexpr bool value {true}; };
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
     using Dawn = ProtoDawn<Agreements...>;
@@ -186,16 +186,16 @@ VALID(Flip<Tester>::Mold<int>::Road<>::value);
 VALID(Flip<Tester>::Page<0>::Road<>::value);
 VALID(Flip<Tester>::Road<Capsule>::Road<>::value);
 VALID(Flip<Tester>::Rail<Shuttle>::Road<>::value);
-VALID(Flip<Tester>::Flow<Reverie>::Road<>::value);
-VALID(Flip<Tester>::Sail<Phantom>::Road<>::value);
-VALID(Flip<Tester>::Snow<Forlorn>::Road<>::value);
-VALID(Flip<Tester>::Hail<Travail>::Road<>::value);
-VALID(Flip<Tester>::Lull<Lullaby>::Road<>::value);
-VALID(Flip<Tester>::Calm<Halcyon>::Road<>::value);
-VALID(Flip<Tester>::Grit<Pursuit>::Road<>::value);
-VALID(Flip<Tester>::Will<Persist>::Road<>::value);
-VALID(Flip<Tester>::Glow<Sunrise>::Road<>::value);
-VALID(Flip<Tester>::Dawn<Morning>::Road<>::value);
+VALID(Flip<Tester>::Flow<Vehicle>::Road<>::value);
+VALID(Flip<Tester>::Sail<Carrier>::Road<>::value);
+VALID(Flip<Tester>::Snow<Reverie>::Road<>::value);
+VALID(Flip<Tester>::Hail<Phantom>::Road<>::value);
+VALID(Flip<Tester>::Cool<Forlorn>::Road<>::value);
+VALID(Flip<Tester>::Calm<Travail>::Road<>::value);
+VALID(Flip<Tester>::Grit<Lullaby>::Road<>::value);
+VALID(Flip<Tester>::Will<Halcyon>::Road<>::value);
+VALID(Flip<Tester>::Glow<Pursuit>::Road<>::value);
+VALID(Flip<Tester>::Dawn<Persist>::Road<>::value);
 /******************************************************************************************************/
 
 

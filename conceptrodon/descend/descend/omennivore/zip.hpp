@@ -11,7 +11,7 @@
 #include "conceptrodon/descend/omennivore/concepts/sailful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/snowful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/hailful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/lullful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/coolful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/calmful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/gritful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/willful.hpp"
@@ -361,7 +361,7 @@ requires (... && Snowful<Packages>)
 struct Zip<Packages...>
 {
     template<template<template<template<template<typename...> class...> class...> class...> class Operation>
-    struct ProtoLull
+    struct ProtoCool
     {
         template<size_t I>
         struct Detail
@@ -403,7 +403,7 @@ struct Zip<Packages...>
     };
     
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Lull = ProtoLull<Agreements...>;
+    using Cool = ProtoCool<Agreements...>;
 };
 /******************************************************************************************************/
 
@@ -467,7 +467,7 @@ struct Zip<Packages...>
 // Snow
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Lullful<Packages>)
+requires (... && Coolful<Packages>)
 struct Zip<Packages...>
 {
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Operation>
@@ -574,7 +574,7 @@ struct Zip<Packages...>
 
 
 
-// Lull
+// Cool
 /******************************************************************************************************/
 template<typename...Packages>
 requires (... && Gritful<Packages>)
@@ -587,7 +587,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Lull...>;
+            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
         };
 
         template<auto...Agreements>
@@ -595,7 +595,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Lull...>;
+        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
 
 /**********/
         template<template<typename...> class OuterOperation>

@@ -76,13 +76,13 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Stockivore::Repack` is implemented similarly to [`Stockivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in `Phantom`. After all sequences are collected, the `Operation` will be invoked.
+`Stockivore::Repack` is implemented similarly to [`Stockivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in `Carrier`. After all sequences are collected, the `Operation` will be invoked.
 
 A simplified version will be as follows:
 
 ```C++
 template<template<auto...> class...>
-struct Phantom;
+struct Carrier;
 
 template<typename...>
 struct Repack {};
@@ -111,7 +111,7 @@ struct Repack<StockroomA<SequenceAs...>, StockroomB<SequenceBs...>, Others...>
     template<template<template<auto...> class...> class Operation>
     using UniSail = Repack
     <
-        Phantom<SequenceAs..., SequenceBs...>,
+        Carrier<SequenceAs..., SequenceBs...>,
         Others...
     >::template UniSail<Operation>;
 };

@@ -8,18 +8,18 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
 #include "conceptrodon/travail.hpp"
 #include "conceptrodon/lullaby.hpp"
 #include "conceptrodon/halcyon.hpp"
-#include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/persist.hpp"
-#include "conceptrodon/morning.hpp"
+#include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/sunrise.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
+#include "conceptrodon/morning.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -59,7 +59,7 @@ struct Tester
                                 struct ProtoHail
                                 {
                                     template<template<template<template<template<typename...> class...> class...> class...> class...>
-                                    struct ProtoLull
+                                    struct ProtoCool
                                     {
                                         template<template<template<template<template<auto...> class...> class...> class...> class...>
                                         struct ProtoCalm
@@ -100,7 +100,7 @@ struct Tester
                                     };
 
                                     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-                                    using Lull = ProtoLull<Agreements...>;
+                                    using Cool = ProtoCool<Agreements...>;
                                 };
 
                                 template<template<template<template<auto...> class...> class...> class...Agreements>
@@ -160,6 +160,8 @@ VALID
     <
         Capsule<>,
         Shuttle<>,
+        Vehicle<>,
+        Carrier<>,
         Reverie<>,
         Phantom<>,
         Forlorn<>,
@@ -169,9 +171,7 @@ VALID
         Pursuit<>,
         Persist<>,
         Sunrise<>,
-        Morning<>,
-        Arcadia<>,
-        Nirvana<>
+        Morning<>
     >::value
 );
 

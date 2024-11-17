@@ -9,6 +9,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -19,8 +21,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
 #include <utility>
@@ -35,10 +35,10 @@ namespace TestTotal {
 
 /******************************************************************************************************/
 template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...>
-struct GlowHolder {};
+struct GlowVessel {};
 
 template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...>
-struct DawnHolder {};
+struct DawnVessel {};
 /******************************************************************************************************/
 
 
@@ -51,8 +51,10 @@ struct DawnHolder {};
 EQUAL_VALUE(Total<Capsule<int, int*, int**, int***>>::value);
 EQUAL_VALUE(Total<Shuttle<0, 1, 2, 3>>::value);
 EQUAL_VALUE(Total<std::index_sequence<0, 1, 2, 3>>::value);
-EQUAL_VALUE(Total<Reverie<Capsule, Capsule, Capsule, Capsule>>::value);
-EQUAL_VALUE(Total<Phantom<Shuttle, Shuttle, Shuttle, Shuttle>>::value);
+EQUAL_VALUE(Total<Vehicle<Capsule, Capsule, Capsule, Capsule>>::value);
+EQUAL_VALUE(Total<Carrier<Shuttle, Shuttle, Shuttle, Shuttle>>::value);
+EQUAL_VALUE(Total<Reverie<Vehicle, Vehicle, Vehicle, Vehicle>>::value);
+EQUAL_VALUE(Total<Phantom<Carrier, Carrier, Carrier, Carrier>>::value);
 EQUAL_VALUE(Total<Forlorn<Reverie, Reverie, Reverie, Reverie>>::value);
 EQUAL_VALUE(Total<Travail<Phantom, Phantom, Phantom, Phantom>>::value);
 EQUAL_VALUE(Total<Lullaby<Forlorn, Forlorn, Forlorn, Forlorn>>::value);
@@ -61,10 +63,8 @@ EQUAL_VALUE(Total<Pursuit<Lullaby, Lullaby, Lullaby, Lullaby>>::value);
 EQUAL_VALUE(Total<Persist<Halcyon, Halcyon, Halcyon, Halcyon>>::value);
 EQUAL_VALUE(Total<Sunrise<Pursuit, Pursuit, Pursuit, Pursuit>>::value);
 EQUAL_VALUE(Total<Morning<Persist, Persist, Persist, Persist>>::value);
-EQUAL_VALUE(Total<Arcadia<Sunrise, Sunrise, Sunrise, Sunrise>>::value);
-EQUAL_VALUE(Total<Nirvana<Morning, Morning, Morning, Morning>>::value);
-EQUAL_VALUE(Total<GlowHolder<Arcadia, Arcadia, Arcadia, Arcadia>>::value);
-EQUAL_VALUE(Total<DawnHolder<Nirvana, Nirvana, Nirvana, Nirvana>>::value);
+EQUAL_VALUE(Total<GlowVessel<Sunrise, Sunrise, Sunrise, Sunrise>>::value);
+EQUAL_VALUE(Total<DawnVessel<Morning, Morning, Morning, Morning>>::value);
 
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/

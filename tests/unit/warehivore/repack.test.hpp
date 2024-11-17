@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/descend/warehivore/repack.hpp"
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -20,9 +20,9 @@ namespace UnitTests {
 namespace TestRepack {
 
 // In this test, we will paste
-//  Reverie<Dummy<0>::Mold>,
+//  Vehicle<Dummy<0>::Mold>,
 //  ...,
-//  Reverie<Dummy<239>::Mold>
+//  Vehicle<Dummy<239>::Mold>
 // together and place the result in Tester.
 
 /******************************************************************************************************/
@@ -67,7 +67,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Reverie<Dummy<
+    Vehicle<Dummy<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \

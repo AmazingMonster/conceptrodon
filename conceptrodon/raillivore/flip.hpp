@@ -98,16 +98,16 @@ struct Flip
     template<template<template<template<auto...> class...> class...> class...Melancholy>
     using Hail = ProtoHail<Melancholy...>;
 
-// Lull -> Rail
+// Cool -> Rail
     template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    struct ProtoLull
+    struct ProtoCool
     {
         template<template<auto...> class...Agreements>
-        using Rail = Operation<Agreements...>::template Lull<Silence...>;
+        using Rail = Operation<Agreements...>::template Cool<Silence...>;
     };
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using Lull = ProtoLull<Silence...>;
+    using Cool = ProtoCool<Silence...>;
 
 // Calm -> Rail
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>

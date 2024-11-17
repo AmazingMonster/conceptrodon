@@ -118,7 +118,7 @@ template
 struct ExtendBack<Sunshine<PreexistingSilence...>>
 {
     template<template<template<template<template<typename...> class...> class...> class...> class...NewSilence>
-    using Lull = Sunshine<PreexistingSilence..., NewSilence...>;
+    using Cool = Sunshine<PreexistingSilence..., NewSilence...>;
 };
 
 template

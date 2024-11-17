@@ -75,11 +75,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_TRANSPORT
-#error "CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_TRANSPORT has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_VESSEL
+#error "CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_VESSEL has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_transports/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_parallel_vessels/page.hpp"
 /******************************************************************************************************/
 
 
@@ -169,7 +169,7 @@ struct CONCEPTRODON_VARBOLA_TYPICAL_REITERATE_FUNCTION_NAME
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_alias_templates/page.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_transports/page.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/page.hpp"
 /******************************************************************************************************/
 
 

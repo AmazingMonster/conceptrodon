@@ -8,6 +8,8 @@
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/reverie.hpp"
 #include "conceptrodon/phantom.hpp"
 #include "conceptrodon/forlorn.hpp"
@@ -18,8 +20,6 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
-#include "conceptrodon/arcadia.hpp"
-#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -37,6 +37,12 @@ INVALID(IsPageful_v<Capsule<>>);
 
 VALID(IsPageful<Shuttle<>>::value);
 VALID(IsPageful_v<Shuttle<>>);
+
+INVALID(IsPageful<Vehicle<>>::value);
+INVALID(IsPageful_v<Vehicle<>>);
+
+INVALID(IsPageful<Carrier<>>::value);
+INVALID(IsPageful_v<Carrier<>>);
 
 INVALID(IsPageful<Reverie<>>::value);
 INVALID(IsPageful_v<Reverie<>>);
@@ -67,12 +73,6 @@ INVALID(IsPageful_v<Sunrise<>>);
 
 INVALID(IsPageful<Morning<>>::value);
 INVALID(IsPageful_v<Morning<>>);
-
-INVALID(IsPageful<Arcadia<>>::value);
-INVALID(IsPageful_v<Arcadia<>>);
-
-INVALID(IsPageful<Nirvana<>>::value);
-INVALID(IsPageful_v<Nirvana<>>);
 
 }}}}
 

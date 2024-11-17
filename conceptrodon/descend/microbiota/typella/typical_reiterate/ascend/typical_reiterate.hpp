@@ -15,7 +15,7 @@ template<>
 struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <0>
 {
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-    = CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT <>;
+    = CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL <>;
 };
 /******************************************************************************************************/
 

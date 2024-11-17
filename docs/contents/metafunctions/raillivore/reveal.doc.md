@@ -47,13 +47,13 @@ template<auto...>
 struct Seq_3;
 
 template<template<auto...> class...>
-struct Phantom;
+struct Carrier;
 
 template<template<auto...> class...Args>
 struct Operation
-{ using type = Phantom<Args...>; };
+{ using type = Carrier<Args...>; };
 
-using SupposedResult = Phantom<Seq_2, Seq_3, Seq_0, Seq_1>;
+using SupposedResult = Carrier<Seq_2, Seq_3, Seq_0, Seq_1>;
 
 template<template<auto...> class...Args>
 using Metafunction = Reveal<Operation>

@@ -62,12 +62,12 @@
   </thead>
   <tbody>
     <tr>
-      <td>holder</td>
+      <td>vessel</td>
       <td>function that transports arguments via its parameter list</td>
     </tr>
     <tr>
-      <td>packed holder</td>
-      <td>instantiation of a holder</td>
+      <td>packed vessel</td>
+      <td>instantiation of a vessel</td>
     </tr>
     <tr>
       <td>operation</td>

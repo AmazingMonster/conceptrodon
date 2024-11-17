@@ -7,7 +7,7 @@
 #include <concepts>
 #include "conceptrodon/roadrivore/bind_back.hpp"
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,7 +24,7 @@ namespace TestBindBack {
 //  Dummy<0>::Mold,
 //  ...,
 //  Dummy<139>::Mold
-// to the back of Reverie.
+// to the back of Vehicle.
 // Then, we will invoke the resulting metafunction by
 //  Dummy<0>::Mold,
 //  ...,
@@ -50,7 +50,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Reverie<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+using SupposedResult = Vehicle<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -71,7 +71,7 @@ using SupposedResult = Reverie<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BindBack<Reverie>::Road<SHEEP_SPROUT(140)>::Road<SHEEP_SPROUT(100)>);
+SAME_TYPE(BindBack<Vehicle>::Road<SHEEP_SPROUT(140)>::Road<SHEEP_SPROUT(100)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

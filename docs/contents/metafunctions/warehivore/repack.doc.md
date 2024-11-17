@@ -76,13 +76,13 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Warehivore::Repack` is implemented similarly to [`Warehivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in `Reverie`. After all containers are collected, the `Operation` will be invoked.
+`Warehivore::Repack` is implemented similarly to [`Warehivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in `Vehicle`. After all containers are collected, the `Operation` will be invoked.
 
 A simplified version will be as follows:
 
 ```C++
 template<template<typename...> class...>
-struct Reverie;
+struct Vehicle;
 
 template<typename...>
 struct Repack {};
@@ -111,7 +111,7 @@ struct Repack<WarehouseA<ContainerAs...>, WarehouseB<ContainerBs...>, Others...>
     template<template<template<typename...> class...> class Operation>
     using UniFlow = Repack
     <
-        Reverie<ContainerAs..., ContainerBs...>,
+        Vehicle<ContainerAs..., ContainerBs...>,
         Others...
     >::template UniFlow<Operation>;
 };

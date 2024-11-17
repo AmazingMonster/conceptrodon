@@ -5,14 +5,14 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_HAIL_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/forlorn.hpp"
-#include "conceptrodon/lullaby.hpp"
-#include "conceptrodon/persist.hpp"
-#include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/reverie.hpp"
+#include "conceptrodon/forlorn.hpp"
+#include "conceptrodon/halcyon.hpp"
+#include "conceptrodon/lullaby.hpp"
+#include "conceptrodon/vehicle.hpp"
 
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
-#include "conceptrodon/travail.hpp"
+#include "conceptrodon/phantom.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
@@ -57,18 +57,18 @@ struct TesterC {};
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Holder,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Vessel,
     template<template<template<template<auto...> class...> class...> class...> class A,
     template<template<template<template<auto...> class...> class...> class...> class B
 >
-struct TesterC<Holder<A, B>>
-{ using type = Capsule<A<Travail>, B<Travail>>; };
+struct TesterC<Vessel<A, B>>
+{ using type = Capsule<A<Phantom>, B<Phantom>>; };
 
 template<typename>
 struct TesterD {};
 
-template<template<typename...> class Holder, typename...Args>
-struct TesterD<Holder<Args...>>
+template<template<typename...> class Vessel, typename...Args>
+struct TesterD<Vessel<Args...>>
 {
     using type = Capsule<typename TesterC<Args>::type...>;
 };
@@ -81,9 +81,9 @@ struct TesterD<Holder<Args...>>
 #define DOUBLE_SHEEP_PREFIX \
     Capsule<TesterA<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Hail<Travail>, TesterB<
+    >::Hail<Phantom>, TesterB<
 #define DOUBLE_SHEEP_SUFFIX \
-    >::Hail<Travail>>
+    >::Hail<Phantom>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
@@ -106,7 +106,7 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Persist<SHEEP_SPROUT(240)>;
+using ArgA = Halcyon<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -124,7 +124,7 @@ using ArgA = Persist<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Persist<SHEEP_SPROUT(300)>;
+using ArgB = Halcyon<SHEEP_SPROUT(300)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -138,10 +138,10 @@ using ArgB = Persist<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Will<Persist>::Road<Capsule>>::type);
+SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Will<Halcyon>::Road<Capsule>>::type);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Will<Persist>::Page<
+    TesterC<Zip<ArgA, ArgB>::Will<Halcyon>::Page<
 #define SHEEP_SUFFIX \
     >>::type
 #define SHEEP_SEPARATOR  \

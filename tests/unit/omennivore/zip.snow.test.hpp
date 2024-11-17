@@ -5,10 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_SNOW_H
 
 #include "conceptrodon/capsule.hpp"
+#include "conceptrodon/reverie.hpp"
 #include "conceptrodon/forlorn.hpp"
 #include "conceptrodon/lullaby.hpp"
-#include "conceptrodon/pursuit.hpp"
-#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/vehicle.hpp"
 
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -55,18 +55,18 @@ struct TesterC {};
 
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Holder,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class Vessel,
     template<template<template<template<typename...> class...> class...> class...> class A,
     template<template<template<template<typename...> class...> class...> class...> class B
 >
-struct TesterC<Holder<A, B>>
-{ using type = Capsule<A<Forlorn>, B<Forlorn>>; };
+struct TesterC<Vessel<A, B>>
+{ using type = Capsule<A<Reverie>, B<Reverie>>; };
 
 template<typename>
 struct TesterD {};
 
-template<template<typename...> class Holder, typename...Args>
-struct TesterD<Holder<Args...>>
+template<template<typename...> class Vessel, typename...Args>
+struct TesterD<Vessel<Args...>>
 {
     using type = Capsule<typename TesterC<Args>::type...>;
 };
@@ -79,9 +79,9 @@ struct TesterD<Holder<Args...>>
 #define DOUBLE_SHEEP_PREFIX \
     Capsule<TesterA<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Snow<Forlorn>, TesterB<
+    >::Snow<Reverie>, TesterB<
 #define DOUBLE_SHEEP_SUFFIX \
-    >::Snow<Forlorn>>
+    >::Snow<Reverie>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
@@ -104,7 +104,7 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Pursuit<SHEEP_SPROUT(240)>;
+using ArgA = Lullaby<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -122,7 +122,7 @@ using ArgA = Pursuit<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Pursuit<SHEEP_SPROUT(300)>;
+using ArgB = Lullaby<SHEEP_SPROUT(300)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -136,10 +136,10 @@ using ArgB = Pursuit<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Grit<Pursuit>::Road<Capsule>>::type);
+SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Grit<Lullaby>::Road<Capsule>>::type);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Grit<Pursuit>::Page<
+    TesterC<Zip<ArgA, ArgB>::Grit<Lullaby>::Page<
 #define SHEEP_SUFFIX \
     >>::type
 #define SHEEP_SEPARATOR  \

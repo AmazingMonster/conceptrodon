@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_2ND_H
 
 #include <concepts>
-#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/varybivore/is_same_as.hpp"
@@ -23,7 +23,7 @@ namespace TestIsSameAs2nd {
 
 /******************************************************************************************************/
 template<size_t I>
-using Check_0 = Phantom<IsSameAs<I>::template Page>;
+using Check_0 = Carrier<IsSameAs<I>::template Page>;
 /******************************************************************************************************/
 
 

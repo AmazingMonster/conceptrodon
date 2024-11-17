@@ -40,7 +40,7 @@ template
 struct CONCEPTRODON_VARBOLA_TYPICAL_POP_FUNCTION_NAME <Variable>
 { 
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT 
-    = CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_TRANSPORT <>;
+    = CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_VESSEL <>;
 };
 /******************************************************************************************************/
 
