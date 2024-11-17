@@ -13,10 +13,10 @@ struct IsCalmful
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
     template<template<template<template<auto...> class...> class...> class...> class...Tranquil
 >
-struct IsCalmful<Sunshine<Tranquil...>>
+struct IsCalmful<Perseverance<Tranquil...>>
 { static constexpr bool value {true}; };
 
 template<typename>
@@ -24,10 +24,10 @@ constexpr bool IsCalmful_v {false};
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
     template<template<template<template<auto...> class...> class...> class...> class...Tranquil
 >
-constexpr bool IsCalmful_v<Sunshine<Tranquil...>> {true};
+constexpr bool IsCalmful_v<Perseverance<Tranquil...>> {true};
 
 }}
 

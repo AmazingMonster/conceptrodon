@@ -13,10 +13,10 @@ struct IsGlowful
 
 template
 <
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct IsGlowful<Sunshine<Sunshines...>>
+struct IsGlowful<Sunlight<Sunshines...>>
 { static constexpr bool value {true}; };
 
 template<typename>
@@ -24,10 +24,10 @@ constexpr bool IsGlowful_v {false};
 
 template
 <
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines
 >
-constexpr bool IsGlowful_v<Sunshine<Sunshines...>> {true};
+constexpr bool IsGlowful_v<Sunlight<Sunshines...>> {true};
 
 }}
 

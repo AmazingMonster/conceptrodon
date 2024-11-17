@@ -95,75 +95,75 @@ struct Total<Tranquil<Melancholy...>>
 // Snow
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
     template<template<template<template<typename...> class...> class...> class...> class...Silence
 >
-struct Total<Sunshine<Silence...>>
+struct Total<Consistency<Silence...>>
 { static constexpr size_t value = sizeof...(Silence); };
 
 // Hail
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<auto...> class...> class...> class...> class...Silence
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
+    template<template<template<template<auto...> class...> class...> class...> class...Tranquil
 >
-struct Total<Sunshine<Silence...>>
-{ static constexpr size_t value = sizeof...(Silence); };
+struct Total<Perseverance<Tranquil...>>
+{ static constexpr size_t value = sizeof...(Tranquil); };
 
 // Cool
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency
 >
-struct Total<Sunshine<Sunshines...>>
-{ static constexpr size_t value = sizeof...(Sunshines); };
+struct Total<Sunshine<Consistency...>>
+{ static constexpr size_t value = sizeof...(Consistency); };
 
 // Calm
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance
 >
-struct Total<Sunshine<Sunshines...>>
-{ static constexpr size_t value = sizeof...(Sunshines); };
+struct Total<Sunshine<Perseverance...>>
+{ static constexpr size_t value = sizeof...(Perseverance); };
 
 // Grit
 template
 <
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct Total<Sunshine<Sunshines...>>
+struct Total<Sunlight<Sunshines...>>
 { static constexpr size_t value = sizeof...(Sunshines); };
 
 // Will
 template
 <
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct Total<Sunshine<Sunshines...>>
+struct Total<Sunlight<Sunshines...>>
 { static constexpr size_t value = sizeof...(Sunshines); };
 
 // Glow
 template
 <
-    template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...> class Sunlight,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunlights
 >
-struct Total<Sunshine<Sunshines...>>
-{ static constexpr size_t value = sizeof...(Sunshines); };
+struct Total<Sunlight<Sunlights...>>
+{ static constexpr size_t value = sizeof...(Sunlights); };
 
 
 // Dawn
 template
 <
-    template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...> class Sunlight,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...Sunlights
 >
-struct Total<Sunshine<Sunshines...>>
-{ static constexpr size_t value = sizeof...(Sunshines); };
+struct Total<Sunlight<Sunlights...>>
+{ static constexpr size_t value = sizeof...(Sunlights); };
 
 
 }}

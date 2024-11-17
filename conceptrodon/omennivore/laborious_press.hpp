@@ -80,50 +80,50 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
         template<template<template<template<typename...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Consistency<Contents...>>
     { using type = Operation::template Cool<Contents...>; };
 
     template
     <
-        template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
         template<template<template<template<auto...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Perseverance<Contents...>>
     { using type = Operation::template Calm<Contents...>; };
 
     template
     <
-        template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
         template<template<template<template<template<typename...> class...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Sunshine<Contents...>>
     { using type = Operation::template Grit<Contents...>; };
 
     template
     <
-        template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
         template<template<template<template<template<auto...> class...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Sunshine<Contents...>>
     { using type = Operation::template Will<Contents...>; };
 
     template
     <
-        template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
         template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Sunlight<Contents...>>
     { using type = Operation::template Glow<Contents...>; };
 
     template
     <
-        template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
         template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Contents
     >
-    struct Detail<Sunshines<Contents...>>
+    struct Detail<Sunlight<Contents...>>
     { using type = Operation::template Dawn<Contents...>; };
 /******************************************************************************************************/
 
@@ -229,11 +229,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
         template<template<template<template<typename...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Consistency<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Cool<Contents...>>
         ::template Detail<Others...>::type;
@@ -241,11 +241,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
         template<template<template<template<auto...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Perseverance<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Calm<Contents...>>
         ::template Detail<Others...>::type;
@@ -253,11 +253,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
         template<template<template<template<template<typename...> class...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Sunshine<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Grit<Contents...>>
         ::template Detail<Others...>::type;
@@ -265,11 +265,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
         template<template<template<template<template<auto...> class...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Sunshine<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Will<Contents...>>
         ::template Detail<Others...>::type;
@@ -277,11 +277,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
         template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Sunlight<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Glow<Contents...>>
         ::template Detail<Others...>::type;
@@ -289,11 +289,11 @@ struct LaboriousPress
 
     template
     <
-        template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshines,
+        template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
         template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Contents,
         typename...Others
     >
-    struct Detail<Sunshines<Contents...>, Others...>
+    struct Detail<Sunlight<Contents...>, Others...>
     {
         using type = LaboriousPress<typename Operation::template Dawn<Contents...>>
         ::template Detail<Others...>::type;

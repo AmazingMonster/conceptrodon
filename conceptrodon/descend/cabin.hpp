@@ -9,14 +9,14 @@
 
 namespace Conceptrodon {
 
-template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine, size_t I>
+template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance, size_t I>
 struct Cabin
 { 
     static consteval auto idyl
-    (std::integral_constant<size_t, I>) -> Camellia<Sunshine>;
+    (std::integral_constant<size_t, I>) -> Camellia<Perseverance>;
 
     static constexpr auto lark
-    (Camellia<Sunshine>) -> std::integral_constant<size_t, I>;
+    (Camellia<Perseverance>) -> std::integral_constant<size_t, I>;
 };
  
 }

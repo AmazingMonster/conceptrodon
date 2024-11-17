@@ -430,14 +430,14 @@ struct Exemplar
 
 
 
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
     struct ProtoGrit {};
 
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
     using Grit = ProtoGrit<Agreements...>;
 
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine>
-    using UniGrit = Sunshine<CONTENTS>;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency>
+    using UniGrit = Consistency<CONTENTS>;
 
     template
     <
@@ -455,14 +455,14 @@ struct Exemplar
 
 
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
     struct ProtoWill {};
 
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
     using Will = ProtoWill<Agreements...>;
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine>
-    using UniWill = Sunshine<CONTENTS>;
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance>
+    using UniWill = Perseverance<CONTENTS>;
 
     template
     <

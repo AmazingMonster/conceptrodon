@@ -121,26 +121,26 @@ struct Flip
     using Calm = ProtoCalm<Tranquil...>;
 
 // Grit -> Rail
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
     struct ProtoGrit
     {
         template<template<auto...> class...Agreements>
-        using Rail = Operation<Agreements...>::template Grit<Sunshines...>;
+        using Rail = Operation<Agreements...>::template Grit<Consistency...>;
     };
 
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Grit = ProtoGrit<Sunshines...>;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
+    using Grit = ProtoGrit<Consistency...>;
 
 // Will -> Rail
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
     struct ProtoWill
     {
         template<template<auto...> class...Agreements>
-        using Rail = Operation<Agreements...>::template Will<Sunshines...>;
+        using Rail = Operation<Agreements...>::template Will<Perseverance...>;
     };
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = ProtoWill<Sunshines...>;
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
+    using Will = ProtoWill<Perseverance...>;
 
 // Glow -> Rail
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>

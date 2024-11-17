@@ -6,19 +6,19 @@
 
 namespace Conceptrodon {
     
-template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
+template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
 struct Pursuit 
 {
-    static constexpr size_t size() { return sizeof...(Sunshines); }
+    static constexpr size_t size() { return sizeof...(Consistency); }
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Beginning>
-    struct Detail { using type = Beginning<Sunshines...>; };
+    struct Detail { using type = Beginning<Consistency...>; };
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
     using Glow = Detail<Agreements...>::type;
     
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Beginning>
-    using UniGlow = Beginning<Sunshines...>;
+    using UniGlow = Beginning<Consistency...>;
 };
  
 }

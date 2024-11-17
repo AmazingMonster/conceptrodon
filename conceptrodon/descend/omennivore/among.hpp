@@ -131,10 +131,10 @@ struct TypicalAmong<Tranquil<Melancholy...>>
 
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
     template<template<template<template<typename...> class...> class...> class...> class...Silence
 >
-struct TypicalAmong<Sunshine<Silence...>>
+struct TypicalAmong<Consistency<Silence...>>
 {
     template<auto I>
     struct ProtoPage
@@ -150,10 +150,10 @@ struct TypicalAmong<Sunshine<Silence...>>
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
     template<template<template<template<auto...> class...> class...> class...> class...Tranquil
 >
-struct TypicalAmong<Sunshine<Tranquil...>>
+struct TypicalAmong<Perseverance<Tranquil...>>
 {
     template<auto I>
     struct ProtoPage
@@ -170,15 +170,15 @@ struct TypicalAmong<Sunshine<Tranquil...>>
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunshine<Consistency...>>
 {
     template<auto I>
     struct ProtoPage
     {
         template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-        using Cool = Typella::TypicalAmong<Coalfish<Sunshines>...>
+        using Cool = Typella::TypicalAmong<Coalfish<Consistency>...>
         ::template Page<I>::type::template Cool<Agreements...>;
     };
 
@@ -189,15 +189,15 @@ struct TypicalAmong<Sunshine<Sunshines...>>
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunshine<Perseverance...>>
 {
     template<auto I>
     struct ProtoPage
     {
         template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
-        using Calm = Typella::TypicalAmong<Camellia<Sunshines>...>
+        using Calm = Typella::TypicalAmong<Camellia<Perseverance>...>
         ::template Page<I>::type::template Calm<Agreements...>;
     };
 
@@ -207,10 +207,10 @@ struct TypicalAmong<Sunshine<Sunshines...>>
 
 template
 <
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunlight<Sunshines...>>
 {
     template<auto I>
     struct ProtoPage
@@ -226,10 +226,10 @@ struct TypicalAmong<Sunshine<Sunshines...>>
 
 template
 <
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunlight<Sunshines...>>
 {
     template<auto I>
     struct ProtoPage
@@ -245,16 +245,16 @@ struct TypicalAmong<Sunshine<Sunshines...>>
 
 template
 <
-    template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...> class Sunlight,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunlights
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunlight<Sunlights...>>
 {
     template<auto I>
     struct ProtoPage
     {
         template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
-        using Glow = Typella::TypicalAmong<Glowworm<Sunshines>...>
+        using Glow = Typella::TypicalAmong<Glowworm<Sunlights>...>
         ::template Page<I>::type::template Glow<Agreements...>;
     };
 
@@ -264,16 +264,16 @@ struct TypicalAmong<Sunshine<Sunshines...>>
 
 template
 <
-    template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...> class Sunlight,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...Sunlights
 >
-struct TypicalAmong<Sunshine<Sunshines...>>
+struct TypicalAmong<Sunlight<Sunlights...>>
 {
     template<auto I>
     struct ProtoPage
     {
         template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
-        using Dawn = Typella::TypicalAmong<Daydream<Sunshines>...>
+        using Dawn = Typella::TypicalAmong<Daydream<Sunlights>...>
         ::template Page<I>::type::template Dawn<Agreements...>;
     };
 

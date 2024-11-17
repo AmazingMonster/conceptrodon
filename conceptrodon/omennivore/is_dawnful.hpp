@@ -13,10 +13,10 @@ struct IsDawnful
 
 template
 <
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines
 >
-struct IsDawnful<Sunshine<Sunshines...>>
+struct IsDawnful<Sunlight<Sunshines...>>
 { static constexpr bool value {true}; };
 
 template<typename>
@@ -24,10 +24,10 @@ constexpr bool IsDawnful_v {false};
 
 template
 <
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines
 >
-constexpr bool IsDawnful_v<Sunshine<Sunshines...>> {true};
+constexpr bool IsDawnful_v<Sunlight<Sunshines...>> {true};
 
 }}
 

@@ -6,11 +6,11 @@
 
 namespace Conceptrodon {
 
-template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine>
+template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance>
 struct Camellia
 {
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
-    using Calm = Sunshine<Tranquil...>;
+    using Calm = Perseverance<Tranquil...>;
 };
 
 }

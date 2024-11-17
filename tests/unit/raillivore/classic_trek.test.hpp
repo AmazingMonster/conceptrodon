@@ -8,11 +8,8 @@
 #include <type_traits>
 #include <utility>
 #include "conceptrodon/descend/raillivore/classic_trek.hpp"
-#include "conceptrodon/monotony.hpp"
-#include "conceptrodon/omennivore/send.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/vehicle.hpp"

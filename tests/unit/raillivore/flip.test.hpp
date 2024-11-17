@@ -7,7 +7,6 @@
 #include <utility>
 #include "conceptrodon/raillivore/flip.hpp"
 #include "macaron/judgmental/valid.hpp"
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

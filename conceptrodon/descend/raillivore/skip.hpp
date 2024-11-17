@@ -63,11 +63,11 @@ struct LoadSkip
     template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
     using Calm = LoadSkip<Operation, Items..., Halcyon<Tranquil...>>;
 
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines>
-    using Grit = LoadSkip<Operation, Items..., Pursuit<Sunshines...>>;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
+    using Grit = LoadSkip<Operation, Items..., Pursuit<Consistency...>>;
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = LoadSkip<Operation, Items..., Persist<Sunshines...>>;
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
+    using Will = LoadSkip<Operation, Items..., Persist<Perseverance...>>;
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
     using Glow = LoadSkip<Operation, Items..., Sunrise<Sunshines...>>;

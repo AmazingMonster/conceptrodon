@@ -9,14 +9,14 @@
 
 namespace Conceptrodon {
 
-template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine, size_t I>
+template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency, size_t I>
 struct Coral
 { 
     static consteval auto idyl
-    (std::integral_constant<size_t, I>) -> Coalfish<Sunshine>;
+    (std::integral_constant<size_t, I>) -> Coalfish<Consistency>;
 
     static constexpr auto lark
-    (Coalfish<Sunshine>) -> std::integral_constant<size_t, I>;
+    (Coalfish<Consistency>) -> std::integral_constant<size_t, I>;
 };
  
 }

@@ -9,8 +9,8 @@ namespace Conceptrodon {
 template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine>
 struct Wildfire
 {
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines>
-    using Will = Sunshine<Sunshines...>;
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
+    using Will = Sunshine<Perseverance...>;
 };
 
 }

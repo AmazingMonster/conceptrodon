@@ -112,68 +112,68 @@ struct ExtendFront<Tranquil<PreexistingMelancholy...>>
 
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
     template<template<template<template<typename...> class...> class...> class...> class...PreexistingSilence
 >
-struct ExtendFront<Sunshine<PreexistingSilence...>>
+struct ExtendFront<Consistency<PreexistingSilence...>>
 {
     template<template<template<template<template<typename...> class...> class...> class...> class...NewSilence>
-    using Cool = Sunshine<NewSilence..., PreexistingSilence...>;
+    using Cool = Consistency<NewSilence..., PreexistingSilence...>;
 };
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
     template<template<template<template<auto...> class...> class...> class...> class...PreexistingTranquil
 >
-struct ExtendFront<Sunshine<PreexistingTranquil...>>
+struct ExtendFront<Perseverance<PreexistingTranquil...>>
 {
     template<template<template<template<template<auto...> class...> class...> class...> class...NewTranquil>
-    using Calm = Sunshine<NewTranquil..., PreexistingTranquil...>;
+    using Calm = Perseverance<NewTranquil..., PreexistingTranquil...>;
 };
 
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...PreexistingSunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...PreexistingConsistency
 >
-struct ExtendFront<Sunshine<PreexistingSunshines...>>
+struct ExtendFront<Sunshine<PreexistingConsistency...>>
 {
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...NewSunshines>
-    using Grit = Sunshine<NewSunshines..., PreexistingSunshines...>;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...NewConsistency>
+    using Grit = Sunshine<NewConsistency..., PreexistingConsistency...>;
 };
 
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...PreexistingSunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...PreexistingPerseverance
 >
-struct ExtendFront<Sunshine<PreexistingSunshines...>>
+struct ExtendFront<Sunshine<PreexistingPerseverance...>>
 {
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...NewSunshines>
-    using Will = Sunshine<NewSunshines..., PreexistingSunshines...>;
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...NewPerseverance>
+    using Will = Sunshine<NewPerseverance..., PreexistingPerseverance...>;
 };
 
 template
 <
-    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...PreexistingSunshines
 >
-struct ExtendFront<Sunshine<PreexistingSunshines...>>
+struct ExtendFront<Sunlight<PreexistingSunshines...>>
 {
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...NewSunshines>
-    using Glow = Sunshine<NewSunshines..., PreexistingSunshines...>;
+    using Glow = Sunlight<NewSunshines..., PreexistingSunshines...>;
 };
 
 template
 <
-    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class Sunlight,
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...PreexistingSunshines
 >
-struct ExtendFront<Sunshine<PreexistingSunshines...>>
+struct ExtendFront<Sunlight<PreexistingSunshines...>>
 {
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...NewSunshines>
-    using Dawn = Sunshine<NewSunshines..., PreexistingSunshines...>;
+    using Dawn = Sunlight<NewSunshines..., PreexistingSunshines...>;
 };
 
 

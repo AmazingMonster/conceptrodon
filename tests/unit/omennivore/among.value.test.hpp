@@ -77,6 +77,48 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
 /******************************************************************************************************/
 
 
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+using IntegerSequenceTester = std::integer_sequence<int, SHEEP_SPROUT(240)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+template<size_t I>
+constexpr auto AtIntegerSequence = Among<IntegerSequenceTester>::ProtoPage<I>::value;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedResult
+
+#define SHEEP_PREFIX    \
+    AtIntegerSequence<
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
 }}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VARIABLES_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VARIABLES_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VALUES_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VALUES_H
 
 #include <concepts>
 #include <utility>
-#include "conceptrodon/descend/omennivore/insert_variables.hpp"
+#include "conceptrodon/descend/omennivore/insert_values.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -19,7 +19,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestInsertVariables {
+namespace TestInsertValues {
 
 
 
@@ -47,7 +47,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 SAME_TYPE
 (
-    InsertVariables<std::make_index_sequence<0>, ALKANE_SPROUT(119)>
+    InsertValues<std::make_index_sequence<0>, ALKANE_SPROUT(119)>
     ::Page<SHEEP_SPROUT(120, *2)>
     ::Page<SHEEP_SPROUT(120, *2+1)>
 );

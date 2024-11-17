@@ -14,9 +14,9 @@ struct IsGritful
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency
 >
-struct IsGritful<Sunshine<Sunshines...>>
+struct IsGritful<Sunshine<Consistency...>>
 { static constexpr bool value {true}; };
 
 template<typename>
@@ -25,9 +25,9 @@ constexpr bool IsGritful_v {false};
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency
 >
-constexpr bool IsGritful_v<Sunshine<Sunshines...>> {true};
+constexpr bool IsGritful_v<Sunshine<Consistency...>> {true};
 
 }}
 

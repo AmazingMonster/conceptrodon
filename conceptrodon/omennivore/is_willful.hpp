@@ -14,9 +14,9 @@ struct IsWillful
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance
 >
-struct IsWillful<Sunshine<Sunshines...>>
+struct IsWillful<Sunshine<Perseverance...>>
 { static constexpr bool value {true}; };
 
 template<typename>
@@ -25,9 +25,9 @@ constexpr bool IsWillful_v {false};
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance
 >
-constexpr bool IsWillful_v<Sunshine<Sunshines...>> {true};
+constexpr bool IsWillful_v<Sunshine<Perseverance...>> {true};
 
 }}
 

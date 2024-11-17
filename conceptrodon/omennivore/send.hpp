@@ -135,10 +135,10 @@ struct Send<Tranquil<Melancholy...>>
 
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class Consistency,
     template<template<template<template<typename...> class...> class...> class...> class...Silence
 >
-struct Send<Sunshine<Silence...>>
+struct Send<Consistency<Silence...>>
 {
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Operation>
     struct Detail 
@@ -153,10 +153,10 @@ struct Send<Sunshine<Silence...>>
 
 template
 <
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class Sunshine,
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class Perseverance,
     template<template<template<template<auto...> class...> class...> class...> class...Tranquil
 >
-struct Send<Sunshine<Tranquil...>>
+struct Send<Perseverance<Tranquil...>>
 {
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Operation>
     struct Detail 
@@ -172,37 +172,37 @@ struct Send<Sunshine<Tranquil...>>
 template
 <
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency
 >
-struct Send<Sunshine<Sunshines...>>
+struct Send<Sunshine<Consistency...>>
 {
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Operation>
     struct Detail 
-    { using type = Operation<Sunshines...>; };
+    { using type = Operation<Consistency...>; };
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
     using Glow = Detail<Agreements...>::type;
 
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Operation>
-    using UniGlow = Operation<Sunshines...>;
+    using UniGlow = Operation<Consistency...>;
 };
 
 template
 <
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine,
-    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Sunshines
+    template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance
 >
-struct Send<Sunshine<Sunshines...>>
+struct Send<Sunshine<Perseverance...>>
 {
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Operation>
     struct Detail 
-    { using type = Operation<Sunshines...>; };
+    { using type = Operation<Perseverance...>; };
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
     using Dawn = Detail<Agreements...>::type;
 
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Operation>
-    using UniDawn = Operation<Sunshines...>;
+    using UniDawn = Operation<Perseverance...>;
 };
 
 }}
