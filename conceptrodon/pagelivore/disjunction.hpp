@@ -7,13 +7,13 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template <template<auto...> class...Predicates>
+template<template<auto...> class...Predicates>
 struct Disjunction
 {
     template<auto...Variables>
     struct ProtoPage
     {
-        static constexpr auto value
+        static constexpr bool value
         {(...||Predicates<Variables...>::value)};
     };
     
@@ -21,7 +21,8 @@ struct Disjunction
     using Page = ProtoPage<Variables...>;
 
     template<auto...Variables>
-    static constexpr auto Page_v {(...||Predicates<Variables...>::value)};
+    static constexpr bool Page_v
+    {(...||Predicates<Variables...>::value)};
 };
 
 }}

@@ -134,7 +134,7 @@ static_assert(
 ```
 
 - `Select::Road` accepts a list of predicates and returns a function.
-When invoked, the function returns `1` if the arguments satisfy any of the predicates;
+When invoked, the function returns `1` if the argument list satisfies any of the predicates;
 otherwise, the function returns `0`.
 
 ```C++
@@ -171,7 +171,7 @@ static_assert(Select::Road<>::Mold<>::value == 0);
 ```
 
 - `Select::Rail` accepts a list of predicates and returns a function.
-When invoked, the function returns `1` if the arguments satisfy any of the predicates;
+When invoked, the function returns `1` if the argument list satisfies any of the predicates;
 otherwise, the function returns `0`.
 
 ```C++

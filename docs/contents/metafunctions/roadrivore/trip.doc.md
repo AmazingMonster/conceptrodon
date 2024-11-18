@@ -311,7 +311,7 @@ static_assert(std::same_as<
 /**** First Example ****//* End */
 ```
 
-- In the second example, we will transport the conjuration function to `InvokeRail`.
+- In the second example, we will transport the conjuration function to `InvokeRoad`.
 
 ```C++
 /**** Second Example ****//* Start */

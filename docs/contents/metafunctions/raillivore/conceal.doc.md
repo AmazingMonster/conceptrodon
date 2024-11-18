@@ -86,3 +86,4 @@ struct Conceal
 ## Links
 
 - [source code](../../../../conceptrodon/raillivore/conceal.hpp)
+- [unit test](../../../../tests/unit/raillivore/conceal.test.hpp)

@@ -9,7 +9,72 @@
     <table>
       <tr>
         <td>Plan</td>
-        <td>Add documentations for <code>ClassicTrip</code>, <code>Trek</code>, and <code>ClassicTrek</code> to <code>Roadrivore</code></i></td>
+        <td>Add documentations for <code>Trip</code>, <code>ClassicTrip</code>, <code>Trek</code>, and <code>ClassicTrek</code> to <code>Roadrivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add the prefix <code>Cognate*</code> to functions that accept an operation first.</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add <code>BiHarvest</code> to <code>Omennivore</code>  to combine the functionalities of <code>HarvestValue</code> and <code>HarvestType</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add <code>All*</code> and <code>Any*</code> versions to all unary concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change <code>*Probe</code> to <code>*ly</code></td>
       </tr>
       <tr>
         <td>Progress</td>
@@ -19,7 +84,7 @@
   </li>
 </ul>
 
-## Before 2024/11/18
+## 2024/11/17
 
 ### Todo
 
@@ -28,29 +93,48 @@
     <table>
       <tr>
         <td>Plan</td>
-        <td>Add vessels to store <code>Glow</code> and <code>Dawn</code></i></td>
+        <td>Add vessels to store <code>Glow</code> and <code>Dawn</code></td>
       </tr>
       <tr>
         <td>Progress</td>
         <td>
-          Rename <code>Reverie</code> to <code>Vehicle</code>;<br>
-          Rename <code>Phantom</code> to <code>Carrier</code>;<br>
-          Rename <code>Forlorn</code> to <code>Reverie</code>;<br>
-          Rename <code>Travail</code> to <code>Phantom</code>;<br>
-          Rename <code>Lullaby</code> to <code>Forlorn</code>;<br>
-          Rename <code>Halcyon</code> to <code>Travail</code>;<br>
-          Rename <code>Pursuit</code> to <code>Lullaby</code>;<br>
-          Rename <code>Persist</code> to <code>Halcyon</code>;<br>
-          Rename <code>Sunrise</code> to <code>Pursuit</code>;<br>
-          Rename <code>Morning</code> to <code>Persist</code>;<br>
-          Rename <code>Arcadia</code> to <code>Sunrise</code>;<br>
-          Rename <code>Nirvana</code> to <code>Morning</code>;<br>
-          Add <code>Arcadia</code> to store <code>Glow</code>;<br>
-          Add <code>Nirvana</code> to store <code>Dawn</code>
+          Renamed <code>Reverie</code> to <code>Vehicle</code>;<br>
+          Renamed <code>Phantom</code> to <code>Carrier</code>;<br>
+          Renamed <code>Forlorn</code> to <code>Reverie</code>;<br>
+          Renamed <code>Travail</code> to <code>Phantom</code>;<br>
+          Renamed <code>Lullaby</code> to <code>Forlorn</code>;<br>
+          Renamed <code>Halcyon</code> to <code>Travail</code>;<br>
+          Renamed <code>Pursuit</code> to <code>Lullaby</code>;<br>
+          Renamed <code>Persist</code> to <code>Halcyon</code>;<br>
+          Renamed <code>Sunrise</code> to <code>Pursuit</code>;<br>
+          Renamed <code>Morning</code> to <code>Persist</code>;<br>
+          Renamed <code>Arcadia</code> to <code>Sunrise</code>;<br>
+          Renamed <code>Nirvana</code> to <code>Morning</code>;<br>
+          Added <code>Arcadia</code> to store <code>Glow</code>;<br>
+          Added <code>Nirvana</code> to store <code>Dawn</code>
       </tr>
     </table>
   </li>
 
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Trip</code>, <code>ClassicTrip</code>, <code>Trek</code>, and <code>ClassicTrek</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Added the said documentations for <code>Raillivore</code></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+## Before 2024/11/17
+
+### Todo
+
+<ul>
   <li>
     <table>
       <tr>
@@ -327,6 +411,7 @@
 
 - `Conjugate`
 - `Operable`
+- `Cognate`
 
 - `Witness`
 - `Arity`
@@ -341,6 +426,7 @@
 - `Valorize`
 - `Typify`
 
+- `Bi`
 - `Easy`
 - `Simple`
 - `Toilsome`

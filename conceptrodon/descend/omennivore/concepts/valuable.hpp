@@ -8,19 +8,13 @@
 #include "conceptrodon/typelivore/concepts/clarify.hpp"
 #include "conceptrodon/varybivore/concepts/divulge.hpp"
 
+#include "conceptrodon/descend/microbiota/ominuci/is_value_immediate.hpp"
+
 namespace Conceptrodon {
-namespace Ominuci {
-
-template<typename Type>
-constexpr bool isValueImmediate(Type value)
-{ return true; }
-
-}
-
 namespace Omennivore {
 
 template<typename Structure>
-concept Valuable 
+concept Valuable
 =   Typelivore::Clarify<std::is_const, const decltype(Structure::value)>
 &&  Varybivore::Divulge
 <

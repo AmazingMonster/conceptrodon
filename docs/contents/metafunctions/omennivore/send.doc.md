@@ -8,6 +8,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Omennivore::Send` accepts a packed vessel and returns a function.
 When invoked with an operation, the function extracts the list of items from the vessel and instantiates the operation with the result.
 
+<pre><code>   PackedVessel
+-> Operation
+-> Operation&lt;Upack(PackedVessel)&gt;</code></pre>
+
 ## Type Signature
 
 This function has multiple signatures.
@@ -141,7 +145,7 @@ static_assert(Metafunction<Capsule<int, int*, int**, int***>>::value);
 
 ## Implementation
 
-The implementation of `Send` utilizes partial template specialization to extract items from a packed vessel. We will showcase a simplified version that handles `Mold`.
+`Omennivore::Send` uses partial template specialization to extract items from a packed vessel. We will showcase a simplified version that handles `Mold`.
 
 ```C++
 /**** Primary template ****/

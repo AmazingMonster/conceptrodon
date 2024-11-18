@@ -72,7 +72,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 While this is possibly one of the most useful metafunctions, its implementation is straightforward. The key is to halt the invocation of `Operation` until the argument list is fully provided.
 
-Here's the entire implementation of `Roadrivore::BindBack`:
+Here's the entire implementation:
 
 ```C++
 template<template<template<typename...> class...> class Operation>

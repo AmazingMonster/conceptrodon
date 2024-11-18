@@ -115,7 +115,7 @@ static_assert(std::same_as
 ```
 
 - `Select::Road` accepts a list of predicates and returns a function.
-When invoked, the function returns `IfTrue` if the arguments satisfy all of the predicates;
+When invoked, the function returns `IfTrue` if the argument list satisfies all of the predicates;
 otherwise, the function returns `IfFalse`.
 
 ```C++
@@ -151,7 +151,7 @@ static_assert(std::same_as<Select::Road<>::Mold<>, IfTrue>);
 ```
 
 - `Select::Rail` accepts a list of predicates and returns a function.
-When invoked, the function returns `IfTrue` if the arguments satisfy all of the predicates;
+When invoked, the function returns `IfTrue` if the argument list satisfies all of the predicates;
 otherwise, the function returns `IfFalse`.
 
 ```C++
