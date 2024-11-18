@@ -1,9 +1,5 @@
 *build*/
 
-# Development log
-DEVLOG.*
-NOTE.*
-
 # Clangd
 *.cache
 compile_commands.json

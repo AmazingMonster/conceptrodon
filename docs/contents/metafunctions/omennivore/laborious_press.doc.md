@@ -124,7 +124,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 ## Implementation
 
 The implementation of `LaboriousPress` relies heavily on recursion.
-We will implement a simplified version that can only handle `Mold` and `Page` as a demonstration.
+We will showcase a simplified version that handles `Mold` and `Page`.
 
 ```C++
 template<typename Operation>

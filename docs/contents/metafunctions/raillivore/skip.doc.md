@@ -180,7 +180,9 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 The implementation of `Skip` relies on a helper function called `LoadSkip` to keep a record of user inputs.
 The record will be passed to `Omennivore::Press` to invoke the previously provided operation.
-We will implement a simplified version that only handles `Mold` and `Page` as a demonstration.
+
+We will implement `Skip` by performing recursion manually, meaning the function will recurse only once for every invocation of a member template.
+We will showcase a simplified version that handles `Mold` and `Page`.
 
 ```C++
 template<typename...>

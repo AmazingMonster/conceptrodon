@@ -20,6 +20,8 @@
 #include "conceptrodon/persist.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
+#include "conceptrodon/arcadia.hpp"
+#include "conceptrodon/nirvana.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -37,9 +39,6 @@ namespace TestAmongDawn {
 
 
 /******************************************************************************************************/
-template<template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...>
-struct DawnVessel {};
-
 template<size_t>
 struct Tester 
 {
@@ -87,7 +86,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-using Amongus = Among<DawnVessel<SHEEP_SPROUT(240)>>;
+using Amongus = Among<Nirvana<SHEEP_SPROUT(240)>>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

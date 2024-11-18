@@ -7,7 +7,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
     
-template<typename Pack>
+template<typename>
 struct Send {};
 
 template<template<typename...> class Container, typename...Elements>
@@ -33,9 +33,6 @@ struct Send<Sequence<Variables...>>
 
     template<template<auto...> class...Agreements>
     using Rail = Detail<Agreements...>::type;
-
-    template<template<auto...> class...Args>
-    using Rail_t = Detail<Args...>::type;
 
     template<template<auto...> class Operation>
     using UniRail = Operation<Variables...>;
