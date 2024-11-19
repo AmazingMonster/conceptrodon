@@ -88,7 +88,7 @@ struct Exemplar
 
 //  static_assert(Rail<>:: Rail<>::value); /* Error */
 
-// These behaviors are not predictable by high-level functions.
+// These behaviors are not predictable by higher-order functions.
 // Probing into arguments' inner structures is necessary before every operation, which is complicated and inefficient.
 
 // The library was first written using this method.
@@ -144,7 +144,7 @@ struct Exemplar
     using Mold = ProtoMold<Agreements...>;
 
 // This means the navigation within the class can be hidden inside the interface, \
-// creating a uniform call site for high-level functions:
+// creating a uniform call site for higher-order functions:
     
     static_assert(Mold<>::Mold<>::Mold<>::value);
 
@@ -169,12 +169,14 @@ struct Exemplar
     {
         template<template<typename...> class Container>
         struct Detail { using type = Container<Elements...>; };
-
-        template<template<typename...> class...Agreements> /* Indirection needed to make 'Road' usable with pack expansion */
+        
+        // Indirection needed to make 'Road' usable with pack expansion.
+        template<template<typename...> class...Agreements> 
         using Road = Detail<Agreements...>::type;
 
+        // Added to avoid indirection.
         template<template<typename...> class Container>
-        using UniRoad = Container<Elements...>; /* Added to avoid indirection */
+        using UniRoad = Container<Elements...>;
     };
 };
 

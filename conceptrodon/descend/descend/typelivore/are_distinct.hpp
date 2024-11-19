@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_TYPELIVORE_ARE_DISTINCT_H
 
-#include "conceptrodon/label.hpp"
+#include "conceptrodon/descend/label.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -18,9 +18,9 @@ struct AreDistinct
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Label<Elements*, I>...
+    : public Label<Elements*, std::integral_constant<size_t, I>>...
     {
-        using Label<Elements*, I>::lark...;
+        using Label<Elements*, std::integral_constant<size_t, I>>::lark...;
 
         template<typename, typename=void>
         struct Hidden

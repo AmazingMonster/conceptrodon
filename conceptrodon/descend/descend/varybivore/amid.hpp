@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_VARYBIVORE_AMID_H
 #define CONCEPTRODON_VARYBIVORE_AMID_H
 
-#include "conceptrodon/descend/stamp.hpp"
-#include <type_traits>
 #include <utility>
+#include "conceptrodon/descend/stamp.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -19,8 +18,8 @@ struct Amid
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Stamp<Elements, I>...
-    { using Stamp<Elements, I>::idyl...; };
+    : public Stamp<Elements, std::integral_constant<size_t, I>>...
+    { using Stamp<Elements, std::integral_constant<size_t, I>>::idyl...; };
 
     template<size_t I>
     struct ProtoPage

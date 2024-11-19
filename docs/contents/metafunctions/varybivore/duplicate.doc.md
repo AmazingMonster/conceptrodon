@@ -35,7 +35,7 @@ struct Duplicate
         alias Rail = RESULT;
 
         template<template<auto...> class>
-        alias UniRail = RESULT;
+        using UniRail = RESULT;
     };
 };
 ```

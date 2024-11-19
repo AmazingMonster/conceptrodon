@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_UPEND_H
 #define CONCEPTRODON_TYPELIVORE_UPEND_H
 
-#include "conceptrodon/label.hpp"
+#include "conceptrodon/descend/label.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -18,9 +18,9 @@ struct Upend
 
     template<template<typename...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
-    : public Label<Elements, I>...
+    : public Label<Elements, std::integral_constant<size_t, I>>...
     {
-        using Label<Elements, I>::idyl...;
+        using Label<Elements, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation
         <decltype(idyl(std::integral_constant<size_t, sizeof...(I) - I - 1>{}))...>;
     };

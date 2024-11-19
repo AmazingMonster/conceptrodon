@@ -110,5 +110,5 @@ struct AreDistinct
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/are_distinct.hpp)
+- [source code](../../../../conceptrodon/descend/descend/typelivore/are_distinct.hpp)
 - [unit test](../../../../tests/unit/typelivore/are_distinct.test.hpp)

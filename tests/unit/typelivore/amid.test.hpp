@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
 
-#include "conceptrodon/descend/typelivore/amid.hpp"
+#include "conceptrodon/descend/descend/typelivore/amid.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

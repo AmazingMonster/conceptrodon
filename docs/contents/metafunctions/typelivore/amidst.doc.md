@@ -25,7 +25,7 @@ struct Amidst
     alias Page = RESULT;
 
     template<auto>
-    alias UniPage = RESULT;
+    using UniPage = RESULT;
 };
 ```
 

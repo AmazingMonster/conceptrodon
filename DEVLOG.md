@@ -1,5 +1,76 @@
 # Diary
 
+## 2024/11/19
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Overhaul the concepts again</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add <code>All*</code> and <code>Any*</code> versions to all unary concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for utilities</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change keys of Lexicon utilities to types</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/18
 
 ### Todo
@@ -26,7 +97,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>In Progress</td>
       </tr>
     </table>
   </li>
@@ -39,7 +110,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>In Progress</td>
       </tr>
     </table>
   </li>
@@ -65,7 +136,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td>Done</td>
+        <td>In Progress</td>
       </tr>
     </table>
   </li>
@@ -413,6 +484,19 @@
 - `Operable`
 - `Cognate`
 
+- `Confess`
+- `Prejure`
+- `Slander`
+- `Divulge`
+- `Distort`
+
+- `Payload`
+- `Payroll`
+- `Passage`
+- `Pathway`
+- `Passway`
+- `Parsley`
+
 - `Witness`
 - `Arity`
 - `Kind`
@@ -434,7 +518,7 @@
 - `Cosmopolitan`
 
 - `Rover`
-- `Rally`
+- `Ramen`
 - `Flora`
 - `Saber`
 - `Snack`
@@ -448,3 +532,7 @@
 
 - `Coral`
 - `Coalfish`
+
+## Notes
+
+- `auto` compiles slower than `size_t`.

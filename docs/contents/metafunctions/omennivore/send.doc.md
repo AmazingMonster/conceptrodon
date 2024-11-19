@@ -52,73 +52,73 @@ struct Send
     alias Road = RESULT;
 
     template<template<typename...> class>
-    alias UniRoad = RESULT;
+    using UniRoad = RESULT;
 
     template<template<auto...> class>
     alias Rail = RESULT;
 
     template<template<auto...> class>
-    alias UniRail = RESULT;
+    using UniRail = RESULT;
     
     template<template<template<typename...> class...> class>
     alias Flow = RESULT;
     
     template<template<template<typename...> class...> class>
-    alias UniFlow = RESULT;
+    using UniFlow = RESULT;
     
     template<template<template<auto...> class...> class>
     alias Sail = RESULT;
     
     template<template<template<auto...> class...> class>
-    alias UniSail = RESULT;
+    using UniSail = RESULT;
     
     template<template<template<template<typename...> class...> class...> class>
     alias Snow = RESULT;
     
     template<template<template<template<typename...> class...> class...> class>
-    alias UniSnow = RESULT;
+    using UniSnow = RESULT;
     
     template<template<template<template<auto...> class...> class...> class>
     alias Hail = RESULT;
     
     template<template<template<template<auto...> class...> class...> class>
-    alias UniHail = RESULT;
+    using UniHail = RESULT;
     
     template<template<template<template<template<typename...> class...> class...> class...> class>
     alias Cool = RESULT;
     
     template<template<template<template<template<typename...> class...> class...> class...> class>
-    alias UniCool = RESULT;
+    using UniCool = RESULT;
     
     template<template<template<template<template<auto...> class...> class...> class...> class>
     alias Calm = RESULT;
     
     template<template<template<template<template<auto...> class...> class...> class...> class>
-    alias UniCalm = RESULT;
+    using UniCalm = RESULT;
     
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class>
     alias Grit = RESULT;
     
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class>
-    alias UniGrit = RESULT;
+    using UniGrit = RESULT;
     
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class>
     alias Will = RESULT;
     
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class>
-    alias UniWill = RESULT;
+    using UniWill = RESULT;
     
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class>
     alias Glow = RESULT;
     
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class>
-    alias UniGlow = RESULT;
+    using UniGlow = RESULT;
     
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class>
     alias Dawn = RESULT;
     
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class>
-    alias UniDawn = RESULT;
+    using UniDawn = RESULT;
 }
 ```
 

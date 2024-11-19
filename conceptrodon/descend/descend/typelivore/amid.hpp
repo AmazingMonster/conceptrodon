@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_AMID_H
 #define CONCEPTRODON_TYPELIVORE_AMID_H
 
-#include "conceptrodon/label.hpp"
+#include "conceptrodon/descend/label.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -18,8 +18,8 @@ struct Amid
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Label<Elements, I>...
-    { using Label<Elements, I>::idyl...; };
+    : public Label<Elements, std::integral_constant<size_t, I>>...
+    { using Label<Elements, std::integral_constant<size_t, I>>::idyl...; };
 
     template<size_t I>
     struct Hidden

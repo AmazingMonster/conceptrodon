@@ -46,7 +46,7 @@ struct Plume
         alias Road = RESULT;
 
         template<template<typename...> class>
-        alias UniRoad = RESULT;
+        using UniRoad = RESULT;
     };
 };
 ```
@@ -62,7 +62,7 @@ struct Plume
         alias Road = RESULT;
 
         template<template<typename...> class>
-        alias UniRoad = RESULT;
+        using UniRoad = RESULT;
     };
 };
 ```
@@ -78,7 +78,7 @@ struct Plume
         alias Road = RESULT;
 
         template<template<typename...> class>
-        alias UniRoad = RESULT;
+        using UniRoad = RESULT;
     };
 };
 ```

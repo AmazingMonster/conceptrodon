@@ -36,7 +36,7 @@ struct ClassicFoldLeftFirst
     alias Road = RESULT;
         
     template<template<typename...> class>
-    alias UniRoad = RESULT;
+    using UniRoad = RESULT;
 };
 ```
 

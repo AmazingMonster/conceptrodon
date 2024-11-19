@@ -25,7 +25,7 @@ struct Amid
     alias Page = RESULT;
 
     template<auto>
-    alias UniPage = RESULT;
+    using UniPage = RESULT;
 };
 ```
 
@@ -98,5 +98,5 @@ struct Amid
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/amid.hpp)
+- [source code](../../../../conceptrodon/descend/descend/typelivore/amid.hpp)
 - [unit test](../../../../tests/unit/typelivore/amid.test.hpp)

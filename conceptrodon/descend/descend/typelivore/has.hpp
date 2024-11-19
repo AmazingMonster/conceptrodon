@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_HAS_H
 #define CONCEPTRODON_TYPELIVORE_HAS_H
 
-#include "conceptrodon/label.hpp"
+#include "conceptrodon/descend/label.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -21,10 +21,10 @@ struct Has
 
         template<size_t...I, size_t...J>
         struct Detail<std::index_sequence<I...>, std::index_sequence<J...>>
-        : public Label<Elements*, I>..., public Label<InspectingElements*, sizeof...(Elements) + J>...
+        : public Label<Elements*, std::integral_constant<size_t, I>>..., public Label<InspectingElements*, std::integral_constant<size_t, sizeof...(Elements) + J>>...
         {
-            using Label<Elements*, I>::lark...;
-            using Label<InspectingElements*, sizeof...(Elements) + J>::lark...;
+            using Label<Elements*, std::integral_constant<size_t, I>>::lark...;
+            using Label<InspectingElements*, std::integral_constant<size_t, sizeof...(Elements) + J>>::lark...;
 
             template<typename, typename=void>
             struct Hidden

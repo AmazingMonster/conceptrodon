@@ -4,19 +4,15 @@
 #ifndef CONCEPTRODON_TOTEM_H
 #define CONCEPTRODON_TOTEM_H
 
-#include <type_traits>
 #include "conceptrodon/emissary.hpp"
 
 namespace Conceptrodon {
 
-template<template<typename...> class Container, size_t I>
+template<template<typename...> class Container, typename Key>
 struct Totem
 { 
-    static consteval auto idyl
-    (std::integral_constant<size_t, I>) -> Emissary<Container>;
-
-    static constexpr auto lark
-    (Emissary<Container>) -> std::integral_constant<size_t, I>;
+    static consteval auto idyl(Key) -> Emissary<Container>;
+    static constexpr auto lark(Emissary<Container>) -> Key;
 };
  
 }

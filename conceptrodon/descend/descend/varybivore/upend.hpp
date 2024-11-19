@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_VARYBIVORE_UPEND_H
 #define CONCEPTRODON_VARYBIVORE_UPEND_H
 
-#include "conceptrodon/descend/stamp.hpp"
 #include <utility>
+#include "conceptrodon/descend/stamp.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -18,9 +18,9 @@ struct Upend
 
     template<template<auto...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
-    : public Stamp<Variables, I>...
+    : public Stamp<Variables, std::integral_constant<size_t, I>>...
     {
-        using Stamp<Variables, I>::idyl...;
+        using Stamp<Variables, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation
         <
             decltype

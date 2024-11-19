@@ -29,7 +29,7 @@ struct Repack
     alias Sail = RESULT;
 
     template<template<template<auto...> class...> class>
-    alias UniSail = RESULT;
+    using UniSail = RESULT;
 };
 ```
 

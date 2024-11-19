@@ -4,19 +4,15 @@
 #ifndef CONCEPTRODON_WINCH_H
 #define CONCEPTRODON_WINCH_H
 
-#include <type_traits>
 #include "conceptrodon/wildfire.hpp"
 
 namespace Conceptrodon {
 
-template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine, size_t I>
+template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Sunshine, typename Key>
 struct Winch
 { 
-    static consteval auto idyl
-    (std::integral_constant<size_t, I>) -> Wildfire<Sunshine>;
-
-    static constexpr auto lark
-    (Wildfire<Sunshine>) -> std::integral_constant<size_t, I>;
+    static consteval auto idyl(Key) -> Wildfire<Sunshine>;
+    static constexpr auto lark(Wildfire<Sunshine>) -> Key;
 };
  
 }

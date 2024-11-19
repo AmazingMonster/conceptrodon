@@ -29,7 +29,7 @@ struct Repack
     alias Flow = RESULT;
 
     template<template<template<typename...> class...> class>
-    alias UniFlow = RESULT;
+    using UniFlow = RESULT;
 };
 ```
 

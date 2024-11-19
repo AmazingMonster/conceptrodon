@@ -144,5 +144,5 @@ struct Has
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/has.hpp)
+- [source code](../../../../conceptrodon/descend/descend/typelivore/has.hpp)
 - [unit test](../../../../tests/unit/typelivore/has.test.hpp)

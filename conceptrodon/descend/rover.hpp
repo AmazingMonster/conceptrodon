@@ -4,19 +4,15 @@
 #ifndef CONCEPTRODON_ROVER_H
 #define CONCEPTRODON_ROVER_H
 
-#include <type_traits>
 #include "conceptrodon/delegacy.hpp"
 
 namespace Conceptrodon {
 
-template<template<template<typename...> class...> class Warehouse, size_t I>
+template<template<template<typename...> class...> class Warehouse, typename Key>
 struct Rover
 { 
-    static consteval auto idyl
-    (std::integral_constant<size_t, I>) -> Delegacy<Warehouse>;
-
-    static constexpr auto lark
-    (Delegacy<Warehouse>) -> std::integral_constant<size_t, I>;
+    static consteval auto idyl(Key) -> Delegacy<Warehouse>;
+    static constexpr auto lark(Delegacy<Warehouse>) -> Key;
 };
  
 }
