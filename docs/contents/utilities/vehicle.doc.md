@@ -29,7 +29,7 @@ Vehicle ::   template<typename...> class...
 template<template<typename...> class...>
 struct Vehicle
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<template<typename...> class...> class>
     alias Flow = RESULT;
@@ -41,7 +41,7 @@ struct Vehicle
 
 ## Examples
 
-- We will create a `Vehicle` with containers `int, int*, int**, int**`.
+- We will create a `Vehicle` with containers `Container_0, Container_1, Container_2, Container_3`.
 Then, we will transport the containers to `Operation`.
 
 ```C++

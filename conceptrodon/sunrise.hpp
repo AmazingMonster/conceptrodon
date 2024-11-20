@@ -7,7 +7,10 @@
 namespace Conceptrodon {
     
 template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
-struct Sunrise {};
+struct Sunrise
+{
+    static constexpr size_t size() { return sizeof...(Sunshines); }
+};
  
 }
 

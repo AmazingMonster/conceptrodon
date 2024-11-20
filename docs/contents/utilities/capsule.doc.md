@@ -29,7 +29,7 @@ Capsule ::   typename...
 template<typename...>
 struct Capsule
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<typename...> class>
     alias Road = RESULT;

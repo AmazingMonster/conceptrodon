@@ -29,7 +29,7 @@ Phantom ::   template<template<auto...> class...> class...
 template<template<template<auto...> class...> class...>
 struct Phantom
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<template<template<auto...> class...> class...> class>
     alias Hail = RESULT;
@@ -41,7 +41,7 @@ struct Phantom
 
 ## Examples
 
-- We will create a `Phantom` with stockrooms `int, int*, int**, int**`.
+- We will create a `Phantom` with stockrooms `Stockroom_0, Stockroom_1, Stockroom_2, Stockroom_3`.
 Then, we will transport the stockrooms to `Operation`.
 
 ```C++

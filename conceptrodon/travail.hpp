@@ -19,7 +19,6 @@ struct Travail
     
     template<template<template<template<template<auto...> class...> class...> class...> class Revelation>
     using UniCalm = Revelation<Nothingness...>;
-
 };
  
 }

@@ -33,7 +33,7 @@ If `Shuttle` is instantiated by one variable:
 template<auto>
 struct Shuttle
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<auto...> class>
     alias Road = RESULT;
@@ -51,7 +51,7 @@ If `Shuttle` is instantiated by two variables:
 template<auto, auto>
 struct Shuttle
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<auto...> class>
     alias Road = RESULT;
@@ -71,7 +71,7 @@ If `Shuttle` is instantiated by three variables:
 template<auto, auto, auto>
 struct Shuttle
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<auto...> class>
     alias Road = RESULT;
@@ -93,7 +93,7 @@ If `Shuttle` is instantiated by more than four variables:
 template<auto, auto, auto, auto, auto...>
 struct Shuttle
 {
-    constexpr auto size() -> size_t;
+    static constexpr auto size() -> size_t;
 
     template<template<auto...> class>
     alias Road = RESULT;
