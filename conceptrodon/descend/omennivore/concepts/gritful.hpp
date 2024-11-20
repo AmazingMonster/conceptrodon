@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_GRITFUL_H
 
 #include "conceptrodon/omennivore/is_gritful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Gritful = Typelivore::Clarify<IsGritful, Arg>;
+concept Gritful = Mouldivore::Confess<IsGritful, Arg>;
 
 }}
 

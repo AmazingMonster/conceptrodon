@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_DAWNFUL_H
 
 #include "conceptrodon/omennivore/is_dawnful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Dawnful = Typelivore::Clarify<IsDawnful, Arg>;
+concept Dawnful = Mouldivore::Confess<IsDawnful, Arg>;
 
 }}
 

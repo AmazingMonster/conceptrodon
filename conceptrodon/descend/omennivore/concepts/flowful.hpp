@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_FLOWFUL_H
 
 #include "conceptrodon/omennivore/is_flowful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Flowful = Typelivore::Clarify<IsFlowful, Arg>;
+concept Flowful = Mouldivore::Confess<IsFlowful, Arg>;
 
 }}
 

@@ -6,16 +6,14 @@
 
 #include "conceptrodon/omennivore/is_glowful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_glowful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyGlowful = (... || IsGlowful<Args>::value);
-
-template<typename...Args>
 concept AnyGlowful
-=   JustAnyGlowful<Args...>
+=   Mouldivore::AnyConfess<IsGlowful, Args...>
 ||  AllGlowful<Args...>;
 
 }}

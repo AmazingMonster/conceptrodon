@@ -6,17 +6,14 @@
 
 #include "conceptrodon/omennivore/is_dawnful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/all_undawnful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyUndawnful
-= (...||(not IsDawnful<Args>::value));
-
-template<typename...Args>
 concept AnyUndawnful
-=   JustAnyUndawnful<Args...>
+=   Mouldivore::AnyConfess<IsDawnful, Args...>
 ||  AllUndawnful<Args...>
 ;
 

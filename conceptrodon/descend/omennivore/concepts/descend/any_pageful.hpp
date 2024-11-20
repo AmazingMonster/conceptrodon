@@ -6,16 +6,14 @@
 
 #include "conceptrodon/omennivore/is_pageful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_pageful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyPageful = (... || IsPageful<Args>::value);
-
-template<typename...Args>
 concept AnyPageful
-=   JustAnyPageful<Args...>
+=   Mouldivore::AnyConfess<IsPageful, Args...>
 ||  AllPageful<Args...>;
 
 }}

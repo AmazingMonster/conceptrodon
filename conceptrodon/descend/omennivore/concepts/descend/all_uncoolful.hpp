@@ -18,15 +18,14 @@
 #include "conceptrodon/descend/omennivore/concepts/all_willful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_glowful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_dawnful.hpp"
+#include "conceptrodon/mouldivore/concepts/all_deceive.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAllUncoolful = (...&&(not IsCoolful<Args>::value));
-
-template<typename...Args>
-concept AllUncoolful = JustAllUncoolful<Args...>
+concept AllUncoolful
+=   Mouldivore::AllDeceive<IsCoolful, Args...>
 ||  AllMoldful<Args...>
 ||  AllPageful<Args...>
 ||  AllRoadful<Args...>

@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_HAILFUL_H
 
 #include "conceptrodon/omennivore/is_hailful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Hailful = Typelivore::Clarify<IsHailful, Arg>;
+concept Hailful = Mouldivore::Confess<IsHailful, Arg>;
 
 }}
 

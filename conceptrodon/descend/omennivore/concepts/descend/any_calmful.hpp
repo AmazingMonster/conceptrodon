@@ -6,16 +6,14 @@
 
 #include "conceptrodon/omennivore/is_calmful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_calmful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyCalmful = (... || IsCalmful<Args>::value);
-
-template<typename...Args>
 concept AnyCalmful
-=   JustAnyCalmful<Args...>
+=   Mouldivore::AnyConfess<IsCalmful, Args...>
 ||  AllCalmful<Args...>;
 
 }}

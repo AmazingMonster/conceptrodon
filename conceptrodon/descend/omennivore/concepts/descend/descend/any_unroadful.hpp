@@ -6,17 +6,14 @@
 
 #include "conceptrodon/omennivore/is_roadful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/all_unroadful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyUnroadful
-= (...||(not IsRoadful<Args>::value));
-
-template<typename...Args>
 concept AnyUnroadful
-=   JustAnyUnroadful<Args...>
+=   Mouldivore::AnyConfess<IsRoadful, Args...>
 ||  AllUnroadful<Args...>
 ;
 

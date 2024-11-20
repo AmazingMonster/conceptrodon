@@ -6,16 +6,14 @@
 
 #include "conceptrodon/omennivore/is_sailful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_sailful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnySailful = (... || IsSailful<Args>::value);
-
-template<typename...Args>
 concept AnySailful
-=   JustAnySailful<Args...>
+=   Mouldivore::AnyConfess<IsSailful, Args...>
 ||  AllSailful<Args...>;
 
 }}

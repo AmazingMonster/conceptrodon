@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_WILLFUL_H
 
 #include "conceptrodon/omennivore/is_willful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Willful = Typelivore::Clarify<IsWillful, Arg>;
+concept Willful = Mouldivore::Confess<IsWillful, Arg>;
 
 }}
 

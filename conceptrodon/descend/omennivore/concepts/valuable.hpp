@@ -5,8 +5,8 @@
 #define CONCEPTRODON_OMENNIVORE_VALUABLE_H
 
 #include <type_traits>
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
-#include "conceptrodon/varybivore/concepts/divulge.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
+#include "conceptrodon/varybivore/concepts/clarify.hpp"
 
 #include "conceptrodon/descend/microbiota/ominuci/is_value_immediate.hpp"
 
@@ -15,8 +15,8 @@ namespace Omennivore {
 
 template<typename Structure>
 concept Valuable
-=   Typelivore::Clarify<std::is_const, const decltype(Structure::value)>
-&&  Varybivore::Divulge
+=   Mouldivore::Confess<std::is_const, const decltype(Structure::value)>
+&&  Varybivore::Clarify
 <
     Ominuci::isValueImmediate<decltype(Structure::value)>,
     Structure::value

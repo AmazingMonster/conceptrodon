@@ -6,16 +6,14 @@
 
 #include "conceptrodon/omennivore/is_railful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_railful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyRailful = (... || IsRailful<Args>::value);
-
-template<typename...Args>
 concept AnyRailful
-=   JustAnyRailful<Args...>
+=   Mouldivore::AnyConfess<IsRailful, Args...>
 ||  AllRailful<Args...>;
 
 }}

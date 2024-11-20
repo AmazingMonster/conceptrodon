@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_SNOWFUL_H
 
 #include "conceptrodon/omennivore/is_snowful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Snowful = Typelivore::Clarify<IsSnowful, Arg>;
+concept Snowful = Mouldivore::Confess<IsSnowful, Arg>;
 
 }}
 

@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_GLOWFUL_H
 
 #include "conceptrodon/omennivore/is_glowful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Glowful = Typelivore::Clarify<IsGlowful, Arg>;
+concept Glowful = Mouldivore::Confess<IsGlowful, Arg>;
 
 }}
 

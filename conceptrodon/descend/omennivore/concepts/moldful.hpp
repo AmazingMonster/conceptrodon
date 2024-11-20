@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_MOLDFUL_H
 
 #include "conceptrodon/omennivore/is_moldful.hpp"
-#include "conceptrodon/typelivore/concepts/clarify.hpp"
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Moldful = Typelivore::Clarify<IsMoldful, Arg>;
+concept Moldful = Mouldivore::Confess<IsMoldful, Arg>;
 
 }}
 

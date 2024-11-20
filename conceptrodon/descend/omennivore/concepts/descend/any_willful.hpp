@@ -6,6 +6,7 @@
 
 #include "conceptrodon/omennivore/is_willful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_willful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

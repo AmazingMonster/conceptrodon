@@ -133,7 +133,7 @@ template<typename...>
 struct Tester_8 {};
 
 template<typename Element>
-requires Varybivore::Divulge
+requires Varybivore::Clarify
 <
     Ominuci::isValueImmediate<decltype(Element::value)>,
     Element::value
@@ -144,7 +144,7 @@ struct Tester_8<Element>
 };
 
 template<typename Element>
-requires Typelivore::Clarify<std::is_const, const decltype(Element::value)>
+requires Mouldivore::Confess<std::is_const, const decltype(Element::value)>
 struct Tester_8<Element>
 {
     static constexpr int value {0};

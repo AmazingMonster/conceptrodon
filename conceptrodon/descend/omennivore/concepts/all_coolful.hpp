@@ -5,12 +5,14 @@
 #define CONCEPTRODON_OMENNIVORE_ALL_COOLFUL_H
 
 #include "conceptrodon/omennivore/is_coolful.hpp"
+#include "conceptrodon/mouldivore/concepts/all_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename...Args>
-concept AllCoolful = (... && IsCoolful<Args>::value);
+concept AllCoolful = Mouldivore::AllConfess<IsCoolful, Args...>;
+
 
 }}
 

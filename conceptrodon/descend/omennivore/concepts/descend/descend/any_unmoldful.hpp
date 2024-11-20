@@ -6,17 +6,14 @@
 
 #include "conceptrodon/omennivore/is_moldful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/all_unmoldful.hpp"
+#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
-concept JustAnyUnmoldful
-= (...||(not IsMoldful<Args>::value));
-
-template<typename...Args>
 concept AnyUnmoldful
-=   JustAnyUnmoldful<Args...>
+=   Mouldivore::AnyConfess<IsMoldful, Args...>
 ||  AllUnmoldful<Args...>
 ;
 
