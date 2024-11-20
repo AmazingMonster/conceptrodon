@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_VALUABLE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_VALUABLE_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/any_valuable.hpp"
+#include "conceptrodon/omennivore/concepts/descend/any_valuable.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -123,6 +123,28 @@ struct Tester_7
 };
 
 INVALID(AnyValuable<Tester_6>);
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+template<typename...Args>
+struct Examiner {};
+
+template<typename...Args>
+requires AnyValuable<Args...>
+struct Examiner<Args...>
+{static constexpr bool value {false}; };
+
+template<typename...Args>
+requires AllValuable<Args...>
+struct Examiner<Args...>
+{static constexpr bool value {true}; };
+
+VALID(Examiner<Tester, Tester_5>::value);
+INVALID(Examiner<Tester, Tester_4>::value);
+INVALID(Examiner<Tester_4, Tester>::value);
 /******************************************************************************************************/
 
 

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_OMENNIVORE_BI_HARVEST_H
 #define CONCEPTRODON_OMENNIVORE_BI_HARVEST_H
 
-#include "conceptrodon/descend/omennivore/concepts/all_valuable.hpp"
+#include "conceptrodon/omennivore/concepts/all_valuable.hpp"
 #include "conceptrodon/omennivore/concepts/descend/all_typical.hpp"
 
 namespace Conceptrodon {

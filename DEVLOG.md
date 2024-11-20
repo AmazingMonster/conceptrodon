@@ -1,5 +1,63 @@
 # Diary
 
+## 2024/11/20
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Work on the concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>It is what it is</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add <code>All*</code> and <code>Any*</code> versions to all unary concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for utilities</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/19
 
 ### Todo
@@ -536,3 +594,4 @@
 ## Notes
 
 - `auto` compiles slower than `size_t`.
+- Check if it is possible to do SFINAE over `inherit same class multiple times` error.

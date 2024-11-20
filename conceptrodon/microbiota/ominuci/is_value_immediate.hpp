@@ -11,6 +11,9 @@ template<typename Type>
 constexpr bool isValueImmediate(Type value)
 { return true; }
 
+template<auto I>
+concept ImmediateValue = isValueImmediate(I);
+
 }}
 
 #endif

@@ -6,19 +6,14 @@
 
 #include "conceptrodon/mouldivore/concepts/confess.hpp"
 #include "conceptrodon/pagelivore/is_specialization_of.hpp"
-#include "conceptrodon/descend/omennivore/concepts/pageful.hpp"
 #include "conceptrodon/peg.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Arg>
-concept JustPegful = Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
-
-template<typename Arg>
 concept Pegful
-=   Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>
-&&  Pageful<Arg>;
+= Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
 
 }}
 

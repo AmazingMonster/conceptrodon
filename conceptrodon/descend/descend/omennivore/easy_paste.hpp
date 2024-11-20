@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_OMENNIVORE_EASY_PASTE_H
 #define CONCEPTRODON_OMENNIVORE_EASY_PASTE_H
 
-#include "conceptrodon/descend/omennivore/concepts/moldful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/roadful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/railful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_moldful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_roadful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_railful.hpp"
 #include "conceptrodon/cotanivore/paste.hpp"
 #include "conceptrodon/sequnivore/paste.hpp"
 #include "conceptrodon/warehivore/paste.hpp"
@@ -20,17 +20,17 @@ struct TypicalEasyPaste
 { using type = Sequnivore::Paste<Packages...>; };
 
 template<typename...Packages>
-requires (... && Moldful<Packages>)
+requires AllMoldful<Packages...>
 struct TypicalEasyPaste<Packages...>
 { using type = Cotanivore::Paste<Packages...>; };
 
 template<typename...Packages>
-requires (... && Roadful<Packages>)
+requires AllRoadful<Packages...>
 struct TypicalEasyPaste<Packages...>
 { using type = Warehivore::Paste<Packages...>; };
 
 template<typename...Packages>
-requires (... && Railful<Packages>)
+requires AllRailful<Packages...>
 struct TypicalEasyPaste<Packages...>
 { using type = Stockivore::Paste<Packages...>; };
 

@@ -1,10 +1,10 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_VALUE_IMMEDIATE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_VALUE_IMMEDIATE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_UNVALUABLE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_UNVALUABLE_H
 
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
+#include "conceptrodon/omennivore/concepts/descend/all_unvaluable.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -14,41 +14,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestIsValueImmediate {
-namespace {
-
-
-
-
-/******************************************************************************************************/
-constexpr bool value_0 {true};
-VALID(Ominuci::isValueImmediate(value_0));
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-bool value_1 {true};
-// VALID(Ominuci::isValueImmediate(value_1));
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-void func() {};
-VALID(Ominuci::isValueImmediate(func));
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto>
-constexpr bool Truth = true;
-VALID(Truth<func>);
-/******************************************************************************************************/
+namespace TestAllUnvaluable {
 
 
 
@@ -59,7 +25,7 @@ struct Tester
     static constexpr bool value = true;
 };
 
-VALID(Ominuci::isValueImmediate(Tester::value));
+INVALID(AllUnvaluable<Tester>);
 /******************************************************************************************************/
 
 
@@ -68,10 +34,10 @@ VALID(Ominuci::isValueImmediate(Tester::value));
 /******************************************************************************************************/
 struct Tester_1
 {
-    static bool value;
+    static constexpr bool value() {return true;};
 };
 
-// VALID(Ominuci::isValueImmediate(Tester_1::value));
+VALID(AllUnvaluable<Tester_1>);
 /******************************************************************************************************/
 
 
@@ -80,10 +46,11 @@ struct Tester_1
 /******************************************************************************************************/
 struct Tester_2
 {
-    static const bool value {true};
+    using value = int;
 };
 
-VALID(Ominuci::isValueImmediate(Tester_2::value));
+VALID(AllUnvaluable<Tester_2, Tester_1>);
+VALID(! AllUnvaluable<Tester, Tester_1>);
 /******************************************************************************************************/
 
 
@@ -92,11 +59,10 @@ VALID(Ominuci::isValueImmediate(Tester_2::value));
 /******************************************************************************************************/
 struct Tester_3
 {
-    static void func(){};
+    bool value;
 };
 
-VALID(Truth<Tester_3::func>);
-VALID(Ominuci::isValueImmediate(Tester_3::func));
+VALID(AllUnvaluable<Tester_3>);
 /******************************************************************************************************/
 
 
@@ -105,14 +71,73 @@ VALID(Ominuci::isValueImmediate(Tester_3::func));
 /******************************************************************************************************/
 struct Tester_4
 {
-    static const float value;
+    bool const value;
 };
 
-const float Tester_4::value = 1.11;
-
-// VALID(Ominuci::isValueImmediate(Tester_4::value));
+VALID(AllUnvaluable<Tester_4>);
 /******************************************************************************************************/
 
-}}}}}
+
+
+
+/******************************************************************************************************/
+namespace {
+
+struct Tester_5
+{
+    static bool const value;
+};
+
+bool const Tester_5::value {true};
+
+}
+
+INVALID(AllUnvaluable<Tester_5>);
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+namespace {
+
+struct Tester_6
+{
+    static float const value;
+};
+
+float const Tester_6::value {1.11};
+
+}
+
+VALID(AllUnvaluable<Tester_6>);
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+struct Tester_7
+{
+    static bool const value;
+};
+
+VALID(AllUnvaluable<Tester_6>);
+/******************************************************************************************************/
+
+
+
+
+
+/******************************************************************************************************/
+INVALID(AllUnvaluable<Tester_5, Tester_6>);
+INVALID(AllUnvaluable<Tester_6, Tester_5>);
+/******************************************************************************************************/
+
+
+
+
+
+}}}}
 
 #endif

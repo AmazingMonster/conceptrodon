@@ -4,15 +4,15 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ANY_UNVALUABLE_H
 #define CONCEPTRODON_OMENNIVORE_ANY_UNVALUABLE_H
 
-#include "conceptrodon/descend/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/descend/omennivore/concepts/descend/all_unvaluable.hpp"
+#include "conceptrodon/omennivore/concepts/Unvaluable.hpp"
+#include "conceptrodon/omennivore/concepts/descend/all_unvaluable.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Structures>
 concept JustAnyUnvaluable
-= (...||(not Valuable<Structures>));
+= (...||(Unvaluable<Structures>));
 
 template<typename...Structures>
 concept AnyUnvaluable

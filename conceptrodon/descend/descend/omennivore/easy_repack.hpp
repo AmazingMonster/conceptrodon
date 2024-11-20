@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_OMENNIVORE_EASY_REPACK_H
 #define CONCEPTRODON_OMENNIVORE_EASY_REPACK_H
 
-#include "conceptrodon/descend/omennivore/concepts/moldful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/roadful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/railful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_moldful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_roadful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_railful.hpp"
 #include "conceptrodon/descend/cotanivore/repack.hpp"
 #include "conceptrodon/descend/sequnivore/repack.hpp"
 #include "conceptrodon/descend/warehivore/repack.hpp"
@@ -21,19 +21,19 @@ struct EasyRepack
 {};
 
 template<typename...Packages>
-requires (... && Moldful<Packages>)
+requires AllMoldful<Packages...>
 struct EasyRepack<Packages...>
 : public Cotanivore::Repack<Packages...>
 {};
 
 template<typename...Packages>
-requires (... && Roadful<Packages>)
+requires AllRoadful<Packages...>
 struct EasyRepack<Packages...>
 : public Warehivore::Repack<Packages...>
 {};
 
 template<typename...Packages>
-requires (... && Railful<Packages>)
+requires AllRailful<Packages...>
 struct EasyRepack<Packages...>
 : public Stockivore::Repack<Packages...>
 {};

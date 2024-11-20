@@ -4,17 +4,17 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ZIP_H
 #define CONCEPTRODON_OMENNIVORE_ZIP_H
 
-#include "conceptrodon/descend/omennivore/concepts/moldful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/roadful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/railful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/flowful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/sailful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/snowful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/hailful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/coolful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/calmful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/gritful.hpp"
-#include "conceptrodon/descend/omennivore/concepts/willful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_moldful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_roadful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_railful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_flowful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_sailful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_snowful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_hailful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_coolful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_calmful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_gritful.hpp"
+#include "conceptrodon/descend/omennivore/concepts/all_willful.hpp"
 
 #include "conceptrodon/descend/omennivore/among.hpp"
 #include "conceptrodon/omennivore/total.hpp"
@@ -82,7 +82,7 @@ struct Zip
 // type
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Moldful<Packages>)
+requires AllMoldful<Packages...>
 struct Zip<Packages...>
 {
     template<template<typename...> class Operation>
@@ -137,7 +137,7 @@ struct Zip<Packages...>
 // Mold
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Roadful<Packages>)
+requires AllRoadful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<typename...> class...> class Operation>
@@ -192,7 +192,7 @@ struct Zip<Packages...>
 // Page
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Railful<Packages>)
+requires AllRailful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<auto...> class...> class Operation>
@@ -247,7 +247,7 @@ struct Zip<Packages...>
 // Road
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Flowful<Packages>)
+requires AllFlowful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<typename...> class...> class...> class Operation>
@@ -302,7 +302,7 @@ struct Zip<Packages...>
 // Rail
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Sailful<Packages>)
+requires AllSailful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<auto...> class...> class...> class Operation>
@@ -357,7 +357,7 @@ struct Zip<Packages...>
 // Flow
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Snowful<Packages>)
+requires AllSnowful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<typename...> class...> class...> class...> class Operation>
@@ -412,7 +412,7 @@ struct Zip<Packages...>
 // Sail
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Hailful<Packages>)
+requires AllHailful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<auto...> class...> class...> class...> class Operation>
@@ -467,7 +467,7 @@ struct Zip<Packages...>
 // Snow
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Coolful<Packages>)
+requires AllCoolful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Operation>
@@ -522,7 +522,7 @@ struct Zip<Packages...>
 // Hail
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Calmful<Packages>)
+requires AllCalmful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Operation>
@@ -577,7 +577,7 @@ struct Zip<Packages...>
 // Cool
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Gritful<Packages>)
+requires AllGritful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Operation>
@@ -632,7 +632,7 @@ struct Zip<Packages...>
 // Calm
 /******************************************************************************************************/
 template<typename...Packages>
-requires (... && Willful<Packages>)
+requires AllWillful<Packages...>
 struct Zip<Packages...>
 {
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Operation>

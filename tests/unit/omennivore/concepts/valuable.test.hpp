@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_VALUABLE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_VALUABLE_H
 
-#include "conceptrodon/descend/omennivore/concepts/valuable.hpp"
+#include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -122,43 +122,11 @@ struct Tester_7
     static bool const value;
 };
 
-INVALID(Valuable<Tester_6>);
+INVALID(Valuable<Tester_7>);
 /******************************************************************************************************/
 
 
 
-
-/******************************************************************************************************/
-template<typename...>
-struct Tester_8 {};
-
-template<typename Element>
-requires Varybivore::Clarify
-<
-    Ominuci::isValueImmediate<decltype(Element::value)>,
-    Element::value
->
-struct Tester_8<Element>
-{
-    static constexpr int value {-1};
-};
-
-template<typename Element>
-requires Mouldivore::Confess<std::is_const, const decltype(Element::value)>
-struct Tester_8<Element>
-{
-    static constexpr int value {0};
-};
-
-template<typename Element>
-requires Valuable<Element>
-struct Tester_8<Element>
-{
-    static constexpr int value {1};
-};
-
-static_assert(Tester_8<std::integral_constant<int, 1>>::value == 1);
-/******************************************************************************************************/
 
 }}}}
 

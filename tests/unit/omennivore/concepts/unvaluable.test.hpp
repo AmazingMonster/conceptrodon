@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNVALUABLE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNVALUABLE_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/unvaluable.hpp"
+#include "conceptrodon/omennivore/concepts/unvaluable.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

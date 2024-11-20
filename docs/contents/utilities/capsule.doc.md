@@ -56,7 +56,7 @@ using Result = PackedCapsule::Road<Operation>;
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
-We can check the size of a packed `Capsule`.
+- We can check the size of a packed `Capsule`.
 
 ```C++
 static_assert(PackedCapsule::size() == 4);

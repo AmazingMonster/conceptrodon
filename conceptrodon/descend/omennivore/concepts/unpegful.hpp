@@ -6,19 +6,14 @@
 
 #include "conceptrodon/mouldivore/concepts/deceive.hpp"
 #include "conceptrodon/pagelivore/is_specialization_of.hpp"
-#include "conceptrodon/descend/omennivore/concepts/descend/unpageful.hpp"
 #include "conceptrodon/peg.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Arg>
-concept JustUnpegful = Mouldivore::Deceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
-
-template<typename Arg>
 concept Unpegful
-=   Mouldivore::Deceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>
-||  Unpageful<Arg>;
+= Mouldivore::Deceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
 
 }}
 

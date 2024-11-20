@@ -5,8 +5,7 @@
 #define CONCEPTRODON_OMENNIVORE_ALL_VALUABLE_H
 
 #include <type_traits>
-#include "conceptrodon/descend/microbiota/ominuci/is_value_immediate.hpp"
-#include "conceptrodon/varybivore/concepts/confess.hpp"
+#include "conceptrodon/microbiota/ominuci/is_value_immediate.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -14,12 +13,8 @@ namespace Omennivore {
 template<typename...Structures>
 concept AllValuable 
 = (...&&(
-       std::is_const<const decltype(Structures::value)>::value
-    && Varybivore::Confess
-    <
-        Ominuci::isValueImmediate<decltype(Structures::value)>,
-        Structures
-    >
+    std::is_const<const decltype(Structures::value)>::value
+    &&  Ominuci::ImmediateValue<Structures::value>
 ));
 
 }}
