@@ -5,15 +5,15 @@
 #define CONCEPTRODON_VARYBIVORE_SAME_H
 
 #include "conceptrodon/varybivore/is_same.hpp"
-#include "conceptrodon/varybivore/concepts/clarify.hpp"
+#include "conceptrodon/pagelivore/concepts/clarify.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto LeftSide, auto RightSide>
 concept Same
-=   Clarify<IsSame, LeftSide, RightSide>
-&&  Clarify<IsSame, RightSide, LeftSide>;
+=   Pagelivore::Clarify<IsSame, LeftSide, RightSide>
+&&  Pagelivore::Clarify<IsSame, RightSide, LeftSide>;
 
 }}
 
