@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ```C++
 template<typename, size_t>
-concept Prefix;
+concept Prefix = REQUIREMENT;
 ```
 
 ## Examples

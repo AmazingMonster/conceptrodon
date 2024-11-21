@@ -52,7 +52,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Reiterate<...>::Page` is implemented as a shortcut to `TypicaReiterate<...>::Page<...>::type`:
+`Reiterate<*>::Page` is implemented as a shortcut to `TypicaReiterate<*>::Page<*>::type`:
 
 ```C++
 template<typename...Elements>

@@ -430,13 +430,13 @@ struct Trek
        /**** Continuation ****//* Start */
        // This function composes the conjuration function `Road` and the `Agreements...`.
        // Note that even though `Agreements...` is variadic, it only allows a single argument.
-       // This is because `Agreements...` will be used to invoke `Trek<...>::ProtoRoad`,
+       // This is because `Agreements...` will be used to invoke `Trek<*>::ProtoRoad`,
        // which has only one parameter `Car`.
        template<template<typename...> class...Agreements>
        using Road = Trek<Commit::template Road>::template ProtoRoad<Agreements...>;
 
        // This function composes the conjuration function `Road` and the `Agreements...`.
-       // `Agreements` will be used to invoke `Trek<...>::ProtoSail.
+       // `Agreements` will be used to invoke `Trek<*>::ProtoSail.
        template<template<template<auto...> class...> class...Agreements>
        using Sail = Trek<Commit::template Road>::template ProtoSail<Agreements...>;
        /**** Continuation ****//* End */

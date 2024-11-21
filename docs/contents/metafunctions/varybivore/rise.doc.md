@@ -68,7 +68,7 @@ static consteval auto arise()
             return original;
         }();
         // We use `std::type_identity` to avoid construct
-        // an object of type `Operation<...>`.
+        // an object of type `Operation<*>`.
         return std::type_identity<Operation<sorted.at(I)...>> {};
     }(std::make_index_sequence<sizeof...(Variables)>{});
 };

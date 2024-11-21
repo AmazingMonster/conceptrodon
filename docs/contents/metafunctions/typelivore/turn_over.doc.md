@@ -40,7 +40,7 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-`TurnOver` is implemented as a shortcut to `TypicalTurnOver<...>::type`:
+`TurnOver` is implemented as a shortcut to `TypicalTurnOver<*>::type`:
 
 ```C++
 template<typename...Elements>

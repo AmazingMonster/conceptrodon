@@ -102,7 +102,7 @@ static consteval auto stare()
             // which contains all the indices of `true`.
             // Then, we instantiate `Operation`.
             // We return `std::type_identity` to avoid constructing
-            // an object of type `Operation<...>`.
+            // an object of type `Operation<*>`.
             return std::type_identity<Operation<result.at(J)...>> {};
         }(std::make_index_sequence<(...+Phenomena)>{});
     }(std::make_index_sequence<sizeof...(Phenomena)>{});

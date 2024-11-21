@@ -44,7 +44,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`ConjureSet` is implemented as a shortcut to `TypicalConjureSet<...>::type`:
+`ConjureSet` is implemented as a shortcut to `TypicalConjureSet<*>::type`:
 
 ```C++
 template<typename...Elements>

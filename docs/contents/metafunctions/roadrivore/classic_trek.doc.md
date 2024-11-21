@@ -436,13 +436,13 @@ struct ClassicTrek
        /**** Continuation ****//* Start */
        // This function composes the conjuration function `Road` and the `Agreements...`.
        // Note that even though `Agreements...` is variadic, it only allows a single argument.
-       // This is because `Agreements...` will be used to invoke `ClassicTrek<...>::ProtoRoad`,
+       // This is because `Agreements...` will be used to invoke `ClassicTrek<*>::ProtoRoad`,
        // which has only one parameter `Car`.
        template<template<typename...> class...Agreements>
        using Road = ClassicTrek<Commit::template Road>::template ProtoRoad<Agreements...>;
 
        // This function composes the conjuration function `Road` and the `Agreements...`.
-       // `Agreements` will be used to invoke `ClassicTrek<...>::ProtoSail.
+       // `Agreements` will be used to invoke `ClassicTrek<*>::ProtoSail.
        template<template<template<auto...> class...> class...Agreements>
        using Sail = ClassicTrek<Commit::template Road>::template ProtoSail<Agreements...>;
        /**** Continuation ****//* End */

@@ -41,7 +41,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Among<...>::Page` is implemented as a shortcut to `TypicalAmong<...>::Page<...>::type`:
+`Among<*>::Page` is implemented as a shortcut to `TypicalAmong<*>::Page<*>::type`:
 
 ```C++
 template<typename...Elements>

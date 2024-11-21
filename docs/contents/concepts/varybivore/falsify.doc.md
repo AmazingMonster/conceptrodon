@@ -1,0 +1,71 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Falsify`
+
+## Description
+
+`Varybivore::Falsify` accepts a callable predicate and a list of variables.
+It returns true if the predicate invoked by the variables returns false and returns false if otherwise.
+
+<pre><code>   Predicate, Variables...
+-> not Predicate(Variables...)</code></pre>
+
+## Structure
+
+```C++
+template<auto, auto...>
+concept Falsify = REQUIREMENT;
+```
+
+## Examples
+
+`Falsify` turns a callable predicate into a concept so that it can be used for subsumption.
+
+The following code will fail since `(not Pred_0(*))` and `(not Pred_0(*)) && (not Pred_1(*))` are both atomic:
+
+```C++
+constexpr auto Pred_0 = [](auto...){return false;};
+
+constexpr auto Pred_1 = [](auto...){return false;};
+
+template<auto...Args>
+requires (not Pred_0(Args...))
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires (not Pred_0(Args...)) && (not Pred_1(Args...))
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCspK4AMngMmAByPgBGmMQSAMykAA6oCoRODB7evv5BaRmOAmER0SxxCVzJdpgOWUIETMQEOT5%2BgbaY9sUMjc0EpVGx8Um2TS1teZ0KE4PhwxWj1QCUtqhexMjsHGgMs5iqKcQA1ExeRCfKxJjoAPoaJyaJACJPAVYBLxDnRAB0AJWJgA7BYbgRNgwTlQxEpnlZgS94SYNABBFGovYHI6nX6oK43e5cJ6vd6fb54gF/IGg8GQ6GwzDIxHItEYgiYFgpAwc55uSkA1HEYAKZ7YDE3ACOXjwNwUJwgDFQBAJtweECFIqpKyBaKxHJxJxiqE80K8DAgNLBmAhxChMNocMSCKRbLRHK5PKZiX5F1QVM1osS4rRUplcoVSpV1zVGg1woU2pWTzMADZzKnI8rVUT41rAbrMQJsccjSbaGaLVa6XaTgRiF5vS6MRjZkxHMg7kwFEoWtRzXyuGLLUDnRw1rROAFeH4OFpSKhOG5rNYTgoNltMCnEjxSARNOO1gBrEABVN/AAcqakAWBqckAE5EnezMlJxxJLwWBINBpSLP50XDheAUEA/33Odx1IOBYBgRAQA2AgUguchKDQLk6HiSJWB2VQrwAWnvE5gGQZATikP4zF4W5CBIPB0D0fhBBEMR2CkGRBEUFR1Eg0hdC4UgAHdiCYFJOB4CcpxnA8F04AB5C5kJVVAqBOPDU0IyRiNI8jJEohUPAw%2BhTnMHcVl4CCtDWCAkHQlJMLICgIDshyQGAKQzD4OgOWIUCIBiGSYnCZoAE9xN4ILmGIEK5JibQ6gg3d0LYQQ5IYWgwt4rAYi8YB%2BVoR1wtILAWEMYBxCy2UErwAA3TBQN4w46guHZd3CDl33nWg8BiEToo8LAZPrPBv24Xg6uIY0lBeTkyu6owDzWKgDBFAA1PBMEEuSUkYIqmOEURxHY/auLUGT%2BP0MqUBXSx9B60DIDWVAUl6Br8NmdBnheUxLGsMxAIm4h6Pq%2BA1lqepnAgVwpj8ATQgWcpKj0QpMgEGHkfSVGGCGRHli6HoGjmdGBPB3p%2BhaHGRiqcYBmJmmKYRqmJDBjdtmZ/QpP/GSgLUgiiJIsiKLMBVcFokzXy4cy90WtYEEwJgsASS1SBPSREj%2BJ9gUkDRJDMSRU1/M8Hw5j8vxAHc/mvVMLwfC8uFTAJJC4AIn1TLneKAkCwOlyDrLgmyEMUlCnJc4zsLYThmhYGrgXwpgTmQAwjHIh8/i4P55xooggYYgT9pYo7pBOpQzt43RPOE0Twskjhp3dwD5KD5TVKjmO44TpPgBTtOM4M1AjPibczClyyoID0P4lQ5z%2B/s4yQFb2PE7KrgHy4P8aFoHy/IC3jItCoq9%2Bi2L4ocIrksYAg0oymTsty/LCrG4rZqMCr53wG56jqhrM9UZqOSK9q3QZLdV6qFAaOx5zDVGruCaU1MAzVKi/cIoBfZ8BWgodam1tq7UfvnQ6bEi6yFOjxec5dLoLR%2BlYW6ICHrK2eq9Tg70CCfVeJQv6AN4g5xBo9fG1VIbQ08O0PQ8MyhMwEijXodMJFZEpksampNCa00EXkEm3Q%2BF9DmLIpGJMibKNhvTeYoi5Hs3XJsNmksTZ1wArwHmC925L2TivHujwICi2ztuSWFkZakDlgrUYyt3yflIN%2BRIqcdbAhdsCYEiRdb6ydvXGxnAvbgUWtBf2SBEJKSnhPYg4cdhRyIiwBQNUyI1ScV6WY1F8DZ3ooxWQBcCEcXkCXEhOhzZCREmJMaNcrHc0bkhC4JwVJnGICwQpxTSnlPbPVFUEBDKz0HqZRII9Unjxng5bJ6y54lJSCkO4ZSHx3AqQQLsoz7xeU3vEbegVgrRQPrcmKcUEpn37ilS%2B6VMpv0wDlPKYgH67hKnNCBvB37VS/jJJqyAWoAMEEA3iIC%2BohXAUNIG0DxrxDgQguayDUnLSYGtDaW0dqzl3Hg1iEhCGcRaeddpndrq/WofdUGC4XpZAagAeg%2BvSqhFh/o2MBsDWhYM1EQz8FDBg7g9HCIlVovG0i0ZSvEZjXosr5EirJro3I%2BiFECHJoYxY2iDF0zbAzIx2iWZmLYj06SHtOAjLGVpIpJSTgHL%2BMckW1SSAeJWb7WW8tFaUBrkE78ZhU6JESAEAIOs14aHDXeC8CTZLAVsN7UeOoVYgDVmnRIF5HavijamV8d4TaJBtQ3ZNaaa5UUTZ7H2Vk1gTQyM4SQQA%3D%3D)
+
+By turning `(not Pred_0(*))` and `(not Pred_1(*))` into concepts, we allow compilers to perform proper subsumption.
+
+```C++
+template<auto...Args>
+requires Falsify<Pred_0, Args...>
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires Falsify<Pred_0, Args...> && Falsify<Pred_1, Args...>
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+## Implementation
+
+```C++
+template<auto Predicate, auto...Variables>
+concept Falsify = not Predicate(Variables...);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISQDspK4AMngMmAByPgBGmMQgZqQADqgKhE4MHt6%2B/kGp6Y4CYRHRLHEJSXaYDplCBEzEBNk%2BfoG2mPZFDPWNBCVRsfGJtg1NLbntCmP94YPlw2YAlLaoXsTI7BwEmCzJBjsmAMxuTF5EANTKxJj4ojukF2dEAHRvAGqNeEwx9ArH2BMGgAgmgGJtkgQLgAxMTpKgATwuxwAIhcGKgoddbnh7pgIJ9iN9fpgFG8XktjlYQUDgQB6ABUTOZLNZdNpjOZFwAKqSCAoLiz2SDOayxUzhcDaWDpphVMliE9zqgrjd0AB9DTIo5okwAVisepREGeqHJlICFhuBHWDAuVDhmCpJgCKOdNJBMp28sVptVt3VXG1uoN%2BuNpvNLqtmBtxDtDtoSmdrvdUpBOz2BydJwjb2BxGA/yOgJBNwAjl48DcBbDE3hEcc3NiNRpHvnC%2BSAdKBLKfRcYqhPPavAwIBbo7H447k26PcCM/smIcc8rye2iyX85gK1XSTC4fWEY3m5q2wWyW8AcizAA2cw3/d1hsnE9cM8dy/F7sMXsK/uD2hh1HcdrVtC4CGILxsysFM52mJdcXVJgFCUJpqBHRsuABMdKSOCwOBWWhOD1Xg/A4LRSFQTg3GsawLgUNYNkwa8jh4UgCE0AiVgAaxAPVJBeDRJC4AIjg0PUNFvG8zAADhk/ROEkXgWAkDRWzIiiqI4XgFBAVsOPIgjSDgWAYEQEA1gIZJznISg0D2Oh4kiVgtlUGSbwAWhvSQLmAZBkAuKQXjMXgcSIIl0D0fhBBEMR2CkGRBEUFR1EM0hdDfAB3YgmGSTgeEI4jSM4yjOAAeXOayoVQKgLjczzvN8/zAoEswLggDwHPoRVzFYpZeAMrQVggJB7OSRyyAoCAxomkBgCkJIaFoHZiF0iAYhKmJwkaBF8t4LbmGIBEypibQagMtj7LYQQyoYWhdrSrAYi8YBTloRM9tILAWEMYBxEe3dagAN1JEq5Rqc4tjY8IdiItLaDwGIcqOjwsBKiC8BU7heBB4gByUFFdl%2BhGjE4lYqAMQt3jwTBMrK5JGE%2B6LhFEcQEuZ5K1BKjL9F%2BlBaMsfREd0yAVlQSFMl0jgPOmdBUVMSxrDMTTcYi0HRY6LpMhcBh3E8Vo9FCOYygqPQCgyAQJj8N9ze6AYTeGN9qlqARenGfXcidzpzrqGZ7aGBInZmK29Hgpp/YWQOVgY9ZNgkQqOBI0gNN4LS6vcryfL8gKgraiBcEIEgWK4fr2LJlYEEwJgsASMdSF4yQjheABOI4AkkISzEkG81L1G9m4UjglNIFTWJeG8uBvGTm5kyf%2BK4PVW5vZOSq0nS9LLwzhrMkaLMqmyppm7rnLYThGhYIGAg8pgLmQAwjEC5uXi4QTQvwcK8Eit9mditnpA5pQXM0q6CSNlXKe0E5JxTqVDgFUrLnAuDVJ4xAL5XxvnfX6j9n6CXap1ca3UWLLAGmTYyo1UBdXiLZaa5D8HDHPpfDyGCjBcGblwVsS0VprQ2mlA6O1Pq8KOidM6DhPpXUYAQW690SpPRem9D62MvpEyMP9Ci%2BAbjA1BmlcGyBIafRhp0EqCMkY7VRlsCiGMsZsVxvjTAhMfrKPCKALefBKYKGprTemjMFE/1ZvFf%2BshOapQoiA3mpMFZWEFkYkWddxbdCljLAgcsdThKVireIatonR29i7PwEBXAhzfEbUoAczZpAtlkD21sUhlLtsbEpXstau2DpU0O2Tuhu1mMUyOodmk5CqWHTp8xTYl1WLHeKkDippTTvQtBt977ACwS/LU%2Bd35F16iXYhW8K5VxrpQBOw9R5PyEgEReARRKSC7t5N80C162A3oNIyJlzKWSqlQo%2BTkXJnxQY1FgCggYBSBiwl4WZphv0LhFKKshf5%2BMSvIQBQSdAgCOKQMBeVsYTJXlM8q%2B9qq1XPj8v5AKgUgqhB1GhE0WJHFLg84aZCKGTTsuS7qIB/nJGSOqQFzd1QkqQt8/%2BdBOGUG4RRARD02KiqEedUR5DroSLug9VRmBnqvTEPIti31iZmN4Gon2IMpYUW0bohR%2Bi4YUSMcjBEpj0ZEksTjeINi7HE0cSQimTAqY0zpgzMibEfFxQkP4pK8LuZItCcYAWNgonwDFhLHsnA6Sy35orSwytU6q0/urOuztug6z1n0w2usI7DOqYUTIBTi3lMLY7TWPsml9DLVm32fRK2B1GHWlpQcm11O6SMmOTF46DygavTgyCWAEv%2BRcTlwKlx8nagXcKxdqXl1IJXauww65wwOYkJ%2BRwjh6gksJNSO6AhT0xZpTg699JLobnqFueoZK3mbpIZuok25cGRXDI4kyz3aU3kNBOIVT2p3Pb%2BripBcbpGcJIIAA)
+
+## Links
+
+- [source code](../../../../conceptrodon/varybivore/concepts/falsify.hpp)
+- [unit test](../../../../tests/unit/concepts/varybivore/falsify.test.hpp)

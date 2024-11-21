@@ -57,7 +57,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Diversity` is implemented as a shortcut to `TypicaDiversity<...>::type`:
+`Diversity` is implemented as a shortcut to `TypicaDiversity<*>::type`:
 
 ```C++
 template<auto...Variables>

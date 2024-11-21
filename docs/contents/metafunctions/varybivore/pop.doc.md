@@ -40,7 +40,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Pop` is implemented as a shortcut to `TypicalPop<...>::type`:
+`Pop` is implemented as a shortcut to `TypicalPop<*>::type`:
 
 ```C++
 template<auto...Variables>
