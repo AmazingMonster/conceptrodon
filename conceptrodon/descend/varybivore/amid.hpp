@@ -5,12 +5,13 @@
 #define CONCEPTRODON_VARYBIVORE_AMID_H
 
 #include <utility>
-#include "conceptrodon/descend/stamp.hpp"
+#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/label.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto...Elements>
+template<auto...Variables>
 struct Amid
 {
     template<typename>
@@ -18,8 +19,8 @@ struct Amid
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Stamp<Elements, std::integral_constant<size_t, I>>...
-    { using Stamp<Elements, std::integral_constant<size_t, I>>::idyl...; };
+    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
+    { using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...; };
 
     template<size_t I>
     struct ProtoPage
@@ -28,7 +29,7 @@ struct Amid
         {
             decltype
             (
-                Detail<std::make_index_sequence<sizeof...(Elements)>>
+                Detail<std::make_index_sequence<sizeof...(Variables)>>
                 ::idyl(std::integral_constant<size_t, I>{})
             )::value
         };
@@ -39,7 +40,7 @@ struct Amid
     {
         decltype
         (
-            Detail<std::make_index_sequence<sizeof...(Elements)>>
+            Detail<std::make_index_sequence<sizeof...(Variables)>>
             ::idyl(std::integral_constant<size_t, I>{})
         )::value
     };

@@ -69,4 +69,4 @@ constexpr bool IsEqual_v
 
 - [source code](../../../../conceptrodon/varybivore/is_equal.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/is_equal.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/is_equal.test.hpp)

@@ -83,4 +83,4 @@ struct BindFront
 ## Links
 
 - [source code](../../../../conceptrodon/pagelivore/bind_front.hpp)
-- [unit test](../../../../tests/unit/pagelivore/bind_front.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/pagelivore/bind_front.test.hpp)

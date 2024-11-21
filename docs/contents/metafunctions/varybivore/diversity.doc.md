@@ -73,4 +73,4 @@ struct Diversity
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/diversity.hpp)
-- [unit test](../../../../tests/unit/varybivore/diversity.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/diversity.test.hpp)

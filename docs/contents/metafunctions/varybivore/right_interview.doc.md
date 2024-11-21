@@ -182,4 +182,4 @@ struct RightInterview<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/right_interview.hpp)
-- [unit test](../../../../tests/unit/varybivore/right_interview.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/right_interview.test.hpp)

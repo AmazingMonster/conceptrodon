@@ -186,4 +186,4 @@ struct FoldLeft<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/fold_left.hpp)
-- [unit test](../../../../tests/unit/varybivore/fold_left.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/fold_left.test.hpp)

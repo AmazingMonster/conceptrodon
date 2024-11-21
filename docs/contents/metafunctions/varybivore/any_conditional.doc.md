@@ -208,4 +208,4 @@ The implementation is straightforward. [Check out this test to see how it works.
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/any_conditional.hpp)
-- [unit test](../../../../tests/unit/varybivore/any_conditional.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/any_conditional.test.hpp)

@@ -82,4 +82,4 @@ struct IsSameAs
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/is_same_as.hpp)
-- [unit test](../../../../tests/unit/varybivore/is_same_as.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/is_same_as.test.hpp)

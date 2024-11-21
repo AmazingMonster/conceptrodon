@@ -90,12 +90,6 @@ SPDX-License-Identifier: Apache-2.0 -->
   </details>
   <!-- Instruments -- End -->
 
-  <!-- Enumerators -- Start -->
-  <details><summary><h3>Lexicons</h3></summary>
-  
-  </details>
-  <!-- Enumerators -- End -->
-
   <!-- Symbols -- Start -->
   <details><summary><h3>Symbols</h3></summary>
   

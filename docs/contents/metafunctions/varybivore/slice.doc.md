@@ -213,4 +213,4 @@ struct Slice
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/slice.hpp)
-- [unit test](../../../../tests/unit/varybivore/slice.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/slice.test.hpp)

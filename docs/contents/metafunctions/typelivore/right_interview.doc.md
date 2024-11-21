@@ -175,4 +175,4 @@ struct RightInterview<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/right_interview.hpp)
-- [unit test](../../../../tests/unit/typelivore/right_interview.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/right_interview.test.hpp)

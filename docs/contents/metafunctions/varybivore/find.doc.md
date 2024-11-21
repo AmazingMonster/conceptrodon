@@ -153,4 +153,4 @@ struct Find<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/find.hpp)
-- [unit test](../../../../tests/unit/varybivore/find.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/find.test.hpp)

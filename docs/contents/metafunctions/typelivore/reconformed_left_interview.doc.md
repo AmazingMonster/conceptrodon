@@ -172,4 +172,4 @@ struct ReconformedLeftInterview
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/reconformed_left_interview.hpp)
-- [unit test](../../../../tests/unit/typelivore/reconformed_left_interview.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/reconformed_left_interview.test.hpp)

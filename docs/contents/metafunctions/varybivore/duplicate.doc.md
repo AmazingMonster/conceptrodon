@@ -118,4 +118,4 @@ struct Duplicate
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/duplicate.hpp)
-- [unit test](../../../../tests/unit/varybivore/duplicate.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/duplicate.test.hpp)

@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_ARE_DISTINCT_H
 
 #include <utility>
-#include "conceptrodon/descend/label.hpp"
+#include "conceptrodon/label.hpp"
 #include "conceptrodon/monotony.hpp"
 
 namespace Conceptrodon {

@@ -1,5 +1,50 @@
 # Diary
 
+## 2024/11/21
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for utilities</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for concepts</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Reorganize the structure of the library</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Reorganized tests so the structure corresponds to the documentation</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/20
 
 ### Todo

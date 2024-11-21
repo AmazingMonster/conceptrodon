@@ -207,4 +207,4 @@ struct Erase
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/erase.hpp)
-- [unit test](../../../../tests/unit/varybivore/erase.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/erase.test.hpp)

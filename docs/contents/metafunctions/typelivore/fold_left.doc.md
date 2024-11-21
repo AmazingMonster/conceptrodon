@@ -189,4 +189,4 @@ struct FoldLeft<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/fold_left.hpp)
-- [unit test](../../../../tests/unit/typelivore/fold_left.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/fold_left.test.hpp)

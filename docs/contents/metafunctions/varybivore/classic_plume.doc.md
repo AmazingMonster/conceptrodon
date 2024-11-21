@@ -236,4 +236,4 @@ struct ClassicPlume<Variable>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/classic_plume.hpp)
-- [unit test](../../../../tests/unit/varybivore/classic_plume.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/classic_plume.test.hpp)

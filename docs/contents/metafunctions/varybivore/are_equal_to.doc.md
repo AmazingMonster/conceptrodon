@@ -88,4 +88,4 @@ struct AreEqualTo
 
 - [source code](../../../../conceptrodon/varybivore/are_equal_to.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/are_equal_to.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/are_equal_to.test.hpp)

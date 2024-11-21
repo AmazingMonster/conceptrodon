@@ -237,4 +237,4 @@ struct Gauge<Element>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/gauge.hpp)
-- [unit test](../../../../tests/unit/typelivore/gauge.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/gauge.test.hpp)

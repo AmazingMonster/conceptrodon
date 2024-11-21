@@ -129,4 +129,4 @@ struct TypicalReiterate
 ## Links
 
 - [source code](../../../../conceptrodon/descend/typelivore/reiterate.hpp)
-- [unit test](../../../../tests/unit/typelivore/typical_reiterate.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/typical_reiterate.test.hpp)

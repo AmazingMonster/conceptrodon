@@ -158,4 +158,4 @@ struct ClassicFoldLeftFirst<Initiator, First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/classic_fold_left_first.hpp)
-- [unit test](../../../../tests/unit/typelivore/classic_fold_left_first.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/classic_fold_left_first.test.hpp)

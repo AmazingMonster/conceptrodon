@@ -158,4 +158,4 @@ struct Inject
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/inject.hpp)
-- [unit test](../../../../tests/unit/varybivore/inject.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/inject.test.hpp)

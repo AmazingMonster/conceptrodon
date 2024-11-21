@@ -220,4 +220,4 @@ struct SensibleGauge<Element>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/sensible_gauge.hpp)
-- [unit test](../../../../tests/unit/typelivore/sensible_gauge.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/sensible_gauge.test.hpp)

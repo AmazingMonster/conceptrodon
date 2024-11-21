@@ -132,4 +132,4 @@ struct Observe
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/observe.hpp)
-- [unit test](../../../../tests/unit/varybivore/observe.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/observe.test.hpp)

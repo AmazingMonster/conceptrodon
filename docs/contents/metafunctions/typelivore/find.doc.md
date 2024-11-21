@@ -149,4 +149,4 @@ struct Find<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/find.hpp)
-- [unit test](../../../../tests/unit/typelivore/find.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/find.test.hpp)

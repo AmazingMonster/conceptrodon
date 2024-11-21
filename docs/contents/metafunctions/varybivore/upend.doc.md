@@ -53,23 +53,30 @@ We will label each variable by its index in the list and collect them into a ros
 When provided with an index, we instruct compilers to pull its corresponding variable from the roster.
 
 First, we need to create a label class.
-We will pack each variable into a `Monotony` so that we can use it as a return type::
+
+```C++
+template<typename Treasure, typename Key>
+struct Label
+{ 
+    static constexpr auto idyl(Key) -> Treasure;
+};
+```
+
+Note that `Label::idyl` maps its parameter type `Key` to its return type `Treasure`. We will pack each variable into a `Monotony` so that we can use it as a return type:
 
 ```C++
 template<auto Variable>
 struct Monotony
-{ static constexpr auto value {Variable}; };
-
-template<auto Variable, size_t I>
-struct Stamp
-{ 
-    static constexpr auto idyl
-    (std::integral_constant<size_t, I>) -> Monotony<Variable>;
+{
+    static constexpr auto value {Variable};
 };
 ```
 
-We can pull out the variable of a given index by asking `decltype` the return type of `idyl` if invoked by `std::integral_constant<size_t, I>`.
-Here, we convert an index into a type via `std::integral_constant` for argument-dependent lookup.
+We can pull out the variable of a given index by asking `decltype` the return type of `idyl` if invoked by the corresponding `Key`.
+For this purpose, we will convert an index into a type via `std::integral_constant`.
+So, the final mapping will be as follows:
+
+<pre><code>std::integral_constant&lt;I&gt; -> Monotony&lt;Variable<sub>I</sub>&gt;</code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the variables out in reversed order. Here's the entire implementation:
 
@@ -83,9 +90,9 @@ struct Upend
     template<template<auto...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
     // We create an overload set of `idyl` through inheritance.
-    : public Stamp<Variables, I>...
+    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
     {
-        using Stamp<Variables, I>::idyl...;
+        using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation<
             // Note that `sizeof...(I)` is the total number of I...,
             // which is a constant.
@@ -107,9 +114,9 @@ struct Upend
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGxcpK4AMngMmAByPgBGmMQgAMwAHKQADqgKhE4MHt6%2BEqkZWY4CYRHRLHEJiQDstpj2pQxCBEzEBHk%2BfoENTTmt7QTlUbHxSakKbR1dBVyT08Pho1XjdQCUtqhexMjsHOaJ4cjeWADUJoluXo60hACel9gmGgCCh8enmBdXyFPoWCoTxe7zeBEwLDSBnBlzcTBuqDOADV2ngmDF6MC3lNiF4HGcALICVBEBiPN4mWoWM5TJiOZBnNAMKaYVRpYhneFEM4ANzEXm%2BlIsKOIaIxmEpABFLtSpTKQSDwZDoRKrlzESKxfRSDS8AAvTAAfQIZwAkljXji8SbBpCFVSLm8zs6aW16YyBCy2Rz1Wc8Oh7rQQS6zhB/iAQOFwcBiGJDUzaYJYVkDcadebEth1mcALRPQnE0mPK6a9GYzPyim1aWJKwUsEQqF01VwhEAOg7pfFCgtVvxcjSrntddeIaVTZhV3HKth6o7bfzJyYCgUOoI90HzDYFpDfZNkswbToFypctrCqdLunzdh18nraI88XBhXZwA8oPY80dSmjQR5xmzyXs6e5nAeR5BlcH7xHSOQ/gQ6ARuEWCqIaSgAI4CgweywqaT4VhWwFnAA9MRZwAOrfMgxCYM2nIMGcqA8vEtCoEw6A0oejFUBc/gaP6gYmHxZwEAgxDbMACB%2BgwCDxIQhh7AuREgGcaReBieAMraaSwl29CrmaTxPkRQrBiGLpeFkRhnNpumomWmAGYBSEBrQ%2BEjuZFlWcAIkboKiSSu%2Bn6wQIsJmZ5IakWckQkt8ol0rxGi/qgVDzhAprrEJGh%2BgoImySJJJiGcDBjByKVmvOpDhRFzpRQA7ggmlSXguVMB6zJtIISmjjVLpRZRnI0Wc6CoOEPlpEwyAANZnKyE3MjkjHMRyonfEoTIcXh1U1VFAAq%2BU0QoXi0CaLWcmcdxTNxZz8MQLAgNtEVRclqUdul2Y5mcQS6gaKVpRluZnGYOqVWcGhto6PW9cNmAnOug4QI90MCbQiNEdDnnhpGgiYDGcYJp1BBIxjzrJvqf4/uTf1vQDn2moDXDAqe1bEzVmXo09ZEDWptC0IxNx5d8fLeN8h3HSaVDiSwiVEgwJICI8fHdST6wRsLArGVD5nAueJks7roJa3eLbG7O7Yds%2By4KPOrwxpgEKMAQPaEVrlljWcABKTDHpcgXgd7kFuLbNEO4I1sdvBiEgCwTBTUayGsmhmCYYwOFXC9aV6Y5mUEdgEbw6qI5nkXbzEQAVBXldV8RILlxXu3YEIu2VzXpdV%2B3Zet4bHzYV8PxuEyexpE7FqKo2M5qubC4u6B0FfjklaG271lCF4aTFJg6Ae454s/IFc8hQwsLA0DOrfRoOsl68y8%2BdvR0nXvZwDkOVwaGfOon2YFoRl7dCwgfzRL4XktG6TShorbxAIGGBCEYFCsCNMuWEq916ZE3nfcWOp0EnSeDnCwHBNi0E4AAVl4H4DgWhSCoE4G4aw1gaTbF2IKMwiQeCkAIJofBmwpogCIZINsGhJBcFqIkDQRCNBmH8P4MwyRUiEI4JIXg90uAaDfmQihVCOC8AUCAN%2B7DyH4NIHAWAMBEAgG2AQNSBByCUDQJCOg8RIjwM4KoZI/gcz%2BEkGcYAyAGRSDbGYXgm9CAkH9HofgggRBiHYFIGQghFAqHUPo0guggh1VjGkTgPACHENIRwyhnA3w3EsddFxbiPFeJ8V9PhZhQweDsfQDkhwuDrF4HorQmwIBIFsWkexZAKAQG6b0kAwApDAxoCdeI2iIAxDyTEcI7R7iZN4HM5gxB7hvhiNoWGejWG2LYIIN8DBaCLKSVgGIXhgBwl5to7gvAsAxyMOIU5eAaIODwMxG5FDWSwxuPsVhUZGh5LuDEWMayPBYDyQQUU91bmkGWjEVBB4HnADuEYDhmwqAGGAAoJEeBMB1WgmQ1h4ThCiHEDEkl8S1B5JSfoQwxhaGWH0HgGI2jICbFQMPHINycz/F9qYSw1gzDqOWqKLAbKICbDsNsnILgGDuE8N0PQoRliVGqHoYo2QBCzD8EETVzQRhqvGEEaVbyBCDBmIquYfQZXmsWIa0qehaSWvyLq2w9rVWOuaVsHYewJDZI4CQ0gajeAaLOKU9xnjvG%2BOqaGXAwTGnMOaa09FmxZLsXGJK0g3DJCJDbAATjqJIARZhJB8VEf4fN%2BhOAKNIPdFhbZAj%2BGSPm5IXB/C8K4EQwt/hg15I0VonRbD0WGJMZ0sxRSbjWIGagepDinEcHaCwHktQcxtSXNZLg%2Ba2xcH4YE/ARAxVhNkJE8l0hKVKGpUk3QwM0lMAybcgNQaQ35I4IUixAtypLpXWuxkBhN3bt3dlCAdSekNIuMwswLTh36I6V02dYH4jTsGQ0kA37V0bpGfm5RfA6DgmIFMmZSSVkLKWaQEjayNlbIcGRvZjtDnHLyWci5VzaA3NYfc%2BlTyKH4FeY4D5eTvnIF%2BWRgFciKHAtBfccF%2BwKFQrwDC1h8LEUQi42NEdmKmDYtxfiwlZGSWnuiee2QVLEkUJvXStFAqrBMuBRKjlXLPScF5QhfljKLDCtDaK/0jl4BSsaLavwEBXA6uVfKh1qwEh6syFq3IVq3X6pyBF9VJqAtmpaIsULqX%2Bh2qGMl417qhhZcKx0fLUWpUML9d6uRz7%2B2cEGsu1d67/0%2BS3Tu/hcaD0kAgyw6DbTOGkHTVgBIWa5G1vrdugRtRu21GEZIUtHiggvoHbYId/WOljqQOYyxyGEO9McWwTgS7yksAUDyBkPI2sqimPuhNoSggGbJUZ2J8hL1mZ0EkUgd6H1ZOrYG3JSSNHvuKV%2Bu6J2zsXau82K6IG9vgcOIkPrI7x0oaQ/01HCRzvr0NJd/NhprsEHAWD89eHJmUCIxQijJzWFU6o9s2js79kEAYycnjmBzmXLEGxsjnHHmybuS8mVAmklCZE7CsTQKWVSZk5C6FZHlNKCRWptFsG%2BBYpxXiglm59MnqexIYzcS3s0s%2By1lA7nmWsr85QxzzJODEXDNZoVIr4hit8%2Bym16W5UKtdWF9AZWNUxeaMVxLZRPWRadWl5oFrOjxYjzljLeWw8pZKzHn3JqPUVC9RV310Sn0A/UfV47njTvnd5FD8EMP42Hp68mmD7S020WG5QAN42QBmG3YkRIRCxGCJUZ32oza%2B2A84IO3Rqbs0gEkEQgtRDkgSPzZIfNwi6hcESH9xI%2BfQ0j7rwNuRASh8F80Tv9YmxlpZGcJIIAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxBLSAA6oCoRODB7evgGkyamOAqHhUSyx8VK2mPYFDEIETMQEmT5%2BgXaYDul1DQRFkTFxCbb1jc3ZbSO9Yf2lg1IAlLaoXsTI7Bzm/mHI3lgA1Cb%2Bbl6OtIQAnofYJhoAgpvbu5gHR8gKBOhYVFc393cEmBYiQMAMObgI50SjFYzwAKsRMEwFCtMKQ9hCocw2HsANKYS7%2Ba53d7ELwOPbBJixWi/EwAdgsBzuexZe3eTEcyD2aAY70wqkSxD2TBOqD2eHQ51oEDx53mewAtFc9vDEciEYcrHd6QARTW0/6A4EczBgkVEPYANQaeCp9B%2BxIIpPJAFkBKgiAxLtqGb9WWz6pzuQI%2BQKheaxQA3MReZ70izW4i26L2ul6/xa%2B5p/Xaw1AkGmo4RgB0pcTyfoCgdtxJZIIezkmPQtN9zNZAPzJrBHeNoKLotLxeVOyRCjRGOhbGr/tr5J1mHqdAOvuzGYNt39PYL3aN2/7REHw4MCgUewA8lDiBz0mjUgAvTAAfQIg4AktPWbP6/PFzSjhe4mvARbw%2BEAQDCLBVEfJQAEdYwYNYwVfQ9CQ/FkAHp0L2AB1Z5kARE1hQYPZUEjOJaFQJh0DZBcSKoA4ADYNAlKUTCY9EEGIZZgAQcUGAQOJCEMNYhzbFkQD2RIvBTPAuUpakwTdBgPQEAk3HLO1MCrQkQPQMCwgBYAr1oR8eXZQQwXvJ8CDRd9UMJQ8xOXTN/X9LxUiMCkqSqRT3U9NSNJTLSrl0/TBEwIyxFMkN6gso4rOfWyfkJfTJVoFCXNcll3LCYB0UhON/B1c9LyAhgwT9LLXMwvYIg9Z4CAQDlGI0KzUCoQcIFfeY2I0cVT0ahqPTEPYGAGIV2r2ZDS1ISqqtZGqAHcEFk3i8FPJhg15WKXzm%2Ba9hq3DhQRPZ0FQXLJKYZAAGs9n5RJDFSAQSLIoVBponlqOQvb5pq2EBL2BFkVoet1uFPYzneOi9n4YgWBAH6qpqtqOtLLr5QVPYuFvPAH3azrusVPYzDRQc0Q0YsmQ3faWSwHYJwgRGaZY6UmZpz9QPA8LIpMsydrZ9mXjcBKbLZXHMHxtHCcx18ia4H4Vz1JzBZ65Wkawo6pNoWgOOeaNvGeIGvBBkiTmh3qlJUr1etE6mafmMD9djRy7dc5LMpZXUcz%2BV2ty7I4/b7NwS1LI9R0HW4jMwQFGAIbSiVdnLPIAJSYJdDmKn807/NxI4RGPBAUMmAz0kAWCYa6nwg/loMwODGEQ%2BLxcl4sIECysevs7AwInb2vbXXNbnQgAqUex/H9DfhH0fYWwIRYTHye7mn8eJ/XB4EKeIWeTWRI4%2BrX5A8LYOB1D1DHWdesAKvGo%2B7uJO8qELxEjyTB0GTrTjfrDOSsA2%2BjhJsTNE2M9gaHduuB%2BewP7A2/kVBsTYwQaGAWiQBZhqxgVTnQME18yrgMHuyTkj5RxxAIBAd4pcFAwiIdpNwT8X4pDftAr%2BaImEgyuJ3CwHBFi0E4AAVl4H4DgWhSCoE4G4aw1g2TLFWHGMw/geCkAIJoLhixrogF4WYYsvCACc/heEMV4f4eRvCAAcZhJAaGkDwjgkheDwy4BoJBgjhGiI4LwBQIAkFKKEVw0gcBYAwEQCAZYBApI2QoBANAQI6BxAiDCTgqgTEMQVAxSQexgDIC5FIYsZheBv0ICQCUeh%2BCCBEGIdgFQSnyCUGoZRpBdDY0WleRInAeDcL4QIuprizwnDCdDRJyTUnpMyVjSQOS9gQA8NE%2BgQpNhcHmLwbxWhFgQCQFExIMSyARPWZskAwApAkxoCDOIHiIDRDqdEMIDRzitN4Jc5gxBzhnmiNoDo3iFFRLYIIM8DBaA3J8aQLA0QvDAGDtrDx3BeBYHLkYcQAL8AIk6GRCFwj%2BQdBOOsBRBkqh1LONEK8jyPBYDqU6PA8NIWkFetEBh84YXADOEYZRiwqAGGAAoS0eBMCLQAoIhRVSyniEqbIRQKh1AAoafoQwxgJGWH0HgaIHjICLFQHvdIEKFTkIzqYSw1gzAuNekmLAiqICLHaJ0ZwEBXBjD8NjEI0wShlD0HkNIAhrVOpSC6hgfQHVzEqNULokw3XYzNTUbojRvXjT0OyUYngWhRsmBG2Y5RTXSLWBIdpHB%2BGkGcbwVxewBkpLSRkrJYyzATNwAU2Zcj5mLKZYsASVFBgmtIGoyQ/hiy6LpBYyQ5imIaH0do/QnBbGkHhvI4sDEuAMRMdokxU7eGSC4Do/wDFs1dM4O4zxiimV%2BMCas4JvSTjkEoDsmZcS2CcAaCwSMdIFSbRHJ5Lg2jixcGLKi/ARBDXFNkAKip0gqkitqeKkAJMmlMBaZCjNWac0iM4D00JZtJpXpvXe7kBhH3PtfX1SZqBplxAOHIswCzt0%2BJWWs3DGyZnHsiRR3ZyHb0Pv2dohxfA6AAmIKc85AL7nXNuaQHjjznmvIcHxz5scfl/LqUCkFYLaAQoUdCqVcLhEIreXgZFdS0XIAxXx7F1jhF4oJecIl6xhGkvJQoqlNLARKdyjullTA2Ucq5Tyvj/LRCCv/cKmpYrhG6BJuh6VOrZV4uNcq1VIZOAao%2BFqmVFg9W5oNRKLS8BTVVDUxaq1sbsi2oYOgRNjrsbOpqEG3IHqagFd9SGgNPRSvVYEGGqYxRI3BsDdlm1wweiVeTUsFYab5lDszZ0gFeb6OocY1jTDb7y0fpIAR%2BRxGlkqNIA2rA8Rm3WJHWO59li6Q6LpHSfwPbJCpOxjB1xm6vE7v8UEkJYTqOntifEjgV6hksAUJGLkkYn3FgLO8PJs2v3Y3c%2BUoYAGfN1N0IEMDEG2mDeg%2Bujg8G%2BlIbhm9j7X2ft/frDhvDVajGLeu%2BRvHD3aMzJAJ9l%2Bj5vvaMfNjohaP/1sZOZQLjwiBP/IURzoTbzRO4a%2BQQCT/yVOYGBaCsQcm%2BOKdhaZqFeBEWOA0wCrTOmKV6dxfKozJmSVJgs7wKzShaW2cZaRvgrL2Wcu5ZiNzP6PN/pkIIQDvmdA5ECygOLcqFWpZERF3knB0LkPd8F%2BL%2Bq4iGpS0qv1GW/CWry6Vu1zWk3uvyOkUrxX0jdajel81tQ2tZA6/V3PXX7Utc6zG/P8bi%2BJ8KymvrFSoPDZcZwY6LB0efb2DT37JooYQArZ%2B%2BbNaSPLPrYiNblAM1bZA8%2BoxvDeGWIcRoIxdJp1rpGxu2wW6lvzFUSASQdJiwWNSUdhi07F17e0au6x/hG%2B5vX1vjNuTV9N7cUP5br0np%2BEkEAA%3D)
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/varybivore/upend.hpp)
-- [unit test](../../../../tests/unit/varybivore/upend.test.hpp)
+- [source code](../../../../conceptrodon/descend/varybivore/upend.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/upend.test.hpp)

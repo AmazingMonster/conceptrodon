@@ -69,4 +69,4 @@ constexpr bool IsLess_v
 
 - [source code](../../../../conceptrodon/varybivore/is_less.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/is_less.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/is_less.test.hpp)

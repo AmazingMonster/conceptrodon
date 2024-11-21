@@ -82,4 +82,4 @@ struct Reveal
 ## Links
 
 - [source code](../../../../conceptrodon/raillivore/reveal.hpp)
-- [unit test](../../../../tests/unit/raillivore/reveal.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/raillivore/reveal.test.hpp)

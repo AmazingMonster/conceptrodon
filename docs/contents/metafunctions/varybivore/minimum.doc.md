@@ -64,4 +64,4 @@ struct Minimum
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/minimum.hpp)
-- [unit test](../../../../tests/unit/varybivore/minimum.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/minimum.test.hpp)

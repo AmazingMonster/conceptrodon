@@ -84,4 +84,4 @@ struct SubtractFrom
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/subtract_from.hpp)
-- [unit test](../../../../tests/unit/varybivore/subtract_from.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/subtract_from.test.hpp)

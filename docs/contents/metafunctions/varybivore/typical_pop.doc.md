@@ -99,4 +99,4 @@ struct TypicalPop<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/pop.hpp)
-- [unit test](../../../../tests/unit/varybivore/typical_pop.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/typical_pop.test.hpp)

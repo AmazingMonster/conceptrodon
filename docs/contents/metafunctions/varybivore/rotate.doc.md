@@ -130,4 +130,4 @@ struct Rotate
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/rotate.hpp)
-- [unit test](../../../../tests/unit/varybivore/rotate.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/rotate.test.hpp)

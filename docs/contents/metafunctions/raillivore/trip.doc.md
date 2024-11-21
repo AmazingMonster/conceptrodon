@@ -452,4 +452,4 @@ struct Trip
 ## Links
 
 - [source code](../../../../conceptrodon/raillivore/trip.hpp)
-- [unit test](../../../../tests/unit/raillivore/trip.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/raillivore/trip.test.hpp)

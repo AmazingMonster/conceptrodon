@@ -499,4 +499,4 @@ struct ClassicTrek
 ## Links
 
 - [source code](../../../../conceptrodon/descend/roadrivore/classic_trek.hpp)
-- [unit test](../../../../tests/unit/roadrivore/classic_trek.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/roadrivore/classic_trek.test.hpp)

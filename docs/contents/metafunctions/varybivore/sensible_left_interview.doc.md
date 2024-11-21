@@ -182,4 +182,4 @@ struct SensibleLeftInterview<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/sensible_left_interview.hpp)
-- [unit test](../../../../tests/unit/varybivore/sensible_left_interview.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/sensible_left_interview.test.hpp)

@@ -118,4 +118,4 @@ struct LookFor
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/look_for.hpp)
-- [unit test](../../../../tests/unit/varybivore/look_for.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/look_for.test.hpp)

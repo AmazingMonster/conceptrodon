@@ -123,4 +123,4 @@ struct TypicalConjureSet
 ## Links
 
 - [source code](../../../../conceptrodon/descend/typelivore/conjure_set.hpp)
-- [unit test](../../../../tests/unit/typelivore/typical_conjure_set.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/typical_conjure_set.test.hpp)

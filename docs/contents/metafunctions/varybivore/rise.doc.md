@@ -91,4 +91,4 @@ struct Rise
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/rise.hpp)
-- [unit test](../../../../tests/unit/varybivore/rise.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/rise.test.hpp)

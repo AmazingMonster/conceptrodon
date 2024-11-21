@@ -122,4 +122,4 @@ struct Repack<WarehouseA<ContainerAs...>, WarehouseB<ContainerBs...>, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/descend/warehivore/repack.hpp)
-- [unit test](../../../../tests/unit/warehivore/repack.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/warehivore/repack.test.hpp)

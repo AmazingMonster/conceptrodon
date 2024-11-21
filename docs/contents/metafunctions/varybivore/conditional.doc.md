@@ -196,4 +196,4 @@ The implementation is straightforward. [Check out this test to see how it works.
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/conditional.hpp)
-- [unit test](../../../../tests/unit/varybivore/conditional.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/conditional.test.hpp)

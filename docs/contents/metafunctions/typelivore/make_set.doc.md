@@ -60,4 +60,4 @@ using MakeSet = TypicalDiversity<>
 ## Links
 
 - [source code](../../../../conceptrodon/descend/descend/typelivore/make_set.hpp)
-- [unit test](../../../../tests/unit/typelivore/make_set.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/make_set.test.hpp)

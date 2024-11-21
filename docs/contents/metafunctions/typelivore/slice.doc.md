@@ -191,4 +191,4 @@ struct Slice
 ## Links
 
 - [source code](../../../../conceptrodon/descend/typelivore/slice.hpp)
-- [unit test](../../../../tests/unit/typelivore/slice.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/slice.test.hpp)

@@ -6,11 +6,11 @@
 
 namespace Conceptrodon {
 
-template<typename Element, typename Key>
+template<typename Treasure, typename Key>
 struct Label
 { 
-    static constexpr auto idyl(Key) -> Element;
-    static constexpr auto lark(Element) -> Key;
+    static constexpr auto idyl(Key) -> Treasure;
+    static constexpr auto lark(Treasure) -> Key;
 };
  
 }

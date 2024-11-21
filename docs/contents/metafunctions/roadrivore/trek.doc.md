@@ -493,4 +493,4 @@ struct Trek
 ## Links
 
 - [source code](../../../../conceptrodon/descend/roadrivore/trek.hpp)
-- [unit test](../../../../tests/unit/roadrivore/trek.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/roadrivore/trek.test.hpp)

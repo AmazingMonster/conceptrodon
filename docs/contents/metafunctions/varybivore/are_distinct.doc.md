@@ -49,9 +49,9 @@ This is essential since inheriting the same class multiple times is an error.
 Unfortunately, using this error for SFINAE is impossible based on my testing.
 
 ```C++
-template<typename Element, size_t I>
+template<typename Treasure, size_t I>
 struct Label
-{ static constexpr void lark(Element); };
+{ static constexpr void lark(Treasure); };
 ```
 
 To instantiate `Label` with variables, we need a helper class that transforms variables into types.
@@ -122,4 +122,4 @@ struct AreDistinct
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/are_distinct.hpp)
-- [unit test](../../../../tests/unit/varybivore/are_distinct.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/are_distinct.test.hpp)

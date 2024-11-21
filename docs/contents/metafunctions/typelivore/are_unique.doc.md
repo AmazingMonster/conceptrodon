@@ -57,4 +57,4 @@ struct AreUnique
 ## Links
 
 - [source code](../../../../conceptrodon/descend/descend/typelivore/are_unique.hpp)
-- [unit test](../../../../tests/unit/typelivore/are_unique.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/are_unique.test.hpp)

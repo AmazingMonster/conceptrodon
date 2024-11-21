@@ -6,7 +6,7 @@
 
 #include "conceptrodon/shuttle.hpp"
 #include "concepts"
-#include "conceptrodon/descend/descend/varybivore/upend.hpp"
+#include "conceptrodon/descend/varybivore/upend.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"

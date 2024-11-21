@@ -86,4 +86,4 @@ struct AreNoLessThan
 
 - [source code](../../../../conceptrodon/varybivore/are_no_less_than.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/are_no_less_than.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/are_no_less_than.test.hpp)

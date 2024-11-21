@@ -5,7 +5,8 @@
 #define CONCEPTRODON_VARYBIVORE_UPEND_H
 
 #include <utility>
-#include "conceptrodon/descend/stamp.hpp"
+#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/label.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -18,9 +19,9 @@ struct Upend
 
     template<template<auto...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
-    : public Stamp<Variables, std::integral_constant<size_t, I>>...
+    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
     {
-        using Stamp<Variables, std::integral_constant<size_t, I>>::idyl...;
+        using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation
         <
             decltype

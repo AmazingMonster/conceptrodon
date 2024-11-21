@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_UPEND_H
 
 #include "concepts"
-#include "conceptrodon/descend/descend/typelivore/upend.hpp"
+#include "conceptrodon/descend/typelivore/upend.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

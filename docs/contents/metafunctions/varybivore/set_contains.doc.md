@@ -98,4 +98,4 @@ struct SetContains
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/set_contains.hpp)
-- [unit test](../../../../tests/unit/varybivore/set_contains.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/set_contains.test.hpp)

@@ -233,4 +233,4 @@ struct Plume<Variable>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/plume.hpp)
-- [unit test](../../../../tests/unit/varybivore/plume.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/plume.test.hpp)

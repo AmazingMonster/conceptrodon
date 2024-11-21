@@ -187,4 +187,4 @@ The implementation is straightforward. [Check out this test to see how it works.
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/conditional.hpp)
-- [unit test](../../../../tests/unit/typelivore/conditional.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/conditional.test.hpp)

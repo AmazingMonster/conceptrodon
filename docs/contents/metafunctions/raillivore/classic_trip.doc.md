@@ -452,4 +452,4 @@ struct ClassicTrip
 ## Links
 
 - [source code](../../../../conceptrodon/raillivore/classic_trip.hpp)
-- [unit test](../../../../tests/unit/raillivore/classic_trip.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/raillivore/classic_trip.test.hpp)

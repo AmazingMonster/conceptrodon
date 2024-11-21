@@ -139,4 +139,4 @@ struct TypicalDiversity: public Monotony<InspectedVariables>...
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/diversity.hpp)
-- [unit test](../../../../tests/unit/varybivore/typical_diversity.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/typical_diversity.test.hpp)

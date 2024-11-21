@@ -194,4 +194,4 @@ struct Erase
 ## Links
 
 - [source code](../../../../conceptrodon/descend/typelivore/erase.hpp)
-- [unit test](../../../../tests/unit/typelivore/erase.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/erase.test.hpp)

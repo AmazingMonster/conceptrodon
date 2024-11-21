@@ -53,4 +53,4 @@ struct Positive
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/positive.hpp)
-- [unit test](../../../../tests/unit/varybivore/positive.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/positive.test.hpp)

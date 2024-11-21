@@ -74,4 +74,4 @@ using Paste = TypicalPaste<Args...>::type;
 ## Links
 
 - [source code](../../../../conceptrodon/warehivore/paste.hpp)
-- [unit test](../../../../tests/unit/warehivore/paste.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/warehivore/paste.test.hpp)

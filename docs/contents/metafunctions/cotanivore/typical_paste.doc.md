@@ -92,4 +92,4 @@ struct TypicalPaste<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others..
 ## Links
 
 - [source code](../../../../conceptrodon/cotanivore/paste.hpp)
-- [unit test](../../../../tests/unit/cotanivore/typical_paste.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/cotanivore/typical_paste.test.hpp)

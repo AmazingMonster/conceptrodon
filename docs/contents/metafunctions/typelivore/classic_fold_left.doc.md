@@ -187,4 +187,4 @@ struct ClassicFoldLeft<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/classic_fold_left.hpp)
-- [unit test](../../../../tests/unit/typelivore/classic_fold_left.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/classic_fold_left.test.hpp)

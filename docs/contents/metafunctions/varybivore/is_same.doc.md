@@ -59,4 +59,4 @@ struct IsSame<Variable, Variable>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/is_same.hpp)
-- [unit test](../../../../tests/unit/varybivore/is_same.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/is_same.test.hpp)

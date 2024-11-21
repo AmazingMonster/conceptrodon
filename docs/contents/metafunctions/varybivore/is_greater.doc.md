@@ -75,4 +75,4 @@ constexpr bool IsGreater_v
 
 - [source code](../../../../conceptrodon/varybivore/is_greater.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/is_greater.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/is_greater.test.hpp)

@@ -99,4 +99,4 @@ struct TypicalAmong<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/among.hpp)
-- [unit test](../../../../tests/unit/typelivore/typical_among.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/typical_among.test.hpp)

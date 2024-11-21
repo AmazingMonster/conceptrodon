@@ -136,4 +136,4 @@ struct Repack<SequenceA<TA, VariableAs...>, SequenceB<TB, VariableBs...>, Others
 ## Links
 
 - [source code](../../../../conceptrodon/descend/sequnivore/repack.hpp)
-- [unit test](../../../../tests/unit/sequnivore/repack.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/sequnivore/repack.test.hpp)

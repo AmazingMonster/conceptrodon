@@ -199,4 +199,4 @@ struct Amidst
 ## Links
 
 - [source code](../../../../conceptrodon/descend/varybivore/amidst.hpp)
-- [unit test](../../../../tests/unit/varybivore/amidst.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/amidst.test.hpp)

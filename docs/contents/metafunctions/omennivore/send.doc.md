@@ -172,4 +172,4 @@ struct Send<Container<Elements...>>
 ## Links
 
 - [source code](../../../../conceptrodon/omennivore/send.hpp)
-- [unit test](../../../../tests/unit/omennivore/send.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/omennivore/send.test.hpp)

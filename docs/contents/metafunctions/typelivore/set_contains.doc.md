@@ -92,4 +92,4 @@ struct SetContains
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/set_contains.hpp)
-- [unit test](../../../../tests/unit/typelivore/set_contains.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/set_contains.test.hpp)

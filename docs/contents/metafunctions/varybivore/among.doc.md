@@ -104,4 +104,4 @@ struct Among<First, Second, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/among.hpp)
-- [unit test](../../../../tests/unit/varybivore/among.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/among.test.hpp)

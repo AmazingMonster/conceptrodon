@@ -74,4 +74,4 @@ using Paste = TypicalPaste<Args...>::type;
 ## Links
 
 - [source code](../../../../conceptrodon/stockivore/paste.hpp)
-- [unit test](../../../../tests/unit/stockivore/paste.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/stockivore/paste.test.hpp)

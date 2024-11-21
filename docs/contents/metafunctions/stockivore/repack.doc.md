@@ -122,4 +122,4 @@ struct Repack<StockroomA<SequenceAs...>, StockroomB<SequenceBs...>, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/descend/stockivore/repack.hpp)
-- [unit test](../../../../tests/unit/stockivore/repack.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/stockivore/repack.test.hpp)

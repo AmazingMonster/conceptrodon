@@ -88,4 +88,4 @@ struct AreGreaterThan
 
 - [source code](../../../../conceptrodon/varybivore/are_greater_than.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/are_greater_than.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/are_greater_than.test.hpp)

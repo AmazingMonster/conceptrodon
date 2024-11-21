@@ -89,4 +89,4 @@ struct AreBoundedByClosedInterval
 
 - [source code](../../../../conceptrodon/varybivore/are_bounded_by_closed_interval.hpp)
 
-- [unit test](../../../../tests/unit/varybivore/are_bounded_by_closed_interval.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/varybivore/are_bounded_by_closed_interval.test.hpp)

@@ -101,4 +101,4 @@ struct Repack<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others...>
 ## Links
 
 - [source code](../../../../conceptrodon/descend/cotanivore/repack.hpp)
-- [unit test](../../../../tests/unit/cotanivore/repack.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/cotanivore/repack.test.hpp)

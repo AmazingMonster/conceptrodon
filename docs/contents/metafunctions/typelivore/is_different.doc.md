@@ -59,4 +59,4 @@ struct IsDifferent<Element, Element>
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/is_different.hpp)
-- [unit test](../../../../tests/unit/typelivore/is_different.test.hpp)
+- [unit test](../../../../tests/unit/metafunctions/typelivore/is_different.test.hpp)
