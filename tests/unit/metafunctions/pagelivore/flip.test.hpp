@@ -7,9 +7,19 @@
 #include <utility>
 #include "conceptrodon/pagelivore/flip.hpp"
 #include "macaron/judgmental/valid.hpp"
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
+
+#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/vehicle.hpp"
 #include "conceptrodon/carrier.hpp"
+#include "conceptrodon/reverie.hpp"
+#include "conceptrodon/phantom.hpp"
+#include "conceptrodon/forlorn.hpp"
+#include "conceptrodon/travail.hpp"
+#include "conceptrodon/lullaby.hpp"
+#include "conceptrodon/halcyon.hpp"
+#include "conceptrodon/pursuit.hpp"
+#include "conceptrodon/persist.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 
@@ -25,6 +35,7 @@ namespace TestFlip {
 template<auto...>
 struct Tester
 { 
+// Mold
     template<typename...>
     struct ProtoMold {};
 
@@ -33,7 +44,8 @@ struct Tester
 
     template<typename...Agreements>
     using Mold = ProtoMold<Agreements...>;
-    
+
+// Page
     template<auto...>
     struct ProtoPage {};
 
@@ -43,24 +55,27 @@ struct Tester
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 
+// Road
     template<template<typename...> class...>
     struct ProtoRoad {};
 
     template<>
-    struct ProtoRoad<std::tuple> { static constexpr bool value {true}; };
+    struct ProtoRoad<Capsule> { static constexpr bool value {true}; };
 
     template<template<typename...> class...Agreements>
     using Road = ProtoRoad<Agreements...>;
 
+// Rail
     template<template<auto...> class...>
     struct ProtoRail {};
 
     template<>
-    struct ProtoRail<std::index_sequence> { static constexpr bool value {true}; };
+    struct ProtoRail<Shuttle> { static constexpr bool value {true}; };
 
     template<template<auto...> class...Agreements>
     using Rail = ProtoRail<Agreements...>;
 
+// Flow
     template<template<template<typename...> class...> class...>
     struct ProtoFlow {};
 
@@ -70,6 +85,7 @@ struct Tester
     template<template<template<typename...> class...> class...Agreements>
     using Flow = ProtoFlow<Agreements...>;
 
+// Sail
     template<template<template<auto...> class...> class...>
     struct ProtoSail {};
 
@@ -78,6 +94,86 @@ struct Tester
 
     template<template<template<auto...> class...> class...Agreements>
     using Sail = ProtoSail<Agreements...>;
+
+// Snow
+    template<template<template<template<typename...> class...> class...> class...>
+    struct ProtoSnow {};
+
+    template<>
+    struct ProtoSnow<Reverie> { static constexpr bool value {true}; };
+
+    template<template<template<template<typename...> class...> class...> class...Agreements>
+    using Snow = ProtoSnow<Agreements...>;
+
+// Hail
+    template<template<template<template<auto...> class...> class...> class...>
+    struct ProtoHail {};
+
+    template<>
+    struct ProtoHail<Phantom> { static constexpr bool value {true}; };
+
+    template<template<template<template<auto...> class...> class...> class...Agreements>
+    using Hail = ProtoHail<Agreements...>;
+
+// Cool
+    template<template<template<template<template<typename...> class...> class...> class...> class...>
+    struct ProtoCool {};
+
+    template<>
+    struct ProtoCool<Forlorn> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
+    using Cool = ProtoCool<Agreements...>;
+
+// Calm
+    template<template<template<template<template<auto...> class...> class...> class...> class...>
+    struct ProtoCalm {};
+
+    template<>
+    struct ProtoCalm<Travail> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
+    using Calm = ProtoCalm<Agreements...>;
+
+// Grit
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
+    struct ProtoGrit {};
+
+    template<>
+    struct ProtoGrit<Lullaby> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
+    using Grit = ProtoGrit<Agreements...>;
+
+// Will
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
+    struct ProtoWill {};
+
+    template<>
+    struct ProtoWill<Halcyon> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
+    using Will = ProtoWill<Agreements...>;
+
+// Glow
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
+    struct ProtoGlow {};
+
+    template<>
+    struct ProtoGlow<Pursuit> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
+    using Glow = ProtoGlow<Agreements...>;
+
+// Dawn
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
+    struct ProtoDawn {};
+
+    template<>
+    struct ProtoDawn<Persist> { static constexpr bool value {true}; };
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
+    using Dawn = ProtoDawn<Agreements...>;
 };
 /******************************************************************************************************/
 
@@ -87,10 +183,18 @@ struct Tester
 /******************************************************************************************************/
 VALID(Flip<Tester>::Mold<int>::Page<>::value);
 VALID(Flip<Tester>::Page<0>::Page<>::value);
-VALID(Flip<Tester>::Road<std::tuple>::Page<>::value);
-VALID(Flip<Tester>::Rail<std::index_sequence>::Page<>::value);
+VALID(Flip<Tester>::Road<Capsule>::Page<>::value);
+VALID(Flip<Tester>::Rail<Shuttle>::Page<>::value);
 VALID(Flip<Tester>::Flow<Vehicle>::Page<>::value);
 VALID(Flip<Tester>::Sail<Carrier>::Page<>::value);
+VALID(Flip<Tester>::Snow<Reverie>::Page<>::value);
+VALID(Flip<Tester>::Hail<Phantom>::Page<>::value);
+VALID(Flip<Tester>::Cool<Forlorn>::Page<>::value);
+VALID(Flip<Tester>::Calm<Travail>::Page<>::value);
+VALID(Flip<Tester>::Grit<Lullaby>::Page<>::value);
+VALID(Flip<Tester>::Will<Halcyon>::Page<>::value);
+VALID(Flip<Tester>::Glow<Pursuit>::Page<>::value);
+VALID(Flip<Tester>::Dawn<Persist>::Page<>::value);
 /******************************************************************************************************/
 
 

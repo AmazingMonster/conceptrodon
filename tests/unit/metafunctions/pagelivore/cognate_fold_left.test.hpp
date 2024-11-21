@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_LEFT_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_LEFT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FOLD_LEFT_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FOLD_LEFT_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/pagelivore/fold_left.hpp"
+#include "conceptrodon/pagelivore/cognate_fold_left.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -16,7 +16,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestFoldLeft {
+namespace TestCognateFoldLeft {
 
 
 
@@ -43,7 +43,7 @@ static constexpr auto BinaryOperation_v = BinaryOperation<Left, Right>::type;
     1 + 239 * 240 / 2
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(240)>);
+EQUAL_VALUE(CognateFoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -57,7 +57,7 @@ EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(240)>);
     1 + 7 * 8 / 2
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(8)>);
+EQUAL_VALUE(CognateFoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(8)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -71,7 +71,7 @@ EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(8)>);
    1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(1)>);
+EQUAL_VALUE(CognateFoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(1)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE

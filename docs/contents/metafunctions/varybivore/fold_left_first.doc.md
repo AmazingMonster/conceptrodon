@@ -22,7 +22,7 @@ When invoked by an operation, the function left-folds the list using the operati
 
 ```Haskell
 FoldLeftFirst ::   auto...
-                -> template<template<auto...> class...>
+                -> template<auto...> class...
                 -> auto
 ```
 
@@ -74,9 +74,9 @@ static_assert(Metafunction<Subtract>::value == -9);
 
 ## Implementation
 
-We will implement `FoldLeftFirst` using recursion over the number of parameters.
+We will implement `FoldLeftFirst` using recursion over the total number of parameters.
 
-- **Base Case:** Handles several numbers directly.
+- **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
   1. Left-fold several parameters;
   2. Use the result as the initiator and perform recursion to fold the rest.

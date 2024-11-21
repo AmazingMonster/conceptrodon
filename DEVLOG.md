@@ -43,6 +43,19 @@
       </tr>
     </table>
   </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
 </ul>
 
 ## 2024/11/20
@@ -635,6 +648,8 @@
 
 - `Coral`
 - `Coalfish`
+
+- `Kindred`
 
 ## Notes
 

@@ -18,7 +18,7 @@ struct CognateFind
     ::template ProtoRail<Predicates...>;
 
     template<auto...Variables>
-    static constexpr auto Page_v
+    static constexpr std::make_signed_t<size_t> Page_v
     {
         Varbola::Find<Variables...>
         ::template Rail_v<Predicates...>

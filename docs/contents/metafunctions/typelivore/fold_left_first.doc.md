@@ -81,9 +81,9 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We will implement `FoldLeftFirst` using recursion over the number of parameters.
+We will implement `FoldLeftFirst` using recursion over the total number of parameters.
 
-- **Base Case:** Handles several numbers directly.
+- **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
   1. Left-fold several parameters;
   2. Use the result as the initiator and perform recursion to fold the rest.

@@ -14,38 +14,74 @@ SPDX-License-Identifier: Apache-2.0 -->
 This function has multiple signatures.
 
 ```Haskell
+-- flip with Mold
 Flip ::   template<template<typename...> class...> class... 
        -> typename...
        -> template<template<typename...> class...>
-```
 
-```Haskell
+-- flip with Page
 Flip ::   template<template<typename...> class...> class... 
        -> auto...
        -> template<template<typename...> class...>
-```
 
-```Haskell
+-- flip with Road
 Flip ::   template<template<typename...> class...> class... 
        -> template<typename...> class...
        -> template<template<typename...> class...>
-```
 
-```Haskell
+-- flip with Rail
 Flip ::   template<template<typename...> class...> class... 
        -> template<auto...> class...
        -> template<template<typename...> class...>
-```
 
-```Haskell
+-- flip with Flow
 Flip ::   template<template<typename...> class...> class... 
        -> template<template<typename...> class...> class...
        -> template<template<typename...> class...>
-```
 
-```Haskell
+-- flip with Sail
 Flip ::   template<template<typename...> class...> class... 
        -> template<template<auto...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Snow
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<typename...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Hail
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<auto...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Cool
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<typename...> class...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Calm
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<auto...> class...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Grit
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<template<typename...> class...> class...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Will
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<template<auto...> class...> class...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Glow
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...
+       -> template<template<typename...> class...>
+
+-- flip with Dawn
+Flip ::   template<template<typename...> class...> class... 
+       -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...
        -> template<template<typename...> class...>
 ```
 
@@ -96,6 +132,62 @@ struct Flip
         template<template<typename...> class...>
         alias Road = RESULT;
     };
+    
+    template<template<template<template<typename...> class...> class...> class...>
+    alias Snow
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<auto...> class...> class...> class...>
+    alias Hail
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<typename...> class...> class...> class...> class...>
+    alias Cool
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<auto...> class...> class...> class...> class...>
+    alias Calm
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
+    alias Grit
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
+    alias Will
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
+    alias Glow
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
+    
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
+    alias Dawn
+    {
+        template<template<typename...> class...>
+        alias Road = RESULT;
+    };
 };
 ```
 
@@ -128,7 +220,8 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-Although there are many cases to consider, each case is pretty straightforward. We will implement the case where the function flips the operation and its member `Mold`.
+Although there are many cases to consider, the implementation for each case is straightforward.
+We will implement the one where the function flips the operation and its member `Mold`.
 
 ```C++
 template<template<template<typename...> class...> class Operation>

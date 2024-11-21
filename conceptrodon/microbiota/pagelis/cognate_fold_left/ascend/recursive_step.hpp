@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_PARAMETER_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FUNCTION_NAME
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FUNCTION_NAME has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,11 +11,29 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
-#error "CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_PARAMETER_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
+
+
+
+/******************************************************************************************************/
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+
+/******************************************************************************************************/
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_INITIAL_VARIABLE_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_INITIAL_VARIABLE_IDENTIFIER has not been defined"
+#endif
+/******************************************************************************************************/
 
 
 
@@ -42,35 +60,8 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS
-#error "CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS has already been defined"
-#endif
-
-#ifdef CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS
-#error "CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS has already been defined"
-#endif
-
-#ifdef CONCEPTRODON_CYTOPLASM_ALKANE_SUFFIX_SYMBOLS
-#error "CONCEPTRODON_CYTOPLASM_ALKANE_SUFFIX_SYMBOLS has already been defined"
-#endif
-
-#ifdef CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS
-#error "CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS has already been defined"
-#endif
-
-#ifdef CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH
-#error "CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH has already been defined"
-#endif
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
 template
 <
-    CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-    FirstVariable,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS   \
     CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
@@ -78,42 +69,49 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
+    , CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
+    ...RestVariables
+
 >
 struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 <
-    FirstVariable,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
+    , RestVariables...
+
 >
 {
     static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
-    = 
+    =   CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FUNCTION_NAME
+        ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
+    <
+
 #define CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS    \
-    CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_PARAMETER_IDENTIFIER
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_PARAMETER_IDENTIFIER
 #define CONCEPTRODON_CYTOPLASM_ALKANE_SUFFIX_SYMBOLS    \
     <
 #define CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH    \
-    CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/alkane.hpp"
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS
@@ -121,7 +119,7 @@ struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_ALKANE_LENGTH
 
-        FirstVariable ,
+        CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_INITIAL_VARIABLE_IDENTIFIER ,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS   \
@@ -129,14 +127,16 @@ struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_AMOUNT
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
-    ;
+    >
+    ::CONCEPTRODON_NUCLEOLUS_SLASH_SEPARATOR
+    ::template CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <RestVariables...>
+    :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ;
 };
-
 /******************************************************************************************************/

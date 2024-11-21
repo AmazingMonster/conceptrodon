@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
-#error "CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT has already been defined"
+#ifdef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT has already been defined"
 #endif
 /******************************************************************************************************/
 
@@ -51,203 +51,203 @@ static constexpr auto CONCEPTRODON_NUCLEOLUS_PAGE_VARIABLE_TEMPLATE
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     1
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     2
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     3
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     4
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     5
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     6
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     7
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     8
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     9
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     10
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     11
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     12
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     13
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     14
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     15
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     16
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/recursive_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/recursive_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     32
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/recursive_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/recursive_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     64
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/recursive_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/recursive_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     128
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/recursive_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/recursive_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT \
     256
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/pagelis/fold_left_first/ascend/recursive_step.hpp"
-#undef CONCEPTRODON_PAGELIS_FOLD_LEFT_FIRST_AMOUNT
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_left_first/ascend/recursive_step.hpp"
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_LEFT_FIRST_AMOUNT
 /******************************************************************************************************/

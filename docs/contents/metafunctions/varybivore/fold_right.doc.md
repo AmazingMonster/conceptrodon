@@ -80,9 +80,9 @@ static_assert(Metafunction<3>::Rail<Subtract>::value == -1);
 
 ## Implementation
 
-We will implement `FoldRight` using recursion over the number of parameters.
+We will implement `FoldRight` using recursion over the total number of parameters.
 
-- **Base Case:** Handles several numbers directly.
+- **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
   1. Right-fold several parameters;
   2. Use the result as the initiator and perform recursion to fold the rest.
@@ -103,14 +103,14 @@ struct FoldRight<Variable>
     struct ProtoPage
     {
         template<template<auto...> class Operation>
-        struct Detail
+        struct ProtoRail
         {
             static constexpr auto value
             { Operation<Variable, Initiator>::value };
         };
 
         template<template<auto...> class...Agreements>
-        using Rail = Detail<Agreements...>;
+        using Rail = ProtoRail<Agreements...>;
     };
 
     template<auto...Agreements>
@@ -125,7 +125,7 @@ struct FoldRight<First, Second>
     struct ProtoPage
     {
         template<template<auto...> class Operation>
-        struct Detail
+        struct ProtoRail
         {
             static constexpr auto value 
             { 
@@ -138,7 +138,7 @@ struct FoldRight<First, Second>
         };
 
         template<template<auto...> class...Agreements>
-        using Rail = Detail<Agreements...>;
+        using Rail = ProtoRail<Agreements...>;
     };
 
     template<auto...Agreements>
@@ -156,7 +156,7 @@ struct FoldRight<First, Second, Others...>
     struct ProtoPage
     {
         template<template<auto...> class Operation>
-        struct Detail
+        struct ProtoRail
         {
             static constexpr auto value
             {
@@ -172,7 +172,7 @@ struct FoldRight<First, Second, Others...>
         };
 
         template<template<auto...> class...Agreements>
-        using Rail = Detail<Agreements...>;
+        using Rail = ProtoRail<Agreements...>;
     };
 
     template<auto...Agreements>
@@ -180,7 +180,7 @@ struct FoldRight<First, Second, Others...>
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGxcpK4AMngMmAByPgBGmMQSGgDspAAOqAqETgwe3r566ZmOAmER0SxxCQCc/raY9sUMQgRMxAS5Pn6BdQ3Zza0EpVGx8YkpCi1tHflBEwND5ZUgNQCUtqhexMjsHASYLKkGeyYAzG5MXkQAdDcAaq14TDH0CqfYJhoAghPEXg4A1AAxTzoABKeGACAI/xMSSsSQAIqcrF8Pp8APTo/4WJhKf7nJQgNFozFAkH/ATbK5ovYHI6YU7nS6of73YiPZ4Mk7vL4/P7Q4G0MEQqGMtkc%2BhvYlwtH/OX/WmHJjHM4XIj/ACSDCyypIUq%2B8v%2BfIBymIqCIyiYwAZBvlsJRn0NhsV9MZLuVXKZ1xub3%2ByAMCgU/wA8ql4srsvrHU65cboQjMC06LKYzCZbbU/K5o5kH6BBNMKpUsR/mqWQA3MReG3RzNy%2B0hsPECMCMUPJ70Uia7WOXXEN4gECV7yYNNIk4OzOw8cOlMx90qtwLz1lm7U7l%2BgMKNefYDETD7RgEV7cudOryZIz/UFMOgwk4I/4JpO0Rm7/eHwTbn2nidn6fIsSGYKvsSqLquNzvgebBflGhoXuEwD/Ja1r3o%2BprmqgKGelBn7HmuUp/qiiKAaiXykoK6AKgA7ngVI0qBrqqsyQJ4MQExdmW/xCJgaAMOgUZxmSQrgpCBCMoCbEcdxvECAJp7EZO8rLoyXFajqRD9gptZGgQvwmmaFpWjWhr2mezqMR6bqWeBzIERu/q4kGobho0cGpkJz63q%2BwGmemOmZtmdF5gwBZFiWXHDtWMK%2BamDbmXWcouc2blnJJ7EEKQCWJclLYMIyPF8egWWxYlhrqb2mnZXWA5DlWJllaZ3KDlFDWJQBREBXaJGddVKlnP1XqoPZ2Cbk5O57tBR4njyXVyghV43nepyPl5yZnLhMH4T%2B7ydX5M5ATpg0QVcm3Te582Xkh2FochhlYcZb6TXh37rrts49bO5FYqCvGbJk5ajgS7CHaSADq7J7BSlwKggo4BtCBDUSy/BCgoXYIIY6D0LDo40BlNEsqkrSsIm8ToySWJY/8%2B7IP9o4LUhBBwzTmATAqLKoDESYMLj/zhBpJDUl8x0sel0lcYVcmcXZNzBsz5OCXp/LCcKYkSVJmUyUVXby3D7EjdKSlyqL6oVY8VXaYaQkYUZ1r/v5maDabw07WNgaNq5kZWx5ysAmtPlzWmxt1kFuZ8WFxalixrXVX5IeNblqVuOLmVx6mSfe24Uv8SVQeNZRomimcevk4bpWNf8g7Lshj1nObfYXZXhrVzZo5La%2BJdNnlTfN3KLX1enMa1bHFdTs1dUjkPY6kUHHVfUHztt6pstve7r1nbBPsxoz17ebdAdPR%2BW2vYRIfz4dFl0lZzHeqdz0n03u83Std2YdhR9TV%2Bhu9Z9oMAFSAKAcA9EJIgEABVsBCHAUA0B5FgEIP/nAz4xIzAnHCP6LwWB7xuD4tsVIx4owMWvrZdUnwZbqisNpISQgvDc2bA4I2Z4w4hUjhFGOg9gINkdAAWmxDPX%2BB0yKfBdjuYgwAZpol3gAWUTEwKgXgGAOGyDFFBD5VZF3EmcII/wThdkkLVD%2BG1xGn1/AvMOAB9Jy8QCAQFkS0BRSjk4nFqh3AqdC9JMEYRPVqaFX48K4CsZEHA1i0E4AAVl4H4DgWhSCoE4G4aw1gjQbC2KOcwJweCkAIJoEJawADWIBwmSCuBoSQXAkgnA0OEjQZh/D%2BDMAADkafoTgkheAsESBoUg0TYnxI4LwBQIBuk5JiSE0gcBYAwEQCADYBBUiXHIJQNABw6DxEiKTTgqhGn%2BB4f4SQ/xgDIFzFIK4ZheCYHwJpPA6A9D8EECIMQ7ApAyEEIoFQ6gxmkF0EEaizZUicB4KEiJUTclxM4MGS4CzoSoCoP8bZuz9mHOOf8U5Zh/gQA8Ks%2BgJYMmBN4KMrQawIBIBWakNZZAKAQDJRSkAwApBmD4HQPY7FKAxDBTEcIrQACegLeCcuYMQblwYYjaF4qMrJKytrBgYLQXlXysAxC8MAc4tBaBDO4LwLALBDDAHEAqti4q8CAw1bEwsf09h8vIIIeoYLaB4BiM2IVHgsBgr0ngTpmrSCA2IDEDImAEw6qMPaowuS1hUAMBI24eBMDURctErJ9zhCiHEC8pN7y1Bgp%2BfoXVKAkmWH0A6oZkA1ioAIdkDVPCJjyQRKYSw1gzB9J9eyLAxaIBrDsEa5wEBXDTD8EEUI4RhgVFGEEQoWQBB9oKBkCdDAFgjASLMeoXamiTHaJ4ToehO3KIEP0No86R2LtsGuqdsw10HqWIE9YmxtgSGBRwSJPSwX9PhTsvZByjknJKeiiAuBCAkBhGg/F2Sw1rDhkwLACR22kEKZIE4VwqgnCSJIMpZhJD%2BA0NU/wVRWkcHaaQTpmSriBH8I0qojSuD%2BGKVwcJiHai9N4P0wZwyQNjOJdMklsyoWLKpTSnFGy2CcFaCwcsSQeFMDGleLgVQrhcFKRcq5JAbl3NkI81N0h01KEzV83QjK/lMABZq%2B9j6GPgo4JC%2BZMNYWlmICJsTEnHJSZk3JjQGKsXkpxYBk4ZgVgErDRM0lqBsXxCWdSoLHnRjCdEzwxz9KqhcG6TQWgLKhkQHZV8gVPKrWZaFSKsVDgrVSqPDKuVYLFXKtVeqq12rdX6tifgWmjgTVgvNXTS1Xrwh7DCV8%2B1jqeUup2LE91nqsk%2Br9UoQNtXEL%2BYjVaBQ0bY3xqtUmtTzyNOyAzZ82Jumc2hrrVYAtvW22lvLfmTgVaCA1v2w2pt8QW1s3gB25dO6/A9v4qe4I/EL2jrSDOxoH3x2NG%2B0e7djQ93rryP2noK7wfA63SejdMxj3zCHYsUdHbUm3qvd1kzz7OA2bs%2BJyTSFpOydKRiv9mkvPAcJXk0g4HIOUHvfhwjMmylJFo0kSpkg0P7KCKZpjtgWO0/Y/ATjczoWhb4%2BszZHBhNIpYAocsuZyyk/pBMBT/6W0qYeSmtbrz5Baa2zoEAej9OGaBbh3HXz%2BkWehRSOF8uDmK%2BV/8VXMn1fQkxeFilXmTi%2BdY0SgLKAfc4ql6H0YyvUipAse7ixnurG2f2Uy5L5M2Ucq5UK7LmfhWivFYVoL0rZXyvq5gJVKqxBVa9TV4Ng2tWGuUc1r5rXLg7CyZ121PWHVOu5QNt17IRu8DG/6ybwbptsb4JG%2BbMa41hgTbwFbeuJDrbeUbrNpvdvGHzTYI7j24mndCpwdE1a831ssI2xjzabkPZLdDl7Lh3uI6h4OsoC7p1FGyADv72Q4dLt6LuhHSHLdZ7MHc9VHN/M9AYD7OYfdcAw9O9a9NJBAnHUFG3fHJ3f4F3FXNXD0dmX9RTXFIDAPEXMDTACDUYaDbrFnEAMwGTE4E4cJGpcpTDegpIUjJ9NAgZIXEZUDGDEASQcJBDcJRpOpKoSQKoSpJDLgPRbrE4VAvpTgPzNje9c5DghQrgkg71cmbIfgoAA)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgOykrgAyeAyYAHI%2BAEaYxCAAnGakAA6oCoRODB7evgGp6ZkCoeFRLLHxSbaY9o4CQgRMxAQ5Pn5cgXaYDlkNTQQlkTFxickKjc2teR22EwNhQ%2BUjSQCUtqhexMjsHASYLCkGeyYAzG5MXkQAdDcAak14TNH0CqfYJhoAguPEXg4A1AAxTzoABKeGACAI/xM/is/gAIqcrF8Pp8APTo/4WJhKf7nJQgNFozFAkH/ATbK5ovYHI6YU7nS6of73YiPZ4Mk7vL4/P7Q4G0MEQqGMtkc%2BhvYlwtH/OX/WmHJjHM4XIj/ACSDEyypIUq%2B8v%2BfIBymIqCIyiYwAZBvlsJRn0NhsV9MZLuVXKZ1xub3%2ByAMCgU/wA8ik4sqsvrHU65cboabzahQUw6LKYzCZbb0/LxhHkH6BONMKoUsR/mqWQA3MReG3R7Ny%2B0hsPECMCMUPJ70Uia7WOXXEN4gEDV7yYDNIk4O7OwycOtMx90qtxLz0Vm7U7l%2BgMKDefYDETD7RgEV7chdOrwZIz/ZN0GEnBH/BNEO%2B0Rn7w/HwS7n3nqcXrOyLElmCr7Eqy7rjcn5HmwP5RoaV5hMAz5WuOpxPi%2BqCWtaH4HrBJ6/pu7wAaiiLAaiXykoK6AKgA7ngVI0uBrqqsyQJ4MQ4w9hW/xCN0AjoFGcZkkK4KQgQjKApx3F8QJDBCeeZHTvKq6MrxWo6kQg5KfWRoEL8JpmhaaGAZmenOixHpulZkHMhuvr%2BriQahuGdQMAh6YiVhb4Xoa9p%2BV5jSOPmaAMEWJZlrxo61jCoEznCcUWQ2cqua27lSTJBCkIFKVpW2HlnPxYXoDl8UpU6mn9tpuUNkOI41nWFVOvVMVNRVQGkcljbkV1tVqWcA1eqgDlbk5gZ7vh36np5MZITeb4PphxlJim75nDB01EVKXX%2Bb186gUNUFXJtcEzbpiHXihOHoY%2Bz4rTdeFfmd23/vO%2B0gRiWKgt0mwZJW44Euwn2kgA6uyewUpcCoIOOAbQgQdEsvwQoKD2CCGOg9Aw%2BONBcQjSP/CkTSsJgexcWVX3lgp/yHsgf3jvNKEELDtOYOMCosqg0SNGEOP/GEWkkNSXxHex0n4zx7HFYJUvelcwYs3EZ48t8Bn8qJwoSZlktySVPaK7DXGjarAWHbZa7sVVjw1RdObq0ZiaPaBZvdWBdLWYNFvqfZf7YNuznNm5kZ2zG3krb55U9SpKW5iFBbhXskXluxbW1XtMfNUH6Uh24Evcen6b5RlRXyaVhcpTR4mimchvKybFcNsOq6obhZzWwOs1Z4azcW7ea2MsXIeq93MbDmnUd1dy4%2BNY3/nTw1Y6N51md7XOn3ZkNYvy45O6Tc9hFd5dyH9/eGH3YmvkbVNL0N7tdofZRenbyN0E34fof/Ezre3ctTumdfA%2BP477vXXk/dEAAqKB0CYGwPRCSGB/wAAq7NTz/BgfAqisDsEYM%2BuYE4YR/ReCwA%2BNwYVtgpHOqbUW3s2Lqk%2BHLFkVhdIiSEF4HmrYHDSkznHRiCcIqlhTuqCeekmyOgALTYgnBRT4K9Povz3MQYAKs0TfwALJkyYFQLwDAegCCSufKuIpJJnC4D2E4PZJD1UehtJRr0SIHTVnmAA%2Bs5OIBAIAaMaNo3RJc3AnHqlfNwbCOFMC4QvNqS1z7iK4CsZEHA1i0E4AAVl4H4DgWhSCoE4G4aw1gjQbC2OhMwJweCkAIJoBJawADWIBkmSCuBoSQHQTgaGSRoMwAA2TpZgAAcvT9CcEkLwFgEgNAaFIOkzJ2SOC8AUCACZFSMkJNIHAWAMBEAgA2AQFIlxyCUDQAcOgcQIik04KoXpnTxGdMkP8YAyB8xSCuGYXgmB8DaTwOgPQ/BBAiDEOwKQMhBCKBUOoZZpBdBmLoq2FInAeCJJSWkypWTODBkuLs6EqAqD/AuVcm5dyHn/CeWYf4EAPBHPoGWfBsTeBLK0GsCASBDkpGOWQCgEBmWspAMAKQyQaC0HJvMiA0RkXRDCE0AAnnC3gYrmDEAlcGaI2huhLLKYcs6wYGC0CleCrA0QvDAHOLQWg8zuC8CwCwQwwBxC6s4iqvAANTWZOLL9PY0ryCCBqMi2geBoitnlR4LAyKDJ4FGWa0gANiDRHSJgBE%2BwrU%2BqMJUtYVADDKNuHgTAdFXLpLKT84QohxCAvzSCtQyLIX6CtSgPJlh9C%2BvmZANYqBKFZFNeI8YikESmEsNYMw0zI3siwA2iAawuh6L8BAVwUx2hBAUoMMoFQ9BpAyO5adS7CjuXncMeIZix3uT6JMTwbQ9B7t6HMLdSwd2zH6Gu3d56FgLpGLE9YmxtgSARRwVJkzkUzJxZc65tz7mPIaSSiAuBCAkBhCUml5Tk1rFhkwLA8QR2kFqZIE4VwEgnH8JIJpZhJCdPGckzpCRBkcGGaQUZpSridK4J03pCRel0fqVwZJWHOnfvBTMuZCzYPLIZRsxlWz0V7PZZyylpy2CcCaCwSs/hxFMADjeLgCQrhcEaa895JBPnfNkH8ot0gS1KDLeC3QyRoVMFhWaj9X6pm8BmWinZ0MsXlmILJ%2BTimnLKdU%2BpjQpLyUsspVBk4ZgVi0uTasplqAKVxH2Ry6LgWRgybk%2BIrzPKEhcAmfywVlARXgtlZK91BX5WKuVQ4d16qTyau1civVBqjUmvdRahNOxMn4Dpo4R1yKXX0zdeGsIewkngp9X6yVgbWu0vZGGspkbo1KDjZaowibQD8b4GmhQGas05vdfm/TALDOyFLWCzJZnK1Ju7VYWtI3h1NpbYWTg7aCCdou72/tcRB3s3gKOmo9rnCToUre2d6AL2LrMcuoo2Qj3TAKCurIIOn3VFqGem9UOZ2nvqPe0o26T1zEB7mZo8Od2jsKW%2B59Q3bM/s4K59zCmlMoRU2pxppLwPaWCzBulVTSAIaQ5QD9FGqOqaaf4Nj/h/AnEkPhm5Zi7MotmbYXjHOBPwCE9sjFcXxMnLORwGT%2BKWAKErPmSsDP6TjE0xBwdunfmFv20C%2BQxnjs6BABYizVn4VkYp1x1FInMXYp17cvXBv/hG9Uyb6EZKEusuCycMLfH6WRZQBHyl6vE8jANykFIzjg/OND64tzNy%2BB0By8K0V4r5VFdLwqpVKqKvRY1VqnVbXMD6sNWIRr4bmtLYm6Qdr9quvgp65cHYZSBteuG76/1ErxvBqm%2B62bMaFsJuQhF1NVoNuZuzWGXNvBdvW4kAd4F9vy1O7O8YGtNhrtfayXd8KnB0QdurT2ywfb7MDs%2BZ9xtiPfsTqnajvQIQH3Y5g4bpZCA7g6boAGXono/bjoHotC/67rQH7qY6LCg7XqHq5Bo7IGPpE4vpFLvru5Iqe4cDU66766G7G4egcxgZaZUrQYx6K7waYCIYjAoZDb84gBmCqYnAnDJLtLNLjLcH%2BD0acbTKcA8aLJwaoYgCSDJKYbJK9JdIJCSAJBi7YZcAWJDYnCEGiFy4MFkYvIiH2ZiGx6c6RoZDOCSBAA%3D)
 
 ## Links
 
