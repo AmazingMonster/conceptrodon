@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_LEFT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_LEFT_INTERVIEW_H
 
+#include <concepts>
+#include <type_traits>
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/typelivore/left_interview.hpp"
-#include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
+#include "macaron/fragmental/alkane.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <type_traits>
-#include <utility>
 
 #include "macaron/fragmental/amenity/define_alkane.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
@@ -25,36 +25,35 @@ namespace TestLeftInterview {
 
 
 /******************************************************************************************************/
-template<int I>
-struct Integer: public std::integral_constant<int, I> {};
+template<typename, typename L, typename R>
+struct NoGreaterThanZero
+{ static constexpr bool value {false}; };
+
+template<typename U, typename L, typename R>
+requires (L::value <= 0)
+struct NoGreaterThanZero<U, L, R>
+{ static constexpr bool value {true}; };
+
+template<typename, typename L, typename R>
+struct EqualNegative
+{ static constexpr bool value {false}; };
+
+template<typename U, typename L, typename R>
+requires (R::value == -L::value)
+struct EqualNegative<U, L, R>
+{ static constexpr bool value {true}; };
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-template<typename, typename Base, typename Derived>
-struct IsBaseOf: std::is_base_of<Base, Derived> {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SHEEP_PREFIX    \
-    Integer <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-    
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
 constexpr auto Interviewed = LeftInterview<SHEEP_SPROUT(120)>
-::Mold<std::integral_constant<int, I>>::template Road_v<std::is_base_of>;
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
+::template Mold<int, std::integral_constant<int, -I>>
+::template Road_v<NoGreaterThanZero, EqualNegative>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 
@@ -92,42 +91,11 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 
 
 /******************************************************************************************************/
-#define SHEEP_PREFIX    \
-    Integer <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-    
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
-constexpr auto MultipleInterviewed = LeftInterview<SHEEP_SPROUT(120)>
-::Mold<int, std::integral_constant<int, I>>::template Road_v<IsBaseOf>;
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedResult
-
-#define SHEEP_PREFIX    \
-    MultipleInterviewed <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-
-#undef SUPPOSED_TYPE
+constexpr auto FailInterviewed = LeftInterview<SHEEP_SPROUT(40), std::integral_constant<int, I>>
+:: template Mold<int, std::integral_constant<int, 1>>::template Road_v<NoGreaterThanZero, EqualNegative>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 
@@ -137,17 +105,6 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 #include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
 using SupposedFailedResult = SignedArk<ALKANE_SPROUT(120)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-template<int I>
-constexpr auto FailInterviewed = LeftInterview<SHEEP_SPROUT(120)>
-::Mold<Integer<I>>::template Road_v<std::is_base_of>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 

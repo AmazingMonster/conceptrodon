@@ -7,14 +7,14 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template <template<auto...>  class Predicate>
+template<template<auto...>  class Predicate>
 struct Negation
 {
     template<auto...Variables>
     struct ProtoPage
     {
         static constexpr bool value 
-        = not Predicate<Variables...>::value;
+        {not Predicate<Variables...>::value};
     };
 
     template<auto...Variables>
@@ -22,7 +22,7 @@ struct Negation
 
     template<auto...Variables>
     static constexpr bool Page_v 
-    = not Predicate<Variables...>::value;
+    {not Predicate<Variables...>::value};
 };
 
 }}

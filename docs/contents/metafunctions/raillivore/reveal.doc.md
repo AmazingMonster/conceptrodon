@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Raillivore::Reveal` accepts an operation and returns a function.
-When invoked, the function instantiates the operation with the arguments and becomes the alias member `type` of the operation.
+When invoked, the function instantiates the operation with the arguments and becomes its type result.
 Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
 
 <pre><code>Operation -> Rail&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>

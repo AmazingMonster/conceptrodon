@@ -22,7 +22,7 @@ struct IsDifferentFrom
     using Page = ProtoPage<Agreements...>;
 
     template<auto...Args>
-    static constexpr auto Page_v 
+    static constexpr bool Page_v 
     {ProtoPage<Args...>::value};
 };
 

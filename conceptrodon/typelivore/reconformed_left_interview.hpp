@@ -19,7 +19,7 @@ struct ReconformedLeftInterview
         using Road = Typella::UnconformedLeftInterview<Operation, Interviewer, Elements...>;
 
         template<template<typename...> class Operation>
-        static constexpr auto Road_v 
+        static constexpr std::make_signed_t<size_t> Road_v 
         {Typella::UnconformedLeftInterview<Operation, Interviewer, Elements...>::value};
     };
 

@@ -23,19 +23,20 @@ struct Conditional
 
 
 
-
+// auto
     template<auto...Agreements>
     using Page = Detail<(...&&static_cast<bool>(Agreements))>::type;
 
 
 
-
+// typename
     template<typename...Elements>
     using Mold = Detail<(...&&static_cast<bool>(Elements::value))>::type;
 
 
 
 
+// template<typename...> class
     template<template<typename...> class...Predicates>
     struct ProtoRoad
     {
@@ -49,6 +50,7 @@ struct Conditional
 
 
 
+// template<auto...> class
     template<template<auto...> class...Predicates>
     struct ProtoRail
     {

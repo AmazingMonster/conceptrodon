@@ -29,7 +29,7 @@ namespace TestLookFor {
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
 constexpr auto Found = LookFor<SHEEP_SPROUT(120)>
-::Rail_v<IsSameAs<I>::template Page>;
+::Rail<IsSameAs<I>::template Page>::value;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 

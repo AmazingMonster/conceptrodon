@@ -15,11 +15,11 @@ struct LookFor
     template<template<auto...> class Predicate>
     struct ProtoRail
     {
-        static constexpr auto value
+        static constexpr std::make_signed_t<size_t> value
         {
             []() -> std::make_signed_t<size_t>
             {
-                std::make_signed_t<size_t> counter {0};
+                std::make_signed_t<size_t> counter {-1};
                 return
                 (...||(++counter, Predicate<Variables>::value)) ? 
                 counter : -1;
@@ -31,7 +31,7 @@ struct LookFor
     using Rail = ProtoRail<Agreements...>;
 
     template<template<auto...> class Predicate>
-    static constexpr auto Rail_v
+    static constexpr std::make_signed_t<size_t> Rail_v
     {
         []() -> std::make_signed_t<size_t>
         {

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_HAS_H
 #define CONCEPTRODON_TYPELIVORE_HAS_H
 
-#include "conceptrodon/descend/label.hpp"
+#include "conceptrodon/label.hpp"
 #include <utility>
 
 namespace Conceptrodon {

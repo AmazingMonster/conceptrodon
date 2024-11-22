@@ -1,5 +1,82 @@
 # Diary
 
+## 2024/11/23
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change names of concepts to include the prepositions</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+## 2024/11/22
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Regulate tests for <code>*Interview</code> functions</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Finished processed part</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Specify <code>auto</code> when the deduced type is clear</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Finished processed part</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/21
 
 ### Todo
@@ -655,3 +732,4 @@
 
 - `auto` compiles slower than `size_t`.
 - Check if it is possible to do SFINAE over `inherit same class multiple times` error.
+- Fold expression evaluates to its initiator when the variadic pack is of size zero. `(init op...op pack) == init` if `sizeof...(pack) == 0`.

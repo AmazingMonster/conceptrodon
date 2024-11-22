@@ -22,7 +22,7 @@ struct IsDifferentFrom
     using Mold = ProtoMold<Agreements...>;
 
     template<typename...Args>
-    static constexpr auto Mold_v 
+    static constexpr bool Mold_v 
     {ProtoMold<Args...>::value};
 };
 

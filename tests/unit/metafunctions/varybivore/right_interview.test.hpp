@@ -25,13 +25,22 @@ namespace TestRightInterview {
 
 
 /******************************************************************************************************/
-template<auto L, auto R>
-struct BinaryOperation
+template<auto L, auto R, auto>
+struct NoGreaterThanZero
 { static constexpr bool value {false}; };
 
-template<auto L, auto R>
-requires (L <= 0 && R == -L)
-struct BinaryOperation<L, R>
+template<auto L, auto R, auto U>
+requires (L <= 0)
+struct NoGreaterThanZero<L, R, U>
+{ static constexpr bool value {true}; };
+
+template<auto L, auto R, auto>
+struct EqualNegative
+{ static constexpr bool value {false}; };
+
+template<auto L, auto R, auto U>
+requires (R == -L)
+struct EqualNegative<L, R, U>
 { static constexpr bool value {true}; };
 /******************************************************************************************************/
 
@@ -42,7 +51,7 @@ struct BinaryOperation<L, R>
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
 constexpr auto Interviewed = RightInterview<SHEEP_SPROUT(120, *(-1))>
-::Page<I>::template Rail_v<BinaryOperation>;
+::Page<I, nullptr>::template Rail_v<NoGreaterThanZero, EqualNegative>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -84,7 +93,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
 constexpr auto FailInterviewed = RightInterview<SHEEP_SPROUT(40), I>
-::template Page<1>::template Rail_v<BinaryOperation>;
+::template Page<1, nullptr>::template Rail_v<NoGreaterThanZero, EqualNegative>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 

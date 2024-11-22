@@ -10,7 +10,7 @@ namespace Varybivore {
 template<auto Target, auto...Variables>
 struct IsUnequal
 {
-    static constexpr auto value
+    static constexpr bool value
     { (...&&(Target < Variables || Variables < Target)) };
 };
 

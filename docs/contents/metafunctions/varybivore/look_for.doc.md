@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Varybivore::LookFor` accepts a list of variables and returns a function.
-When invoked by predicates, the function returns the index of the first variable that satisfies all the predicates, or `-1` if it cannot find the variable.
+When invoked by a predicate, the function returns the index of the first variable that satisfies the predicate, or `-1` if it cannot find the variable.
 This function is created to exhibit the power of fold expression and to compare with `Varybivore::Find`.
 
 <pre><code>   Arguments...
@@ -28,14 +28,14 @@ LookFor ::   auto...
 template<auto...>
 struct LookFor
 {
-    template<template<auto...> class...>
+    template<template<auto...> class>
     alias Rail
     {
         static constexpr std::make_signed_t<size_t>
         value {RESULT};
     };
 
-    template<template<auto...> class...>
+    template<template<auto...> class>
     static constexpr std::make_signed_t<size_t>
     Rail_v {RESULT};
 };
@@ -43,7 +43,7 @@ struct LookFor
 
 ## Examples
 
-We will lookfor the indices of `2` and `-1` in list `0, 1, 2, 3`.
+We will look for the indices of `2` and `-1` in list `0, 1, 2, 2`.
 
 ```C++
 template<auto I>
@@ -55,7 +55,7 @@ struct IsMinusOne
 : public std::bool_constant<I==-1> {};
 
 template<template<auto...> class...Args>
-using Metafunction = LookFor<0, 1, 2, 3>
+using Metafunction = LookFor<0, 1, 2, 2>
 ::Rail<Args...>;
 
 static_assert(Metafunction<IsTwo>::value == 2);
@@ -85,7 +85,7 @@ The comma operator discards the result of counter incrementation, leaving the pr
 The fold expression will short-circuit as soon as `true` is obtained.
 Hence, the counter will stop incrementing once the right variable is found.
 
-If no variable satisfies all the predicates, then the fold expression is evaluated to `false`. In that case, `-1` is returned.
+If no variable satisfies the predicate, then the fold expression is evaluated to `false`. In that case, `-1` is returned.
 
 Here's the entire implementation:
 
@@ -113,7 +113,7 @@ struct LookFor
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKzSrgAyeAyYAHI%2BAEaYxCCS/qQADqgKhE4MHt6%2BAdKp6Y4CoeFRLLHxibaY9kUMQgRMxATZPn6B1bWZDU0EJZExcQlJCo3Nrbkdo739ZRXDAJS2qF7EyOwc5gDMYcjeWADUJltuXo60hACex9gmGgCC27v7mEcnyKPoWFQ3d48PBEwLGSBkBxzcTDOqAAdLCAGpNPBMaL0BS/B6jYheBwHYKoVAAawAYiQ/iYAOxWB4HGkHQHA0GYcH0kFMMEnSFEWHQm4HPZMBQKA7KYiYfCidm3am0zHYgjC4ioIgAJSYdD%2BtKOlI1mpljUcyD5AlGmFUyWIB05qAOADcxF4mdLdVqqfdnc6TP4rP4ACIQBYHAC0vM%2BIBALCYBMwAH10sBwuhowRwekAF4x5NbKVu92aimu3O50PhyMxuMJpMpvDpytZo1eQRxF2BrgUn3HAuF52igirBg6ruaiDciluUcQazWNANwFkBVivASpknBHEJEozBorNhu3eTALAPHIlHJ2DmnTxsWkBB1tbTtdtv%2Bge6tsd5%2Bvu9k08sxnMoGs9kIShEc635QVuXuYBRSBRgCC3bNNS8dIjAOVU6DeH0FSVVA0NocFIOgthBAUEDbk/B4P1dP4AHoACp6IYxjqJohiABVsCEViGOYh46MY/ieP%2BR4zB2Bg9i8Q5wTOOgrnRISfzZZcgKIA4AEk5NlHFVIUViAHdUD%2Ba9ki8FFFwOYtonxWhozQBhpkEcFVIw45MLMXl80or97gUwCrTUjSCCxLSFAAWTCJCAHlwkMg5jNMw0LKsmzjUaByTnUrZ20ylt3O1cksqogF/1/E4fKUq1SL5AxwNhe5iGAeC/iQsJgAOELMEaKgGwcTIMNxfFiVJE4NFIA4uFGsxRq2OSw1w/D6pI2FfnIoTpgNaMBSUZoIHazrurqRydP0m4d3tV4XJcg4zAWN8MX1RcNsFOICB2jqmC6sSDvS0LwoUKLl2wU692czKbxuu8OCWWhOH8Xg/A4LRSFQTgx0saxzJWNZzpEnhSAITRIaWAkAnJaEtgADgANnJLZqY0CmaYATi2fROEkXgWAkDQRvhxHkY4XgFBAEb8YRyHSDgWAYEQEAVgIYyCHISg0GBOg4giVgNlUKnA0pyQDmAZBDSkaEzF4BciDXdA9H4QQRDEdgpBkQRFBUdQxdIXRxt04gmGSTgeChmG4YJpHOAis4FYOVAqAObXKd1/XDeNyRTYOCAPFV%2BgLW2LgFl4UWtCWCAkBV5I1bICgIDLiuQGAKRJpoWhZyFiBolD6IwiaS4A94TvmGIS4IuibRMAcXvSBVoiCCi2ge49rBoi8YAIVoWghe4XgsAjIxxAXvBRR6m1N1D00x7ODZcbCQFoY9i5ol9wePCwUPArwTnN9IY/iEspQfSBQwwALhGAJksKgBgGpwjwJgXSEVkiMAnrbYQohxBOyQa7NQocvb6EASgSclh9B4GiELSASxUDJDqBvQMnwXKmDRpYMwfNv5WxPqQzoY86guAYO4TwbQ9AhDCAMcoQxxoFAyAICYfhRFpHEQwWYgx4jjTsBw7oYwWi8NyEomoKiBA9GaPI4RijbBqMkXoaY%2BjBFzBEUsBQmN1gSCDhwWGpBea8H5nHHWesDZGzGqnMw6dcCEBIEcHG%2Bc8agKWAgTATAsDxH9KQYmkgtjQmZuSSQGhJBmEkJTbm/hKaM1ZhwdmpBOZbC4NCSmXBKbk0ZuTKpgQuD%2BGZpTFxod%2BaC2FuEsWxdpYl1lpHM4Stq6oCzurTWnAmgsBtOSQMTAqqALGozaE5TEYWxIHga240kH21QdIdBShMEe10JNH2fte6OOca4sOHAI7yzONHWOkzpmzPmShLgSyVnp0zuXbOIStjXQLqAiWpcRk/LiEMmu2cQBPJmfyIw7yuAjSbi3Sg7cPb927hPDFg9h6j3Hp/KesFZ7z0RovZeq914T23oAvepKD4qOPhvVZqhz6AgntfGood76P0uM/DYiM34f1xt/X%2BmB/47yAS1IF4CmCQOgbA%2BB8NcbbJQY7PZsgMHu0RscnBIC6FWAIffEh8TyGUM4NQgg6BaH4IsIwtxzCNmsPiconqzgICuFMeNARpQFF6DEXUT1KQZF1AMfMLRXRdEmI0VI9hrr6hqNDSI4xvRA3mL6JY31edlirHsVm2%2Bly2mcEtMQKZMy5lwtau85Z0INABPwJbP5edAXdMidE2JlBHHFNKUsjJ5Imnkhppk7JkhxpXPabYTphdxaSxlnLBWELQUVw1mwCZJavEsAUDaQ0Noq2MlGObet6zNnO2QQ7CQ6qXYHK1ToEALNTn%2B03hckOHt%2Ba3KjjHYtLB12bu3buxSowvmLt%2BdsLYYSp3FxBaMyuysgNDC3ckZI0Yd2M2jHuggG0117LoCituHcu6DyxfhoeI8OET0JYIYlocyUrzEJSz%2B1Ld78q3vSo%2BJ8PZn2QBfdljZb6I25d3Plr81xCt4CKtIYqAG7yld0vgECFBQJgXAhBn8VVnrQRqq9WDb26uMDawhxD4BkIoZkDe1FQz6usHapGDqsDGpsdouNXCeE5Bjd6oRYag2FEyIG/1mRE1GJdXUPR6iXNmIc0FhNGbDFmKjaFpRkWfXRazbYnNjsn2tJfUWyZ36t22j/YCADEBAkNtzmBiJpAokxKGPE2%2BXaQBmCWVsLY/h/AZMRfTLY5JqkZb5pwDpItyuJLMBUrg/zKb/MZpUswOTySFK2M%2B3rAsulF0cWbHrbi%2BvLcJl/OI6RnCSCAA%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgOykrgAyeAyYAHI%2BAEaYxCBmAGykAA6oCoRODB7evgGp6ZkCoeFRLLHxSbaY9o4CQgRMxAQ5Pn5cgXaYDlkNTQQlkTFxCckKjc2teR22EwNhQ%2BUjSQCUtqhexMjsHOYAzGHI3lgA1CZ7bl6OtIQAnufYJhoAgvuHx5hnF8jj6FhUDyerxeBEwLBSBlB5zcTCuqAAdIiAGpNPBMaL0BSAl7jYheBwnYKoVAAawAYiQgSZ/FYXid6SdQeDIZhoUyIUwoRdYUREfCHicjkwFAoTspiJh8KIuY86QzcfiCGLiKgiAAlJh0IEMs407U6%2BWNRzIQUCcaYVQpYgnHmoE4ANzEXlZcoNutpzzdbpMAFYrD6ACIQFYnAC0At%2BIBALCYJMwAH0MsBwuh4wRoRkAF4J9N7WWer066kewuFyPR2MJpMptMZvDZ2t501eQRxd2hrjUgPnEult0SgibBj6vs6iB86luScQazWNAt0FkZWSvDS1kXFHENEYzBYvNRx3eTArEPnMlnV2j%2Bnz1vWkBhzt7Xt9rvBkcGrs99%2Bfp9Uy/slk2TBDkuRhOEJybIURT5Z5gAlMFGAIPd8x1LwMiME4NToL4A2VVVUCw2hoVg%2BC2EEBQIMeX8Xh/D0gQAegAKmYljWLY%2BiGNYk4ABVdyQk5WI4l4mLY0SWKE4FXjMA4GCOLxTmhK46DubFJIAzl1zAogTgASVUhUCR0hRuIAd1QIF7xSLwMVXE5y2iYlaHjNAGHGQxczcHScPOXCzAFYtaL/Z51NA21dP0gg8UMhQAFkwjQgB5cILJOKybJNezHOcs1GkEaE9L2btCo7fy9X8Iq6JBYDAIuELNNtSjBQMaDEWeYhgGQoE0LCYAThizBGioFsegEHDCWJclKQuDRSBOLhZrMBbVKjQjiPaijEUBajJLc4142FJRmggfrBuGuphwuIzTPM/cQEPZ1vMKk4zBWL8cSNVd9pFOICGOgamCG2Tzvy2L4oUJL12wA8nU%2BHyfIfV6nw4NZaE4H1eD8DgtFIVBOCnSxrDsjYtlh6SeFIAhNGRtYSRAH1/HhPYAA5En8PZWY0Zm2YATj2fROEkXgWAkDQZsx7HcY4XgFBAGbKax5HSDgWAYEQEANgIKyCHISg0HBOg4giVgdlUFnQ0SSQTmAZATSkeEzF4FciC3dA9H4QQRDEdgpBkQRFBUdQFdIXR5pM4gmBSTgeBRtGMapnHOASq4tZOVAqBOU3EnNy3rdtyR7ZOCAPH1%2BhrX2LgVl4eWtDWCAkD1lIDbICgIAbpuQGAKRFpoWhFxliBonj6IwiaW4o94YfmGIW4EuibRunl8m9bIggktoMeg6waIvGAGFaFoGXuF4LAYyMcRN7wCUentXd44tborh2cmwlBVGg5uaJw%2BnjwsHjyK8GFkfUgN9iAOSUAGMEhhgA3CMFTNYVADAdSRHgTAJkEopEYOPX2whRDiB9u7eQSg1DxxDvoKBKBZyWH0HgaIMtIBrFQCkc6h9Qy/B8qYAmlgzASxAS7W%2B9Dqi1CyC4Bg7hPBtD0CEBYZQKh6DSBkc6Ux2gFAUVkQYMiRjzS6CNBgfRJjiOmIIhevQ5jqOGPELRcwlF6Dcs0MxSwLFrAUMTbYEgY4cHRqQcWvBJYZzNhbK2Ns5r5zMIXXAhASBnDJpXCmcC1gIEwEwLA8RgykFppIPY8Jeb%2BEkBoSQZhJCJFFj6RI3N%2BYcEFqQYWewuDwkSFwRITNuZMwaT6SQXAfS82SN4hOUtbCy1iQrWuqs67q2TlcHWrdUAl0NsbTgTQWD2n8KGJgTUoFzW5vCWp2MnYkDwK7eaBDPZ4OkAQ/2xCg66EWmHCO493GeJ6ZLJOmsrip3TgspZKy1kYS4Js7Zhdi6N1LlEvYL0q5wKVvXaZQK4iTLbqXEAHzllCiML8rgM0e590oIPIOk9R5YLxdPWe88HBYOXohNeG9sZbx3nvA%2BWCT5QPPtSy%2Bxib6Hx2aoB%2BoIsEvxqPHD%2BX9bg/x2Njf%2BgDyYgLAZgCBp9oE9QhQgpgSCUFoIwZjcmRzcHe1ObIc5gdsZXLIbAjhVgqEfzoakxhzDOCsIIOgdhlCLDcJ8bw/Z/DUnaPOiIsRuRlFSNKOYuRhRFEGOUfIooDB7GyK0TUYx9QrFhpsXGnRej5iBocTYxNfqs39GjZopxLjvb3LjkHXxSKvkot6r8rZ8INBhPwM7EFFdwVDPiYk5JlB3GVOqZsvJ/hOn%2BDZvkwp7SvHx0ltLAZ1dFbKzVhrLWcLoVNyNmweZxAWABJYAoe0Jp7Q1pZOMR2ja9kHOwccnV2D9UkJAHzG5kcj4lvHWWxO4ylRpxtBurdO690Ho0uMAFy7gX7D2DEmdtcoUzObrrIDIxd0pBSPGfd3N4yHoIPtL9py6BYoHkPEe08CX4ZnnPBeZLpkr0pfHGlu8xD0qAYys%2Borj6suvrfIO99kCP15a2N%2B2NBWjxFX/LcEreBSvSDKyBZ8FVDL4IghQyDUHoMwUArVXsJC6r9kQg1Ohb3GuME66htD4AMKYVkQ%2B9FIymusC6nGbqsCWqcSm71EBXDWPmgGxYMaVGRrc9586%2BaLFGNTdmiRsahEJrzdIoNlj%2Bi%2BdsemzzBb1ibFcRXcpDyJ2cE/Zuy227d0Oj/aCADEBwlNvLmBuJpAElJJGKkt%2BPaEibL2HsH0Po8nos5nsfwjTn0S04FOuWlX0lmDqVwUFiRQXc3qUkDQgQ357FLX1vp4H3EO16z4/rgya5rBARkZwkggA%3D)
 
 ## Links
 

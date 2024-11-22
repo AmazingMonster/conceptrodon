@@ -50,12 +50,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER  \
-    Interviewer
+#define CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER  \
+    Interviewers
 /******************************************************************************************************/
 
 
@@ -133,7 +133,7 @@ struct CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_FUNCTION_NAME
     template
     <
         CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-        CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+        ... CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
     >
     struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
     {
@@ -188,7 +188,7 @@ struct CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+#undef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
 #undef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
 #undef CONCEPTRODON_VARBOLA_LEFT_INTERVIEW_REST_PARAMETER_IDENTIFIER
 /******************************************************************************************************/

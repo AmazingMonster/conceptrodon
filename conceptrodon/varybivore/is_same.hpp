@@ -16,7 +16,7 @@ struct SolitaryIsSame<Variable, Variable>
 { static constexpr bool value {true}; };
 
 template<auto LeftSide, auto RightSide>
-constexpr auto SolitaryIsSame_v
+constexpr bool SolitaryIsSame_v
 {SolitaryIsSame<LeftSide, RightSide>::value};
 
 template<auto Target, auto...Variables>

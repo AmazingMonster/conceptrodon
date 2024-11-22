@@ -15,7 +15,7 @@ struct LookFor
     template<template<typename...> class Predicate>
     struct ProtoRoad
     {
-        static constexpr auto value
+        static constexpr std::make_signed_t<size_t> value
         {
             []() -> std::make_signed_t<size_t>
             {
@@ -31,7 +31,7 @@ struct LookFor
     using Road = ProtoRoad<Agreements...>;
 
     template<template<typename...> class Predicate>
-    static constexpr auto Road_v
+    static constexpr std::make_signed_t<size_t> Road_v
     {
         []() -> std::make_signed_t<size_t>
         {
