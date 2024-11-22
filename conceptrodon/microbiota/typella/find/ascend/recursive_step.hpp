@@ -11,6 +11,15 @@
 
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_TYPELLA_FIND_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_TYPELLA_FIND_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_TYPELLA_FIND_LENGTH
 #error "CONCEPTRODON_TYPELLA_FIND_LENGTH has not been defined"
 #endif
@@ -115,7 +124,8 @@ struct CONCEPTRODON_TYPELLA_FIND_FUNCTION_NAME
     >
     struct CONCEPTRODON_NUCLEOLUS_ROAD_PROTO_TEMPLATE
     {
-        static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
+        static constexpr CONCEPTRODON_TYPELLA_FIND_RESULT_INTEGRAL_TYPE
+        CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
         {
 #include "ascend/recursive_step.hpp"
         };
@@ -134,7 +144,8 @@ struct CONCEPTRODON_TYPELLA_FIND_FUNCTION_NAME
         CONCEPTRODON_NUCLEOLUS_ROAD_PARAMETER_CATEGORY
         ... CONCEPTRODON_TYPELLA_FIND_PREDICATES_IDENTIFIER
     >
-    static constexpr auto CONCEPTRODON_NUCLEOLUS_ROAD_VARIABLE_TEMPLATE
+    static constexpr CONCEPTRODON_TYPELLA_FIND_RESULT_INTEGRAL_TYPE
+    CONCEPTRODON_NUCLEOLUS_ROAD_VARIABLE_TEMPLATE
     {
 #include "ascend/recursive_step.hpp"
     };

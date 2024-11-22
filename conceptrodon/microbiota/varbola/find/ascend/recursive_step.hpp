@@ -11,6 +11,15 @@
 
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_VARBOLA_FIND_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_VARBOLA_FIND_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_VARBOLA_FIND_LENGTH
 #error "CONCEPTRODON_VARBOLA_FIND_LENGTH has not been defined"
 #endif
@@ -114,7 +123,8 @@ struct CONCEPTRODON_VARBOLA_FIND_FUNCTION_NAME
     >
     struct CONCEPTRODON_NUCLEOLUS_RAIL_PROTO_TEMPLATE
     {
-        static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
+        static constexpr CONCEPTRODON_VARBOLA_FIND_RESULT_INTEGRAL_TYPE
+        CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
         {
 #include "ascend/recursive_step.hpp"
         };
@@ -133,7 +143,8 @@ struct CONCEPTRODON_VARBOLA_FIND_FUNCTION_NAME
         CONCEPTRODON_NUCLEOLUS_RAIL_PARAMETER_CATEGORY
         ... CONCEPTRODON_VARBOLA_FIND_PREDICATES_IDENTIFIER
     >
-    static constexpr auto CONCEPTRODON_NUCLEOLUS_RAIL_VARIABLE_TEMPLATE
+    static constexpr CONCEPTRODON_VARBOLA_FIND_RESULT_INTEGRAL_TYPE
+    CONCEPTRODON_NUCLEOLUS_RAIL_VARIABLE_TEMPLATE
     {
 #include "ascend/recursive_step.hpp"
     };

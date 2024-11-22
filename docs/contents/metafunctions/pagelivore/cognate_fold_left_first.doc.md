@@ -29,7 +29,7 @@ CognateFoldLeftFirst ::   template<auto...> class...
 ## Structure
 
 ```C++
-template<template<auto...> class...>
+template<template<auto...> class>
 struct CognateFoldLeftFirst
 {
     template<auto...>

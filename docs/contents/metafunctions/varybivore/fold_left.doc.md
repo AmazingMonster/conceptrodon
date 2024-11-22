@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::FoldLeft` accepts a list of variables.
 It produces a function that accepts an initiator and whose first layer accepts an operation.
 The function left-folds the list using the operation and the initiator.
+
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
 -> Initiator
 -> Operation

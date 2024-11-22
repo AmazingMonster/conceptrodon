@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_H
-#define CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_H
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_H
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_H
 /******************************************************************************************************/
 
 
@@ -70,23 +70,23 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME
-#error "CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME has already been defined"
+#ifdef CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_FUNCTION_NAME
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_FUNCTION_NAME has already been defined"
 #endif
 
-#define CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME   \
-    FoldRightLast
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_FUNCTION_NAME   \
+    CognateFoldRightLast
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER   \
+#define CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER   \
     Operation
 /******************************************************************************************************/
 
@@ -105,12 +105,12 @@ namespace Pagelis {
 template
 <
     CONCEPTRODON_NUCLEOLUS_RAIL_PARAMETER_CATEGORY
-    CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
+    CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
 >
-struct CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME
+struct CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_FUNCTION_NAME
 {
 
-#include "conceptrodon/microbiota/pagelis/fold_right_last/fold_right_last.hpp"
+#include "conceptrodon/microbiota/pagelis/cognate_fold_right_last/cognate_fold_right_last.hpp"
 
 };
 /******************************************************************************************************/
@@ -138,8 +138,8 @@ struct CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_FUNCTION_NAME
-#undef CONCEPTRODON_PAGELIS_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_FUNCTION_NAME
+#undef CONCEPTRODON_PAGELIS_COGNATE_FOLD_RIGHT_LAST_PARAMETER_IDENTIFIER
 /******************************************************************************************************/
 
 

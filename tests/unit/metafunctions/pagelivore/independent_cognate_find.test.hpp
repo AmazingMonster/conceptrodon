@@ -1,14 +1,15 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_FIND_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_FIND_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_COGNATE_FIND_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_COGNATE_FIND_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/pagelivore/independent_find.hpp"
+#include "conceptrodon/pagelivore/independent_cognate_find.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same.hpp"
+#include "conceptrodon/varybivore/are_no_greater_than.hpp"
+#include "conceptrodon/varybivore/are_no_less_than.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -20,14 +21,18 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestIndependentFind {
+namespace TestIndependentCognateFind {
 
 
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
-constexpr auto Found = IndependentFind<Varybivore::IsSameAs<I>::template Page>
+constexpr auto Found = IndependentCognateFind
+<
+    Varybivore::AreNoGreaterThan<I>::template Page,
+    Varybivore::AreNoLessThan<I>::template Page
+>
 ::template Page_v<SHEEP_SPROUT(20)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
@@ -69,7 +74,11 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(20)>);
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
-constexpr auto FailFound = IndependentFind<Varybivore::IsSameAs<-1>::template Page>
+constexpr auto FailFound = IndependentCognateFind
+<
+    Varybivore::AreNoGreaterThan<-1>::template Page,
+    Varybivore::AreNoLessThan<-1>::template Page
+>
 ::Page_v<SHEEP_SPROUT(40), I>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/

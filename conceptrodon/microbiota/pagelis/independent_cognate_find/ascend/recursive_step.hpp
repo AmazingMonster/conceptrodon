@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FIND_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_PAGELIS_FIND_PARAMETER_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_PARAMETERS_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_PARAMETERS_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,8 +11,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FIND_RESULT_INTEGRAL_TYPE
-#error "CONCEPTRODON_PAGELIS_FIND_RESULT_INTEGRAL_TYPE has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_RESULT_INTEGRAL_TYPE has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -20,8 +20,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_FIND_LENGTH
-#error "CONCEPTRODON_PAGELIS_FIND_LENGTH has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH
+#error "CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -84,7 +84,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_FIND_LENGTH
+    CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -105,7 +105,7 @@ struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_FIND_LENGTH
+    CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -118,23 +118,24 @@ struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
 
 >
 {
-    static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
+    static constexpr CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_RESULT_INTEGRAL_TYPE
+    CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
     {
 
-        []() -> CONCEPTRODON_PAGELIS_FIND_RESULT_INTEGRAL_TYPE
+        []() -> CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_RESULT_INTEGRAL_TYPE
         {
             
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_PREFIX_SYMBOLS  \
-    if constexpr ( CONCEPTRODON_PAGELIS_FIND_PARAMETER_IDENTIFIER <
+    if constexpr ((...&& CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_PARAMETERS_IDENTIFIER <
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_MIDDLE_SYMBOLS  \
-    > :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ) \
+    > :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT )) \
     { return
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_SUFFIX_SYMBOLS  \
     ; }
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_SEPARATOR_SYMBOLS   \
     else
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_TAIL_COUNT   \
-    CONCEPTRODON_PAGELIS_FIND_LENGTH
+    CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep_tail.hpp"
 
@@ -150,7 +151,7 @@ struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
                 :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
             )
             {
-                return CONCEPTRODON_PAGELIS_FIND_LENGTH
+                return CONCEPTRODON_PAGELIS_INDEPENDENT_COGNATE_FIND_LENGTH
                 + CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE <RestVariables...>
                 :: CONCEPTRODON_NUCLEOLUS_VALUE_RESULT ;
             }

@@ -11,6 +11,15 @@
 
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_LENGTH
 #error "CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_LENGTH has not been defined"
 #endif
@@ -90,7 +99,8 @@ struct CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_FUNCTION_NAME
     , RestElements...
 > 
 {
-    static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
+    static constexpr CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+    CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
     {
         []() -> CONCEPTRODON_TYPELLA_UNCONFORMED_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
         {

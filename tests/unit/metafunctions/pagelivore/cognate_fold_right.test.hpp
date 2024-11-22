@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_RIGHT_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_RIGHT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FOLD_RIGHT_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FOLD_RIGHT_H
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/pagelivore/fold_right.hpp"
+#include "conceptrodon/pagelivore/cognate_fold_right.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -43,7 +43,7 @@ static constexpr auto BinaryOperation_v = BinaryOperation<Left, Right>::type;
     2
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldRight<BinaryOperation>::Page<239>::Page_v<1, SHEEP_SPROUT(239)>);
+EQUAL_VALUE(CognateFoldRight<BinaryOperation>::Page<239>::Page_v<1, SHEEP_SPROUT(239)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -57,7 +57,7 @@ EQUAL_VALUE(FoldRight<BinaryOperation>::Page<239>::Page_v<1, SHEEP_SPROUT(239)>)
     2
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldRight<BinaryOperation>::Page<7>::Page_v<1, SHEEP_SPROUT(8)>);
+EQUAL_VALUE(CognateFoldRight<BinaryOperation>::Page<7>::Page_v<1, SHEEP_SPROUT(8)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -71,7 +71,7 @@ EQUAL_VALUE(FoldRight<BinaryOperation>::Page<7>::Page_v<1, SHEEP_SPROUT(8)>);
     1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldRight<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(1)>);
+EQUAL_VALUE(CognateFoldRight<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(1)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE

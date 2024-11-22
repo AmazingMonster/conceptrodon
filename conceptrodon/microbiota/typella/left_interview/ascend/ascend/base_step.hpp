@@ -2,6 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
 #error "CONCEPTRODON_TYPELLA_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER has not been defined"
 #endif
