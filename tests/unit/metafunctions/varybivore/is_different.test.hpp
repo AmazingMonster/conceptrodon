@@ -21,8 +21,8 @@ namespace TestIsDifferent {
 
 
 /******************************************************************************************************/
-INVALID(IsDifferent_v<1, 1>);
-VALID(IsDifferent<1, 2>::value);
+INVALID(IsDifferent_v<1, 1, 1, 1, 2>);
+VALID(IsDifferent<1, 2, 2, 3, 4>::value);
 VALID(IsDifferent_v<1, static_cast<size_t>(1)>);
 /******************************************************************************************************/
 

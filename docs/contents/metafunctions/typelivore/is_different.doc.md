@@ -5,28 +5,30 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivare::IsDifferent` accepts two elements.
-It returns true if they are different and returns false otherwise.
+`Typelivore::IsDifferent` accepts a target and a list of elements.
+It returns true if the target is different from every element;
+otherwise, it returns false.
 
-<pre><code>Left, Right -> Left != Right ? true : false</code></pre>
+<pre><code>   Target, E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> (Target different from E<sub>0</sub>) && (Target different from E<sub>1</sub>) && ... && (Target different from E<sub>n</sub>)</code></pre>
 
 ## Type Signature
 
 ```Haskell
-IsDifferent :: typename... -> auto
+IsDifferent :: typename... -> typename
 ```
 
 ## Structure
 
 ```C++
-template<typename, typename>
+template<typename...>
 struct IsDifferent
 {
     static constexpr bool value
     {RESULT};
 };
 
-template<typename, typename>
+template<typename...>
 constexpr bool IsDifferent_v
 {RESULT};
 ```
@@ -34,29 +36,31 @@ constexpr bool IsDifferent_v
 ## Examples
 
 ```C++
-static_assert(IsDifferent<int, int*>::value);
-static_assert(!IsDifferent<int, int>::value);
+static_assert(IsDifferent<int, int*, int**, int**>::value);
+static_assert(! IsDifferent<int, int, int*>::value);
 ```
 
 ## Implementation
 
-We will use partial template specialization to detect if the two arguments are identical.
+We will implement `IsDifferent` using `std::is_same_v`.
 
-If two arguments are identical, the compiler will select the partial specialization instead of the primary template.
+Here's the entire implementation:
 
 ```C++
-template<typename, typename>
+template<typename Target, typename...Elements>
 struct IsDifferent
-{ static constexpr bool value {true}; };
+{ static constexpr bool value
+{(...&&(not std::is_same_v<Elements, Target>))}; };
 
-template<typename Element>
-struct IsDifferent<Element, Element>
-{ static constexpr bool value {false}; };
+template<typename Target, typename...Elements>
+constexpr bool IsDifferent_v 
+{(...&&(not std::is_same_v<Elements, Target>))};
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgGykrgAyeAyYAHI%2BAEaYxAGkAA6oCoRODB7evgnJqY4CoeFRLLHxXIF2mA7pQgRMxASZPn7ltpj2%2BQy19QSFkTFxCQp1DU3ZrcM9fcWlAQCUtqhexMjsHASYLIkGGyYAzG4EAJ6JjKyYANTBmFTCeFikF8enzGwXAEp4wAh3WPvYJg0AEFhsQvA4LgBJBQAETwVCocUYBEBQJMAHYLBdJo5kBc0AxhphVIliBdoqhPBcAG5iLyXDEWAhgzAYmH7LFsjmo1EbLY7VkHZ5nN7YehsQT/VGg8EEKGw%2BGI4jI/ZuMWbZGPdUSlF7AHAxnYuq4/ECIkkskUqm07wMzFUMRKLl7Tno9kunnAgD0ACo/f6A17Ub6/QAVbBCUP%2BoPegNxn0xtEGsx7MLIbxYC6qgmrRIEBRSg3AnF4ZAAfSYCiUDQg0LhCKRkoOYQIjxbPv%2BIBANvpc25xeNpYrVbiBAgYDAdcVjd1bhbbab2C7PcwfZdHAWtE4AFZeH5uLxUJw3NZrNilisGSmeKQCJoNwsANYgbeSAB0GkkXHRew0240Zj%2BP4ZgABwgfonCSLwLASBoGikPuWikEeHC8AoIDwXeHBaAscCwDAiAgEsBCJF4rYUBAaBbHQcQROcnCqCB/gALT%2BJIFzAMgeJSG%2BZi8Jg%2BBEMQ9x6PwggiGI7BSDIgiKCo6jYToegAO7EEwiScDwm47nu97IZwADyZGkXKqBUBcjEsWxHFcRcPFmBcEAeNR9BkuYexcHMvBYThpAQEgVGJDRZAUYFwUgMAUhmHwdAbMQ6EQNEenRGE9RHJpvApcwxBHAZ0TaFUWE3lROoGQwtDpYppBYNEXjAG4Yi0OhB7VZshjAOIVX4Mq1TUpgzVIcSVRkWsN4tu0em0Hg0RqTlHhYHpzJ4DBLV9cQFJKDCbVGFNRj3gsVAGMACgAGp4JgykGS8GUycIojiNJYnyEoah6boXD6O1KCnpY%2BjTehkALKgebpM1zHDOg%2BwwqYljWGYSGoGtwlYADEALJU1TOBArhjC0QQMOg0wDGUSQpGkAi43ouTkwwRMlIMH0Y503SjJ4zR6EzNQjL0YT9PTJOTKzWR44LPNFMTEjoxeqySxBHC7ghekoRZTGsexnHce%2BDkQLghAkFm15ebe%2B0LAgmBMFg8Ro6Qz6SHsb4AJx7OikifmYkj%2BHB27%2BA7ctQaQMEeW%2B/jlCBDsgeUr5cNuTuBIhh6cGhGHG4puEEf5RHGWR5CUGFrl0WwnD1Cw1LosxTD4gYRh2Q7b5cB%2B/GCSQIkfU9EkPdIT1ya9VW6NFqnqRl2ny7pVUoUZJFkRcZkXMXpfl5X7U13XH6Oc5QWuQbexmEbPkbn5AWoC5cQ55RR8b4Mc9l%2Bm7VcA7XDwTQtBxQlSVVVlaU3R/OV5QVDg3SVZEZUKp6RqnVBqtAmo3SwCwdqnUkLdUKngPqA1%2BKqGGhsG640txVSmjNNK801hISWitG8a0NqYC2rAnaYRQCpz4EdU651LrXRam3e6UlO6yG7gpJCfdPp7RhlYX6eDUZAxBmaTg4MCCQz2NDH6Fh4aHiRvcfq8B0btCQVjHGbNxj40JrzGYDNSZ5HSJTD61NOh01mIzTRmMujc3MW0DoXMpiGIlozRxuiRbc2sQzKWywZaeTlgreO%2BkOCz2ICXMuFcb7VzvivDQjldZCS3p5byJtSBmwtoMa2OD/aB1rp%2BdEMd0Q/kkO7NiH0wkoSTphfafl05IGIiZU%2BedaL0Q4MXayLAFDUjxNSBJAphiNz1sjUSsh26cNujwt6IA9ikAHhpA8w9QlK0MlnUy5lunsV6f0mkQymAbGGGvc%2BwUt57F3g0jO7SQq5zOa5bsyBEiJDLIMh2ZZhkEArFEtiMVn5xFfslVKOUv4gtyvlQqACj6lXKpVBBmBar1Uas1G8MC4FEN4Ig3qaiqpDWQCNLBggJq4OmrNI4hDFrCVIbwchKRKHbQ6rQhph0mDHTOhdK6jAbrsMkhILhskXq8KUgsquxgFF/WiGI5CEjCScC9BDb6sNLBKOQiolG6jnFaL8NjAmTiQjuP5lTMmnQnGWPSH4gWdjmZeOFhza1riGiWo5ra9mni3HiyNcEhQ0spKrNHgjTgkSWA9L6QMw5xy5Q6ybm5Q2GTU6m3NpbSgw8CkgDMLXPYextz/i/HBLN6J/DgRqYnWwyc95zCfCASQ25HbbhAoBB2kgHY/mdlwUVnA9gBoTqhFOOFh58UVmPUtFaFhrVSM4SQQA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwDMpK4AMngMmAByPgBGmMR6AA6oCoRODB7evv5ByamOAmER0SxxCVy2mPYFDEIETMQEmT5%2BgZXV6XUNBEVRsfF6CvWNzdltQ929JWUSAJS2qF7EyOwc5gHhyN5YANQmAW4EAJ6JmAD6BMRMhAr72CYaAIIPjwSYLIkGb/uHJ4ysmB2ABUGsBMARSDtjqdmGwAHQI7D0NiCW4Be5PIbELwOHYASQUABE8FQqPFGAQXiYAOwWHYTRzIHZoBhDTCqRLEHYxVCeHYANzEXkwVNpEARcPMADZpRAGKgCPSCOgQCA8AozgoAWd%2BT8ke8KQpISDiGDKejZrMaYT9nTrbaqU83h8viKDtD/mxgaDwZCPbDMBL9SiCGiMY8WWyOVyeXyCcTSeTBDq9k8aRZxQjpbL5Yqhiq1RqtWwdXrkYbjT7zdhLfaAlY008APQAKjb7Y7nabL1b7eBmCGCh2He7zc745HjseDLwyDOTAUSkaEHjJLJxApP3CEJ225bkL3%2B93gjbd1Vgu8mCt9ZeM7nC6XBAgYDA%2BKJa6T5rc24Pgl/BBbM8QAvYVrwsDh5loTgAFZeD8DgtFIVBODcaxrHpRZlkBdYeFIAhNAg%2BYAGsQGgsw4WpMxJAADmo6CNAATjIjQpWooIoI4SReBYCQNA0Uh4MQ5COF4BQQH4/CEIg0g4FgGBEBARYCESLwIQoCA0A%2BOh4kiAFOFUaipQAWilSQdmAZAmSkOEzF4TB8CIYg8BVCp%2BEEEQxHYKQZEERQVHUKTSF0CoAHcrkSTgeEgmC4IIpDOAAeVUlTFVQKgdgM4zTPMyydmsswdggDwtPoLkcNmXhJK0eYICQTTEm0sh1PqxqQGAKQzD4Og3mIMSIBiOKYnCBojki3ghuYYgjgSmJtEwBwxtITSQwShhaFGwKsBiLxgDcMRaDE7heCwFhDGAcRNrwDcHDwfkBzi9l5tU1ZcO3Ko4toPAYiuKaPCwOLLjwHijtIO7iB5JRCXeM7PqMAj5ioAxgAUAA1PBMBChKYUWtzhFEcRvNxvy1Di4L9DOlA0MsfQvrEyB5lQRIakOoz832QlTEsawzCEsGnKwOmIHmOx5pqFwGHcTwWj0UJwj6UoBgqPI0gEUY/CVlIVYYKZ%2BnKdpRc6YYmil7IKhFm6BC6RodYVvWJhGE31dsI2bZmLhhcwlY5n0GKBLi4SMsMkyzIsqzJBswrcEIEg9kCd3Kvh%2BYEEwJgsASIXSBIyQAjhBiAmpSQNEkKipT46CpQYn3OO4kAAi4OEpS4ViGOopvoMkLhoLzqU/cC4TRPEvD4Zk%2BTasU5LVPISgWtK3S2E4BoWH5akjKYZkDCMPKGLhevEPs6P%2Bb0XGPIJ6QiaUEnAt0TqwqYCKjuijhYN7oTEon1L0sX5fV/Xs6t53uEGhCrFQaqVWOAQzAVSHlJGqdVUAlXiFPDS8DQEDC/ivLYZ0uAMS4PxGgtAep9QGoFCaI1FqkKmjNOaC0QbLQpKtdacUto7T2rQA6i0Tow1WIhfA11HB3UOnvVQT03iLTehxRCn1vojT%2BtwyqTlga4TBhDTAUNTpGFhqAGBfAkao3RpjbGINj74y8mfWQxMAqIWvuTOGnMrDUykYLBmTN0gszZgEDmVMLA814KgPmzl7r031hbPwEBXBqxlhLV2itSDKxqBEjW%2BR0jRLtlUA2lsjYJOCTUK2PQ5bTBifbY2WQnZFJSd7BQnsvKP2foJXxnAdjoJ/pgze2CAFAIgFHRy4D47QOqknFOadKCPy4qQHiARt5F2pF3ak1IAjF0kKZCodT4oiVsIPKq0lZIKSUilJBM8dJ6Q4IvbKLAFD8iZPyNprohh2QciQZyR9ZAn1MT5eQF9LE6FrqQW%2B98opV1qf7N%2BylVI7DSo04gLBTnnMudcpgbwhjAJQY1cBAQoGbNgSgZFpV9nYoGBcxIiQdTYLODcgg85IWmS6gQ%2BIRDBrDSmuQhl01Zqi0WnQwQDCNo8MwNtXa%2B1Dq4U4RouRpBeEGwEQ9YRyBnpiMEO9QKUifpHFkQDBRi1lEpFUdDDR4QtHVR0UwZGaMMZY0YDjZ5JiJBmN8h80m3yN7GC8TTGITikIuIEIdJs%2BZKZc0sD4pC/iBbwGFmkkJ4tJYlMiegcpiStZZLick/JutBhhpyZkx2qaOgZMmMm22gwM1RrNi7PNbsPZLC9u7AFsU%2B4NJOWZM5FyBRwoRYqTp9yypx3RYnUgydU4DAzhxUZPEzDbwCAEaC9EO58XHdSViL96lrLEhJHtWdqQ2WmVwKQDEpl5y4NSKuAQa2vzWRix%2BtkF2rITjA%2BYYNUjOEkEAA%3D%3D)
 
 ## Links
 
 - [source code](../../../../conceptrodon/typelivore/is_different.hpp)
+
 - [unit test](../../../../tests/unit/metafunctions/typelivore/is_different.test.hpp)

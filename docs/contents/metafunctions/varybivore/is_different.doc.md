@@ -5,10 +5,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Varybivore::IsDifferent` accepts two variables.
-It returns true if they are different and returns false otherwise.
+`Varybivore::IsDifferent` accepts a target and a list of variables.
+It returns true if the target is different from every variable;
+otherwise, it returns false.
 
-<pre><code>Left, Right -> Left != Right ? true : false</code></pre>
+<pre><code>   Target, V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> (Target different from V<sub>0</sub>) && (Target different from V<sub>1</sub>) && ... && (Target different from V<sub>n</sub>)</code></pre>
 
 ## Type Signature
 
@@ -19,14 +21,14 @@ IsDifferent :: auto... -> auto
 ## Structure
 
 ```C++
-template<auto, auto>
+template<auto...>
 struct IsDifferent
 {
     static constexpr bool value
     {RESULT};
 };
 
-template<auto, auto>
+template<auto...>
 constexpr bool IsDifferent_v
 {RESULT};
 ```
@@ -34,29 +36,34 @@ constexpr bool IsDifferent_v
 ## Examples
 
 ```C++
+static_assert(IsDifferent<1, 2, 3, 4>::value);
+static_assert(! IsDifferent<1, 1.0, 1>::value);
 static_assert(IsDifferent<1, 1.0>::value);
-static_assert(!IsDifferent<1, 1>::value);
 ```
 
 ## Implementation
 
-We will use partial template specialization to detect if the two arguments are identical.
+We will implement `IsDifferent` using `Varybivore::SolitaryIsDifferent`.
 
-If two arguments are identical, the compiler will select the partial specialization instead of the primary template.
+Here's the entire implementation:
 
 ```C++
-template<auto, auto>
+template<auto Target, auto...Variables>
 struct IsDifferent
-{ static constexpr bool value {true}; };
+{
+    static constexpr bool value
+    {(...&&SolitaryIsDifferent<Variables, Target>::value)};
+};
 
-template<auto Variable>
-struct IsDifferent<Variable, Variable>
-{ static constexpr bool value {false}; };
+template<auto Target, auto...Variables>
+constexpr bool IsDifferent_v
+{(...&&SolitaryIsDifferent<Variables, Target>::value)};
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISWakrgAyeAyYAHI%2BAEaYxBLSAA6oCoRODB7evv6ByamOAqHhUSyx8VK2mPYFDEIETMQEmT5%2BAZXV6XUNBEWRMXEJtvWNzdltCsM9YX2lA1IAlLaoXsTI7BwEmCyJBpsmAMxuTF5EpADUx0QH2CYaAIITxF4OZwCSCgAieFRUcYwEtzuJgA7BYzhMmI5kGc0AwJphVIliGdoqhPGcAG5iLyYM4giwEJ6YEEfA5gklkwGAzbbXbEw6XVBnABqDTwTGi9GugMezwIb0%2B31%2BxH%2BBzcrOI7M5mHOEqlXP2N3u%2BPB9ShMIE8MRyNR6Kx3lx%2BKoYiUFP25OBpPNVPuAHoAFSOp3O22Ah2OgAq2CEHqdrrtzsD9v9QPuEKhAH0mAolI0IO8vj8/oIxVxzlwAHQaa4gED6nHzSlhtV4ZBRmNxAgQMBgBNC5MAw5ps5cHN57GYQvmjiLWicACsvD8HC0pFQnDc1ms4OWq0NZn2PFIBE0PcWAGsQP3JFnJFxgfsNP2NGYAGynswADkv%2Bk4kl4LAkGg0pGHo/HHF4ChAL5XI57pBwLAMCICAywEIkJzkJQaDbHQcQRKw6yqJep4ALSnpIZzAMg0JSBmZi8Jg%2BBEJK6B6PwggiGI7AVJR8hKGoq6kLoaYAO7EEwiScDwvYDkOzEfgA8ickH8qgVBnCh6GYdhuEtjuZhnBAHhwfQyLmIu8y8H%2BWiLBASCwYk8FkBQEBGSZIDAFIgQ0LQmzEN%2BEDRMx0RhA0ACePG8G5zDEB5QnRNomAON5pCwWwghCQwtBef%2BpBYNEXjAEctC0N%2B3C8FgLCGMA4jxfgIoOHgGKYBlo4IiFJzrEuYSbH28W0Hg0Scf5HhYMxhJ4I%2BmWkKVxCokoHxbLlTVGKuixUAYwAKMyeCYGxQmJIwYX0dR4h0bIigqOo8WsfouUoFOlj6M136QIsqCJDUGVoRM6AHB8piWNYZjvv1ZFlfAix2CFNQuAw7ieC0eghNMJRlHoeRpAIox%2BGm0M1L0ENzO0f2dJMcN6L9xUCF0jTI/05RDN0WNphCBPg0TEg/bOaw07eHCDq%2BgmcFJqEYVhOF4Ypym4IQJB4guXDacuE2LAgmBMFg8QQBu/j7BmACc%2BzApIGgBJIp7Pv2p5K4z96kI%2Bi4ZqeXCnpeSuXub25cP2Kuniz8Ufl%2BP5i/%2B%2BkgQZYGiVBZkWepiFsJwDQsBiwJoUwMIGEYLZKxmmYVSRJB4ORaZraIG3SPR21MXtICBBxXHeXxTMCc7nAiRBJxnBJFzEGHEdR8gMfAHHCdZspqnGepQv7GYou6QB3sB3E0HmagakDKH4doS3uVcErXAvnZDlOS58W%2BZ5YVb/5gXBaFvURf80WxcxiXJal6Vhdlo3rKOhXo6V5VEaoVWbGFdVVMxTUtZ57X3x0pKHqS5%2BqDUwMNHKRgxqgA9nwaas15qLWWsOJcGcaKDBzoxXao5dCBFbkdF6J1f7nTlmOa66Rbr3Ues9Kwlg3q8FQB9VOX0Lpo1xn4CArgyZBEBoTWYxNEbpB4UIwoVMBHYyqOjPGmNgbZHJlIjh%2BMpjFGpuTWRWR4Yk0pqoiRIslgrHpvohqzM3yMLZjPJu0dcrt0TnzZOGlhaD3FqQSW0sBhkIaobY28cNbAntsCA8mtMJpjMWOTgrtfwTUAl7JA4ExLj1HsQIO6xQ6yRYAoDE0IMSLwzHSCYREHGpworIdatFs5bWwcxXQ%2BxSBF24plUupjWYcCrmJWukk0lYQyVkzEuT8n8hUpPHucQ%2B77GcXAkewyTKJOmepPMyBEiJAjDkpWEYBlRgbphPgdA16UA3qOXecUlxHP3n9MKx8ooxTig/TASUUpiGvr1W%2B0DAEJTwEVRwz9mKVWQNVT%2Bghv6NWaq1DyADOrALCmAlIECRrQLCLAvS8CmAzTmgtJaK1eroKzjIQQuccE6BALUghtDrCnWiKQy6FDNScFtPdQhdCLAMLHMwrAlL2H/S4YDHhYNdGQwRikGGGQ5FaNEQwfh/KOUY1JiKyRHQZHdAlajCmTRZXqMVeI/ltNDG0SaeXd8FitndMydk/pkIyqDP5qRPuIsdIuLcTLSgpdvEF3jvsfY/Zjx7mfO64EFsnYGs/LYN2Q95jy0kP2ZW/ZLxniVpIJWB5VZcGJZwfY%2BrzFBtDaXQiAaM12o9osfqqRnCSCAA%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISQDMpK4AMngMmAByPgBGmMQgZgAcpAAOqAqETgwe3r7%2BQemZjgJhEdEscQnJtpj2JQxCBEzEBLk%2BfoG19dlNLQRlUbHxiSkKza3t%2BV3j/YMVVaMAlLaoXsTI7BwA9ABU%2B7sA1EKehC0AngCSCgAieFRU8YwEhwe72yYaAIIEmCypBl%2BJgCbiYXiIpEOYKIwOwny%2B42IXgcx1OEyut3uj2Iz3hJgA7BZDrNHMhDmgGONMKpUsRDjFUJ5DgA3MReTCHAkWAhIzAEm7Aon8wV476/f6Avkg6GoQ4ANRaeCYMXosPhiORLxOtDOxAxdweT0EwLcCuISpVmEhZotqoCcO%2BXOJzVJ5IEVJpdIZTNZ3g5XKoYiUwoCQvxAtDoq%2BewOqJ16OuBuxz1eBw%2BYr%2BAKYQOl4NlABUWsBMARITKAHSVm3K%2BgKNXfDUoxNYo0EPGE%2BGHLvO7N4MkUj20%2BmM2gstl877dzmEiCV8vmABsi%2B1uv1LZxxpB1ctCkhheIxbb9pAIF97KWIasjvDIsdGYl2aloLzh33h7Lebn29r9a%2BA9%2BnrDkyzaGhuBAAPrMu2FizpWi7LmiFwgcmm6moqNaYLur5FiWsInmemAXjekZ3tGbzkRR6ZkbG%2BaYQQCipvsVExhRrFUeqLp9uBTAKEorQQMhrYmlwkJmJCQSHJIeGnuOF4kQinHINxvHxAQEBgGAhyCWBwmQlw5YaHp0kEXJV4Kb2Sk8XxanabiIIiYc%2BkaMZsmChwKy0JwACsvB%2BBwWikKgnBuNY1jEmsGz%2BmYAQ8KQBCaO5KwANYgF5ZjlviZiSEkSReRoACcaUaAuSRBJ5HCSLwLASBohl%2BQFQUcLwCggIZ8X%2Be5pBwLAMCICAawEKk4LkJQaD/HQ8SRKwWyqEkC4ALQLpIhzAMgZJSOWZi8Jg%2BBEOa6B6PwggiGI7BSDIgiKCo6gdaQugiQA7sQTCpJwPAed5vkJYFnAAPLgkNLyoFQhyzQtS0rWtjmSJthwQB4430HS5gxUsvDtVoKwQEgY2pBNZAUBAuP4yAwBSGJNC0L8xAtRAMTfTE4QXG9vCM8weq/TE2iYA4LOkGNbCCL9DC0Oc31YDEXjAKCtC0C13C8FgLCGMA4i3fgOIOHgzKYd91I8%2BCWyxeEvzlQFOoxM9eoeFg308ng1UK6QOvEAySg3H8Ks6kYCUrFQBjAAocp4JgD2/akjB80dwiiOI53R1dajffd%2BgqygoWWPoeAxC1kArKgqQNPL83jOgwI3KYljWGYDUu/tut590PMNC4DDuJ4HR6KE4RDJUIwiUUWQCFMfgDxkQ8MPMwwJCJdjN70ExtB3%2BSz3U88CH0rRT33M%2B2IvI96LMW89ws/crAoEWbBIH0cD5pD1bwjWg3Ni3Lat60w2YcO4IQJCctFXA0ZxV9isBAmAmBYASBAZKBRyz5QCPiSQGhJBZQXLVLyC58r6E4JVUg1UYrlgXFwEq%2BUkjEK8pILgXl4ELnvt9RqzVWrAI6ljXq2N%2BoA2GoTYmSMppsE4C0FgzJ8TzSYOSAwRhHL5XLE5bau0SB4AOiJaOJ047SATkoJOt1dBiSei9FmN874Px%2Bhwf6g1wSHGBlCYgQiRFiOQBI4AUiZEGThgjPGSN/4BDMEAjGnV2E8PiCNImqBEYjEEcI%2BaDiVZcHylwQylNqa03prdNmzMnZpI5lzZufMBbPGFqLcWmBJbSzEHLPmSsvZbAChreeOt5YBX1sgQ2fMTZ1G%2BhbK25wbbVPRuaR2sUXZu0wB7ZWRhvagBYXwAOQcQ5hwjn5WKKjY5nXUbIRON0Ao6NTj7SuVhM4W1ztAwKhdsjF1LuXPZ1da7xHrkc8%2Ba8tbOAgK4A%2BIlu7lGnnoQeDQ3lpHHg0beixV49A3vvZeo8m5PMaIvIF/c979D%2BUfAYJ8vmANWOsK%2B6LypGPoZwaxtjRHiJVs4py395HIwAb4kBpAwEQJGMc8quD8HSOQfiah%2BJ8QBBQZIJaIljEMNsEwvxrD4DsIGoDYJgTiB8K2IIiGLAFDMjJMyWJ5ZJTjDkb/fah1ZCqNWRdeQmjNk6BAEEPRr0FaGK%2BrdRqZjAaWJBvK5airlUsjVRql48NQkePiF4gI1KpkBJ9fjKVIakanmQKkVIkFYngU9dxGxS0%2BB0CSZQFJAVMliwyUzLJ3NeZOzyULEW2aanFKljLcpTtKnjN6aQWpWt6l61UAbX4rTBDtNup0i4PS7b9L5kMjIIzPbjPCJMzG0ymCB2DqHcOkcnbLNOhINZl1jXJzNTs4wGcbCHPgPnU57pODbFLunKulga6Pzroohuxy57Qtbu3PIkKPm92Bf84o2Q/k/OyHC3ed6GibyXk%2Bw%2BjyAOwtRTvQ%2B4LgOz3A58yD6KL6YrOtauhtr8XOsOK6lVHrHzjHJdqrxgD0Y0rpZAygN9mWJGkQEAIXk8qUNqrR/EJU0MNU4IwtqNKUqSHxJtdlXApD5TZfArg%2BJsEcACDa9jTVmGYxvltNjj8ONycSs7eImRnCSCAA%3D%3D%3D)
 
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/is_different.hpp)
+
 - [unit test](../../../../tests/unit/metafunctions/varybivore/is_different.test.hpp)

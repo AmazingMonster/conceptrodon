@@ -15,28 +15,22 @@ otherwise, it returns false.
 ## Type Signature
 
 ```Haskell
-IsLess ::   auto...
-         -> auto...
-         -> auto
+IsLess :: auto... -> auto
 ```
 
 ## Structure
 
 ```C++
-template<auto>
+template<auto...>
 struct IsLess
 {
-    template<auto...>
-    alias Page
-    {
-        static constexpr bool value
-        {RESULT};
-    };
-    
-    template<auto...>
-    static constexpr bool Page_v
+    static constexpr bool value
     {RESULT};
 };
+
+template<auto...>
+constexpr bool IsLess_v
+{RESULT};
 ```
 
 ## Examples

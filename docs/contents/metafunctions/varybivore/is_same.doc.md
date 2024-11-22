@@ -5,10 +5,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Varybivore::IsSame` accepts two variables.
-It returns true if they are the same and returns false otherwise.
+`Varybivore::IsSame` accepts a target and a list of variables.
+It returns true if the target is the same as every variable;
+otherwise, it returns false.
 
-<pre><code>Left, Right -> Left == Right ? true : false</code></pre>
+<pre><code>   Target, V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> (Target same as V<sub>0</sub>) && (Target same as V<sub>1</sub>) && ... && (Target same as V<sub>n</sub>)</code></pre>
 
 ## Type Signature
 
@@ -19,14 +21,14 @@ IsSame :: auto... -> auto
 ## Structure
 
 ```C++
-template<auto, auto>
+template<auto...>
 struct IsSame
 {
     static constexpr bool value
     {RESULT};
 };
 
-template<auto, auto>
+template<auto...>
 constexpr bool IsSame_v
 {RESULT};
 ```
@@ -34,29 +36,33 @@ constexpr bool IsSame_v
 ## Examples
 
 ```C++
-static_assert(! IsSame<1, 1.0>::value);
-static_assert(IsSame<1, 1>::value);
+static_assert(IsSame<1, 1, 1, 1>::value);
+static_assert(! IsSame<1, 1.0, 1>::value);
 ```
 
 ## Implementation
 
-We will use partial template specialization to detect if the two arguments are identical.
+We will implement `IsSame` using `Varybivore::SolitaryIsSame`.
 
-If two arguments are identical, the compiler will select the partial specialization instead of the primary template.
+Here's the entire implementation:
 
 ```C++
-template<auto, auto>
+template<auto Target, auto...Variables>
 struct IsSame
-{ static constexpr bool value {false}; };
+{
+    static constexpr bool value
+    {(...&&SolitaryIsSame<Variables, Target>::value)};
+};
 
-template<auto Variable>
-struct IsSame<Variable, Variable>
-{ static constexpr bool value {true}; };
+template<auto Target, auto...Variables>
+constexpr bool IsSame_v
+{(...&&SolitaryIsSame<Variables, Target>::value)};
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwAbKSuADJ4DJgAcj4ARpjEEtIADqgKhE4MHt6%2BAcGp6Y4C4ZExLPGJUraY9kUMQgRMxATZPn5B1bWZDU0EJdFxCUm2jc2tuR0Ko30RA%2BVDUgCUtqhexMjsHASYLMkG2yb%2BbkxeRKQA1CdEh9gmGgCCU8ReDucAkgpCrJh39yYA7BZzlMmI5kOc0AwpphVMliOdYqhPOcAG5iLyYc4AixUMRKAEAEUOQMJxN%2Bv22u32PyOV1Q5wAak08ExYvQbr8ni8CO9Pt9Dm4mcQWWzMBchSL2f5bg9scDGmCIQJobD4YjkWjvJjsQRnj9/kT/CSDWTZQ8APQAKmtNtt5t%2BVutABVsEInTb7Rbbd7LZ6/g8QWCAPpMBRKZoQMBgXlfNgCrgXLgAOg0NxAIE1GMWpseCrwyBDYYSBAgH1jNLcCfOXDTGfRmGzRo4y1onAArLw/BwtKRUJw3NZrMDVuttWZ/DxSARNM3lgBrEBtyQpyRcf7%2BDRtjRmQKBMwADn3%2Bk4kl4LAkGg0pC7Pb7HF4ChAV%2Bn3ebpDgsBgiBAqwIyVO5CUGgux0AkUTfJwqj7oEAC0gSSOcwDIOCUhJmYvCYPgRDCugej8IIIhiOwVT4fIShqDOpC6AmADuxBMMknA8C27adpRd4APKnP%2BPKoFQ5xQbB8GIch1bLmY5wQB4IH0PC5gTosvAvloywQEgwHJKBZAUBAGlaSAwBSGYfB0NsxCPhAsSUbEERNAAnkxvA2cwxB2RxsTaJgDiOaQwFsIIHEMLQDmvqQWCxF4wDHLQtCPtwvBYCwhjAOIoX4MQXmOCimBxT2MJeacmyThE2ytqFtB4LE9GuR4WCUbqeDnvFpDZcQiJKASOzJRVRgzssVAGMACgMngmA0RxySMD5pGEeIJGyIoKjqKF1H6MlKCDpY%2BiVY%2BkDLKgyR1HFMFTOghwEqYljWGYt6tThOXwMsdiZZkLgMO4nhtHoYSzGUFR6AUGQCOMfgJoDdT9H9CydC9Ag9GMn25Amz0ON00yQ4MlQjL0IN6CCzQY/MlRPSOGwSCxHAdte7GcAJ0FwQhSEoeJkm4IQJBYuOXCKVOfXLAgmBMFgiQQPOICSP4SYAJz%2BP8kgaJIZiSIEl5toEUvHhwp6kOeE5JoEXCBPuUv7obS5cG2MvBDevB3g%2BT686%2BqlfmpP7cQBOl6bJ4FsJwTQsCi/wwUwEIGEY1ZS0myZ5VhJB4LhCYzaIc3SKRi0UStIDGXRDGORTVM272nBcX%2BpznHxlzEAHQch8gYfABHUcppJ0mabJnP%2BGYPPKW%2BrtewkgG6agMlDP7gcwXXyVcFLXBXjQtBmRZVmhc59k%2BavrnuZ53nNX5jAEIFwWUeFkXRbFPmJd1mw9ulL3ZblGGqAV2w%2BSVNSURVVX2bV19KcKTWTlau1TAnUkpGB6qAJ2fBBrDVGuNSaXZJxJyIsMNO5Flo9l0MZeuG0rpbU/rtUWvZDqZGOqdc6l0rCWBurbO68cHp7RhqjZwEBXC4wTD9UomMAZpCBlkRGoNSDg0yITf6yMaiw3qNMdhTC6jwxmFwomeNpECOUb0URCwSZrDJtzTWBcaYcErtXYOodkqN2jqzWOckubdz5qQAWQshhELKtrXWkcFb/Etv8dcitlarmpqFO2tgHY92dvAV2v4eKD37sQH2mx/bCRYAoFE4IUTTyTNSKYGErHxzwrIWaxFU4LXQZRXQ/hSA50YvFfObFAnF3drxfiCSEJJJSaidJmSeRSWHm3BIHd/C2KgX3HpWlokjNkhmZAyRkhBjSVLIMnSQxV3giZBeCQl7WVsq5deWy3IeUyj5PeAUgohRvpgCKUUxDn2apfcBv8wp4Ayqje%2BlF8rIEKq/QQ79yqVWqnZH%2B9V/4%2BSAWkEBXVwEREgSpaBTAhojTGhNKazVkEpxkIIdOGCdABDWr1Sh1htqxEIftEhypODmlOrgqhFgaG9joVgIlsjXqsPejIzhcwxFCN4XUGRwjii/W4eIrocMVE5EESjOR6N%2BVKORiKr6Mr1FSrEVo0c5M9G1NvLTZp5xWmpI6aCHKXS2bYQ7tzJSdiHHC0oBTVxWdI7%2BH8G2Lcq5Lz2v%2BEbAJGr7zBOfHYhckg2zSzbPuHcUtJBS3XLLLg5Syr%2BHVbbTgZqnYU3Qh6%2BNXrQnLFaukZwkggA)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISQDMpK4AMngMmAByPgBGmMQgZgDspAAOqAqETgwe3r7%2BQemZjgJhEdEscQnJtpj2JQxCBEzEBLk%2BfoG19dlNLQRlUbHxiSkKza3t%2BV3j/YMVVaMAlLaoXsTI7BwA9ABU%2B7sA1EKehC0AngCSCkKsmIcHu9smGgCCBJgsqQYfJgFuTC8RFIh0BRD%2B2Ber3GxC8DmOpwmVxudyhJiSFkOs0cyEOaAY40wqlSxEOMVQnkOADcxF57uiLFQxEp0QARP6YtkctFvD5fH6YP4AoGoQ4ANRaeCYMXoEKhMLhBARtDOxGRtzYQolxClMswIO1utlAUhbwZWOaOLxAkJxNJ5MpNO89IxBFhgqS7ICnM93LNbz2B2VqvVdweB2evM%2B3yYv3%2BYNFABUWsBMAQQQmAHTZw3S%2BgKOVvBXw64awVmjFQw7Vi2xvC4/G2klkim0am08uvGuHBkQbOZ8wANiHJxVSNLqP%2Bub1ChByeIqYIEJAICddKWXO9aN9W/972jAqFCcO88XGZF/en%2BcLr0bHztLcpE7YAH0qduLH3s0OR4iLs/BSnSU80wWcTxTNNl1XDsNx3Kw90DR4kMeSNXkQo5E1AggFHDfZUPQ5CkNQ%2BVLXrF8mAUJRWggAChS4EF6MORiuCgtdMA3XdoVI5ByMo%2BICAgMAwEOWj/mYzMNAY1iYI5DgVloTgAFZeD8DgtFIVBODcaxrCxNYNnpMwAh4UgCE0OSVgAaxARSzEzJIzEkAAOJzFI0ABOWyNEHJyggUjhJF4FgJA0STVPUzSOF4BQQEksy1Lk0g4FgGBEBANYCFSIFyEoNAvjoeJIjuThVCcwcAFpB0kQ5gGQXEpEzMxeEwfAiB1dA9H4QQRDEdgpBkQRFBUdQEtIXR6IAd2IJhUk4Hh5KUlTzI0zgAHkgSypVUCoQ5SoqqqarqpjJEaw4IA8fL6FJcxjKWXh4q0FYICQPLUgKsgKAgV73pAYApDMPg6A%2BYgYogGJlpicILjm3hIeYNVVpibRMAcGHSDythBFWhhaHOZasBiLxgABWhaBi7heCwFhDGAcRRvwYgUccKlQOWokUaBLYTPCD5/PUlUYmmtUPCwZa3TwYKKdIFniHJJRWU%2BGmVSMcyVioAxgAUMU8EwCbVtSRg0a64RRHEfrjaGtRlvG/QaZQHTLH0PAYhiyAVlQVIGnJ8rxnQP5WVMSxrDMCKZfa1m3e6JnshcBh3E8Do9FCcIhkqEZ6KKLIBCmPwM4yLOGHmYYEnouxo4EPpJgT/JS7qcvGgmAYU4WdPbEbnO9FmVoi7TkuVgUfTNgkBaOGU0hwt4SLdrKyrqtq%2BqTrMM7cEIEgeyMrg7tM1WVgQTAmCwBIICsgpM3cgIkkkDRJEcwdQsUwd3P0ThAtIYLjMzQcuB89ynO/xTJBcEUufQc49lqRWirFbeCUnqpWeulDa2VPrfSukVNgnAWgsCpEkcqTA8QGCMExdymYuASWaq1EgeAOr0WNj1M20gLZKCtqNXQAMpozRhiPMeE8VocHWplIEhxtqgmIFgnBeDkAEOAEQkhEkzoXTelddeAQzBbweoleBKD4g5S%2BqgS6IxMHYPKpImmXB3JcEkjQWgwNQbg1GnDaGUsHEIyRkzNGGNGAEGxrjfGmBCbEzEGTNGVMlZbHUgzaOLNybqXZsgTmaMeZ1GWgLIW5wRZhPujqSWJkZZy0wAramRhlagBgXwDWWsdZ6wNqpEytDTZ9QYbIS2I11KsNtirQOVhHYC1dsfDSntsje19v7TpwdQ7xHDr0/udcHAxwgK4Du9Fk7lGLnoTODRFlpHzg0Huixa49Aru3auuco6zMOXMZuqzS5HLyCcruTcVm92HqsdYQ9N7P1HktUaU9DHiPwTTGRpCNDLwoddDeaid6kD3gfEYfT/Kv3fsQ6%2BSRgFJCSAEG%2Bkgqr0R4RA2wUD1GwPgPAjKm0dFaOIGgrYmCDosAUFSXEVIzGZgFOMchq92qdVkHQhpA15BMJaToEAQR2GzQplwr5EU1qIK2jtGl1U6UMupMy1lSpzp6MUfEZRAQIWlM0Rq965KDVXVXMgVIqQ3xmJfKq8ioiqqA2sfEWxEMoZqjRs484iNkaoylh4rGOM8b0z8UTEmQSpYhKKRk0gETZlRLZqoDmHwEmCCSaNFJFx0liyyWjXJGR8mKyKeEEpj0ylME1trXW%2BtDZSzqb1CQjTBoCutsK9pxgHY2B6fAd2AybScG2L7e2QdLAh0nmHKhEc%2BllzOX4eZcdNnLNTnsrZxRsibPWdkXZrcp0NErm0Y5ncZk7sbpukubd%2BibPuSe55A9Xl9QlWA75nAREsFpfSxlKrYxYRBRy5Rm97qQuhYfSgI8EWJGIQEAIik3KANChBpIPkH1SqiviuKkLrKSCSI1FFXApDuWRefLgKR/IBElZPTg/6YEjyaohsjyHCUrBlpkZwkggA%3D%3D%3D)
 
 ## Links
 
 - [source code](../../../../conceptrodon/varybivore/is_same.hpp)
+
 - [unit test](../../../../tests/unit/metafunctions/varybivore/is_same.test.hpp)

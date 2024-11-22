@@ -8,7 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::IsDifferentFrom` accepts a variable and returns a function.
 When invoked by an argument, the function returns true if the argument differs from the variable and returns false if otherwise.
 
-<pre><code>Target -> Variable -> Variable != Target ? true : false</code></pre>
+<pre><code>Target -> Variable -> Variable different from Target ? true : false</code></pre>
 
 ## Type Signature
 
