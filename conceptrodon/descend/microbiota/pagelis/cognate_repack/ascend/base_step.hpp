@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_FUNCTION_NAME
-#error "CONCEPTRODON_PAGELIS_REPACK_FUNCTION_NAME has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_FUNCTION_NAME
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_FUNCTION_NAME has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,8 +11,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_PAGELIS_REPACK_PARAMETER_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_PARAMETER_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -20,8 +20,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_LENGTH
-#error "CONCEPTRODON_PAGELIS_REPACK_LENGTH has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -96,9 +96,6 @@
 
 
 
-
-
-
 /******************************************************************************************************/
 template
 <
@@ -109,7 +106,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_llama.hpp"
 
@@ -118,7 +115,7 @@ template
 #undef CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_COUNT
 
-    ,
+,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS   \
     CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY ...
@@ -126,7 +123,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -134,8 +131,6 @@ template
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
-
-    , typename...RestPacks
 
 >
 
@@ -150,7 +145,7 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #define CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_plain.hpp"
 
@@ -160,15 +155,11 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #undef CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_PLAIN_COUNT
 
-    , RestPacks...
 >
 {
-
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-    = CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
+    = CONCEPTRODON_PAGELIS_COGNATE_REPACK_PARAMETER_IDENTIFIER
     <
-        CONCEPTRODON_NUCLEOLUS_PAGE_PARALLEL_VESSEL
-        <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SUFFIX_SYMBOLS   \
@@ -176,7 +167,7 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -185,11 +176,7 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
-        >
-        , RestPacks...
-    >
-    :: CONCEPTRODON_NUCLEOLUS_TYPE_RESULT ;
-
+    >;
 };
 /******************************************************************************************************/
 

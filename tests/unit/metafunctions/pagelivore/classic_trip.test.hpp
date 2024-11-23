@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRIP_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRIP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CLASSIC_TRIP_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CLASSIC_TRIP_H
 
 #include <type_traits>
 #include <utility>
 #include "conceptrodon/monotony.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/pagelivore/trip.hpp"
+#include "conceptrodon/pagelivore/classic_trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 
@@ -18,7 +18,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestTrip {
+namespace TestClassicTrip {
 
 
 
@@ -57,10 +57,10 @@ struct TesterA
 };
 
 template<typename>
-struct TesterBHelper {};
+struct TesterB {};
 
 template<template<auto...> class Sequence, auto...I>
-struct TesterBHelper<Sequence<I...>>
+struct TesterB<Sequence<I...>>
 {
     template<auto...Agreements>
     using Page = Sequence<(0 +...+ (2*I)), Agreements...>;
@@ -88,14 +88,11 @@ struct TesterBHelper<Sequence<I...>>
     using Mold = ProtoMold<Elements...>;
 };
 
-template<typename...Elements>
-using TesterB = TesterBHelper<typename Elements::type...>;
-
 template<typename Element>
-struct TesterCHelper {};
+struct TesterC {};
 
 template<template<auto...> class Sequence, auto...I>
-struct TesterCHelper<Sequence<I...>>
+struct TesterC<Sequence<I...>>
 {
     template<auto...Agreements>
     using Page = Sequence<(0 +...+ (I-1)), Agreements...>;
@@ -123,9 +120,6 @@ struct TesterCHelper<Sequence<I...>>
     using Mold = ProtoMold<Elements...>;
 };
 
-template<typename...Elements>
-using TesterC = TesterCHelper<typename Elements::type...>;
-
 template<template<auto...> class P>
 struct PageVessel
 {
@@ -143,7 +137,7 @@ struct PageVessel
 
 SAME_TYPE
 (
-    Trip<TesterA<4>::Page>
+    ClassicTrip<TesterA<4>::Page>
     ::Road<TesterB>
     ::Road<TesterB>
     ::Road<TesterB>
@@ -164,7 +158,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Trip<TesterA<1>::Page>
+    ClassicTrip<TesterA<1>::Page>
     ::Rail<TesterA<2>::Page>
     ::Rail<TesterA<3>::Page>
     ::Rail<TesterA<4>::Page>
@@ -186,7 +180,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Trip<TesterA<1>::Page>
+    ClassicTrip<TesterA<1>::Page>
     ::Rail<TesterA<2>::Page>
     ::Rail<TesterA<3>::Page>
     ::Rail<TesterA<4>::Page>
@@ -210,7 +204,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Trip<TesterA<1>::Page>
+    ClassicTrip<TesterA<1>::Page>
     ::Rail<TesterA<2>::Page>
     ::Rail<TesterA<3>::Page>
     ::Rail<TesterA<4>::Page>
@@ -234,7 +228,7 @@ SAME_TYPE
 
 SAME_TYPE
 (
-    Trip<TesterA<1>::Page>
+    ClassicTrip<TesterA<1>::Page>
     ::Rail<TesterA<2>::Page>
     ::Rail<TesterA<3>::Page>
     ::Rail<TesterA<4>::Page>
@@ -258,7 +252,7 @@ SAME_TYPE
 
 EQUAL_VALUE
 (
-    Trip<TesterA<1>::Page>
+    ClassicTrip<TesterA<1>::Page>
     ::Rail<TesterA<2>::Page>
     ::Rail<TesterA<3>::Page>
     ::Rail<TesterA<4>::Page>

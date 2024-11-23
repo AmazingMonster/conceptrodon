@@ -4,7 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FRONT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FRONT_H
 
+#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/pagelivore/front.hpp"
+#include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -33,7 +35,7 @@ using SupposedResultA = Shuttle<SHEEP_SPROUT(40)>;
     SupposedResultA
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Front<>::Page<40>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(Front<Shuttle>::Page<40>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

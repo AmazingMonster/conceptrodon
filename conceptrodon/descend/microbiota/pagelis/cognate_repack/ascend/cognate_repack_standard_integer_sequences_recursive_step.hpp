@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_LENGTH
-#error "CONCEPTRODON_PAGELIS_REPACK_LENGTH has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -11,8 +11,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_PARAMETER_IDENTIFIER
-#error "CONCEPTRODON_PAGELIS_REPACK_PARAMETER_IDENTIFIER has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_PARAMETER_IDENTIFIER
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_PARAMETER_IDENTIFIER has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -20,8 +20,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_INTEGER_SEQUENCE
-#error "CONCEPTRODON_PAGELIS_REPACK_INTEGER_SEQUENCE has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_INTEGER_SEQUENCE
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_INTEGER_SEQUENCE has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -29,8 +29,8 @@
 
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_PAGELIS_REPACK_UNIFIED_INTEGER_TYPE
-#error "CONCEPTRODON_PAGELIS_REPACK_UNIFIED_INTEGER_TYPE has not been defined"
+#ifndef CONCEPTRODON_PAGELIS_COGNATE_REPACK_UNIFIED_INTEGER_TYPE
+#error "CONCEPTRODON_PAGELIS_COGNATE_REPACK_UNIFIED_INTEGER_TYPE has not been defined"
 #endif
 /******************************************************************************************************/
 
@@ -140,7 +140,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_HORSE_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_HORSE_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_horse.hpp"
 
@@ -157,7 +157,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_LLAMA_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_llama.hpp"
 
@@ -174,7 +174,7 @@ template
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 
@@ -199,7 +199,7 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #define CONCEPTRODON_CYTOPLASM_MICRO_WORLD_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_WORLD_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_world.hpp"
 
@@ -216,9 +216,9 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
     = CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
     <
-        CONCEPTRODON_PAGELIS_REPACK_INTEGER_SEQUENCE
+        CONCEPTRODON_PAGELIS_COGNATE_REPACK_INTEGER_SEQUENCE
         <
-            CONCEPTRODON_PAGELIS_REPACK_UNIFIED_INTEGER_TYPE
+            CONCEPTRODON_PAGELIS_COGNATE_REPACK_UNIFIED_INTEGER_TYPE
             ,
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
@@ -227,7 +227,7 @@ struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_SEPARATOR_SYMBOLS    \
     ,
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT    \
-    CONCEPTRODON_PAGELIS_REPACK_LENGTH
+    CONCEPTRODON_PAGELIS_COGNATE_REPACK_LENGTH
 
 #include "conceptrodon/microbiota/cytoplasm/repetition/micro_sheep.hpp"
 

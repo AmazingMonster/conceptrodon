@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_REPACK_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_REPACK_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REPACK_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REPACK_H
 
 #include <utility>
-#include "conceptrodon/pagelivore/repack.hpp"
+#include "conceptrodon/descend/pagelivore/cognate_repack.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -17,7 +17,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestRepack {
+namespace TestCognateRepack {
 
 
 
@@ -51,7 +51,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateRepack<Tester>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -83,7 +83,7 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<std::index_sequence>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateRepack<std::index_sequence>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -122,7 +122,7 @@ using SupposedShuttle = SignedArk<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<Shuttle>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateRepack<Shuttle>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

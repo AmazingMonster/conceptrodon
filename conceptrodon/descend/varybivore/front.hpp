@@ -19,14 +19,7 @@ struct Front
         using Rail = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template lark<Agreements..., Monotony<Variables>...>()
-        );
-        
-        template<template<auto...> class Operation=Shuttle>
-        using UniRail = decltype
-        (
-            Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template lark<Operation, Monotony<Variables>...>()
+            ::template idyl<Agreements..., Monotony<Variables>...>()
         );
     };
 
