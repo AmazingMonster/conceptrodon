@@ -22,8 +22,8 @@ struct TypicalConjureSet
     struct Detail<std::index_sequence<I...>>
     {
         template<Prefix<I>...FrontElements, typename Inspecting, typename...>
-        static consteval auto idyl() -> 
-        std::conditional_t
+        static consteval auto idyl()
+        -> std::conditional_t
         <
             (...||std::is_same_v<FrontElements, Inspecting>),
             Capsule<>,

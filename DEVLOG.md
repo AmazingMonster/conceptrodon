@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>Nah</td>
       </tr>
     </table>
   </li>
@@ -26,7 +26,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>In progress. Five functions left</td>
       </tr>
     </table>
   </li>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>Nah</td>
       </tr>
     </table>
   </li>

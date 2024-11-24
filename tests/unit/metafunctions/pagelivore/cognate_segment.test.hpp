@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SEGMENT_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SEGMENT_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_SEGMENT_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_SEGMENT_H
 
 #include <concepts>
 #include <utility>
-#include "conceptrodon/descend/pagelivore/segment.hpp"
+#include "conceptrodon/descend/pagelivore/cognate_segment.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -20,7 +20,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestSegment {
+namespace TestCognateSegment {
 
 
 
@@ -49,8 +49,8 @@ using SupposedResult = Ark<0, ALKANE_SPROUT(239)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Segment<Shuttle>::Page<SHEEP_SPROUT(240)>);
-SAME_TYPE(Segment<Shuttle>::Mold<std::index_sequence<SHEEP_SPROUT(240)>>);
+SAME_TYPE(CognateSegment<Shuttle>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateSegment<Shuttle>::Mold<std::index_sequence<SHEEP_SPROUT(240)>>);
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

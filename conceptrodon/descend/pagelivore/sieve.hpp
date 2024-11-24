@@ -10,7 +10,7 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class Predicate>
+template<template<auto...> class...Predicates>
 struct Sieve
 {
     template<auto Variable>
@@ -18,23 +18,13 @@ struct Sieve
     { using type = Shuttle<>; };
 
     template<auto Variable>
-    requires (not Predicate<Variable>::value)
+    requires (not (...&&Predicates<Variable>::value))
     struct Detail<Variable>
     { using type = Shuttle<Variable>; };
 
     template<auto...Variables>
-    struct ProtoPage
-    { 
-        using type = Sequnivore::TypicalPaste
-        <typename Detail<Variables>::type...>::type; 
-    };
-
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
-
-    template<auto...Variables>
-    using Page_t = Sequnivore::Paste
-    <typename Detail<Variables>::type...>::type; 
+    using Page = Sequnivore::TypicalPaste
+    <typename Detail<Variables>::type...>::type;
 };
 
 }}

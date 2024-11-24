@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_SEGMENT_H
-#define CONCEPTRODON_PAGELIVORE_SEGMENT_H
+#ifndef CONCEPTRODON_PAGELIVORE_COGNATE_SEGMENT_H
+#define CONCEPTRODON_PAGELIVORE_COGNATE_SEGMENT_H
 
 #include <utility>
 #include "conceptrodon/omennivore/send.hpp"
@@ -12,7 +12,7 @@ namespace Conceptrodon {
 namespace Pagelivore {
 
 template<template<auto...> class Operation>
-struct Segment
+struct CognateSegment
 {
     template<size_t I, size_t...J>
     struct Detail
