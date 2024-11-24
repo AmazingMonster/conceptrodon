@@ -25,7 +25,7 @@ struct Sieve
     template<auto...Variables>
     struct ProtoPage
     { 
-        using type = Sequnivore::Paste
+        using type = Sequnivore::TypicalPaste
         <typename Detail<Variables>::type...>::type; 
     };
 

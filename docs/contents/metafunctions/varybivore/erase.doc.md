@@ -30,7 +30,7 @@ When invoked by an operation, the function removes the variables of indices with
 ```Haskell
 Erase ::   auto...
         -> auto...
-        -> template<template<typename...> class...>
+        -> template<template<auto...> class...>
 ```
 
 ## Structure

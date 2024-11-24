@@ -5,7 +5,7 @@
 #define CONCEPTRODON_PAGELIVORE_MODIFY_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/omennivore/modify_variables.hpp"
+#include "conceptrodon/descend/omennivore/modify_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
 #include "conceptrodon/descend/pagelivore/segment.hpp"
 
@@ -31,7 +31,7 @@ struct Modify
                 <
                     typename Pagelivore::Segment<Detail_t>
                     ::template Page<I...>
-                >::template UniRoad<Omennivore::ModifyVariables>
+                >::template UniRoad<Omennivore::ModifyValues>
                 ::template ProtoRail<Hormone>
                 ::template Page_t<Variables...>
             >

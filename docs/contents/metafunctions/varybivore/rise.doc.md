@@ -25,7 +25,7 @@ Rise ::   auto...
 template<auto...>
 struct Rise
 {
-    template<template<auto...> class...>
+    template<template<auto...> class>
     alias Rail = RESULT;
 };
 ```

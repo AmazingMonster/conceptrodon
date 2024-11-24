@@ -5,7 +5,7 @@
 #define CONCEPTRODON_PAGELIVORE_REMOVE_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/omennivore/remove_variables.hpp"
+#include "conceptrodon/descend/omennivore/remove_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
 #include "conceptrodon/descend/pagelivore/segment.hpp"
 
@@ -28,7 +28,7 @@ struct Remove
             <
                 typename Pagelivore::Segment<Detail_t>
                 ::template Page<I...>
-            >::template UniRoad<Omennivore::RemoveVariables>
+            >::template UniRoad<Omennivore::RemoveValues>
             ::template Page_t<Variables...>
         >
         ::template UniRail<Operation>;

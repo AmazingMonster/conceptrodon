@@ -5,8 +5,6 @@
 #define CONCEPTRODON_VARBOLA_SHEAR_H
 
 #include "conceptrodon/prefix.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/monotony.hpp"
 #include <utility>
 
 namespace Conceptrodon {

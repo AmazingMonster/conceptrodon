@@ -14,13 +14,8 @@ struct Observe
 {
     template<template<auto...> class...Agreements>
     using Rail = decltype
-    (
-        Varbola::stare
-        <
-            Agreements...,
-            static_cast<bool>(Phenomena)...
-        >()
-    )::type;
+    (Varbola::stare<Agreements..., static_cast<bool>(Phenomena)...>())
+    ::type;
 };
 
 }}

@@ -38,7 +38,7 @@ struct TypicalReiterate
 
 ## Examples
 
-We will instantiate `Operation` with four iterations of `int, int*`:
+We will repeat `int, int*` four times:
 
 ```C++
 template<typename...>
@@ -69,13 +69,9 @@ We will implement `TypicalReiterate` using recursion over the times of iteration
   3. Invoke the first layer of `TypicalReiterate` with the times left;
   4. Concatenate two results.
 
-Here is a simplified version of the implementation:
+We will use `ExtendBack` to concatenate two parts.
 
 ```C++
-template<typename...>
-struct Capsule;
-
-// We will use this function to concatenate two parts.
 template<typename...>
 struct ExtendBack {};
 
@@ -88,6 +84,13 @@ struct ExtendBack<Container<Elements...>>
     template<typename...Agreements>
     using Mold = Container<Elements..., Agreements...>;
 };
+```
+
+Here is a simplified version of the implementation:
+
+```C++
+template<typename...>
+struct Capsule;
 
 template<typename...Elements>
 struct TypicalReiterate

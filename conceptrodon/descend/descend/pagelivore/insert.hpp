@@ -5,7 +5,7 @@
 #define CONCEPTRODON_PAGELIVORE_INSERT_H
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/omennivore/insert_variables.hpp"
+#include "conceptrodon/descend/omennivore/insert_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
 #include "conceptrodon/descend/pagelivore/segment.hpp"
 
@@ -33,7 +33,7 @@ struct Insert
                     <
                         typename Pagelivore::Segment<Detail_t>
                         ::template Page<I...>
-                    >::template UniRoad<Omennivore::InsertVariables>
+                    >::template UniRoad<Omennivore::InsertValues>
                     ::template Page<NewVariables...>
                     ::template Page_t<Variables...>
                 >

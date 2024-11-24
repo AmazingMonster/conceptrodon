@@ -6,7 +6,7 @@
 
 #include <utility>
 #include "conceptrodon/omennivore/send.hpp"
-#include "conceptrodon/descend/microbiota/varbola/pop.hpp"
+#include "conceptrodon/descend/microbiota/varbola/typical_pop.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
@@ -23,7 +23,7 @@ struct Segment
     };
 
     template<auto...Agreements>
-    using Page = Omennivore::Send<typename Varbola::Pop<Agreements...>::type>
+    using Page = Omennivore::Send<typename Varbola::TypicalPop<Agreements...>::type>
     ::template UniRail<Detail<Agreements...>::template Hidden_t>;
 
     template<typename>
@@ -36,7 +36,7 @@ struct Segment
         requires (...&&(K < J))
         using Detail_t = Operation<I, J-K...>;
 
-        using type = Omennivore::Send<typename Varbola::Pop<I, J...>::type>
+        using type = Omennivore::Send<typename Varbola::TypicalPop<I, J...>::type>
         ::template UniRail<Detail_t>;
     };
 

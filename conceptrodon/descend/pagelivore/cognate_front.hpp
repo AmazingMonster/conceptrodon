@@ -1,26 +1,25 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_VARYBIVORE_FRONT_H
-#define CONCEPTRODON_VARYBIVORE_FRONT_H
+#ifndef CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
+#define CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
 
-#include "conceptrodon/monotony.hpp"
 #include "conceptrodon/descend/microbiota/varbola/fore.hpp"
 
 namespace Conceptrodon {
-namespace Varybivore {
+namespace Pagelivore {
 
-template<auto...Variables>
-struct Front
+template<template<auto...> class Operation>
+struct CognateFront
 {
     template<size_t Amount>
     struct ProtoPage
     {
-        template<template<auto...> class...Agreements>
-        using Rail = decltype
+        template<auto...Variables>
+        using Page = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Operation, Monotony<Variables>...>()
         );
     };
 

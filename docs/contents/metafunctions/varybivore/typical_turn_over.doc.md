@@ -52,10 +52,9 @@ We will implement `TypicalTurnOver` using recursion over the total number of par
   2. Invoke `TypicalTurnOver` by the rest to turn them over;
   3. Switch the positions of these two flipped parts and concatenate them together.
 
-Here's a simplified version of the implementation:
+We will use `ExtendBack` to concatenate two flipped parts.
 
 ```C++
-// We will use this function to concatenate two flipped parts.
 template<typename>
 struct ExtendBack {};
 
@@ -65,7 +64,11 @@ struct ExtendBack<Sequence<Variables...>>
     template<auto...Endings>
     using Page = Sequence<Variables..., Endings...>;
 };
+```
 
+Here's a simplified version of the implementation:
+
+```C++
 template<auto...>
 struct Shuttle;
 

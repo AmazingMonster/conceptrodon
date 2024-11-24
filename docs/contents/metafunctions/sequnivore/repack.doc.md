@@ -13,6 +13,7 @@ When invoked by an operation, the function concatenates the packed sequences and
 -> Operation&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>
 
 `Sequnivore::Repack` can also handle `std::integer_sequence`. The function first `static_cast` integers to `std::make_signed_t<size_t>`. Then, it uses the result to invoke an operation.
+
 <pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>, Variables<sub><i>i</i></sub>...&gt;...
 -> Operation
 -> Operation&lt;(size_t)Variables<sub><i>0</i></sub>..., (size_t)Variables<sub><i>1</i></sub>..., ...></code></pre>
@@ -20,7 +21,7 @@ When invoked by an operation, the function concatenates the packed sequences and
 ## Type Signature
 
 ```Haskell
-Repack :: typename... -> template<auto...>
+Repack :: typename... -> template<template<auto...> class...>
 ```
 
 ## Structure

@@ -1,6 +1,6 @@
 # Diary
 
-## 2024/11/23
+## 2024/11/24
 
 ### Todo
 
@@ -27,6 +27,51 @@
       <tr>
         <td>Progress</td>
         <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Remove <code>Cognate*</code> prefix from some functions in <code>Pagelivore</code> for simplicity</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+## 2024/11/23
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change names of concepts to include the prepositions</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Nah</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In progress</td>
       </tr>
     </table>
   </li>

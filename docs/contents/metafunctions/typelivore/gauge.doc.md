@@ -49,9 +49,8 @@ struct Gauge
         using UniRail = RESULT;
     };
 };
-```
 
-```C++
+
 template<typename...>
 struct Gauge
 {
@@ -65,9 +64,8 @@ struct Gauge
         using UniRail = RESULT;
     };
 };
-```
 
-```C++
+
 template<typename...>
 struct Gauge
 {

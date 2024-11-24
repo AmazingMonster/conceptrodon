@@ -6,7 +6,7 @@
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/varybivore/among.hpp"
-#include "conceptrodon/descend/omennivore/concepts/descend/nonzero_peg.hpp"
+#include "conceptrodon/descend/omennivore/concepts/descend/peg_nonzero.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
@@ -24,7 +24,7 @@ struct Bind
             static constexpr auto Hidden_v {Variable};
             
             template<auto Variable>
-            requires Omennivore::NonzeroPeg<decltype(Variable)>
+            requires Omennivore::PegNonzero<decltype(Variable)>
             static constexpr auto Hidden_v<Variable> 
             {
                 Varybivore::Among<Replacements...>
