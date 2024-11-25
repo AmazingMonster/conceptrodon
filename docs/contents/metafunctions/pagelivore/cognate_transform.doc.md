@@ -7,8 +7,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Pagelivore::CognateTransform` accepts an operation.
 Its first layer accepts a list of predicates.
-Its second layer accepts another operation and returns a function.
-When invoked, the function transforms its arguments that satisfy all the predicates with the second operation and instantiates the first operation with the result.
+Its second layer accepts a transformation and returns a function.
+When invoked, the function transforms its arguments that satisfy all the predicates with the transformation and instantiates the first operation with the result.
 
 <pre><code>   FirstOperation
 -> Predicates...
@@ -54,7 +54,7 @@ struct CognateTransform
 
 ## Example
 
-We will apply unary minus to variables divisible by two and three in the list `1, 12, 2, 6, 15`.
+We will apply `UnaryMinus` to variables divisible by two and three in the list `1, 12, 2, 6, 15`.
 
 ```C++
 template<auto I>

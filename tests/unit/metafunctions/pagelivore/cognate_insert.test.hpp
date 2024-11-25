@@ -35,7 +35,13 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateInsert<Shuttle>::Page<SHEEP_SPROUT(120, *2+1)>::Page<SHEEP_SPROUT(120, *2)>::Page<SHEEP_SPROUT(120, *2)>);
+SAME_TYPE
+(
+    CognateInsert<Shuttle>
+    ::Page<SHEEP_SPROUT(120, *2+1)>
+    ::Page<SHEEP_SPROUT(120)>
+    ::Page<SHEEP_SPROUT(120, *2), 1, 2, 3, 4>
+);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

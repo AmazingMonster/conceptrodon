@@ -19,7 +19,7 @@ struct CognateInsert
     struct ProtoPage
     {
         template<size_t I, size_t...J>
-        using Detail_t = Capsule<std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
+        using Detail_t = Capsule<std::make_index_sequence<I>, std::make_index_sequence<J>...>;
         
         struct Slash
         {

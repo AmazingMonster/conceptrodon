@@ -48,7 +48,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
 SAME_TYPE
 (
     InsertValues<std::make_index_sequence<0>, ALKANE_SPROUT(119)>
-    ::Page<SHEEP_SPROUT(120, *2)>
+    ::Page<SHEEP_SPROUT(120, *2), 1, 2, 3, 4>
     ::Page<SHEEP_SPROUT(120, *2+1)>
 );
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"

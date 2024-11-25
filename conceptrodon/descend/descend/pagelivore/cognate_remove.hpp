@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_REMOVE_H
-#define CONCEPTRODON_PAGELIVORE_REMOVE_H
+#ifndef CONCEPTRODON_PAGELIVORE_COGNATE_REMOVE_H
+#define CONCEPTRODON_PAGELIVORE_COGNATE_REMOVE_H
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/omennivore/remove_values.hpp"
