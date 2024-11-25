@@ -4,14 +4,13 @@
 #ifndef CONCEPTRODON_PAGELIVORE_BIND_H
 #define CONCEPTRODON_PAGELIVORE_BIND_H
 
-#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/varybivore/among.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/peg_nonzero.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class Operation=Shuttle>
+template<template<auto...> class Operation>
 struct Bind
 {
     template<auto...Variables>

@@ -1,43 +1,34 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRIM_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TRIM_H
+#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_MODIFY_H
+#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_MODIFY_H
 
-#include "conceptrodon/descend/pagelivore/trim.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include <type_traits>
+#include <concepts>
+#include "conceptrodon/descend/descend/pagelivore/cognate_modify.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
+#include "macaron/fragmental/double_sheep.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
+#include "macaron/fragmental/amenity/define_double_sheep.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 namespace UnitTests {
-namespace TestTrim {
+namespace TestCognateModify {
 
 
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(200, +40)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResult
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Trim<>::Page<40>::Page<SHEEP_SPROUT(240)>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_TYPE
+template<auto Integer>
+struct PlusOne
+{
+    static constexpr auto value {Integer + 1};
+};
 /******************************************************************************************************/
 
 
@@ -45,7 +36,7 @@ SAME_TYPE(Trim<>::Page<40>::Page<SHEEP_SPROUT(240)>);
 
 /******************************************************************************************************/
 template<auto...Variables>
-requires (sizeof...(Variables) == 40)
+requires (sizeof...(Variables) == 240)
 struct Tester {};
 /******************************************************************************************************/
 
@@ -53,20 +44,31 @@ struct Tester {};
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultB = Tester<SHEEP_SPROUT(40, +200)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+#define DOUBLE_SHEEP_PREFIX
+#define DOUBLE_SHEEP_MIDDLE \
+    * 2 + 1,
+#define DOUBLE_SHEEP_SUFFIX \
+    * 2 + 1
+#define DOUBLE_SHEEP_SEPARATOR  \
+    ,
+
+using SupposedResult = Tester<DOUBLE_SHEEP_SPROUT(120)>;
+
+#undef DOUBLE_SHEEP_PREFIX
+#undef DOUBLE_SHEEP_MIDDLE
+#undef DOUBLE_SHEEP_SUFFIX
+#undef DOUBLE_SHEEP_SEPARATOR
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultB
+#define SUPPOSED_TYPE \
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Trim<Tester>::Page<200>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateModify<Tester>::Rail<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -75,9 +77,10 @@ SAME_TYPE(Trim<Tester>::Page<200>::Page<SHEEP_SPROUT(240)>);
 
 
 
-}}}}
-
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
+#include "macaron/fragmental/amenity/undef_double_sheep.hpp"
+
+}}}}
 
 #endif

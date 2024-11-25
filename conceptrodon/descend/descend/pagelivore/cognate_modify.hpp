@@ -1,19 +1,19 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_MODIFY_H
-#define CONCEPTRODON_PAGELIVORE_MODIFY_H
+#ifndef CONCEPTRODON_PAGELIVORE_COGNATE_MODIFY_H
+#define CONCEPTRODON_PAGELIVORE_COGNATE_MODIFY_H
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/omennivore/modify_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
-#include "conceptrodon/descend/pagelivore/segment.hpp"
+#include "conceptrodon/descend/pagelivore/cognate_segment.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 
 template<template<auto...> class Operation>
-struct Modify
+struct CognateModify
 {
     template<template<auto...> class Hormone>
     struct ProtoRail
@@ -29,11 +29,11 @@ struct Modify
             <
                 typename Omennivore::Send
                 <
-                    typename Pagelivore::Segment<Detail_t>
+                    typename CognateSegment<Detail_t>
                     ::template Page<I...>
                 >::template UniRoad<Omennivore::ModifyValues>
                 ::template ProtoRail<Hormone>
-                ::template Page_t<Variables...>
+                ::template Page<Variables...>
             >
             ::template UniRail<Operation>;
         };

@@ -7,13 +7,13 @@
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/omennivore/remove_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
-#include "conceptrodon/descend/pagelivore/segment.hpp"
+#include "conceptrodon/descend/pagelivore/cognate_segment.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 
 template<template<auto...> class Operation>
-struct Remove
+struct CognateRemove
 {
     template<size_t I, size_t...J>
     using Detail_t = Capsule<std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
@@ -26,10 +26,10 @@ struct Remove
         <
             typename Omennivore::Send
             <
-                typename Pagelivore::Segment<Detail_t>
+                typename CognateSegment<Detail_t>
                 ::template Page<I...>
             >::template UniRoad<Omennivore::RemoveValues>
-            ::template Page_t<Variables...>
+            ::template Page<Variables...>
         >
         ::template UniRail<Operation>;
     };

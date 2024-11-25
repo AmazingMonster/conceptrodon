@@ -778,3 +778,4 @@
 - `auto` compiles slower than `size_t`.
 - Check if it is possible to do SFINAE over `inherit same class multiple times` error.
 - Fold expression evaluates to its initiator when the variadic pack is of size zero. `(init op...op pack) == init` if `sizeof...(pack) == 0`.
+- Be careful with variadic concepts.

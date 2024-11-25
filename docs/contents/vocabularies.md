@@ -112,6 +112,10 @@
       <td>invocation order</td>
       <td>The invocation order of a function is the arrangement of the function's layers</td>
     </tr>
+    <tr>
+      <td>finally-returned function</td>
+      <td>the last layer of a given metafunction</td>
+    </tr>
   </tbody>
 </table>
 
@@ -238,7 +242,7 @@
     </tr>
     <tr>
       <td>varybivore</td>
-      <td>A funtion that feeds on variables</td>
+      <td>A funtion that feeds on values</td>
     </tr>
     <tr>
       <td>mouldivore</td>
@@ -322,6 +326,26 @@
     <tr>
       <td>stockii</td>
       <td>stockivore</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prefix</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cognate</td>
+      <td>Used when a function firstly accepts an operation, which will later be instantiated with the result of the main algorithm performed by the function.
+      This prefix is not used when the function's name strongly suggests the operation's existence, such as <code>Agent</code>, <code>BindFront</code>, <code>BindBack</code>, and <code>Bind</code>.</td>
+    </tr>
+    <tr>
+      <td>Kindred</td>
+      <td>Used when a function lastly accepts operations or predicates that participate in the algorithm performed by the function</td>
     </tr>
   </tbody>
 </table>

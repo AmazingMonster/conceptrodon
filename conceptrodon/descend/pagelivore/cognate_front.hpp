@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
 #define CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
 
+#include "conceptrodon/monotony.hpp"
 #include "conceptrodon/descend/microbiota/varbola/fore.hpp"
 
 namespace Conceptrodon {
