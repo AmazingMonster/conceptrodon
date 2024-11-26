@@ -1,5 +1,108 @@
 # Diary
 
+## 2024/11/26
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change names of concepts to include the prepositions</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Remove <code>Cognate*</code> prefix from some functions in <code>Pagelivore</code> for simplicity</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Mouldivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+## 2024/11/25
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Change names of concepts to include the prepositions</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Nah</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add relevant documentations for <code>Omennivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Pagelivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Done</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Remove <code>Cognate*</code> prefix from some functions in <code>Pagelivore</code> for simplicity</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>Nah</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/24
 
 ### Todo
