@@ -5,19 +5,19 @@
 #define CONCEPTRODON_TYPELIVORE_EQUAL_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/equal.hpp"
+#include "conceptrodon/varybivore/concepts/equal_to.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename LeftSide, typename RightSide>
-concept JustEqual = Varybivore::Equal<LeftSide::value, RightSide::value>;
+concept JustEqualTo = Varybivore::EqualTo<LeftSide::value, RightSide::value>;
 
 template<typename LeftSide, typename RightSide>
-concept Equal
+concept EqualTo
 =   Omennivore::Valuable<LeftSide>
 &&  Omennivore::Valuable<RightSide>
-&&  JustEqual<LeftSide, RightSide>;
+&&  JustEqualTo<LeftSide, RightSide>;
 
 }}
 

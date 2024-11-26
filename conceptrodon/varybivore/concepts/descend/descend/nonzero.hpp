@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_VARYBIVORE_NONZERO_H
 #define CONCEPTRODON_VARYBIVORE_NONZERO_H
 
-#include "conceptrodon/varybivore/concepts/descend/unequal.hpp"
+#include "conceptrodon/varybivore/concepts/descend/unequal_to.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Arg>
-concept Nonzero = Unequal<Arg, 0>;
+concept Nonzero = UnequalTo<Arg, 0>;
 
 }}
 

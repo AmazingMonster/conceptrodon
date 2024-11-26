@@ -5,16 +5,16 @@
 #define CONCEPTRODON_TYPELIVORE_BOUNDED_BY_LEFT_OPEN_RIGHT_CLOSED_INTERVAL_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/descend/no_greater.hpp"
-#include "conceptrodon/varybivore/concepts/less.hpp"
+#include "conceptrodon/varybivore/concepts/descend/no_greater_than.hpp"
+#include "conceptrodon/varybivore/concepts/less_than.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept JustBoundedByLeftOpenRightClosedInterval
-=   Varybivore::Less<LowerBound::value, Element::value>
-&&  Varybivore::NoGreater<Element::value, UpperBound::value>;
+=   Varybivore::LessThan<LowerBound::value, Element::value>
+&&  Varybivore::NoGreaterThan<Element::value, UpperBound::value>;
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept BoundedByLeftOpenRightClosedInterval

@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ZERO_H
 #define CONCEPTRODON_VARYBIVORE_ZERO_H
 
-#include "conceptrodon/varybivore/concepts/equal.hpp"
+#include "conceptrodon/varybivore/concepts/equal_to.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Arg>
-concept Zero = Equal<Arg, 0>;
+concept Zero = EqualTo<Arg, 0>;
 
 }}
 

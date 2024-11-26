@@ -5,15 +5,15 @@
 #define CONCEPTRODON_TYPELIVORE_BOUNDED_BY_CLOSED_INTERVAL_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/descend/no_greater.hpp"
+#include "conceptrodon/varybivore/concepts/descend/no_greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept JustBoundedByClosedInterval
-=   Varybivore::NoGreater<LowerBound::value, Element::value>
-&&  Varybivore::NoGreater<Element::value, UpperBound::value>;
+=   Varybivore::NoGreaterThan<LowerBound::value, Element::value>
+&&  Varybivore::NoGreaterThan<Element::value, UpperBound::value>;
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept BoundedByClosedInterval

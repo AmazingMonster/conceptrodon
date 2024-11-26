@@ -5,13 +5,13 @@
 #define CONCEPTRODON_TYPELIVORE_NONZERO_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/descend/unequal.hpp"
+#include "conceptrodon/varybivore/concepts/descend/unequal_to.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Arg>
-concept JustNonzero = Varybivore::Unequal<Arg::value, 0>;
+concept JustNonzero = Varybivore::UnequalTo<Arg::value, 0>;
 
 template<typename Arg>
 concept Nonzero

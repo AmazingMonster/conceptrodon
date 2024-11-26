@@ -5,13 +5,13 @@
 #define CONCEPTRODON_TYPELIVORE_NEGATIVE_ONE_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/equal.hpp"
+#include "conceptrodon/varybivore/concepts/equal_to.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Arg>
-concept JustNegativeOne = Varybivore::Equal<Arg::value, -1>;
+concept JustNegativeOne = Varybivore::EqualTo<Arg::value, -1>;
 
 template<typename Arg>
 concept NegativeOne

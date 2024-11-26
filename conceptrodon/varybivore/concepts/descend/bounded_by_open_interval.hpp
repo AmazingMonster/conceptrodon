@@ -4,15 +4,15 @@
 #ifndef CONCEPTRODON_VARYBIVORE_BOUNDED_BY_OPEN_INTERVAL_H
 #define CONCEPTRODON_VARYBIVORE_BOUNDED_BY_OPEN_INTERVAL_H
 
-#include "conceptrodon/varybivore/concepts/less.hpp"
+#include "conceptrodon/varybivore/concepts/less_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Variable, auto LowerBound, auto UpperBound>
 concept BoundedByOpenInterval 
-=   Less<LowerBound, Variable>
-&&  Less<Variable, UpperBound>;
+=   LessThan<LowerBound, Variable>
+&&  LessThan<Variable, UpperBound>;
 
 }}
 

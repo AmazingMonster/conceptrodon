@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_VARYBIVORE_NEGATIVE_ONE_H
 #define CONCEPTRODON_VARYBIVORE_NEGATIVE_ONE_H
 
-#include "conceptrodon/varybivore/concepts/equal.hpp"
+#include "conceptrodon/varybivore/concepts/equal_to.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Arg>
-concept NegativeOne = Equal<Arg, -1>;
+concept NegativeOne = EqualTo<Arg, -1>;
 
 }}
 

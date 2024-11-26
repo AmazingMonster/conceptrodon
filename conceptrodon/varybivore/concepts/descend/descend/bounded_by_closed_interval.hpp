@@ -4,15 +4,15 @@
 #ifndef CONCEPTRODON_VARYBIVORE_BOUNDED_BY_CLOSED_INTERVAL_H
 #define CONCEPTRODON_VARYBIVORE_BOUNDED_BY_CLOSED_INTERVAL_H
 
-#include "conceptrodon/varybivore/concepts/descend/no_greater.hpp"
+#include "conceptrodon/varybivore/concepts/descend/no_greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Variable, auto LowerBound, auto UpperBound>
 concept BoundedByClosedInterval 
-=   NoGreater<LowerBound, Variable>
-&&  NoGreater<Variable, UpperBound>;
+=   NoGreaterThan<LowerBound, Variable>
+&&  NoGreaterThan<Variable, UpperBound>;
 
 }}
 

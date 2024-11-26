@@ -4,6 +4,8 @@
 
 ### Todo
 
+So tired...
+
 <ul>
   <li>
     <table>
@@ -13,7 +15,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>Done</td>
       </tr>
     </table>
   </li>
@@ -26,7 +28,7 @@
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>Done</td>
       </tr>
     </table>
   </li>

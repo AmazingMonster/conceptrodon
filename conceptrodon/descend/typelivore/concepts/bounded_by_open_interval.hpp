@@ -5,15 +5,15 @@
 #define CONCEPTRODON_TYPELIVORE_BOUNDED_BY_OPEN_INTERVAL_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "conceptrodon/varybivore/concepts/less.hpp"
+#include "conceptrodon/varybivore/concepts/less_than.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept JustBoundedByOpenInterval
-=   Varybivore::Less<LowerBound::value, Element::value>
-&&  Varybivore::Less<Element::value, UpperBound::value>;
+=   Varybivore::LessThan<LowerBound::value, Element::value>
+&&  Varybivore::LessThan<Element::value, UpperBound::value>;
 
 template<typename Element, typename LowerBound, typename UpperBound>
 concept BoundedByOpenInterval

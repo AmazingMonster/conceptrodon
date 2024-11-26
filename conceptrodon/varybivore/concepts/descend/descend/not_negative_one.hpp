@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_VARYBIVORE_NOT_NEGATIVE_ONE_H
 #define CONCEPTRODON_VARYBIVORE_NOT_NEGATIVE_ONE_H
 
-#include "conceptrodon/varybivore/concepts/descend/unequal.hpp"
+#include "conceptrodon/varybivore/concepts/descend/unequal_to.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Arg>
-concept NotNegativeOne = Unequal<Arg, -1>;
+concept NotNegativeOne = UnequalTo<Arg, -1>;
 
 }}
 
