@@ -8,7 +8,7 @@
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/mouldivore/find.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/typelivore/is_same.hpp"
+#include "conceptrodon/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

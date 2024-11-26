@@ -9,8 +9,8 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class...Sequences>
-using IndependentFind = Pagelis::IndependentFind<Sequences...>;
+template<template<auto...> class...Predicates>
+using IndependentFind = Pagelis::IndependentFind<Predicates...>;
 
 
 }}

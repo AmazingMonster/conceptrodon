@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_MOULDIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 #define CONCEPTRODON_MOULDIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 
-#include "conceptrodon/microbiota/moldiae/left_interview.hpp"
+#include "conceptrodon/microbiota/moldiae/independent_left_interview.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class...Containers>
-using IndependentLeftInterview = Moldiae::LeftInterview<Containers...>;
+template<template<typename...> class...Predicates>
+using IndependentLeftInterview = Moldiae::IndependentLeftInterview<Predicates...>;
 
 }}
 

@@ -16,8 +16,7 @@ template
     CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
     ...
 >
-struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
-{};
+struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER {};
 /******************************************************************************************************/
 
 
@@ -30,20 +29,7 @@ template
     ...Elements
 >
 using CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE
-=   CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE <Elements...> ;
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template
-<
-    CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-    ...Elements
->
-using CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
-=   CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE <Elements...>
+=   CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER <Elements...>
     :: CONCEPTRODON_NUCLEOLUS_TYPE_RESULT ;
 /******************************************************************************************************/
 

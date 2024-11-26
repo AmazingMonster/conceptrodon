@@ -9,16 +9,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked, the function returns the index of the first argument that satisfies all predicates, or `-1` if it cannot find the argument.
 
 <pre><code>   Predicates...
--> Arguments...
--> Found ?
-   index : -1</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Exist (...&& Predicates&lt;Arg<sub>I</sub>&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 
 ```Haskell
 Find ::   template<auto...> class...
-              -> auto...
-              -> auto
+       -> auto...
+       -> auto
 ```
 
 ## Structure

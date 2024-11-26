@@ -91,7 +91,7 @@ SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
 constexpr auto Interviewed = LeftInterview<std::is_same>
-::template Mold<std::integral_constant<int, I>>
+::Mold<std::integral_constant<int, I>>
 ::template Mold_v<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/

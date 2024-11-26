@@ -8,6 +8,11 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::IsSpecializationOf` accepts a sequence and returns a function.
 When invoked by a type, the function returns true if the type is created by an instantiation of the sequence and returns false if otherwise.
 
+<pre><code>   Sequence
+-> PackedVessel
+-> PackedVessel == Sequence&lt;Variables...&gt; ?
+   true : false</code></pre>
+
 ## Type Signature
 
 ```Haskell

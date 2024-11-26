@@ -9,15 +9,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by an operation, the function left-folds the list with the first element as the initiator.
 The type result of the operation is used for continuation.
 
-<pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
+<pre><code>   Initiator, E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>, ..., E<sub>n</sub>
 -> Operation
--> Operation&lt;...
+-> Operation&lt;
+   Operation&lt;
+        &vellip;
    Operation&lt;
    Operation&lt;
-       E<sub>0</sub>, E<sub>1</sub>
+       Initiator, E<sub>0</sub>
+   &gt;::type, E<sub>1</sub>
    &gt;::type, E<sub>2</sub>
-   &gt;::type
-   ..., E<sub>n</sub>&gt;::type</code></pre>
+        &vellip;
+   &gt;::type, E<sub>n</sub>
+   &gt;::type</code></pre>
 
 ## Type Signature
 

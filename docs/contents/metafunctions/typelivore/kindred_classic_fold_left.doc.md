@@ -10,16 +10,20 @@ Its first layer accepts an initiator and returns a function.
 When invoked by an operation, the function left-folds the list using the operation and the initiator.
 The type result of the operation is used for continuation.
 
-<pre><code>   E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>, ..., E<sub>n</sub>
 -> Initiator
 -> Operation
--> Operation&lt;...
+-> Operation&lt;
+   Operation&lt;
+        &vellip;
    Operation&lt;
    Operation&lt;
        Initiator, E<sub>0</sub>
    &gt;::type, E<sub>1</sub>
-   &gt;::type
-   ..., E<sub>n</sub>&gt;::type</code></pre>
+   &gt;::type, E<sub>2</sub>
+        &vellip;
+   &gt;::type, E<sub>n</sub>
+   &gt;::type</code></pre>
 
 ## Type Signature
 

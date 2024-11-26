@@ -11,7 +11,8 @@ When invoked, the function adds the variables to the end of the argument list an
 
 <pre><code>   Operation
 -> Variables...
--> Operation&lt;*, Variables...&gt;</code></pre>
+-> Arguments...
+-> Operation&lt;Arguments..., Variables...&gt;</code></pre>
 
 ## Type Signature
 
@@ -38,7 +39,7 @@ struct BindBack
 
 ## Examples
 
-We will bind `-1` and `-2` to the back of `Operation`.
+We will bind `-1, -2` to the back of `Operation`.
 
 ```C++
 template<auto...>
@@ -58,7 +59,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-While this is possibly one of the most useful metafunctions, its implementation is straightforward. The key is to halt the invocation of `Operation` until the argument list is fully provided.
+The key is to halt the invocation of `Operation` until the argument list is fully provided.
 
 Here's the entire implementation:
 

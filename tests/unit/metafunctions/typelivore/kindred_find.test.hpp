@@ -25,10 +25,30 @@ namespace TestKindred_Find {
 
 
 /******************************************************************************************************/
+template<auto I>
+struct AreNoGreaterThan
+{
+    template<typename...Args>
+    using Mold = std::bool_constant<(...&&(Args::value <= I))>;
+};
+
+
+template<auto I>
+struct AreNoLessThan
+{
+    template<typename...Args>
+    using Mold = std::bool_constant<(...&&(Args::value >= I))>;
+};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
 constexpr auto Found = KindredFind<SHEEP_SPROUT(120)>
-::Road_v<IsSameAs<std::integral_constant<int, I>>::template Mold>;
+::Road_v<AreNoGreaterThan<I>::template Mold, AreNoLessThan<I>::template Mold>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -71,7 +91,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
 constexpr auto FailFound = KindredFind<SHEEP_SPROUT(120), std::integral_constant<int, I>>
-::template Road_v<IsSameAs<std::integral_constant<int, -1>>::template Mold>;
+::template Road_v<AreNoGreaterThan<-1>::template Mold, AreNoLessThan<-1>::template Mold>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 

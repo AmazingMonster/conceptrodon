@@ -12,9 +12,9 @@ then, it returns the index of the first argument that satisfies all newly formed
 
 <pre><code>   Predicates...
 -> RightSides...
--> Arguments...
--> Found ?
-   index : -1</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Exist (...&& Predicates&lt;Arg<sub>I</sub>, RightSides...&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 

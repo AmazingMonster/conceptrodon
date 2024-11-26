@@ -5,9 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_FIND_H
 
 #include <concepts>
+#include <type_traits>
 #include "conceptrodon/mouldivore/independent_find.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/typelivore/is_same.hpp"
+#include "conceptrodon/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -25,9 +26,29 @@ namespace TestIndependentFind {
 
 
 /******************************************************************************************************/
+template<auto I>
+struct AreNoGreaterThan
+{
+    template<typename...Args>
+    using Mold = std::bool_constant<(...&&(Args::value <= I))>;
+};
+
+
+template<auto I>
+struct AreNoLessThan
+{
+    template<typename...Args>
+    using Mold = std::bool_constant<(...&&(Args::value >= I))>;
+};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
-constexpr auto Found = IndependentFind<Typelivore::IsSameAs<std::integral_constant<int, I>>::template Mold>
+constexpr auto Found = IndependentFind<AreNoGreaterThan<I>::template Mold, AreNoLessThan<I>::template Mold>
 ::template Mold_v<SHEEP_SPROUT(120)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
@@ -70,7 +91,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
-constexpr auto FailFound = IndependentFind<Typelivore::IsSameAs<std::integral_constant<int, -1>>::template Mold>
+constexpr auto FailFound = IndependentFind<AreNoGreaterThan<-1>::template Mold, AreNoLessThan<-1>::template Mold>
 ::template Mold_v<SHEEP_SPROUT(120),std::integral_constant<int, I>>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/

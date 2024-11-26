@@ -6,13 +6,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Typelivore::KindredLookFor` accepts a list of elements and returns a function.
-When invoked by predicates, the function returns the index of the first element that satisfies all the predicates, or `-1` if it cannot find the element.
+When invoked by a predicate, the function returns the index of the first element that satisfies the predicate, or `-1` if it cannot find the element.
 This function is created to exhibit the power of fold expression and to compare with `Typelivore::Find`.
 
-<pre><code>   Arguments...
+<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
 -> Predicate
--> Found ?
-   index : -1</code></pre>
+-> Exist Predicate&lt;Arg<sub>I</sub>&gt;::value ?
+   I : -1</code></pre>
 
 ## Type Signature
 

@@ -12,11 +12,11 @@ then, it returns the index of the first element that satisfies all newly formed 
 
 This function internally is the flattened version of `Typelivore::LeftInterview`.
 
-<pre><code>   Arguments...
+<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
 -> LeftSides...
 -> Predicates...
--> Found ?
-   index : -1</code></pre>
+-> Exist (...&& Predicates&lt;LeftSides..., Arg<sub>I</sub>&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 

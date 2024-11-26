@@ -9,16 +9,20 @@ SPDX-License-Identifier: Apache-2.0 -->
 It produces a function that accepts an initiator and whose first layer accepts an operation.
 The function left-folds the list using the operation and the initiator.
 
-<pre><code>   V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>n</sub>
 -> Initiator
 -> Operation
--> Operation&lt;...
+-> Operation&lt;
+   Operation&lt;
+        &vellip;
    Operation&lt;
    Operation&lt;
        Initiator, V<sub>0</sub>
    &gt;::value, V<sub>1</sub>
-   &gt;::value
-   ..., V<sub>n</sub>&gt;::value</code></pre>
+   &gt;::value, V<sub>2</sub>
+        &vellip;
+   &gt;::value, V<sub>n</sub>
+   &gt;::value</code></pre>
 
 ## Type Signature
 

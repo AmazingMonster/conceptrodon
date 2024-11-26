@@ -14,7 +14,7 @@ struct Negation
     struct ProtoMold
     {
         static constexpr bool value 
-        = not Predicate<Elements...>::value;
+        {not Predicate<Elements...>::value};
     };
 
     template<typename...Elements>
@@ -22,7 +22,7 @@ struct Negation
 
     template<typename...Elements>
     static constexpr bool Mold_v 
-    = not Predicate<Elements...>::value;
+    {not Predicate<Elements...>::value};
 };
 
 }}

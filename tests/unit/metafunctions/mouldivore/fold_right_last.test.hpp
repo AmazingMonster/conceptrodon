@@ -44,7 +44,7 @@ using BinaryOperation_t = BinaryOperation<Left, Right>::type;
     std::integral_constant<int, 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>);
+SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -58,7 +58,7 @@ SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<std::integral_constant<int, 1>,
     std::integral_constant<int, 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<std::integral_constant<int, 1>, SHEEP_SPROUT(8)>);
+SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<std::integral_constant<int, 1>, SHEEP_SPROUT(8)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -72,7 +72,7 @@ SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<std::integral_constant<int, 1>,
     std::integral_constant<int, 1>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<std::integral_constant<int, 1>, SHEEP_SPROUT(1)>);
+SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<std::integral_constant<int, 1>, SHEEP_SPROUT(1)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

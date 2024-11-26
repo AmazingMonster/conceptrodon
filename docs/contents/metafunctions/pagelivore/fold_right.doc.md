@@ -10,14 +10,16 @@ When invoked, the function right-folds its argument list using the operation and
 
 <pre><code>   Operation
 -> Initiator
--> E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
--> Operation&lt;E<sub>0</sub>, ...
-   Operation&lt;E<sub>n-1</sub>,
-   Operation&lt;E<sub>n</sub>,
+-> V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
+-> Operation&lt;V<sub>0</sub>,
+        &vellip;
+   Operation&lt;V<sub>n-1</sub>,
+   Operation&lt;V<sub>n</sub>,
        Initiator
    &gt;::value
    &gt;::value
-   ...&gt;::value</code></pre>
+        &vellip;
+   &gt;::value</code></pre>
 
 ## Type Signature
 

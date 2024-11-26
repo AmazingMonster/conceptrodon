@@ -8,10 +8,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::KindredFind` accepts a list of elements and returns a function.
 When invoked by predicates, the function returns the index of the first element that satisfies all predicates, or `-1` if it cannot find the element.
 
-<pre><code>   Arguments...
+<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
 -> Predicates...
--> Found ?
-   index : -1</code></pre>
+-> Exist (...&& Predicates&lt;Arg<sub>I</sub>&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 

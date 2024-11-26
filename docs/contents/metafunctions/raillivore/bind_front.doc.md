@@ -11,7 +11,8 @@ When invoked, the function adds the sequences to the beginning of the argument l
 
 <pre><code>   Operation
 -> Sequences...
--> Operation&lt;Sequences..., *&gt;</code></pre>
+-> Arguments...
+-> Operation&lt;Sequences..., Arguments...&gt;</code></pre>
 
 ## Type Signature
 
@@ -38,7 +39,7 @@ struct BindFront
 
 ## Examples
 
-We will bind `Seq_0` and `Seq_1` to the front of `Operation`.
+We will bind `Seq_0, Seq_1` to the front of `Operation`.
 
 ```C++
 template<auto...>
@@ -70,7 +71,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-While this is possibly one of the most useful metafunctions, its implementation is straightforward. The key is to halt the invocation of `Operation` until the argument list is fully provided.
+The key is to halt the invocation of `Operation` until the argument list is fully provided.
 
 Here's the entire implementation:
 

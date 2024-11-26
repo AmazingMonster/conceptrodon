@@ -11,7 +11,8 @@ When invoked, the function adds the containers to the beginning of the argument 
 
 <pre><code>   Operation
 -> Containers...
--> Operation&lt;Containers..., *&gt;</code></pre>
+-> Arguments...
+-> Operation&lt;Containers..., Arguments...&gt;</code></pre>
 
 ## Type Signature
 
@@ -38,7 +39,7 @@ struct BindFront
 
 ## Examples
 
-We will bind `Con_0` and `Con_1` to the front of `Operation`.
+We will bind `Con_0, Con_1` to the front of `Operation`.
 
 ```C++
 template<typename...>
@@ -70,7 +71,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-While this is possibly one of the most useful metafunctions, its implementation is straightforward. The key is to halt the invocation of `Operation` until the argument list is fully provided.
+The key is to halt the invocation of `Operation` until the argument list is fully provided.
 
 Here's the entire implementation:
 

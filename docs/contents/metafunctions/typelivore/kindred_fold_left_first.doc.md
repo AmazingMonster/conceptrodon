@@ -8,15 +8,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::KindredFoldLeftFirst` accepts a list of elements and returns a function.
 When invoked by an operation, the function left-folds the list using the operation with the first element as the initiator.
 
-<pre><code>   E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>..., E<sub>n</sub>
+<pre><code>   Initiator, E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>, ..., E<sub>n</sub>
 -> Operation
--> Operation&lt;...
+-> Operation&lt;
+   Operation&lt;
+        &vellip;
    Operation&lt;
    Operation&lt;
-       E<sub>0</sub>, E<sub>1</sub>
+       Initiator, E<sub>0</sub>
+   &gt;, E<sub>1</sub>
    &gt;, E<sub>2</sub>
-   &gt;
-   ..., E<sub>n</sub>&gt;</code></pre>
+     &vellip;
+   &gt;, E<sub>n</sub>
+   &gt;</code></pre>
 
 ## Type Signature
 

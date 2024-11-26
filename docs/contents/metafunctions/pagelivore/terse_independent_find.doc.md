@@ -11,9 +11,9 @@ When invoked, the function returns the index of the first argument that satisfie
 `Pagelivore::TerseIndependentFind` prepares fewer base cases than `Pagelivore::IndependentFind`.
 
 <pre><code>   Predicates...
--> Arguments...
--> Found ?
-   index : -1</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Exist (...&& Predicates&lt;Arg<sub>I</sub>&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 

@@ -44,7 +44,7 @@ using BinaryOperation_t = BinaryOperation<Left, Right>::type;
     std::integral_constant<int, 1 + 239 * 240 / 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep_reversed.hpp"
-SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<SHEEP_REVERSED_SPROUT(240), std::integral_constant<int, 1>>);
+SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<SHEEP_REVERSED_SPROUT(240), std::integral_constant<int, 1>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep_reversed.hpp"
 
 #undef SUPPOSED_TYPE
@@ -72,7 +72,7 @@ SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<SHEEP_REVERSED_SPROUT(8), std::in
     std::integral_constant<int, 1>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep_reversed.hpp"
-SAME_TYPE(FoldRightLast<BinaryOperation>::Mold_t<SHEEP_REVERSED_SPROUT(240)>);
+SAME_TYPE(FoldRightLast<BinaryOperation>::Mold<SHEEP_REVERSED_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep_reversed.hpp"
 
 #undef SUPPOSED_TYPE

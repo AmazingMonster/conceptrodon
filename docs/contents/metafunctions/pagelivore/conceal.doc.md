@@ -9,7 +9,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked, the function instantiates the operation with the arguments and returns the result using alias member `type`.
 Overall, `Conceal` turns an operation into its `Typical` counterpart.
 
-<pre><code>Operation -> Page&lt;&ast;&gt;{type=Operation&lt;&ast;&gt;}</code></pre>
+<pre><code>Operation
+-> Arguments...
+-> Page { type=Operation&lt;Arguments...&gt; }</code></pre>
 
 ## Type Signature
 

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_FIND_H
 #define CONCEPTRODON_MOULDIVORE_FIND_H
 
-#include "conceptrodon/microbiota/typella/find.hpp"
+#include "conceptrodon/microbiota/typella/kindred_find.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -13,13 +13,13 @@ template<template<typename...> class Predicate>
 struct Find
 {
     template<typename...Elements>
-    using Mold = Typella::Find<Elements...>
+    using Mold = Typella::KindredFind<Elements...>
     ::template ProtoRoad<Predicate>;
 
     template<typename...Elements>
     static constexpr auto Mold_v
     {
-        Typella::Find<Elements...>
+        Typella::KindredFind<Elements...>
         ::template Road_v<Predicate>
     };
 };

@@ -11,22 +11,26 @@ When invoked, the function left-folds its argument list using the operation and 
 
 <pre><code>   Operation
 -> Initiator
--> V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
--> Operation&lt;...
+-> V<sub>0</sub>, V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>n</sub>
+-> Operation&lt;
+   Operation&lt;
+        &vellip;
    Operation&lt;
    Operation&lt;
        Initiator, V<sub>0</sub>
    &gt;::value, V<sub>1</sub>
-   &gt;::value
-   ..., V<sub>n</sub>&gt;::value</code></pre>
+   &gt;::value, V<sub>2</sub>
+        &vellip;
+   &gt;::value, V<sub>n</sub>
+   &gt;::value</code></pre>
 
 ## Type Signature
 
 ```Haskell
 FoldLeft ::   template<auto...> class...
-                  -> auto...
-                  -> auto...
-                  -> auto
+           -> auto...
+           -> auto...
+           -> auto
 ```
 
 ## Structure
@@ -35,7 +39,7 @@ FoldLeft ::   template<auto...> class...
 template<template<auto...> class>
 struct FoldLeft
 {
-    template<auto...>
+    template<auto>
     alias Page
     {
         template<auto...>

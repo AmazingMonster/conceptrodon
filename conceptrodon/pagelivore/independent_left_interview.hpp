@@ -9,9 +9,8 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class...Sequences>
-using IndependentLeftInterview
-= Pagelis::IndependentLeftInterview<Sequences...>;
+template<template<auto...> class...Predicates>
+using IndependentLeftInterview = Pagelis::IndependentLeftInterview<Predicates...>;
 
 
 }}

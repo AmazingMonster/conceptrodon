@@ -94,99 +94,99 @@ struct Flip
     template<typename...>
     alias Mold
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
 
     template<auto...>
     alias Page
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
 
     template<template<typename...> class...>
     alias Road
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<auto...> class...>
     alias Rail
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<typename...> class...> class...>
     alias Flow
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<auto...> class...> class...>
     alias Sail
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<typename...> class...> class...> class...>
     alias Snow
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<auto...> class...> class...> class...>
     alias Hail
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<typename...> class...> class...> class...> class...>
     alias Cool
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<auto...> class...> class...> class...> class...>
     alias Calm
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
     alias Grit
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
     alias Will
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
     alias Glow
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
     
     template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
     alias Dawn
     {
-        template<template<auto...> class...>
-        alias Rail = RESULT;
+        template<auto...>
+        alias Page = RESULT;
     };
 };
 ```

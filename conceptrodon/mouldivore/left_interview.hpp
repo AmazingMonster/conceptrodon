@@ -9,23 +9,23 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Predicate>
+template<template<typename...> class...Predicates>
 struct LeftInterview
 {
-    template<typename Interviewer>
+    template<typename...Interviewers>
     struct ProtoMold
     {
         template<typename...Elements>
         using Mold = Typella::SensibleLeftInterview<Elements...>
-        ::template ProtoRoad<Predicate>
-        ::template Mold<Interviewer>;
+        ::template ProtoRoad<Predicates...>
+        ::template Mold<Interviewers...>;
 
         template<typename...Elements>
         static constexpr auto Mold_v
         {
             Typella::SensibleLeftInterview<Elements...>
-            ::template ProtoRoad<Predicate>
-            ::template Mold_v<Interviewer>
+            ::template ProtoRoad<Predicates...>
+            ::template Mold_v<Interviewers...>
         };
     };
 

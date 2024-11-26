@@ -10,11 +10,11 @@ Its first layer accepts a list of predicates and returns a function.
 When invoked, the function first binds the arguments to the front of every predicate;
 then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if it cannot find the element.
 
-<pre><code>   Arguments...
+<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
 -> Predicates...
 -> LeftSides...
--> Found ?
-   index : -1</code></pre>
+-> Exist (...&& Predicates&lt;LeftSides..., Arg<sub>I</sub>&gt;::value) ?
+   I : -1</code></pre>
 
 ## Type Signature
 

@@ -4,14 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 
+#include <concepts>
+#include <type_traits>
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/mouldivore/independent_left_interview.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
+#include "macaron/fragmental/alkane.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <type_traits>
-#include <utility>
 
 #include "macaron/fragmental/amenity/define_alkane.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
@@ -20,36 +19,43 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 namespace UnitTests {
-namespace TestLeftInterview {
+namespace TestIndependentLeftInterview {
 
 
 
 
 /******************************************************************************************************/
+template<typename, typename L, typename R>
+struct NoGreaterThanZero
+{ static constexpr bool value {false}; };
+
+template<typename U, typename L, typename R>
+requires (L::value <= 0)
+struct NoGreaterThanZero<U, L, R>
+{ static constexpr bool value {true}; };
+
+template<typename, typename L, typename R>
+struct EqualNegative
+{ static constexpr bool value {false}; };
+
+template<typename U, typename L, typename R>
+requires (R::value == -L::value)
+struct EqualNegative<U, L, R>
+{ static constexpr bool value {true}; };
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
-struct Integer: public std::integral_constant<int, I> {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SHEEP_PREFIX    \
-    Integer <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-    
-template<int I>
-constexpr auto Interviewed = IndependentLeftInterview<std::is_base_of>
-::template Mold<std::integral_constant<int, I>>
+constexpr auto Interviewed = IndependentLeftInterview<NoGreaterThanZero, EqualNegative>
+::template Mold<int, std::integral_constant<int, -I>>
 ::template Mold_v<SHEEP_SPROUT(120)>;
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
+
 
 
 
@@ -85,21 +91,21 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
 
 
 /******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+template<int I>
+constexpr auto FailInterviewed = IndependentLeftInterview<NoGreaterThanZero, EqualNegative>
+::template Mold<int, std::integral_constant<int, 1>>
+::template Mold_v<SHEEP_SPROUT(40), std::integral_constant<int, I>>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
 using SupposedFailedResult = SignedArk<ALKANE_SPROUT(120)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-template<int I>
-constexpr auto FailInterviewed = IndependentLeftInterview<std::is_base_of>
-::template Mold<Integer<I>>
-::template Mold_v<SHEEP_SPROUT(120), std::integral_constant<int, I>>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 

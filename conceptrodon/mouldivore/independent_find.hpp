@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_MOULDIVORE_INDEPENDENT_FIND_H
 #define CONCEPTRODON_MOULDIVORE_INDEPENDENT_FIND_H
 
-#include "conceptrodon/microbiota/moldiae/find.hpp"
+#include "conceptrodon/microbiota/moldiae/independent_find.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class...Containers>
-using IndependentFind = Moldiae::Find<Containers...>;
+template<template<typename...> class...Predicates>
+using IndependentFind = Moldiae::IndependentFind<Predicates...>;
 
 }}
 

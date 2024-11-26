@@ -9,14 +9,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked, the function right-folds its argument list using the operation with the last argument as the initiator.
 
 <pre><code>   Operation
--> V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>, Initiator
--> Operation&lt;V<sub>0</sub>, ...
+-> Initiator, V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
+-> Operation&lt;V<sub>0</sub>,
+        &vellip;
    Operation&lt;V<sub>n-1</sub>,
    Operation&lt;V<sub>n</sub>,
        Initiator
    &gt;::value
    &gt;::value
-   ...&gt;::value</code></pre>
+        &vellip;
+   &gt;::value</code></pre>
 
 ## Type Signature
 

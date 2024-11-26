@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by a packed sequence, the function extracts the list of variables from the packed sequence and instantiates the operation with the list.
 
 <pre><code>   Operation
--> PackedSequence
--> Operation&lt;Upack(PackedSequence)&gt;</code></pre>
+-> Sequence&lt;Variables...&gt;
+-> Operation&lt;Variables...&gt;</code></pre>
 
 ## Type Signature
 

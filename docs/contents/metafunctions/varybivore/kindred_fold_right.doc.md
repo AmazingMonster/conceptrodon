@@ -12,13 +12,15 @@ The function right-folds the list using the operation and the initiator.
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
 -> Initiator
 -> Operation
--> Operation&lt;V<sub>0</sub>, ...
+-> Operation&lt;V<sub>0</sub>,
+        &vellip;
    Operation&lt;V<sub>n-1</sub>,
    Operation&lt;V<sub>n</sub>,
        Initiator
    &gt;::value
    &gt;::value
-   ...&gt;::value</code></pre>
+        &vellip;
+   &gt;::value</code></pre>
 
 ## Type Signature
 
