@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_REPACK_H
 #define CONCEPTRODON_MOULDIVORE_REPACK_H
 
-#include "conceptrodon/microbiota/moldiae/repack.hpp"
+#include "conceptrodon/descend/microbiota/moldiae/repack.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {

@@ -348,13 +348,9 @@ Note that in order to succeed, `Rail<Args...>` must be a packed `Road`, meaning 
 We will implement `Trek` by performing recursion manually, meaning the function will recurse only once for every invocation of a member template.
 We will showcase a simplified version that handles `Mold` and `Rail`.
 
-Note that in the following code,
-
-- `Radio` is a `Rail` and
-- `Car` is a `Mold` or `Rail`.
+We will use a simplified version of `Send` to compose operations.
 
 ```C++
-// Simplified `Send` function.
 template<typename PackedVessel>
 struct Send {};
 
@@ -381,8 +377,16 @@ struct Send<Stockroom<Sequences...>>
     template<template<template<auto...> class...> class...Agreements>
     using Sail = Detail<Agreements...>::type;
 };
+```
 
+Note that in the following code,
 
+- `Radio` is a `Rail` and
+- `Car` is a `Mold` or `Rail`.
+
+Here is the entire implementation.
+
+```C++
 // `Radio` is a `Rail`.
 template<template<template<auto...> class...> class Radio>
 struct Trek

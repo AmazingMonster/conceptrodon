@@ -1,5 +1,39 @@
 # Diary
 
+## 2024/11/27
+
+### Todo
+
+I hope one day, all my work will be appreciated.
+
+<ul>
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Add documentations for <code>Mouldivore</code></td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tr>
+        <td>Plan</td>
+        <td>Prepare to merge with main</td>
+      </tr>
+      <tr>
+        <td>Progress</td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/26
 
 ### Todo
@@ -41,7 +75,7 @@ So tired...
       </tr>
       <tr>
         <td>Progress</td>
-        <td></td>
+        <td>In Progress</td>
       </tr>
     </table>
   </li>

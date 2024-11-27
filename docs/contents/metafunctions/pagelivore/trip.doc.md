@@ -338,20 +338,20 @@ static_assert(std::same_as<
 /**** First Example ****//* End */
 ```
 
-- In the second example, we will transport the conjuration function to `InvokeRail`.
+- In the second example, we will transport the conjuration function to `InvokePage`.
 
 ```C++
 /**** Second Example ****//* Start */
 template<template<auto...> class PageArg>
-struct InvokeRailDetail
+struct InvokePageDetail
 {
     using type = PageArg<2, 3>;
 };
 
 template<template<auto...> class...Args>
-using InvokeRail = InvokeRailDetail<Args...>::type;
+using InvokePage = InvokePageDetail<Args...>::type;
 
-using Result_1 = Metafunction::Sail<InvokeRail>;
+using Result_1 = Metafunction::Sail<InvokePage>;
 
 static_assert(std::same_as<Result_1, SupposedResult>);
 /**** Second Example ****//* End */

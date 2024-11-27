@@ -6,7 +6,7 @@
 
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/mouldivore/repack.hpp"
+#include "conceptrodon/descend/mouldivore/repack.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

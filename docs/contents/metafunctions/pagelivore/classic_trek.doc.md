@@ -195,7 +195,7 @@ ClassicTrek ::   template<auto...> class...
 
 ```C++
 template<template<auto...> class>
-struct Trip
+struct Trep
 {
     struct Commit
     {
@@ -263,7 +263,7 @@ struct Trip
 
 We will see two examples that demonstrate conjuration and transition.
 
-- In the first example, we will compose `OperationA<2>::Rail`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
+- In the first example, we will compose `OperationA<Shuttle>::Rail`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
 
 ```C++
 template<auto...>
@@ -383,7 +383,7 @@ For example, we can compose a `Page` and a `Road` in the following way:
 
 ```C++
 template<auto...Args>
-using Metafunction = Send<Page<Args...>::type>::template Flow<Road>;
+using Metafunction = Send<typename Page<Args...>::type>::template Flow<Road>;
 ```
 
 Note that in order to succeed, `Page<Args...>::type` must be a packed `Road`, meaning it is of the form `Vessel<Items...>` where `Items...` all have signature `template<typename...>`. This requirement is not checked by `ClassicTrek`.
@@ -391,13 +391,9 @@ Note that in order to succeed, `Page<Args...>::type` must be a packed `Road`, me
 We will implement `ClassicTrek` by performing recursion manually, meaning the function will recurse only once for every invocation of a member template.
 We will showcase a simplified version that handles `Mold` and `Rail`.
 
-Note that in the following code,
-
-- `Radio` is a `Page` and
-- `Car` is a `Mold` or `Rail`.
+We will use a simplified version of `Send` to compose operations.
 
 ```C++
-// Simplified `Send` function.
 template<typename PackedVessel>
 struct Send {};
 
@@ -424,8 +420,16 @@ struct Send<Stockroom<Sequences...>>
     template<template<template<auto...> class...> class...Agreements>
     using Sail = Detail<Agreements...>::type;
 };
+```
 
+Note that in the following code,
 
+- `Radio` is a `Page` and
+- `Car` is a `Mold` or `Rail`.
+
+Here is the entire implementation.
+
+```C++
 // `Radio` is a `Page`.
 template<template<auto...> class Radio>
 struct ClassicTrek

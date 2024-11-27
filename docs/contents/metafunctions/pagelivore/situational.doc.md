@@ -17,8 +17,8 @@ When invoked, the function returns its first argument if the argument list satis
 
 ```Haskell
 Situational ::   template<auto...> class...
-                     -> auto...
-                     -> auto
+              -> auto...
+              -> auto
 ```
 
 ## Structure
@@ -64,7 +64,7 @@ static_assert(Metafunction<10, 2>::value == 2);
 
 ## Implementation
 
-We will implement `Situational` using 'C++20 Constraints.'
+We will implement `Situational` using partial template specialization, where we separate cases via constraints.
 
 ```C++
 template<template<auto...> class...Predicates>
