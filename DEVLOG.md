@@ -31,7 +31,7 @@ I will succeed. Everyone will know my name.
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +46,7 @@ I will succeed. Everyone will know my name.
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>Done</td>
         </tr>
       </tbody>
     </table>
