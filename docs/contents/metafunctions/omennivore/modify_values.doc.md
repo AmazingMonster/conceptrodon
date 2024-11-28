@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Omennivore::ModifyValues` accepts a list of `std::index_sequence`, which indicates distances between adjacent indices.
 Its first layer accepts an operation and returns a function.
-When invoked, the function transforms the arguments from its argument list according to the `std::index_sequence`s with the operation.
+When invoked, the function transforms the arguments from its argument list according to the `std::index_sequence`s using the operation.
 The result will be stored inside `Shuttle`.
 
 <pre><code>   std::make_index_sequence&lt;I<sub>0</sub>&gt;,
@@ -62,7 +62,7 @@ We will keep the first index, `1`, since it represents how many variables we mus
 <pre><code>   1, 3, 5
 -> std::make_index_sequence&lt;1&gt;,
    std::make_index_sequence&lt;3-1-1&gt;,
-   std::make_index-sequence&lt;5-3-1&gt;</code></pre>
+   std::make_index_sequence&lt;5-3-1&gt;</code></pre>
 
 We will pass these sequences to `ModifyValues`.
 

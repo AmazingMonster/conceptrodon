@@ -350,10 +350,10 @@ struct BiCognateGauge
     {
         // One Containers
         // Multiple Elements
-        template<typename...Variables>
+        template<typename...Elements>
         struct Detail
         {
-            using type = Operation<Device<Variables>::value...>;
+            using type = Operation<Device<Elements>::value...>;
         };
 
         template<typename...Agreements>

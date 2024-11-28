@@ -4,8 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_RIGHT_REVIEW_H
 #define CONCEPTRODON_MOULDIVORE_RIGHT_REVIEW_H
 
-#include "conceptrodon/prefix.hpp"
-#include <utility>
+#include "conceptrodon/descend/microbiota/moldiae/right_inspect.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -13,17 +12,6 @@ namespace Mouldivore {
 template<template<typename...> class Predicate>
 struct RightReview
 {
-    template<typename>
-    struct Detail {};
-
-    template<size_t...I>
-    struct Detail<std::index_sequence<I...>> 
-    {
-        template<Prefix<I>..., typename OnDuty, typename...RestElements>
-        static consteval bool idyl()
-        { return (...&&Predicate<RestElements, OnDuty>::value); }
-    };
-
     template<typename...Elements>
     struct ProtoMold
     {
@@ -31,9 +19,16 @@ struct RightReview
         {
             []<size_t...I>(std::index_sequence<I...>)
             {
-                return (...&&(Detail<std::make_index_sequence<I>>::template idyl<Elements...>()));
+                return
+                (...&&(
+                    decltype
+                    (
+                        Moldiae::RightInspect<std::make_index_sequence<I>>
+                        ::template idyl<Predicate, Elements...>()
+                    )::value
+                ));
             }(std::make_index_sequence<sizeof...(Elements) - 1>{})
-        };  
+        }; 
     };
 
     template<typename...Elements>
@@ -44,9 +39,16 @@ struct RightReview
     {
         []<size_t...I>(std::index_sequence<I...>)
         {
-            return (...&&(Detail<std::make_index_sequence<I>>::template idyl<Elements...>()));
+            return
+            (...&&(
+                decltype
+                (
+                    Moldiae::RightInspect<std::make_index_sequence<I>>
+                    ::template idyl<Predicate, Elements...>()
+                )::value
+            ));
         }(std::make_index_sequence<sizeof...(Elements) - 1>{})
-    };
+    }; 
 };
 
 }}

@@ -10,7 +10,7 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Predicate>
+template<template<typename...> class...Predicates>
 struct Sieve
 {
     template<typename Element>
@@ -18,23 +18,13 @@ struct Sieve
     { using type = Capsule<>; };
 
     template<typename Element>
-    requires (not Predicate<Element>::value)
+    requires (not (...&&Predicates<Element>::value))
     struct Detail<Element>
     { using type = Capsule<Element>; };
 
     template<typename...Elements>
-    struct ProtoMold
-    { 
-        using type = Cotanivore::Paste
-        <typename Detail<Elements>::type...>::type; 
-    };
-
-    template<typename...Elements>
-    using Mold = ProtoMold<Elements...>;
-
-    template<typename...Elements>
-    using Mold_t = Cotanivore::Paste
-    <typename Detail<Elements>::type...>::type; 
+    using Mold = Cotanivore::TypicalPaste
+    <typename Detail<Elements>::type...>::type;
 };
 
 }}

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_POP_H
-#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_POP_H
+#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_RECUR_H
+#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_RECUR_H
 
 #include <utility>
 #include "conceptrodon/descend/typelivore/pop.hpp"
@@ -18,7 +18,7 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 namespace UnitTests {
-namespace TestPop {
+namespace TestRecur {
 
 
 
@@ -44,7 +44,7 @@ struct Predicate
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Recur<Agent<Typelivore::Pop>::Mold>::Road<Predicate>::Mold_t<Capsule<SHEEP_SPROUT(240)>>::type);
+SAME_TYPE(Recur<Agent<Typelivore::Pop>::Mold>::Road<Predicate, Predicate>::Mold<Capsule<SHEEP_SPROUT(240)>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -8,8 +8,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::RightReview` accepts a predicate and returns a function. When invoked, the function returns true if the predicate evaluates to true for every relative-order-reversing pair of its arguments and returns false if otherwise.
 
 <pre><code>   Predicate
--> ..., V<sub>i</sub>, V<sub>i+1</sub>, ...
--> ... && Predicate&lt;V<sub>i+1</sub>, V<sub>i</sub>&gt;::value && ...</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, Arg<sub>2</sub>, ..., Arg<sub>i</sub>, Arg<sub>i+1</sub>, ..., Arg<sub>n-1</sub>, Arg<sub>n</sub>
+->   Predicate&lt;Arg<sub>1</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>2</sub>, Arg<sub>0</sub>&gt; && ... && Predicate&lt;Arg<sub>i</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>0</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>0</sub>&gt;
+  && Predicate&lt;Arg<sub>2</sub>, Arg<sub>1</sub>&gt; && ... && Predicate&lt;Arg<sub>i</sub>, Arg<sub>1</sub>&gt; && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>1</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>1</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>1</sub>&gt;
+              &vellip;
+  && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>i</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>i</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>i</sub>&gt;
+              &vellip;
+  && Predicate&lt;Arg<sub>n</sub>, Arg<sub>n-1</sub>&gt;</code></pre>
 
 ## Type Signature
 
@@ -64,6 +69,9 @@ We will implement this process in two steps.
 First, when given an index, we query the predicate with the pairs consisting of the variable at the index and every variable behind it.
 
 ```C++
+template<typename, auto>
+concept Prefix = true;
+
 template<typename>
 struct RightInspect {};
 
@@ -72,7 +80,7 @@ struct RightInspect<std::index_sequence<I...>>
 {
     template<template<auto...> class Predicate, Prefix<I>..., typename OnDuty, typename...RestVariables>
     static consteval auto idyl()
-    // We combine the results using the fold expression over `&&`.
+    // We combine the results using a fold expression over `&&`.
     // The pack we are folding is `RestVariables...`.
     -> std::bool_constant<(...&&Predicate<RestVariables::value, OnDuty::value>::value)>;
 };
@@ -96,7 +104,7 @@ struct Monotony
     (...&&(
         decltype
         (
-            Pagelis::RightInspect<std::make_index_sequence<I>>
+            RightInspect<std::make_index_sequence<I>>
             // Note that each variable is kept inside `Monotony`.
             ::template idyl<Predicate, Monotony<Variables>...>()
         )::value

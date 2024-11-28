@@ -12,7 +12,7 @@ namespace Mouldivore {
 template<template<typename...> class History>
 struct Recur
 {
-    template<template<typename...> class LessonLearned>
+    template<template<typename...> class...LessonsLearned>
     struct ProtoRoad
     {
         template<typename...Sacrifices>
@@ -25,11 +25,11 @@ struct Recur
 /******************************************************************************************************/
             if constexpr 
             (
-                LessonLearned<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
                         Sacrifices...
-                    >::type
-                >::value
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
@@ -45,19 +45,19 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
+                    History<
                         Sacrifices...
-                    >::type
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -69,23 +69,23 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -97,27 +97,27 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -129,31 +129,31 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -165,35 +165,35 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -205,39 +205,39 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -249,43 +249,43 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -297,47 +297,47 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -349,51 +349,51 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -405,55 +405,55 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -465,59 +465,59 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -529,63 +529,63 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -597,67 +597,67 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -669,71 +669,71 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -745,75 +745,75 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -825,79 +825,79 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -909,83 +909,83 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -997,87 +997,87 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1089,91 +1089,91 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1185,95 +1185,95 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1285,99 +1285,99 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1389,103 +1389,103 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1497,107 +1497,107 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1609,111 +1609,111 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1725,115 +1725,115 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1845,119 +1845,119 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -1969,123 +1969,123 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -2097,127 +2097,127 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -2229,131 +2229,131 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -2365,135 +2365,135 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -2505,139 +2505,139 @@ struct Recur
 /******************************************************************************************************/
             else if constexpr 
             (
-                LessonLearned<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                (...&&LessonsLearned<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                >::value
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                >::value)
             )
             {
                 return std::type_identity<History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >>{};
             }
 /******************************************************************************************************/
@@ -2649,71 +2649,71 @@ struct Recur
             else 
             {
                 return idyl<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
-                    typename History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
+                    History<
                         Sacrifices...
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
-                    >::type
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
+                    >
                 >();
             }
 /******************************************************************************************************/
@@ -2724,16 +2724,7 @@ struct Recur
         }
 
         template<typename...Sacrifices>
-        struct ProtoMold
-        {
-            using type = decltype(idyl<Sacrifices...>())::type;
-        };
-
-        template<typename...Sacrifices>
-        using Mold = ProtoMold<Sacrifices...>;
-
-        template<typename...Sacrifices>
-        using Mold_t = decltype(idyl<Sacrifices...>())::type;
+        using Mold = decltype(idyl<Sacrifices...>())::type;
     };
 
     template<template<typename...> class...Agreements>

@@ -61,7 +61,7 @@ We will keep the first index, `1`, since it represents how many variables we mus
 <pre><code>   1, 2, 3
 -> std::make_index_sequence&lt;1&gt;,
    std::make_index_sequence&lt;2-1&gt;,
-   std::make_index-sequence&lt;3-2&gt;</code></pre>
+   std::make_index_sequence&lt;3-2&gt;</code></pre>
 
 We will pass these sequences to `InsertValues`.
 

@@ -13,8 +13,8 @@ When invoked, the function injects new variables into the location of its argume
 <pre><code>   Operation
 -> I
 -> NewVariables...
--> Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>n</sub>
--> Operation&lt;Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>, NewVariables..., Variable<sub>I</sub>, ..., Variable<sub>n</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I</sub>, ..., Arg<sub>n</sub>
+-> Operation&lt;Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, NewVariables..., Arg<sub>I</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

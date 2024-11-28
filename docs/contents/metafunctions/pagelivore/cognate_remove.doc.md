@@ -28,7 +28,7 @@ When invoked, the function removes its arguments at positions indicated by the i
 ## Type Signature
 
 ```Haskell
-CognateInsert ::   template<auto...> class...
+CognateRemove ::   template<auto...> class...
                 -> auto...
                 -> template<auto...>
 ```
@@ -37,7 +37,7 @@ CognateInsert ::   template<auto...> class...
 
 ```C++
 template<template<auto...> class>
-struct CognateInsert
+struct CognateRemove
 {
     template<auto...>
     alias Page
@@ -70,7 +70,7 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-We will implement `CognateRemove` by combining `Pagelivore::Segment` and `Omennivore::InsertValues`.
+We will implement `CognateRemove` by combining `Pagelivore::CognateSegment` and `Omennivore::RemoveValues`.
 
 When provided with a list of ascending indices, `Pagelivore::CognateSegment` will find the differences between the adjacent indices.
 
@@ -85,7 +85,7 @@ using Detail_t = Capsule
 <std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
 ```
 
-We will keep the first index, `1`, since it represents how many variables we must pass to reach the first target position.
+We will keep the first index, <code>I<sub>0</sub></code>, since it represents how many variables we must pass to reach the first target position.
 We subtract an additional one from the rest since we only need the number of variables separating two targets.
 
 <pre><code>   I<sub>0</sub>, I<sub>1</sub>-I<sub>0</sub>, ..., I<sub>i</sub>-I<sub>i-1</sub>, ..., I<sub>n</sub>-I<sub>n-1</sub>

@@ -79,7 +79,7 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-We will implement `CognateInsert` by combining `Pagelivore::Segment` and `Omennivore::InsertValues`.
+We will implement `CognateInsert` by combining `Pagelivore::CognateSegment` and `Omennivore::InsertValues`.
 
 When provided with a list of ascending indices, `Pagelivore::CognateSegment` will find the differences between the adjacent indices.
 
@@ -91,10 +91,10 @@ Then, we will make `std::index_sequence` of each difference by passing the follo
 ```C++
 template<size_t I, size_t...J>
 using Detail_t = Capsule
-<std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
+<std::make_index_sequence<I>, std::make_index_sequence<J>...>;
 ```
 
-We will keep the first index, `1`, since it represents how many variables we must pass to reach the first target position.
+We will keep the first index, <code>I<sub>0</sub></code>, since it represents how many variables we must pass to reach the first target position.
 
 <pre><code>   I<sub>0</sub>, I<sub>1</sub>-I<sub>0</sub>, ..., I<sub>i</sub>-I<sub>i-1</sub>, ..., I<sub>n</sub>-I<sub>n-1</sub>
 -> Capsule

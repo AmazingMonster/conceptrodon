@@ -56,7 +56,7 @@ We subtract an additional one from the rest since we only need the number of var
 <pre><code>   1, 3, 5
 -> std::make_index_sequence&lt;1&gt;,
    std::make_index_sequence&lt;3-1-1&gt;,
-   std::make_index-sequence&lt;5-3-1&gt;</code></pre>
+   std::make_index_sequence&lt;5-3-1&gt;</code></pre>
 
 We will pass these sequences to `RemoveValues`.
 
