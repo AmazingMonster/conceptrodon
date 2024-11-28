@@ -4,14 +4,13 @@
 #ifndef CONCEPTRODON_MOULDIVORE_BIND_H
 #define CONCEPTRODON_MOULDIVORE_BIND_H
 
-#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/typelivore/among.hpp"
-#include "conceptrodon/descend/omennivore/concepts/descend/nonzero_peg.hpp"
+#include "conceptrodon/descend/omennivore/concepts/descend/peg_nonzero.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Operation=Capsule>
+template<template<typename...> class Operation>
 struct Bind
 {
     template<typename...Elements>
@@ -25,10 +24,10 @@ struct Bind
             { using type = Element; };
 
             template<typename Element>
-            requires Omennivore::NonzeroPeg<Element>
+            requires Omennivore::PegNonzero<Element>
             struct Hidden<Element>
             { 
-                using type = Typelivore::Among<Replacements...>
+                using type = Typelivore::TypicalAmong<Replacements...>
                 ::template ProtoPage<Element::value - 1>
                 ::type; 
             };

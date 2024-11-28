@@ -4,15 +4,15 @@
 #ifndef CONCEPTRODON_STOCKIVORE_PASTE_H
 #define CONCEPTRODON_STOCKIVORE_PASTE_H
 
-#include "conceptrodon/microbiota/stockii/paste.hpp"
+#include "conceptrodon/microbiota/stockii/typical_paste.hpp"
 
 namespace Conceptrodon {
 namespace Stockivore {
 
-using Stockii::Paste;
+using Stockii::TypicalPaste;
 
 template<typename...Packs>
-using Paste_t = Paste<Packs...>::type;
+using Paste = Stockii::TypicalPaste<Packs...>::type;
 
 }}
 

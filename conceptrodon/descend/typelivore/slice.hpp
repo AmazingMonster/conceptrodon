@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TYPELIVORE_SLICE_H
 
 #include "conceptrodon/descend/microbiota/typella/incise.hpp"
+#include "conceptrodon/descend/microbiota/typella/shear.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -12,22 +13,29 @@ namespace Typelivore {
 template<typename...Elements>
 struct Slice
 {
+    template<auto...>
+    struct ProtoPage {};
+
+    template<size_t Amount>
+    struct ProtoPage<Amount>
+    {
+        template<template<typename...> class...Agreements>
+        using Road = decltype
+        (
+            Typella::Shear<std::make_index_sequence<Amount>>
+            ::template idyl<Agreements..., Elements...>()
+        );
+    };
+
     template<size_t Start, size_t End>
     requires (Start <= End)
-    struct ProtoPage
+    struct ProtoPage<Start, End>
     {   
         template<template<typename...> class...Agreements>
         using Road = decltype
         (
             Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Agreements..., Elements...>()
-        );
-
-        template<template<typename...> class Operation=Capsule>
-        using UniRoad = decltype
-        (
-            Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Elements...>()
+            ::template idyl<Agreements..., Elements...>()
         );
     };
 

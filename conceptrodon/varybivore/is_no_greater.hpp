@@ -7,34 +7,16 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto LeftSide, auto RightSide>
+template<auto Target, auto...Variables>
 struct IsNoGreater
 {
     static constexpr bool value
-    { not (RightSide < LeftSide) };
+    { (...&&(not (Variables < Target))) };
 };
 
-template<auto LeftSide, auto RightSide>
+template<auto Target, auto...Variables>
 constexpr bool IsNoGreater_v
-{ not (RightSide < LeftSide) };
-
-template<auto RightSide>
-struct IsNoGreaterThan
-{
-    template<auto LeftSide>
-    struct ProtoPage
-    {
-        static constexpr bool value
-        { not (RightSide < LeftSide) };
-    };
-    
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto LeftSide>
-    static constexpr bool Page_v 
-    = not (RightSide < LeftSide);
-};
+{ (...&&(not (Variables < Target))) };
 
 }}
 

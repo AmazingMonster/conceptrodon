@@ -9,23 +9,23 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class Predicate>
+template<template<auto...> class...Predicates>
 struct LeftInterview
 {
-    template<auto Interviewer>
+    template<auto...Interviewers>
     struct ProtoPage
     {
         template<auto...Variables>
         using Page = Varbola::SensibleLeftInterview<Variables...>
-        ::template ProtoRail<Predicate>
-        ::template Page<Interviewer>;
+        ::template ProtoRail<Predicates...>
+        ::template ProtoPage<Interviewers...>;
 
         template<auto...Variables>
         static constexpr auto Page_v
         {
             Varbola::SensibleLeftInterview<Variables...>
-            ::template ProtoRail<Predicate>
-            ::template Page_v<Interviewer>
+            ::template ProtoRail<Predicates...>
+            ::template Page_v<Interviewers...>
         };
     };
 

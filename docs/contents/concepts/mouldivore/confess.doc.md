@@ -1,0 +1,79 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Confess`
+
+## Description
+
+`Mouldivore::Confess` accepts a class template predicate and a list of elements.
+It returns true if the predicate invoked by the elements returns true and returns false if otherwise.
+
+<pre><code>   Predicate, Elements...
+-> Predicate&lt;Elements...&gt;::value</code></pre>
+
+## Structure
+
+```C++
+template<template<typename...> class, typename...>
+concept Confess = REQUIREMENT;
+```
+
+## Examples
+
+`Confess` turns a class template predicate into a concept so that it can be used for subsumption.
+
+The following code will fail since `Pred_0<*>::value` and `Pred_0<*>::value && Pred_1<*>::value` are both atomic:
+
+```C++
+template<typename...>
+struct Pred_0
+{
+    static constexpr bool value {true};
+};
+
+template<typename...>
+struct Pred_1
+{
+    static constexpr bool value {true};
+};
+
+template<typename...Args>
+requires Pred_0<Args...>::value
+constexpr bool fun(){return false;}
+
+template<typename...Args>
+requires Pred_0<Args...>::value && Pred_1<Args...>::value
+constexpr bool fun(){return true;}
+
+static_assert(fun<int>());
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwDspK4AMngMmAByPgBGmMT%2BXKQADqgKhE4MHt6%2BeqnpjgJhEdEscQlJdpgOmUIETMQE2T5%2BgbaY9oUMdQ0ExVGx8Ym29Y3NuZWjfeEDZUNcAJS2qF7EyOwcBJgsyQZbJgDMbgQAnsmMrJgAdDeH2CYaAIIKBMReDgDUysSY6AD6GgejxMASsTw%2BEI%2BLyYjmQHzQDBemFUyWIHxiqE8HwAbmIvJgPiCLK98SCACKHMHAgIUg5UoFbHZ7TCHY5nC5sG5XO5Al5vT7fX5/LhAolAyFQ%2Bqw%2BECJEotEYrG47wEokklk0ymizV00VPRm7GEso6nc7MTk3R7EYAKHlPH4ARy8eB%2BCi%2BP3%2BgKOVptXLuIBAytJTwRctR6MxtA%2BVC8DAgCyJPwIqwY0bESi1mqeDO2hv2JvZ5uuluttoO93tmCdLswbsFntZPoUfvLAaDqrMADZzJ33UKRd7Sy3sG28SyQ7KtvKI1iY3GE6CkymPurMxTs09obC/kwFEpGtRY6zwgQ7vGE7qnhwlrROABWXh%2BDhaUioThuazWKErNYdg48UgCE0a8lgAaxAO9JCuDRJC4AIDg0O8NC7TszAADjQ/ROEkXgWAkDQNFIJ8XzfDheAUEBCKA59r1IOBYBgRAQBWAhki8AhyEoNAdjoeJIkuThVDQzsAFpO0kD5gGQOEpCuMxeF%2BQgSDwdA9H4QQRDEdgpBkQRFBUdQaNIXQkgAd2IJhkk4Hgb3vR9gNfTgAHl2LYggPlQKgPiE0TxMk6SPlkswPggDwePoNFzH/BZeGorQlggJBuOSXiyAoCBktSkBgCkMw%2BDoLZiAoiAYgcmJwgaE5rN4crmGIE4nJibRqmogDuLYQQnIYWgqqMrAYi8YA3DEWgKO4XgsBYQxgHEPqaxqbFawc5FqnYjYAJPDoHNoPAYgs%2BqPCwBzXjwPDxtIRbiAxJQyW2aadqMYClioAwbQANTwTBTKcs1qt04RRHEHT1PkJQ1Ackz9GmlBP0sfRdooyAllQZIujGkSXnQQ4yVMSxrDMEjLuIFSlqR9pOkyFwGHcTwWj0UIZlKco8jSDIBHGPwknyNmGH6Jn5nJlraimDm9CqGoBB6Ro%2BcGCoRl6UXJl6GW5gqJYFB/dYJFsjgHyIhzSO84SxIkqSZKg4KIFwJTIrMaLYqepYEEwJgsASeNSHAyQDiuABOA4AkkGCzEkTsCLvTtfawjgcNIPD/yuTsuE7NDfbQ5PIK4O9/c7fWjNI8jKMAp66MYxLmNc9jOIy1Bwr4gSOAaFhsQCESmHhAwjEC32ri4aCFPwIhidUpIQc0oHpBB/TwaM3Q8vMyzqp1vXiN4UiXNY9iPK8puW7bjvpu73voJCsKUoiwk7bMGLi5ohKktr8/4mrzKIpAXfW%2BQTuct9rhCJoWghViqlSMrVSqf0wH1Uas1Bwf12qMAIF1HqDl%2BqDWGrQUaf1Jr3Q2C%2BfAPwFpLSMitZAa0/qbVvEZHae1KqHVwbFYmZ0AKXWupgW6U0jAPVAHfPgr0FAfS%2Bj9Rgf0x6A20pPWQ09DIvjnlDR6uMrBw2oYjD2KM0acAxgQLGBwcawwsATNeRMSYqPVh0IWzgICuEVsEamKtmZc1Zl0ax3Muh2IFuLLoUsmi0wmILCW3QphuLltCMYPjOby2lozWW2tlirC1osaOK8DacA%2BB/feX9D5cB7n3DQIVrZD0vvbW%2B8UnYuzdpQHWsd449xggEbOAR4KSBDuJJIq9HJkVsEXOKtF6JMRYm5F%2Bj9Ur8TYJwJufkWAKGxHCbEWSrjMheAPG2Kk1KyHHuI/6UiIYgAOKQBeVlxrL3svnZyld3KeVScQFgEypkzLmQs9yoUhkXyigcG%2B3T74oGec/dKr8hjTOSMkP4szfZ/AeTuK54l8qAPiMAsqFV6oQIRQ1JqLU4G1w6og7qvU8GYAGkNEaY0ALYM4fQ0g%2BChaLTGi%2BEhZDzoUO2rtfaJw6HHUYX9FhaQ2F3U4eEbh8VeFMHep9b6v1zqiK0hICRekwbSJ0DsuRxg9HwxiCY18qNMhjQAPSYxhnjSwBjXxGKwGqjxlNLHU2sQzEo0SHEFEyM4xxmQglizMf4rx1izWS0CVE1WYsRZhP9crX19j1aa20kcvOJEUnjIkpM6ZOJ7lGheHkweJBCmLAdnfUprshge0oVU/wPcDgHDvEhWCBES0BBTlGtenBC5UUdp7EAkg7x%2BzvGhLsvtJC%2B3ggHLguzKEHGOdGjpHydbyVre0rNJSLqwsppIIAA)
+
+By turning `Pred_0<*>::value` and `Pred_1<*>::value` into concepts, we allow compilers to perform proper subsumption.
+
+```C++
+template<typename...Args>
+requires Confess<Pred_0, Args...>
+constexpr bool fun(){return false;}
+
+template<typename...Args>
+requires Confess<Pred_0, Args...> && Confess<Pred_1, Args...>
+constexpr bool fun(){return true;}
+
+static_assert(fun<int>());
+```
+
+## Implementation
+
+```C++
+template<template<typename...> class Predicate, typename...Elements>
+concept Confess = Predicate<Elements...>::value;
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEs6SuADJ4DJgAcj4ARpjEIACspAAOqAqETgwe3r7%2ByanpAiFhkSwxcYl2mA4ZQgRMxARZPn5cAZXVArX1BEUR0bEJtnUNTTmtQ929JWUJAJS2qF7EyOwcBJgsSQbrJgDMbuub25h7BwCeSYysmAB0d3vYANTIBgoKj8rEmPii66SPBAuVzYdxu2HobEECgeJg0AEE0AwVkkCI8PAwqJg3o89gARD5fH5MHb7cEbRgEBSgh4gEAANzEXhOuys8NhcIA9AAqHm8vn8jns7m8x4AFSxlMefMF8OF/PlPJlcPZhy2xOZ50uzBB9122HZCgIxC8DgJ3wA%2Bhp2SYAOysuGPR2PQ3EvDIZ4CQ2YVRJYiPKKoTyPBneTA4u1Gpm23F7e3R2PW%2BGq46nQFa67UvUGyOmz4WrjWu3sp3OuqOd2Ir0%2Bv0BoMhpnhiyRk42mMswttuNJjZqkma4G3O5w4jAaFZ%2BFfACOXjwX3e6Mxb1OefQlv%2Bw9Hmf18Mr62r/sDtEeVC8DAgs1tFi%2BBCWDGPYiUCdbibhyfVqaB2sHNw3Y%2B3w8wadZyxNEBEXMc3BXNdHl/LccTMAA2cwENAjEsQgqCuHXEcqV1f9d29X0DyDE8zwvO1r1vAFjWZKxnzZeEXXLc0mDeWICGoU9TlCAgHnPC923hDh5loTh4l4PwOC0UhUE4NxrGsZ1FmWMNzF2HhSAITRhPmABrBJJBuDRJC4G1dg0eINEQhCzAADls/ROEkXgWAkDQNFISTpNkjheAUEAPK0qThNIOBYBgRAQEWAgki8AhyEoNBNjoWJwmuThVFshCAFoEMkR5gGQd0pBuMxeG%2BQgSDwdA9H4QQRDEdgpBkQRFBUdRgtIXQsIAd2IJgkk4HgRLEiTtJkzgAHk4ti1FUCoR5MpyvKCqKx4SrMR4IA8ZL6D9NSuFmXggq0eYICQJKkhSsgKAgS7rpAYApACGhaHWYh/IgKJxqiUJ6jOIbeF%2B5hiDOSaom0Kogo0pLIQISaGFoAHOqwKIvGANwxFofzuF4LAWEMYBxBR4DqjpLFxu9Ko4tWDSeMwUTOtoPAon60GPCwcajTwVzcdIcniADJRcQ2QnmaMbT5ioAxRwANTwTAesmrVAZa4RRHEZq6vkJQ1HG7r9EJlAFMsfQWf8yB5lQFEMhx7LDXQPFTEsawzG8gXiGqinLdsBmoYyFwGHcTxmj0YJQj6UoBiwlI0kcARRhaPI44yKZ%2BjiLD2njhguhGEOxl9%2Bxs9znoI%2BmaOJjz7Ik5dBo06jjP5gUZSVgkEaOHEzzxp8xasty/LCuKwzNogXBKv2sx1KOzTJfmBBMCYLA4nPUh9MkXYbgATl2G1JGMsxJAQ9z4gQzfHI4ZzSFc9SbgQrgENszfbPv%2BITPibeEK7zqfL8gKZ%2BCs6EVzpRRmnFBKd1UC7VSulDg9QWB0htNlJgzwDBGHWpvG4XAjLlXwEQT2NUsLawapraQ2s2p606roAIfUBqA3bp3LyvAfLTRinFR481HhwIQUglBhN0GYKMltHaV09rwV2GYaeJ0QrAPuntcBsiBhcMQS8QmXBN5cA8q9d6n1vqdWBv9VW%2BjQbg0hg4VWsMKQIyRuNVG6NMa0GxqrfGYtVjSXwF8MmFNOpU2QDTVW9NGbSWZqzf6HNXHHU9rzDSAshaYBFgTIw4tQAAL4DLBQ8tFbK0YKrIhGsmqkNkOQjq0kqGGwls7KwptgkWxXtbbOdsHZOxNhYN2TCPZexqU3P2HQ/AQFcInMOQd64zBjvkbOAzRkp0KGXdOegs41GGI0fONdunF0WcMiutclnVzmesmZDc24LCWK3Q658GHd04Jw4g8DEHIJUWgtRAiNBbTHngsRh1jqz1IPPReAwV6M0vtfDBxkbTvxtGZSQB88pYUYRNXytg/5SMAfAYB0VZryMgSI6BbBOBwJWiwBQdJ3R0keccQ0ODx7VVqrIYh%2BS1ZFP1iAXYpAaGDVxvQsa38pqgLmgtPF%2BUCVEuDKS9UhohGYuumI3YkjJahQuhKuRt0FFxCJUkJI5oSWb3NGSggLFrl5T4HQbRlBdHSSMcjDS5qTFQ3MZAuGVjkZuMwGjDGWMcYaWcYk8JpB3H%2B3JjjaSPi/F8wCeNYJbMzhhK5pE1WMTUhxNFok0IyTTqpKYHLBWSsVZ81yY1CQBTWq62KToJlZTjDNLNlETpMkbaek4ByB2xsXaWFaTJdpWBq3zOcH0oOEzAhDP2SM5OBRMjLL0LHEdGyM6F39p0RZfau05z2cUWZmd51jrXZMQd0cm4tyahyr%2B3lLn8seIK4lIr1hitHrgkg7yZUALngvJelB26ApAGYDBuxdjxEsiZdyX6bQP0PUwzgv9ApfLXvELe8RbKIU3pITeZkd5cGZYzXYnKj3wqRe3MqwG4WfIffzWIaRnCSCAA%3D)
+
+## Links
+
+- [source code](../../../../conceptrodon/mouldivore/concepts/confess.hpp)
+- [unit test](../../../../tests/unit/concepts/mouldivore/confess.test.hpp)

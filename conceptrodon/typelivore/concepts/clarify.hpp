@@ -7,8 +7,8 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<template<typename...> class Predicate, typename...Elements>
-concept Clarify = Predicate<Elements...>::value;
+template<typename Predicate, auto...Variables>
+concept Clarify = Predicate{}(Variables...);
 
 }}
 

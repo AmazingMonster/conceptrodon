@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_DIVERSITY_H
-#define CONCEPTRODON_TYPELIVORE_DIVERSITY_H
+#ifndef CONCEPTRODON_TYPELIVORE_TYPICAL_DIVERSITY_H
+#define CONCEPTRODON_TYPELIVORE_TYPICAL_DIVERSITY_H
 
 #include "conceptrodon/capsule.hpp"
 #include <type_traits>
@@ -11,16 +11,16 @@ namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename...InspectedElements>
-struct Diversity: public std::type_identity<InspectedElements>...
+struct TypicalDiversity: public std::type_identity<InspectedElements>...
 {
     template<typename InspectingElement, typename...RestElements>
     struct ProtoMold
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, Diversity>::value, 
-            Diversity, 
-            Diversity<InspectedElements..., InspectingElement>
+            std::is_base_of<std::type_identity<InspectingElement>, TypicalDiversity>::value, 
+            TypicalDiversity, 
+            TypicalDiversity<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
     };
 
@@ -29,7 +29,7 @@ struct Diversity: public std::type_identity<InspectedElements>...
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, Diversity>::value, 
+            std::is_base_of<std::type_identity<InspectingElement>, TypicalDiversity>::value, 
             Capsule<InspectedElements...>, 
             Capsule<InspectedElements..., InspectingElement>
         >::type;
@@ -43,12 +43,13 @@ struct Diversity: public std::type_identity<InspectedElements>...
 };
 
 template<>
-struct Diversity<>
+struct TypicalDiversity<>
 {
     template<typename InspectingElement, typename...RestElements>
     struct ProtoMold
     {
-        using type = Diversity<InspectingElement>::template ProtoMold<RestElements...>
+        using type = TypicalDiversity<InspectingElement>
+        ::template ProtoMold<RestElements...>
         ::type;
     };
 
@@ -59,6 +60,14 @@ struct Diversity<>
     using Mold_t = ProtoMold<Elements...>::type;
 };
 
+template<typename...Elements>
+struct Diversity
+{
+    template<typename...Agreements>
+    using Mold = TypicalDiversity<Elements...>
+    ::template ProtoMold<Agreements...>
+    ::type;
+};
 
 }}
 

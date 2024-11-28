@@ -4,27 +4,19 @@
 #ifndef CONCEPTRODON_TYPELIVORE_IS_SAME_H
 #define CONCEPTRODON_TYPELIVORE_IS_SAME_H
 
+#include <type_traits>
+
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename Known>
-struct IsSameAs
-{
-    template<typename>
-    struct ProtoMold 
-    { static constexpr bool value {false}; };
+template<typename Target, typename...Elements>
+struct IsSame
+{ static constexpr bool value
+{(...&&std::is_same_v<Elements, Target>)}; };
 
-    template<>
-    struct ProtoMold<Known> 
-    { static constexpr bool value {true}; };
-
-    template<typename...Agreements>
-    using Mold = ProtoMold<Agreements...>;
-
-    template<typename...Args>
-    static constexpr bool Mold_v 
-    {ProtoMold<Args...>::value};
-};
+template<typename Target, typename...Elements>
+constexpr bool IsSame_v 
+{(...&&std::is_same_v<Elements, Target>)};
 
 }}
 

@@ -6,19 +6,19 @@
 
 namespace Conceptrodon {
     
-template<template<template<template<typename...> class...> class...> class...Nothingness>
+template<template<template<template<template<typename...> class...> class...> class...> class...Dreams>
 struct Lullaby 
 {
-    static constexpr size_t size() { return sizeof...(Nothingness); }
+    static constexpr size_t size() { return sizeof...(Dreams); }
 
-    template<template<template<template<template<typename...> class...> class...> class...> class Revelation>
-    struct Detail { using type = Revelation<Nothingness...>; };
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Realization>
+    struct Detail { using type = Realization<Dreams...>; };
 
-    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
-    using Lull = Detail<Silence...>::type;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
+    using Grit = Detail<Agreements...>::type;
     
-    template<template<template<template<template<typename...> class...> class...> class...> class Revelation>
-    using UniLull = Revelation<Nothingness...>;
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class Realization>
+    using UniGrit = Realization<Dreams...>;
 };
  
 }

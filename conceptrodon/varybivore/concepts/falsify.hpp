@@ -7,8 +7,8 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<template<auto...> class Predicate, auto...Variables>
-concept Falsify = not Predicate<Variables...>::value;
+template<auto Predicate, auto...Variables>
+concept Falsify = not Predicate(Variables...);
 
 }}
 

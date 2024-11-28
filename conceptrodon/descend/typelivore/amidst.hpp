@@ -8,7 +8,6 @@
 #include <utility>
 
 namespace Conceptrodon {
-
 namespace Typella {
 
 template<typename>
@@ -21,14 +20,11 @@ struct Midst<std::index_sequence<I...>>
     static constexpr auto idyl() -> Target;
 
     template<typename...Elements>
-    struct ProtoMold
+    struct Detail
     { using type = decltype(idyl<Elements...>()); };
 
     template<typename...Elements>
-    using Mold = ProtoMold<Elements...>;
-
-    template<typename...Elements>
-    using Mold_t = ProtoMold<Elements...>::type;
+    using Mold = Detail<Elements...>::type;
 };
 
 }
@@ -39,17 +35,14 @@ template<typename...Elements>
 struct Amidst
 {
     template<size_t I>
-    struct ProtoPage
+    struct Detail
     {
         using type = decltype
         (Typella::Midst<std::make_index_sequence<I>>::template idyl<Elements...>());
     };
 
     template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto...Args>
-    using Page_t = ProtoPage<Args...>::type;
+    using Page = Detail<Agreements...>::type;
 
     template<size_t I>
     using UniPage = decltype

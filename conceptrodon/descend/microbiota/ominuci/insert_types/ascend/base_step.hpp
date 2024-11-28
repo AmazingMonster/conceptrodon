@@ -170,6 +170,9 @@ struct CONCEPTRODON_OMINUCI_INSERT_TYPES_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_HORSE_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_HORSE_COUNT
 
+        , CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
+        ...RestNewElements
+
     >
     struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
     {
@@ -202,7 +205,7 @@ struct CONCEPTRODON_OMINUCI_INSERT_TYPES_FUNCTION_NAME
         >
         static consteval auto CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION()
 
-        -> CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_TRANSPORT
+        -> CONCEPTRODON_NUCLEOLUS_MOLD_PARALLEL_VESSEL
         <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_RIVER_PREFIX_SYMBOLS
@@ -227,46 +230,17 @@ struct CONCEPTRODON_OMINUCI_INSERT_TYPES_FUNCTION_NAME
             , RestElements...
         >;
 
-        struct CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-        {
-            template
-            <
-                CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-                ...Elements
-            >
-            struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
-            {
-                using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT = decltype
-                (
-                    CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <Elements...>()
-                );
-            };
-        };
-
         template
         <
             CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
             ...Elements
         >
-        using CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE 
-        = CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-        ::template CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE <Elements...>;
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-            ...Elements
-        >
-        using CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE 
+        using CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <Elements...>()
         );
     };
-
-
-
-
 
     template
     <

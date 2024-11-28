@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ERASE_H
 #define CONCEPTRODON_VARYBIVORE_ERASE_H
 
+#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/descend/microbiota/varbola/ditch.hpp"
 #include "conceptrodon/descend/microbiota/varbola/expunge.hpp"
 
 namespace Conceptrodon {
@@ -12,22 +14,29 @@ namespace Varybivore {
 template<auto...Variables>
 struct Erase
 {
+    template<auto...>
+    struct ProtoPage {};
+
+    template<size_t Index>
+    struct ProtoPage<Index>
+    {
+        template<template<auto...> class...Agreements>
+        using Rail = decltype
+        (
+            Varbola::Ditch<std::make_index_sequence<Index>>
+            ::template idyl<Agreements..., Monotony<Variables>...>()
+        );
+    };
+
     template<size_t Start, size_t End>
     requires (Start <= End)
-    struct ProtoPage
+    struct ProtoPage<Start, End>
     {
         template<template<auto...> class...Agreements>
         using Rail = decltype
         (
             Varbola::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Agreements..., Monotony<Variables>...>()
-        );
-        
-        template<template<auto...> class Operation=Shuttle>
-        using UniRail = decltype
-        (
-            Varbola::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template lark<Operation, Monotony<Variables>...>()
+            ::template idyl<Agreements..., Monotony<Variables>...>()
         );
     };
 

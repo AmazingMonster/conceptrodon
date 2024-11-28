@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_VARYBIVORE_ARE_DISTINCT_H
 
+#include <utility>
 #include "conceptrodon/label.hpp"
 #include "conceptrodon/monotony.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -19,9 +19,9 @@ struct AreDistinct
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Label<Monotony<Variables>, I>...
+    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
     {
-        using Label<Monotony<Variables>, I>::lark...;
+        using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::lark...;
 
         template<auto, typename=void>
         struct Hidden

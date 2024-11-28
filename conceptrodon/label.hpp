@@ -4,15 +4,13 @@
 #ifndef CONCEPTRODON_LABEL_H
 #define CONCEPTRODON_LABEL_H
 
-#include <type_traits>
-
 namespace Conceptrodon {
 
-template<typename Element, size_t I>
+template<typename Treasure, typename Key>
 struct Label
 { 
-    static constexpr auto idyl(std::integral_constant<size_t, I>) -> Element;
-    static constexpr auto lark(Element) -> std::integral_constant<size_t, I>;
+    static constexpr auto idyl(Key) -> Treasure;
+    static constexpr auto lark(Treasure) -> Key;
 };
  
 }

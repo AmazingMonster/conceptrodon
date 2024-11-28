@@ -11,6 +11,15 @@
 
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_LENGTH
 #error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_LENGTH has not been defined"
 #endif
@@ -41,24 +50,24 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER  \
-    Interviewer
+#define CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER  \
+    Interviewers
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
-#error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
+#error "CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER  \
-    Predicate
+#define CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER  \
+    Predicates
 /******************************************************************************************************/
 
 
@@ -123,7 +132,7 @@ struct CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
     template
     <
         CONCEPTRODON_NUCLEOLUS_RAIL_PARAMETER_CATEGORY
-        CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
+        ... CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
     >
     struct CONCEPTRODON_NUCLEOLUS_RAIL_PROTO_TEMPLATE
     {
@@ -131,11 +140,12 @@ struct CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
         template
         <
             CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+            ... CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
         >
         struct CONCEPTRODON_NUCLEOLUS_PAGE_PROTO_TEMPLATE
         {
-            static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT 
+            static constexpr CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+            CONCEPTRODON_NUCLEOLUS_VALUE_RESULT 
             {
 #include "ascend/recursive_step.hpp"
             };
@@ -154,9 +164,10 @@ struct CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
         template
         <
             CONCEPTRODON_NUCLEOLUS_PAGE_PARAMETER_CATEGORY
-            CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
+            ... CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
         >
-        static constexpr auto CONCEPTRODON_NUCLEOLUS_PAGE_VARIABLE_TEMPLATE
+        static constexpr CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+        CONCEPTRODON_NUCLEOLUS_PAGE_VARIABLE_TEMPLATE
         {
 #include "ascend/recursive_step.hpp"
         };
@@ -177,7 +188,7 @@ struct CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
 
 
 /******************************************************************************************************/
-#undef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWER_IDENTIFIER
-#undef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
+#undef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
+#undef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
 #undef CONCEPTRODON_VARBOLA_SENSIBLE_LEFT_INTERVIEW_REST_PARAMETER_IDENTIFIER
 /******************************************************************************************************/

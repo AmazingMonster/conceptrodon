@@ -11,7 +11,7 @@ template<template<template<typename...> class...> class Operation>
 struct Reveal
 {
     template<template<typename...> class...Containers>
-    using Page = Operation<Containers...>::type;
+    using Road = Operation<Containers...>::type;
 };
 
 }}

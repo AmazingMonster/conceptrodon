@@ -21,11 +21,11 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
+#error "CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_proto_templates/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_helpers/detail.hpp"
 /******************************************************************************************************/
 
 
@@ -37,17 +37,6 @@
 #endif
 
 #include "conceptrodon/microbiota/nucleolus/define_synopsis_templates/mold.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#ifdef CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
-#error "CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE has already been defined"
-#endif
-
-#include "conceptrodon/microbiota/nucleolus/define_alias_templates/mold.hpp"
 /******************************************************************************************************/
 
 
@@ -127,9 +116,8 @@ struct CONCEPTRODON_MOLDIAE_FOLD_RIGHT_LAST_FUNCTION_NAME
 
 /******************************************************************************************************/
 #include "conceptrodon/microbiota/nucleolus/undef_results/type.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_proto_templates/mold.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_helpers/detail.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_synopsis_templates/mold.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_alias_templates/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/mold.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parameter_categories/road.hpp"
 /******************************************************************************************************/

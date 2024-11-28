@@ -19,7 +19,7 @@ struct LookFor
         {
             []() -> std::make_signed_t<size_t>
             {
-                std::make_signed_t<size_t> counter {0};
+                std::make_signed_t<size_t> counter {-1};
                 return
                 (...||( (++counter, Predicate<Variables>::value) ? true : false)) ? 
                 counter : -1;

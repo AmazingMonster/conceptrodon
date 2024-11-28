@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_PAGELIVORE_INDEPENDENT_FIND_H
 #define CONCEPTRODON_PAGELIVORE_INDEPENDENT_FIND_H
 
-#include "conceptrodon/microbiota/pagelis/find.hpp"
+#include "conceptrodon/microbiota/pagelis/independent_find.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class...Sequences>
-using IndependentFind = Pagelis::Find<Sequences...>;
+template<template<auto...> class...Predicates>
+using IndependentFind = Pagelis::IndependentFind<Predicates...>;
 
 
 }}

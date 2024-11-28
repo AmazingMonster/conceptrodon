@@ -4,12 +4,21 @@
 #ifndef CONCEPTRODON_TYPELIVORE_REITERATE_H
 #define CONCEPTRODON_TYPELIVORE_REITERATE_H
 
-#include "conceptrodon/descend/microbiota/typella/reiterate.hpp"
+#include "conceptrodon/descend/microbiota/typella/typical_reiterate.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
-using Typella::Reiterate;
+using Typella::TypicalReiterate;
+
+template<typename...Elements>
+struct Reiterate
+{
+    template<auto...Agreements>
+    using Page = TypicalReiterate<Elements...>
+    ::template ProtoPage<Agreements...>
+    ::type;
+};
 
 }}
 

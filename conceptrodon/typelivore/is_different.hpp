@@ -4,39 +4,19 @@
 #ifndef CONCEPTRODON_TYPELIVORE_IS_DIFFERENT_H
 #define CONCEPTRODON_TYPELIVORE_IS_DIFFERENT_H
 
+#include <type_traits>
+
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename LeftSide, typename RightSide>
+template<typename Target, typename...Elements>
 struct IsDifferent
-{ static constexpr bool value {true}; };
+{ static constexpr bool value
+{(...&&(not std::is_same_v<Elements, Target>))}; };
 
-template<typename Element>
-struct IsDifferent<Element, Element>
-{ static constexpr bool value {false}; };
-
-template<typename RightSide>
-struct IsDifferentFrom
-{
-    template<typename LeftSide>
-    struct ProtoMold
-    { static constexpr bool value {true}; };
-
-    template<>
-    struct ProtoMold<RightSide>
-    { static constexpr bool value {false}; };
-
-    template<typename...Agreements>
-    using Mold = ProtoMold<Agreements...>;
-
-    template<typename...Args>
-    static constexpr auto Mold_v 
-    {ProtoMold<Args...>::value};
-};
-
-template<typename LeftSide, typename RightSide>
-constexpr auto IsDifferent_v 
-{IsDifferent<LeftSide, RightSide>::value};
+template<typename Target, typename...Elements>
+constexpr bool IsDifferent_v 
+{(...&&(not std::is_same_v<Elements, Target>))};
 
 }}
 

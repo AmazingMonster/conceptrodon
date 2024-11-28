@@ -7,36 +7,28 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto LeftSide, auto RightSide>
-struct IsDifferent
+template<auto, auto>
+struct SolitaryIsDifferent
 { static constexpr bool value {true}; };
 
 template<auto Variable>
-struct IsDifferent<Variable, Variable>
+struct SolitaryIsDifferent<Variable, Variable>
 { static constexpr bool value {false}; };
 
-template<auto RightSide>
-struct IsDifferentAs
+template<auto LeftSide, auto RightSide>
+constexpr bool SolitaryIsDifferent_v 
+{SolitaryIsDifferent<LeftSide, RightSide>::value};
+
+template<auto Target, auto...Variables>
+struct IsDifferent
 {
-    template<auto LeftSide>
-    struct ProtoPage
-    { static constexpr bool value {true}; };
-
-    template<>
-    struct ProtoPage<RightSide>
-    { static constexpr bool value {false}; };
-
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto...Args>
-    static constexpr auto Page_v 
-    {ProtoPage<Args...>::value};
+    static constexpr bool value
+    {(...&&SolitaryIsDifferent<Variables, Target>::value)};
 };
 
-template<auto LeftSide, auto RightSide>
-constexpr auto IsDifferent_v 
-{IsDifferent<LeftSide, RightSide>::value};
+template<auto Target, auto...Variables>
+constexpr bool IsDifferent_v
+{(...&&SolitaryIsDifferent<Variables, Target>::value)};
 
 }}
 

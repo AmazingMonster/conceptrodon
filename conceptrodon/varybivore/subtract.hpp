@@ -7,34 +7,16 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto I, auto J>
+template<auto Target, auto...Variables>
 struct Subtract
 { 
     static constexpr auto value 
-    {I - J}; 
+    {(Target -...- Variables)}; 
 };
 
-template<auto I, auto J>
+template<auto Target, auto...Variables>
 constexpr auto Subtract_v
-{I - J};
-
-template<auto I>
-struct SubtractFrom
-{
-    template<auto J>
-    struct ProtoPage
-    { 
-        static constexpr auto value 
-        {I - J}; 
-    };
-    
-    template<auto...Agreements>
-    using Page = ProtoPage<Agreements...>;
-
-    template<auto J>
-    static constexpr auto Page_v
-    {I - J};
-};
+{(Target -...- Variables)}; 
 
 }}
 

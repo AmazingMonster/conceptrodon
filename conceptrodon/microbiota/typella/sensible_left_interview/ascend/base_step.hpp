@@ -2,6 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
+#ifndef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+#error "CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE has not been defined"
+#endif
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #ifndef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
 #error "CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME has not been defined"
 #endif
@@ -53,12 +62,12 @@
 
 
 /******************************************************************************************************/
-#ifdef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
-#error "CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER has already been defined"
+#ifdef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
+#error "CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER has already been defined"
 #endif
 
-#define CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER  \
-    Predicate
+#define CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER  \
+    Predicates
 /******************************************************************************************************/
 
 
@@ -106,7 +115,7 @@ struct CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
     template
     <
         CONCEPTRODON_NUCLEOLUS_ROAD_PARAMETER_CATEGORY
-        CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
+        ... CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
     >
     struct CONCEPTRODON_NUCLEOLUS_ROAD_PROTO_TEMPLATE
     {
@@ -117,7 +126,8 @@ struct CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
         >
         struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
         {
-            static constexpr auto CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
+            static constexpr CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+            CONCEPTRODON_NUCLEOLUS_VALUE_RESULT
             {
 #include "ascend/base_step.hpp"
             };
@@ -138,7 +148,8 @@ struct CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
             CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY ...
             CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
         >
-        static constexpr auto CONCEPTRODON_NUCLEOLUS_MOLD_VARIABLE_TEMPLATE
+        static constexpr CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_RESULT_INTEGRAL_TYPE
+        CONCEPTRODON_NUCLEOLUS_MOLD_VARIABLE_TEMPLATE
         {
 #include "ascend/base_step.hpp"
         };
@@ -160,5 +171,5 @@ struct CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_FUNCTION_NAME
 
 /******************************************************************************************************/
 #undef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_INTERVIEWERS_IDENTIFIER
-#undef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATE_IDENTIFIER
+#undef CONCEPTRODON_TYPELLA_SENSIBLE_LEFT_INTERVIEW_PREDICATES_IDENTIFIER
 /******************************************************************************************************/

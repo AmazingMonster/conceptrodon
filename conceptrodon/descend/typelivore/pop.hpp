@@ -4,12 +4,15 @@
 #ifndef CONCEPTRODON_TYPELIVORE_POP_H
 #define CONCEPTRODON_TYPELIVORE_POP_H
 
-#include "conceptrodon/descend/microbiota/typella/pop.hpp"
+#include "conceptrodon/descend/microbiota/typella/typical_pop.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
-using Typella::Pop;
+using Typella::TypicalPop;
+
+template<typename...Args>
+using Pop = TypicalPop<Args...>::type;
 
 }}
 

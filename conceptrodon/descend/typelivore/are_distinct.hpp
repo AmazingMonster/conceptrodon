@@ -18,16 +18,16 @@ struct AreDistinct
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Label<Elements, I>...
+    : public Label<Elements*, std::integral_constant<size_t, I>>...
     {
-        using Label<Elements, I>::lark...;
+        using Label<Elements*, std::integral_constant<size_t, I>>::lark...;
 
         template<typename, typename=void>
         struct Hidden
         { static constexpr bool value {false}; };
 
         template<typename Element>
-        struct Hidden<Element, std::void_t<decltype(lark(std::declval<Element>()))>>
+        struct Hidden<Element, std::void_t<decltype(lark(std::declval<Element*>()))>>
         { static constexpr bool value {true}; };
 
         static constexpr bool value {(...&&Hidden<Elements>::value)};

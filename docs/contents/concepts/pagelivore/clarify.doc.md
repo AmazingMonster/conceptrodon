@@ -1,0 +1,79 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Clarify`
+
+## Description
+
+`Pagelivore::Clarify` accepts a class template predicate and a list of variables.
+It returns true if the predicate invoked by the variables returns true and returns false if otherwise.
+
+<pre><code>   Predicate, Variables...
+-> Predicate&lt;Variables...&gt;::value</code></pre>
+
+## Structure
+
+```C++
+template<template<auto...> class, auto...>
+concept Clarify = REQUIREMENT;
+```
+
+## Examples
+
+`Clarify` turns a class template predicate into a concept so that it can be used for subsumption.
+
+The following code will fail since `Pred_0<*>::value` and `Pred_0<*>::value && Pred_1<*>::value` are both atomic:
+
+```C++
+template<auto...>
+struct Pred_0
+{
+    static constexpr bool value {true};
+};
+
+template<auto...>
+struct Pred_1
+{
+    static constexpr bool value {true};
+};
+
+template<auto...Args>
+requires Pred_0<Args...>::value
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires Pred_0<Args...>::value && Pred_1<Args...>::value
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCspK4AMngMmAByPgBGmMT%2BXKQADqgKhE4MHt6%2B/kGp6Y4CYRHRLHEJZkl2mA6ZQgRMxATZPn6Btpj2RQwNTQQlUbHxibaNza25HQrjA%2BFD5SNVAJS2qF7EyOwcBJgsyQa7JgDMbkxeRAB01yfYJhoAgjPEXg4A1MrEmOgA%2Bhr3DxMAHYrI83uC3jMmI5kG80AwZphVMliG8YqhPG8AG5iLyYN7AiwEF6YYEAEROoMBQIpxypAN2%2B0OpNO5yuN2Od0ez1eBA%2BX1%2BXABhIBEMhjRhcIEiORqPRmJx3nxhOJePJlOFNI1jwZewO0JZZwuqGulwexGACluAK%2BAEcvHgvgp%2Bd8/ic3ObLabbiAQIq1Y94TKUWiMbQ3lQvAwIMtCV8CBsGBGxEoNVqdY9GfqjqzjabPVbOTbMPbHZhnZ9Xf9TgXvZzff7lWYAGzmZsuwXu2sc7AN3GkwPS3ay0OYyPR2Mg%2BOJt6qllWdOA7kSvDIH5MBRKZrUKPuoWcmOxukcVa0TgBXh%2BDhaUioThuazWSHrTZN448UgETQn1YAaxAATNpcAAczZSAEQLNpIACcxyQWYxz6Jwki8CwEgaBopBXjed4cLwCggJhX7XiepBwLAMCICA6wEMkFzkJQaD7HQ8SRKw2yqKBAC0UFvMAyCwlIlxmLw3yECQeDoHo/CCCIYjsFIMiCIoKjqCRpC6EkADuxBMMknA8Ke56Xt%2Bt6cAA8hcdF8qgVBvJxzY8ZIfECW8QlmG8EAeMx9CouY77LLwxFaKsEBIExyQsWQFAQBFUUgMAUhmHwdC7MQBEQDEpkxOETQAJ4GbwOXMMQeXmTE2i1MRH5MWwgjmQwtAFepWAxF4wBnLQtAEdwvBYCwhjAOILVlnUWLlqZSK1Bc2wfuEuxnuptB4DEumlR4WCmcSeBob1pDjcQ6JKGSeyDctRjfqsVAGJaABqeCYFp5nJIwhVKcIojiIpMnyEoaimZp%2BiDSgj6WPoK0EZAqyoMkPQ9VxMzoCcZKmJY1hmDhB3EJJE1Q503SZC4DDuJ4bR6KE8xlBUegFBkAiTH4SS0z0gxUyM1RdFV9SzAzeg1HUAh9M0rPDAk1Q86TuTi/0IuLGLqwKC%2BWwSEZHAXlhpm4fZ3G8fxgmSMJnm4OJfkIVwgWfpdqwIJgTBYAkMakP%2BkjHJcsFApIGiSGYkjNhhgHQUhHAoaQaHvpcYHNsB0HAVwzYBJIXABLBzYa%2BpuH4YRlskaFlFhdRVn0TFcW%2BWxbCcE0LBYkCXFMHCBhGG50GXFwlw3mJRDY1JSQ/XJX3SD9Kn/epujJTpemFar6vYbwuGWbRFxvLZbyV9Xtf14NTct23nneZFvkEghZgW8FpH5yX8QMbFqA%2BSMq818gDeJdBXCYTQtBpRlWXqcV%2BVvb/pVyqVQcG9WqjACANSaqZVq7VOrdTev1M62wbz4C%2BGNCa6kprIBmm9eaXRTLLVWvlDayCgrY12h%2BA6R1MAnQGkYc6oAc58Bugoe6j1nqvT2r3T6CkB6yCHmpG8o8gYXVRlYMGhDIaOxhnDTgCMCBI2OCjUGFgMazyxjjKRCtOYCz8BAVwvMkgU1KKLGmaQ6ZZElozFI5iWaU1MRzAmgsJY5GsfzHoQs5gmLlnzFxZNpbC3sT482awNjKxCYtaemtOAr2IFXGuddH6by4M3VuGgjb4E7ofAKQUrakBtnbEYjtFohzDs3L2QJk5AiBMcb2vtE5pxwpwTORFLpkTzkgGi1kr4X2IGXbYldeIsAUFiWEWIUmXGZDMUSmSJLd3en3Xh70BEAxAIhce%2BlepTxMunCyhcbJ2UGc5YZozsQTKmXyLyN997xGyccE%2BbTz7XKij055vk/TIGSMkH44zoI/AueuOJUEUof3iF/bKuVSr/0hWVCqVVQE3zqhAxqzUUGYDah1MQ8C9qIPoaQ0gqCubjR6u3VQ01di4MEPgpaK01p5RIVtchb0qFpBoadeh4RGEhWYUwO6D0novSvB%2Bbh8kJB8OUn9QROg1kiOMCo8GMQtG3lhpkHqAB6RGIM0aWDUbeDRWAlXuMJvo4mhjgjE1ltTJmtjMhmuZpkS17N8Zc2cf0M1RrXWBO8VasYbqrG%2BJlkEq1CslYKW2Y02eMSjlvBOWM85BoZgZJNtk82uSc7W1tvbSgqtSn%2BGbscY4AQAhe1fhoAtkFgIRrMnhWwWdT7LD/CAF2LdjjAQTghYtzYEKQSDscHZTSa31tViJKtGds4hVWAddIzhJBAA)
+
+By turning `Pred_0<*>::value` and `Pred_1<*>::value` into concepts, we allow compilers to perform proper subsumption.
+
+```C++
+template<auto...Args>
+requires Clarify<Pred_0, Args...>
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires Clarify<Pred_0, Args...> && Clarify<Pred_1, Args...>
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+## Implementation
+
+```C++
+template<template<auto...> class Predicate, auto...Variables>
+concept Clarify = Predicate<Variables...>::value;
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCspK4AMngMmAByPgBGmMT%2BABykAA6oCoRODB7evv5BaRmOAmER0SxxCWbJdpgOWUIETMQEOT5%2BgbaY9sUMjc0EpVGx8Um2TS1teZ0KE4PhwxWj1QCUtqhexMjsHASYLCkGeyYAzG57B0eYp25MXkQAdE%2Bn2ADUyAYKCq/KxJj4oj2pFed0eTwAas08EwYvQFC8TBoAIJoBjbFIEV5uAzEPBUACer1OABEfn8AUxjmdIbiYXCng8XiAQAA3MRea4nKzIxFIgD0ACohcKRaK%2BbzBcLXgAVTCzb4i8XIyWi1VCpVI3kXQ6Uzm3e6oBkI5GzYheBxk/4AfQ0vJMAHZuUjXi7XrNKXhkO8BLNMKoUsRXjFUJ5XmzvJgiY6CGbrvbiacnQ6E1y7cjtVcbqDDc8TtheabzZjftauHbHbzXW6mo4vajff7A8HQ%2BGOVGLDGOcnE%2BWU0n0/sdVT9WCHkjiMB4XneX8AI5ePB/b7YqEEm4l9A24HjydG6fI%2Bt7RtBkO0V5ULwMCArB0WP4ETYMc9iJQ9%2BNppEZ3VZg0MndT/NkTnBclyxHE8XxddyS3V5/z3N5zAANiQsDV0gs4NytLhtwnBR4N5Q8/QDE9QwvK8b0de9H1eTtOSsd8eRNGtPStJgvniAhqEvG4yzza8by5Dg1loTgAl4PwOC0UhUE4NxrGsN0Ni2SNzBOHhSAITQhLWABrEAAkkB4NEkLh7RODQAg0MxEMQ6pkhEjhJF4FgJA0DRSAkqSZI4XgFBAdzNMkoTSDgWAYEQEANgIFJ7nISg0AOOh4kiVgdlURJEIAWkQyRXmAZAvSkB4zF4f5CBIPB0D0fhBBEMR2CkGRBEUFR1CC0hdGwgB3YgmBSTgeGE0TxK06TOAAeXuGLMVQKhXnSrKcrygrXiKsxXggDxEvoQNVK4FZeECrQ1ggJAEpSJKyAoCBzsukBgCkMw%2BDoPZiD8iAYlGmJwmafEBt4b7mGIfFxpibQ6kC9SErYQRxoYWg/varAYi8YBbloWg/O4XgsBYQxgHEJHFwhvAWTlUa/Tqe4dnU8I9gcqTaDwGJeuBjwsFGmM8Bc7HSDJ4hgyUYl9nxpmjC0tYqAMSdwTwTAuvGlJGH%2BprhFEcRGpq%2BQlDUUbOv0fGUHkyx9GZvzIDWVAMSyLHMtmdASVMSxrDMLz%2BdxLBzevLoeiyFwGHcTx2j0UIFnKSo9EKTIBCmPxsKj3ohnD0ZsNqeoBH6SYg7yVPuhJjO5iTkYElTuZY70d0WiLpYS7WBQlO2CQho4MSPNG7z5oy7LcvywrDPWiBcHK3azDUg6NIltYEEwJgsASb29MkE4HgAThOe1JGMsxJEQtyAkQlf9E4JzSBctSHkQrhEMSFfEivgyuACNfELb9rvN8/yJ6Ck7wtOyKptitdW6O0UpsE4M0FgLJ7SZSYO8AwRhVorweFwIypV8BEA9tVWQdUNbSC1i1XW7VdBPR6n1f6zdW6eV4N5Sa0V7ivFmiCYgkDoGwI%2BPjRByCjIbS2hdHaRJR5mHHkdYKf9gHxDijdVA21RgQKgZldhRguAry4O5GgtBXrvU%2Bu1QGv0Va6OBqDcGDgVbQ0YAQOGCNRrI1RujTGKtcaix2FJfAfx6hkyxlJSmyBqYqzpt0UaTMWa/XZs4w6uIebqX5oLTAws8ZGDFqAb%2BfBpYKFlvLRWyteZaxwQ1PBsgCFtSksQg24snZWBNkEr2ltrY%2Bk4HbAgDsTjEnKS7N28QPbkwtj7fOfgICuHLthUOZRi6R3SNHbI2c46pHGYnMOozc6%2BwLgMQZPT059ELvMmuFcy5TJ2QMauEd9rrE2I3Y5DlKHt04EwlhMC4EcOUVwjQG0h4YIEWPQ6k9SDT1nqMb2DkT5nyQcZe0T97RmUkNvHK2EqFjR8rYT%2BIif7wD/lFaakjxHEFATsCBS0WAKBZF6FkjyrizDQcPSqWDarqzyarQpesQAnFIKQ/q2MKEjTfhNABM05q4tyviwlYYSW6lmDw6RfD4jvJOMIiWIUzrisuhihVO1WTIBSCkK0xKV5WlJQQVizCcrPQ0fELRX0frA30eakGYMIamOkTDCx8NEYuMwCjNGYh7G80cQksJpBXEkw8RTVQVM9h%2BMEAE9qQTWb4lCZzCJKtonpFiSLBJ4QknHRSUwGWcsFZKwkupHJNKJD5OajrIpOhGWlOMMbGwVT4A1N6FjPk9sjbO0sK7ah7tKpdO9mnXo/tA65GmcMxYRyZlFCyKshOWRDkpzWb0TOrQ9mLN6Yu2dJdxgrOXZuquWyjl1wbg1dlr8vLXL5a8AVRLhV7FFYPdBJB3n7U%2Bd/KeM856UGboC/wSCTgnACJZEyblf32mvie6hnAP4BS%2BYvAIq8AiJGsivSQK8zLry4EyhyJwOWnvhUi5uJUwNwufcdNY/MMjOEkEAA%3D%3D%3D)
+
+## Links
+
+- [source code](../../../../conceptrodon/pagelivore/concepts/clarify.hpp)
+- [unit test](../../../../tests/unit/concepts/pagelivore/clarify.test.hpp)

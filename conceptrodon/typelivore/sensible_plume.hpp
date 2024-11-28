@@ -14,7 +14,33 @@ struct SensiblePlume
     struct ProtoRoad 
     {
         template<template<typename...> class...Cosmetics>
-        using Road = Operation<typename Cosmetics<Elements>::type...>;
+        struct Detail
+        {
+            using type = Operation<Cosmetics<Elements>...>;
+        };
+
+        template<template<typename...> class Cosmetic>
+        struct Detail<Cosmetic>
+        {
+            using type = Operation<Cosmetic<Elements>...>;
+        };
+
+        template<template<typename...> class...Cosmetics>
+        using Road = Detail<Cosmetics...>::type;
+    };
+
+    template<template<typename...> class...Agreements>
+    using Road = ProtoRoad<Agreements...>;
+};
+
+template<typename Element>
+struct SensiblePlume<Element>
+{
+    template<template<typename...> class Operation>
+    struct ProtoRoad 
+    {
+        template<template<typename...> class...Cosmetics>
+        using Road = Operation<Cosmetics<Element>...>;
     };
 
     template<template<typename...> class...Agreements>

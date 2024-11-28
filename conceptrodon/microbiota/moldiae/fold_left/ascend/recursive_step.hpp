@@ -2,15 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /******************************************************************************************************/
-#ifndef CONCEPTRODON_MOLDIAE_FOLD_LEFT_FUNCTION_NAME
-#error "CONCEPTRODON_MOLDIAE_FOLD_LEFT_FUNCTION_NAME has not been defined"
-#endif
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
 #ifndef CONCEPTRODON_MOLDIAE_FOLD_LEFT_PARAMETER_IDENTIFIER
 #error "CONCEPTRODON_MOLDIAE_FOLD_LEFT_PARAMETER_IDENTIFIER has not been defined"
 #endif
@@ -80,7 +71,7 @@ template
     ...RestElements
 
 >
-struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
+struct CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER
 <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_PREFIX_SYMBOLS
@@ -100,8 +91,7 @@ struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
 >
 {
     using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT
-    =   CONCEPTRODON_MOLDIAE_FOLD_LEFT_FUNCTION_NAME
-        ::template CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
+    =   CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
     <
 
 #define CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS    \
@@ -136,8 +126,7 @@ struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
 #undef CONCEPTRODON_CYTOPLASM_MICRO_SHEEP_COUNT
 
     >
-    ::CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-    ::template CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE <RestElements...>
+    ::template CONCEPTRODON_NUCLEOLUS_DETAIL_HELPER <RestElements...>
     :: CONCEPTRODON_NUCLEOLUS_TYPE_RESULT ;
 };
 /******************************************************************************************************/

@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_PAGELIVORE_INDEPENDENT_RIGHT_INTERVIEW_H
 #define CONCEPTRODON_PAGELIVORE_INDEPENDENT_RIGHT_INTERVIEW_H
 
-#include "conceptrodon/microbiota/pagelis/right_interview.hpp"
+#include "conceptrodon/microbiota/pagelis/independent_right_interview.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class...Sequences>
-using IndependentRightInterview = Pagelis::RightInterview<Sequences...>;
+template<template<auto...> class...Predicates>
+using IndependentRightInterview = Pagelis::IndependentRightInterview<Predicates...>;
 
 
 }}

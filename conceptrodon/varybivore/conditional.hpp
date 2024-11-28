@@ -11,47 +11,50 @@ template<auto IfTrue, auto IfFalse>
 struct Conditional
 {
     template<auto>
-    struct ProtoPage {};
+    struct Detail {};
 
     template<>
-    struct ProtoPage<true>
+    struct Detail <true>
     { static constexpr auto value {IfTrue}; };
 
     template<>
-    struct ProtoPage<false>
+    struct Detail <false>
     { static constexpr auto value {IfFalse}; };
 
 
 
 
+// auto
     template<auto...Agreements>
-    using Page = ProtoPage<(...&&static_cast<bool>(Agreements))>;
+    using Page = Detail<(...&&static_cast<bool>(Agreements))>;
 
     template<auto...Args>
-    static constexpr auto Page_v {ProtoPage<(...&&static_cast<bool>(Args))>::value};
+    static constexpr auto Page_v {Detail<(...&&static_cast<bool>(Args))>::value};
 
 
 
+
+// typename
+    template<typename...Elements>
+    using Mold = Detail<(...&&static_cast<bool>(Elements::value))>;
 
     template<typename...Elements>
-    using Mold = ProtoPage<(...&&static_cast<bool>(Elements::value))>;
-
-    template<typename...Elements>
-    static constexpr auto Mold_v { ProtoPage<(...&&static_cast<bool>(Elements::value))>::value };
+    static constexpr auto Mold_v { Detail<(...&&static_cast<bool>(Elements::value))>::value };
 
 
 
 
+// template<typename...> class
     template<template<typename...> class...Predicates>
     struct ProtoRoad
     {
         
         template<typename...Elements>
-        using Mold = ProtoPage<(...&&static_cast<bool>(Predicates<Elements...>::value))>;
+        using Mold = Detail<(...&&static_cast<bool>(Predicates<Elements...>::value))>;
 
         template<typename...Elements>
         static constexpr auto Mold_v 
-        { ProtoPage<(...&&static_cast<bool>(Predicates<Elements...>::value))>::value };
+        { Detail<(...&&static_cast<bool>(Predicates<Elements...>::value))>::value };
     };
 
     template<template<typename...> class...Predicates>
@@ -60,15 +63,16 @@ struct Conditional
 
 
 
+// template<auto...> class
     template<template<auto...> class...Predicates>
     struct ProtoRail
     {
         template<auto...Variables>
-        using Page = ProtoPage<(...&&static_cast<bool>(Predicates<Variables...>::value))>;
+        using Page = Detail<(...&&static_cast<bool>(Predicates<Variables...>::value))>;
             
         template<auto...Variables>
         static constexpr auto Page_v 
-        { ProtoPage<(...&&static_cast<bool>(Predicates<Variables...>::value))>::value };
+        { Detail<(...&&static_cast<bool>(Predicates<Variables...>::value))>::value };
     };
     
     template<template<auto...> class...Predicates>

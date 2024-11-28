@@ -11,7 +11,7 @@ namespace Typelivore {
 
 template<typename...Elements>
 struct SetContains
-:public std::type_identity<Elements>...
+: public std::type_identity<Elements>...
 {
     template<typename Inspecting>
     struct ProtoMold

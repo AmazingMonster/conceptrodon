@@ -11,45 +11,37 @@ template<typename IfTrue, typename IfFalse>
 struct Conditional
 {
     template<auto>
-    struct ProtoPage {};
+    struct Detail {};
 
     template<>
-    struct ProtoPage<true>
+    struct Detail<true>
     { using type = IfTrue; };
 
     template<>
-    struct ProtoPage<false>
+    struct Detail<false>
     { using type = IfFalse; };
 
 
 
-
+// auto
     template<auto...Agreements>
-    using Page = ProtoPage<(...&&static_cast<bool>(Agreements))>;
-
-    template<auto...Args>
-    using Page_t = ProtoPage<Args...>::type;
+    using Page = Detail<(...&&static_cast<bool>(Agreements))>::type;
 
 
 
-
+// typename
     template<typename...Elements>
-    using Mold = ProtoPage<(...&&static_cast<bool>(Elements::value))>;
-
-    template<typename...Elements>
-    using Mold_t = ProtoPage<(...&&static_cast<bool>(Elements::value))>::type;
+    using Mold = Detail<(...&&static_cast<bool>(Elements::value))>::type;
 
 
 
 
+// template<typename...> class
     template<template<typename...> class...Predicates>
     struct ProtoRoad
     {
         template<typename...Elements>
-        using Mold = ProtoPage<(...&&static_cast<bool>(Predicates<Elements...>::value))>;
-
-        template<typename...Elements>
-        using Mold_t = ProtoPage<(...&&static_cast<bool>(Predicates<Elements...>::value))>::type;
+        using Mold = Detail<(...&&static_cast<bool>(Predicates<Elements...>::value))>::type;
     };
 
     template<template<typename...> class...Predicates>
@@ -58,14 +50,12 @@ struct Conditional
 
 
 
+// template<auto...> class
     template<template<auto...> class...Predicates>
     struct ProtoRail
     {
         template<auto...Variables>
-        using Page = ProtoPage<(...&&static_cast<bool>(Predicates<Variables...>::value))>;
-            
-        template<auto...Variables>
-        using Page_t = ProtoPage<(...&&static_cast<bool>(Predicates<Variables...>::value))>::type;
+        using Page = Detail<(...&&static_cast<bool>(Predicates<Variables...>::value))>::type;
     };
     
     template<template<auto...> class...Predicates>

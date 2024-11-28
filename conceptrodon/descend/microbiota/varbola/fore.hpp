@@ -5,8 +5,6 @@
 #define CONCEPTRODON_VARBOLA_FORE_H
 
 #include "conceptrodon/prefix.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/monotony.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -18,21 +16,8 @@ struct Fore {};
 template<size_t...I>
 struct Fore<std::index_sequence<I...>>
 {
-    template<Prefix<I>...Targets, typename...>
-    static consteval auto idyl() -> Shuttle<Targets::value...>;
-
     template<template<auto...> class Operation, Prefix<I>...Targets, typename...>
-    static consteval auto lark() -> Operation<Targets::value...>;
-
-    template<auto...Variables>
-    struct ProtoPage
-    { using type = decltype(idyl<Monotony<Variables>...>()); };
-
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
-
-    template<auto...Variables>
-    using Page_t = decltype(idyl<Monotony<Variables>...>());
+    static consteval auto idyl() -> Operation<Targets::value...>;
 };
 
 }}

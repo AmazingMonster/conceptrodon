@@ -7,10 +7,13 @@
 #include <utility>
 
 namespace Conceptrodon {
+    
 
+    
+    
 /******************************************************************************************************/
 template<auto...Variables>
-struct Shuttle
+struct Payload
 {
     static constexpr size_t size() { return sizeof...(Variables); }
 
@@ -29,19 +32,59 @@ struct Shuttle
 
 
 /******************************************************************************************************/
+template<auto...>
+struct Payroll {};
+
+template<auto First, auto...Others>
+struct Payroll<First, Others...>
+{
+    static constexpr auto first() { return First; }
+};
+
+template<auto First, auto Second, auto...Others>
+struct Payroll<First, Second, Others...>
+{
+    static constexpr auto first() { return First; }
+    static constexpr auto second() { return Second; }
+};
+
+template<auto First, auto Second, auto Third, auto...Others>
+struct Payroll<First, Second, Third, Others...>
+{
+    static constexpr auto first() { return First; }
+    static constexpr auto second() { return Second; }
+    static constexpr auto third() { return Third; }
+};
+
+template<auto First, auto Second, auto Third, auto Fourth, auto...Others>
+struct Payroll<First, Second, Third, Fourth, Others...>
+{
+    static constexpr auto first() { return First; }
+    static constexpr auto second() { return Second; }
+    static constexpr auto third() { return Third; }
+    static constexpr auto fourth() { return Fourth; }
+};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+template<auto...Variables>
+struct Shuttle
+: public Payload<Variables...>
+, public Payroll<Variables...> {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 template<size_t...Indices>
 struct Shuttle<Indices...>
 : public std::index_sequence<Indices...>
-{
-    template<template<auto...> class Sequence>
-    struct ProtoRail { using type = Sequence<Indices...>; };
-
-    template<template<auto...> class...Sequences>
-    using Rail = ProtoRail<Sequences...>::type;
-
-    template<template<auto...> class Sequence>
-    using UniRail = Sequence<Indices...>;
-};
+, public Payload<Indices...>
+, public Payroll<Indices...> {};
 /******************************************************************************************************/
 
 
@@ -57,53 +100,6 @@ using SignedArk = Shuttle<Indices...>;
 
 
 
-
-/******************************************************************************************************/
-template<auto I>
-struct Henagon: public Shuttle<I>
-{
-    static constexpr auto first() { return I; }
-};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto I, auto J>
-struct Digon: public Shuttle<I, J>
-{
-    static constexpr auto first() { return I; }
-    static constexpr auto second() { return J; }
-};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto I, auto J, auto K>
-struct Trigon: public Shuttle<I, J, K>
-{
-    static constexpr auto first() { return I; }
-    static constexpr auto second() { return J; }
-    static constexpr auto third() { return K; }
-};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto I, auto J, auto K, auto L>
-struct Tetragon: public Shuttle<I, J, K, L>
-{
-    static constexpr auto first() { return I; }
-    static constexpr auto second() { return J; }
-    static constexpr auto third() { return K; }
-    static constexpr auto fourth() { return L; }
-};
-/******************************************************************************************************/
 
 }
 

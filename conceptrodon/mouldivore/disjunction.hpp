@@ -13,7 +13,7 @@ struct Disjunction
     template<typename...Elements>
     struct ProtoMold
     {
-        static constexpr auto value
+        static constexpr bool value
         {(...||Predicates<Elements...>::value)};
     };
 
@@ -21,7 +21,8 @@ struct Disjunction
     using Mold = ProtoMold<Elements...>;
 
     template<typename...Elements>
-    static constexpr bool Mold_v {(...||Predicates<Elements...>::value)};
+    static constexpr bool Mold_v
+    {(...||Predicates<Elements...>::value)};
 };
 
 }}

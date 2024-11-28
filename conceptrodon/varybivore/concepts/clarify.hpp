@@ -7,8 +7,8 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<template<auto...> class Predicate, auto...Variables>
-concept Clarify = Predicate<Variables...>::value;
+template<auto Predicate, auto...Variables>
+concept Clarify = Predicate(Variables...);
 
 }}
 

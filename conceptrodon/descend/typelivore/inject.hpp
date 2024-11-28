@@ -23,15 +23,7 @@ struct Inject
             (
                 Typella::Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template lark<Agreements..., Elements...>()
-            );
-
-            template<template<typename...> class Operation=Capsule>
-            using UniRoad = decltype
-            (
-                Typella::Enrich<std::make_index_sequence<Index>>
-                ::template ProtoMold<NewElements...>
-                ::template lark<Operation, Elements...>()
+                ::template idyl<Agreements..., Elements...>()
             );
         };
 

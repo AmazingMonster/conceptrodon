@@ -9,12 +9,10 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename FirstElement, typename...Elements>
-struct MakeSet
-{
-    using type = Diversity<FirstElement>::template ProtoMold<Elements...>
-    ::type;
-};
+template<typename...Elements>
+using MakeSet = TypicalDiversity<>
+::ProtoMold<Elements...>
+::type;
 
 }}
 

@@ -1,0 +1,71 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Falsify`
+
+## Description
+
+`Typelivore::Falsify` accepts a callable type predicate and a list of variables.
+It returns true if the predicate invoked by the variables returns false and returns false if otherwise.
+
+<pre><code>   Predicate, Variables...
+-> not Predicate{}(Variables...)</code></pre>
+
+## Structure
+
+```C++
+template<typename, auto...>
+concept Falsify = REQUIREMENT;
+```
+
+## Examples
+
+`Falsify` turns a callable type predicate into a concept so that it can be used for subsumption.
+
+The following code will fail since `(not Pred_0{}(*))` and `(not Pred_0{}(*)) && (not Pred_1{}(*))` are both atomic:
+
+```C++
+using Pred_0 = decltype([](auto...){return false;});
+
+using Pred_1 = decltype([](auto...){return false;});
+
+template<auto...Args>
+requires (not Pred_0{}(Args...))
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires (not Pred_0{}(Args...)) && (not Pred_1{}(Args...))
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCspK4AMngMmAByPgBGmMQSAMykAA6oCoRODB7evv5BaRmOAmER0SxxCVzJdpgOWUIETMQEOT5%2BgbaY9sUMjc0EpVGx8Um2TS1teZ0KE4PhwxWj1QCUtqhexMjsHF4ZRgDUysSY6AD6GgcmiQAiB1jItAQAnimYECYBVgE3EExeRAAdMCViYAOwWE4ETYMA5UMRKa5WME3UGJKwaACCJixe3CwCOJ3OXCut3udSer3en2%2Bv3%2BQJB4MhmGhxFh8NoiPR4NRSJx2KxBEwLBSBiF1zc9NQwMBmOIwAU12w/JOAEcvHgTgoDhAGKgCITThcmTyIHKFTKVqCsWgGLNMKoUsQDjFUJ44V4GBBQRCoTC4QjMHyUfz%2BUKRWKg4lJQDpcDzYrEsqsWqNVqdXqDccjRoTSizfKFJaVlczAA2cxljP6w3EvO/BPF/m2%2B2O52u91UT3epl%2BtkHAjELxR5E3UNY2ZMRzIM5MBRKFrUT0SrhK71oiwcNa0TgBXh%2BDhaUioThuazWA4KDZbTClxI8UgETRbtYAaxAATLgIAHGWpAEwTLSQAE5EkAsxkh3DhJF4FgJA0DRSAPI8Tw4XgFBARCn0PLdSDgWAYEQEANgIFIAXISg0BFOh4kiVgdlUX8AFogIOYBkGQA4pEBMxeFOQgSDwdA9H4QQRDEdgpBkQRFBUdQcNIXQuFIAB3YgmBSTgeG3Xd92fY9OAAeQBMiDVQKgDkYssWMkNiOK4yQeJ1DxqPoZ1zHvFZeGwrQ1ggJAqJSGiyAoCBAuCkBgCkMw%2BDoIViAwiAYn0mJwmaZ4tN4VLmGIZ5DJibQ6mwh8qLYQRDIYWgMoUrAYi8YBJVoTlMtILAWEMYBxBqzUirwAA3TAMIUh06gBHYH3CIUoKPWg8BidTco8LB9MHPA4O4XgBuIV0lBuYUOtmoxnzWKgDAVAA1PBMBUwy3gPB9ROEURxCkx7ZLUfSlP0DqUHPSx9DmjDIDWVAUl6IamNmdBrhuUxLGsMwUK24ghMG%2BA1lqepnAgVwpj8ZTQgWcpKj0QpMgEPHSfScmGCGYnli6HoGjmSnlMx3p%2BhaOmRiqcYBlZvmuaJnmJAx69tlF/RdKQ/TUMs5jWPYzjuLMHVcAE9yIK4LzH2OtYEEwJgsASb1SHfSREkBUCwUkDRJDMSQywQz9gKl6DYJAe9AT/Mtv2A78uDLAJJC4AJQLLGWFNQ9DMN1nC/MI/ziJM8jQvCty6LYThmhYPqwSYpgDkeDquOAwEuEBI9%2BKIFHhOUx7xJe6Q3qUD6FN0GK1I0zKdI4PdI5QoyU7Miyc7zgui4MQ4uDLivLggFygrcu8zB1nzcKT9P4gosLUFc0Yx/z4ujBnrhEJoJ54kS5KFOy9KWrv3L8sKhwWtKxgCAqqr9Nq%2BrGuajarV9pGC6kefAJx6gDSGlXVQo0hQtUmt0fSs15rpSWjsI8q11oPi2jtTAe12ogPxMdPgZ0FCXWurdRgLUG7PUks3WQ715JHg7t9I6cMrD/RQUDU2oNwacEhgQaGtwOEIyRvEWuaNgaM16tjXGnh2h6EJmUEWykya9AFuorI3Mli83ZszfmCi8hs26LIvocwdEkzZizIx%2BNBbzBUboyWV5NgS21m7fuyFeBy0PhPY%2BBIZ7l0rmrfANc7za28nrUgBsjajFNlBGCpA4KJDLnbMEYcwRgkSPbR2IcB7eM4DHLCJD8JERIqZHeW9iCZx2DnViLAFB9U4n1QJkZZh8VCYJOu0knoSQkAwmSrdmE6E9qpdSmkNq908bLIepEAQHHMgcOptkGlNIOC0subSDQLz3kveId5EhrxKQFXZwVKmnLciAJpKQUhnA2WcLZs5iAsCArFS%2BCVKA3yPI/aqD4fnPyKm/PeZVP6VWqmAzAdUGpiAAQ%2BNqB0MG8HAb1KB%2BkRrIDGggwQSCFIoIWs8dBK0UbYM2vEPBBCDrEPjqQpgF0ro3TujQ2Qjd6E9KYZ9UZU9jB/RsNw9Gx4wZZCGgAeihr9eGlhEbeORqjHhGNTFYz8DjBg7hbFKJVZYhmWiKZqrUdTXomq9EKo5jY3Idj9ECE5g4xYVj7EC0nELRxVixauMklMvSUdOBLOefUxpzTWlTkGts9WYSPIRLjr5fWhtjaUF7okuCZgy6JESAEAIdsz4aGTYBb8%2BSDJoVsLHdeVozYgAtuXRI35g4QTTWWCCgE3aJA9YPfNRbe68VzdHCNL5SBbQyM4SQQA)
+
+By turning `(not Pred_0{}(*))` and `(not Pred_1{}(*))` into concepts, we allow compilers to perform proper subsumption.
+
+```C++
+template<auto...Args>
+requires Falsify<Pred_0, Args...>
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires Falsify<Pred_0, Args...> && Falsify<Pred_1, Args...>
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+## Implementation
+
+```C++
+template<typename Predicate, auto...Variables>
+concept Falsify = not Predicate{}(Variables...);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISQCcpK4AMngMmAByPgBGmMQgZqQADqgKhE4MHt6%2B/kGp6Y4CYRHRLHEJSXaYDplCBEzEBNk%2BfoG2mPZFDPWNBCVRsfGJtg1NLbntCmP94YPlw2YAlLaoXsTI7BwEmCzJBjsmAMxuBACeyYysmADUysSY%2BKI7pDdMXkQAdN8Aao14TBi9AUx2wJg0AEE0AxNskCDcAGJidJUM43Y4AERuDFQ8Pujzwz0wJgA7FYSRiIH9iACgZgFN9PktjlZIeCIQB6ABUPN5fP5HPZ3N5NwAKvSCAobnzBZDhfyFTzZRD2V50kY7g90AB9DToo5YrDIWjnS4QEwAVisFsp7y%2B32ZZIeBHWDBuVGRxKO5IxzO97NV6uAmse2q4%2BsNNRNF0w5qtlttH1QjMdFmdrvdnpZpN92bZkJ2ewOXrcduT3whxGAIKOYMhDwAjl48A8pUjaCizsc3PidRpXpXq4zQezodNMKpksQbjFUJ53V4GBBU%2BniG6PR2vT6AwXdvsmIcTmXGYOa3XK5gmy36YjkXhUd3e7qB1WGd9QeizAA2cxf28d%2B8uxOJ8uBfId31rUcBHHSdp1necqEXZdSTTTAXTXG4CGILwtxzHcIWmA9CW1JgFCUJpqEXbsuFBZc/QsDgVloTgLV4PwOC0UhUE4NxrGsG4FDWDZbnMI4eFIAhNEYlYAGsQAtSRPg0SQuBJI4NAtDRvy/MwAA5dP0ThJF4FgJA0ft2M47iOF4BQQH7SSOMY0g4FgGBEBANYCGSD5yEoNA9joeJImuThVF0r8AFov0kG5gGQZAbikT4zF4AkiBpdA9H4QQRDEdgpBkQRFBUdQnNIXRQIAd2IJhkk4HgmJYtipK4zgAHkPh8%2BFUCoG5wqimK4oSpLFLMG4IA8QL6GnUSuCWXhHK0FYICQALkiCsgKAgdbNpAYApCSGgTXiOyIBiVqYnCRozga3gruYYgznamJtBqRzxICthBHahhaFu8qsBiLxgFLWgOzu0gsBYQxgHEQHr1qAA3elWonGoPi2cTwh2ZjytoPAYlqp6PCwVqsLwUzuF4FHiFnJQMV2WGCaMKSVioAxqx%2BPBMCq9rLnY8ScuEURxEK4WSrUVrKv0WGUD4yx9EJuzIBWVA4UyOyOEi6Z0ExUxLGsMwrNpzLUdVjoukyFwGHcTxWj0UI5jKCo9AKDIBAmPxQPd7oBhd4ZQOqWoBF6cZ7dyIPOneuoZn9oYEiDmYvb0QimnjhZE5WQT1k2CQmo4VjSEs3hrP6iLoti%2BLEuS8aIFwQgSE/MSFoktmVgQTAmCwBJl1IOTJCOT4AiOElJGUsxJC/cyLS/II8eM0hTLEz4vy4L9dICXT14UrgLRHr9i9a6zbPstunJW9zVs8rrfO23aZpCthOEaFgkZJSKmBuY1YaSgJPi4EpNK%2BAMp4CyqBYWeUxbSAlkoKW5VdBJBqnVO6Bci4lzahwTq3kPg3F6m8Ygb8P5fx/hqLg/9AF6kmqgaa8Rm7LEWmzFya0aEbRmn5HarC9qv3fpFUhB0AhcH7MdHYxAzoXXKg9G6kMpFPRem9BwkMvqMAIL9f6rUgYgzBhDamUMmZGHhpxfADxkao3KujZAmNIY406K1AmRMbqky2JxCmVNxK03ppgRmMMDHhFABfPgnMFDc15vzRgkNIGiwKjA2QksyqcUQbLVmBsrCK3sSrPu6tuhax1gQPWBoUlGxNvEM2GTs7RxDn4CArgU6gSdqUBObs0geyyBHb2KRml%2B2do0qOVtQ7JzaanCp3Qw6zAaZnVOAycjtLTmM%2BYrt5qrFzgVNBLVyplx4cQ7%2BBgyEUKUhNBuGVm7zUYRfDuXce6UALovZe/9lIkn3iSNSkhJ4xVAhgk%2Btgz5LWcq5DyXluocIfsFUKHBX5DRYAoJGiUkbkM%2BMWaYwDG6ZWyrIKB0SiryDgfEnQIAjikGQfVamqyj7rI6rfHqfVwWxUhdCm4sL/4IvhNQ2hs0zBHCOK3H5K0WGsqBVwmaIBoXJGSNqBl2omUkUITFPgdBRHiMutdJ6MilXPVeu9JRNDvqqL%2BgDIxmBgagzEDo8S0NmbON4MYmOKMtacQsVY3RNi8acXscTM4TjyY0jcTTeInjvHMz8UwjmTAuY8z5gLCJaKokSBicVbF0s8VJOMArGw6T4Bqw1tBTgHJdby0NpYY2pdTZgPNn3YO3QbZ22mY7W2GcFkdMKJkWpDaWl1sDpbGO/S%2BjNvLbHPobbE6jG7YMpO/bukTMWTnYS%2BdDKFzWVZTgBCWAQqhTCuFTKDkgKbnNLl7dSCd27sMPuC8TKJH/hyi0mkVLmQ5SSDepKF02S%2BQ5PdA8LTDwtLpb8ARAhqVHlwfFeMjjztLpwU5y0C6pQfaBp93KVi03SM4SQQA)
+
+## Links
+
+- [source code](../../../../conceptrodon/typelivore/concepts/falsify.hpp)
+- [unit test](../../../../tests/unit/concepts/typelivore/falsify.test.hpp)

@@ -7,27 +7,24 @@
 namespace Conceptrodon {
 namespace Pagelivore {
 
-template<template<auto...> class Predicate>
+template<template<auto...> class...Predicates>
 struct Situational
 {
-    template<auto, auto>
-    struct ProtoPage {};
-
-    template<auto IfTrue, auto IfFalse>
-    requires Predicate<IfTrue, IfFalse>::value
-    struct ProtoPage<IfTrue, IfFalse> 
-    { static constexpr auto value = IfTrue; };
-
-    template<auto IfTrue, auto IfFalse>
-    requires (not Predicate<IfTrue, IfFalse>::value)
-    struct ProtoPage<IfTrue, IfFalse> 
+    template<auto IfTrue, auto IfFalse, auto...Others>
+    struct ProtoPage
     { static constexpr auto value = IfFalse; };
+
+    template<auto IfTrue, auto IfFalse, auto...Others>
+    requires (...&&Predicates<IfTrue, IfFalse, Others...>::value)
+    struct ProtoPage<IfTrue, IfFalse, Others...> 
+    { static constexpr auto value = IfTrue; };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 
     template<auto...Args>
-    static constexpr auto Page_v { ProtoPage<Args...>::value };
+    static constexpr auto Page_v
+    { ProtoPage<Args...>::value };
 };
 
 }}

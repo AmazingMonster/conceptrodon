@@ -6,19 +6,19 @@
 
 namespace Conceptrodon {
     
-template<template<typename...> class...Containers>
+template<template<template<typename...> class...> class...Things>
 struct Reverie
 {
-    static constexpr size_t size() { return sizeof...(Containers); }
+    static constexpr size_t size() { return sizeof...(Things); }
 
-    template<template<template<typename...> class...> class Warehouse>
-    struct Detail { using type = Warehouse<Containers...>; };
+    template<template<template<template<typename...> class...> class...> class Intoxication>
+    struct Detail { using type = Intoxication<Things...>; };
 
-    template<template<template<typename...> class...> class...Warehouses>
-    using Flow = Detail<Warehouses...>::type;
-
-    template<template<template<typename...> class...> class Warehouse>
-    using UniFlow = Warehouse<Containers...>;
+    template<template<template<template<typename...> class...> class...> class...Foolishness>
+    using Snow = Detail<Foolishness...>::type;
+    
+    template<template<template<template<typename...> class...> class...> class Intoxication>
+    using UniSnow = Intoxication<Things...>;
 };
  
 }

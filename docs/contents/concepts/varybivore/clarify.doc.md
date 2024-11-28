@@ -1,0 +1,71 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Clarify`
+
+## Description
+
+`Varybivore::Clarify` accepts a callable predicate and a list of variables.
+It returns true if the predicate invoked by the variables returns true and returns false if otherwise.
+
+<pre><code>   Predicate, Variables...
+-> Predicate(Variables...)</code></pre>
+
+## Structure
+
+```C++
+template<auto, auto...>
+concept Clarify = REQUIREMENT;
+```
+
+## Examples
+
+`Clarify` turns a callable predicate into a concept so that it can be used for subsumption.
+
+The following code will fail since `(Pred_0(*))` and `(Pred_0(*)) && (Pred_1(*))` are both atomic:
+
+```C++
+constexpr auto Pred_0 = [](auto...){return true;};
+
+constexpr auto Pred_1 = [](auto...){return true;};
+
+template<auto...Args>
+requires (Pred_0(Args...))
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires (Pred_0(Args...)) && (Pred_1(Args...))
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCspK4AMngMmAByPgBGmMQSAMykAA6oCoRODB7evnppGY4CYRHRLHEJXLaY9kUMQgRMxAQ5Pn6B1bVZDU0EJVGx8Um2jc2teVUKo33hA%2BVDXACUtqhexMjsHGgMU5iqKcQA1ExeRIfKxJjoAPoahyaJACL3AVYBjxAnRAB0v4smAHYLJcCGsGIcCMQvJgHlYAY9YSYNABBJHI7a7fZHL6oc6XG5ce5PF5vD4437ff5AkFgiFQmGJOEIxlotEETAsFIGdkPNzk37I4jABQPbBoy4ARy8eEuCkOEAuV1uEEFwopi3%2BKIx7KxhxiqE8hyoXgYECpwMwoOI4KoYiUiPhrJR7M53IZfNOqApqpFiTFKMl0tl8sVNw0KqFCnVi3uZgAbOY4yH8dcuBG1X9NeiBJiDnqDbQjSazYCLVbwZDoQ6ESi0VMmI5kNcmAolM1qCbeVxRWb/oyOMtaJwArw/BwtKRUJw3NZrIcFKt1phY4keKQCJoB8sANYgAJx74ADjjUgCALjkgAnIlz2ZkkOOJJeCwJBoNKQxxOpxxeAoQO%2BN3HAdSDgWAYEQEBVgIFJTnISg0E5Oh4kiVhNlUY8AFoL0OYBkGQQ4pG%2BMxeCuQgSDwdA9H4QQRDEdgpBkQRFBUdQgNIXQqgAd2IJgUk4HhB2HUdN0nTgAHlThgghDlQKhDnQuMsMkHC8IIyQiPlDxEPoI5zFXRZeEArRlggJAEJSJCyAoCBzMskBgCkMw%2BDodliD/CAYhEmJwiaABPfjeG85hiF8sSYm0TAHAC0gELYQQxIYWh/LYrAYi8YA%2BVoWg/24XgsBYQxgHEFKZUixwADdMByic9ki05NjXcJ2QfCdaDwGIeJCjwsBEyE8BfXLSEq4h9SUR4OUKtqjE3ZYqAMYUADU8EwTixJSRhouo4RRHEBituYtQRI4/RCpQWdLH0dq/0gZZUBSOocowqZ0AeR5TEsawzC/YbiAoqr4GWOwyqyFwGHcTw2j0UJZjKCp8nSTIBHGPwqgKRGGH6WGFk6YGBB6MYIYmHGHG6aZMcGSoRl6ZG9HrZpyfmSpAcXDYJEEjgRw/ETv3kzDsNw/DCLMeVcDI3S7yWQyZuWBBMCYLAEjNUhd0kRJvmvAFJA0SQzEkOM333S99E4J9SBfVdvhPOND0vQ8uDjAJJC4AJrzjLm2O/X9/3XGaQPA0zIMk2DrNsnSULYTgmhYcqAQwphDmQAwjAIy9vi4b4avwIhfsoqotto3bpH2pRDrY3QnO43iAvZznP14b8JOg04ZLkqOY7jhOk%2BAFO04zzTUG0%2BIVzMAyfaAkyzIHiydLgmyp7stvY8TwquEvLh3xoWhXPczy2KCvzov3kKwoiqLBtixgCASpKRNS9LMuy6L8smzYJ3wS4Scq6qSNUOr2WipqNQRJtQ6n5bqr9DK/QGmuYao1MDjQKkYKaoBx58HmgoJaK01obUGvnHa9Ei6yAOqxCc5cTrTXelYC6IDrpKzug9TgT0CAvSeJQz6314g53%2BjdYmdRQbg1yCjYIYMGZw1RgjOoNNxGFCyKI7GQMSZ42mFI3hpNehyMpnTFohMhFaI0WzFYaxWZLGNhzYSHtODHGINHWO8dl7J1Xr3O4EBRbZxXJLMexkZZywVpQdmptzap21gCF2AIASJB1nrJ27svycC9gBX2oEIJQSkrPUOyFUKR2sdhFgChyr4XKo4t0UwSJZ3IrnRi206ISEIUxEuJCdAgGSJXPiuUa7mNiRwRuUkW5WJYDkvJBSikNiqtJCAWlp5Dz0okUeRlgIB3SVZeC88dIgHySkFI1xCmXmuMUggzZslFxcvEHeXkfIhUPuc0K4UyrRQvvFRKyU36YDShlMQj9BrPyQRA0g79gZfxErVZA9UAGCCAWxEBnVfLgN6lA6KsD0jwImkg8IKDjJoKYItZaq11pjjXHg6pe0iH1KOk08hxhzo2BoQDSc90sg5QAPTPTOh9SwX164/T%2BrQwGNRcZ%2BAgK4FR0NSgU3hjIpGOixXo30ZMXlij6jKMlbKroSj1Ew1FZMRVgjaZk3VYzAxC4jH0XaTE%2Bulio4DPyYcbZ3w9kizKeLfSUtx7ePlkMJWD4An%2BFTokRIAQAja3XhoX155DymtEj%2BWw3s5kamViAVWadEiHkdneANcY7znlMYkDpZrI0xvZsRcNntPFbiGickGkggA%3D%3D)
+
+By turning `(Pred_0(*))` and `(Pred_1(*))` into concepts, we allow compilers to perform proper subsumption.
+
+```C++
+template<auto...Args>
+requires Clarify<Pred_0, Args...>
+constexpr bool fun(){return false;}
+
+template<auto...Args>
+requires Clarify<Pred_0, Args...> && Clarify<Pred_1, Args...>
+constexpr bool fun(){return true;}
+
+static_assert(fun<1>());
+```
+
+## Implementation
+
+```C++
+template<auto Predicate, auto...Variables>
+concept Clarify = Predicate(Variables...);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISQDMpK4AMngMmAByPgBGmMQgZqQADqgKhE4MHt6%2B/kGp6Y4CYRHRLHEJSXaYDplCBEzEBNk%2BfoG2mPZFDPWNBCVRsfGJtg1NLbntCmP94YPlw2YAlLaoXsTI7BwEmCzJBjsmAW5MXkQA1MrEmPiiO6Tnp0QAdK8Aao14TDH0CkfYJg0AEE0AxNskCOc3AZiHgqABPc5HAAil2utyYOwgH1h31%2Br2eSyOVmBgKBAHoAFTUmm0unkslUmnnAAqmGmCnOtIZwKZdP51J5QLJoOmmFUyWIjzOqDRNwA%2BhokQFUSYAKxWNXIiBPVAEokAdgs1wI6wY5wIxC8mGJJgNyNtpOBop2Eqlurl6HlXGVqo16u1uv1duNmFNxHNluttvtjuFwJ2ewONuOQdeQOIwD%2BAQBwOuAEcvHhrpzoZ8EUc3FcFRoHhmswT/iKBGK3ecYqhPOcqF4GBBDaHw%2BaqGIlDGHU6gYn9piUycZQT69ncxnMIXi%2ByoTC4fDK9WvbXzkvGzmkWYAGzmc9b8u7477711zMKE8rl3iyXtzu0bu9/shk0zQtK0UysWNJ2mTE8GQeUmAUJQmmoXtKy4f5%2ByJAILA4FZaE4NVeD8DgtFIVBODcaxrHOBQ1g2TAzwCHhSAITRsJWABrEA1UkZ4NEkLgDQCDQ1Q0C9zzMAAOcT9E4SReBYCQNFrQjiNIjheAUEBa2YojsNIOBYBgRAQDWAhkjOchKDQPY6HiSJWC2VRxPPABac9JHOYBkGQc4pGeMxeBuQgSDwdA9H4QQRDEdgpBkQRFBUdQdNIXQuFIAB3YgmGSTgeBwvCCJYkjOAAeTOMzIVQKhzkcly3I8ryfO4sxzggDxrPoKVzAYpZeG0rQVggJArOSGyyAoCBhtGkBgCkJIaFoHZiA0iAYkKmJwkaeEct4dbmGIeFipibQam0xirLYQRioYWgtqSrAYi8YATloWgNO4XgsBYQxgHEO6N1qAA3dlCvFGozi2Rjwh2XCktoPAYky/aPCwQrLTweT3tIIHiA7JRkV2b64aMFiVioAwszePBMDS4rkkYbbYuEURxBi8L5CUNRCpS/RvpQCjLH0eGNMgFZUAhTI3uc6Z0BRUxLGsMwVOx2EsGF/sOi6TIXAYdxPFaPRQjmMoKj0AoMgECY/FSs3ugGY3hlS6pagEXpxj13JHc6E66hmO2hgSR2ZktvRIKaP2FgDlZqPWTYJDyjh8NIZTeFU6qnNc9zPO83zmogXAgs6sxut6kmVgQTAmCwBJ1Y4wJngATgCA1JF4sxJHPRS1XPevpI4WTSHkhjnnPLhz3E%2BvxNHriuDVRvzyTwrVPUzSmJJvTDMG4yyvM8bJo6uy2E4RoWABg1nKYc5kAMIwfPr54uB4gL8CIFWwtkSKWekNn4s5pLdCSDKWVtrx0TsnIqHBSqmTOOcSqjxiAnzPhfK%2B31b73x4i1NqI0Or0WWCXHSA0hqoHavECyE0iFYOGMfU%2BzlkFGC4PXLgtZ5qLWWqtJKu1NoMw4ftQ6x0HAM3OowAgV0bqFXuo9Z6r0GafUJlsYi%2BBriA2BklUGyBwYMyhp0QqcMEabWRnI3qsIMaMWxrjTA%2BMvpGCJqAfBfByYKEptTWm9NMZsw/tFL%2Bsgf6JWIv/HmxM5ZWAFjotWotxYtk4FLAgMsVSBIVkreIKtgYiw1t7ZwEBXDB1SobUo/tTZpHNlkd2VsUgFNtkbPJntNYuyDsUkOXtnY9F9hUiOIdak5BKaHWYuTWlcCjjRWOfTe6gMXpwOBCDz6X2vsAVBD8lR52fiQeifS8H9TLhXKulB4790HnfXiBpZ4GgEpINublUpgKXrYFefVdL6SMiZcqpC962XskfeBdUWAKABt5AG9DnjJmmE/AuIU34RWZh4xm3iuYgCCIA7K70QEFSSqpSB5UYFVWPh8r5Py/kAshK1cho16IBB6qvWxm9nljUsoSjqIBvnJGSPKX59d5R4tgu8r%2BdAWGUDYcRbht1GL8t4SdARRCLrCOurdeRmAHpPTEFIzGMirEGNIAo72QM3rEVUeozGmiYbER0YjeE%2BjUZGIZqYtI5iCZWPCDY/qdimAUypjTOmhFGJuPBRITxcUOY%2BJ0DC/xxh%2BY2BCfAMJ3Q3rkmlnzeWlhFYp2ViFZJ6snbdG1rrDpBsdbhxNtbMpmQsmlMKJkHNDtUmNNds0OpVS0lNL6KWgOow%2BiFq6Q2uOqwY7RURQvZFYzMXuU%2Bd884zL/mzmmC1fOL9lmkpuUsdZldhjqxhjsxId8AgBDVMJPiil10GjHj2lSnBl5aVLqQWuaoG5qnEheeukh64CSblwIIMMAhIsPWpMlaze7%2BQPSnI9n7WJY3iOkZwkggA)
+
+## Links
+
+- [source code](../../../../conceptrodon/varybivore/concepts/clarify.hpp)
+- [unit test](../../../../tests/unit/concepts/varybivore/clarify.test.hpp)

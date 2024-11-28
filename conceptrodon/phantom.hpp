@@ -6,22 +6,21 @@
 
 namespace Conceptrodon {
     
-template<template<auto...> class...Sequences>
+template<template<template<auto...> class...> class...Things>
 struct Phantom
 {
-    static constexpr size_t size() { return sizeof...(Sequences); }
+    static constexpr size_t size() { return sizeof...(Things); }
 
-    template<template<template<auto...> class...> class Stockroom>
-    struct Detail { using type = Stockroom<Sequences...>; };
+    template<template<template<template<auto...> class...> class...> class Intoxication>
+    struct Detail { using type = Intoxication<Things...>; };
 
-    template<template<template<auto...> class...> class...Stockrooms>
-    using Sail = Detail<Stockrooms...>::type;
-    
-    template<template<template<auto...> class...> class Stockroom>
-    using UniSail = Stockroom<Sequences...>;
+    template<template<template<template<auto...> class...> class...> class...Foolishness>
+    using Hail = Detail<Foolishness...>::type;
+
+    template<template<template<template<auto...> class...> class...> class Intoxication>
+    using UniHail = Intoxication<Things...>;
 };
  
 }
 
 #endif
-

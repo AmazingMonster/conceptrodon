@@ -6,19 +6,19 @@
 
 namespace Conceptrodon {
     
-template<template<template<template<template<auto...> class...> class...> class...> class...Dreams>
+template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
 struct Persist 
 {
-    static constexpr size_t size() { return sizeof...(Dreams); }
+    static constexpr size_t size() { return sizeof...(Perseverance); }
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Realization>
-    struct Detail { using type = Realization<Dreams...>; };
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Beginning>
+    struct Detail { using type = Beginning<Perseverance...>; };
 
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
-    using Will = Detail<Agreements...>::type;
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
+    using Dawn = Detail<Agreements...>::type;
     
-    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class Realization>
-    using UniWill = Realization<Dreams...>;
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class Beginning>
+    using UniDawn = Beginning<Perseverance...>;
 };
  
 }

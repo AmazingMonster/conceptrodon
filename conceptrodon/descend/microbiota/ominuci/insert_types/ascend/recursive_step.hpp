@@ -226,7 +226,7 @@ struct CONCEPTRODON_OMINUCI_INSERT_TYPES_FUNCTION_NAME
                 ::template CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <RestElements...> ()
             )
         >
-        ::template CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE
+        ::template CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE
         <
 
 #define CONCEPTRODON_CYTOPLASM_MICRO_RIVER_PREFIX_SYMBOLS
@@ -250,37 +250,12 @@ struct CONCEPTRODON_OMINUCI_INSERT_TYPES_FUNCTION_NAME
 
         >;
 
-        struct CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-        {
-            template
-            <
-                CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-                ...Elements
-            >
-            struct CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE
-            {
-                using CONCEPTRODON_NUCLEOLUS_TYPE_RESULT = decltype
-                (
-                    CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <Elements...>()
-                );
-            };
-        };
-
         template
         <
             CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
             ...Elements
         >
         using CONCEPTRODON_NUCLEOLUS_MOLD_SYNOPSIS_TEMPLATE 
-        = CONCEPTRODON_NUCLEOLUS_SEPARATOR_IDENTIFIER
-        ::template CONCEPTRODON_NUCLEOLUS_MOLD_PROTO_TEMPLATE <Elements...>;
-
-        template
-        <
-            CONCEPTRODON_NUCLEOLUS_MOLD_PARAMETER_CATEGORY
-            ...Elements
-        >
-        using CONCEPTRODON_NUCLEOLUS_MOLD_ALIAS_TEMPLATE 
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <Elements...>()

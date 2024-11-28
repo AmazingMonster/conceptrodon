@@ -11,7 +11,7 @@ template<template<template<auto...> class...> class Operation>
 struct Reveal
 {
     template<template<auto...> class...Sequences>
-    using Page = Operation<Sequences...>::type;
+    using Rail = Operation<Sequences...>::type;
 };
 
 }}
