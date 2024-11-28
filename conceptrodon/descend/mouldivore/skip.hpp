@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_PAGELIVORE_SKIP_H
-#define CONCEPTRODON_PAGELIVORE_SKIP_H
+#ifndef CONCEPTRODON_MOULDIVORE_SKIP_H
+#define CONCEPTRODON_MOULDIVORE_SKIP_H
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
@@ -22,15 +22,15 @@
 #include "conceptrodon/omennivore/press.hpp"
 
 namespace Conceptrodon {
-namespace Pagelis {
+namespace Moldiae {
 
-template<template<auto...> class Operation, typename...Items>
+template<template<typename...> class Operation, typename...Items>
 struct LoadSkip
 {
     struct Commit
     {
-        template<auto...Variables>
-        using Page = Omennivore::Press<Operation<Variables...>>::template Mold<Items...>;
+        template<typename...Elements>
+        using Mold = Omennivore::Press<Operation<Elements...>>::template Mold<Items...>;
     };
 
     template<typename...Elements>
@@ -78,10 +78,10 @@ struct LoadSkip
 
 }
 
-namespace Pagelivore {
+namespace Mouldivore {
 
-template<template<auto...> class Operation>
-struct Skip: public Pagelis::LoadSkip<Operation> {};
+template<template<typename...> class Operation>
+struct Skip: public Moldiae::LoadSkip<Operation> {};
 
 }}
 
