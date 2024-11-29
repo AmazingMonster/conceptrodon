@@ -5,8 +5,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::Has` accepts a list of elements and returns a predicate.
-When invoked, the predicate returns true if the previously provided elements contain all its arguments and returns false if otherwise.
+`Typelivore::Has` accepts a list of elements and returns a function.
+When invoked, the function returns true if the previously provided elements contain all its arguments and returns false if otherwise.
 
 <pre><code>   Elements...
 -> Arguments...
@@ -37,8 +37,8 @@ struct Has
 
 ## Examples
 
-We will check whether `int*, void`  is contained in `int, int*, int**`.
-Then, we will check whether `int, int**`  is contained in `int, int*, int**`.
+We will check whether `int*, void`  is contained in `int, int*, int**, int**`.
+Then, we will check whether `int, int**`  is contained in `int, int*, int**, int**`.
 
 ```C++
 template<typename...Args>

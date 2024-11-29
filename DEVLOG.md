@@ -1,5 +1,41 @@
 # Diary
 
+## 2024/11/29
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add <code>Agent</code> to <code>Raillivore</code> and <code>Roadrivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add an index page for the documentation</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Finished metafunctions for all namespaces except <code>Omennivore</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/28
 
 I will succeed. Everyone will know my name.
