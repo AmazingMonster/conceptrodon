@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_PAGE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_PAGE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_TYPICAL_PASTE_TYPE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_TYPICAL_PASTE_TYPE_H
 
-#include <concepts>
-#include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
-#include "conceptrodon/carrier.hpp"
+#include <utility>
+#include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
+#include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -17,42 +17,15 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestEasyRepackPage {
+namespace TestEasyTypicalPasteType {
 
 
 
 
 /******************************************************************************************************/
-template<size_t>
-struct Tester
-{
-    template<auto...>
-    struct ProtoPage {};
-
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
-};
-
-template<template<auto...> class...>
-struct Transport {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SHEEP_PREFIX    \
-    Tester<
-#define SHEEP_SUFFIX    \
-    >::Page
-#define SHEEP_SEPARATOR \
-    ,
-
-using SupposedResult = Transport<SHEEP_SPROUT(240)>;
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
 
@@ -63,14 +36,13 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Carrier<Tester<
+    Capsule<std::integral_constant<int,
 #define SHEEP_SUFFIX    \
-    >::Page>
+    >>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::UniSail<Transport>);
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::Sail<Transport>);
+SAME_TYPE(EasyTypicalPaste<SHEEP_SPROUT(240)>::type);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -1,44 +1,58 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_TYPES_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_HARVEST_TYPES_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_PAGE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_PAGE_H
 
 #include <concepts>
-#include <type_traits>
-#include "conceptrodon/descend/omennivore/harvest_types.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
+#include "conceptrodon/carrier.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
-#include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
+#include "macaron/judgmental/amenity/define_same_type.hpp"
+
 
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestHarvestTypes {
+namespace TestEasyKindredRepackPage {
 
 
 
 
 /******************************************************************************************************/
-template<typename...Elements>
-requires (sizeof...(Elements)==240)
-struct TesterA {};
+template<size_t>
+struct Tester
+{
+    template<auto...>
+    struct ProtoPage {};
 
-template<auto I>
-struct TesterB
-{using type = std::integral_constant<int, I>; };
+    template<auto...Variables>
+    using Page = ProtoPage<Variables...>;
+};
+
+template<template<auto...> class...>
+struct Transport {};
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+#define SHEEP_PREFIX    \
+    Tester<
+#define SHEEP_SUFFIX    \
+    >::Page
+#define SHEEP_SEPARATOR \
+    ,
+
+using SupposedResult = Transport<SHEEP_SPROUT(240)>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
 /******************************************************************************************************/
 
 
@@ -49,28 +63,27 @@ using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    TesterB<
+    Carrier<Tester<
 #define SHEEP_SUFFIX    \
-    >
+    >::Page>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(HarvestTypes<SHEEP_SPROUT(240)>::UniRoad<TesterA>);
-SAME_TYPE(HarvestTypes<SHEEP_SPROUT(240)>::Road<TesterA>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::UniSail<Transport>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Sail<Transport>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
 #undef SHEEP_SEPARATOR
 
 #undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
+/**************************************************************************************************/
 
 
 }}}}
 
-#include "macaron/judgmental/amenity/undef_same_type.hpp"
+
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
 
 #endif

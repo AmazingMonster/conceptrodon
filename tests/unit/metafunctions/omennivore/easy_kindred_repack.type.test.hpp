@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_TYPE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_TYPE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_TYPE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_TYPE_H
 
 #include <utility>
-#include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -17,7 +17,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestEasyRepackType {
+namespace TestEasyKindredRepackType {
 
 
 
@@ -42,8 +42,8 @@ using SupposedResult = std::tuple<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::UniRoad<std::tuple>);
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::Road<std::tuple>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::UniRoad<std::tuple>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Road<std::tuple>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

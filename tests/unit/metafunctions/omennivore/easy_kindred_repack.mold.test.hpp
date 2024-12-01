@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_MOLD_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_MOLD_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_MOLD_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_MOLD_H
 
 #include <concepts>
-#include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/vehicle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -17,7 +17,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestEasyRepackMold {
+namespace TestEasyKindredRepackMold {
 
 
 
@@ -69,8 +69,8 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::UniFlow<Transport>);
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::Flow<Transport>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::UniFlow<Transport>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Flow<Transport>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

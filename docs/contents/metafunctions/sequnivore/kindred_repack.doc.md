@@ -8,15 +8,15 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Sequnivore::KindredRepack` accepts a list of packed sequences and returns a function.
 When invoked by an operation, the function concatenates the packed sequences and instantiates the operation with the result.
 
-<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Variables<sub><i>i</i></sub>...&gt;...
+<pre><code>   Sequence<sub><i>0</i></sub>&lt;Vs<sub><i>0</i></sub>...&gt;, Sequence<sub><i>1</i></sub>&lt;Vs<sub><i>1</i></sub>...&gt;, ..., Sequence<sub><i>n</i></sub>&lt;Vs<sub><i>n</i></sub>...&gt;
 -> Operation
--> Operation&lt;Variables<sub><i>0</i></sub>..., Variables<sub><i>1</i></sub>..., ...></code></pre>
+-> Operation&lt;Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
 
 `Sequnivore::KindredRepack` can also handle `std::integer_sequence`. The function first `static_cast` integers to `std::make_signed_t<size_t>`. Then, it uses the result to invoke an operation.
 
-<pre><code>   ...Sequence<sub><i>i</i></sub>&lt;Type<sub><i>i</i></sub>, Variables<sub><i>i</i></sub>...&gt;...
+<pre><code>   Sequence<sub><i>0</i></sub>&lt;Type<sub>0</sub>, Vs<sub><i>0</i></sub>...&gt;, Sequence<sub><i>1</i></sub>&lt;Type<sub>1</sub>, Vs<sub><i>1</i></sub>...&gt;, ..., Sequence<sub><i>n</i></sub>&lt;Type<sub>n</sub>, Vs<sub><i>n</i></sub>...&gt;
 -> Operation
--> Operation&lt;(size_t)Variables<sub><i>0</i></sub>..., (size_t)Variables<sub><i>1</i></sub>..., ...></code></pre>
+-> Operation&lt;Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

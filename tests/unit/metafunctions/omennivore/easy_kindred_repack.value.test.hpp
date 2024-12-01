@@ -1,10 +1,10 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_VALUE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_REPACK_VALUE_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_VALUE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_VALUE_H
 
-#include "conceptrodon/descend/descend/omennivore/easy_repack.hpp"
+#include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -16,7 +16,7 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestEasyRepackValue {
+namespace TestEasyKindredRepackValue {
 
 
 
@@ -41,8 +41,8 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::UniRail<std::index_sequence>);
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::Rail<std::index_sequence>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::UniRail<std::index_sequence>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Rail<std::index_sequence>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -83,8 +83,8 @@ using SupposedShuttle = Shuttle<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
-SAME_TYPE(EasyRepack<SHEEP_SPROUT(240)>::Rail<Shuttle>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
+SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Rail<Shuttle>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

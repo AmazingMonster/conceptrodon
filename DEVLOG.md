@@ -1,5 +1,62 @@
 # Diary
 
+## 2024/12/01
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add documentations for <code>Omennivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+## 2024/11/30
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add DOCS.md to the root directory</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add documentations for <code>Omennivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In Progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/11/29
 
 ### Todo

@@ -37,7 +37,7 @@ struct Zip
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::value...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::value...>;
         };
 
         template<auto...Agreements>
@@ -45,7 +45,7 @@ struct Zip
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::value...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::value...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -92,7 +92,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <typename Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::type...>;
+            <typename TypicalAmong<Packages>::template ProtoPage<I>::type...>;
         };
 
         template<auto...Agreements>
@@ -100,7 +100,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <typename Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::type...>;
+        <typename TypicalAmong<Packages>::template ProtoPage<I>::type...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -147,7 +147,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Mold...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Mold...>;
         };
 
         template<auto...Agreements>
@@ -155,7 +155,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Mold...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Mold...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -202,7 +202,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Page...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Page...>;
         };
 
         template<auto...Agreements>
@@ -210,7 +210,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Page...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Page...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -257,7 +257,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Road...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Road...>;
         };
 
         template<auto...Agreements>
@@ -265,7 +265,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Road...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Road...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -312,7 +312,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Rail...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Rail...>;
         };
 
         template<auto...Agreements>
@@ -320,7 +320,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Rail...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Rail...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -367,7 +367,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Flow...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Flow...>;
         };
 
         template<auto...Agreements>
@@ -375,7 +375,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Flow...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Flow...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -422,7 +422,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Sail...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Sail...>;
         };
 
         template<auto...Agreements>
@@ -430,7 +430,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Sail...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Sail...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -477,7 +477,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Snow...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Snow...>;
         };
 
         template<auto...Agreements>
@@ -485,7 +485,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Snow...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Snow...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -532,7 +532,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Hail...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Hail...>;
         };
 
         template<auto...Agreements>
@@ -540,7 +540,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Hail...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Hail...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -587,7 +587,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
         };
 
         template<auto...Agreements>
@@ -595,7 +595,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
 
 /**********/
         template<template<typename...> class OuterOperation>
@@ -642,7 +642,7 @@ struct Zip<Packages...>
         struct Detail
         {
             using type = Operation
-            <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Calm...>;
+            <TypicalAmong<Packages>::template ProtoPage<I>::template Calm...>;
         };
 
         template<auto...Agreements>
@@ -650,7 +650,7 @@ struct Zip<Packages...>
 
         template<size_t I>
         using UniPage = Operation
-        <Omennivore::TypicalAmong<Packages>::template ProtoPage<I>::template Calm...>;
+        <TypicalAmong<Packages>::template ProtoPage<I>::template Calm...>;
 
 /**********/
         template<template<typename...> class OuterOperation>

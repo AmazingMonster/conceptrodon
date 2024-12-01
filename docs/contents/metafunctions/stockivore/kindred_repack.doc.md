@@ -8,9 +8,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Stockivore::KindredRepack` accepts a list of packed stockrooms and returns a function.
 When invoked by an operation, the function concatenates the packed stockrooms and instantiates the operation with the result.
 
-<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...
+<pre><code>  Stockroom<sub><i>0</i></sub>&lt;Seqs<sub><i>0</i></sub>...&gt;,Stockroom<sub><i>1</i></sub>&lt;Seqs<sub><i>1</i></sub>...&gt;, ...,Stockroom<sub><i>n</i></sub>&lt;Seqs<sub><i>n</i></sub>...&gt;
 -> Operation
--> Operation&lt;Sequences<sub><i>0</i></sub>..., Sequences<sub><i>1</i></sub>..., ...></code></pre>
+-> Operation&lt;Seqs<sub><i>0</i></sub>..., Seqs<sub><i>1</i></sub>..., ..., Seqs<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

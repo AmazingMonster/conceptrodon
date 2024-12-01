@@ -65,6 +65,7 @@ EQUAL_VALUE(Total<Sunrise<Pursuit, Pursuit, Pursuit, Pursuit>>::value);
 EQUAL_VALUE(Total<Morning<Persist, Persist, Persist, Persist>>::value);
 EQUAL_VALUE(Total<GlowVessel<Sunrise, Sunrise, Sunrise, Sunrise>>::value);
 EQUAL_VALUE(Total<DawnVessel<Morning, Morning, Morning, Morning>>::value);
+EQUAL_VALUE(Total_v<DawnVessel<Morning, Morning, Morning, Morning>>);
 
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/

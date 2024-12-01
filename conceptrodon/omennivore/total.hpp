@@ -165,6 +165,8 @@ template
 struct Total<Sunlight<Sunlights...>>
 { static constexpr size_t value = sizeof...(Sunlights); };
 
+template<typename PackedVessel>
+constexpr size_t Total_v = Total<PackedVessel>::value;
 
 }}
 

@@ -8,8 +8,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Cotanivore::TypicalPaste` accepts a list of packed containers.
 It concatenates them together and uses the first container to hold the result.
 
-<pre><code>   ...Container<sub><i>i</i></sub>&lt;Elements<sub><i>i</i></sub>...&gt;...
--> Container<sub><i>0</i></sub>&lt;Elements<sub><i>0</i></sub>..., Elements<sub><i>1</i></sub>..., ...></code></pre>
+<pre><code>   Container<sub><i>0</i></sub>&lt;Es<sub><i>0</i></sub>...&gt;, Container<sub><i>1</i></sub>&lt;Es<sub><i>1</i></sub>...&gt;, ..., Container<sub><i>n</i></sub>&lt;Es<sub><i>n</i></sub>...&gt;
+-> Container<sub><i>0</i></sub>&lt;Es<sub><i>0</i></sub>..., Es<sub><i>1</i></sub>..., ..., Es<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

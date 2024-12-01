@@ -8,8 +8,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Stockivore::TypicalPaste` accepts a list of packed stockrooms.
 It concatenates them together and uses the first stockroom to hold the result.
 
-<pre><code>   ...Stockroom<sub><i>i</i></sub>&lt;Sequences<sub><i>i</i></sub>...&gt;...
--> Stockroom<sub><i>0</i></sub>&lt;Sequences<sub><i>0</i></sub>..., Sequences<sub><i>1</i></sub>..., ...></code></pre>
+<pre><code>   Stockroom<sub><i>0</i></sub>&lt;Seqs<sub><i>0</i></sub>...&gt;, Stockroom<sub><i>1</i></sub>&lt;Seqs<sub><i>1</i></sub>...&gt;, ..., Stockroom<sub><i>n</i></sub>&lt;Seqs<sub><i>n</i></sub>...&gt;
+-> Stockroom<sub><i>0</i></sub>&lt;Seqs<sub><i>0</i></sub>..., Seqs<sub><i>1</i></sub>..., ..., Seqs<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

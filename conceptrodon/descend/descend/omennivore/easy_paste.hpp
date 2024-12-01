@@ -16,26 +16,30 @@ namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Packages>
-struct TypicalEasyPaste
-{ using type = Sequnivore::Paste<Packages...>; };
+struct EasyTypicalPaste
+: public Sequnivore::TypicalPaste<Packages...>
+{};
 
 template<typename...Packages>
 requires AllMoldful<Packages...>
-struct TypicalEasyPaste<Packages...>
-{ using type = Cotanivore::Paste<Packages...>; };
+struct EasyTypicalPaste<Packages...>
+: public Cotanivore::TypicalPaste<Packages...>
+{};
 
 template<typename...Packages>
 requires AllRoadful<Packages...>
-struct TypicalEasyPaste<Packages...>
-{ using type = Warehivore::Paste<Packages...>; };
+struct EasyTypicalPaste<Packages...>
+: public Warehivore::TypicalPaste<Packages...>
+{};
 
 template<typename...Packages>
 requires AllRailful<Packages...>
-struct TypicalEasyPaste<Packages...>
-{ using type = Stockivore::Paste<Packages...>; };
+struct EasyTypicalPaste<Packages...>
+: public Stockivore::TypicalPaste<Packages...>
+{};
 
-template<typename...Packables>
-using EasyPaste = TypicalEasyPaste<Packables...>::type;
+template<typename...Packages>
+using EasyPaste = EasyTypicalPaste<Packages...>::type;
 
 }}
 

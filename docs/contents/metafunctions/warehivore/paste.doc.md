@@ -8,8 +8,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Warehivore::Paste` accepts a list of packed warehouses.
 It concatenates them together and uses the first warehouse to hold the result.
 
-<pre><code>   ...Warehouse<sub><i>i</i></sub>&lt;Containers<sub><i>i</i></sub>...&gt;...
--> Warehouse<sub><i>0</i></sub>&lt;Containers<sub><i>0</i></sub>..., Containers<sub><i>1</i></sub>..., ...></code></pre>
+<pre><code>   Warehouse<sub><i>0</i></sub>&lt;Cons<sub><i>0</i></sub>...&gt;, Warehouse<sub><i>1</i></sub>&lt;Cons<sub><i>1</i></sub>...&gt;, ..., Warehouse<sub><i>n</i></sub>&lt;Cons<sub><i>n</i></sub>...&gt;
+-> Warehouse<sub><i>0</i></sub>&lt;Cons<sub><i>0</i></sub>..., Cons<sub><i>1</i></sub>..., ..., Cons<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 
