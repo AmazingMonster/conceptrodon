@@ -1,7 +1,9 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `AllClarify`
+# `Pagelivore::AllClarify`
+
+<p style='text-align: right;'><a href="../../../index.md#conceptualizations-1">To Index</a></p>
 
 ## Description
 
