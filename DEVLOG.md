@@ -1,5 +1,26 @@
 # Diary
 
+## 2024/12/02
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Post on r/cpp 'show and  tell'</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/01
 
 ### Todo
@@ -44,7 +65,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>Done</td>
         </tr>
       </tbody>
     </table>

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Conceptrodon
 
-A C++20 metaprogramming library focusing on metafunction composition.
+A C++20 metaprogramming library focusing on metafunction composition. Check out [DOCS.md](./DOCS.md) for more informations.
 
 ## Introduction
 
@@ -262,12 +262,12 @@ The most helpful thing is always the simplest.
 However, those simplest things never get explained.
 This doesn't seem right.
 
-[The documentation of Conceptrodon](./docs/index.md) will focus on the library's implementation details and explain the mechanisms with testable code.
+[The documentation of Conceptrodon](./DOCS.md) will focus on the library's implementation details and explain the mechanisms with testable code.
 It will assume the reader is a C++ programmer who may not be interested in metaprogramming but is willing to give it a try.
 The contents will be elementary but not entirely from scratch to bore everyone out.
 Functional programming will be mentioned as a comparison or inspiration, but it will not be a roadblock to understanding C++ techniques.
 
-## Speed
+## Performance
 
 Nothing intrinsic prevents Conceptrodon from utilizing a fast algorithm.
 While this library requires metafunctions to follow the same pattern, it is uninterested in what is happening within them.
@@ -325,4 +325,4 @@ You are good to go.
 
 ## Links
 
-[Documentation for Conceptrodon(WIP)](./docs/index.md)
+[Documentation for Conceptrodon(WIP)](./DOCS.md)
