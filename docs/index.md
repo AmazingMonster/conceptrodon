@@ -563,7 +563,194 @@ SPDX-License-Identifier: Apache-2.0 -->
 
   <!-- Omennivore -- Start -->
   <details><summary><h3>Omennivore</h3></summary>
-  
+    <!-- List Modifications -- Start -->
+    <table>
+      <caption><b>List Modifications</b></caption>
+      <thead>
+        <tr>
+          <th style="text-align: center">Name</th>
+          <th style="text-align: center">Functionality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/bi_harvest.doc.md">BiHarvest</a></td>
+          <td>Collect the type results or the value results of the elements and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/classic_modify_types.doc.md">ClassicModifyTypes</a></td>
+          <td>Transform elements at given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/easy_kindred_repack.doc.md">EasyKindredRepack</a></td>
+          <td>Concatenate packed vessels and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/easy_paste.doc.md">EasyPaste</a></td>
+          <td>Concatenate packed vessels</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/easy_typical_paste.doc.md">EasyTypicalPaste</a></td>
+          <td>Concatenate packed vessels</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/extend_back.doc.md">ExtendBack</a></td>
+          <td>Append items to the back</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/extend_back.doc.md">ExtendFront</a></td>
+          <td>Append items to the front</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/insert_types.doc.md">InsertTypes</a></td>
+          <td>Insert elements into given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/insert_values.doc.md">InsertValues</a></td>
+          <td>Insert variables into given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/modify_types.doc.md">ModifyTypes</a></td>
+          <td>Transform elements at given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/modify_values.doc.md">ModifyValues</a></td>
+          <td>Transform variables at given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/remove_types.doc.md">RemoveTypes</a></td>
+          <td>Remove elements at given positions and then invoke an operation</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/remove_values.doc.md">RemoveValues</a></td>
+          <td>Remove variables at given positions and then invoke an operation</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- List Modifications -- End -->
+    <!-- Higher-Order Modifications -- Start -->
+    <table>
+      <caption><b>Higher-Order Modifications</b></caption>
+      <thead>
+        <tr>
+          <th style="text-align: center">Name</th>
+          <th style="text-align: center">Functionality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/laborious_press.doc.md">LaboriousPress</a></td>
+          <td>Flatten the layers of a metafunction</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/press.doc.md">Press</a></td>
+          <td>Flatten the layers of a metafunction</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/send.doc.md">Send</a></td>
+          <td>Invoke an operation with the items inside a packed vessel</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Higher-Order Modifications -- End -->
+    <!-- Item Examinations -- Start -->
+    <table>
+      <caption><b>Item Examinations</b></caption>
+      <thead>
+        <tr>
+          <th style="text-align: center">Name</th>
+          <th style="text-align: center">Functionality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/among.doc.md">Among</a></td>
+          <td>Pick out the item at a given index from a packed vessel</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_calmful.doc.md">IsCalmful</a></td>
+          <td>Check if a type is a packed <code>Calm</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_coolful.doc.md">IsCoolful</a></td>
+          <td>Check if a type is a packed <code>Cool</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_dawnful.doc.md">IsDawnful</a></td>
+          <td>Check if a type is a packed <code>Dawn</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_flowful.doc.md">IsFlowful</a></td>
+          <td>Check if a type is a packed <code>Flow</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_glowful.doc.md">IsGlowful</a></td>
+          <td>Check if a type is a packed <code>Glow</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_gritful.doc.md">IsGritful</a></td>
+          <td>Check if a type is a packed <code>Grit</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_hailful.doc.md">IsHailful</a></td>
+          <td>Check if a type is a packed <code>Hail</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_moldful.doc.md">IsMoldful</a></td>
+          <td>Check if a type is a packed <code>Mold</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_pageful.doc.md">IsPageful</a></td>
+          <td>Check if a type is a packed <code>Page</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_railful.doc.md">IsRailful</a></td>
+          <td>Check if a type is a packed <code>Rail</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_roadful.doc.md">IsRoadful</a></td>
+          <td>Check if a type is a packed <code>Road</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_sailful.doc.md">IsSailful</a></td>
+          <td>Check if a type is a packed <code>Sail</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_snowful.doc.md">IsSnowful</a></td>
+          <td>Check if a type is a packed <code>Snow</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/is_willful.doc.md">IsWillful</a></td>
+          <td>Check if a type is a packed <code>Will</code></td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/total.doc.md">Total</a></td>
+          <td>Count the number of items contained in a packed vessel</td>
+        </tr>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/typical_among.doc.md">TypicalAmong</a></td>
+          <td>Pick out the item at a given index from a packed vessel</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Item Examinations -- End -->
+    <!-- Algorithms -- Start -->
+    <table>
+      <caption><b>Algorithms</b></caption>
+      <thead>
+        <tr>
+          <th style="text-align: center">Name</th>
+          <th style="text-align: center">Functionality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./contents/metafunctions/omennivore/zip.doc.md">Zip</a></td>
+          <td>Zip packed vessels</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Algorithms -- Start -->
   </details>
   <!-- Omennivore -- End -->
 

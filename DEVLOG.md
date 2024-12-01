@@ -19,6 +19,36 @@
       </tbody>
     </table>
   </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add indices for the documentations of <code>Omennivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add link 'ToIndex' to the documentations</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 ## 2024/11/30
