@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::Has`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+
 ## Description
 
 `Typelivore::Has` accepts a list of elements and returns a function.

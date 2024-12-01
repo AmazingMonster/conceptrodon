@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::Repack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-3">To Index</a></p>
+
 ## Description
 
 `Pagelivore::Repack` accepts an operation and returns a function.

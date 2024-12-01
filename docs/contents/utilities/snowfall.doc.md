@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Snowfall`
 
+<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+
 ## Description
 
 `Snowfall` accepts a `Snow` and returns the `Snow` via member `Snow`.

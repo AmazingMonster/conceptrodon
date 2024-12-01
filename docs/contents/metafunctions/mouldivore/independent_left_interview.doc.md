@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::IndependentLeftInterview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations">To Index</a></p>
+
 ## Description
 
 `Mouldivore::IndependentLeftInterview` accepts a list of predicates.

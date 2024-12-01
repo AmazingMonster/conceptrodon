@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::EasyKindredRepack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+
 ## Description
 
 `Omennivore::EasyKindredRepack` accepts a list of packed vessels and returns a function.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Halfmoon`
 
+<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+
 ## Description
 
 `Halfmoon` accepts a `Hail` and returns the `Hail` via member `Hail`.

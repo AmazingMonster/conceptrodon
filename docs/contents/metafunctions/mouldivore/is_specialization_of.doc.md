@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::IsSpecializationOf`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations">To Index</a></p>
+
 ## Description
 
 `Mouldivore::IsSpecializationOf` accepts a container and returns a function.

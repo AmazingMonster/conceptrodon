@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Capsule`
 
+<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+
 ## Description
 
 `Capsule` accepts a list of elements and returns a function.

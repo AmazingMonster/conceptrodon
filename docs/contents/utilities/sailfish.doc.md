@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Sailfish`
 
+<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+
 ## Description
 
 `Sailfish` accepts a `Sail` and returns the `Sail` via member `Sail`.

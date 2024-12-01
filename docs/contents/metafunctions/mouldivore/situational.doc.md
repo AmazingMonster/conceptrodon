@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Situational`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Situational` accepts a list of predicates and returns a function.

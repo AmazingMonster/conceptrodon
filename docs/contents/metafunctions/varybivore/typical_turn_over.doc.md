@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::TypicalTurnOver`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+
 ## Description
 
 `Varybivore::TypicalTurnOver` accepts a list of variables and returns a `Shuttle` packed with the previously provided variables but in reversed order.

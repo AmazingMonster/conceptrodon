@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::IndependentLeftInterview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-1">To Index</a></p>
+
 ## Description
 
 `Pagelivore::IndependentLeftInterview` accepts a list of predicates.

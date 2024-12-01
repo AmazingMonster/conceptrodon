@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Coalfish`
 
+<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+
 ## Description
 
 `Coalfish` accepts a `Cool` and returns the `Cool` via member `Cool`.

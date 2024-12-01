@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::FoldRight`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::FoldRight` accepts an operation. Its first layer accepts an initiator and returns a function.

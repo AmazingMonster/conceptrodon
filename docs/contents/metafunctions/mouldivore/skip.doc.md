@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Skip`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Skip` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.

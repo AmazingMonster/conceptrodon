@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Diplomat`
 
+<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+
 ## Description
 
 `Diplomat` accepts a sequence and returns the sequence via member `Page`.

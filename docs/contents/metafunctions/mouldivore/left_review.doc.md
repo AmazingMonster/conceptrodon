@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::LeftReview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations">To Index</a></p>
+
 ## Description
 
 `Mouldivore::LeftReview` accepts a predicate and returns a function. When invoked, the function returns true if the predicate evaluates to true for every relative-order-preserving pair of its arguments and returns false if otherwise.

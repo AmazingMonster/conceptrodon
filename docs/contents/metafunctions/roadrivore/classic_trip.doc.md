@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Roadrivore::ClassicTrip`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-4">To Index</a></p>
+
 ## Description
 
 `Roadrivore::ClassicTrip` accepts an operation.

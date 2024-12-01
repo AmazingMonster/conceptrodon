@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::Pop`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+
 ## Description
 
 `Typelivore::Pop` accepts a list of elements and pops the last one. The result is stored in `Capsule`.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Sequnivore::Paste`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-4">To Index</a></p>
+
 ## Description
 
 `Sequnivore::Paste` accepts a list of packed sequences.

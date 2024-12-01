@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Agent`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Agent` accepts an operation and returns a function.

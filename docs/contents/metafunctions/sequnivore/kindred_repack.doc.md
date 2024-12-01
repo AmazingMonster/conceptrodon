@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Sequnivore::KindredRepack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-4">To Index</a></p>
+
 ## Description
 
 `Sequnivore::KindredRepack` accepts a list of packed sequences and returns a function.

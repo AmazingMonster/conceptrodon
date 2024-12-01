@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::SubtractFrom`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+
 ## Description
 
 `Varybivore::SubtractFrom` accepts a variable and returns a function. When invoked, the function subtracts all arguments from the variable.

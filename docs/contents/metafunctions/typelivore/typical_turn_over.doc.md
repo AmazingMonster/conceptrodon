@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::TypicalTurnOver`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+
 ## Description
 
 `Typelivore::TypicalTurnOver` accepts a list of elements and returns a `Capsule` packed with the previously provided elements but in reversed order.

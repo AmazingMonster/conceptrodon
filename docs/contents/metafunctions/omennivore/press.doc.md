@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::Press`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-1">To Index</a></p>
+
 ## Description
 
 `Omennivore::Press` accepts an operation and flattens its inner structure. It returns an uncurried version of the operation. Check out **Examples** for a detailed description.

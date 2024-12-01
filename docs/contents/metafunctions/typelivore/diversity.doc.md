@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::Diversity`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+
 ## Description
 
 `Typelivore::Diversity` accepts a set of nonrepetitive elements and returns a function.

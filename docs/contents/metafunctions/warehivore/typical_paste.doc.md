@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Warehivore::TypicalPaste`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-8">To Index</a></p>
+
 ## Description
 
 `Warehivore::TypicalPaste` accepts a list of packed warehouses.

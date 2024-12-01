@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Negation`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Negation` accepts a predicate and returns a function. When invoked, the function returns true if the predicate instantiated by the arguments evaluates to false and returns false if otherwise.

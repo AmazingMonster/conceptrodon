@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Forlorn`
 
+<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+
 ## Description
 
 `Forlorn` accepts a list of items and returns a function.

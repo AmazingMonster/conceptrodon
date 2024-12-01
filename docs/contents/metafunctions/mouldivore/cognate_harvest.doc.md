@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::CognateHarvest`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-1">To Index</a></p>
+
 ## Description
 
 `Mouldivore::CognateHarvest` accepts an operation and returns a function.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Slice`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+
 ## Description
 
 `Varybivore::Slice` accepts a list of variables.

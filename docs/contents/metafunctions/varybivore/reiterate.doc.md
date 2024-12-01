@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Reiterate`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+
 ## Description
 
 `Varybivore::Reiterate` accepts a list of variables and returns a function. When invoked by the times of repetitions, the function repeats the list the given number of times and stores the result inside `Shuttle`.

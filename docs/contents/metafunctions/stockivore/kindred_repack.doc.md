@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Stockivore::KindredRepack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-5">To Index</a></p>
+
 ## Description
 
 `Stockivore::KindredRepack` accepts a list of packed stockrooms and returns a function.

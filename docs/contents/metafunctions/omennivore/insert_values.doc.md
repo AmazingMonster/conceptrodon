@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::InsertValues`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+
 ## Description
 
 `Omennivore::InsertValues` accepts a list of `std::index_sequence`, which indicates distances between adjacent indices.

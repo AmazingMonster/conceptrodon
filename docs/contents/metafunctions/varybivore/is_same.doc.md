@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::IsSame`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations-4">To Index</a></p>
+
 ## Description
 
 `Varybivore::IsSame` accepts a target and a list of variables.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::Conditional`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-3">To Index</a></p>
+
 ## Description
 
 `Typelivore::Conditional` accepts two elements and returns several functions.

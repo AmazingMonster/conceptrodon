@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Raillivore::Skip`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-3">To Index</a></p>
+
 ## Description
 
 `Raillivore::Skip` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.

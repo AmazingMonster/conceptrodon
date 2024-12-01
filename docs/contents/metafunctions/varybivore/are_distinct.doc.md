@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AreDistinct`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-3">To Index</a></p>
+
 ## Description
 
 `Varybivore::AreDistinct` accepts a list of variables. It returns true if no two variables in the list are the same and returns false if otherwise.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AreBoundedByLeftOpenRightClosedInterval`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-examinations">To Index</a></p>
+
 ## Description
 
 `Varybivore::AreBoundedByLeftOpenRightClosedInterval` accepts two variables, indicating a left-open-right-closed interval, and returns a predicate.

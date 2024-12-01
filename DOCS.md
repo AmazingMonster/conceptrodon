@@ -500,9 +500,9 @@ SPDX-License-Identifier: Apache-2.0 -->
       </tbody>
     </table>
     <!-- List Examinations -- End -->
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <table>
-      <caption><b>Item Examinations</b></caption>
+      <caption><b>Entity Examinations</b></caption>
       <thead>
         <tr>
           <th style="text-align: center">Name</th>
@@ -516,7 +516,7 @@ SPDX-License-Identifier: Apache-2.0 -->
         </tr>
       </tbody>
     </table>
-    <!-- Item Examinations -- End -->
+    <!-- Entity Examinations -- End -->
     <!-- Algorithms -- Start -->
     <table>
       <caption><b>Algorithms</b></caption>
@@ -653,9 +653,9 @@ SPDX-License-Identifier: Apache-2.0 -->
       </tbody>
     </table>
     <!-- Higher-Order Modifications -- End -->
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <table>
-      <caption><b>Item Examinations</b></caption>
+      <caption><b>Entity Examinations</b></caption>
       <thead>
         <tr>
           <th style="text-align: center">Name</th>
@@ -733,7 +733,7 @@ SPDX-License-Identifier: Apache-2.0 -->
         </tr>
       </tbody>
     </table>
-    <!-- Item Examinations -- End -->
+    <!-- Entity Examinations -- End -->
     <!-- Algorithms -- Start -->
     <table>
       <thead>
@@ -983,9 +983,9 @@ SPDX-License-Identifier: Apache-2.0 -->
       </tbody>
     </table>
     <!-- List Examinations -- End -->
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <table>
-      <caption><b>Item Examinations</b></caption>
+      <caption><b>Entity Examinations</b></caption>
       <thead>
         <tr>
           <th style="text-align: center">Name</th>
@@ -1414,9 +1414,9 @@ SPDX-License-Identifier: Apache-2.0 -->
       </tbody>
     </table>
     <!-- List Examinations -- End -->
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <table>
-      <caption><b>Item Examinations</b></caption>
+      <caption><b>Entity Examinations</b></caption>
       <thead>
         <tr>
           <th style="text-align: center">Name</th>
@@ -1442,7 +1442,7 @@ SPDX-License-Identifier: Apache-2.0 -->
         </tr>
       </tbody>
     </table>
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <!-- Algorithms -- Start -->
     <table>
       <caption><b>Algorithms</b></caption>
@@ -1671,9 +1671,9 @@ SPDX-License-Identifier: Apache-2.0 -->
       </tbody>
     </table>
     <!-- List Examinations -- End -->
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <table>
-      <caption><b>Item Examinations</b></caption>
+      <caption><b>Entity Examinations</b></caption>
       <thead>
         <tr>
           <th style="text-align: center">Name</th>
@@ -1707,7 +1707,7 @@ SPDX-License-Identifier: Apache-2.0 -->
         </tr>
       </tbody>
     </table>
-    <!-- Item Examinations -- Start -->
+    <!-- Entity Examinations -- Start -->
     <!-- Arithmetic Modifications -- Start -->
     <table>
       <caption><b>Arithmetic Modifications</b></caption>

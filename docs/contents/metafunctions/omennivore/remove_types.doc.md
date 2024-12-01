@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::RemoveTypes`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+
 ## Description
 
 `Omennivore::RemoveTypes` accepts a list of `std::index_sequence`, which indicates distances between adjacent indices and returns a function.

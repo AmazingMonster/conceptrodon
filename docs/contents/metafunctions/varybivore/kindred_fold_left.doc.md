@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::KindredFoldLeft`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-4">To Index</a></p>
+
 ## Description
 
 `Varybivore::KindredFoldLeft` accepts a list of variables.

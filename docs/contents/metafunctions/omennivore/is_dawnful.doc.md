@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::IsDawnful`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations-1">To Index</a></p>
+
 ## Description
 
 `Omennivore::IsDawnful` accepts a type.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::SensibleLeftInterview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-3">To Index</a></p>
+
 ## Description
 
 `Varybivore::SensibleLeftInterview` accepts a list of variables.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Among`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Among` accepts a list of containers. Its first layer accepts an index and returns a function.

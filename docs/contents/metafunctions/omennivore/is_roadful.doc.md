@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::IsRoadful`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations-1">To Index</a></p>
+
 ## Description
 
 `Omennivore::IsRoadful` accepts a type.

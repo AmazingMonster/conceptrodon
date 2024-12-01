@@ -516,8 +516,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 </table>
 <!-- List Examinations -- End -->
 
-<!-- Item Examinations -- Start -->
-#### Item Examinations
+<!-- Entity Examinations -- Start -->
+#### Entity Examinations
 
 <table>
   <thead>
@@ -533,7 +533,7 @@ SPDX-License-Identifier: Apache-2.0 -->
     </tr>
   </tbody>
 </table>
-<!-- Item Examinations -- End -->
+<!-- Entity Examinations -- End -->
 
 <!-- Algorithms -- Start -->
 #### Algorithms
@@ -618,7 +618,7 @@ SPDX-License-Identifier: Apache-2.0 -->
       <td>Append items to the back</td>
     </tr>
     <tr>
-      <td><a href="./contents/metafunctions/omennivore/extend_back.doc.md">ExtendFront</a></td>
+      <td><a href="./contents/metafunctions/omennivore/extend_front.doc.md">ExtendFront</a></td>
       <td>Append items to the front</td>
     </tr>
     <tr>
@@ -676,8 +676,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 </table>
 <!-- Higher-Order Modifications -- End -->
 
-<!-- Item Examinations -- Start -->
-#### Item Examinations
+<!-- Entity Examinations -- Start -->
+#### Entity Examinations
 
 <table>
   <thead>
@@ -757,7 +757,7 @@ SPDX-License-Identifier: Apache-2.0 -->
     </tr>
   </tbody>
 </table>
-<!-- Item Examinations -- End -->
+<!-- Entity Examinations -- End -->
 
 <!-- Algorithms -- Start -->
 #### Algorithms
@@ -1015,8 +1015,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 </table>
 <!-- List Examinations -- End -->
 
-<!-- Item Examinations -- Start -->
-#### Item Examinations
+<!-- Entity Examinations -- Start -->
+#### Entity Examinations
 
 <table>
   <thead>
@@ -1456,8 +1456,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 </table>
 <!-- List Examinations -- End -->
 
-<!-- Item Examinations -- Start -->
-#### Item Examinations
+<!-- Entity Examinations -- Start -->
+#### Entity Examinations
 
 <table>
   <thead>
@@ -1485,7 +1485,7 @@ SPDX-License-Identifier: Apache-2.0 -->
     </tr>
   </tbody>
 </table>
-<!-- Item Examinations -- Start -->
+<!-- Entity Examinations -- Start -->
 
 <!-- Algorithms -- Start -->
 #### Algorithms
@@ -1720,8 +1720,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 </table>
 <!-- List Examinations -- End -->
 
-<!-- Item Examinations -- Start -->
-#### Item Examinations
+<!-- Entity Examinations -- Start -->
+#### Entity Examinations
 
 <table>
   <thead>
@@ -1757,7 +1757,7 @@ SPDX-License-Identifier: Apache-2.0 -->
     </tr>
   </tbody>
 </table>
-<!-- Item Examinations -- Start -->
+<!-- Entity Examinations -- Start -->
 
 <!-- Arithmetic Modifications -- Start -->
 #### Arithmetic Modifications
@@ -1866,7 +1866,7 @@ SPDX-License-Identifier: Apache-2.0 -->
       <td>Check if the first variable is less or equal to the others</td>
     </tr>
     <tr>
-      <td><a href="./contents/metafunctions/varybivore/is_no_less.doc.md">IsNoless</a></td>
+      <td><a href="./contents/metafunctions/varybivore/is_no_less.doc.md">IsNoLess</a></td>
       <td>Check if the first variable is greater or equal to the others</td>
     </tr>
     <tr>

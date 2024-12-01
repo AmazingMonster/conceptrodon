@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::IsSpecializationOf`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::IsSpecializationOf` accepts a sequence and returns a function.

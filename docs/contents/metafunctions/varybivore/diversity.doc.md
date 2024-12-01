@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Diversity`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+
 ## Description
 
 `Varybivore::Diversity` accepts a set of nonrepetitive variables and returns a function.

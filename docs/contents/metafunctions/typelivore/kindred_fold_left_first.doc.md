@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::KindredFoldLeftFirst`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-3">To Index</a></p>
+
 ## Description
 
 `Typelivore::KindredFoldLeftFirst` accepts a list of elements and returns a function.

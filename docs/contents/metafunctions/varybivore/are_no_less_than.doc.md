@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AreNoLessThan`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-examinations">To Index</a></p>
+
 ## Description
 
 `Varybivore::AreNoLessThan` accepts a variable and returns a predicate.

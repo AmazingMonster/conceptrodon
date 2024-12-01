@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Prefix`
 
+<p style='text-align: right;'><a href="../../index.md#instruments">To Index</a></p>
+
 ## Description
 
 `Prefix` accepts an element and an index. It constantly evaluates to `true`.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::Conceal`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::Conceal` accepts an operation and returns a function.

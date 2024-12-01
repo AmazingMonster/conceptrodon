@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Observe`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-3">To Index</a></p>
+
 ## Description
 
 `Varybivore::Observe` accepts a list of variables and returns a function.

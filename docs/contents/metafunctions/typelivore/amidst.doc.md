@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::Amidst`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+
 ## Description
 
 `Typelivore::Amidst` accepts a list of elements and returns a function. When invoked by an index, the function returns the element at the index from the list.

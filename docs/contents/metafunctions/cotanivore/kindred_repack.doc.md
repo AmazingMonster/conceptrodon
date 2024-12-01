@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Cotanivore::KindredRepack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications">To Index</a></p>
+
 ## Description
 
 `Cotanivore::KindredRepack` accepts a list of packed containers and returns a function.

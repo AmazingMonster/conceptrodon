@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::AreDistinct`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+
 ## Description
 
 `Typelivore::AreDistinct` accepts a list of elements. It returns true if no two elements in the list are the same and returns false if otherwise.

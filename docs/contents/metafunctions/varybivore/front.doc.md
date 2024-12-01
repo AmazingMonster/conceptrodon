@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Front`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+
 ## Description
 
 `Varybivore::Front` accepts a list of variables.

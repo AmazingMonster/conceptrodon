@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::CognateFilter`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-3">To Index</a></p>
+
 ## Description
 
 `Pagelivore::CognateFilter` accepts an operation. Its first layer accepts a list of predicates and returns a function.

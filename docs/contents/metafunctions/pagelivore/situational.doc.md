@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::Situational`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::Situational` accepts a list of predicates and returns a function.

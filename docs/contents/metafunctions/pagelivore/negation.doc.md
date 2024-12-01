@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::Negation`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::Negation` accepts a predicate and returns a function. When invoked, the function returns true if the predicate instantiated by the arguments evaluates to false and returns false if otherwise.

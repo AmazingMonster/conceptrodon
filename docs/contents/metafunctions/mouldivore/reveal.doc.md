@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Reveal`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Reveal` accepts an operation and returns a function.

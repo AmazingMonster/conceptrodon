@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::KindredLeftInterview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+
 ## Description
 
 `Typelivore::KindredLeftInterview` accepts a list of elements.

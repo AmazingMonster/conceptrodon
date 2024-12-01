@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::FoldLeft`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-2">To Index</a></p>
+
 ## Description
 
 `Pagelivore::FoldLeft` accepts an operation.

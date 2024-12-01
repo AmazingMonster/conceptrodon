@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::FoldLeft`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms">To Index</a></p>
+
 ## Description
 
 `Mouldivore::FoldLeft` accepts an operation.

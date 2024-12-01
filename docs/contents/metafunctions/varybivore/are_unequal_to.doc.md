@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AreUnequalTo`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-examinations">To Index</a></p>
+
 ## Description
 
 `Varybivore::AreUnequalTo` accepts a variable and returns a predicate.

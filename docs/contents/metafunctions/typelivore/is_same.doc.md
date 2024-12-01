@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::IsSame`
 
+<p style='text-align: right;'><a href="../../../index.md#entity-examinations-3">To Index</a></p>
+
 ## Description
 
 `Typelivore::IsSame` accepts a target and a list of elements.

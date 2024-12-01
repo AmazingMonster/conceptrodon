@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Warehivore::KindredRepack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-8">To Index</a></p>
+
 ## Description
 
 `Warehivore::KindredRepack` accepts a list of packed warehouses and returns a function.

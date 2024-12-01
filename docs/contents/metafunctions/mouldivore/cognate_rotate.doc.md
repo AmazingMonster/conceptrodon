@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::CognateRotate`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-1">To Index</a></p>
+
 ## Description
 
 `Mouldivore::CognateRotate` accepts an operation.

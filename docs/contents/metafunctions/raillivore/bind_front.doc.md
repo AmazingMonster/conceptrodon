@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Raillivore::BindFront`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-3">To Index</a></p>
+
 ## Description
 
 `Raillivore::BindFront` accepts an operation.

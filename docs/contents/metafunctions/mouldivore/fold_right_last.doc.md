@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::FoldRightLast`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms">To Index</a></p>
+
 ## Description
 
 `Mouldivore::FoldRightLast` accepts an operation and returns a function.

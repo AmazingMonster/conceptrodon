@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::Among`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-1">To Index</a></p>
+
 ## Description
 
 `Pagelivore::Among` accepts a list of sequences. Its first layer accepts an index and returns a function.

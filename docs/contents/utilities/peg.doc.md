@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Peg`
 
+<p style='text-align: right;'><a href="../../index.md#symbols">To Index</a></p>
+
 ## Description
 
 `Peg` accepts a index and returns the index via member `value`.

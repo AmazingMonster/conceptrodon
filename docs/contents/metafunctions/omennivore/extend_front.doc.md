@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::ExtendFront`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+
 ## Description
 
 `Omennivore::ExtendFront` accepts a packed vessel and returns a function. When invoked, the function appends its arguments to the front of the packed vessel.

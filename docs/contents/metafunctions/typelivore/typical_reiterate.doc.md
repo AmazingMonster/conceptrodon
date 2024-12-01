@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::TypicalReiterate`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+
 ## Description
 
 `Typelivore::TypicalReiterate` accepts a list of elements and returns a function. When invoked by the times of repetitions, the function repeats the list the given number of times and stores the result inside `Capsule`.

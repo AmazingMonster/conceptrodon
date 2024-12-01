@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::RightReview`
 
+<p style='text-align: right;'><a href="../../../index.md#list-examinations-1">To Index</a></p>
+
 ## Description
 
 `Pagelivore::RightReview` accepts a predicate and returns a function. When invoked, the function returns true if the predicate evaluates to true for every relative-order-reversing pair of its arguments and returns false if otherwise.

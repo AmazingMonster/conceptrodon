@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Subtract`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+
 ## Description
 
 `Varybivore::Subtract` accepts a target and a list of variables.

@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::ExtendBack`
 
+<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+
 ## Description
 
 `Omennivore::ExtendBack` accepts a packed vessel and returns a function. When invoked, the function appends its arguments to the back of the packed vessel.

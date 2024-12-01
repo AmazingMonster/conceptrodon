@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::Send`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-1">To Index</a></p>
+
 ## Description
 
 `Omennivore::Send` accepts a packed vessel and returns a function.

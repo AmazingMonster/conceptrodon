@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Conditional`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms-4">To Index</a></p>
+
 ## Description
 
 `Varybivore::Conditional` accepts two variables and returns several functions.

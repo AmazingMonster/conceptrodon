@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::FoldRight`
 
+<p style='text-align: right;'><a href="../../../index.md#algorithms">To Index</a></p>
+
 ## Description
 
 `Mouldivore::FoldRight` accepts an operation. Its first layer accepts an initiator and returns a function.

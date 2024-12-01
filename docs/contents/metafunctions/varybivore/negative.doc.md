@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Negative`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+
 ## Description
 
 `Varybivore::Negative` accepts a variable and applies unary `-` to it.

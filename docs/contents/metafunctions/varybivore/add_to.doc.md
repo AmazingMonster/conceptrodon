@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AddTo`
 
+<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+
 ## Description
 
 `Varybivore::AddTo` accepts a variable and returns a function. When invoked, the function sums up the variable and the arguments.

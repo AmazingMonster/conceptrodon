@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Trip`
 
+<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+
 ## Description
 
 `Mouldivore::Trip` accepts an operation.

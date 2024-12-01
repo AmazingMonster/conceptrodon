@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Phantom`
 
+<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+
 ## Description
 
 `Phantom` accepts a list of stockrooms and returns a function.
