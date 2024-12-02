@@ -29,7 +29,22 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td>Elements are now compared against values instead of types</td>
+          <td>Done. Elements are now compared against values instead of types</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add unit tests for concepts</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done. Everything in this library is tested at least once</td>
         </tr>
       </tbody>
     </table>

@@ -6,14 +6,14 @@
 
 #include "conceptrodon/omennivore/is_gritful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/all_ungritful.hpp"
-#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
+#include "conceptrodon/mouldivore/concepts/any_deceive.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
 concept AnyUngritful
-=   Mouldivore::AnyConfess<IsGritful, Args...>
+=   Mouldivore::AnyDeceive<IsGritful, Args...>
 ||  AllUngritful<Args...>
 ;
 

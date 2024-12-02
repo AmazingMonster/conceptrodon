@@ -40,7 +40,7 @@ static_assert(Tester<Monotony<1>, Monotony<1.0>>::value);
 
 /******************************************************************************************************/
 template<typename I, typename J>
-requires DifferentFrom<J, I>
+requires DifferentFrom<J, I> && DifferentFrom<I, J>
 struct Tester<I, J>
 { static constexpr bool value {true}; };
 /******************************************************************************************************/

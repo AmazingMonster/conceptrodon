@@ -39,7 +39,7 @@ static_assert(Tester<1, 1.0>::value);
 
 /******************************************************************************************************/
 template<auto I, auto J>
-requires DifferentFrom<J, I>
+requires DifferentFrom<I, J> && DifferentFrom<J, I>
 struct Tester<I, J>
 { static constexpr bool value {true}; };
 /******************************************************************************************************/

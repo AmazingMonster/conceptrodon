@@ -11,12 +11,12 @@ namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename...Args>
-concept JustAnyZero = Varybivore::JustAnyZero<Args::value...>;
+concept JustAnyZero = Varybivore::AnyZero<Args::value...>;
 
 template<typename...Args>
 concept AnyZero
 =   Omennivore::AllValuable<Args...>
-&&  (JustAnyZero<Args...> || Varybivore::AllZero<Args::value...>);
+&&  JustAnyZero<Args...>;
 
 }}
 

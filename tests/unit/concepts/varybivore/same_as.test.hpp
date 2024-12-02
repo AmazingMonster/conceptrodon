@@ -39,7 +39,7 @@ static_assert(! Tester<1, 1.0>::value);
 
 /******************************************************************************************************/
 template<auto I, auto J>
-requires SameAs<J, I>
+requires SameAs<I, J> && SameAs<J, I>
 struct Tester<I, J>
 { static constexpr bool value {true}; };
 /******************************************************************************************************/

@@ -6,14 +6,14 @@
 
 #include "conceptrodon/omennivore/is_flowful.hpp"
 #include "conceptrodon/descend/omennivore/concepts/descend/all_unflowful.hpp"
-#include "conceptrodon/mouldivore/concepts/any_confess.hpp"
+#include "conceptrodon/mouldivore/concepts/any_deceive.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename...Args>
 concept AnyUnflowful
-=   Mouldivore::AnyConfess<IsFlowful, Args...>
+=   Mouldivore::AnyDeceive<IsFlowful, Args...>
 ||  AllUnflowful<Args...>
 ;
 
