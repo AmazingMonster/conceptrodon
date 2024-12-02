@@ -11,16 +11,14 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename Element, typename LowerBound, typename UpperBound>
+template<typename Element, auto LowerBound, auto UpperBound>
 concept JustBoundedByLeftClosedRightOpenInterval
-=   Varybivore::NoGreaterThan<LowerBound::value, Element::value>
-&&  Varybivore::LessThan<Element::value, UpperBound::value>;
+=   Varybivore::NoGreaterThan<LowerBound, Element::value>
+&&  Varybivore::LessThan<Element::value, UpperBound>;
 
-template<typename Element, typename LowerBound, typename UpperBound>
+template<typename Element, auto LowerBound, auto UpperBound>
 concept BoundedByLeftClosedRightOpenInterval
 =   Omennivore::Valuable<Element> 
-&&  Omennivore::Valuable<LowerBound>
-&&  Omennivore::Valuable<UpperBound>
 &&  JustBoundedByLeftClosedRightOpenInterval<Element, LowerBound, UpperBound>;
 
 }}

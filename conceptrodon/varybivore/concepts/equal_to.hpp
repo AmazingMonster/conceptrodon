@@ -8,9 +8,14 @@ namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto LeftSide, auto RightSide>
-concept EqualTo 
+concept JustEqualTo 
 =   not (LeftSide < RightSide)
 &&  not (RightSide < LeftSide);
+
+template<auto LeftSide, auto RightSide>
+concept EqualTo 
+=   JustEqualTo<LeftSide, RightSide>
+&&  JustEqualTo<RightSide, LeftSide>;
 
 }}
 

@@ -10,13 +10,12 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename LeftSide, typename RightSide>
-concept JustEqualTo = Varybivore::EqualTo<LeftSide::value, RightSide::value>;
+template<typename LeftSide, auto RightSide>
+concept JustEqualTo = Varybivore::EqualTo<LeftSide::value, RightSide>;
 
-template<typename LeftSide, typename RightSide>
+template<typename LeftSide, auto RightSide>
 concept EqualTo
 =   Omennivore::Valuable<LeftSide>
-&&  Omennivore::Valuable<RightSide>
 &&  JustEqualTo<LeftSide, RightSide>;
 
 }}

@@ -5,12 +5,6 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_VALUABLE_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
-#include "macaron/judgmental/valid.hpp"
-#include "macaron/judgmental/invalid.hpp"
-
-#include "macaron/judgmental/amenity/define_valid.hpp"
-#include "macaron/judgmental/amenity/define_invalid.hpp"
-#include <type_traits>
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -26,7 +20,7 @@ struct Tester
     static constexpr bool value = true;
 };
 
-VALID(Valuable<Tester>);
+static_assert(Valuable<Tester>);
 /******************************************************************************************************/
 
 
@@ -38,7 +32,7 @@ struct Tester_1
     static constexpr bool value() {return true;};
 };
 
-INVALID(Valuable<Tester_1>);
+static_assert(! Valuable<Tester_1>);
 /******************************************************************************************************/
 
 
@@ -50,7 +44,7 @@ struct Tester_2
     using value = int;
 };
 
-INVALID(Valuable<Tester_2>);
+static_assert(! Valuable<Tester_2>);
 /******************************************************************************************************/
 
 
@@ -62,7 +56,7 @@ struct Tester_3
     bool value;
 };
 
-INVALID(Valuable<Tester_3>);
+static_assert(! Valuable<Tester_3>);
 /******************************************************************************************************/
 
 
@@ -74,7 +68,7 @@ struct Tester_4
     bool const value;
 };
 
-INVALID(Valuable<Tester_4>);
+static_assert(! Valuable<Tester_4>);
 /******************************************************************************************************/
 
 
@@ -92,7 +86,7 @@ bool const Tester_5::value {true};
 
 }
 
-VALID(Valuable<Tester_5>);
+static_assert(Valuable<Tester_5>);
 /******************************************************************************************************/
 
 
@@ -110,7 +104,7 @@ float const Tester_6::value {1.11};
 
 }
 
-INVALID(Valuable<Tester_6>);
+static_assert(! Valuable<Tester_6>);
 /******************************************************************************************************/
 
 
@@ -122,7 +116,7 @@ struct Tester_7
     static bool const value;
 };
 
-INVALID(Valuable<Tester_7>);
+static_assert(! Valuable<Tester_7>);
 /******************************************************************************************************/
 
 

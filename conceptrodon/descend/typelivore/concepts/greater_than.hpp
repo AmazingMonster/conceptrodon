@@ -10,13 +10,12 @@
 namespace Conceptrodon {
 namespace Typelivore {
 
-template<typename LeftSide, typename RightSide>
-concept JustGreaterThan = Varybivore::LessThan<RightSide::value, LeftSide::value>;
+template<typename LeftSide, auto RightSide>
+concept JustGreaterThan = Varybivore::LessThan<RightSide, LeftSide::value>;
 
-template<typename LeftSide, typename RightSide>
-concept Greater
+template<typename LeftSide, auto RightSide>
+concept GreaterThan
 =   Omennivore::Valuable<LeftSide>
-&&  Omennivore::Valuable<RightSide>
 &&  JustGreaterThan<LeftSide, RightSide>;
 
 }}

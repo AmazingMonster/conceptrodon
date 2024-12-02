@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ROADLY_H
 #define CONCEPTRODON_OMENNIVORE_ROADLY_H
 
-#include "conceptrodon/legation.hpp"
+#include "conceptrodon/delegacy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Roadly = requires 
-{typename Legation<Structure::template Road>;};
+{typename Delegacy<Structure::template Road>;};
 
 }}
 

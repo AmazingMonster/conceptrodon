@@ -19,6 +19,21 @@
       </tbody>
     </table>
   </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Reform arithmetic concepts for <code>Typelivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Elements are now compared against values instead of types</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 ## 2024/12/01

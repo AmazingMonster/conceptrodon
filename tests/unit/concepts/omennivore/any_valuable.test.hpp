@@ -5,12 +5,6 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_VALUABLE_H
 
 #include "conceptrodon/omennivore/concepts/descend/any_valuable.hpp"
-#include "macaron/judgmental/valid.hpp"
-#include "macaron/judgmental/invalid.hpp"
-
-#include "macaron/judgmental/amenity/define_valid.hpp"
-#include "macaron/judgmental/amenity/define_invalid.hpp"
-#include <type_traits>
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -26,7 +20,7 @@ struct Tester
     static constexpr bool value = true;
 };
 
-VALID(AnyValuable<Tester>);
+static_assert(AnyValuable<Tester>);
 /******************************************************************************************************/
 
 
@@ -38,7 +32,7 @@ struct Tester_1
     static constexpr bool value() {return true;};
 };
 
-INVALID(AnyValuable<Tester_1>);
+static_assert(! AnyValuable<Tester_1>);
 /******************************************************************************************************/
 
 
@@ -50,7 +44,7 @@ struct Tester_2
     using value = int;
 };
 
-INVALID(AnyValuable<Tester_2>);
+static_assert(! AnyValuable<Tester_2>);
 /******************************************************************************************************/
 
 
@@ -62,7 +56,7 @@ struct Tester_3
     bool value;
 };
 
-INVALID(AnyValuable<Tester_3>);
+static_assert(! AnyValuable<Tester_3>);
 /******************************************************************************************************/
 
 
@@ -74,7 +68,7 @@ struct Tester_4
     bool const value;
 };
 
-INVALID(AnyValuable<Tester_4>);
+static_assert(! AnyValuable<Tester_4>);
 /******************************************************************************************************/
 
 
@@ -92,7 +86,7 @@ bool const Tester_5::value {true};
 
 }
 
-VALID(AnyValuable<Tester_5>);
+static_assert(AnyValuable<Tester_5>);
 /******************************************************************************************************/
 
 
@@ -110,7 +104,7 @@ float const Tester_6::value {1.11};
 
 }
 
-INVALID(AnyValuable<Tester_6>);
+static_assert(! AnyValuable<Tester_6>);
 /******************************************************************************************************/
 
 
@@ -122,7 +116,7 @@ struct Tester_7
     static bool const value;
 };
 
-INVALID(AnyValuable<Tester_6>);
+static_assert(! AnyValuable<Tester_6>);
 /******************************************************************************************************/
 
 
@@ -142,9 +136,9 @@ requires AllValuable<Args...>
 struct Examiner<Args...>
 {static constexpr bool value {true}; };
 
-VALID(Examiner<Tester, Tester_5>::value);
-INVALID(Examiner<Tester, Tester_4>::value);
-INVALID(Examiner<Tester_4, Tester>::value);
+static_assert(Examiner<Tester, Tester_5>::value);
+static_assert(! Examiner<Tester, Tester_4>::value);
+static_assert(! Examiner<Tester_4, Tester>::value);
 /******************************************************************************************************/
 
 
