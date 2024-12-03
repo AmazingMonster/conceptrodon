@@ -2057,6 +2057,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 <!-- Symbols -- Start -->
 ### Symbols
 
+- #### [Peg<a id="utility-symbols-peg"></a>](./contents/utilities/peg.doc.md)
+
 <table>
   <thead>
     <tr>

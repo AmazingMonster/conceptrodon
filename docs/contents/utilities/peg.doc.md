@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Peg`
 
-<p style='text-align: right;'><a href="../../index.md#symbols">To Index</a></p>
+<p style='text-align: right;'><a href="../../index.md#utility-symbols-peg">To Index</a></p>
 
 ## Description
 
