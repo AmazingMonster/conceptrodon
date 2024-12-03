@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_NONZERO_H
 
 #include "conceptrodon/descend/typelivore/concepts/all_nonzero.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -30,9 +30,9 @@ struct Tester<I...>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<1>, Monotony<2>, Monotony<3>>::value);
-static_assert(! Tester<Monotony<-1>, Monotony<0>, Monotony<-1>>::value);
-static_assert(! Tester<Monotony<0>, Monotony<0>, Monotony<0>>::value);
+static_assert(Tester<Vay<1>, Vay<2>, Vay<3>>::value);
+static_assert(! Tester<Vay<-1>, Vay<0>, Vay<-1>>::value);
+static_assert(! Tester<Vay<0>, Vay<0>, Vay<0>>::value);
 /******************************************************************************************************/
 
 

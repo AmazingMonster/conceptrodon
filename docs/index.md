@@ -1968,63 +1968,63 @@ SPDX-License-Identifier: Apache-2.0 -->
   </thead>
   <tbody>
     <tr>
-      <td><a href="./contents/utilities/monotony.doc.md">Monotony</a></td>
+      <td><a href="./contents/utilities/vay.doc.md">Vay</a></td>
       <td>Represent a <code>value</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/emissary.doc.md">Emissary</a></td>
+      <td><a href="./contents/utilities/moy.doc.md">Moy</a></td>
       <td>Represent a <code>Mold</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/diplomat.doc.md">Diplomat</a></td>
+      <td><a href="./contents/utilities/pay.doc.md">Pay</a></td>
       <td>Represent a <code>Page</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/delegacy.doc.md">Delegacy</a></td>
+      <td><a href="./contents/utilities/roy.doc.md">Roy</a></td>
       <td>Represent a <code>Road</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/legation.doc.md">Legation</a></td>
+      <td><a href="./contents/utilities/ray.doc.md">Ray</a></td>
       <td>Represent a <code>Rail</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/florican.doc.md">Florican</a></td>
+      <td><a href="./contents/utilities/fly.doc.md">Fly</a></td>
       <td>Represent a <code>Flow</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/sailfish.doc.md">Sailfish</a></td>
+      <td><a href="./contents/utilities/say.doc.md">Say</a></td>
       <td>Represent a <code>Sail</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/snowfall.doc.md">Snowfall</a></td>
+      <td><a href="./contents/utilities/sny.doc.md">Sny</a></td>
       <td>Represent a <code>Snow</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/halfmoon.doc.md">Halfmoon</a></td>
+      <td><a href="./contents/utilities/hay.doc.md">Hay</a></td>
       <td>Represent a <code>Hail</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/coalfish.doc.md">Coalfish</a></td>
+      <td><a href="./contents/utilities/coy.doc.md">Coy</a></td>
       <td>Represent a <code>Cool</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/camellia.doc.md">Camellia</a></td>
+      <td><a href="./contents/utilities/cay.doc.md">Cay</a></td>
       <td>Represent a <code>calm</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/graphite.doc.md">Graphite</a></td>
+      <td><a href="./contents/utilities/gry.doc.md">Gry</a></td>
       <td>Represent a <code>Grit</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/wildfire.doc.md">Wildfire</a></td>
+      <td><a href="./contents/utilities/wiy.doc.md">Wiy</a></td>
       <td>Represent a <code>Will</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/glowworm.doc.md">Glowworm</a></td>
+      <td><a href="./contents/utilities/gly.doc.md">Gly</a></td>
       <td>Represent a <code>Glow</code></td>
     </tr>
     <tr>
-      <td><a href="./contents/utilities/daydream.doc.md">Daydream</a></td>
+      <td><a href="./contents/utilities/day.doc.md">Day</a></td>
       <td>Represent a <code>Dawn</code></td>
     </tr>
   </tbody>

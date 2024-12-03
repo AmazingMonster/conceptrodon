@@ -4,14 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_FIND_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_FIND_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/mouldivore/independent_find.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -49,7 +48,7 @@ struct AreNoLessThan
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
 constexpr auto Found = IndependentFind<AreNoGreaterThan<I>::template Mold, AreNoLessThan<I>::template Mold>
-::template Mold_v<SHEEP_SPROUT(120)>;
+::template Mold_v<SHEEP_SPROUT(40)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -58,7 +57,9 @@ constexpr auto Found = IndependentFind<AreNoGreaterThan<I>::template Mold, AreNo
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = SignedArk<SHEEP_SPROUT(120)>;
+#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
+using SupposedResult = SignedArk<SHEEP_SPROUT(40), ALKANE_SPROUT(40)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -76,50 +77,7 @@ using SupposedResult = SignedArk<SHEEP_SPROUT(120)>;
 #define SHEEP_SEPARATOR \
     ,
     
-SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-template<int I>
-constexpr auto FailFound = IndependentFind<AreNoGreaterThan<-1>::template Mold, AreNoLessThan<-1>::template Mold>
-::template Mold_v<SHEEP_SPROUT(120),std::integral_constant<int, I>>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
-using SupposedFailedResult = SignedArk<ALKANE_SPROUT(120)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedFailedResult
-
-#define SHEEP_PREFIX    \
-    FailFound <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-    
-SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
+SAME_TYPE(Shuttle<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -46,25 +46,25 @@ struct CognateFilter
 
 ## Examples
 
-We will remove every element whose value result is divisible by two and three from the list `Monotony<1>, Monotony<12>, Monotony<2>, Monotony<6>, Monotony<15>` and instiate `Operation` with the elements left.
+We will remove every element whose value result is divisible by two and three from the list `Vay<1>, Vay<12>, Vay<2>, Vay<6>, Vay<15>` and instiate `Operation` with the elements left.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Val>
+template<typename Vay>
 struct DivisibleByTwo
 {
     static constexpr bool value
-    {Val::value % 2 == 0};
+    {Vay::value % 2 == 0};
 };
 
-template<typename Val>
+template<typename Vay>
 struct DivisibleByThree
 {
     static constexpr bool value
-    {Val::value % 3 == 0};
+    {Vay::value % 3 == 0};
 };
 
 template<typename...>
@@ -75,10 +75,10 @@ using Metafunction = CognateFilter<Operation>
 ::Road<DivisibleByTwo, DivisibleByThree>
 ::Mold<Args...>;
 
-using SupposedResult = Operation<Monotony<1>, Monotony<2>, Monotony<15>>;
+using SupposedResult = Operation<Vay<1>, Vay<2>, Vay<15>>;
 
 using Result = Metafunction
-<Monotony<1>, Monotony<12>, Monotony<2>, Monotony<6>, Monotony<15>>;
+<Vay<1>, Vay<12>, Vay<2>, Vay<6>, Vay<15>>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

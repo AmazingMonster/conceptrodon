@@ -32,10 +32,10 @@ struct Tester<Args...>
 };
 
 template<auto I>
-struct Val
+struct Vay
 { static constexpr auto value {I}; };
 
-static_assert(Tester<Val<0>, Val<1>>::value);
+static_assert(Tester<Vay<0>, Vay<1>>::value);
 
 }}}
 

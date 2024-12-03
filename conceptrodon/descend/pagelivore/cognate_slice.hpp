@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_COGNATE_SLICE_H
 #define CONCEPTRODON_PAGELIVORE_COGNATE_SLICE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/incise.hpp"
 #include "conceptrodon/descend/microbiota/varbola/shear.hpp"
 
@@ -24,7 +24,7 @@ struct CognateSlice
         using Page = decltype
         (
             Varbola::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 
@@ -36,7 +36,7 @@ struct CognateSlice
         using Page = decltype
         (
             Varbola::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 

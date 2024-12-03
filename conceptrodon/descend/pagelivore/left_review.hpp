@@ -5,7 +5,7 @@
 #define CONCEPTRODON_PAGELIVORE_LEFT_REVIEW_H
 
 #include "conceptrodon/descend/microbiota/pagelis/left_inspect.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -26,7 +26,7 @@ struct LeftReview
                     decltype
                     (
                         Pagelis::LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Monotony<Variables>...>()
+                        ::template idyl<Predicate, Vay<Variables>...>()
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Variables) - 1>{})
@@ -46,7 +46,7 @@ struct LeftReview
                 decltype
                 (
                     Pagelis::LeftInspect<std::make_index_sequence<I>>
-                    ::template idyl<Predicate, Monotony<Variables>...>()
+                    ::template idyl<Predicate, Vay<Variables>...>()
                 )::value
             ));
         }(std::make_index_sequence<sizeof...(Variables) - 1>{})

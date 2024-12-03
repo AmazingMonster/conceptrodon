@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_COOLLESS_H
 #define CONCEPTRODON_OMENNIVORE_COOLLESS_H
 
-#include "conceptrodon/coalfish.hpp"
+#include "conceptrodon/coy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Coolless = not requires 
-{typename Coalfish<Structure::template Cool>;};
+{typename Coy<Structure::template Cool>;};
 
 }}
 

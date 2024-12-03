@@ -7,7 +7,7 @@
 #include "conceptrodon/descend/omennivore/concepts/descend/any_peg_zero.hpp"
 #include "conceptrodon/descend/omennivore/concepts/all_pegful.hpp"
 #include "conceptrodon/descend/typelivore/concepts/any_zero.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -52,7 +52,7 @@ struct Tester<Args...>
 /******************************************************************************************************/
 static_assert(Tester<int, Peg<0>>::value == 0);
 static_assert(Tester<Peg<10>, Peg<1>>::value == 1);
-static_assert(Tester<Monotony<0>, Peg<10>>::value == 2);
+static_assert(Tester<Vay<0>, Peg<10>>::value == 2);
 static_assert(Tester<Peg<0>, Peg<1>>::value == 3);
 /******************************************************************************************************/
 

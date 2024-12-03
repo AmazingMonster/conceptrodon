@@ -4,12 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_FILTER_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_FILTER_H
 
-#include <type_traits>
-#include <concepts>
 #include "conceptrodon/descend/descend/mouldivore/cognate_filter.hpp"
-#include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -36,7 +34,7 @@ struct IsEven
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 120)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -44,7 +42,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(120, * 2 + 1)>;
+using SupposedResult = Operation<SHEEP_SPROUT(120, * 2 + 1)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -56,7 +54,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(120, * 2 + 1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(CognateFilter<Tester>::Road<IsEven>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateFilter<Operation>::Road<IsEven>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -80,7 +78,7 @@ struct IsDivisibleByThirty
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 232)
-struct Tester_1 {};
+struct Operation_1 {};
 /******************************************************************************************************/
 
 
@@ -88,7 +86,7 @@ struct Tester_1 {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult_1 = Tester_1
+using SupposedResult_1 = Operation_1
 <
     SHEEP_SPROUT(29, +1),
     SHEEP_SPROUT(29, +31),
@@ -110,7 +108,7 @@ using SupposedResult_1 = Tester_1
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(CognateFilter<Tester_1>::Road<IsEven, IsDivisibleByThirty>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateFilter<Operation_1>::Road<IsEven, IsDivisibleByThirty>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -119,9 +117,9 @@ SAME_TYPE(CognateFilter<Tester_1>::Road<IsEven, IsDivisibleByThirty>::Mold<SHEEP
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
-
-}}}}
 
 #endif

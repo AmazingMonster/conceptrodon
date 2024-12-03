@@ -1,5 +1,41 @@
 # Diary
 
+## 2024/12/03
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Rename identity utilities</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done. An identity utility's name is the first two letters of its corresponding member name plus `y`</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Test Github markdown links</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/02
 
 ### Todo
@@ -1251,7 +1287,7 @@ So tired...
 - `Dairy`
 
 - `Coral`
-- `Coalfish`
+- `Coy`
 
 - `Kindred`
 

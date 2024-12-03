@@ -111,7 +111,7 @@ We will transform variables into types so that we can avoid defining the bodies 
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -138,7 +138,7 @@ struct Ditch<std::index_sequence<I...>>
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     Operation<FrontTargets::value..., BackTargets::value...>;
 };
 ```
@@ -168,7 +168,7 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     Operation<FrontTargets::value..., BackTargets::value...>;
 };
 ```
@@ -189,7 +189,7 @@ struct CognateErase
         using Page = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 
@@ -201,7 +201,7 @@ struct CognateErase
         using Page = decltype
         (
             Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 

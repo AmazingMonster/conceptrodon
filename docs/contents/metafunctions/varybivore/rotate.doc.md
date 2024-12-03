@@ -73,7 +73,7 @@ We will transform variables into types so that we can avoid defining the body of
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -97,7 +97,7 @@ struct Swivel<std::index_sequence<J...>>
     // Note that `Operation` is invoked by values extracted from
     // the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     -> Operation<BackTargets::value..., FrontTargets::value...>;
 };
 ```
@@ -118,7 +118,7 @@ struct Rotate
         using Rail = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 

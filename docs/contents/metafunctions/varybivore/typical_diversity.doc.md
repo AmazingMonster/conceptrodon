@@ -92,7 +92,7 @@ To 'inherit' variables, we need a helper class that transforms variables into ty
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -105,7 +105,7 @@ template<auto...>
 struct Shuttle;
 
 template<auto...InspectedVariables>
-struct TypicalDiversity: public Monotony<InspectedVariables>...
+struct TypicalDiversity: public Vay<InspectedVariables>...
 {
 // Recursive Case:
     template<auto InspectingVariable, auto...RestVariables>
@@ -113,7 +113,7 @@ struct TypicalDiversity: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
+            std::is_base_of<Vay<InspectingVariable>, TypicalDiversity>::value, 
             TypicalDiversity, 
             TypicalDiversity<InspectedVariables..., InspectingVariable>
         >::type::template ProtoPage<RestVariables...>::type;
@@ -125,7 +125,7 @@ struct TypicalDiversity: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
+            std::is_base_of<Vay<InspectingVariable>, TypicalDiversity>::value, 
             Shuttle<InspectedVariables...>, 
             Shuttle<InspectedVariables..., InspectingVariable>
         >::type;

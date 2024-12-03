@@ -56,31 +56,31 @@ struct CognateClassicTransform
 
 ## Example
 
-We will apply `UnaryMinus` to elements whose value results are divisible by two and three in the list `Monotony<1>, Monotony<12>, Monotony<2>, Monotony<6>, Monotony<15>`.
+We will apply `UnaryMinus` to elements whose value results are divisible by two and three in the list `Vay<1>, Vay<12>, Vay<2>, Vay<6>, Vay<15>`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Val>
+template<typename Vay>
 struct DivisibleByTwo
 {
     static constexpr bool value
-    {Val::value % 2 == 0};
+    {Vay::value % 2 == 0};
 };
 
-template<typename Val>
+template<typename Vay>
 struct DivisibleByThree
 {
     static constexpr bool value
-    {Val::value % 3 == 0};
+    {Vay::value % 3 == 0};
 };
 
-template<typename Val>
+template<typename Vay>
 struct UnaryMinus
 {
-    using type = Monotony<-Val::value>;
+    using type = Vay<-Vay::value>;
 };
 
 template<typename...>
@@ -93,10 +93,10 @@ using Metafunction = CognateClassicTransform<Operation>
 ::Mold<Args...>;
 
 using SupposedResult = Operation
-<Monotony<1>, Monotony<-12>, Monotony<2>, Monotony<-6>, Monotony<15>>;
+<Vay<1>, Vay<-12>, Vay<2>, Vay<-6>, Vay<15>>;
 
 using Result = Metafunction
-<Monotony<1>, Monotony<12>, Monotony<2>, Monotony<6>, Monotony<15>>;
+<Vay<1>, Vay<12>, Vay<2>, Vay<6>, Vay<15>>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

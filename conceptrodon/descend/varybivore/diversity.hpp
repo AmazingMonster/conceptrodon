@@ -5,21 +5,21 @@
 #define CONCEPTRODON_VARYBIVORE_TYPICAL_DIVERSITY_H
 
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto...InspectedVariables>
-struct TypicalDiversity: public Monotony<InspectedVariables>...
+struct TypicalDiversity: public Vay<InspectedVariables>...
 {
     template<auto InspectingVariable, auto...RestVariables>
     struct ProtoPage
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
+            std::is_base_of<Vay<InspectingVariable>, TypicalDiversity>::value, 
             TypicalDiversity, 
             TypicalDiversity<InspectedVariables..., InspectingVariable>
         >::type::template ProtoPage<RestVariables...>::type;
@@ -30,7 +30,7 @@ struct TypicalDiversity: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, TypicalDiversity>::value, 
+            std::is_base_of<Vay<InspectingVariable>, TypicalDiversity>::value, 
             Shuttle<InspectedVariables...>, 
             Shuttle<InspectedVariables..., InspectingVariable>
         >::type;

@@ -8,7 +8,7 @@
 #include <utility>
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/roadrivore/trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
@@ -35,9 +35,9 @@ struct TesterA
     struct ProtoRoad
     {
         template<typename...Agreements>
-        using Mold = Container<Monotony<I>, Agreements...>;
+        using Mold = Container<Vay<I>, Agreements...>;
 
-        using type = Container<Monotony<I>>;
+        using type = Container<Vay<I>>;
 
         static constexpr auto value {I};
     };
@@ -46,9 +46,9 @@ struct TesterA
     struct ProtoRoad<DummyContainer>
     {
         template<typename...Agreements>
-        using Mold = DummyContainer<Monotony<-I>, Agreements...>;
+        using Mold = DummyContainer<Vay<-I>, Agreements...>;
 
-        using type = DummyContainer<Monotony<-I>>;
+        using type = DummyContainer<Vay<-I>>;
 
         static constexpr auto value {-I};
     };
@@ -64,12 +64,12 @@ template<template<typename...> class Container, typename...E>
 struct TesterBHelper<Container<E...>>
 {
     template<typename...Agreements>
-    using Mold = Container<Monotony<(0 +...+ (2 * E::value))>, Agreements...>;
+    using Mold = Container<Vay<(0 +...+ (2 * E::value))>, Agreements...>;
 
-    using type = Container<Monotony<(0 +...+ (2 * E::value))>>;
+    using type = Container<Vay<(0 +...+ (2 * E::value))>>;
     
     template<auto...I>
-    using Page = Container<Monotony<(0 +...+ (2 * E::value)) + (0 +...+ I)>>;
+    using Page = Container<Vay<(0 +...+ (2 * E::value)) + (0 +...+ I)>>;
 
     static constexpr auto value { (0 +...+ (2 * E::value)) };
 
@@ -85,12 +85,12 @@ template<template<typename...> class Container, typename...E>
 struct TesterCHelper<Container<E...>>
 {
     template<typename...Agreements>
-    using Mold = Container<Monotony<(0 +...+ (E::value - 1))>, Agreements...>;
+    using Mold = Container<Vay<(0 +...+ (E::value - 1))>, Agreements...>;
 
-    using type = Container<Monotony<(0 +...+ (E::value - 1))>>;
+    using type = Container<Vay<(0 +...+ (E::value - 1))>>;
     
     template<auto...I>
-    using Page = Container<Monotony<(0 +...+ (E::value - 1)) + (0 +...+ I)>>;
+    using Page = Container<Vay<(0 +...+ (E::value - 1)) + (0 +...+ I)>>;
 
     static constexpr auto value { (0 +...+ (E::value - 1)) };
 
@@ -112,7 +112,7 @@ struct RoadVessel
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Capsule<Monotony<2*2*2*4>>
+    Capsule<Vay<2*2*2*4>>
 
 SAME_TYPE
 (
@@ -133,7 +133,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Capsule<Monotony<2*4 + 2*3 + 2*2 + 2*1>, int>
+    Capsule<Vay<2*4 + 2*3 + 2*2 + 2*1>, int>
 
 SAME_TYPE
 (
@@ -155,7 +155,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE  \
-    Capsule<Monotony<2*4 + 2*3 + 2*2 + 2*1 - 1 - 1>, int>
+    Capsule<Vay<2*4 + 2*3 + 2*2 + 2*1 - 1 - 1>, int>
 
 SAME_TYPE
 (
@@ -179,7 +179,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE  \
-    DummyContainer<Monotony<2*4 + 2*3 + 2*2 + 2*(-1) - 1 - 1>, int>
+    DummyContainer<Vay<2*4 + 2*3 + 2*2 + 2*(-1) - 1 - 1>, int>
 
 SAME_TYPE
 (
@@ -203,7 +203,7 @@ SAME_TYPE
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE  \
-    Capsule<Monotony<((4-1) + (3-1) + (2-1) + (1-1) - 1) * 2>, int>
+    Capsule<Vay<((4-1) + (3-1) + (2-1) + (1-1) - 1) * 2>, int>
 
 SAME_TYPE
 (

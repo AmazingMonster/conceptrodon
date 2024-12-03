@@ -4,10 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_SITUATIONAL_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_SITUATIONAL_H
 
-#include <concepts>
-#include <type_traits>
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/mouldivore/situational.hpp"
 #include "macaron/judgmental/same_type.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 
@@ -20,11 +20,25 @@ namespace TestSituational {
 
 
 /******************************************************************************************************/
-template<typename A, typename B>
-struct Predicate 
+template<typename A, typename B, typename C>
+struct PredA
 { 
     static constexpr bool value 
     {static_cast<bool>(A::value)}; 
+};
+
+template<typename A, typename B, typename C>
+struct PredB
+{ 
+    static constexpr bool value 
+    {static_cast<bool>(B::value)}; 
+};
+
+template<typename A, typename B, typename C>
+struct PredC
+{ 
+    static constexpr bool value 
+    {static_cast<bool>(C::value)}; 
 };
 /******************************************************************************************************/
 
@@ -35,8 +49,24 @@ struct Predicate
 #define SUPPOSED_TYPE   \
     std::true_type
 
-SAME_TYPE(Situational<Predicate>::Mold_t<std::true_type, std::false_type>);
-SAME_TYPE(Situational<Predicate>::Mold_t<std::false_type, std::true_type>);
+SAME_TYPE(Situational<PredA>::Mold<std::true_type, std::false_type, Vay<true>>);
+SAME_TYPE(Situational<PredA>::Mold<std::false_type, std::true_type, Vay<true>>);
+SAME_TYPE(Situational<PredA, PredC>::Mold<std::true_type, std::false_type, Vay<true>>);
+SAME_TYPE(Situational<PredA, PredB>::Mold<std::false_type, std::true_type, Vay<true>>);
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    std::false_type
+
+SAME_TYPE(Situational<PredA>::Mold<std::false_type, std::false_type, Vay<true>>);
+SAME_TYPE(Situational<PredA, PredC>::Mold<std::true_type, std::false_type, Vay<false>>);
+SAME_TYPE(Situational<PredA, PredB>::Mold<std::true_type, std::false_type, Vay<true>>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

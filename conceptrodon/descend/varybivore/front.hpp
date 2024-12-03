@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_FRONT_H
 #define CONCEPTRODON_VARYBIVORE_FRONT_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/fore.hpp"
 
 namespace Conceptrodon {
@@ -20,7 +20,7 @@ struct Front
         using Rail = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 

@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_INJECT_H
 
 #include "conceptrodon/descend/microbiota/varbola/enrich.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -26,7 +26,7 @@ struct Inject
                 (
                     Varbola::Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Agreements..., Monotony<Variables>...>()
+                    ::template idyl<Agreements..., Vay<Variables>...>()
                 );
             };
         };

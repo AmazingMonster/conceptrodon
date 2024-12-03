@@ -178,7 +178,7 @@ struct CONCEPTRODON_OMINUCI_MODIFY_VALUES_FUNCTION_NAME
 #undef CONCEPTRODON_CYTOPLASM_MICRO_WORLD_SEPARATOR_SYMBOLS
 #undef CONCEPTRODON_CYTOPLASM_MICRO_WORLD_COUNT
 
-            , typename...RestMonotonyVariables
+            , typename...RestVayVariables
         >
         static consteval auto CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION()        
         ->  CONCEPTRODON_OMINUCI_MODIFY_VALUES_EXTEND_FRONT_FUNCTION
@@ -187,7 +187,7 @@ struct CONCEPTRODON_OMINUCI_MODIFY_VALUES_FUNCTION_NAME
             (
                 CONCEPTRODON_OMINUCI_MODIFY_VALUES_FUNCTION_NAME <RestIndexSequences ...>
                 ::template CONCEPTRODON_NUCLEOLUS_RAIL_PROTO_TEMPLATE <Hormone>
-                ::template CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <RestMonotonyVariables...> ()
+                ::template CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION <RestVayVariables...> ()
             )
         >
         ::template CONCEPTRODON_NUCLEOLUS_PAGE_SYNOPSIS_TEMPLATE
@@ -226,7 +226,7 @@ struct CONCEPTRODON_OMINUCI_MODIFY_VALUES_FUNCTION_NAME
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION 
             <
-                CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY <Variables>...
+                CONCEPTRODON_NUCLEOLUS_VAY_UTILITY <Variables>...
             >()
         );
     };

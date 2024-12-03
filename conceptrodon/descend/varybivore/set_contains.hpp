@@ -5,20 +5,20 @@
 #define CONCEPTRODON_VARYBIVORE_SET_CONTAINS_H
 
 #include <type_traits>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto...Variables>
 struct SetContains
-:public Monotony<Variables>...
+:public Vay<Variables>...
 {
     template<auto Inspecting>
     struct ProtoPage
     {   
         static constexpr bool value 
-        {std::is_base_of<Monotony<Inspecting>, SetContains>::value};
+        {std::is_base_of<Vay<Inspecting>, SetContains>::value};
     };
 
     template<auto...Agreements>
@@ -26,7 +26,7 @@ struct SetContains
 
     template<auto Inspecting>
     static constexpr bool Page_v 
-    {std::is_base_of<Monotony<Inspecting>, SetContains>::value};
+    {std::is_base_of<Vay<Inspecting>, SetContains>::value};
 };
 
 }}

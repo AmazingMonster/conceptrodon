@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_DECEIVE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/mouldivore/concepts/deceive.hpp"
 
 namespace Conceptrodon {
@@ -31,22 +31,22 @@ template<auto>
 struct Tester {};
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>::Mold, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>::Mold, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {0};
 };
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<1>::Mold, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<1>::Mold, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {-1};
 };
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>::Mold, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>::Mold, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>::Mold, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>::Mold, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {1};
@@ -67,14 +67,14 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanOneA
-= Deceive<AreNoGreaterThan<1>::Mold, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<1>::Mold, Vay<Arg>>;
 
 template<auto Arg>
 concept Truth = true;
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>::Mold, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>::Mold, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>::Mold, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>::Mold, Vay<Arg>>
 && GreaterThanOneA<Arg>
 struct Tester<Arg>
 {
@@ -97,11 +97,11 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanOneB
-= not AreNoGreaterThan<1>::Mold<Monotony<Arg>>::value;
+= not AreNoGreaterThan<1>::Mold<Vay<Arg>>::value;
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>::Mold, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>::Mold, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>::Mold, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>::Mold, Vay<Arg>>
 && GreaterThanOneB<Arg>
 struct Tester<Arg>
 {
@@ -124,11 +124,11 @@ static_assert(Tester<3>::value == 1.2);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanTwoA
-= not AreNoGreaterThan<2>::Mold<Monotony<Arg>>::value;
+= not AreNoGreaterThan<2>::Mold<Vay<Arg>>::value;
 
 template<auto Arg>
 concept GreaterThanTwoB
-= not AreNoGreaterThan<2>::Mold<Monotony<Arg>>::value;
+= not AreNoGreaterThan<2>::Mold<Vay<Arg>>::value;
 
 template<auto>
 struct TesterB;
@@ -157,11 +157,11 @@ static_assert(TesterB<3>::value == 2);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanTwoC
-= Deceive<AreNoGreaterThan<2>::Mold, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<2>::Mold, Vay<Arg>>;
 
 template<auto Arg>
 concept GreaterThanTwoD
-= Deceive<AreNoGreaterThan<2>::Mold, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<2>::Mold, Vay<Arg>>;
 
 template<auto>
 struct TesterC;

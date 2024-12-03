@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_FLOWLY_H
 #define CONCEPTRODON_OMENNIVORE_FLOWLY_H
 
-#include "conceptrodon/florican.hpp"
+#include "conceptrodon/fly.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Flowly = requires 
-{typename Florican<Structure::template Flow>;};
+{typename Fly<Structure::template Flow>;};
 
 }}
 

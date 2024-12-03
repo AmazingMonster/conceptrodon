@@ -60,11 +60,11 @@ struct CognateInsert
 
 ## Examples
 
-We will insert `Monotony<-1>, Monotony<-3>, Monotony<-5>` to indices `1, 2, 3` of `Monotony<0>, Monotony<2>, Monotony<4>` and invoke `Operation` with the result.
+We will insert `Vay<-1>, Vay<-3>, Vay<-5>` to indices `1, 2, 3` of `Vay<0>, Vay<2>, Vay<4>` and invoke `Operation` with the result.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename...>
@@ -72,14 +72,14 @@ struct Operation;
 
 template<typename...Args>
 using Metafunction = CognateInsert<Operation>
-::Mold<Monotony<0>, Monotony<2>, Monotony<4>>
+::Mold<Vay<0>, Vay<2>, Vay<4>>
 ::Page<1, 2, 3>
 ::Mold<Args...>;
 
 using SupposedResult = Operation
-<Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>>;
+<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>>;
 
-using Result = Metafunction<Monotony<-1>, Monotony<-3>, Monotony<-5>>;
+using Result = Metafunction<Vay<-1>, Vay<-3>, Vay<-5>>;
 
 static_assert(std::same_as<SupposedResult, Result>);
 ```

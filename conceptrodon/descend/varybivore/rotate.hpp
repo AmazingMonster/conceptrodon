@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_ROTATE_H
 
 #include "conceptrodon/descend/microbiota/varbola/swivel.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -20,7 +20,7 @@ struct Rotate
         using Rail = decltype
         (
             Varbola::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 

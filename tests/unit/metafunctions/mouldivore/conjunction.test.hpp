@@ -22,19 +22,66 @@ namespace TestConjunction {
 
 
 /******************************************************************************************************/
+/**** Pred_0 ****/
+// Returns true if the argument is less than 10.
 template<typename...>
-using MoldT = std::true_type;
+struct Pred_0
+{ static constexpr bool value {false}; };
 
+template<typename I>
+requires (I::value < 10)
+struct Pred_0<I>
+{ static constexpr bool value {true}; };
+
+/**** Pred_1 ****/
+// Returns true if the argument is greater than 0.
 template<typename...>
-using MoldF = std::false_type;
+struct Pred_1
+{ static constexpr bool value {false}; };
+
+template<typename I>
+requires (0 < I::value)
+struct Pred_1<I>
+{ static constexpr bool value {true}; };
+
+/**** Pred_2 ****/
+// Returns true if the argument is even.
+template<typename...>
+struct Pred_2
+{ static constexpr bool value {false}; };
+
+template<typename I>
+requires (I::value % 2 == 0)
+struct Pred_2<I>
+{ static constexpr bool value {true}; };
+
+/**** Example ****/
+template<typename...Args>
+using Metafunction = Conjunction<Pred_0, Pred_1, Pred_2>
+::Mold<Args...>;
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-VALID(Conjunction<MoldT, MoldT, MoldT, MoldT>::Mold_v<int>);
-INVALID(Conjunction<MoldF, MoldT, MoldT, MoldT>::Mold_v<int>);
+VALID(Metafunction<std::integral_constant<int, 2>>::value);
+VALID(Metafunction<std::integral_constant<int, 4>>::value);
+INVALID(Metafunction<std::integral_constant<int, 5>>::value);
+INVALID(Metafunction<std::integral_constant<int, -2>>::value);
+
+// If no predicate is provided,
+// the value is always `true`.
+VALID
+(
+    Conjunction<>
+    ::Mold
+    <
+        std::integral_constant<int, 1>,
+        std::integral_constant<int, 2>,
+        std::integral_constant<int, 3>
+    >::value
+);
 /******************************************************************************************************/
 
 

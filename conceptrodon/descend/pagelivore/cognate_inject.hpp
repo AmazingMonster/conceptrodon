@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_COGNATE_INJECT_H
 #define CONCEPTRODON_PAGELIVORE_COGNATE_INJECT_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/enrich.hpp"
 
 namespace Conceptrodon {
@@ -26,7 +26,7 @@ struct CognateInject
                 (
                     Varbola::Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Operation, Monotony<Variables>...>()
+                    ::template idyl<Operation, Vay<Variables>...>()
                 );
             };
         };

@@ -137,12 +137,12 @@ Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
 template<auto>
-struct Val;
+struct Vay;
 
 template<auto I>
 struct AddZeroHelper
 { 
-    using type = Val<I>; 
+    using type = Vay<I>; 
 };
 
 template<auto...Args>
@@ -151,7 +151,7 @@ using AddZero = AddZeroHelper<Args...>::type;
 template<auto I>
 struct AddOneHelper
 { 
-    using type = Val<I + 1>;
+    using type = Vay<I + 1>;
 };
 
 template<auto...Args>
@@ -160,7 +160,7 @@ using AddOne = AddOneHelper<Args...>::type;
 template<auto I>
 struct AddTwoHelper
 {
-    using type = Val<I + 2>;
+    using type = Vay<I + 2>;
 };
 
 template<auto...Args>
@@ -169,7 +169,7 @@ using AddTwo = AddTwoHelper<Args...>::type;
 template<typename...>
 struct Operation;
 
-using SupposedResult = Operation<Val<0>, Val<1>, Val<2>>;
+using SupposedResult = Operation<Vay<0>, Vay<1>, Vay<2>>;
 
 using Result 
 = BiCognatePlume<Operation>
@@ -183,7 +183,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
-using SupposedResult_1 = Operation<Val<1>, Val<2>, Val<3>>;
+using SupposedResult_1 = Operation<Vay<1>, Vay<2>, Vay<3>>;
 
 using Result_1 = BiCognatePlume<Operation>
 ::Rail<AddOne>
@@ -196,7 +196,7 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
-using SupposedResult_2 = Operation<Val<0>, Val<2>, Val<4>>;
+using SupposedResult_2 = Operation<Vay<0>, Vay<2>, Vay<4>>;
 
 using Result_2 = BiCognatePlume<Operation>
 ::Rail<AddZero, AddOne, AddTwo>
@@ -212,7 +212,7 @@ Then, we will collect `type` members of the results to instantiate `Operation`.
 template<typename Element>
 struct TypeAddZeroHelper
 { 
-    using type = Val<Element::value>; 
+    using type = Vay<Element::value>; 
 };
 
 template<typename...Args>
@@ -221,7 +221,7 @@ using TypeAddZero = TypeAddZeroHelper<Args...>::type;
 template<typename Element>
 struct TypeAddOneHelper
 { 
-    using type = Val<Element::value + 1>; 
+    using type = Vay<Element::value + 1>; 
 };
 
 template<typename...Args>
@@ -230,13 +230,13 @@ using TypeAddOne = TypeAddOneHelper<Args...>::type;
 template<typename Element>
 struct TypeAddTwoHelper
 { 
-    using type = Val<Element::value + 2>; 
+    using type = Vay<Element::value + 2>; 
 };
 
 template<typename...Args>
 using TypeAddTwo = TypeAddTwoHelper<Args...>::type;
 
-using SupposedResult_3 = Operation<Val<0>, Val<1>, Val<2>>;
+using SupposedResult_3 = Operation<Vay<0>, Vay<1>, Vay<2>>;
 
 using Result_3 
 = BiCognatePlume<Operation>
@@ -250,7 +250,7 @@ static_assert(std::same_as<Result_3, SupposedResult_3>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
-using SupposedResult_4 = Operation<Val<1>, Val<2>, Val<3>>;
+using SupposedResult_4 = Operation<Vay<1>, Vay<2>, Vay<3>>;
 
 using Result_4 = BiCognatePlume<Operation>
 ::Road<TypeAddOne>
@@ -267,7 +267,7 @@ static_assert(std::same_as<Result_4, SupposedResult_4>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
-using SupposedResult_5 = Operation<Val<0>, Val<2>, Val<4>>;
+using SupposedResult_5 = Operation<Vay<0>, Vay<2>, Vay<4>>;
 
 using Result_5 = BiCognatePlume<Operation>
 ::Road<TypeAddZero, TypeAddOne, TypeAddTwo>

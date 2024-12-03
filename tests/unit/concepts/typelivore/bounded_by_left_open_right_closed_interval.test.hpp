@@ -7,7 +7,7 @@
 #include "conceptrodon/descend/typelivore/concepts/bounded_by_left_open_right_closed_interval.hpp"
 #include "conceptrodon/descend/typelivore/concepts/greater_than.hpp"
 #include "conceptrodon/descend/typelivore/concepts/no_greater_than.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -42,12 +42,12 @@ struct Tester<I>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<nullptr>>::value == 0);
-static_assert(Tester<Monotony<11>>::value == 1);
-static_assert(Tester<Monotony<0>>::value == 2);
-static_assert(Tester<Monotony<-1>>::value == 2);
-static_assert(Tester<Monotony<3>>::value == 3);
-static_assert(Tester<Monotony<10>>::value == 3);
+static_assert(Tester<Vay<nullptr>>::value == 0);
+static_assert(Tester<Vay<11>>::value == 1);
+static_assert(Tester<Vay<0>>::value == 2);
+static_assert(Tester<Vay<-1>>::value == 2);
+static_assert(Tester<Vay<3>>::value == 3);
+static_assert(Tester<Vay<10>>::value == 3);
 /******************************************************************************************************/
 
 

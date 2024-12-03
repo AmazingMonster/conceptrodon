@@ -109,7 +109,7 @@ We will transform variables into types so that we can avoid defining the bodies 
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -137,7 +137,7 @@ struct Shear<std::index_sequence<I...>>
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     -> Operation<Targets::value...>;
 };
 ```
@@ -168,7 +168,7 @@ struct Incise<std::index_sequence<I...>, std::index_sequence<J...>>
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     -> Operation<Targets::value...>;
 };
 ```
@@ -189,7 +189,7 @@ struct Slice
         using Rail = decltype
         (
             Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 
@@ -201,7 +201,7 @@ struct Slice
         using Rail = decltype
         (
             Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 

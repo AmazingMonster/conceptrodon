@@ -125,7 +125,7 @@ We will transform variables into types so that we can avoid defining the body of
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -168,7 +168,7 @@ struct ModifyValues<std::index_sequence<I...>>
         // Note that `Shuttle` is instantiated by values
         // extracted from the template parameters.
         // This is because we will pack every variable
-        // into `Monotony`.
+        // into `Vay`.
         -> Shuttle
         <
             FrontTargets::value...,
@@ -177,7 +177,7 @@ struct ModifyValues<std::index_sequence<I...>>
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Monotony<Agreements>...>());
+        using Page = decltype(idyl<Vay<Agreements>...>());
     };
 
     template<template<auto...> class...Agreements>
@@ -214,7 +214,7 @@ struct ModifyValues<std::index_sequence<I...>, std::index_sequence<J...>>
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Monotony<Agreements>...>());
+        using Page = decltype(idyl<Vay<Agreements>...>());
     };
 
     template<template<auto...> class...Agreements>
@@ -257,7 +257,7 @@ struct ModifyValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Monotony<Agreements>...>());
+        using Page = decltype(idyl<Vay<Agreements>...>());
     };
 
     template<template<auto...> class...Agreements>

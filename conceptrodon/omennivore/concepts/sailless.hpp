@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_SAILLESS_H
 #define CONCEPTRODON_OMENNIVORE_SAILLESS_H
 
-#include "conceptrodon/sailfish.hpp"
+#include "conceptrodon/say.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Sailless = not requires 
-{typename Sailfish<Structure::template Sail>;};
+{typename Say<Structure::template Sail>;};
 
 }}
 

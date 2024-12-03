@@ -38,7 +38,7 @@ namespace TestAmongValue {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult = Shuttle<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -67,7 +67,7 @@ constexpr auto At = Among<SupposedResult>::ProtoPage<I>::value;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
+SAME_TYPE(Shuttle<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -81,7 +81,7 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using IntegerSequenceTester = std::integer_sequence<int, SHEEP_SPROUT(240)>;
+using IntegerSequenceTester = std::integer_sequence<int, SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -110,7 +110,7 @@ constexpr auto AtIntegerSequence = Among<IntegerSequenceTester>::ProtoPage<I>::v
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
+SAME_TYPE(Shuttle<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

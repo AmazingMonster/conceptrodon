@@ -5,14 +5,14 @@
 #define CONCEPTRODON_VARYBIVORE_ARE_OVERLAPPING_H
 
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto...InspectedVariables>
-struct AreOverlapping: public Monotony<InspectedVariables>...
+struct AreOverlapping: public Vay<InspectedVariables>...
 {
     struct Detail
     {
@@ -25,7 +25,7 @@ struct AreOverlapping: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, AreOverlapping>::value, 
+            std::is_base_of<Vay<InspectingVariable>, AreOverlapping>::value, 
             Detail, 
             AreOverlapping<InspectedVariables..., InspectingVariable>
         >::type::template ProtoPage<RestVariables...>::type;
@@ -38,7 +38,7 @@ struct AreOverlapping: public Monotony<InspectedVariables>...
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, AreOverlapping>::value, 
+            std::is_base_of<Vay<InspectingVariable>, AreOverlapping>::value, 
             void,
             Shuttle<InspectedVariables..., InspectingVariable>
         >::type;

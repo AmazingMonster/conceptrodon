@@ -4,17 +4,14 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CLASSIC_TREK_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CLASSIC_TREK_H
 
-#include <concepts>
-#include <type_traits>
-#include <utility>
 #include "conceptrodon/descend/mouldivore/classic_trek.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/vehicle.hpp"
 #include "conceptrodon/carrier.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -31,10 +28,10 @@ namespace TestClassic_trek {
 template<auto I>
 struct TesterA
 {
-    template<typename...Val>
+    template<typename...Vay>
     struct ProtoMold
     {
-        using type = Capsule<Shuttle<I>, Shuttle<Val::value>...>;
+        using type = Capsule<Shuttle<I>, Shuttle<Vay::value>...>;
     };
 
     template<typename...Agreements>
@@ -94,7 +91,7 @@ struct TesterE
 template<template<typename...> class R>
 struct MoldVessel
 {
-    using type = R<Monotony<0>, Monotony<1>, Monotony<2>>::type;
+    using type = R<Vay<0>, Vay<1>, Vay<2>>::type;
 };
 /******************************************************************************************************/
 
@@ -112,7 +109,7 @@ SAME_TYPE
     ::Road<TesterB>
     ::Road<TesterB>
     ::Commit
-    ::Mold<Monotony<0>, Monotony<1>, Monotony<2>>
+    ::Mold<Vay<0>, Vay<1>, Vay<2>>
     ::type
 );
 
@@ -141,7 +138,7 @@ SAME_TYPE
     ::Road<TesterC>
     ::Road<TesterD>
     ::Commit
-    ::Mold<Monotony<0>, Monotony<1>, Monotony<2>>
+    ::Mold<Vay<0>, Vay<1>, Vay<2>>
     ::type
 );
 
@@ -172,7 +169,7 @@ SAME_TYPE
     ::Road<TesterD>
     ::Sail<TesterE<2>::Rail>
     ::Commit
-    ::Mold<Monotony<0>, Monotony<1>, Monotony<2>>
+    ::Mold<Vay<0>, Vay<1>, Vay<2>>
     ::type
 );
 

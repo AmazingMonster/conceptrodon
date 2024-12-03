@@ -4,12 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REVEAL_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REVEAL_H
 
-#include <concepts>
 
 #include "conceptrodon/mouldivore/reveal.hpp"
 #include "conceptrodon/capsule.hpp"
+#include <concepts>
 
 #include "macaron/judgmental/same_type.hpp"
+
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 
 namespace Conceptrodon {

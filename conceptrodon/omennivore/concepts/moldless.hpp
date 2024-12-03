@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_MOLDLESS_H
 #define CONCEPTRODON_OMENNIVORE_MOLDLESS_H
 
-#include "conceptrodon/emissary.hpp"
+#include "conceptrodon/moy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Moldless = not requires 
-{typename Emissary<Structure::template Mold>;};
+{typename Moy<Structure::template Mold>;};
 
 }}
 

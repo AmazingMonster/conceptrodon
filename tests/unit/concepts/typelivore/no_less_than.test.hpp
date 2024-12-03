@@ -7,7 +7,7 @@
 #include "conceptrodon/descend/typelivore/concepts/equal_to.hpp"
 #include "conceptrodon/descend/typelivore/concepts/no_less_than.hpp"
 #include "conceptrodon/descend/typelivore/concepts/greater_than.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -32,8 +32,8 @@ struct Tester<I, J>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<3>, 1>::value == 1);
-static_assert(Tester<Monotony<-1>, -1>::value == 1);
+static_assert(Tester<Vay<3>, 1>::value == 1);
+static_assert(Tester<Vay<-1>, -1>::value == 1);
 /******************************************************************************************************/
 
 
@@ -55,10 +55,10 @@ struct Tester<I, J>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<3>, 1>::value == 1);
-static_assert(Tester<Monotony<-1>, -1>::value == 1);
-static_assert(Tester<Monotony<3>, 0>::value == 2);
-static_assert(Tester<Monotony<1>, 1>::value == 3);
+static_assert(Tester<Vay<3>, 1>::value == 1);
+static_assert(Tester<Vay<-1>, -1>::value == 1);
+static_assert(Tester<Vay<3>, 0>::value == 2);
+static_assert(Tester<Vay<1>, 1>::value == 3);
 /******************************************************************************************************/
 
 

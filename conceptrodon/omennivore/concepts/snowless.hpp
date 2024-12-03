@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_SNOWLESS_H
 #define CONCEPTRODON_OMENNIVORE_SNOWLESS_H
 
-#include "conceptrodon/snowfall.hpp"
+#include "conceptrodon/sny.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Snowless = not requires 
-{typename Snowfall<Structure::template Snow>;};
+{typename Sny<Structure::template Snow>;};
 
 }}
 

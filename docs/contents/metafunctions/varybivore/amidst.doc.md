@@ -72,14 +72,14 @@ To make it work, we need to turn variables into pointers. We will create a helpe
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
 Now, we can make pointers from variables by:
 
 ```C++
-static_cast<Monotony<Variables>*>(nullptr)
+static_cast<Vay<Variables>*>(nullptr)
 ```
 
 Finally, we will make a template that generates the `std::index_sequence` and translates the result.
@@ -98,7 +98,7 @@ struct Amidst
                 decltype
                 (
                     Midst<std::make_index_sequence<I>>
-                    ::idyl(static_cast<Monotony<Variables>*>(nullptr)...)
+                    ::idyl(static_cast<Vay<Variables>*>(nullptr)...)
                 )
             >::value
         };
@@ -172,7 +172,7 @@ struct Midst<std::index_sequence<I...>>
 `Prefix<I>...Nah` tells compilers that this function template is only allowed when `Nah` satisfies `Prefix<Nah, I>...`
 In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
 
-We will use `Monotony` defined above and write an `Amidst` compatible with this version of `Midst`:
+We will use `Vay` defined above and write an `Amidst` compatible with this version of `Midst`:
 
 ```C++
 template<auto...Variables>
@@ -186,7 +186,7 @@ struct Amidst
             decltype
             (
                 Midst<std::make_index_sequence<I>>
-                ::template idyl<Monotony<Variables>...>()
+                ::template idyl<Vay<Variables>...>()
             )::value
         };
     };

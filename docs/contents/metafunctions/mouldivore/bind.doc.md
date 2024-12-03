@@ -41,11 +41,11 @@ struct Bind
 
 ## Example
 
-We will bind the second and the fourth parameter of `Operation` with `Monotony<-2>, Monotony<-4>` and reverse the order of the first and the third parameter.
+We will bind the second and the fourth parameter of `Operation` with `Vay<-2>, Vay<-4>` and reverse the order of the first and the third parameter.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename...>
@@ -53,13 +53,13 @@ struct Operation;
 
 template<typename...Args>
 using Metafunction = Bind<Operation>
-::Mold<Peg<2>, Monotony<-2>, Peg<1>, Monotony<-4>>
+::Mold<Peg<2>, Vay<-2>, Peg<1>, Vay<-4>>
 ::Mold<Args...>;
 
-using SupposedResult = Operation<Monotony<3>, Monotony<-2>, Monotony<1>, Monotony<-4>>;
+using SupposedResult = Operation<Vay<3>, Vay<-2>, Vay<1>, Vay<-4>>;
 
 // The `void` at the end has not effect.
-using Result = Metafunction<Monotony<1>, Monotony<3>, void>;
+using Result = Metafunction<Vay<1>, Vay<3>, void>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

@@ -10,7 +10,7 @@ namespace Mouldivore {
 template<template<typename...> class Operation>
 struct CognateTransform
 {
-    template<template<typename...> class Puberty>
+    template<template<typename...> class...Puberty>
     struct ProtoRoad
     {
         struct Slash
@@ -23,7 +23,7 @@ struct CognateTransform
                 { using type = Element; };
 
                 template<typename Element>
-                requires Puberty<Element>::value
+                requires (...&&Puberty<Element>::value)
                 struct Hidden<Element>
                 { using type = Hormone<Element>; };
 

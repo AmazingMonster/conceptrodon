@@ -43,11 +43,11 @@ struct LeftReview
 
 ## Example
 
-- We will check if every relative-order-preserving pair of `Monotony<0>, Monotony<1>, Monotony<2>, Monotony<2>` satisfies `IsNoGreater`.
+- We will check if every relative-order-preserving pair of `Vay<0>, Vay<1>, Vay<2>, Vay<2>` satisfies `IsNoGreater`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename L, typename R>
@@ -61,7 +61,7 @@ struct IsNoGreater
 static_assert
 (
     LeftReview<IsNoGreater>
-    ::Mold<Monotony<0>, Monotony<1>, Monotony<2>, Monotony<2>>
+    ::Mold<Vay<0>, Vay<1>, Vay<2>, Vay<2>>
     ::value
 );
 ```
@@ -69,11 +69,11 @@ static_assert
 - Note that the order matters when the predicate is not commutative.
 
 ```C++
-// Reverse Monotony<0> and Monotony<1>
+// Reverse Vay<0> and Vay<1>
 static_assert
 (
     ! LeftReview<IsNoGreater>
-    ::Mold<Monotony<1>, Monotony<0>, Monotony<2>, Monotony<2>>
+    ::Mold<Vay<1>, Vay<0>, Vay<2>, Vay<2>>
     ::value
 );
 ```

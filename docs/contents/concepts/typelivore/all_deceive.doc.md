@@ -32,7 +32,7 @@ using Pred_0 = decltype([](auto...){return false;});
 using Pred_1 = decltype([](auto...){return false;});
 
 template<auto I>
-struct Monotony
+struct Vay
 {
     static constexpr auto value {I};
 };
@@ -45,7 +45,7 @@ template<typename...Args>
 requires(...&&(not Pred_0{}(Args::value))) && (...&&(not Pred_1{}(Args::value)))
 constexpr bool fun(){return true;}
 
-static_assert(fun<Monotony<1>>());
+static_assert(fun<Vay<1>>());
 ```
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwArKSuADJ4DJgAcj4ARpjEEgCcpAAOqAqETgwe3r566ZmOAuGRMSzxiVy2mPbFDEIETMQEuT5%2BQTV12Y3NBKXRcQnJtk0tbfnVCmP9EYMVw1wAlLaoXsTI7BxemUYA1MrEmOgA%2Bhp7Jv4AIntYyLQEAJ6pmBAmgVaBVxBMXkQAdICliYAOwWI4EdYMPZUMRKS5WEFXYH%2BKwaACCJgxOwiwAOR1OXAu11umHuTxebw%2B72%2BvwBQNB4MwkOI0NhtHhqNByIRWMxGIImBYqQMgsubjpqD2AElLtg%2BdNiF4HHsALICVBEBiPPmMvl7A17aZMRzIPZoBjTTCqVLEPaSvYANzEXkwFzBsqRvIx3O9/PRguFosw4opjFYmEB/3RxGACjlfKOAEcvHgjgo9hAo%2BYAGy5iAMTX445nPVIiAxuMgEDO7yYJYNvkWq02u2xVCeGFeBgQYFgiFQmFwkNcr0%2BgVCkUmkduMPMNhRyvx/zyjHJ1PprOA3P5wsEYunDRl75L6u110NpYXMx5m%2BZ7M33dFw4lrjHiuxhRnl31xsY5uCq2eztp2VDdr2jIDqyewEEqI6IlcuoYsaponEwChKC01DduK6p7gIOr%2BG4b4rnKvYohYHArLQnCBLwfgcFopCoJwbjWNYRprBsbrmP4PCkAQmhUSsADWICBDm/wABw5lIgQgjmkhJP4ClmP4%2BicJIvAsBIGgaKQDFMSxHC8F%2B%2BmCYxVGkHAsAwIgIBrAQqR/OQlBoMKdAJFEEacKoMkALSKXswDIGaUj/GYvDHIQJB4Ogej8IIIhiOwUgyIIigqOolmkLo1QAO7EEwqScDw1G0fRQnMZwADyfzOfuqBUHsfk5oFkjBaFezhWYmYeB59B2rxyy8BZWgrBASDuaknlkBQEDTbNIDAFIZh8HQgrEF%2BECxFVsQRM0jylbw%2B3MMQjw1bE2hkhZ/HuWwgg1QwtBHTlWCxF4wASrQHLHaQWAsIYwDiG9aY3XgjqYF%2BOXWmSfxbPxESCjROW0HgsRFedHhYFVsF4Dp3C8JDxDtkoVxCkDaNGEJKxUAYcYAGp4Jg%2BU1S8DH8YlwiiOIaVc5lahVXl%2BhAyg7GWPo6NfpAKyoKk9TQ/50zoJcVymJY1hmEZxPEHFUPwCsdjg84ECuBMfjVGEczlJUBQZFkAjm3bRTZAMNuLF0xsNDMTtTLUXu9C0btDFUox9L7YdB9bIcSIbXGbLHGkcHRBlVcZLUBUFIVhZIEWZrgMVDWpI0CTTKwIJgTBYIkvakGJkj%2BP8ykgpIGiSGYkg5npEkpCjWmkDpfH/LJOZSUkUlcDmgSSFwgTKTmqc5cZpkgOZNPWXZk0OfVLnzYtg3eWwnDNCwjogv5TDmgY%2BxcEk/xcP8THRUQuvxdUXPJbz0j80ogs5boa1CrFWOuVZOlUl61R3o1ZqJ8z4XyvkDbqd8H7nAgP1Gag1rz%2BDMEsUa68t77wSK5BaqABrDFgefe4QNb5cH0jQB4CRtq7RyqdQ6f1WHnUutdBwf17qMAIE9F6VV3qfW%2Br9Qm/0KZGBBkxfARwHAQ31jDVQcNBR/SRrUKqaMMaHWxlsJieMCb8WJqTTA5NAbSNxOvOmTBGbM1ZuzP6H8eapW/rIAW2UmIAJFtTdWVgJbaOlrXOWCtOBKwICra4fjNbawSK/fWMtPYKJNmbTw7Q9BWzKDHaohQHY5DSZMNI9t6jBwWKHI2yTvbhwKRbJJ9RA6zCyWUvQxpxg1JaTMUpttlirHWAnHpKMU6GV4OnCh8CqE32QY/fO%2BAX5YJLmNYSpAK5V2GLXPu2kAh3zbiCOeIIQT%2BHbp3Gei8jKcBXmvSyE1N5IEcg1YhhDiCHy2CfIKLAFCOjNI6W%2B/xgzTCirM2Kb90rcxShINxGVf6eJ0AEUgQCSqE1AUMtOkCnJ/D2E1e0xAWBvI%2BV8n5fz9xoNIRghIWD/C4NLlc6yU0SWzQeXSwaNZkCpFSCcb5SQTiErQtixS60GFbUoMwpiHDXr8VFVwm6vDSEPQEc9V6sjMAfS%2BmIcR/EAaU30bwOR4NIbQyfio5A8N1GCE0ajdGmNHh6NxrrIxRMEimPMZTKx1KbF2JZmzRgTjZCf1cSCjxQtYXX2MOLGwgSDbMXltkaGAB6ZWYsNaWC1iMnWesgmG39pUlwDB3DtMtjmrpHtcn1AjsW120dml%2B26AIBpEcKn1M6RW7pkdWh5pbYWqocc%2BmpSReAs5HAsU4o6u8z5ToCXTmmDMwu8zKWLIbMsyu1dKCgP7jpMwd9/BBECG3WhGhN0KSkqckZ5zbCrypeNUSIAG7338FJaealt05jUgpJO/g%2B3HpMuepZKNIpHuqp%2BudKxiaZGcJIIAA%3D%3D%3D)
@@ -61,7 +61,7 @@ template<typename...Args>
 requires AllDeceive<Pred_0, Args...> && AllDeceive<Pred_1, Args...>
 constexpr bool fun(){return true;}
 
-static_assert(fun<Monotony<1>>());
+static_assert(fun<Vay<1>>());
 ```
 
 ## Implementation

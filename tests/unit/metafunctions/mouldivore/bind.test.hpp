@@ -4,14 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_H
 
-#include <concepts>
 #include "conceptrodon/descend/descend/mouldivore/bind.hpp"
-#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/peg.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -27,8 +26,17 @@ namespace TestBind {
 
 
 /******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -49,7 +57,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep_reversed.hpp"
-SAME_TYPE(Bind<Capsule>::Mold<DOUBLE_SHEEP_SPROUT(120)>::Mold<SHEEP_REVERSED_SPROUT(120, *2+1)>);
+SAME_TYPE(Bind<Operation>::Mold<DOUBLE_SHEEP_SPROUT(120)>::Mold<SHEEP_REVERSED_SPROUT(120, *2+1)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep_reversed.hpp"
 
 #undef DOUBLE_SHEEP_PREFIX

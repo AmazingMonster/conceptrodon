@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ERASE_H
 #define CONCEPTRODON_VARYBIVORE_ERASE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/ditch.hpp"
 #include "conceptrodon/descend/microbiota/varbola/expunge.hpp"
 
@@ -24,7 +24,7 @@ struct Erase
         using Rail = decltype
         (
             Varbola::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 
@@ -36,7 +36,7 @@ struct Erase
         using Rail = decltype
         (
             Varbola::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Monotony<Variables>...>()
+            ::template idyl<Agreements..., Vay<Variables>...>()
         );
     };
 

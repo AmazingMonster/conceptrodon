@@ -413,11 +413,11 @@ struct TypicalAmong<Container<Elements...>>
 {};
 ```
 
-To pick out `Flow`s with `Typelivore::TypicalAmong`, we will wrap every `Flow` into a `Florican`.
+To pick out `Flow`s with `Typelivore::TypicalAmong`, we will wrap every `Flow` into a `Fly`.
 
 ```C++
 template<template<template<template<typename...> class...> class...> class Sorrow>
-struct Florican
+struct Fly
 {
     template<template<template<typename...> class...> class...Warehouses>
     using Flow = Sorrow<Warehouses...>;
@@ -439,11 +439,11 @@ struct TypicalAmong<Vessel<Flows...>>
     struct ProtoPage
     {
         template<template<template<typename...> class...> class...Arguments>
-        // We warp each of `Flows...` into `Florican`
+        // We warp each of `Flows...` into `Fly`
         // and invoke `Typelivore::TypicalAmong`. 
-        using Flow = Typelivore::TypicalAmong<Florican<Flows>...>
+        using Flow = Typelivore::TypicalAmong<Fly<Flows>...>
         ::template Page<I>
-        // The `type` we obtained is an instantiated `Florican`.
+        // The `type` we obtained is an instantiated `Fly`.
         ::type
         // We call the template member `Flow` with the arguments.
         ::template Flow<Arguments...>;

@@ -70,7 +70,7 @@ We will transform variables into types so that we can avoid defining the body of
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -94,7 +94,7 @@ struct Fore<std::index_sequence<I...>>
     // Note that `Operation` is invoked by values
     // extracted from the template parameters.
     // This is because we will pack every item
-    // of `Variables...` into `Monotony`.
+    // of `Variables...` into `Vay`.
     static consteval auto idyl() -> Operation<Targets::value...>;
 };
 ```
@@ -115,7 +115,7 @@ struct CognateFront
         using Page = decltype
         (
             Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 

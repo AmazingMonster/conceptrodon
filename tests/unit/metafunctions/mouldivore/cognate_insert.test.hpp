@@ -6,7 +6,6 @@
 
 #include <concepts>
 #include "conceptrodon/descend/descend/mouldivore/cognate_insert.hpp"
-#include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -24,8 +23,17 @@ namespace TestCognateInsert {
 
 
 /******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -38,7 +46,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(CognateInsert<Capsule>::Mold<LLAMA_SPROUT(120, *2+1)>::Page<SHEEP_SPROUT(120)>::Mold<LLAMA_SPROUT(120, *2)>);
+SAME_TYPE(CognateInsert<Operation>::Mold<LLAMA_SPROUT(120, *2+1)>::Page<SHEEP_SPROUT(120)>::Mold<LLAMA_SPROUT(120, *2)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 

@@ -56,7 +56,7 @@ struct InsertTypes
 
 ## Examples
 
-We will insert `Monotony<-1>, Monotony<-3>, Monotony<-5>` to indices `1, 2, 3` of `Monotony<0>, Monotony<2>, Monotony<4>`.
+We will insert `Vay<-1>, Vay<-3>, Vay<-5>` to indices `1, 2, 3` of `Vay<0>, Vay<2>, Vay<4>`.
 To do so, we will calculate the distance from one index to its immediate next.
 We will keep the first index, `1`, since it represents how many elements we must pass to reach the first target position.
 
@@ -69,7 +69,7 @@ We will pass these sequences to `InsertTypes`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename...>
@@ -82,12 +82,12 @@ using Metafunction = InsertTypes
     std::make_index_sequence<2-1>,
     std::make_index_sequence<3-2>
 >
-::Mold<Monotony<-1>, Monotony<-3>, Monotony<-5>>
+::Mold<Vay<-1>, Vay<-3>, Vay<-5>>
 ::Mold<Args...>;
 
-using SupposedResult = Capsule<Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>>;
+using SupposedResult = Capsule<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>>;
 
-using Result = Metafunction<Monotony<0>, Monotony<2>, Monotony<4>>;
+using Result = Metafunction<Vay<0>, Vay<2>, Vay<4>>;
 
 static_assert(std::same_as<SupposedResult, Result>);
 ```

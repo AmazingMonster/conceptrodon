@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_RAILLY_H
 #define CONCEPTRODON_OMENNIVORE_RAILLY_H
 
-#include "conceptrodon/legation.hpp"
+#include "conceptrodon/ray.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Railly = requires
-{typename Legation<Structure::template Rail>;};
+{typename Ray<Structure::template Rail>;};
 
 }}
 

@@ -49,7 +49,7 @@ struct RemoveTypes
 
 ## Examples
 
-We will remove elements of indices `1, 3, 5` from `Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>`.
+We will remove elements of indices `1, 3, 5` from `Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>`.
 To do so, we will calculate the distance from one index to its immediate next.
 
 We will keep the first index, `1`, since it represents how many elements we must pass to reach the first target position.
@@ -64,7 +64,7 @@ We will pass these sequences to `RemoveTypes`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename...>
@@ -79,9 +79,9 @@ using Metafunction = RemoveTypes
 >
 ::Mold<Args...>;
 
-using SupposedResult = Capsule<Monotony<0>, Monotony<2>, Monotony<4>>;
+using SupposedResult = Capsule<Vay<0>, Vay<2>, Vay<4>>;
 
-using Result = Metafunction<Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>>;
+using Result = Metafunction<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>>;
 
 static_assert(std::same_as<SupposedResult, Result>);
 ```

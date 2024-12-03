@@ -25,18 +25,22 @@ namespace TestLeftReview {
 
 
 
+
+/******************************************************************************************************/
 template<typename L, typename R>
 struct BinaryOperation
 { static constexpr bool value {L::value < R::value}; };
+/******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 VALID(LeftReview<Mouldivore::Negation<std::is_same>::Mold>::Mold_v<SHEEP_SPROUT(40)>);
+VALID(LeftReview<Mouldivore::Negation<std::is_same>::Mold>::Mold<SHEEP_SPROUT(40)>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
 
 
 
@@ -50,13 +54,11 @@ VALID(LeftReview<std::is_same>::Mold_v<ALKANE_SPROUT(40)>);
 
 
 
-
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 INVALID(LeftReview<Mouldivore::Negation<std::is_same>::Mold>::Mold_v<SHEEP_SPROUT(40), std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
 
 
 
@@ -70,13 +72,11 @@ VALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40)>);
 
 
 
-
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 INVALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40),std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
 
 
 

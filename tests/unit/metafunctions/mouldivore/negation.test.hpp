@@ -4,11 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_NEGATION_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_NEGATION_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/mouldivore/negation.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"
@@ -22,19 +21,24 @@ namespace TestNegation {
 
 
 /******************************************************************************************************/
-template<typename...>
-using MoldT = std::true_type;
+template<typename First, typename Second>
+struct IsLess
+{
+    static constexpr bool value
+    {First::value < Second::value};
+};
 
-template<typename...>
-using MoldF = std::false_type;
+template<typename...Args>
+using IsNoLess = Negation<IsLess>::Mold<Args...>;
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-INVALID(Negation<MoldT>::Mold_v<int>);
-VALID(Negation<MoldF>::Mold_v<int>);
+VALID(IsNoLess<std::integral_constant<int, 1>, std::integral_constant<int, 1>>::value);
+VALID(IsNoLess<std::integral_constant<int, 1>, std::integral_constant<int, 0>>::value);
+INVALID(IsNoLess<std::integral_constant<int, 1>, std::integral_constant<int, 2>>::value);
 /******************************************************************************************************/
 
 

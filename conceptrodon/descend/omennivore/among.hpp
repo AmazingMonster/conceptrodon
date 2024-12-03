@@ -9,18 +9,18 @@
 #include "conceptrodon/microbiota/moldiae/among.hpp"
 #include "conceptrodon/microbiota/pagelis/among.hpp"
 
-#include "conceptrodon/delegacy.hpp"
-#include "conceptrodon/legation.hpp"
-#include "conceptrodon/florican.hpp"
-#include "conceptrodon/sailfish.hpp"
-#include "conceptrodon/snowfall.hpp"
-#include "conceptrodon/halfmoon.hpp"
-#include "conceptrodon/coalfish.hpp"
-#include "conceptrodon/camellia.hpp"
-#include "conceptrodon/graphite.hpp"
-#include "conceptrodon/wildfire.hpp"
-#include "conceptrodon/glowworm.hpp"
-#include "conceptrodon/daydream.hpp"
+#include "conceptrodon/roy.hpp"
+#include "conceptrodon/ray.hpp"
+#include "conceptrodon/fly.hpp"
+#include "conceptrodon/say.hpp"
+#include "conceptrodon/sny.hpp"
+#include "conceptrodon/hay.hpp"
+#include "conceptrodon/coy.hpp"
+#include "conceptrodon/cay.hpp"
+#include "conceptrodon/gry.hpp"
+#include "conceptrodon/wiy.hpp"
+#include "conceptrodon/gly.hpp"
+#include "conceptrodon/day.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -64,7 +64,7 @@ struct TypicalAmong<Sorrow<Warehouses...>>
     struct ProtoPage
     {
         template<template<typename...> class...Agreements>
-        using Road = Typella::TypicalAmong<Delegacy<Warehouses>...>
+        using Road = Typella::TypicalAmong<Roy<Warehouses>...>
         ::template Page<I>::type::template Road<Agreements...>;
     };
 
@@ -83,7 +83,7 @@ struct TypicalAmong<Melancholy<Stockrooms...>>
     struct ProtoPage
     {
         template<template<auto...> class...Agreements>
-        using Rail = Typella::TypicalAmong<Legation<Stockrooms>...>
+        using Rail = Typella::TypicalAmong<Ray<Stockrooms>...>
         ::template Page<I>::type::template Rail<Agreements...>;
     };
 
@@ -102,7 +102,7 @@ struct TypicalAmong<Silence<Sorrow...>>
     struct ProtoPage
     {
         template<template<template<typename...> class...> class...Agreements>
-        using Flow = Typella::TypicalAmong<Florican<Sorrow>...>
+        using Flow = Typella::TypicalAmong<Fly<Sorrow>...>
         ::template Page<I>::type::template Flow<Agreements...>;
     };
 
@@ -121,7 +121,7 @@ struct TypicalAmong<Tranquil<Melancholy...>>
     struct ProtoPage
     {
         template<template<template<auto...> class...> class...Agreements>
-        using Sail = Typella::TypicalAmong<Sailfish<Melancholy>...>
+        using Sail = Typella::TypicalAmong<Say<Melancholy>...>
         ::template Page<I>::type::template Sail<Agreements...>;
     };
 
@@ -140,7 +140,7 @@ struct TypicalAmong<Consistency<Silence...>>
     struct ProtoPage
     {
         template<template<template<template<typename...> class...> class...> class...Agreements>
-        using Snow = Typella::TypicalAmong<Snowfall<Silence>...>
+        using Snow = Typella::TypicalAmong<Sny<Silence>...>
         ::template Page<I>::type::template Snow<Agreements...>;
     };
 
@@ -159,7 +159,7 @@ struct TypicalAmong<Perseverance<Tranquil...>>
     struct ProtoPage
     {
         template<template<template<template<auto...> class...> class...> class...Agreements>
-        using Hail = Typella::TypicalAmong<Halfmoon<Tranquil>...>
+        using Hail = Typella::TypicalAmong<Hay<Tranquil>...>
         ::template Page<I>::type::template Hail<Agreements...>;
     };
 
@@ -178,7 +178,7 @@ struct TypicalAmong<Sunshine<Consistency...>>
     struct ProtoPage
     {
         template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-        using Cool = Typella::TypicalAmong<Coalfish<Consistency>...>
+        using Cool = Typella::TypicalAmong<Coy<Consistency>...>
         ::template Page<I>::type::template Cool<Agreements...>;
     };
 
@@ -197,7 +197,7 @@ struct TypicalAmong<Sunshine<Perseverance...>>
     struct ProtoPage
     {
         template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
-        using Calm = Typella::TypicalAmong<Camellia<Perseverance>...>
+        using Calm = Typella::TypicalAmong<Cay<Perseverance>...>
         ::template Page<I>::type::template Calm<Agreements...>;
     };
 
@@ -216,7 +216,7 @@ struct TypicalAmong<Sunlight<Sunshines...>>
     struct ProtoPage
     {
         template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
-        using Grit = Typella::TypicalAmong<Graphite<Sunshines>...>
+        using Grit = Typella::TypicalAmong<Gry<Sunshines>...>
         ::template Page<I>::type::template Grit<Agreements...>;
     };
 
@@ -235,7 +235,7 @@ struct TypicalAmong<Sunlight<Sunshines...>>
     struct ProtoPage
     {
         template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
-        using Will = Typella::TypicalAmong<Wildfire<Sunshines>...>
+        using Will = Typella::TypicalAmong<Wiy<Sunshines>...>
         ::template Page<I>::type::template Will<Agreements...>;
     };
 
@@ -254,7 +254,7 @@ struct TypicalAmong<Sunlight<Sunlights...>>
     struct ProtoPage
     {
         template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
-        using Glow = Typella::TypicalAmong<Glowworm<Sunlights>...>
+        using Glow = Typella::TypicalAmong<Gly<Sunlights>...>
         ::template Page<I>::type::template Glow<Agreements...>;
     };
 
@@ -273,7 +273,7 @@ struct TypicalAmong<Sunlight<Sunlights...>>
     struct ProtoPage
     {
         template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
-        using Dawn = Typella::TypicalAmong<Daydream<Sunlights>...>
+        using Dawn = Typella::TypicalAmong<Day<Sunlights>...>
         ::template Page<I>::type::template Dawn<Agreements...>;
     };
 

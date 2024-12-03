@@ -8,7 +8,7 @@
 #include <type_traits>
 #include <utility>
 #include "conceptrodon/descend/roadrivore/classic_trek.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/capsule.hpp"
@@ -34,7 +34,7 @@ struct TesterA
     template<template<typename...> class...Containers>
     struct ProtoRoad
     {
-        using type = Capsule<Containers<Monotony<I>>...>;
+        using type = Capsule<Containers<Vay<I>>...>;
     };
 
     template<template<typename...> class...Containers>
@@ -47,7 +47,7 @@ struct TesterB {};
 template<template<typename...> class...Containers, typename...E>
 struct TesterB<Containers<E>...>
 {
-    using type = Capsule<Containers<Monotony<2*E::value>>...>;
+    using type = Capsule<Containers<Vay<2*E::value>>...>;
 };
 
 template<typename...>
@@ -56,7 +56,7 @@ struct TesterC {};
 template<template<typename...> class...Container, typename...E>
 struct TesterC<Container<E>...>
 {
-    using type = Capsule<Container<Monotony<E::value-1>>...>;
+    using type = Capsule<Container<Vay<E::value-1>>...>;
 };
 
 template<auto>
@@ -92,9 +92,9 @@ struct RoadVessel
 #define SUPPOSED_TYPE   \
     Capsule \
     <   \
-        Capsule<Monotony<2*2*2*4>>, \
-        Capsule<Monotony<2*2*2*4>>, \
-        Capsule<Monotony<2*2*2*4>>  \
+        Capsule<Vay<2*2*2*4>>, \
+        Capsule<Vay<2*2*2*4>>, \
+        Capsule<Vay<2*2*2*4>>  \
     >
 
 SAME_TYPE
@@ -146,9 +146,9 @@ SAME_TYPE
 #define SUPPOSED_TYPE   \
     Capsule \
     <   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>,   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>,   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>    \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>,   \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>,   \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>    \
     >
 
 
@@ -176,9 +176,9 @@ SAME_TYPE
 #define SUPPOSED_TYPE   \
     Capsule \
     <   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>,   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>,   \
-        IndexedContainer<2*2*2*4-1>::Mold<Monotony<2>>    \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>,   \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>,   \
+        IndexedContainer<2*2*2*4-1>::Mold<Vay<2>>    \
     >
 
 

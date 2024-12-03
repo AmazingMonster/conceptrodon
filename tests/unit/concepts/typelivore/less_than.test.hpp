@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_LESS_THAN_H
 
 #include "conceptrodon/descend/typelivore/concepts/less_than.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -30,10 +30,10 @@ struct Tester<I, J>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<1>, 2>::value);
-static_assert(! Tester<Monotony<-1>, -1>::value);
-static_assert(! Tester<Monotony<1>, 1.0>::value);
-static_assert(Tester<Monotony<1>, 2.0>::value);
+static_assert(Tester<Vay<1>, 2>::value);
+static_assert(! Tester<Vay<-1>, -1>::value);
+static_assert(! Tester<Vay<1>, 1.0>::value);
+static_assert(Tester<Vay<1>, 2.0>::value);
 /******************************************************************************************************/
 
 

@@ -64,11 +64,11 @@ struct Label
 };
 ```
 
-Note that `Label::idyl` maps its parameter type `Key` to its return type `Treasure`. We will pack each variable into a `Monotony` so that we can use it as a return type:
+Note that `Label::idyl` maps its parameter type `Key` to its return type `Treasure`. We will pack each variable into a `Vay` so that we can use it as a return type:
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 {
     static constexpr auto value {Variable};
 };
@@ -78,7 +78,7 @@ We can pull out the variable of a given index by asking `decltype` the return ty
 For this purpose, we will convert an index into a type via `std::integral_constant`.
 So, the final mapping will be as follows:
 
-<pre><code>std::integral_constant&lt;I&gt; -> Monotony&lt;Variable<sub>I</sub>&gt;</code></pre>
+<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;Variable<sub>I</sub>&gt;</code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the variables out in reversed order. Here's the entire implementation:
 
@@ -92,9 +92,9 @@ struct Upend
     template<template<auto...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
     // We create an overload set of `idyl` through inheritance.
-    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
+    : public Label<Vay<Variables>, std::integral_constant<size_t, I>>...
     {
-        using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...;
+        using Label<Vay<Variables>, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation<
             // Note that `sizeof...(I)` is the total number of I...,
             // which is a constant.
@@ -106,7 +106,7 @@ struct Upend
                     std::integral_constant
                     <size_t, sizeof...(I) - I - 1>{}
                 )
-            // We pull the value result out of `Monotony`.
+            // We pull the value result out of `Vay`.
             )::value...
         >;
     };

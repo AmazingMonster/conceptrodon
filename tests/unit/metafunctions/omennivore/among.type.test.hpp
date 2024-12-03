@@ -38,7 +38,7 @@ namespace TestAmongType {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -66,7 +66,7 @@ using At = Among<SupposedResult>::Page<I>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

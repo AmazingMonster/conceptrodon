@@ -79,7 +79,7 @@ We will transform variables into types so that we can avoid defining the body of
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -108,7 +108,7 @@ struct Enrich<std::index_sequence<I...>>
         // Note that `Operation` is invoked by values
         // extracted from the template parameters.
         // This is because we will pack every item
-        // of `Variables...` into `Monotony`.
+        // of `Variables...` into `Vay`.
         Operation<FrontTargets::value..., NewVariables..., BackTargets::value...>;
     };
 
@@ -141,7 +141,7 @@ struct Inject
                 (
                     Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Agreements..., Monotony<Variables>...>()
+                    ::template idyl<Agreements..., Vay<Variables>...>()
                 );
             };
         };

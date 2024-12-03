@@ -60,14 +60,14 @@ To instantiate `Label` with variables, we need a helper class that transforms va
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
 Then, given a `Variable` and an index `I`, we will instantiate `Label` as follows:
 
 ```C++
-Label<Monotony<Variable>, I>
+Label<Vay<Variable>, I>
 ```
 
 Here's the entire implementation:
@@ -82,11 +82,11 @@ struct AreDistinct
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
     // We create an overload set through inheritance.
-    : public Label<Monotony<Variables>, I>...
+    : public Label<Vay<Variables>, I>...
     {
         // We bring every `lark` from its base class
         // to the current scope.
-        using Label<Monotony<Variables>, I>::lark...;
+        using Label<Vay<Variables>, I>::lark...;
 
         // We will do SFINAE on the second parameter.
         // The default argument `void` ensures
@@ -99,12 +99,12 @@ struct AreDistinct
         // This function checks if a variable
         // is in the previously provided list.
         // We ask the compiler to find a `lark` that
-        // declares a parameter of type `Monotony<Variable>`.
+        // declares a parameter of type `Vay<Variable>`.
         // If the compiler finds the `lark,`
         // this specialization will be used.
         // Otherwise, the primary template will be used.
         template<auto Variable>
-        struct Hidden<Variable, decltype(lark(std::declval<Monotony<Variable>>()))>
+        struct Hidden<Variable, decltype(lark(std::declval<Vay<Variable>>()))>
         { static constexpr bool value {true}; };
 
         // We check every variable using a fold expression.

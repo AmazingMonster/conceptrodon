@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_RAILLESS_H
 #define CONCEPTRODON_OMENNIVORE_RAILLESS_H
 
-#include "conceptrodon/legation.hpp"
+#include "conceptrodon/ray.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Railless = not requires
-{typename Legation<Structure::template Rail>;};
+{typename Ray<Structure::template Rail>;};
 
 }}
 

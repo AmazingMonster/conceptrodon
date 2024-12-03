@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_PAGELESS_H
 #define CONCEPTRODON_OMENNIVORE_PAGELESS_H
 
-#include "conceptrodon/diplomat.hpp"
+#include "conceptrodon/pay.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Pageless = not requires 
-{typename Diplomat<Structure::template Page>;};
+{typename Pay<Structure::template Page>;};
 
 }}
 

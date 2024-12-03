@@ -4,11 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_REVERSE_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_REVERSE_H
 
-#include "concepts"
 #include "conceptrodon/descend/mouldivore/cognate_reverse.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -25,7 +25,7 @@ namespace TestCognateReverse {
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -33,7 +33,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep_reversed.hpp"
-using SuppesedResult = Tester<SHEEP_REVERSED_SPROUT(240)>;
+using SuppesedResult = Operation<SHEEP_REVERSED_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep_reversed.hpp"
 /******************************************************************************************************/
 
@@ -45,7 +45,7 @@ using SuppesedResult = Tester<SHEEP_REVERSED_SPROUT(240)>;
     SuppesedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(CognateReverse<Tester>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateReverse<Operation>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

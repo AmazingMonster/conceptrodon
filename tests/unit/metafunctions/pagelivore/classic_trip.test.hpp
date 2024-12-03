@@ -6,7 +6,7 @@
 
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/classic_trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -31,7 +31,7 @@ struct TesterA
     struct ProtoPage
     {
         template<auto...Agreements>
-        using Page = Monotony<((I+...+Variables)+...+Agreements)>;
+        using Page = Vay<((I+...+Variables)+...+Agreements)>;
 
         using type = Shuttle<I, Variables...>;
 
@@ -44,7 +44,7 @@ struct TesterA
     struct ProtoPage<nullptr, Variables...>
     {
         template<auto...Agreements>
-        using Page = Monotony<((-I+...+Variables)+...+Agreements)>;
+        using Page = Vay<((-I+...+Variables)+...+Agreements)>;
 
         using type = Shuttle<-I, Variables...>;
 

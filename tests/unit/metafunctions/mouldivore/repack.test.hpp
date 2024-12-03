@@ -4,12 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REPACK_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REPACK_H
 
-#include <type_traits>
-#include <utility>
 #include "conceptrodon/descend/mouldivore/repack.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
+#include <utility>
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
@@ -26,7 +25,7 @@ namespace TestRepack {
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -34,7 +33,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedTuple = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -43,7 +42,7 @@ using SupposedTuple = Tester<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedTuple
+    SupposedResult
 
 #define SHEEP_PREFIX    \
     Capsule<std::integral_constant<int,
@@ -52,7 +51,7 @@ using SupposedTuple = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Repack<Operation>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -65,7 +64,6 @@ SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
 
 
 }}}}
-
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_WILLLY_H
 #define CONCEPTRODON_OMENNIVORE_WILLLY_H
 
-#include "conceptrodon/wildfire.hpp"
+#include "conceptrodon/wiy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Willly = requires 
-{typename Wildfire<Structure::template Will>;};
+{typename Wiy<Structure::template Will>;};
 
 }}
 

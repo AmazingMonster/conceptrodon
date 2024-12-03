@@ -4,8 +4,6 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_MODIFY_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_MODIFY_H
 
-#include <type_traits>
-#include <concepts>
 #include "conceptrodon/descend/descend/mouldivore/cognate_modify.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -28,15 +26,10 @@ namespace TestCognateModify {
 /******************************************************************************************************/
 template<typename...Args>
 using PlusOne = std::integral_constant<int, (Args::value + 1)...>;
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -52,7 +45,7 @@ struct Tester {};
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Tester<DOUBLE_SHEEP_SPROUT(120)>;
+using SupposedResult = Operation<DOUBLE_SHEEP_SPROUT(120)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -69,7 +62,7 @@ using SupposedResult = Tester<DOUBLE_SHEEP_SPROUT(120)>;
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(CognateModify<Tester>::Road<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Mold<LLAMA_SPROUT(240)>);
+SAME_TYPE(CognateModify<Operation>::Road<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Mold<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
@@ -79,11 +72,11 @@ SAME_TYPE(CognateModify<Tester>::Road<PlusOne>::Page<SHEEP_SPROUT(120, *2)>::Mol
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_llama.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
-
-}}}}
 
 #endif

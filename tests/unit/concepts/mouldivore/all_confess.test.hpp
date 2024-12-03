@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ALL_CONFESS_H
 
 #include "conceptrodon/mouldivore/concepts/all_confess.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -32,8 +32,8 @@ struct AreGreaterThan
 
 
 /******************************************************************************************************/
-static_assert(AllConfess<AreGreaterThan<0>::Mold, Monotony<1>, Monotony<2>, Monotony<3>>);
-static_assert(! AllConfess<AreGreaterThan<0>::Mold, Monotony<0>, Monotony<2>, Monotony<3>>);
+static_assert(AllConfess<AreGreaterThan<0>::Mold, Vay<1>, Vay<2>, Vay<3>>);
+static_assert(! AllConfess<AreGreaterThan<0>::Mold, Vay<0>, Vay<2>, Vay<3>>);
 /******************************************************************************************************/
 
 
@@ -44,22 +44,22 @@ template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires AllConfess<AreGreaterThan<0>::Mold, Monotony<Args>...>
+requires AllConfess<AreGreaterThan<0>::Mold, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires AllConfess<AreGreaterThan<1>::Mold, Monotony<Args>...>
+requires AllConfess<AreGreaterThan<1>::Mold, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires AllConfess<AreGreaterThan<0>::Mold, Monotony<Args>...>
-&& AllConfess<AreGreaterThan<1>::Mold, Monotony<Args>...>
+requires AllConfess<AreGreaterThan<0>::Mold, Vay<Args>...>
+&& AllConfess<AreGreaterThan<1>::Mold, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -80,12 +80,12 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= AllConfess<AreGreaterThan<1>::Mold, Monotony<Args>...>;
+= AllConfess<AreGreaterThan<1>::Mold, Vay<Args>...>;
 
 
 template<auto...Args>
-requires AllConfess<AreGreaterThan<0>::Mold, Monotony<Args>...>
-&& AllConfess<AreGreaterThan<1>::Mold, Monotony<Args>...>
+requires AllConfess<AreGreaterThan<0>::Mold, Vay<Args>...>
+&& AllConfess<AreGreaterThan<1>::Mold, Vay<Args>...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -108,11 +108,11 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneB
-= (...&&AreGreaterThan<1>::Mold<Monotony<Args>>::value);
+= (...&&AreGreaterThan<1>::Mold<Vay<Args>>::value);
 
 template<auto...Args>
-requires AllConfess<AreGreaterThan<0>::Mold, Monotony<Args>...>
-&& AllConfess<AreGreaterThan<1>::Mold, Monotony<Args>...>
+requires AllConfess<AreGreaterThan<0>::Mold, Vay<Args>...>
+&& AllConfess<AreGreaterThan<1>::Mold, Vay<Args>...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -135,11 +135,11 @@ static_assert(Tester<3, 4, 5>::value == 1.2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoA
-= (...&&AreGreaterThan<2>::Mold<Monotony<Args>>::value);
+= (...&&AreGreaterThan<2>::Mold<Vay<Args>>::value);
 
 template<auto...Args>
 concept GreaterThanTwoB
-= (...&&AreGreaterThan<2>::Mold<Monotony<Args>>::value);
+= (...&&AreGreaterThan<2>::Mold<Vay<Args>>::value);
 
 template<auto...>
 struct TesterB;
@@ -168,11 +168,11 @@ static_assert(TesterB<3, 4, 5>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= AllConfess<AreGreaterThan<2>::Mold, Monotony<Args>...>;
+= AllConfess<AreGreaterThan<2>::Mold, Vay<Args>...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= AllConfess<AreGreaterThan<2>::Mold, Monotony<Args>...>;
+= AllConfess<AreGreaterThan<2>::Mold, Vay<Args>...>;
 
 template<auto...>
 struct TesterC;

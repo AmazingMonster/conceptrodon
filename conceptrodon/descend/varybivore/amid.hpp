@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_AMID_H
 
 #include <utility>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/label.hpp"
 
 namespace Conceptrodon {
@@ -19,8 +19,8 @@ struct Amid
 
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
-    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
-    { using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...; };
+    : public Label<Vay<Variables>, std::integral_constant<size_t, I>>...
+    { using Label<Vay<Variables>, std::integral_constant<size_t, I>>::idyl...; };
 
     template<size_t I>
     struct ProtoPage

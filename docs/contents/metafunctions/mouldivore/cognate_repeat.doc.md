@@ -41,26 +41,26 @@ struct CognateRepeat
 
 ## Examples
 
-We will instantiate `Operation` with four iterations of `Monotony<0>, Monotony<1>`:
+We will instantiate `Operation` with four iterations of `Vay<0>, Vay<1>`:
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
 template<typename...>
 struct Operation;
 
 using SupposedResult = Operation<
-    Monotony<0>, Monotony<1>,
-    Monotony<0>, Monotony<1>,
-    Monotony<0>, Monotony<1>,
-    Monotony<0>, Monotony<1>
+    Vay<0>, Vay<1>,
+    Vay<0>, Vay<1>,
+    Vay<0>, Vay<1>,
+    Vay<0>, Vay<1>
 >;
 
 using Result = CognateRepeat<Operation>
 ::Page<4>
-::Mold<Monotony<0>, Monotony<1>>;
+::Mold<Vay<0>, Vay<1>>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

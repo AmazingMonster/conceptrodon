@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_ROTATE_H
 #define CONCEPTRODON_PAGELIVORE_ROTATE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/swivel.hpp"
 
 namespace Conceptrodon {
@@ -21,7 +21,7 @@ struct CognateRotate
         using Page = decltype
         (
             Varbola::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 

@@ -6,7 +6,7 @@
 
 #include <type_traits>
 #include <utility>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/mouldivore/classic_trip.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -27,44 +27,44 @@ namespace TestClassicTrip {
 template<auto I>
 struct TesterA
 {
-    template<typename...Val>
+    template<typename...Vals>
     struct ProtoMold
     {
         template<auto...Agreements>
-        using Page = Monotony<((I+...+Val::value)+...+Agreements)>;
+        using Page = Vay<((I+...+Vals::value)+...+Agreements)>;
 
-        using type = Monotony<(I+...+Val::value)>;
+        using type = Vay<(I+...+Vals::value)>;
 
         static constexpr auto value
-        {(I+...+Val::value)};
+        {(I+...+Vals::value)};
     };
 
     
-    template<typename...Val>
-    struct ProtoMold<void, Val...>
+    template<typename...Vals>
+    struct ProtoMold<void, Vals...>
     {
         template<auto...Agreements>
-        using Page = Monotony<((-I+...+Val::value)+...+Agreements)>;
+        using Page = Vay<((-I+...+Vals::value)+...+Agreements)>;
 
-        using type = Monotony<(-I+...+Val::value)>;
+        using type = Vay<(-I+...+Vals::value)>;
 
         static constexpr auto value
-        {(-I+...+Val::value)};
+        {(-I+...+Vals::value)};
     };
 
     template<typename...Agreements>
     using Mold = ProtoMold<Agreements...>;
 };
 
-template<typename Val>
+template<typename Vals>
 struct TesterB
 {
     template<auto...Agreements>
-    using Page = Shuttle<2*Val::value, Agreements...>;
+    using Page = Shuttle<2*Vals::value, Agreements...>;
 
-    using type = Monotony<2*Val::value>;
+    using type = Vay<2*Vals::value>;
 
-    static constexpr auto value { 2*Val::value };
+    static constexpr auto value { 2*Vals::value };
 
     template<typename>
     struct ProtoMold {};
@@ -74,28 +74,28 @@ struct TesterB
     {
 
         template<auto...Agreements>
-        using Page = Shuttle<2*Val::value + (0 +...+ J), Agreements...>;
+        using Page = Shuttle<2*Vals::value + (0 +...+ J), Agreements...>;
 
-        using type = Shuttle<2*Val::value + (0 +...+ J)>;
+        using type = Shuttle<2*Vals::value + (0 +...+ J)>;
 
         static constexpr auto value
-        { 2*Val::value + (0 +...+ J) };
+        { 2*Vals::value + (0 +...+ J) };
     };
 
     template<typename...Elements>
     using Mold = ProtoMold<Elements...>;
 };
 
-template<typename Val>
+template<typename Vals>
 struct TesterC
 {
     template<auto...Agreements>
-    using Page = Shuttle<Val::value-1, Agreements...>;
+    using Page = Shuttle<Vals::value-1, Agreements...>;
 
-    using type = Monotony<Val::value-1>;
+    using type = Vay<Vals::value-1>;
 
     static constexpr auto value
-    { Val::value-1 };
+    { Vals::value-1 };
 
     template<typename>
     struct ProtoMold {};
@@ -105,11 +105,11 @@ struct TesterC
     {
 
         template<auto...Agreements>
-        using Page = Shuttle<Val::value-1 + (0 +...+ J), Agreements...>;
+        using Page = Shuttle<Vals::value-1 + (0 +...+ J), Agreements...>;
 
-        using type = Shuttle<Val::value-1 + (0 +...+ J)>;
+        using type = Shuttle<Vals::value-1 + (0 +...+ J)>;
 
-        static constexpr auto value { Val::value-1 + (0 +...+ J) };
+        static constexpr auto value { Vals::value-1 + (0 +...+ J) };
     };
 
     template<typename...Elements>
@@ -120,7 +120,7 @@ template<template<typename...> class P>
 struct MoldVessel
 {
     static constexpr auto value
-    { P<Monotony<11>>::value };
+    { P<Vay<11>>::value };
 };
 /******************************************************************************************************/
 
@@ -129,7 +129,7 @@ struct MoldVessel
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    Monotony<2*2*2*(4 + 5)>
+    Vay<2*2*2*(4 + 5)>
 
 SAME_TYPE
 (
@@ -138,7 +138,7 @@ SAME_TYPE
     ::Road<TesterB>
     ::Road<TesterB>
     ::Commit
-    ::Mold<Monotony<5>>
+    ::Mold<Vay<5>>
     ::type
 );
 
@@ -160,7 +160,7 @@ SAME_TYPE
     ::Road<TesterA<4>::Mold>
     ::Road<TesterB>
     ::Commit
-    ::Mold<Monotony<11>>
+    ::Mold<Vay<11>>
     ::Page<10>
 );
 
@@ -184,7 +184,7 @@ SAME_TYPE
     ::Road<TesterC>
     ::Road<TesterC>
     ::Commit
-    ::Mold<Monotony<11>>
+    ::Mold<Vay<11>>
     ::Page<10>
 );
 
@@ -208,7 +208,7 @@ SAME_TYPE
     ::Road<TesterC>
     ::Road<TesterC>
     ::Commit
-    ::Mold<void, Monotony<11>>
+    ::Mold<void, Vay<11>>
     ::Page<10>
 );
 
@@ -232,7 +232,7 @@ SAME_TYPE
     ::Road<TesterC>
     ::Road<TesterB>
     ::Commit
-    ::Mold<Monotony<11>>
+    ::Mold<Vay<11>>
     ::Page<10>
 );
 

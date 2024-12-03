@@ -59,11 +59,11 @@ struct Label
 };
 ```
 
-Note that `Label::idyl` maps its parameter type `Key` to its return type `Treasure`. We will pack each variable into a `Monotony` so that we can use it as a return type:
+Note that `Label::idyl` maps its parameter type `Key` to its return type `Treasure`. We will pack each variable into a `Vay` so that we can use it as a return type:
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 {
     static constexpr auto value {Variable};
 };
@@ -73,7 +73,7 @@ We can pull out the variable of a given index by asking `decltype` the return ty
 For this purpose, we will convert an index into a type via `std::integral_constant`.
 So, the final mapping will be as follows:
 
-<pre><code>std::integral_constant&lt;I&gt; -> Monotony&lt;Variable<sub>I</sub>&gt;</code></pre>
+<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;Variable<sub>I</sub>&gt;</code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the variable out when provided with an index. Here's the entire implementation:
 
@@ -87,10 +87,10 @@ struct Amid
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
     // We create an overload set of `idyl` through inheritance.
-    : public Label<Monotony<Variables>, std::integral_constant<I>>...
+    : public Label<Vay<Variables>, std::integral_constant<I>>...
     {
         // We bring every `idyl` from its base class to the current scope.
-        using Label<Monotony<Variables>, std::integral_constant<I>>::idyl...;
+        using Label<Vay<Variables>, std::integral_constant<I>>::idyl...;
     };
 
     template<size_t I>

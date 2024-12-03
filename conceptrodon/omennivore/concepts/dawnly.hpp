@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_DAWNLY_H
 #define CONCEPTRODON_OMENNIVORE_DAWNLY_H
 
-#include "conceptrodon/daydream.hpp"
+#include "conceptrodon/day.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Dawnly = requires 
-{typename Daydream<Structure::template Dawn>;};
+{typename Day<Structure::template Dawn>;};
 
 }}
 

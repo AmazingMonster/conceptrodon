@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_CALMLESS_H
 #define CONCEPTRODON_OMENNIVORE_CALMLESS_H
 
-#include "conceptrodon/camellia.hpp"
+#include "conceptrodon/cay.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Calmless = not requires 
-{typename Camellia<Structure::template Calm>;};
+{typename Cay<Structure::template Calm>;};
 
 }}
 

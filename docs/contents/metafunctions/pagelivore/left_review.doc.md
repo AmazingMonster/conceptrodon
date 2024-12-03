@@ -94,7 +94,7 @@ We will transform variables into types so that we can use them as parameter type
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -107,8 +107,8 @@ struct Monotony
         decltype
         (
             LeftInspect<std::make_index_sequence<I>>
-            // Note that each variable is kept inside `Monotony`.
-            ::template idyl<Predicate, Monotony<Variables>...>()
+            // Note that each variable is kept inside `Vay`.
+            ::template idyl<Predicate, Vay<Variables>...>()
         )::value
     ));
 }(std::make_index_sequence<sizeof...(Variables) - 1>{})
@@ -132,7 +132,7 @@ struct LeftReview
                     decltype
                     (
                         LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Monotony<Variables>...>()
+                        ::template idyl<Predicate, Vay<Variables>...>()
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Variables) - 1>{})

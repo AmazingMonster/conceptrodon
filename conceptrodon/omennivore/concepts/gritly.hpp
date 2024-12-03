@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_GRITLY_H
 #define CONCEPTRODON_OMENNIVORE_GRITLY_H
 
-#include "conceptrodon/graphite.hpp"
+#include "conceptrodon/gry.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Gritly = requires 
-{typename Graphite<Structure::template Grit>;};
+{typename Gry<Structure::template Grit>;};
 
 }}
 

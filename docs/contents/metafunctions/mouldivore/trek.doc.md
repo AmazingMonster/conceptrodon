@@ -281,10 +281,10 @@ struct Carrier;
 template<template<auto...> class Sequence>
 struct OperationA
 { 
-    template<typename...Val>
+    template<typename...Vay>
     struct Detail
     {
-        using type = Capsule<Sequence<Val::value>...>;
+        using type = Capsule<Sequence<Vay::value>...>;
     };
 
     template<typename...Agreements>

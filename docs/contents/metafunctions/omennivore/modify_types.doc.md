@@ -56,7 +56,7 @@ struct ModifyTypes
 
 ## Examples
 
-We will apply `UnaryMinus` to elements of indices `1, 3, 5` from `Monotony<0>, Monotony<1>, Monotony<2>, Monotony<3>, Monotony<4>, Monotony<5>`.
+We will apply `UnaryMinus` to elements of indices `1, 3, 5` from `Vay<0>, Vay<1>, Vay<2>, Vay<3>, Vay<4>, Vay<5>`.
 To do so, we will calculate the distance from one index to its immediate next.
 
 We will keep the first index, `1`, since it represents how many elements we must pass to reach the first target position. We subtract an additional one from the rest since we only need the number of elements separating two targets.
@@ -70,13 +70,13 @@ We will pass these sequences to `ModifyTypes`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Val>
+template<typename Vay>
 struct UnaryMinusHelper
 {
-    using type = Monotony<-Val::value>;
+    using type = Vay<-Vay::value>;
 };
 
 template<typename...Args>
@@ -95,9 +95,9 @@ using Metafunction = ModifyTypes
 ::Road<UnaryMinus>
 ::Mold<Args...>;
 
-using SupposedResult = Capsule<Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>>;
+using SupposedResult = Capsule<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>>;
 
-using Result = Metafunction<Monotony<0>, Monotony<1>, Monotony<2>, Monotony<3>, Monotony<4>, Monotony<5>>;
+using Result = Metafunction<Vay<0>, Vay<1>, Vay<2>, Vay<3>, Vay<4>, Vay<5>>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

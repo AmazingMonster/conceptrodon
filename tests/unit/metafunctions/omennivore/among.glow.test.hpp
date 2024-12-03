@@ -40,7 +40,7 @@ namespace TestAmongGlow {
 
 /******************************************************************************************************/
 template<size_t>
-struct Tester 
+struct Tester
 {
     template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class>
     struct ProtoGlow {};
@@ -61,7 +61,7 @@ struct Tester
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -86,7 +86,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-using Amongus = Among<Arcadia<SHEEP_SPROUT(240)>>;
+using Amongus = Among<Arcadia<SHEEP_SPROUT(80)>>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -100,7 +100,7 @@ using Amongus = Among<Arcadia<SHEEP_SPROUT(240)>>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

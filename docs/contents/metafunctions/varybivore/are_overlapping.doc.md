@@ -88,7 +88,7 @@ To 'inherit' variables, we need a helper class that transforms variables into ty
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -111,7 +111,7 @@ struct Shuttle;
 
 template<auto...InspectedVariables>
 struct AreOverlapping
-: public Monotony<InspectedVariables>...
+: public Vay<InspectedVariables>...
 {
     struct Detail
     {
@@ -127,7 +127,7 @@ struct AreOverlapping
         // `Detail` will stop recursion, achieving short-circuit.
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>,AreOverlapping>::value, 
+            std::is_base_of<Vay<InspectingVariable>,AreOverlapping>::value, 
             Detail, 
             AreOverlapping<InspectedVariables..., InspectingVariable>
         >::type::template ProtoPage<RestVariables...>::type;
@@ -141,7 +141,7 @@ struct AreOverlapping
     {
         using type = std::conditional
         <
-            std::is_base_of<Monotony<InspectingVariable>, AreOverlapping>::value, 
+            std::is_base_of<Vay<InspectingVariable>, AreOverlapping>::value, 
             void,
             Shuttle<InspectedVariables..., InspectingVariable>
         >::type;

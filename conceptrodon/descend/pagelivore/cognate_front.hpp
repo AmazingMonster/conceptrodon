@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
 #define CONCEPTRODON_PAGELIVORE_COGNATE_FRONT_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/descend/microbiota/varbola/fore.hpp"
 
 namespace Conceptrodon {
@@ -20,7 +20,7 @@ struct CognateFront
         using Page = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Monotony<Variables>...>()
+            ::template idyl<Operation, Vay<Variables>...>()
         );
     };
 

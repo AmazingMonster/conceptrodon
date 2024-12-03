@@ -6,6 +6,7 @@
 
 #include "conceptrodon/mouldivore/among.hpp"
 #include "conceptrodon/capsule.hpp"
+#include "conceptrodon/vay.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include <utility>
@@ -22,14 +23,24 @@ namespace TestAmong {
 
 
 /******************************************************************************************************/
-template<size_t>
+template<int I>
 struct Tester 
 {
-    template<typename...>
-    struct ProtoMold {};
+    template<typename...Agreements>
+    struct Detail
+    {
+        using type = void;
+    };
+
+    
+    template<>
+    struct Detail<int>
+    {
+        using type = Vay<I>;
+    };
 
     template<typename...Agreements>
-    using Mold = ProtoMold<Agreements...>;
+    using Mold = Detail<Agreements...>::type;
 };
 /******************************************************************************************************/
 
@@ -38,9 +49,9 @@ struct Tester
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Vay<
 #define SHEEP_SUFFIX    \
-    >::Mold<int>
+    >
 #define SHEEP_SEPARATOR \
     ,
 

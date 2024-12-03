@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ROADLESS_H
 #define CONCEPTRODON_OMENNIVORE_ROADLESS_H
 
-#include "conceptrodon/delegacy.hpp"
+#include "conceptrodon/roy.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Roadless = not requires 
-{typename Delegacy<Structure::template Road>;};
+{typename Roy<Structure::template Road>;};
 
 }}
 

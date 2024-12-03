@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DECEIVE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/varybivore/concepts/deceive.hpp"
 
 namespace Conceptrodon {
@@ -24,22 +24,22 @@ template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Monotony<Args>...>
+requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<1, decltype(Args)...>, Monotony<Args>...>
+requires Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Monotony<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Monotony<Args>...>
+requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -60,12 +60,12 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= Deceive<areNoGreaterThan<1, decltype(Args)...>, Monotony<Args>...>;
+= Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>;
 
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Monotony<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Monotony<Args>...>
+requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -91,8 +91,8 @@ concept GreaterThanOneB
 = not areNoGreaterThan<1>(Args...);
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Monotony<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Monotony<Args>...>
+requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -148,11 +148,11 @@ static_assert(TesterB<3>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= Deceive<areNoGreaterThan<2, decltype(Args)...>, Monotony<Args>...>;
+= Deceive<areNoGreaterThan<2, decltype(Args)...>, Vay<Args>...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= Deceive<areNoGreaterThan<2, decltype(Args)...>, Monotony<Args>...>;
+= Deceive<areNoGreaterThan<2, decltype(Args)...>, Vay<Args>...>;
 
 template<auto...>
 struct TesterC;

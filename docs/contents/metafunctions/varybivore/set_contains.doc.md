@@ -66,7 +66,7 @@ To 'inherit' variables, we need a helper class that transforms variables into ty
 
 ```C++
 template<auto Variable>
-struct Monotony
+struct Vay
 { static constexpr auto value {Variable}; };
 ```
 
@@ -75,7 +75,7 @@ Since inheriting the same type multiple times is illegal in C++, the initial lis
 ```C++
 template<auto...Variables>
 struct SetContains
-: public Monotony<Variables>...
+: public Vay<Variables>...
 {
     template<auto Inspecting>
     struct ProtoPage
@@ -84,7 +84,7 @@ struct SetContains
         {
             std::is_base_of
             <
-                Monotony<Inspecting>,
+                Vay<Inspecting>,
                 SetContains
             >::value
         };

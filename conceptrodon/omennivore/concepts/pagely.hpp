@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_PAGELY_H
 #define CONCEPTRODON_OMENNIVORE_PAGELY_H
 
-#include "conceptrodon/diplomat.hpp"
+#include "conceptrodon/pay.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Pagely = requires 
-{typename Diplomat<Structure::template Page>;};
+{typename Pay<Structure::template Page>;};
 
 }}
 

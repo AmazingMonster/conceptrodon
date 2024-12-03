@@ -49,20 +49,20 @@ We will increment `0` and `-1` until they are greater than `9`.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Val>
+template<typename Vay>
 struct AddOne
 {
-    using type = Monotony<Val::value + 1>;
+    using type = Vay<Vay::value + 1>;
 };
 
-template<typename Val>
+template<typename Vay>
 struct IsGreaterThanNine
 {
     static constexpr auto value
-    {Val::value > 9};
+    {Vay::value > 9};
 };
 
 template<typename...Args>
@@ -70,10 +70,10 @@ using Metafunction = ClassicRecur<AddOne>
 ::Road<IsGreaterThanNine>
 ::Mold<Args...>;
 
-using SupposedResult = Monotony<10>;
+using SupposedResult = Vay<10>;
 
-using Result_0 = Metafunction<Monotony<0>>::type;
-using Result_1 = Metafunction<Monotony<-1>>::type;
+using Result_0 = Metafunction<Vay<0>>::type;
+using Result_1 = Metafunction<Vay<-1>>::type;
 
 static_assert(std::same_as<Result_0, SupposedResult>);
 static_assert(std::same_as<Result_1, SupposedResult>);

@@ -13,7 +13,7 @@
 #include "conceptrodon/prefix.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/omennivore/extend_front.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include <utility>
 /******************************************************************************************************/
 
@@ -47,12 +47,12 @@
 #error "CONCEPTRODON_NUCLEOLUS_PREFIX_UTILITY has already been defined"
 #endif
 
-#ifdef CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY
-#error "CONCEPTRODON_NUCLEOLUS_MONOTONY_UTILITY has already been defined"
+#ifdef CONCEPTRODON_NUCLEOLUS_VAY_UTILITY
+#error "CONCEPTRODON_NUCLEOLUS_VAY_UTILITY has already been defined"
 #endif
 
 #include "conceptrodon/microbiota/nucleolus/define_utilities/prefix.hpp"
-#include "conceptrodon/microbiota/nucleolus/define_utilities/monotony.hpp"
+#include "conceptrodon/microbiota/nucleolus/define_utilities/vay.hpp"
 /******************************************************************************************************/
 
 
@@ -179,7 +179,7 @@ namespace Ominuci {
 #include "conceptrodon/microbiota/nucleolus/undef_results/value.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_functions/idyl.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_utilities/prefix.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_utilities/monotony.hpp"
+#include "conceptrodon/microbiota/nucleolus/undef_utilities/vay.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_parallel_vessels/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/page.hpp"
 #include "conceptrodon/microbiota/nucleolus/undef_proto_templates/rail.hpp"

@@ -59,17 +59,17 @@ struct CognateRemove
 
 ## Examples
 
-We will apply `UnaryMinus` to elements of indices `1, 3, 5` from `Monotony<0>, Monotony<1>, Monotony<2>, Monotony<3>, Monotony<4>, Monotony<5>` and invoke `Operation` with the result.
+We will apply `UnaryMinus` to elements of indices `1, 3, 5` from `Vay<0>, Vay<1>, Vay<2>, Vay<3>, Vay<4>, Vay<5>` and invoke `Operation` with the result.
 
 ```C++
 template<auto I>
-struct Monotony
+struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Val>
+template<typename Vay>
 struct UnaryMinusHelper
 {
-    using type = Monotony<-Val::value>;
+    using type = Vay<-Vay::value>;
 };
 
 template<typename...Args>
@@ -84,9 +84,9 @@ using Metafunction = CognateModify<Operation>
 ::Page<1, 3, 5>
 ::Mold<Args...>;
 
-using SupposedResult = Operation<Monotony<0>, Monotony<-1>, Monotony<2>, Monotony<-3>, Monotony<4>, Monotony<-5>>;
+using SupposedResult = Operation<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>>;
 
-using Result = Metafunction<Monotony<0>, Monotony<1>, Monotony<2>, Monotony<3>, Monotony<4>, Monotony<5>>;
+using Result = Metafunction<Vay<0>, Vay<1>, Vay<2>, Vay<3>, Vay<4>, Vay<5>>;
 
 static_assert(std::same_as<Result, SupposedResult>);
 ```

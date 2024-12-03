@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_UPEND_H
 
 #include <utility>
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/label.hpp"
 
 namespace Conceptrodon {
@@ -19,9 +19,9 @@ struct Upend
 
     template<template<auto...> class Operation, size_t...I>
     struct Detail<Operation, std::index_sequence<I...>>
-    : public Label<Monotony<Variables>, std::integral_constant<size_t, I>>...
+    : public Label<Vay<Variables>, std::integral_constant<size_t, I>>...
     {
-        using Label<Monotony<Variables>, std::integral_constant<size_t, I>>::idyl...;
+        using Label<Vay<Variables>, std::integral_constant<size_t, I>>::idyl...;
         using type = Operation
         <
             decltype

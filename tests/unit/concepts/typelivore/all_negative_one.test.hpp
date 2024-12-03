@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_NEGATIVE_ONE_H
 
 #include "conceptrodon/descend/typelivore/concepts/all_negative_one.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -20,9 +20,9 @@ template<typename...>
 struct Tester
 { static constexpr bool value {false}; };
 
-template<typename...Val>
-requires AllNegativeOne<Val...>
-struct Tester<Val...>
+template<typename...Vay>
+requires AllNegativeOne<Vay...>
+struct Tester<Vay...>
 { static constexpr bool value {true}; };
 /******************************************************************************************************/
 
@@ -30,8 +30,8 @@ struct Tester<Val...>
 
 
 /******************************************************************************************************/
-static_assert(! Tester<Monotony<1>, Monotony<2>, Monotony<3>>::value);
-static_assert(Tester<Monotony<-1>, Monotony<-1>, Monotony<-1>>::value);
+static_assert(! Tester<Vay<1>, Vay<2>, Vay<3>>::value);
+static_assert(Tester<Vay<-1>, Vay<-1>, Vay<-1>>::value);
 /******************************************************************************************************/
 
 

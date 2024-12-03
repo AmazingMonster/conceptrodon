@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DECEIVE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/typelivore/concepts/deceive.hpp"
 
 namespace Conceptrodon {
@@ -27,22 +27,22 @@ template<auto>
 struct Tester {};
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {0};
 };
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<1>, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<1>, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {-1};
 };
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>, Vay<Arg>>
 struct Tester<Arg>
 {
     static constexpr int value {1};
@@ -63,14 +63,14 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanOneA
-= Deceive<AreNoGreaterThan<1>, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<1>, Vay<Arg>>;
 
 template<auto Arg>
 concept Truth = true;
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>, Vay<Arg>>
 && GreaterThanOneA<Arg>
 struct Tester<Arg>
 {
@@ -96,8 +96,8 @@ concept GreaterThanOneB
 = not AreNoGreaterThan<1>{}(Arg);
 
 template<auto Arg>
-requires Deceive<AreNoGreaterThan<0>, Monotony<Arg>>
-&& Deceive<AreNoGreaterThan<1>, Monotony<Arg>>
+requires Deceive<AreNoGreaterThan<0>, Vay<Arg>>
+&& Deceive<AreNoGreaterThan<1>, Vay<Arg>>
 && GreaterThanOneB<Arg>
 struct Tester<Arg>
 {
@@ -153,11 +153,11 @@ static_assert(TesterB<3>::value == 2);
 /******************************************************************************************************/
 template<auto Arg>
 concept GreaterThanTwoC
-= Deceive<AreNoGreaterThan<2>, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<2>, Vay<Arg>>;
 
 template<auto Arg>
 concept GreaterThanTwoD
-= Deceive<AreNoGreaterThan<2>, Monotony<Arg>>;
+= Deceive<AreNoGreaterThan<2>, Vay<Arg>>;
 
 template<auto>
 struct TesterC;

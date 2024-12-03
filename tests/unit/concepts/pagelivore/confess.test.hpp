@@ -6,7 +6,7 @@
 
 #include "conceptrodon/pagelivore/concepts/confess.hpp"
 #include "conceptrodon/varybivore/are_greater_than.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {
@@ -18,22 +18,22 @@ template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires Confess<Varybivore::AreGreaterThan<0>::Page, Monotony<Args>...>
+requires Confess<Varybivore::AreGreaterThan<0>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires Confess<Varybivore::AreGreaterThan<1>::Page, Monotony<Args>...>
+requires Confess<Varybivore::AreGreaterThan<1>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires Confess<Varybivore::AreGreaterThan<0>::Page, Monotony<Args>...>
-&& Confess<Varybivore::AreGreaterThan<1>::Page, Monotony<Args>...>
+requires Confess<Varybivore::AreGreaterThan<0>::Page, Vay<Args>...>
+&& Confess<Varybivore::AreGreaterThan<1>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -54,12 +54,12 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= Confess<Varybivore::AreGreaterThan<1>::Page, Monotony<Args>...>;
+= Confess<Varybivore::AreGreaterThan<1>::Page, Vay<Args>...>;
 
 
 template<auto...Args>
-requires Confess<Varybivore::AreGreaterThan<0>::Page, Monotony<Args>...>
-&& Confess<Varybivore::AreGreaterThan<1>::Page, Monotony<Args>...>
+requires Confess<Varybivore::AreGreaterThan<0>::Page, Vay<Args>...>
+&& Confess<Varybivore::AreGreaterThan<1>::Page, Vay<Args>...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -85,8 +85,8 @@ concept GreaterThanOneB
 = Varybivore::AreGreaterThan<1>::Page<Args...>::value;
 
 template<auto...Args>
-requires Confess<Varybivore::AreGreaterThan<0>::Page, Monotony<Args>...>
-&& Confess<Varybivore::AreGreaterThan<1>::Page, Monotony<Args>...>
+requires Confess<Varybivore::AreGreaterThan<0>::Page, Vay<Args>...>
+&& Confess<Varybivore::AreGreaterThan<1>::Page, Vay<Args>...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -142,11 +142,11 @@ static_assert(TesterB<3, 4, 5>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= Confess<Varybivore::AreGreaterThan<2>::Page, Monotony<Args>...>;
+= Confess<Varybivore::AreGreaterThan<2>::Page, Vay<Args>...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= Confess<Varybivore::AreGreaterThan<2>::Page, Monotony<Args>...>;
+= Confess<Varybivore::AreGreaterThan<2>::Page, Vay<Args>...>;
 
 template<auto...>
 struct TesterC;

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_DECEIVE_H
 
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 #include "conceptrodon/pagelivore/concepts/all_deceive.hpp"
 #include "conceptrodon/varybivore/are_no_greater_than.hpp"
 
@@ -17,9 +17,9 @@ namespace TestAllDeceive {
 
 
 /******************************************************************************************************/
-static_assert(AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<1>, Monotony<2>, Monotony<3>>);
-static_assert(! AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<1>, Monotony<-2>, Monotony<-3>>);
-static_assert(! AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<0>, Monotony<-1>, Monotony<-2>>);
+static_assert(AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<1>, Vay<2>, Vay<3>>);
+static_assert(! AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<1>, Vay<-2>, Vay<-3>>);
+static_assert(! AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<0>, Vay<-1>, Vay<-2>>);
 /******************************************************************************************************/
 
 
@@ -30,22 +30,22 @@ template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<Args>...>
+requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Monotony<Args>...>
+requires AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<Args>...>
-&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Monotony<Args>...>
+requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<Args>...>
+&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -66,12 +66,12 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Monotony<Args>...>;
+= AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Vay<Args>...>;
 
 
 template<auto...Args>
-requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<Args>...>
-&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Monotony<Args>...>
+requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<Args>...>
+&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Vay<Args>...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -97,8 +97,8 @@ concept GreaterThanOneB
 = (...&&(not Varybivore::AreNoGreaterThan<1>::Page<Args>::value));
 
 template<auto...Args>
-requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Monotony<Args>...>
-&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Monotony<Args>...>
+requires AllDeceive<Varybivore::AreNoGreaterThan<0>::Page, Vay<Args>...>
+&& AllDeceive<Varybivore::AreNoGreaterThan<1>::Page, Vay<Args>...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -154,11 +154,11 @@ static_assert(TesterB<3, 4, 5>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= AllDeceive<Varybivore::AreNoGreaterThan<2>::Page, Monotony<Args>...>;
+= AllDeceive<Varybivore::AreNoGreaterThan<2>::Page, Vay<Args>...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= AllDeceive<Varybivore::AreNoGreaterThan<2>::Page, Monotony<Args>...>;
+= AllDeceive<Varybivore::AreNoGreaterThan<2>::Page, Vay<Args>...>;
 
 template<auto...>
 struct TesterC;

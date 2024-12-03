@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DIFFERENT_FROM_H
 
 #include "conceptrodon/descend/typelivore/concepts/different_from.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -30,9 +30,9 @@ struct Tester<I, J>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<1>, Monotony<2>>::value);
-static_assert(! Tester<Monotony<-1>, Monotony<-1>>::value);
-static_assert(Tester<Monotony<1>, Monotony<1.0>>::value);
+static_assert(Tester<Vay<1>, Vay<2>>::value);
+static_assert(! Tester<Vay<-1>, Vay<-1>>::value);
+static_assert(Tester<Vay<1>, Vay<1.0>>::value);
 /******************************************************************************************************/
 
 
@@ -49,8 +49,8 @@ struct Tester<I, J>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<1>, Monotony<2>>::value);
-// static_assert(Tester<Monotony<2>, Monotony<2.0>>::value);
+static_assert(Tester<Vay<1>, Vay<2>>::value);
+// static_assert(Tester<Vay<2>, Vay<2.0>>::value);
 /******************************************************************************************************/
 
 

@@ -7,7 +7,7 @@
 #include "conceptrodon/descend/typelivore/concepts/zero.hpp"
 #include "conceptrodon/descend/typelivore/concepts/no_less_than.hpp"
 #include "conceptrodon/descend/typelivore/concepts/no_greater_than.hpp"
-#include "conceptrodon/monotony.hpp"
+#include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -42,10 +42,10 @@ struct Tester<I>
 
 
 /******************************************************************************************************/
-static_assert(Tester<Monotony<nullptr>>::value == 0);
-static_assert(Tester<Monotony<3>>::value == 1);
-static_assert(Tester<Monotony<-3>>::value == 2);
-static_assert(Tester<Monotony<0>>::value == 3);
+static_assert(Tester<Vay<nullptr>>::value == 0);
+static_assert(Tester<Vay<3>>::value == 1);
+static_assert(Tester<Vay<-3>>::value == 2);
+static_assert(Tester<Vay<0>>::value == 3);
 /******************************************************************************************************/
 
 

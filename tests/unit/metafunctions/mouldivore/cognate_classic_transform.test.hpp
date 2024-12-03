@@ -4,13 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_CLASSIC_TRANSFORM_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_CLASSIC_TRANSFORM_H
 
-#include <type_traits>
-#include <concepts>
 #include "conceptrodon/descend/mouldivore/cognate_classic_transform.hpp"
-#include "conceptrodon/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -49,7 +47,7 @@ struct PlusOne
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -65,7 +63,7 @@ struct Tester {};
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Tester<DOUBLE_SHEEP_SPROUT(120)>;
+using SupposedResult = Operation<DOUBLE_SHEEP_SPROUT(120)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -81,7 +79,7 @@ using SupposedResult = Tester<DOUBLE_SHEEP_SPROUT(120)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(CognateClassicTransform<Tester>::Road<IsEven>::Road<PlusOne>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateClassicTransform<Operation>::Road<IsEven>::Road<PlusOne>::Mold<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -90,10 +88,10 @@ SAME_TYPE(CognateClassicTransform<Tester>::Road<IsEven>::Road<PlusOne>::Mold<SHE
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
-
-}}}}
 
 #endif

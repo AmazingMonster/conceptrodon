@@ -4,13 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CLASSIC_PLUME_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CLASSIC_PLUME_H
 
-#include <concepts>
-#include <type_traits>
-#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/mouldivore/bi_cognate_classic_plume.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
+#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -47,25 +45,21 @@ struct Dummy
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 };
+
+template<typename...Elements>
+requires (sizeof...(Elements) == 240)
+struct Operation;
 /******************************************************************************************************/
 
-// In this example,
-// we will place
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Capsule.
 
+
+
+/**** First Test ****//**** Start ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240, *2)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
 
 
 
@@ -81,7 +75,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -90,55 +84,35 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SP
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+/**** First Test ****//**** End ****/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<1>::Mold.
-// The result will be collected in a Capsule.
 
+
+/**** Second Test ****//**** Start ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult_1 = Capsule<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+/**** Second Test ****//**** End ****/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<1>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Capsule.
 
+
+/**** Third Test ****//**** Start ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_2 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_2
 
@@ -149,7 +123,7 @@ using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Road<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -157,16 +131,11 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<SHEEP_SPROUT(240)>::Mold<std::int
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+/**** Third Test ****//**** End ****/
 
-// In this example,
-// we will place
-//  0, ..., 239
-// into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Capsule.
 
+
+/**** Fourth Test ****//**** Start ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult
@@ -179,7 +148,7 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Road<SHEEP_SPROUT(240)>::Mold<std::int
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -188,32 +157,28 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SP
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+/**** Fourth Test ****//**** End ****/
 
-// In this example,
-// we will pack each
-//  0, ..., 239
-// into
-//  Dummy<1>::Page.
-// The result will be collected in a Capsule.
 
+
+
+/**** Fifth Test ****//**** Start ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+/**** Fifth Test ****//**** End ****/
 
-// In this example,
-// we will pack each 1 into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Capsule.
 
+
+
+/**** Sixth Test ****//**** Start ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_2
@@ -225,7 +190,7 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROU
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<SHEEP_SPROUT(240)>::Page<1>);
+SAME_TYPE(BiCognateClassicPlume<Operation>::Rail<SHEEP_SPROUT(240)>::Page<1>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -233,9 +198,7 @@ SAME_TYPE(BiCognateClassicPlume<Capsule>::Rail<SHEEP_SPROUT(240)>::Page<1>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-
-
-
+/**** Sixth Test ****//**** End ****/
 
 }}}}
 

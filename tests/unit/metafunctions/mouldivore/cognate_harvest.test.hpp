@@ -25,10 +25,10 @@ namespace TestCognateHarvest {
 /******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements)==240)
-struct TesterA {};
+struct Operation {};
 
 template<auto I>
-struct TesterB
+struct Crop
 {using type = std::integral_constant<int, I>; };
 /******************************************************************************************************/
 
@@ -37,7 +37,7 @@ struct TesterB
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -49,13 +49,13 @@ using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    TesterB<
+    Crop<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(CognateHarvest<TesterA>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateHarvest<Operation>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

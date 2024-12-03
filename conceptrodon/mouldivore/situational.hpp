@@ -7,27 +7,20 @@
 namespace Conceptrodon {
 namespace Mouldivore {
 
-template<template<typename...> class Predicate>
+template<template<typename...> class...Predicates>
 struct Situational
 {
-    template<typename, typename>
-    struct ProtoMold {};
-
-    template <typename IfTrue, typename IfFalse>
-    requires Predicate<IfTrue, IfFalse>::value
-    struct ProtoMold<IfTrue, IfFalse> 
-    { using type = IfTrue; };
-
-    template<typename IfTrue, typename IfFalse>
-    requires (not Predicate<IfTrue, IfFalse>::value)
-    struct ProtoMold<IfTrue, IfFalse> 
+    template<typename IfTrue, typename IfFalse, typename...>
+    struct Detail
     { using type = IfFalse; };
 
-    template<typename...Agreements>
-    using Mold = ProtoMold<Agreements...>;
+    template <typename IfTrue, typename IfFalse, typename...Others>
+    requires (...&& Predicates<IfTrue, IfFalse, Others...>::value)
+    struct Detail<IfTrue, IfFalse, Others...>
+    { using type = IfTrue; };
 
-    template<typename...Args>
-    using Mold_t = ProtoMold<Args...>::type;
+    template<typename...Agreements>
+    using Mold = Detail<Agreements...>::type;
 };
 
 }}

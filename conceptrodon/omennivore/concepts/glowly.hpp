@@ -4,14 +4,14 @@
 #ifndef CONCEPTRODON_OMENNIVORE_GLOWLY_H
 #define CONCEPTRODON_OMENNIVORE_GLOWLY_H
 
-#include "conceptrodon/glowworm.hpp"
+#include "conceptrodon/gly.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Structure>
 concept Glowly = requires 
-{typename Glowworm<Structure::template Glow>;};
+{typename Gly<Structure::template Glow>;};
 
 }}
 
