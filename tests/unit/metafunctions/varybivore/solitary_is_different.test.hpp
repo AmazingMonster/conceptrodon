@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_DIFFERENT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_DIFFERENT_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/is_different.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -23,7 +23,7 @@ namespace TestSolitaryIsDifferent {
 /******************************************************************************************************/
 INVALID(SolitaryIsDifferent_v<1, 1>);
 VALID(SolitaryIsDifferent<1, 2>::value);
-VALID(SolitaryIsDifferent_v<1, static_cast<size_t>(1)>);
+VALID(SolitaryIsDifferent_v<1, 1.0>);
 /******************************************************************************************************/
 
 

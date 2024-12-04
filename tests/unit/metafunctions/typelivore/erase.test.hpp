@@ -151,6 +151,8 @@ SAME_TYPE(EraseIndex<180>);
 /******************************************************************************************************/
 
 
+
+
 }}}}
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"

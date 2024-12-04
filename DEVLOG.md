@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>Organized the unit tests</td>
         </tr>
       </tbody>
     </table>

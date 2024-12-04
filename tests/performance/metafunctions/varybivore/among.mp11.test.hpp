@@ -7,6 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/varybivore/among.hpp"
+#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
@@ -14,6 +15,19 @@
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
+
+#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#include "boost/mp11.hpp"
+#endif
+
+
+namespace boost {
+namespace mp11 {
+
+template<auto A> using mp_value = std::integral_constant<decltype(A), A>;
+
+}}
+
 
 namespace Conceptrodon {
 namespace Varybivore {
@@ -25,7 +39,7 @@ namespace TestAmong {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
+using ShuttleTester = Shuttle<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -33,6 +47,64 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
 
 
 /******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    boost::mp11::mp_value <
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+
+using SupposedMPResult = Capsule<SHEEP_SPROUT(240)>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedMPResult
+
+
+template<size_t I>
+using MPAt = boost::mp11::mp_at_c<ShuttleTester, I>;
+
+#define SHEEP_PREFIX    \
+    MPAt <
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+    
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+#else
+
+
+
+
+
+/******************************************************************************************************/
+using SupposedResult = ShuttleTester;
+
 #define SUPPOSED_TYPE \
     SupposedResult
 
@@ -56,10 +128,8 @@ SAME_TYPE(Shuttle<SHEEP_SPROUT(240)>);
 #undef SHEEP_SEPARATOR
 
 #undef SUPPOSED_TYPE
-/******************************************************************************************************/
 
-
-
+#endif
 
 }}}}
 

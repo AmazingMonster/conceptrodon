@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/varybivore/are_bounded_by_left_closed_right_open_interval.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -18,9 +17,17 @@ namespace Varybivore {
 namespace UnitTests {
 namespace TestAreBoundedByLeftClosedRightOpenInterval {
 
+
+
+
+/******************************************************************************************************/
 VALID(AreBoundedByLeftClosedRightOpenInterval<0, 1>::Page_v<0, 0.5, 0.8>);
 INVALID(AreBoundedByLeftClosedRightOpenInterval<0, 1>::Page_v<0, 1>);
 INVALID(AreBoundedByLeftClosedRightOpenInterval<0, 1>::Page_v<0, -1>);
+/******************************************************************************************************/
+
+
+
 
 }}}}
 

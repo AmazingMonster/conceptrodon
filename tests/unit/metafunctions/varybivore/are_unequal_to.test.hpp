@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNEQUAL_TO_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNEQUAL_TO_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/are_unequal_to.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

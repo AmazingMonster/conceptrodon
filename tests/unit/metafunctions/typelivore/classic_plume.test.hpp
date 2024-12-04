@@ -43,16 +43,8 @@ struct Dummy
 };
 /******************************************************************************************************/
 
-// In this example,
-// we will place
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Operation.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
@@ -86,14 +78,8 @@ SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRoad<Oper
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<1>::Mold.
-// The result will be collected in a Operation.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
@@ -116,14 +102,8 @@ SAME_TYPE(ClassicPlume<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRoad<Operati
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<1>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Operation.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"

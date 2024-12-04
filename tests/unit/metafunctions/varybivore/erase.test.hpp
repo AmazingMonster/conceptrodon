@@ -4,11 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ERASE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ERASE_H
 
+#include <utility>
+
 #include "conceptrodon/descend/varybivore/erase.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -22,19 +23,30 @@ namespace TestErase {
 
 
 /******************************************************************************************************/
+template<auto...Args>
+requires (sizeof...(Args)==180)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultA = Shuttle<SHEEP_SPROUT(40), SHEEP_SPROUT(140, +100)>;
+using SupposedResult = Operation<SHEEP_SPROUT(40), SHEEP_SPROUT(140, +100)>;
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 /******************************************************************************************************/
+
 
 
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    SupposedResultA
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Shuttle>);
+SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Operation>);
+// SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<100, 40>::Rail<Operation>);
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 
 
@@ -46,61 +58,21 @@ SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Shuttle>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-// SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<400, 100>::Rail<Shuttle>);
+using SupposedResult_1 = Operation<SHEEP_SPROUT(180)>;
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 /******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultB = Shuttle<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-/******************************************************************************************************/
 
 
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    SupposedResultB
+    SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 40>::Rail<Shuttle>);
+SAME_TYPE(Erase<SHEEP_SPROUT(180)>::Page<40, 40>::Rail<Operation>);
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto...Variables>
-requires (sizeof...(Variables) == 180)
-struct Tester {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultC = Tester<SHEEP_SPROUT(40), SHEEP_SPROUT(140, +100)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultC
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Tester>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -111,7 +83,7 @@ SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40, 100>::Rail<Tester>);
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<size_t I>
-using DismissIndex = Erase<SHEEP_SPROUT(240)>::Page<I>::template Rail<Shuttle>;
+using EraseIndex = Erase<SHEEP_SPROUT(181)>::Page<I>::template Rail<Operation>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -120,7 +92,7 @@ using DismissIndex = Erase<SHEEP_SPROUT(240)>::Page<I>::template Rail<Shuttle>;
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultD = Shuttle<SHEEP_SPROUT(239, +1)>;
+using SupposedResult_3 = Operation<SHEEP_SPROUT(180, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -129,9 +101,9 @@ using SupposedResultD = Shuttle<SHEEP_SPROUT(239, +1)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultD
+    SupposedResult_3
     
-SAME_TYPE(DismissIndex<0>);
+SAME_TYPE(EraseIndex<0>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -141,7 +113,7 @@ SAME_TYPE(DismissIndex<0>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultE = Shuttle<SHEEP_SPROUT(40), SHEEP_SPROUT(199, +41)>;
+using SupposedResult_4 = Operation<SHEEP_SPROUT(40), SHEEP_SPROUT(140, +41)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -150,9 +122,9 @@ using SupposedResultE = Shuttle<SHEEP_SPROUT(40), SHEEP_SPROUT(199, +41)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultE
+    SupposedResult_4
     
-SAME_TYPE(DismissIndex<40>);
+SAME_TYPE(EraseIndex<40>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -162,7 +134,7 @@ SAME_TYPE(DismissIndex<40>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultF = Shuttle<SHEEP_SPROUT(239)>;
+using SupposedResult_5 = Operation<SHEEP_SPROUT(180)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -171,41 +143,9 @@ using SupposedResultF = Shuttle<SHEEP_SPROUT(239)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultF
+    SupposedResult_5
     
-SAME_TYPE(DismissIndex<239>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<auto...Variables>
-requires (sizeof...(Variables) == 239)
-struct TesterB {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultG = TesterB<SHEEP_SPROUT(40), SHEEP_SPROUT(199, +41)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultG
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Erase<SHEEP_SPROUT(240)>::Page<40>::Rail<TesterB>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+SAME_TYPE(EraseIndex<180>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

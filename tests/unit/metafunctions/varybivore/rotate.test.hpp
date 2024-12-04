@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ROTATE_H
 
 #include "conceptrodon/descend/varybivore/rotate.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,8 +21,17 @@ namespace TestRotate {
 
 
 /******************************************************************************************************/
+template<auto...Args>
+requires (sizeof...(Args)==240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultA = Shuttle<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
+using SupposedResult = Operation<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -31,10 +40,10 @@ using SupposedResultA = Shuttle<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultA
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Rail<Shuttle>);
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Rail<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -44,7 +53,7 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Rail<Shuttle>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultB = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -53,10 +62,10 @@ using SupposedResultB = Shuttle<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultB
+    SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Rail<Shuttle>);
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Rail<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -67,46 +76,15 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Rail<Shuttle>);
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultB
+    SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Rail<Shuttle>);
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Rail<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
-template<auto...Variables>
-requires (sizeof...(Variables) == 240)
-struct Tester {};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultC = Tester<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultC
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Rail<Tester>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
 
 
 

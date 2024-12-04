@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/minimum.hpp"
+
 #include "macaron/judgmental/equal_value.hpp"
 
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -21,9 +21,11 @@ namespace TestMinimum {
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     -10
+
 EQUAL_VALUE(Minimum_v<-10, 11, 12>);
 EQUAL_VALUE(Minimum<-10, 11, 12>::value);
-EQUAL_VALUE(Minimum_v<-10.0, -9.0, -8.5, static_cast<double>(7)>);
+EQUAL_VALUE(Minimum_v<-10.0, -9.0, -8.5, 7.0>);
+
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/
 

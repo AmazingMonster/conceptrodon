@@ -4,10 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_OVERLAPPING_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_OVERLAPPING_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/descend/varybivore/are_overlapping.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -36,7 +34,7 @@ VALID(std::is_same_v<AreOverlapping<SHEEP_SPROUT(240)>::Page<SHEEP_SPROUT(120)>:
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(std::is_same_v<AreOverlapping<SHEEP_SPROUT(240)>::Page<10>::type, void>);
+VALID(std::is_same_v<AreOverlapping<SHEEP_SPROUT(240)>::Page<300, 300>::type, void>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 

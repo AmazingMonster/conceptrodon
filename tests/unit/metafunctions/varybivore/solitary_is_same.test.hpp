@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_SAME_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_SAME_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/is_same.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -23,7 +23,7 @@ namespace TestIsSame {
 /******************************************************************************************************/
 VALID(SolitaryIsSame_v<1, 1>);
 INVALID(SolitaryIsSame_v<1, 2>);
-INVALID(SolitaryIsSame<1, static_cast<size_t>(1)>::value);
+INVALID(SolitaryIsSame<1, 1.0>::value);
 /******************************************************************************************************/
 
 

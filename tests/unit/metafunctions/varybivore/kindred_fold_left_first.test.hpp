@@ -24,15 +24,12 @@ namespace TestKindredFoldLeftFirst {
 /******************************************************************************************************/
 template<auto Left, auto Right>
 struct BinaryOperation
-{ static constexpr auto value = Left + Right; };
+{ static constexpr auto value {Left + Right}; };
 
 template<auto Left, auto Right>
 requires (Left < Right)
 struct BinaryOperation<Left, Right>
-{ static constexpr auto value = 1; };
-
-template<auto Left, auto Right>
-static constexpr auto BinaryOperation_v = BinaryOperation<Left, Right>::type;
+{ static constexpr auto value {Left}; };
 /******************************************************************************************************/
 
 
@@ -54,10 +51,10 @@ EQUAL_VALUE(KindredFoldLeftFirst<1, SHEEP_SPROUT(240)>::Rail_v<BinaryOperation>)
 
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
-    1 + 7 * 8 / 2
+    -1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(KindredFoldLeftFirst<1, SHEEP_SPROUT(8)>::Rail_v<BinaryOperation>);
+EQUAL_VALUE(KindredFoldLeftFirst<-1, SHEEP_SPROUT(240)>::Rail_v<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -68,10 +65,10 @@ EQUAL_VALUE(KindredFoldLeftFirst<1, SHEEP_SPROUT(8)>::Rail_v<BinaryOperation>);
 
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
-   1
+    1 + 7 * 8 / 2
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(KindredFoldLeftFirst<1, SHEEP_SPROUT(1)>::Rail<BinaryOperation>::value);
+EQUAL_VALUE(KindredFoldLeftFirst<1, SHEEP_SPROUT(8)>::Rail_v<BinaryOperation>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE

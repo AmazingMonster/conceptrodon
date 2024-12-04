@@ -34,7 +34,7 @@ VALID(Contains<SHEEP_SPROUT(240)>::Page<10>::value);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(Contains<SHEEP_SPROUT(240), 39>::Page<39>::value);
+VALID(Contains<SHEEP_SPROUT(240), 39, 39>::Page<39>::value);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -44,7 +44,7 @@ VALID(Contains<SHEEP_SPROUT(240), 39>::Page<39>::value);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-INVALID(Contains<SHEEP_SPROUT(240), 39>::Page<-1>::value);
+INVALID(Contains<SHEEP_SPROUT(240), 39, 39>::Page<-1>::value);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 

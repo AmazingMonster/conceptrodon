@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_DISTINCT_H
 
-#include <concepts>
 #include "conceptrodon/descend/varybivore/are_distinct.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -44,37 +44,9 @@ INVALID(AreDistinct<SHEEP_SPROUT(40), 39>::value);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(AreDistinct<SHEEP_SPROUT(40), static_cast<size_t>(39)>::value);
+VALID(AreDistinct<SHEEP_SPROUT(40), 39.0>::value);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-template<typename T>
-constexpr T ThirtyNine {39};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-INVALID(AreDistinct<SHEEP_SPROUT(40), ThirtyNine<int>>::value);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(AreDistinct<SHEEP_SPROUT(40), ThirtyNine<size_t>>::value);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
 
 
 

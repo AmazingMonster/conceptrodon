@@ -1,29 +1,23 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_4TH_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_4TH_H
+#ifndef CONCEPTRODON_TESTS_GENERAL_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_8_H
+#define CONCEPTRODON_TESTS_GENERAL_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_8_H
 
-#include <concepts>
-#include "conceptrodon/carrier.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
-
 namespace Conceptrodon {
-namespace Varybivore {
-namespace UnitTests {
-namespace TestIsSameAs4th {
+namespace GeneralTests {
+namespace VariableTemplateMemberSpecialization8 {
+
 
 
 
 /******************************************************************************************************/
-template<template<auto...> class>
-struct Truth
+template<size_t>
+struct Tester
 {
     template<auto...>
     struct ProtoPage
@@ -88,26 +82,12 @@ struct Truth
         {true};
     };
 
-    static constexpr bool value 
-    {true};
-
-    template<auto...>
-    static constexpr bool Page_v {true};
-
     template<auto...Args>
-    static constexpr bool ProtoPage_v {ProtoPage<Args...>::value};
+    using Page = ProtoPage<Args...>;
 };
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-template<size_t I>
-constexpr bool Check = Truth<IsSameAs<I>::template Page>
-::template ProtoPage_v<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+template<typename...>
+struct Vessel {};
 /******************************************************************************************************/
 
 
@@ -115,13 +95,13 @@ constexpr bool Check = Truth<IsSameAs<I>::template Page>
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Check <
+    Tester <
 #define SHEEP_SUFFIX    \
-    >
+    >::Page<0>
 #define SHEEP_SEPARATOR \
     ,
 
-using Tester = Shuttle<SHEEP_SPROUT(240)>;
+using Dummy = Vessel<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -131,7 +111,7 @@ using Tester = Shuttle<SHEEP_SPROUT(240)>;
 
 
 
-}}}}
+}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 

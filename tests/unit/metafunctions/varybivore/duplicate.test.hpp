@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DUPLICATE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DUPLICATE_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/duplicate.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"
 
@@ -22,31 +21,9 @@ namespace TestDuplicate {
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_zero_alkane.hpp"
-using SupposedResultA = Shuttle<ALKANE_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_zero_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultA
-
-SAME_TYPE(Duplicate<0>::Page<240>::UniRail<Shuttle>);
-SAME_TYPE(Duplicate<0>::Page<240>::Rail<Shuttle>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -54,7 +31,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_zero_alkane.hpp"
-using SupposedResultB = Tester<ALKANE_SPROUT(240)>;
+using SupposedResult = Operation<ALKANE_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_zero_alkane.hpp"
 /******************************************************************************************************/
 
@@ -63,10 +40,10 @@ using SupposedResultB = Tester<ALKANE_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultB
+    SupposedResult
 
-SAME_TYPE(Duplicate<0>::Page<240>::UniRail<Tester>);
-SAME_TYPE(Duplicate<0>::Page<240>::Rail<Tester>);
+SAME_TYPE(Duplicate<0>::Page<240>::UniRail<Operation>);
+SAME_TYPE(Duplicate<0>::Page<240>::Rail<Operation>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

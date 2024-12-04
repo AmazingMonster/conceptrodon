@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_TURN_OVER_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_TURN_OVER_H
 
-#include "concepts"
 #include "conceptrodon/descend/varybivore/turn_over.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
@@ -24,7 +24,7 @@ namespace TestTypicalTurnOver {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep_reversed.hpp"
-using SuppesedShuttle = Shuttle<SHEEP_REVERSED_SPROUT(240)>;
+using SupposedResult = Shuttle<SHEEP_REVERSED_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep_reversed.hpp"
 /******************************************************************************************************/
 
@@ -33,7 +33,7 @@ using SuppesedShuttle = Shuttle<SHEEP_REVERSED_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    SuppesedShuttle
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 SAME_TYPE(TypicalTurnOver<SHEEP_SPROUT(240)>::type);

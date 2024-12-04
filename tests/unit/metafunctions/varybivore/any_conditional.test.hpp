@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_CONDITIONAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_CONDITIONAL_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/varybivore/any_conditional.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

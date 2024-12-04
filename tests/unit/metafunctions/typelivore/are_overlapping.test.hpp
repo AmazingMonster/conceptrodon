@@ -47,7 +47,11 @@ static_assert
     std::is_same_v
     <
         AreOverlapping<SHEEP_SPROUT(240)>
-        ::Mold<std::integral_constant<int, 10>>
+        ::Mold
+        <
+            std::integral_constant<int, 300>,
+            std::integral_constant<int, 300>
+        >
         ::type
         ,
         void

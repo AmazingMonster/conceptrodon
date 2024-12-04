@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_GREATER_THAN_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_GREATER_THAN_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/are_greater_than.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

@@ -4,10 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_CLASSIC_PLUME_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_CLASSIC_PLUME_H
 
-#include <concepts>
-#include <type_traits>
-#include "conceptrodon/capsule.hpp"
+#include <utility>
+
 #include "conceptrodon/varybivore/sensible_classic_plume.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -26,6 +26,10 @@ namespace TestSensibleClassicPlume {
 
 
 /******************************************************************************************************/
+template<typename...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+
 template<auto I>
 struct Dummy
 {
@@ -40,18 +44,12 @@ struct Dummy
 };
 /******************************************************************************************************/
 
-// In this example,
-// we will place
-//  0, ..., 239
-// into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Capsule.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240, *2)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -70,7 +68,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(SensibleClassicPlume<LLAMA_SPROUT(240)>::Road<Capsule>::Rail<SHEEP_SPROUT(240)>);
+SAME_TYPE(SensibleClassicPlume<LLAMA_SPROUT(240)>::Road<Operation>::Rail<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -80,16 +78,12 @@ SAME_TYPE(SensibleClassicPlume<LLAMA_SPROUT(240)>::Road<Capsule>::Rail<SHEEP_SPR
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  0, ..., 239
-// into
-//  Dummy<1>::Page.
-// The result will be collected in a Capsule.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult_1 = Capsule<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -101,22 +95,18 @@ using SupposedResult_1 = Capsule<SHEEP_SPROUT(240, +1)>;
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(SensibleClassicPlume<LLAMA_SPROUT(240)>::Road<Capsule>::Rail<Dummy<1>::Page>);
+SAME_TYPE(SensibleClassicPlume<LLAMA_SPROUT(240)>::Road<Operation>::Rail<Dummy<1>::Page>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each 1 into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Capsule.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_2 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -134,7 +124,7 @@ using SupposedResult_2 = Capsule<SHEEP_SPROUT(240, +1)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(SensibleClassicPlume<1>::Road<Capsule>::Rail<SHEEP_SPROUT(240)>);
+SAME_TYPE(SensibleClassicPlume<1>::Road<Operation>::Rail<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

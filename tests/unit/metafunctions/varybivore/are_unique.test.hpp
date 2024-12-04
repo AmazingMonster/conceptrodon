@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNIQUE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_UNIQUE_H
 
-#include <concepts>
 #include "conceptrodon/descend/descend/varybivore/are_unique.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

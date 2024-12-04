@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_REITERATE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_REITERATE_H
 
-#include <concepts>
 #include "conceptrodon/descend/varybivore/reiterate.hpp"
+
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 
@@ -28,7 +28,7 @@ namespace TestReiterate {
 #define ALKANE_SEPARATOR    \
     ,
 
-using SupposedShuttle = Shuttle<ALKANE_SPROUT(240)>;
+using SupposedResult = Shuttle<ALKANE_SPROUT(240)>;
 
 #undef ALKANE_PREFIX
 #undef ALKANE_CARBON
@@ -41,7 +41,7 @@ using SupposedShuttle = Shuttle<ALKANE_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedShuttle
+    SupposedResult
 
 SAME_TYPE(Reiterate<1, 2, 3>::Page<240>);
 

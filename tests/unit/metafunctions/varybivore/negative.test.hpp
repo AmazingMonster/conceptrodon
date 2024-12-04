@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NEGATIVE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NEGATIVE_H
 
-#include <concepts>
 #include "conceptrodon/varybivore/negative.hpp"
+
 #include "macaron/judgmental/equal_value.hpp"
 
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
@@ -21,8 +21,10 @@ namespace TestNegative {
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     -10
+
 EQUAL_VALUE(Negative<10>::value);
 EQUAL_VALUE(Negative_v<10.0>);
+
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/
 
@@ -32,8 +34,10 @@ EQUAL_VALUE(Negative_v<10.0>);
 /******************************************************************************************************/
 #define SUPPOSED_VALUE  \
     10
+
 EQUAL_VALUE(Negative_v<-10>);
-EQUAL_VALUE(Negative_v<-10.0>);
+EQUAL_VALUE(Negative<-10.0>::value);
+
 #undef SUPPOSED_VALUE
 /******************************************************************************************************/
 
