@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_OBSERVE_H
 
 #include "conceptrodon/descend/pagelivore/cognate_observe.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/binary_sheep.hpp"
@@ -23,8 +23,17 @@ namespace TestCognateObserve {
 
 
 /******************************************************************************************************/
+template<size_t...Variables>
+requires (sizeof...(Variables) == 120)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedShuttle = Ark<SHEEP_SPROUT(120, *2+1)>;
+using SupposedResult = Operation<SHEEP_SPROUT(120, *2+1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 /******************************************************************************************************/
@@ -34,10 +43,10 @@ using SupposedShuttle = Ark<SHEEP_SPROUT(120, *2+1)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedShuttle
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_boolean_sheep.hpp"
-SAME_TYPE(CognateObserve<Ark>::Page<BINARY_SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateObserve<Operation>::Page<BINARY_SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_boolean_sheep.hpp"
 
 #undef SUPPOSED_TYPE

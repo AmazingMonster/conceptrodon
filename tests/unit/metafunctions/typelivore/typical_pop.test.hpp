@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_POP_H
 
 #include <utility>
+
 #include "conceptrodon/descend/typelivore/pop.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

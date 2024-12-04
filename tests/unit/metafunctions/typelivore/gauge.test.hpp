@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GAUGE_H
 
-#include <type_traits>
+#include <concepts>
+
 #include "conceptrodon/typelivore/gauge.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -25,6 +26,10 @@ namespace TestGauge {
 
 
 /******************************************************************************************************/
+template<auto...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+
 template<auto I>
 struct Dummy
 {
@@ -48,11 +53,11 @@ struct Dummy
 //  Dummy<0>::Mold,
 //  ...,
 //  Dummy<239>::Mold.
-// The result will be collected in a Shuttle.
+// The result will be collected in a Operation.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240, *2)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -71,8 +76,8 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Rail<Shuttle>);
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::Rail<Operation>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRail<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -89,11 +94,11 @@ SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
 //  std::integral_constant<239>
 // into
 //  Dummy<1>::Mold.
-// The result will be collected in a Shuttle.
+// The result will be collected in a Operation.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_1 = Shuttle<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -105,8 +110,8 @@ using SupposedResult_1 = Shuttle<SHEEP_SPROUT(240, +1)>;
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::Rail<Shuttle>);
-SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRail<Shuttle>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::Rail<Operation>);
+SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRail<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SUPPOSED_TYPE
@@ -119,11 +124,11 @@ SAME_TYPE(Gauge<LLAMA_SPROUT(240)>::Road<Dummy<1>::Mold>::UniRail<Shuttle>);
 //  Dummy<0>::Mold,
 //  ...,
 //  Dummy<239>::Mold.
-// The result will be collected in a Shuttle.
+// The result will be collected in a Operation.
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_2 = Shuttle<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_2 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -141,8 +146,8 @@ using SupposedResult_2 = Shuttle<SHEEP_SPROUT(240, +1)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Gauge<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::Rail<Shuttle>);
-SAME_TYPE(Gauge<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::UniRail<Shuttle>);
+SAME_TYPE(Gauge<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::Rail<Operation>);
+SAME_TYPE(Gauge<std::integral_constant<int, 1>>::Road<SHEEP_SPROUT(240)>::UniRail<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

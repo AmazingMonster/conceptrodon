@@ -4,11 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_SEGMENT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_SEGMENT_H
 
-#include <concepts>
 #include <utility>
+
 #include "conceptrodon/descend/pagelivore/cognate_segment.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
@@ -26,6 +25,15 @@ namespace TestCognateSegment {
 
 
 /******************************************************************************************************/
+template<size_t...Variables>
+requires (sizeof...(Variables) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #define ALKANE_PREFIX
 #define ALKANE_CARBON   \
     1
@@ -33,7 +41,7 @@ namespace TestCognateSegment {
 #define ALKANE_SEPARATOR    \
     ,
 
-using SupposedResult = Ark<0, ALKANE_SPROUT(239)>;
+using SupposedResult = Operation<0, ALKANE_SPROUT(239)>;
 
 #undef ALKANE_PREFIX
 #undef ALKANE_CARBON
@@ -49,12 +57,14 @@ using SupposedResult = Ark<0, ALKANE_SPROUT(239)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSegment<Shuttle>::Page<SHEEP_SPROUT(240)>);
-SAME_TYPE(CognateSegment<Shuttle>::Mold<std::index_sequence<SHEEP_SPROUT(240)>>);
+SAME_TYPE(CognateSegment<Operation>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateSegment<Operation>::Mold<std::index_sequence<SHEEP_SPROUT(240)>>);
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+
+
 
 
 }}}}

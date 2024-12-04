@@ -4,8 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TOTAL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TOTAL_H
 
+#include <utility>
+
 #include "conceptrodon/omennivore/total.hpp"
-#include "macaron/judgmental/equal_value.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
@@ -22,8 +23,9 @@
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
 
+#include "macaron/judgmental/equal_value.hpp"
+
 #include "macaron/judgmental/amenity/define_equal_value.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Omennivore {

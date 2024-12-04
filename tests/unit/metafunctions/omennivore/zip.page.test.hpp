@@ -1,17 +1,17 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_4TH_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_4TH_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_PAGE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_PAGE_H
+
+#include <utility>
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/carrier.hpp"
-
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -20,14 +20,17 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestZip4th {
+namespace TestZipPage {
 
 
 
 
 /******************************************************************************************************/
+template<template<auto...> class...>
+struct ArgArgVessel {};
+
 template<size_t>
-struct TesterA 
+struct Tester_0 
 {
     template<auto...>
     struct ProtoPage {};
@@ -38,7 +41,7 @@ struct TesterA
 
 
 template<size_t>
-struct TesterB 
+struct Tester_1
 {
     template<auto...>
     struct ProtoPage {};
@@ -46,28 +49,21 @@ struct TesterB
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 };
-
-
-template<typename>
-struct TesterC {};
 
 template
 <
-    template<template<auto...> class...> class Vessel,
     template<auto...> class A,
     template<auto...> class B
 >
-struct TesterC<Vessel<A, B>>
+struct CrossSectionHelper
 { using type = Capsule<A<0>, B<0>>; };
 
-template<typename>
-struct TesterD {};
-
-template<template<typename...> class Vessel, typename...Args>
-struct TesterD<Vessel<Args...>>
-{
-    using type = Capsule<typename TesterC<Args>::type...>;
-};
+template
+<
+    template<auto...> class A,
+    template<auto...> class B
+>
+using CrossSection = CrossSectionHelper<A, B>::type;
 /******************************************************************************************************/
 
 
@@ -75,15 +71,15 @@ struct TesterD<Vessel<Args...>>
 
 /******************************************************************************************************/
 #define DOUBLE_SHEEP_PREFIX \
-    Capsule<TesterA<
+    Capsule<Tester_0<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Page<0>, TesterB<
+    >::Page<0>, Tester_1<
 #define DOUBLE_SHEEP_SUFFIX \
     >::Page<0>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(80)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -96,13 +92,13 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterA<
+    Tester_0<
 #define SHEEP_SUFFIX \
     >::Page
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Carrier<SHEEP_SPROUT(240)>;
+using Arg_0 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -114,13 +110,13 @@ using ArgA = Carrier<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterB<
+    Tester_1<
 #define SHEEP_SUFFIX \
     >::Page
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Carrier<SHEEP_SPROUT(300)>;
+using Arg_1 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -134,16 +130,16 @@ using ArgB = Carrier<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Sail<Carrier>::Road<Capsule>>::type);
+SAME_TYPE(Zip<Arg_0, Arg_1>::Sail<CrossSection>::Road<Capsule>);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Sail<Carrier>::Page<
+    Zip<Arg_0, Arg_1>::Sail<CrossSection>::Page<
 #define SHEEP_SUFFIX \
-    >>::type
+    >
 #define SHEEP_SEPARATOR  \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

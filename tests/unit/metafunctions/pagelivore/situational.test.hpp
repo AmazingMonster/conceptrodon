@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SITUATIONAL_H
 
 #include <type_traits>
+
 #include "conceptrodon/pagelivore/situational.hpp"
+
 #include "macaron/judgmental/equal_value.hpp"
 
 #include "macaron/judgmental/amenity/define_equal_value.hpp"

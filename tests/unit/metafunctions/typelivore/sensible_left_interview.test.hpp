@@ -4,10 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_LEFT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SENSIBLE_LEFT_INTERVIEW_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/typelivore/sensible_left_interview.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -50,7 +51,7 @@ struct EqualNegative<U, L, R>
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<int I>
-constexpr auto Interviewed = SensibleLeftInterview<SHEEP_SPROUT(120)>
+constexpr auto Interviewed = SensibleLeftInterview<SHEEP_SPROUT(80)>
 ::template Road<NoGreaterThanZero, EqualNegative>
 ::template Mold_v<int, std::integral_constant<int, -I>>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
@@ -61,7 +62,9 @@ constexpr auto Interviewed = SensibleLeftInterview<SHEEP_SPROUT(120)>
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = SignedArk<SHEEP_SPROUT(120)>;
+#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
+using SupposedResult = SignedArk<SHEEP_SPROUT(80), ALKANE_SPROUT(40)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -74,50 +77,6 @@ using SupposedResult = SignedArk<SHEEP_SPROUT(120)>;
 
 #define SHEEP_PREFIX    \
     Interviewed <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-SAME_TYPE(Shuttle<SHEEP_SPROUT(120)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-template<int I>
-constexpr auto FailInterviewed = SensibleLeftInterview<SHEEP_SPROUT(40), std::integral_constant<int, I>>
-::template Road<NoGreaterThanZero, EqualNegative>
-::template Mold<int, std::integral_constant<int, 1>>
-::value;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
-using SupposedFailedResult = SignedArk<ALKANE_SPROUT(120)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedFailedResult
-
-#define SHEEP_PREFIX    \
-    FailInterviewed <
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \

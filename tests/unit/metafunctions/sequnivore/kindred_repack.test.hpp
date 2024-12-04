@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_KINDRED_REPACK_H
 
 #include "conceptrodon/descend/sequnivore/kindred_repack.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,12 +22,12 @@ namespace TestKindredRepack {
 //  Shuttle<0>,
 //  ...,
 //  Shuttle<239>
-// together and place the result in Tester.
+// together and place the result in Operation.
 
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240)
-struct Tester;
+struct Operation;
 /******************************************************************************************************/
 
 
@@ -34,7 +35,7 @@ struct Tester;
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -51,8 +52,8 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniRail<Tester>);
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Tester>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniRail<Operation>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -65,7 +66,7 @@ SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Tester>);
 //  Shuttle<0>,
 //  ...,
 //  Shuttle<239>
-// together and place the result in Tester.
+// together and place the result in Operation.
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
@@ -75,7 +76,7 @@ SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Tester>);
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult_1 = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -96,8 +97,8 @@ using SupposedResult_1 = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniRail<Tester>);
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Tester>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniRail<Operation>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

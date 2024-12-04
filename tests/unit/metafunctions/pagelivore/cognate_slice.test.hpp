@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_SLICE_H
 
 #include "conceptrodon/descend/pagelivore/cognate_slice.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,55 +21,9 @@ namespace TestCognateSlice {
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultA = Shuttle<SHEEP_SPROUT(40, +60)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultA
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSlice<Shuttle>::Page<60, 100>::Page<SHEEP_SPROUT(240)>);
-// SAME_TYPE(CognateSlice<Shuttle>::Page<600, 100>::Page<SHEEP_SPROUT(240)>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultB = Shuttle<>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultB
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSlice<Shuttle>::Page<40, 40>::Page<SHEEP_SPROUT(240)>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 60)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -77,7 +31,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultC = Tester<SHEEP_SPROUT(60, +40)>;
+using SupposedResult = Operation<SHEEP_SPROUT(60, +60)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -86,33 +40,11 @@ using SupposedResultC = Tester<SHEEP_SPROUT(60, +40)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultC
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSlice<Tester>::Page<40, 100>::Page<SHEEP_SPROUT(240)>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultD = Shuttle<SHEEP_SPROUT(200, +40)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultD
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSlice<Shuttle>::Page<40>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateSlice<Operation>::Page<60, 120>::Page<SHEEP_SPROUT(240)>);
+// SAME_TYPE(CognateSlice<Operation>::Page<120, 60>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -123,8 +55,8 @@ SAME_TYPE(CognateSlice<Shuttle>::Page<40>::Page<SHEEP_SPROUT(240)>);
 
 /******************************************************************************************************/
 template<auto...Variables>
-requires (sizeof...(Variables) == 40)
-struct TesterB {};
+requires (sizeof...(Variables) == 0)
+struct Operation_1 {};
 /******************************************************************************************************/
 
 
@@ -132,7 +64,7 @@ struct TesterB {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResultE = TesterB<SHEEP_SPROUT(40, +200)>;
+using SupposedResult_1 = Operation_1<>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -141,10 +73,47 @@ using SupposedResultE = TesterB<SHEEP_SPROUT(40, +200)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultE
+    SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateSlice<TesterB>::Page<200>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateSlice<Operation_1>::Page<40, 40>::Page<SHEEP_SPROUT(240)>);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+using SupposedResult_2 = Operation<SHEEP_SPROUT(60, +40)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_2
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+SAME_TYPE(CognateSlice<Operation>::Page<40>::Page<SHEEP_SPROUT(100)>);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_1
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+SAME_TYPE(CognateSlice<Operation_1>::Page<200>::Page<SHEEP_SPROUT(200)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -154,5 +123,8 @@ SAME_TYPE(CognateSlice<TesterB>::Page<200>::Page<SHEEP_SPROUT(240)>);
 
 
 }}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 #endif

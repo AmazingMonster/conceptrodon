@@ -4,10 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_MODIFY_TYPES_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_MODIFY_TYPES_H
 
-#include <type_traits>
-#include <concepts>
+#include <utility>
+
 #include "conceptrodon/descend/omennivore/modify_types.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
@@ -86,11 +87,11 @@ SAME_TYPE
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_alkane.hpp"
-
-}}}}
 
 #endif

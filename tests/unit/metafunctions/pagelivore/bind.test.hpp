@@ -5,9 +5,11 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_BIND_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/descend/pagelivore/bind.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/peg.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"

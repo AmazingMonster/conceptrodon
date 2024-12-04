@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DUPLICATE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DUPLICATE_H
 
-#include <concepts>
 #include "conceptrodon/typelivore/duplicate.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"
 
@@ -22,6 +21,15 @@ namespace TestDuplicate {
 
 
 /******************************************************************************************************/
+template<typename...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #define ALKANE_PREFIX
 #define ALKANE_CARBON   \
     int
@@ -29,7 +37,7 @@ namespace TestDuplicate {
 #define ALKANE_SEPARATOR    \
     ,
 
-using SupposedResult = Capsule<ALKANE_SPROUT(240)>;
+using SupposedResult = Operation<ALKANE_SPROUT(240)>;
 
 #undef ALKANE_PREFIX
 #undef ALKANE_CARBON
@@ -44,8 +52,8 @@ using SupposedResult = Capsule<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedResult
 
-SAME_TYPE(Duplicate<int>::Page<240>::UniRoad<Capsule>);
-SAME_TYPE(Duplicate<int>::Page<240>::Road<Capsule>);
+SAME_TYPE(Duplicate<int>::Page<240>::UniRoad<Operation>);
+SAME_TYPE(Duplicate<int>::Page<240>::Road<Operation>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

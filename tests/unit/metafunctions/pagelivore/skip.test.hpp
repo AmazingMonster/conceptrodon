@@ -4,13 +4,15 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SKIP_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SKIP_H
 
+#include <utility>
+
 #include "conceptrodon/descend/pagelivore/skip.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Pagelivore {
@@ -18,7 +20,7 @@ namespace UnitTests {
 namespace TestSkip {
 
 template<auto...>
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold
@@ -141,7 +143,7 @@ struct Tester
 
 
 template<>
-struct Tester<-1>
+struct Operation<-1>
 {
     template<auto...>
     struct ProtoPage
@@ -160,9 +162,9 @@ struct Tester<-1>
 };
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Page<>::value);
-VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Page<>::value);
-VALID(Skip<Tester>::Page<true>::Commit::Page<-1>::value);
+VALID(Skip<Operation>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Page<>::value);
+VALID(Skip<Operation>::Mold<>::Mold<std::true_type>::Commit::Page<>::value);
+VALID(Skip<Operation>::Page<true>::Commit::Page<-1>::value);
 
 
 }}}}

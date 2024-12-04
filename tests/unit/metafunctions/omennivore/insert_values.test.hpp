@@ -4,10 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VALUES_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_INSERT_VALUES_H
 
-#include <concepts>
 #include <utility>
+
 #include "conceptrodon/descend/omennivore/insert_values.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

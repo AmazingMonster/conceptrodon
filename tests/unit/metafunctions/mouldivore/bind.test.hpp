@@ -4,13 +4,15 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_H
 
+#include <utility>
+
 #include "conceptrodon/descend/descend/mouldivore/bind.hpp"
 #include "conceptrodon/peg.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

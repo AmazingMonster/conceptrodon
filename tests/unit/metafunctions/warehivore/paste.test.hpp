@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_WAREHIVORE_PASTE_H
 
 #include <concepts>
+
 #include "conceptrodon/warehivore/paste.hpp"
 #include "conceptrodon/vehicle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -20,14 +22,14 @@ namespace UnitTests {
 namespace TestPaste {
 
 // In this test, we will paste
-//  Tester<>,
+//  FirstPackedVessel<>,
 //  Vehicle<Dummy<0>::Mold>,
 //  Vehicle<Dummy<239>::Mold>
 // together.
 
 /******************************************************************************************************/
 template<template<typename...> class...Containers>
-struct Tester;
+struct FirstPackedVessel {};
 
 template<size_t>
 struct Dummy
@@ -51,7 +53,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = FirstPackedVessel<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -72,7 +74,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<FirstPackedVessel<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -82,8 +84,9 @@ SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

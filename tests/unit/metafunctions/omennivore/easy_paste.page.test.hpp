@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_PAGE_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
 #include "conceptrodon/carrier.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,7 +26,7 @@ namespace TestEasyPastePage {
 
 /******************************************************************************************************/
 template<size_t>
-struct Tester
+struct Operation
 {
     template<auto...>
     struct ProtoPage {};
@@ -39,7 +41,7 @@ struct Tester
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Operation<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
@@ -60,7 +62,7 @@ using SupposedResult = Carrier<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Carrier<Tester<
+    Carrier<Operation<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \
@@ -76,8 +78,9 @@ SAME_TYPE(EasyPaste<SHEEP_SPROUT(240)>);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

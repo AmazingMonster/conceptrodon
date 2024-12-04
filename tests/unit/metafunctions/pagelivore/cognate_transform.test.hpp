@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_TRANSFORM_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_TRANSFORM_H
 
-#include <type_traits>
-#include <concepts>
+#include <utility>
+
 #include "conceptrodon/descend/pagelivore/cognate_transform.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
@@ -54,7 +55,7 @@ struct PlusOne
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -70,7 +71,7 @@ struct Tester {};
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Tester<0, 1, DOUBLE_SHEEP_SPROUT(119)>;
+using SupposedResult = Operation<0, 1, DOUBLE_SHEEP_SPROUT(119)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -88,7 +89,7 @@ using SupposedResult = Tester<0, 1, DOUBLE_SHEEP_SPROUT(119)>;
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 SAME_TYPE
 (
-    CognateTransform<Tester>
+    CognateTransform<Operation>
     ::Rail<IsEven, IsPositive>
     ::Rail<PlusOne>
     ::Page<SHEEP_SPROUT(240)>);
@@ -100,10 +101,10 @@ SAME_TYPE
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/fragmental/amenity/undef_double_sheep.hpp"
-
-}}}}
 
 #endif

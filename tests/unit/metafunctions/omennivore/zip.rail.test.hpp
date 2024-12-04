@@ -4,17 +4,14 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_RAIL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_RAIL_H
 
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/vehicle.hpp"
+#include <utility>
 
+#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/phantom.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -29,8 +26,14 @@ namespace TestZipRail {
 
 
 /******************************************************************************************************/
+template<auto...Nothingness>
+struct ArgArg {};
+
+template<template<template<auto...> class...> class...>
+struct ArgArgVessel {};
+
 template<size_t>
-struct TesterA 
+struct Tester_0 
 {
     template<template<auto...> class...>
     struct ProtoRail {};
@@ -41,7 +44,7 @@ struct TesterA
 
 
 template<size_t>
-struct TesterB 
+struct Tester_1
 {
     template<template<auto...> class...>
     struct ProtoRail {};
@@ -49,27 +52,21 @@ struct TesterB
     template<template<auto...> class...Agreements>
     using Rail = ProtoRail<Agreements...>;
 };
-
-template<typename>
-struct TesterC {};
 
 template
 <
-    template<template<template<auto...> class...> class...> class Vessel,
     template<template<auto...> class...> class A,
     template<template<auto...> class...> class B
 >
-struct TesterC<Vessel<A, B>>
-{ using type = Capsule<A<Shuttle>, B<Shuttle>>; };
+struct CrossSectionHelper
+{ using type = Capsule<A<ArgArg>, B<ArgArg>>; };
 
-template<typename>
-struct TesterD {};
-
-template<template<typename...> class Vessel, typename...Args>
-struct TesterD<Vessel<Args...>>
-{
-    using type = Capsule<typename TesterC<Args>::type...>;
-};
+template
+<
+    template<template<auto...> class...> class A,
+    template<template<auto...> class...> class B
+>
+using CrossSection = CrossSectionHelper<A, B>::type;
 /******************************************************************************************************/
 
 
@@ -77,15 +74,15 @@ struct TesterD<Vessel<Args...>>
 
 /******************************************************************************************************/
 #define DOUBLE_SHEEP_PREFIX \
-    Capsule<TesterA<
+    Capsule<Tester_0<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Rail<Shuttle>, TesterB<
+    >::Rail<ArgArg>, Tester_1<
 #define DOUBLE_SHEEP_SUFFIX \
-    >::Rail<Shuttle>>
+    >::Rail<ArgArg>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(80)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -98,13 +95,13 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterA<
+    Tester_0<
 #define SHEEP_SUFFIX \
     >::Rail
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Phantom<SHEEP_SPROUT(240)>;
+using Arg_0 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -116,13 +113,13 @@ using ArgA = Phantom<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterB<
+    Tester_1<
 #define SHEEP_SUFFIX \
     >::Rail
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Phantom<SHEEP_SPROUT(300)>;
+using Arg_1 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -136,16 +133,16 @@ using ArgB = Phantom<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Hail<Phantom>::Road<Capsule>>::type);
+SAME_TYPE(Zip<Arg_0, Arg_1>::Hail<CrossSection>::Road<Capsule>);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Hail<Phantom>::Page<
+    Zip<Arg_0, Arg_1>::Hail<CrossSection>::Page<
 #define SHEEP_SUFFIX \
-    >>::type
+    >
 #define SHEEP_SEPARATOR  \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -4,14 +4,16 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_PASTE_H
 #define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_PASTE_H
 
+#include <utility>
+
 #include "conceptrodon/sequnivore/paste.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
-#include <utility>
 
 
 namespace Conceptrodon {
@@ -20,7 +22,7 @@ namespace UnitTests {
 namespace TestPaste {
 
 // In this test, we will paste
-//  Tester<>,
+//  FirstPackedVessel<>,
 //  Shuttle<0>,
 //  ...,
 //  Shuttle<239>
@@ -28,7 +30,7 @@ namespace TestPaste {
 
 /******************************************************************************************************/
 template<size_t...>
-struct Tester;
+struct FirstPackedVessel {};
 /******************************************************************************************************/
 
 
@@ -36,7 +38,7 @@ struct Tester;
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = FirstPackedVessel<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -54,7 +56,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Paste<Tester<>, SHEEP_SPROUT(240)>);
+SAME_TYPE(Paste<FirstPackedVessel<>, SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -135,8 +137,10 @@ SAME_TYPE(Paste<std::integer_sequence<int>, SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-}}}}
 
+
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

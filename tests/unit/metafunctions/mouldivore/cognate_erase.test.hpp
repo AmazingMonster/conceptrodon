@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_ERASE_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_ERASE_H
 
+#include <utility>
+
 #include "conceptrodon/descend/mouldivore/cognate_erase.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

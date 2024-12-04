@@ -4,13 +4,14 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_TYPE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_TYPE_H
 
-#include "conceptrodon/capsule.hpp"
+#include <utility>
 
+#include "conceptrodon/capsule.hpp"
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -26,11 +27,11 @@ namespace TestZipType {
 
 /******************************************************************************************************/
 template<size_t>
-struct TesterA {};
+struct Tester_0 {};
 
 
 template<size_t>
-struct TesterB {};
+struct Tester_1 {};
 /******************************************************************************************************/
 
 
@@ -38,15 +39,15 @@ struct TesterB {};
 
 /******************************************************************************************************/
 #define DOUBLE_SHEEP_PREFIX \
-    Capsule<TesterA<
+    Capsule<Tester_0<
 #define DOUBLE_SHEEP_MIDDLE \
-    >, TesterB<
+    >, Tester_1<
 #define DOUBLE_SHEEP_SUFFIX \
     >>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(80)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -59,13 +60,13 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterA<
+    Tester_0<
 #define SHEEP_SUFFIX \
     >
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Capsule<SHEEP_SPROUT(240)>;
+using Arg_0 = Capsule<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -77,13 +78,13 @@ using ArgA = Capsule<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterB<
+    Tester_1<
 #define SHEEP_SUFFIX \
     >
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Capsule<SHEEP_SPROUT(300)>;
+using Arg_1 = Capsule<SHEEP_SPROUT(120)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -97,16 +98,16 @@ using ArgB = Capsule<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(Zip<ArgA, ArgB>::Road<Capsule>::Road<Capsule>);
+SAME_TYPE(Zip<Arg_0, Arg_1>::Road<Capsule>::Road<Capsule>);
 
 #define SHEEP_PREFIX \
-    Zip<ArgA, ArgB>::Road<Capsule>::Page<
+    Zip<Arg_0, Arg_1>::Road<Capsule>::Page<
 #define SHEEP_SUFFIX \
     >
 #define SHEEP_SEPARATOR  \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

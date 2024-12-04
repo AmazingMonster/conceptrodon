@@ -4,12 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_TRIP_H
 #define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_TRIP_H
 
-#include <type_traits>
 #include <utility>
-#include "conceptrodon/shuttle.hpp"
+
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/roadrivore/trip.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 

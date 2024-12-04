@@ -6,6 +6,7 @@
 
 #include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -114,8 +115,10 @@ SAME_TYPE(EasyPaste<SHEEP_SPROUT(240)>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-}}}}
 
+
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

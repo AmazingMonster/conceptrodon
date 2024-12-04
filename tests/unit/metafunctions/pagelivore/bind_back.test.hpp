@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_BIND_BACK_H
 
 #include <concepts>
+
 #include "conceptrodon/pagelivore/bind_back.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -23,7 +25,7 @@ namespace TestBindBack {
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -31,7 +33,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+using SupposedResult = Operation<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -43,7 +45,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(BindBack<Tester>::Page<SHEEP_SPROUT(140)>::Page<SHEEP_SPROUT(100)>);
+SAME_TYPE(BindBack<Operation>::Page<SHEEP_SPROUT(140)>::Page<SHEEP_SPROUT(100)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

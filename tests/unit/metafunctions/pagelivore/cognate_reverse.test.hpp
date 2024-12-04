@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REVERSE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REVERSE_H
 
-#include "concepts"
 #include "conceptrodon/descend/pagelivore/cognate_reverse.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"
@@ -25,7 +25,7 @@ namespace TestCognateReverse {
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -33,7 +33,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep_reversed.hpp"
-using SuppesedResult = Tester<SHEEP_REVERSED_SPROUT(240)>;
+using SuppesedResult = Operation<SHEEP_REVERSED_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep_reversed.hpp"
 /******************************************************************************************************/
 
@@ -45,7 +45,7 @@ using SuppesedResult = Tester<SHEEP_REVERSED_SPROUT(240)>;
     SuppesedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateReverse<Tester>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateReverse<Operation>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONTAINS_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONTAINS_H
 
-#include <concepts>
 #include "conceptrodon/typelivore/contains.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -15,54 +14,12 @@
 #include "macaron/judgmental/amenity/define_invalid.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-#include "boost/mp11.hpp"
-#endif
-
 namespace Conceptrodon {
 namespace Typelivore {
 namespace UnitTests {
 namespace TestContains {
     
     
-
-
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-VALID(boost::mp11::mp_contains<Capsule<SHEEP_SPROUT(240)>, std::integral_constant<int, 10>>::value);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-VALID(boost::mp11::mp_contains<Capsule<SHEEP_SPROUT(240), std::integral_constant<int, 39>>, std::integral_constant<int, 39>>::value);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-INVALID(boost::mp11::mp_contains<Capsule<SHEEP_SPROUT(240), std::integral_constant<int, 39>>, std::integral_constant<int, -1>>::value);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-#else
-
-
 
 
 /******************************************************************************************************/
@@ -90,11 +47,6 @@ VALID(Contains<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::Mold<std::in
 INVALID(Contains<SHEEP_SPROUT(240), std::integral_constant<int, 39>>::Mold<std::integral_constant<int, -1>>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
-
-
-
-#endif
 
 
 

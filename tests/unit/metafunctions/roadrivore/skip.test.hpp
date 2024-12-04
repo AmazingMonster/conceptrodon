@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_SKIP_H
 
 #include "conceptrodon/descend/roadrivore/skip.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -17,7 +18,7 @@ namespace UnitTests {
 namespace TestSkip {
 
 template<template<typename...> class...>
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold
@@ -140,7 +141,7 @@ struct Tester
 
 
 template<>
-struct Tester<std::tuple>
+struct Operation<std::tuple>
 {
     template<auto...>
     struct ProtoPage
@@ -159,9 +160,9 @@ struct Tester<std::tuple>
 };
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Road<>::value);
-VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Road<>::value);
-VALID(Skip<Tester>::Page<true>::Commit::Road<std::tuple>::value);
+VALID(Skip<Operation>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Road<>::value);
+VALID(Skip<Operation>::Mold<>::Mold<std::true_type>::Commit::Road<>::value);
+VALID(Skip<Operation>::Page<true>::Commit::Road<std::tuple>::value);
 
 
 }}}}

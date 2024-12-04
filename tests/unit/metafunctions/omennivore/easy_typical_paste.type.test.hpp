@@ -5,14 +5,15 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_TYPICAL_PASTE_TYPE_H
 
 #include <utility>
+
 #include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
-
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -52,8 +53,9 @@ SAME_TYPE(EasyTypicalPaste<SHEEP_SPROUT(240)>::type);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/typelivore/is_same.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

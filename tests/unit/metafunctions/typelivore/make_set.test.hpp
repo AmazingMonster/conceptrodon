@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_MAKE_SET_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/descend/typelivore/make_set.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -15,10 +17,6 @@
 #include "macaron/judgmental/amenity/define_invalid.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-#include "boost/mp11.hpp"
-#endif
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -37,43 +35,18 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 
 
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-
-
-
-
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
+SAME_TYPE(MakeSet<SHEEP_SPROUT(240), SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
-
-
-#else
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResult
-
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(MakeSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-#endif
 
 
 }}}}

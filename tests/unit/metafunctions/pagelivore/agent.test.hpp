@@ -4,13 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AGENT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AGENT_H
 
-#include <concepts>
 #include <utility>
+
 #include "conceptrodon/pagelivore/agent.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include "type_traits"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -24,8 +23,17 @@ namespace TestAgent {
 
 
 /******************************************************************************************************/
+template<auto...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -37,7 +45,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(Agent<Shuttle>::Mold<std::integer_sequence<int, SHEEP_SPROUT(240)>>);
+SAME_TYPE(Agent<Operation>::Mold<std::integer_sequence<int, SHEEP_SPROUT(240)>>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE

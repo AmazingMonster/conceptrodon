@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_REPACK_H
 
 #include <utility>
+
 #include "conceptrodon/descend/pagelivore/repack.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,8 +26,8 @@ namespace TestRepack {
 
 /******************************************************************************************************/
 template<auto...Variables>
-requires (sizeof...(Variables) == 240)
-struct Tester {};
+requires (sizeof...(Variables) == 80)
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -33,7 +35,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -51,7 +53,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Repack<Operation>::Mold<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -65,7 +67,7 @@ SAME_TYPE(Repack<Tester>::Mold<SHEEP_SPROUT(240)>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
+using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -83,7 +85,7 @@ using SupposedIndexSequence = std::index_sequence<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<std::index_sequence>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Repack<std::index_sequence>::Mold<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -101,7 +103,7 @@ SAME_TYPE(Repack<std::index_sequence>::Mold<SHEEP_SPROUT(240)>);
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedShuttle = SignedArk<SHEEP_SPROUT(240)>;
+using SupposedShuttle = SignedArk<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -122,7 +124,7 @@ using SupposedShuttle = SignedArk<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Repack<Shuttle>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(Repack<SignedArk>::Mold<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

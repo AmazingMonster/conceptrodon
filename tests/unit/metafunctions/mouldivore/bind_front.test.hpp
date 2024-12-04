@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_FRONT_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_FRONT_H
 
+#include <utility>
+
 #include "conceptrodon/mouldivore/bind_front.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

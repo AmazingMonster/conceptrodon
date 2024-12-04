@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_FOLD_LEFT_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_FOLD_LEFT_H
 
+#include <utility>
+
 #include "conceptrodon/mouldivore/fold_left.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -28,7 +30,7 @@ struct BinaryOperation
 template<typename Left, typename Right>
 requires (Left::value < Right::value)
 struct BinaryOperation<Left, Right>
-{ using type = std::integral_constant<int, 0>; };
+{ using type = std::integral_constant<int, Left::value>; };
 
 template<typename Left, typename Right>
 using BinaryOperation_t = BinaryOperation<Left, Right>::type;
@@ -53,7 +55,7 @@ SAME_TYPE(FoldLeft<BinaryOperation_t>::Mold<std::integral_constant<int, 1>>::Mol
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
-    std::integral_constant<int, 0>
+    std::integral_constant<int, -1>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 SAME_TYPE(FoldLeft<BinaryOperation_t>::Mold<std::integral_constant<int, -1>>::Mold<SHEEP_SPROUT(240)>);

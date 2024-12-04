@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FRONT_H
 
 #include "conceptrodon/descend/typelivore/front.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,8 +21,17 @@ namespace TestFront {
 
 
 /******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements) == 40)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResultA = Capsule<SHEEP_SPROUT(40)>;
+using SupposedResult = Operation<SHEEP_SPROUT(40)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -31,10 +40,24 @@ using SupposedResultA = Capsule<SHEEP_SPROUT(40)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultA
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Front<SHEEP_SPROUT(240)>::Page<40>::Road<Capsule>);
+SAME_TYPE(Front<SHEEP_SPROUT(240)>::Page<40>::Road<Operation>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Front<SHEEP_SPROUT(40)>::Page<40>::Road<Operation>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -45,17 +68,15 @@ SAME_TYPE(Front<SHEEP_SPROUT(240)>::Page<40>::Road<Capsule>);
 
 /******************************************************************************************************/
 template<typename...Elements>
-requires (sizeof...(Elements) == 40)
-struct Tester {};
+requires (sizeof...(Elements) == 0)
+struct Operation_1 {};
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResultB = Tester<SHEEP_SPROUT(40)>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+using SupposedResult_1 = Operation_1<>;
 /******************************************************************************************************/
 
 
@@ -63,10 +84,10 @@ using SupposedResultB = Tester<SHEEP_SPROUT(40)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedResultB
+    SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Front<SHEEP_SPROUT(240)>::Page<40>::Road<Tester>);
+SAME_TYPE(Front<SHEEP_SPROUT(40)>::Page<0>::Road<Operation_1>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

@@ -4,12 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONDITIONAL_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONDITIONAL_H
 
-#include <concepts>
-#include <type_traits>
-#include "conceptrodon/typelivore/any_conditional.hpp"
-#include "macaron/judgmental/same_type.hpp"
+#include <utility>
 
-#include "macaron/judgmental/amenity/define_same_type.hpp"
+#include "conceptrodon/typelivore/any_conditional.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -19,6 +16,64 @@ namespace TestAnyConditional {
 
 
 
+/******************************************************************************************************/
+struct IfTrue {};
+
+struct IfFalse {};
+
+using Select = AnyConditional<IfTrue, IfFalse>;
+/******************************************************************************************************/
+
+
+
+
+/**** First Test ****/
+/******************************************************************************************************/
+static_assert(std::same_as<Select::Page<1, 2>, IfTrue>);
+static_assert(std::same_as<Select::Page<0, 2>, IfTrue>);
+static_assert(std::same_as<Select::Page<0, 0>, IfFalse>);
+/******************************************************************************************************/
+
+
+
+
+/**** Second Test ****/
+/******************************************************************************************************/
+static_assert(std::same_as
+<
+    Select::Mold
+    <
+        std::integral_constant<int, 1>, 
+        std::integral_constant<int, 2>
+    >, 
+    IfTrue
+>);
+
+static_assert(std::same_as
+<
+    Select::Mold
+    <
+        std::integral_constant<int, 0>, 
+        std::integral_constant<int, 2>
+    >, 
+    IfTrue
+>);
+
+static_assert(std::same_as
+<
+    Select::Mold
+    <
+        std::integral_constant<int, 0>, 
+        std::integral_constant<int, 0>
+    >, 
+    IfFalse
+>);
+/******************************************************************************************************/
+
+
+
+
+/**** Third Test ****/
 /******************************************************************************************************/
 struct VoidInt;
 
@@ -40,12 +95,29 @@ struct IntTester<int>: public std::true_type {};
 template<>
 struct IntTester<VoidInt>: public std::true_type {};
 
+template<typename...Args>
+using Metafunction = Select
+::Road<VoidTester, IntTester>
+::Mold<Args...>;
+
+static_assert(std::same_as<Metafunction<int>, IfTrue>);
+static_assert(std::same_as<Metafunction<void>, IfTrue>);
+static_assert(std::same_as<Metafunction<VoidInt>, IfTrue>);
+static_assert(std::same_as<Metafunction<double>, IfFalse>);
+static_assert(std::same_as<Select::Road<>::Mold<>, IfFalse>);
+/******************************************************************************************************/
+
+
+
+
+/**** Fourth Test ****/
+/******************************************************************************************************/
 template<auto...>
-struct PositiveTester: public std::false_type {};
+struct NonpositiveTester: public std::false_type {};
 
 template<auto I>
-requires (0 < I)
-struct PositiveTester<I>: public std::true_type {};
+requires (I <= 0 )
+struct NonpositiveTester<I>: public std::true_type {};
 
 template<auto...>
 struct NonnegativeTester: public std::false_type {};
@@ -53,45 +125,22 @@ struct NonnegativeTester: public std::false_type {};
 template<auto I>
 requires (0 <= I)
 struct NonnegativeTester<I>: public std::true_type {};
-/******************************************************************************************************/
 
+template<auto...Args>
+using Metafunction_1 = Select
+::Rail<NonpositiveTester, NonnegativeTester>
+::Page<Args...>;
 
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    std::false_type
-
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int*>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void*>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<-1>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<>::Mold<VoidInt>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<>::Page<1>);
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    std::true_type
-
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<VoidInt>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<1>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<int>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Road<VoidTester, IntTester>::Mold<void>);
-SAME_TYPE(AnyConditional<std::true_type, std::false_type>::Rail<PositiveTester, NonnegativeTester>::Page<0>);
-
-#undef SUPPOSED_TYPE
+static_assert(std::same_as<Metafunction_1<1>, IfTrue>);
+static_assert(std::same_as<Metafunction_1<-1>, IfTrue>);
+static_assert(std::same_as<Metafunction_1<0>, IfTrue>);
+static_assert(std::same_as<Metafunction_1<nullptr>, IfFalse>);
+static_assert(std::same_as<Select::Rail<>::Page<>, IfFalse>);
 /******************************************************************************************************/
 
 
 
 
 }}}}
-
-#include "macaron/judgmental/amenity/undef_same_type.hpp"
 
 #endif

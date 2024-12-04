@@ -4,8 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FIND_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FIND_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
 
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/find.hpp"
@@ -44,7 +43,9 @@ constexpr auto Found = Find
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = SignedArk<SHEEP_SPROUT(40)>;
+#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
+using SupposedResult = SignedArk<SHEEP_SPROUT(40), ALKANE_SPROUT(40)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -61,54 +62,7 @@ using SupposedResult = SignedArk<SHEEP_SPROUT(40)>;
     >
 #define SHEEP_SEPARATOR \
     ,
-SAME_TYPE(Shuttle<SHEEP_SPROUT(40)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-template<int I>
-constexpr auto FailFound = Find
-<
-    Varybivore::AreNoGreaterThan<-1>::template Page,
-    Varybivore::AreNoLessThan<-1>::template Page
->
-::Page_v<SHEEP_SPROUT(40), I>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
-using SupposedFailedResult = SignedArk<ALKANE_SPROUT(40)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedFailedResult
-
-#define SHEEP_PREFIX    \
-    FailFound <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-    
-SAME_TYPE(Shuttle<SHEEP_SPROUT(40)>);
+SAME_TYPE(Shuttle<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_NEGATION_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_NEGATION_H
 
+#include <utility>
+
 #include "conceptrodon/mouldivore/negation.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"

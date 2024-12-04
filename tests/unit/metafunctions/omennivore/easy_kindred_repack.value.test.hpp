@@ -6,6 +6,7 @@
 
 #include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -97,7 +98,6 @@ SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Rail<Shuttle>);
 
 
 }}}}
-
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

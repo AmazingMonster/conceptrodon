@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_FRONT_H
 
 #include "conceptrodon/descend/mouldivore/cognate_front.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

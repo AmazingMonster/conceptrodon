@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ARE_DISTINCT_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/typelivore/are_distinct.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
@@ -24,7 +26,7 @@ namespace TestAreDistinct {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-VALID(AreDistinct<SHEEP_SPROUT(40)>::value);
+VALID(AreDistinct<SHEEP_SPROUT(80)>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -34,7 +36,7 @@ VALID(AreDistinct<SHEEP_SPROUT(40)>::value);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-INVALID(AreDistinct<SHEEP_SPROUT(40), std::integral_constant<int, 39>>::value);
+INVALID(AreDistinct<SHEEP_SPROUT(80), std::integral_constant<int, 79>>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 

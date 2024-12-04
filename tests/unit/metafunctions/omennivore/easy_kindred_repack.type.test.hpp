@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_TYPE_H
 
 #include <utility>
+
 #include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -55,7 +57,6 @@ SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Road<std::tuple>);
 
 
 }}}}
-
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

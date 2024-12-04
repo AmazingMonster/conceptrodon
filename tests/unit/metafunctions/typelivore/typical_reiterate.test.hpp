@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_REITERATE_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/typelivore/reiterate.hpp"
+
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

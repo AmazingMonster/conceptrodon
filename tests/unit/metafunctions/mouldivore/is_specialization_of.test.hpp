@@ -4,12 +4,14 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_IS_SPECIALIZATION_OF_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_IS_SPECIALIZATION_OF_H
 
+#include <utility>
+
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/mouldivore/is_specialization_of.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"

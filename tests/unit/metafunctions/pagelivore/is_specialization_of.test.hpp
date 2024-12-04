@@ -4,12 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_IS_SPECIALIZATION_OF_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_IS_SPECIALIZATION_OF_H
 
-#include <concepts>
 #include <utility>
-#include <type_traits>
+
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/is_specialization_of.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -29,5 +29,8 @@ INVALID(IsSpecializationOf<std::index_sequence>::Mold_v<Shuttle<>>);
 INVALID(IsSpecializationOf<std::index_sequence>::Mold_v<Shuttle<1>>);
 
 }}}}
+
+#include "macaron/judgmental/amenity/undef_valid.hpp"
+#include "macaron/judgmental/amenity/undef_invalid.hpp"
 
 #endif

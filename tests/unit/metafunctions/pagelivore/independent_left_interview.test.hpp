@@ -4,10 +4,11 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_INDEPENDENT_LEFT_INTERVIEW_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/independent_left_interview.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -51,7 +52,7 @@ struct EqualNegative<U, L, R>
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<int I>
 constexpr auto Interviewed = IndependentLeftInterview<NoGreaterThanZero, EqualNegative>
-::Page<nullptr, -I>::template Page_v<SHEEP_SPROUT(20)>;
+::Page<nullptr, -I>::template Page_v<SHEEP_SPROUT(17)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -60,7 +61,9 @@ constexpr auto Interviewed = IndependentLeftInterview<NoGreaterThanZero, EqualNe
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = SignedArk<SHEEP_SPROUT(20)>;
+#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
+using SupposedResult = SignedArk<SHEEP_SPROUT(17), ALKANE_SPROUT(3)>;
+#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -73,48 +76,6 @@ using SupposedResult = SignedArk<SHEEP_SPROUT(20)>;
 
 #define SHEEP_PREFIX    \
     Interviewed <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,
-SAME_TYPE(Shuttle<SHEEP_SPROUT(20)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-template<int I>
-constexpr auto FailInterviewed = IndependentLeftInterview<NoGreaterThanZero, EqualNegative>
-::Page<nullptr, 1>::template Page_v<SHEEP_SPROUT(40), I>;
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_negative_one_alkane.hpp"
-using SupposedFailedResult = SignedArk<ALKANE_SPROUT(20)>;
-#include "macaron/fragmental/amenity/instances/undef_integer_negative_one_alkane.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedFailedResult
-
-#define SHEEP_PREFIX    \
-    FailInterviewed <
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \

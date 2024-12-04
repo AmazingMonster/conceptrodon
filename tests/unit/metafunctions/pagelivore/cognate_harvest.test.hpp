@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_HARVEST_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_HARVEST_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/descend/pagelivore/cognate_harvest.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,10 +25,10 @@ namespace TestCognateHarvest {
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables)==240)
-struct TesterA {};
+struct Operation {};
 
 template<auto I>
-struct TesterB
+struct Crop
 { static constexpr auto value {I}; };
 /******************************************************************************************************/
 
@@ -36,7 +37,7 @@ struct TesterB
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -48,13 +49,13 @@ using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    TesterB<
+    Crop<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(CognateHarvest<TesterA>::Mold<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateHarvest<Operation>::Mold<SHEEP_SPROUT(240)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

@@ -6,6 +6,8 @@
 
 #include "conceptrodon/descend/omennivore/among.hpp"
 
+#include <utility>
+
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/vehicle.hpp"
@@ -23,7 +25,6 @@
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

@@ -4,16 +4,15 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TREK_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_TREK_H
 
-#include <concepts>
-#include <type_traits>
 #include <utility>
+
 #include "conceptrodon/descend/pagelivore/trek.hpp"
-#include "macaron/judgmental/same_type.hpp"
-#include "macaron/judgmental/equal_value.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/vehicle.hpp"
 #include "conceptrodon/carrier.hpp"
+
+#include "macaron/judgmental/same_type.hpp"
+#include "macaron/judgmental/equal_value.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/judgmental/amenity/define_equal_value.hpp"

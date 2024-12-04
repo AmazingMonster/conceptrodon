@@ -5,14 +5,15 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_MOLD_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
 #include "conceptrodon/vehicle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
-
 
 namespace Conceptrodon {
 namespace Omennivore {
@@ -24,7 +25,7 @@ namespace TestEasyPasteMold {
 
 /******************************************************************************************************/
 template<size_t>
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold {};
@@ -39,7 +40,7 @@ struct Tester
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Operation<
 #define SHEEP_SUFFIX    \
     >::Mold
 #define SHEEP_SEPARATOR \
@@ -60,7 +61,7 @@ using SupposedResult = Vehicle<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Vehicle<Tester<
+    Vehicle<Operation<
 #define SHEEP_SUFFIX    \
     >::Mold>
 #define SHEEP_SEPARATOR \
@@ -76,8 +77,9 @@ SAME_TYPE(EasyPaste<SHEEP_SPROUT(240)>);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

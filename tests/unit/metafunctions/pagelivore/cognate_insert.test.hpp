@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INSERT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INSERT_H
 
-#include <concepts>
 #include "conceptrodon/descend/descend/pagelivore/cognate_insert.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -22,8 +21,17 @@ namespace TestCognateInsert {
 
 
 /******************************************************************************************************/
+template<auto...Variables>
+requires (sizeof...(Variables) == 240)
+struct Operation {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -37,7 +45,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 SAME_TYPE
 (
-    CognateInsert<Shuttle>
+    CognateInsert<Operation>
     ::Page<SHEEP_SPROUT(120, *2+1)>
     ::Page<SHEEP_SPROUT(120)>
     ::Page<SHEEP_SPROUT(120, *2), 1, 2, 3, 4>

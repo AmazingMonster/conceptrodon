@@ -4,11 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CLASSIC_TRIP_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CLASSIC_TRIP_H
 
-#include <type_traits>
 #include <utility>
+
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/classic_trip.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 

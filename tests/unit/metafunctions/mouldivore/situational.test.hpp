@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_SITUATIONAL_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_SITUATIONAL_H
 
+#include <utility>
+
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/mouldivore/situational.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 

@@ -5,9 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_RAILLIVORE_BIND_FRONT_H
 
 #include <concepts>
+
 #include "conceptrodon/raillivore/bind_front.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/carrier.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,18 +24,25 @@ namespace TestBindFront {
 //  Dummy<0>::Page,
 //  ...,
 //  Dummy<99>::Page
-// to the back of Carrier.
+// to the back of Operation.
 // Then, we will invoke the resulting metafunction by
 //  Dummy<0>::Page,
 //  ...,
 //  Dummy<139>::Page.
 
 /******************************************************************************************************/
+template<template<auto...> class...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+
 template<auto>
 struct Dummy
 {
+    template<auto...>
+    struct ProtoPage {};
+
     template<auto...Variables>
-    using Page = Shuttle<Variables...>;
+    using Page = ProtoPage<Variables...>;
 };
 /******************************************************************************************************/
 
@@ -50,7 +57,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Carrier<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+using SupposedResult = Operation<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -71,7 +78,7 @@ using SupposedResult = Carrier<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BindFront<Carrier>::Rail<SHEEP_SPROUT(100)>::Rail<SHEEP_SPROUT(140)>);
+SAME_TYPE(BindFront<Operation>::Rail<SHEEP_SPROUT(100)>::Rail<SHEEP_SPROUT(140)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

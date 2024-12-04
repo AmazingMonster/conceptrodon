@@ -4,11 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_BI_HARVEST_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_BI_HARVEST_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
 
 #include "conceptrodon/descend/omennivore/bi_harvest.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -25,12 +24,12 @@ namespace TestBiHarvest {
 
 /******************************************************************************************************/
 template<typename...Elements>
-requires (sizeof...(Elements)==240)
-struct TesterA {};
+requires (sizeof...(Elements)==80)
+struct Operation {};
 
 template<auto I>
-struct TesterB
-{using type = std::integral_constant<int, I>; };
+struct Crop
+{ using type = std::integral_constant<int, I>; };
 /******************************************************************************************************/
 
 
@@ -38,7 +37,7 @@ struct TesterB
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -50,13 +49,13 @@ using SupposedResult = TesterA<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    TesterB<
+    Crop<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Road<TesterA>);
+SAME_TYPE(BiHarvest<SHEEP_SPROUT(80)>::Road<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -70,11 +69,11 @@ SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Road<TesterA>);
 
 /******************************************************************************************************/
 template<auto...Variables>
-requires (sizeof...(Variables)==240)
-struct TesterC {};
+requires (sizeof...(Variables)==80)
+struct Operation_1 {};
 
 template<auto I>
-struct TesterD
+struct Crop_1
 { static constexpr auto value {I}; };
 /******************************************************************************************************/
 
@@ -83,7 +82,7 @@ struct TesterD
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_1 = TesterC<SHEEP_SPROUT(240)>;
+using SupposedResult_1 = Operation_1<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -95,13 +94,13 @@ using SupposedResult_1 = TesterC<SHEEP_SPROUT(240)>;
     SupposedResult_1
 
 #define SHEEP_PREFIX    \
-    TesterD<
+    Crop_1<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Rail<TesterC>);
+SAME_TYPE(BiHarvest<SHEEP_SPROUT(80)>::Rail<Operation_1>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -115,7 +114,7 @@ SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Rail<TesterC>);
 
 /******************************************************************************************************/
 template<auto I>
-struct TesterE
+struct crop_2
 {
     static constexpr auto value {I};
     using type = std::integral_constant<int, I>;
@@ -130,13 +129,13 @@ struct TesterE
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    TesterE<
+    crop_2<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Road<TesterA>);
+SAME_TYPE(BiHarvest<SHEEP_SPROUT(80)>::Road<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -153,13 +152,13 @@ SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Road<TesterA>);
     SupposedResult_1
 
 #define SHEEP_PREFIX    \
-    TesterE<
+    crop_2<
 #define SHEEP_SUFFIX    \
     >
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiHarvest<SHEEP_SPROUT(240)>::Rail<TesterC>);
+SAME_TYPE(BiHarvest<SHEEP_SPROUT(80)>::Rail<Operation_1>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

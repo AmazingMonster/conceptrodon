@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CONJUNCTION_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CONJUNCTION_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/mouldivore/conjunction.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

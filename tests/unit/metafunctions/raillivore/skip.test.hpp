@@ -4,21 +4,27 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_RAILLIVORE_SKIP_H
 #define CONCEPTRODON_TESTS_UNIT_RAILLIVORE_SKIP_H
 
+#include <utility>
+
 #include "conceptrodon/descend/raillivore/skip.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 #include "macaron/judgmental/amenity/define_invalid.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Raillivore {
 namespace UnitTests {
 namespace TestSkip {
 
+
+
+
+/******************************************************************************************************/
 template<template<auto...> class...>
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold
@@ -141,7 +147,7 @@ struct Tester
 
 
 template<>
-struct Tester<std::index_sequence>
+struct Operation<std::index_sequence>
 {
     template<auto...>
     struct ProtoPage
@@ -158,11 +164,18 @@ struct Tester<std::index_sequence>
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
 };
+/******************************************************************************************************/
 
 
-VALID(Skip<Tester>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Rail<>::value);
-VALID(Skip<Tester>::Mold<>::Mold<std::true_type>::Commit::Rail<>::value);
-VALID(Skip<Tester>::Page<true>::Commit::Rail<std::index_sequence>::value);
+
+
+/******************************************************************************************************/
+VALID(Skip<Operation>::Mold<>::Page<>::Road<>::Rail<>::Flow<>::Sail<>::Snow<>::Hail<>::Cool<>::Calm<>::Grit<>::Will<>::Glow<>::Dawn<>::Commit::Rail<>::value);
+VALID(Skip<Operation>::Mold<>::Mold<std::true_type>::Commit::Rail<>::value);
+VALID(Skip<Operation>::Page<true>::Commit::Rail<std::index_sequence>::value);
+/******************************************************************************************************/
+
+
 
 
 }}}}

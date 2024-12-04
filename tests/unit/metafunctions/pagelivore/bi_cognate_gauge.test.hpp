@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_BI_COGNATE_GAUGE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_BI_COGNATE_GAUGE_H
 
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/pagelivore/bi_cognate_gauge.hpp"
-#include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/llama.hpp"
@@ -46,27 +47,20 @@ struct Dummy
     template<typename...Agreements>
     using Mold = ProtoMold<Agreements...>;
 };
+
+template<auto...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
 /******************************************************************************************************/
 
-// In this example,
-// we will place
-//  0, ..., 239
-// into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Shuttle.
 
+
+/**** First Example ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240, *2)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult
 
@@ -78,7 +72,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240, *2)>;
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(BiCognateGauge<Shuttle>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateGauge<Operation>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -88,49 +82,34 @@ SAME_TYPE(BiCognateGauge<Shuttle>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(24
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  0, ..., 239
-// into Dummy<1>::Page.
-// The result will be collected in a Shuttle.
 
+
+
+/**** Second Example ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_1 = Shuttle<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_llama.hpp"
-SAME_TYPE(BiCognateGauge<Shuttle>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateGauge<Operation>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_llama.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack 1 into
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<239>::Page.
-// The result will be collected in a Shuttle.
 
+
+
+/**** Third Example ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_2 = Shuttle<SHEEP_SPROUT(240, +1)>;
+using SupposedResult_2 = Operation<SHEEP_SPROUT(240, +1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
 
-
-
-
-/******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_2
 
@@ -141,7 +120,7 @@ using SupposedResult_2 = Shuttle<SHEEP_SPROUT(240, +1)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiCognateGauge<Shuttle>::Rail<SHEEP_SPROUT(240)>::Page<1>);
+SAME_TYPE(BiCognateGauge<Operation>::Rail<SHEEP_SPROUT(240)>::Page<1>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -150,17 +129,10 @@ SAME_TYPE(BiCognateGauge<Shuttle>::Rail<SHEEP_SPROUT(240)>::Page<1>);
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will place
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Shuttle.
 
+
+
+/**** Fourth Example ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult
@@ -173,7 +145,7 @@ SAME_TYPE(BiCognateGauge<Shuttle>::Rail<SHEEP_SPROUT(240)>::Page<1>);
     ,
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(BiCognateGauge<Shuttle>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateGauge<Operation>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SHEEP_PREFIX
@@ -183,35 +155,25 @@ SAME_TYPE(BiCognateGauge<Shuttle>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(24
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<0>,
-//  ...,
-//  std::integral_constant<239>
-// into
-//  Dummy<1>::Mold.
-// The result will be collected in a Shuttle.
 
+
+
+/**** Fifth Example ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_llama.hpp"
-SAME_TYPE(BiCognateGauge<Shuttle>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240)>);
+SAME_TYPE(BiCognateGauge<Operation>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_llama.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
-// In this example,
-// we will pack each
-//  std::integral_constant<1>
-// into
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<239>::Mold.
-// The result will be collected in a Shuttle.
 
+
+
+/**** Sixth Example ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_2
@@ -223,7 +185,7 @@ SAME_TYPE(BiCognateGauge<Shuttle>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240)>
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BiCognateGauge<Shuttle>::Road<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>);
+SAME_TYPE(BiCognateGauge<Operation>::Road<SHEEP_SPROUT(240)>::Mold<std::integral_constant<int, 1>>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

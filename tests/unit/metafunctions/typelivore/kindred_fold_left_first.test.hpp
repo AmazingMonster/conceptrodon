@@ -4,10 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_FOLD_LEFT_FIRST_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_FOLD_LEFT_FIRST_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/typelivore/kindred_fold_left_first.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -30,7 +30,7 @@ struct BinaryOperation
 template<typename Left, typename Right>
 requires (Left::value < Right::value)
 struct BinaryOperation<Left, Right>
-{ using type = std::integral_constant<int, 1>; };
+{ using type = std::integral_constant<int, Left::value>; };
 
 template<typename Left, typename Right>
 using BinaryOperation_t = BinaryOperation<Left, Right>::type;
@@ -44,7 +44,29 @@ using BinaryOperation_t = BinaryOperation<Left, Right>::type;
     std::integral_constant<int, 1 + 239 * 240 / 2>
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>::Road<BinaryOperation_t>);
+SAME_TYPE
+(
+    KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)>
+    ::Road<BinaryOperation_t>
+);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    std::integral_constant<int, -1>
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE
+(
+    KindredFoldLeftFirst<std::integral_constant<int, -1>, SHEEP_SPROUT(240)>
+    ::Road<BinaryOperation_t>
+);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -57,20 +79,11 @@ SAME_TYPE(KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(240)
 #define SUPPOSED_TYPE \
     std::integral_constant<int, 1 + 7 * 8 / 2>
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(8)>::UniRoad<BinaryOperation_t>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    std::integral_constant<int, 1>
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(1)>::Road<BinaryOperation_t>);
+SAME_TYPE
+(
+    KindredFoldLeftFirst<std::integral_constant<int, 1>, SHEEP_SPROUT(8)>
+    ::UniRoad<BinaryOperation_t>
+);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

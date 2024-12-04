@@ -4,11 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_COTANIVORE_TYPICAL_PASTE_H
 #define CONCEPTRODON_TESTS_UNIT_COTANIVORE_TYPICAL_PASTE_H
 
+#include <utility>
+
 #include "conceptrodon/cotanivore/paste.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"

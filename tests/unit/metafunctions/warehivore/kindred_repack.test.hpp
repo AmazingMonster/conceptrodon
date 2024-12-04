@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_WAREHIVORE_KINDRED_REPACK_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/warehivore/kindred_repack.hpp"
 #include "conceptrodon/vehicle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -23,12 +25,12 @@ namespace TestKindredRepack {
 //  Vehicle<Dummy<0>::Mold>,
 //  ...,
 //  Vehicle<Dummy<239>::Mold>
-// together and place the result in Tester.
+// together and place the result in Operation.
 
 /******************************************************************************************************/
 template<template<typename...> class...Warehouses>
 requires (sizeof...(Warehouses) == 240)
-struct Tester {};
+struct Operation {};
 
 template<size_t>
 struct Dummy
@@ -52,7 +54,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -73,7 +75,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniFlow<Tester>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniFlow<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -83,8 +85,9 @@ SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniFlow<Tester>);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_ROTATE_H
 
 #include "conceptrodon/descend/mouldivore/cognate_rotate.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

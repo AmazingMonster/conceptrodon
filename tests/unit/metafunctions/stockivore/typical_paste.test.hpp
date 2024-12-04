@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_STOCKIVORE_TYPICAL_PASTE_H
 
 #include <concepts>
+
 #include "conceptrodon/stockivore/paste.hpp"
 #include "conceptrodon/carrier.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -20,14 +22,14 @@ namespace UnitTests {
 namespace TestTypicalPaste {
 
 // In this test, we will paste
-//  Tester<>,
+//  FirstPackedVessel<>,
 //  Carrier<Dummy<0>::Page>,
 //  Carrier<Dummy<239>::Page>
 // together.
 
 /******************************************************************************************************/
 template<template<auto...> class...Sequences>
-struct Tester;
+struct FirstPackedVessel;
 
 template<size_t>
 struct Dummy
@@ -51,7 +53,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = FirstPackedVessel<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -72,7 +74,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(TypicalPaste<Tester<>, SHEEP_SPROUT(240)>::type);
+SAME_TYPE(TypicalPaste<FirstPackedVessel<>, SHEEP_SPROUT(240)>::type);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -82,8 +84,9 @@ SAME_TYPE(TypicalPaste<Tester<>, SHEEP_SPROUT(240)>::type);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

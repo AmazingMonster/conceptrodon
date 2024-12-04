@@ -5,10 +5,11 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_RIGHT_REVIEW_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/pagelivore/right_review.hpp"
-#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/pagelivore/negation.hpp"
 #include "conceptrodon/varybivore/is_same.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/valid.hpp"
@@ -26,9 +27,13 @@ namespace TestRightReview {
 
 
 
+
+/******************************************************************************************************/
 template<auto L, auto R>
-struct BinaryOperation
+struct LessThan
 { static constexpr bool value {L < R}; };
+/******************************************************************************************************/
+
 
 
 
@@ -54,6 +59,16 @@ VALID(RightReview<Varybivore::IsSame>::Page_v<ALKANE_SPROUT(40)>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+VALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEEP_SPROUT(40), 39.0>);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 INVALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEEP_SPROUT(40), 39>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
@@ -64,7 +79,7 @@ INVALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEE
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(RightReview<Pagelivore::Negation<BinaryOperation>::Page>::Page_v<SHEEP_SPROUT(40)>);
+VALID(RightReview<Pagelivore::Negation<LessThan>::Page>::Page_v<SHEEP_SPROUT(40)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -74,38 +89,9 @@ VALID(RightReview<Pagelivore::Negation<BinaryOperation>::Page>::Page_v<SHEEP_SPR
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-INVALID(RightReview<BinaryOperation>::Page_v<SHEEP_SPROUT(40), 39>);
+INVALID(RightReview<LessThan>::Page_v<SHEEP_SPROUT(40), 39>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
-
-
-
-
-
-/******************************************************************************************************/
-template<typename T>
-constexpr T ThirtyNine {39};
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-VALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEEP_SPROUT(40), ThirtyNine<size_t>>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-INVALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEEP_SPROUT(40), ThirtyNine<int>>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-/******************************************************************************************************/
-
 
 
 

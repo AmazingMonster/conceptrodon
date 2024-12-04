@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CONCEAL_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_CONCEAL_H
 
-#include "conceptrodon/mouldivore/conceal.hpp"
 #include <concepts>
 
+#include "conceptrodon/mouldivore/conceal.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
+
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 
 namespace Conceptrodon {

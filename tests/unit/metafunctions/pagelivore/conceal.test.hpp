@@ -9,6 +9,7 @@
 #include "conceptrodon/pagelivore/conceal.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
+
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 
 namespace Conceptrodon {

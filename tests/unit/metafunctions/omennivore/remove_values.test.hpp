@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_REMOVE_VALUES_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_REMOVE_VALUES_H
 
-#include <concepts>
 #include <utility>
+
 #include "conceptrodon/descend/omennivore/remove_values.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

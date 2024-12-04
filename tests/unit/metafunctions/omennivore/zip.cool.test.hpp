@@ -1,21 +1,17 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_COOL_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_COOL_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_CALM_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_CALM_H
+
+#include <utility>
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/forlorn.hpp"
-#include "conceptrodon/lullaby.hpp"
-#include "conceptrodon/vehicle.hpp"
-
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
-#include "conceptrodon/pursuit.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -24,53 +20,53 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestZipCool {
+namespace TestZipCalm {
 
 
 
 
 /******************************************************************************************************/
+template<template<template<template<typename...> class...> class...> class...Nothingness>
+struct ArgArg {};
+
+template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Perseverance>
+struct ArgArgVessel {};
+
 template<size_t>
-struct TesterA 
+struct Tester_0 
 {
     template<template<template<template<template<typename...> class...> class...> class...> class...>
-    struct ProtoCool {};
+    struct ProtoCalm {};
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Cool = ProtoCool<Agreements...>;
+    using Calm = ProtoCalm<Agreements...>;
 };
 
 
 template<size_t>
-struct TesterB 
+struct Tester_1
 {
     template<template<template<template<template<typename...> class...> class...> class...> class...>
-    struct ProtoCool {};
+    struct ProtoCalm {};
 
     template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
-    using Cool = ProtoCool<Agreements...>;
+    using Calm = ProtoCalm<Agreements...>;
 };
-
-template<typename>
-struct TesterC {};
 
 template
 <
-    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class Vessel,
     template<template<template<template<template<typename...> class...> class...> class...> class...> class A,
     template<template<template<template<template<typename...> class...> class...> class...> class...> class B
 >
-struct TesterC<Vessel<A, B>>
-{ using type = Capsule<A<Forlorn>, B<Forlorn>>; };
+struct CrossSectionHelper
+{ using type = Capsule<A<ArgArg>, B<ArgArg>>; };
 
-template<typename>
-struct TesterD {};
-
-template<template<typename...> class Vessel, typename...Args>
-struct TesterD<Vessel<Args...>>
-{
-    using type = Capsule<typename TesterC<Args>::type...>;
-};
+template
+<
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class A,
+    template<template<template<template<template<typename...> class...> class...> class...> class...> class B
+>
+using CrossSection = CrossSectionHelper<A, B>::type;
 /******************************************************************************************************/
 
 
@@ -78,15 +74,15 @@ struct TesterD<Vessel<Args...>>
 
 /******************************************************************************************************/
 #define DOUBLE_SHEEP_PREFIX \
-    Capsule<TesterA<
+    Capsule<Tester_0<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Cool<Forlorn>, TesterB<
+    >::Calm<ArgArg>, Tester_1<
 #define DOUBLE_SHEEP_SUFFIX \
-    >::Cool<Forlorn>>
+    >::Calm<ArgArg>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(80)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -99,13 +95,13 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterA<
+    Tester_0<
 #define SHEEP_SUFFIX \
-    >::Cool
+    >::Calm
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Pursuit<SHEEP_SPROUT(240)>;
+using Arg_0 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -117,13 +113,13 @@ using ArgA = Pursuit<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterB<
+    Tester_1<
 #define SHEEP_SUFFIX \
-    >::Cool
+    >::Calm
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Pursuit<SHEEP_SPROUT(300)>;
+using Arg_1 = ArgArgVessel<SHEEP_SPROUT(120)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -137,16 +133,16 @@ using ArgB = Pursuit<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Glow<Pursuit>::Road<Capsule>>::type);
+SAME_TYPE(Zip<Arg_0, Arg_1>::Glow<CrossSection>::Road<Capsule>);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Glow<Pursuit>::Page<
+    Zip<Arg_0, Arg_1>::Glow<CrossSection>::Page<
 #define SHEEP_SUFFIX \
-    >>::type
+    >
 #define SHEEP_SEPARATOR  \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

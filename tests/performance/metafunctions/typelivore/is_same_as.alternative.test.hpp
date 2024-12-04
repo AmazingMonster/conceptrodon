@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_AS_2ND_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_AS_2ND_H
 
-#include <concepts>
 #include <type_traits>
 #include "conceptrodon/typelivore/is_same_as.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -20,7 +20,13 @@ namespace Typelivore {
 namespace UnitTests {
 namespace TestIsSameAs2nd {
 
+
+
+
 #ifdef CONCEPTRODON_TEST_ALTERNATIVE_SWITCH
+
+
+
 
 /******************************************************************************************************/
 template<typename Target>
@@ -42,13 +48,22 @@ struct FlattenedAnyAreSameAs
 };
 /******************************************************************************************************/
 
+
+
+
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 INVALID(FlattenedAnyAreSameAs<std::integral_constant<int, -1>>::Mold<SHEEP_SPROUT(240)>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
+
+
+
 #else
+
+
+
 
 /******************************************************************************************************/
 template<typename Target>
@@ -70,11 +85,17 @@ struct StructuredAnyAreSameAs
 };
 /******************************************************************************************************/
 
+
+
+
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 INVALID(StructuredAnyAreSameAs<std::integral_constant<int, -1>>::Mold<SHEEP_SPROUT(240)>::value);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
+
+
+
 
 #endif
 

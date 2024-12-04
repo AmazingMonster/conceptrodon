@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ROTATE_H
 
 #include "conceptrodon/descend/typelivore/rotate.hpp"
-#include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -21,67 +21,9 @@ namespace TestRotate {
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResultA = Capsule<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultA
-
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Road<Capsule>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-/******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResultB = Capsule<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultB
-
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Road<Capsule>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResultB
-
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Road<Capsule>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-
-/******************************************************************************************************/
 template<typename...Elements>
 requires (sizeof...(Elements)==240)
-struct TesterC {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -89,7 +31,7 @@ struct TesterC {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResultC = TesterC<SHEEP_SPROUT(40, +200), SHEEP_SPROUT(200)>;
+using SupposedResult = Operation<SHEEP_SPROUT(200, +40), SHEEP_SPROUT(40)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -97,13 +39,48 @@ using SupposedResultC = TesterC<SHEEP_SPROUT(40, +200), SHEEP_SPROUT(200)>;
 
 
 /******************************************************************************************************/
-#define SUPPOSED_TYPE \
-    SupposedResultC
+#define SUPPOSED_TYPE   \
+    SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<200>::Road<TesterC>);
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<40>::Road<Operation>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+using SupposedResult_1 = Operation<SHEEP_SPROUT(240)>;
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_1
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<0>::Road<Operation>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_1
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<240>::Road<Operation>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
@@ -112,5 +89,8 @@ SAME_TYPE(Rotate<SHEEP_SPROUT(240)>::Page<200>::Road<TesterC>);
 
 
 }}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 #endif

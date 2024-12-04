@@ -4,10 +4,12 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_FILTER_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_FILTER_H
 
+#include <utility>
+
 #include "conceptrodon/descend/descend/mouldivore/cognate_filter.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

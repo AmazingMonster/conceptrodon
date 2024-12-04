@@ -4,18 +4,16 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
 
+#include <utility>
+
 #include "conceptrodon/descend/typelivore/amid.hpp"
 #include "conceptrodon/capsule.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-#include "boost/mp11.hpp"
-#endif
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -41,42 +39,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
     SupposedResult
-/******************************************************************************************************/
 
-
-
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-
-
-
-
-/******************************************************************************************************/
-template<size_t I>
-using MPAt = boost::mp11::mp_at_c<SupposedResult, I>;
-
-#define SHEEP_PREFIX    \
-    MPAt <
-#define SHEEP_SUFFIX    \
-    >
-#define SHEEP_SEPARATOR \
-    ,    
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
-
-#undef SHEEP_PREFIX
-#undef SHEEP_SUFFIX
-#undef SHEEP_SEPARATOR
-/******************************************************************************************************/
-
-
-
-
-#else
-
-
-
-
-/******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<size_t I>
 using At = Amid<SHEEP_SPROUT(240)>::UniPage<I>;
@@ -94,17 +57,7 @@ SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
 #undef SHEEP_SEPARATOR
-/******************************************************************************************************/
 
-
-
-
-#endif
-
-
-
-
-/******************************************************************************************************/
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 

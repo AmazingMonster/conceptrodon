@@ -5,7 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_REITERATE_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/typelivore/reiterate.hpp"
+
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 
@@ -28,7 +30,7 @@ namespace TestReiterate {
 #define ALKANE_SEPARATOR    \
     ,
 
-using SupposedCapsule = Capsule<ALKANE_SPROUT(240)>;
+using SupposedResult = Capsule<ALKANE_SPROUT(240)>;
 
 #undef ALKANE_PREFIX
 #undef ALKANE_CARBON
@@ -41,7 +43,7 @@ using SupposedCapsule = Capsule<ALKANE_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
-    SupposedCapsule
+    SupposedResult
 
 SAME_TYPE(Reiterate<int, float, double>::Page<240>);
 

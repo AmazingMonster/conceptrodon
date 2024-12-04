@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_LEFT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FOLD_LEFT_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/pagelivore/fold_left.hpp"
+
 #include "macaron/judgmental/equal_value.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,15 +25,12 @@ namespace TestCognateFoldLeft {
 /******************************************************************************************************/
 template<auto Left, auto Right>
 struct BinaryOperation
-{ static constexpr auto value = Left + Right; };
+{ static constexpr auto value {Left + Right}; };
 
 template<auto Left, auto Right>
 requires (Left < Right)
 struct BinaryOperation<Left, Right>
-{ static constexpr auto value = 1; };
-
-template<auto Left, auto Right>
-static constexpr auto BinaryOperation_v = BinaryOperation<Left, Right>::type;
+{ static constexpr auto value {Left}; };
 /******************************************************************************************************/
 
 
@@ -44,6 +42,21 @@ static constexpr auto BinaryOperation_v = BinaryOperation<Left, Right>::type;
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(240)>);
+EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page<SHEEP_SPROUT(240)>::value);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+
+#undef SUPPOSED_VALUE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_VALUE  \
+    -1
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<-1>::Page_v<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE
@@ -58,20 +71,6 @@ EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(240)>);
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(8)>);
-#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
-
-#undef SUPPOSED_VALUE
-/******************************************************************************************************/
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_VALUE  \
-   1
-
-#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-EQUAL_VALUE(FoldLeft<BinaryOperation>::Page<1>::Page_v<SHEEP_SPROUT(1)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_VALUE

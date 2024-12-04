@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FILTER_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FILTER_H
 
-#include <concepts>
 #include "conceptrodon/descend/descend/pagelivore/cognate_filter.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -35,7 +35,7 @@ struct IsEven
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 120)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -43,7 +43,7 @@ struct Tester {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult = Tester<SHEEP_SPROUT(120, * 2 + 1)>;
+using SupposedResult = Operation<SHEEP_SPROUT(120, * 2 + 1)>;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 
@@ -55,7 +55,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(120, * 2 + 1)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateFilter<Tester>::Rail<IsEven>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateFilter<Operation>::Rail<IsEven>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -78,7 +78,7 @@ struct IsDivisibleByThirty
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 232)
-struct Tester_1 {};
+struct Operation_1 {};
 /******************************************************************************************************/
 
 
@@ -86,7 +86,7 @@ struct Tester_1 {};
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-using SupposedResult_1 = Tester_1
+using SupposedResult_1 = Operation_1
 <
     SHEEP_SPROUT(29, +1),
     SHEEP_SPROUT(29, +31),
@@ -108,7 +108,7 @@ using SupposedResult_1 = Tester_1
     SupposedResult_1
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
-SAME_TYPE(CognateFilter<Tester_1>::Rail<IsEven, IsDivisibleByThirty>::Page<SHEEP_SPROUT(240)>);
+SAME_TYPE(CognateFilter<Operation_1>::Rail<IsEven, IsDivisibleByThirty>::Page<SHEEP_SPROUT(240)>);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 #undef SUPPOSED_TYPE
@@ -117,10 +117,10 @@ SAME_TYPE(CognateFilter<Tester_1>::Rail<IsEven, IsDivisibleByThirty>::Page<SHEEP
 
 
 
-#include "macaron/judgmental/amenity/undef_same_type.hpp"
-#include "macaron/fragmental/amenity/undef_sheep.hpp"
-
 
 }}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
 
 #endif

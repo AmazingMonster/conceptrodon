@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_SIEVE_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/pagelivore/sieve.hpp"
 #include "conceptrodon/shuttle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -99,10 +101,9 @@ SAME_TYPE(Sieve<IsEven, IsDivisibleByThirty>::Page<SHEEP_SPROUT(240)>);
 
 
 
+}}}}
+
 #include "macaron/judgmental/amenity/undef_same_type.hpp"
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
-
-
-}}}}
 
 #endif

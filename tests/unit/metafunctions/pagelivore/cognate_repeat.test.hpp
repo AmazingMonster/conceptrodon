@@ -24,7 +24,7 @@ namespace TestCognateRepeat {
 /******************************************************************************************************/
 template<auto...Variables>
 requires (sizeof...(Variables) == 240 * 3)
-struct Tester {};
+struct Operation {};
 /******************************************************************************************************/
 
 
@@ -38,7 +38,7 @@ struct Tester {};
 #define ALKANE_SEPARATOR    \
     ,
 
-using SupposedResult = Tester<ALKANE_SPROUT(240)>;
+using SupposedResult = Operation<ALKANE_SPROUT(240)>;
 
 #undef ALKANE_PREFIX
 #undef ALKANE_CARBON
@@ -53,7 +53,7 @@ using SupposedResult = Tester<ALKANE_SPROUT(240)>;
 #define SUPPOSED_TYPE   \
     SupposedResult
 
-SAME_TYPE(CognateRepeat<Tester>::Page<240>::Page<1, 2, 3>);
+SAME_TYPE(CognateRepeat<Operation>::Page<240>::Page<1, 2, 3>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/

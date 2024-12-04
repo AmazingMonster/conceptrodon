@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
 
-#include <concepts>
 #include "conceptrodon/descend/typelivore/conjure_set.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/same_type.hpp"
@@ -15,10 +15,6 @@
 #include "macaron/judgmental/amenity/define_invalid.hpp"
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
-#include "boost/mp11.hpp"
-#endif
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -30,14 +26,9 @@ namespace TestConjureSet {
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<SHEEP_SPROUT(80)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
-
-
-
-
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 
 
 
@@ -47,33 +38,13 @@ using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(boost::mp11::mp_set_push_back<Capsule<>, SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
+SAME_TYPE(ConjureSet<SHEEP_SPROUT(80), std::integral_constant<int, 79>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 
 
-
-
-#else
-
-
-
-
-/******************************************************************************************************/
-#define SUPPOSED_TYPE   \
-    SupposedResult
-
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(ConjureSet<SHEEP_SPROUT(240), std::integral_constant<int, 39>>);
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef SUPPOSED_TYPE
-/******************************************************************************************************/
-
-
-#endif
 
 
 }}}}

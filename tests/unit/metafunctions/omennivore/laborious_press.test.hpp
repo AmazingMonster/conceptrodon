@@ -20,6 +20,7 @@
 #include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/sunrise.hpp"
 #include "conceptrodon/morning.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -31,7 +32,7 @@ namespace Omennivore {
 namespace UnitTests {
 namespace TestPress {
 
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold
@@ -154,7 +155,7 @@ struct Tester
 
 VALID
 (
-    LaboriousPress<Tester>
+    LaboriousPress<Operation>
     ::Mold
     <
         Capsule<>,
@@ -174,8 +175,8 @@ VALID
     >::value
 );
 
-VALID(LaboriousPress<Tester>::Mold<Capsule<>, Capsule<std::true_type>>::value);
-INVALID(LaboriousPress<Tester>::Mold<Capsule<>, Capsule<>>::value);
+VALID(LaboriousPress<Operation>::Mold<Capsule<>, Capsule<std::true_type>>::value);
+INVALID(LaboriousPress<Operation>::Mold<Capsule<>, Capsule<>>::value);
 
 }}}}
 

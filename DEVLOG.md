@@ -1,5 +1,30 @@
 # Diary
 
+## 2024/12/04
+
+> It's also Jimmy's quest, to beat jimmypoopins.
+>
+> -- Summoning Salt
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Organize tests</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/03
 
 ### Todo

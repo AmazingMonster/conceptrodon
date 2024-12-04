@@ -4,9 +4,10 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_NEGATION_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_NEGATION_H
 
-#include <concepts>
-#include <type_traits>
+#include <utility>
+
 #include "conceptrodon/pagelivore/negation.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -22,19 +23,24 @@ namespace TestNegation {
 
 
 /******************************************************************************************************/
-template<auto...>
-using PageT = std::true_type;
+template<auto First, auto Second>
+struct IsLess
+{
+    static constexpr bool value
+    {First < Second};
+};
 
-template<auto...>
-using PageF = std::false_type;
+template<auto...Args>
+using IsNoLess = Negation<IsLess>::Page<Args...>;
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-INVALID(Negation<PageT>::Page_v<1>);
-VALID(Negation<PageF>::Page_v<1>);
+VALID(IsNoLess<1, 1>::value);
+VALID(IsNoLess<1, 0>::value);
+INVALID(IsNoLess<1, 2>::value);
 /******************************************************************************************************/
 
 

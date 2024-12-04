@@ -4,9 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
 
-#include <utility>
 #include "conceptrodon/pagelivore/flip.hpp"
-#include "macaron/judgmental/valid.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
@@ -20,6 +18,8 @@
 #include "conceptrodon/halcyon.hpp"
 #include "conceptrodon/pursuit.hpp"
 #include "conceptrodon/persist.hpp"
+
+#include "macaron/judgmental/valid.hpp"
 
 #include "macaron/judgmental/amenity/define_valid.hpp"
 

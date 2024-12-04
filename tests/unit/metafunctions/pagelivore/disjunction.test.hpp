@@ -4,9 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_DISJUNCTION_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_DISJUNCTION_H
 
-#include <concepts>
-#include <type_traits>
 #include "conceptrodon/pagelivore/disjunction.hpp"
+
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 
@@ -22,20 +21,57 @@ namespace TestDisjunction {
 
 
 /******************************************************************************************************/
+/**** Pred_0 ****/
+// Returns true if the argument is greater than 10.
 template<auto...>
-using PageT = std::true_type;
+struct Pred_0
+{ static constexpr bool value {false}; };
 
+template<auto I>
+requires (10 < I)
+struct Pred_0<I>
+{ static constexpr bool value {true}; };
+
+/**** Pred_1 ****/
+// Returns true if the argument is less than 0.
 template<auto...>
-using PageF = std::false_type;
+struct Pred_1
+{ static constexpr bool value {false}; };
+
+template<auto I>
+requires (I < 0)
+struct Pred_1<I>
+{ static constexpr bool value {true}; };
+
+/**** Pred_2 ****/
+// Returns true if the argument is even.
+template<auto...>
+struct Pred_2
+{ static constexpr bool value {false}; };
+
+template<auto I>
+requires (I % 2 == 0)
+struct Pred_2<I>
+{ static constexpr bool value {true}; };
+
+/**** Example ****/
+template<auto...Args>
+using Metafunction = Disjunction<Pred_0, Pred_1, Pred_2>
+::Page<Args...>;
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-VALID(Disjunction<PageT, PageT, PageT, PageT>::Page_v<1>);
-VALID(Disjunction<PageF, PageT, PageT, PageT>::Page_v<1>);
-INVALID(Disjunction<PageF, PageF, PageF, PageF>::Page_v<1>);
+VALID(Metafunction<-1>::value);
+VALID(Metafunction<2>::value);
+INVALID(Metafunction<5>::value);
+VALID(Metafunction<-2>::value);
+
+// If no predicate is provided,
+// the value is always `false`.
+INVALID(Disjunction<>::Page<1, 2, 3>::value);
 /******************************************************************************************************/
 
 

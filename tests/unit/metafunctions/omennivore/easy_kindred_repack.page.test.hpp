@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_PAGE_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/carrier.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,7 +26,7 @@ namespace TestEasyKindredRepackPage {
 
 /******************************************************************************************************/
 template<size_t>
-struct Tester
+struct Operation
 {
     template<auto...>
     struct ProtoPage {};
@@ -42,7 +44,7 @@ struct Transport {};
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    Tester<
+    Operation<
 #define SHEEP_SUFFIX    \
     >::Page
 #define SHEEP_SEPARATOR \
@@ -63,7 +65,7 @@ using SupposedResult = Transport<SHEEP_SPROUT(240)>;
     SupposedResult
 
 #define SHEEP_PREFIX    \
-    Carrier<Tester<
+    Carrier<Operation<
 #define SHEEP_SUFFIX    \
     >::Page>
 #define SHEEP_SEPARATOR \
@@ -81,7 +83,6 @@ SAME_TYPE(EasyKindredRepack<SHEEP_SPROUT(240)>::Sail<Transport>);
 
 
 }}}}
-
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

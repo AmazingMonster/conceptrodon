@@ -5,8 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_STOCKIVORE_KINDRED_REPACK_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/stockivore/kindred_repack.hpp"
 #include "conceptrodon/carrier.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -23,18 +25,13 @@ namespace TestKindredRepack {
 //  Carrier<Dummy<0>::Page>,
 //  ...,
 //  Carrier<Dummy<239>::Page>
-// together and place the result in Tester.
+// together and place the result in Operation.
 
 /******************************************************************************************************/
 template<template<auto...> class...Sequences>
 requires (sizeof...(Sequences) == 240)
-struct Tester;
-/******************************************************************************************************/
+struct Operation;
 
-
-
-
-/******************************************************************************************************/
 template<size_t>
 struct Dummy
 {
@@ -57,7 +54,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Tester<SHEEP_SPROUT(240)>;
+using SupposedResult = Operation<SHEEP_SPROUT(240)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -78,7 +75,7 @@ using SupposedResult = Tester<SHEEP_SPROUT(240)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniSail<Tester>);
+SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniSail<Operation>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -88,8 +85,9 @@ SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::UniSail<Tester>);
 /**************************************************************************************************/
 
 
-}}}}
 
+
+}}}}
 
 #include "macaron/fragmental/amenity/undef_sheep.hpp"
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

@@ -4,13 +4,13 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_AGENT_H
 #define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_AGENT_H
 
-#include <concepts>
 #include <utility>
+
 #include "conceptrodon/roadrivore/agent.hpp"
 #include "conceptrodon/vehicle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
-#include "type_traits"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -24,8 +24,9 @@ namespace TestAgent {
 
 
 /******************************************************************************************************/
-template<template<typename...> class...>
-struct Operation;
+template<template<typename...> class...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
 
 template<auto>
 struct DummyArg
@@ -68,6 +69,8 @@ SAME_TYPE(Agent<Operation>::Mold<PackedVessel>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
+
+
 
 
 }}}}

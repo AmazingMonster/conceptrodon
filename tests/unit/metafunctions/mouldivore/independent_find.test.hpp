@@ -4,13 +4,15 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_FIND_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_INDEPENDENT_FIND_H
 
+#include <utility>
+
 #include "conceptrodon/mouldivore/independent_find.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/typelivore/is_same_as.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"

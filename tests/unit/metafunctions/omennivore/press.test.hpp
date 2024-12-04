@@ -32,7 +32,7 @@ namespace Omennivore {
 namespace UnitTests {
 namespace TestPress {
 
-struct Tester
+struct Operation
 {
     template<typename...>
     struct ProtoMold
@@ -155,7 +155,7 @@ struct Tester
 
 VALID
 (
-    Press<Tester>
+    Press<Operation>
     ::Mold
     <
         Capsule<>,
@@ -175,8 +175,8 @@ VALID
     >::value
 );
 
-VALID(Press<Tester>::Mold<Capsule<>, Capsule<std::true_type>>::value);
-INVALID(Press<Tester>::Mold<Capsule<>, Capsule<>>::value);
+VALID(Press<Operation>::Mold<Capsule<>, Capsule<std::true_type>>::value);
+INVALID(Press<Operation>::Mold<Capsule<>, Capsule<>>::value);
 
 }}}}
 

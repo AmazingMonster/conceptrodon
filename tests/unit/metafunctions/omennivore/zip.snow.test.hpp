@@ -1,20 +1,17 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_SNOW_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_SNOW_H
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_FLOW_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ZIP_FLOW_H
+
+#include <utility>
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/forlorn.hpp"
-#include "conceptrodon/lullaby.hpp"
-#include "conceptrodon/vehicle.hpp"
-
 #include "conceptrodon/descend/descend/omennivore/zip.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"
-#include <utility>
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
@@ -23,53 +20,53 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestZipSnow {
+namespace TestZipFlow {
 
 
 
 
 /******************************************************************************************************/
+template<template<template<typename...> class...> class...Nothingness>
+struct ArgArg {};
+
+template<template<template<template<template<typename...> class...> class...> class...> class...>
+struct ArgArgVessel {};
+
 template<size_t>
-struct TesterA 
+struct Tester_0 
 {
     template<template<template<template<typename...> class...> class...> class...>
-    struct ProtoSnow {};
+    struct ProtoFlow {};
 
     template<template<template<template<typename...> class...> class...> class...Agreements>
-    using Snow = ProtoSnow<Agreements...>;
+    using Flow = ProtoFlow<Agreements...>;
 };
 
 
 template<size_t>
-struct TesterB 
+struct Tester_1
 {
     template<template<template<template<typename...> class...> class...> class...>
-    struct ProtoSnow {};
+    struct ProtoFlow {};
 
     template<template<template<template<typename...> class...> class...> class...Agreements>
-    using Snow = ProtoSnow<Agreements...>;
+    using Flow = ProtoFlow<Agreements...>;
 };
-
-template<typename>
-struct TesterC {};
 
 template
 <
-    template<template<template<template<template<typename...> class...> class...> class...> class...> class Vessel,
     template<template<template<template<typename...> class...> class...> class...> class A,
     template<template<template<template<typename...> class...> class...> class...> class B
 >
-struct TesterC<Vessel<A, B>>
-{ using type = Capsule<A<Reverie>, B<Reverie>>; };
+struct CrossSectionHelper
+{ using type = Capsule<A<ArgArg>, B<ArgArg>>; };
 
-template<typename>
-struct TesterD {};
-
-template<template<typename...> class Vessel, typename...Args>
-struct TesterD<Vessel<Args...>>
-{
-    using type = Capsule<typename TesterC<Args>::type...>;
-};
+template
+<
+    template<template<template<template<typename...> class...> class...> class...> class A,
+    template<template<template<template<typename...> class...> class...> class...> class B
+>
+using CrossSection = CrossSectionHelper<A, B>::type;
 /******************************************************************************************************/
 
 
@@ -77,15 +74,15 @@ struct TesterD<Vessel<Args...>>
 
 /******************************************************************************************************/
 #define DOUBLE_SHEEP_PREFIX \
-    Capsule<TesterA<
+    Capsule<Tester_0<
 #define DOUBLE_SHEEP_MIDDLE \
-    >::Snow<Reverie>, TesterB<
+    >::Flow<ArgArg>, Tester_1<
 #define DOUBLE_SHEEP_SUFFIX \
-    >::Snow<Reverie>>
+    >::Flow<ArgArg>>
 #define DOUBLE_SHEEP_SEPARATOR  \
     ,
 
-using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
+using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(80)>;
 
 #undef DOUBLE_SHEEP_PREFIX
 #undef DOUBLE_SHEEP_MIDDLE
@@ -98,13 +95,13 @@ using SupposedResult = Capsule<DOUBLE_SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterA<
+    Tester_0<
 #define SHEEP_SUFFIX \
-    >::Snow
+    >::Flow
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgA = Lullaby<SHEEP_SPROUT(240)>;
+using Arg_0 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -116,13 +113,13 @@ using ArgA = Lullaby<SHEEP_SPROUT(240)>;
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX \
-    TesterB<
+    Tester_1<
 #define SHEEP_SUFFIX \
-    >::Snow
+    >::Flow
 #define SHEEP_SEPARATOR  \
     ,
 
-using ArgB = Lullaby<SHEEP_SPROUT(300)>;
+using Arg_1 = ArgArgVessel<SHEEP_SPROUT(80)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -136,16 +133,16 @@ using ArgB = Lullaby<SHEEP_SPROUT(300)>;
 #define SUPPOSED_TYPE \
     SupposedResult
 
-SAME_TYPE(TesterD<Zip<ArgA, ArgB>::Grit<Lullaby>::Road<Capsule>>::type);
+SAME_TYPE(Zip<Arg_0, Arg_1>::Grit<CrossSection>::Road<Capsule>);
 
 #define SHEEP_PREFIX \
-    TesterC<Zip<ArgA, ArgB>::Grit<Lullaby>::Page<
+    Zip<Arg_0, Arg_1>::Grit<CrossSection>::Page<
 #define SHEEP_SUFFIX \
-    >>::type
+    >
 #define SHEEP_SEPARATOR  \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX

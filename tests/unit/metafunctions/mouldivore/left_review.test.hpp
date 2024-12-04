@@ -5,9 +5,10 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_LEFT_REVIEW_H
 
 #include <concepts>
+
 #include "conceptrodon/descend/mouldivore/left_review.hpp"
-#include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/mouldivore/negation.hpp"
+
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/valid.hpp"
@@ -28,7 +29,7 @@ namespace TestLeftReview {
 
 /******************************************************************************************************/
 template<typename L, typename R>
-struct BinaryOperation
+struct LessThan
 { static constexpr bool value {L::value < R::value}; };
 /******************************************************************************************************/
 
@@ -65,7 +66,7 @@ INVALID(LeftReview<Mouldivore::Negation<std::is_same>::Mold>::Mold_v<SHEEP_SPROU
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-VALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40)>);
+VALID(LeftReview<LessThan>::Mold_v<SHEEP_SPROUT(40)>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 
@@ -74,7 +75,7 @@ VALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40)>);
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-INVALID(LeftReview<BinaryOperation>::Mold_v<SHEEP_SPROUT(40),std::integral_constant<int, 39>>);
+INVALID(LeftReview<LessThan>::Mold_v<SHEEP_SPROUT(40),std::integral_constant<int, 39>>);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 /******************************************************************************************************/
 

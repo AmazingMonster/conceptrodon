@@ -5,9 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_BIND_BACK_H
 
 #include <concepts>
+
 #include "conceptrodon/roadrivore/bind_back.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/vehicle.hpp"
+
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
@@ -24,18 +24,25 @@ namespace TestBindBack {
 //  Dummy<0>::Mold,
 //  ...,
 //  Dummy<139>::Mold
-// to the back of Vehicle.
+// to the back of Operation.
 // Then, we will invoke the resulting metafunction by
 //  Dummy<0>::Mold,
 //  ...,
 //  Dummy<99>::Mold.
 
 /******************************************************************************************************/
+template<template<typename...> class...Args>
+requires (sizeof...(Args) == 240)
+struct Operation {};
+
 template<auto>
 struct Dummy
 {
+    template<typename...>
+    struct ProtoMold {};
+
     template<typename...Elements>
-    using Mold = Capsule<Elements...>;
+    using Mold = ProtoMold<Elements...>;
 };
 /******************************************************************************************************/
 
@@ -50,7 +57,7 @@ struct Dummy
 #define SHEEP_SEPARATOR \
     ,
 
-using SupposedResult = Vehicle<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
+using SupposedResult = Operation<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
@@ -71,7 +78,7 @@ using SupposedResult = Vehicle<SHEEP_SPROUT(100), SHEEP_SPROUT(140)>;
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(BindBack<Vehicle>::Road<SHEEP_SPROUT(140)>::Road<SHEEP_SPROUT(100)>);
+SAME_TYPE(BindBack<Operation>::Road<SHEEP_SPROUT(140)>::Road<SHEEP_SPROUT(100)>);
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
