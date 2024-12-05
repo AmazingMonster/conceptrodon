@@ -1,5 +1,58 @@
 # Diary
 
+## 2024/12/05
+
+One day, shining stars will fall upon this library like soaps dropping inside a prison.
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Vocabulary</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Hello World</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/04
 
 > It's also Jimmy's quest, to beat jimmypoopins.

@@ -12,6 +12,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 <!-- Introduction -- Start -->
 <details><summary><h2>Introduction</h2></summary>
 
+<h3><a href="./docs/contents/introduction/vocabulary.md">Vocabulary</a></h3>
+
 </details>
 <!-- Introduction -- End -->
 

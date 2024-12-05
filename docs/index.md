@@ -9,6 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <!-- Introduction -- Start -->
 ## Introduction
+
+### [Vocabulary](./contents/introduction/vocabulary.md)
 <!-- Introduction -- End -->
 
 <!-- Concepts -- Start -->

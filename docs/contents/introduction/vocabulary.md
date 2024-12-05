@@ -3,6 +3,63 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Vocabularies
 
+## Introduction
+
+When I choose a technical expression to use in the documentation, I first attempt to keep it close to the relevant C++ terminologies since they are well-documented and familiar to a programmer.
+However, C++ terms can be confusing.
+For example, it is unclear what the 'non-type' in the 'non-type template parameter' refers to, as it looks like the complement of all 'type template parameters'.
+Moreover, the term 'template template parameter' not only repeats the same word twice like a typo but also erases the differences between the parameter lists within template template parameters.
+The detection of the differences, however, is the key part of this library.
+
+As a result, some vocabulary used in the documentation will have meanings unique to this library.
+The goal is to maintain the usual flow of written English while providing insights through the selection of words.
+For example, I use the words 'container' or 'sequence' to mean a template whose job is to hold its arguments.
+In this sense, the two words are interchangeable.
+However, I select the word 'container' when the template holds types exclusively, meaning its template head is `template<typename...>`, and the word 'sequence' when the template holds values exclusively, meaning its template head is `template<auto...>`.
+This specification is beneficial when both of them appear in the same context, where lengthy quantifiers must be applied if a single word denotes multiple sorts of holder templates.
+
+Another example would be the use of the word 'element', which denotes a type in a container, and the word 'variable', which denotes a value in a sequence.
+Honestly, I would like to write 'type' instead of 'element' and 'value' instead of 'variable'.
+However, both words have been designated as the conventional names for type traits by the C++ community.
+To avoid possible confusion, I adopted the lengthier ones.
+
+The word 'variable' is inaccurate as nothing varies for a non-type parameter.
+Other words like 'datum' and 'member' are considered.
+'Datum' is rejected since its plural form is irregular, a significant setback as it prohibits Find-and-Relace.
+I prefer 'member' over 'variable' since the former often denotes an element in math.
+Yet again, the word 'member' already has an established meaning in programming.
+It commonly refers to a component of a class.
+Therefore, I rejected the word to avoid creating a mess.
+While 'variable' is inaccurate, I doubt this inaccuracy will become the source of confusion, and its resemblance to the word 'value' also gives it an edge.
+
+Another example I would like to talk about is the use of the word 'layer'. An illustration might help in understanding the term.
+
+<pre><code>template<...>
+Metafunction ----------------------------------------------+
+{                                                          |
+    template<...>                                      0th Layer
+    NestedMetafunction ------------------------------+     |
+    {                                                |     |
+        template<...>                            1st Layer |
+        NestedMetafunction --------------------+     |     |
+        {                                      |     |     |
+                  ...                      2nd Layer |     |
+            template<...>                      |     |     |
+            NestedMetafunction ----------+     |     |     |
+            {                       Last Layer |     |     |
+            }; --------------------------+     |     |     |
+                  ...                          |     |     |
+        }; ------------------------------------+     |     |
+    }; ----------------------------------------------+     |
+}; --------------------------------------------------------+</code></pre>
+
+Each layer is a nested metafunction, except the *0*th one.
+A layer's number suggests its position in an invocation order.
+To invoke the (*n* + 1)th layer, the *n*th layer must be instantiated first.
+This rule applies recursively, with the *0*th layer serving as the base case, which can be invoked directly.
+
+## Contents
+
 <table>
   <thead>
     <tr>
@@ -13,31 +70,32 @@ SPDX-License-Identifier: Apache-2.0 -->
   <tbody>
     <tr>
       <td>metafunction</td>
-      <td>A template is a metafunction if it is a class template or an alias template</td>
+      <td>A metafunction is a class template or an alias template</td>
     </tr>
     <tr>
       <td>signature</td>
       <td>
         A signature is:
         <ul>
-            <li><code>typename</code> for a type;</li>
-            <li><code>auto</code> for a value;</li>
-            <li>the template-head for a template</li>
+          <li><code>typename</code> for a type;</li>
+          <li><code>auto</code> for a value;</li>
+          <li>the template-head for a template</li>
         </ul>
+      </td>
     </tr>
     <tr>
       <td>conformed</td>
       <td>
-        A metafunction is conformed if one of the following is true
+        A template head is conformed if one of the following is true
         <ul>
           <li>
-            It is a class template whose parameter list only consists of type template parameters(<code>typename</code>);
+            Its parameter list only consists of type template parameters(<code>typename</code>);
           </li>
           <li>
-            It is a class template whose parameter list only consists of non-type template parameters(<code>auto</code>);
+            Its parameter list only consists of non-type template parameters(<code>auto</code>);
           </li>
           <li>
-            It is a class template whose parameter list only consists of conformed metafunctions
+            Its parameter list only consists of conformed template heads
           </li>
         </ul>
       </td>
