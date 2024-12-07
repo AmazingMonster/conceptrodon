@@ -26,34 +26,67 @@ template ---------------------------------------------------+
     Arg ------------------------> identifier                |
 > ----------------------------------------------------------+</code></pre>
 
-## Metafunction || Function || Operation || Vessel
+## Metafunction && Function
 
 In C++, the word 'metafunction' does not have a decisive definition and often acts as a synonym for 'template'.
 In this library, the word represents a class template or an alias template, as these are the only kinds of templates acceptable as template arguments in C++20.
 
-The goal is to define the kind of metafunctions this library focuses on. To start with, we will categorize metafunctions by their primary signatures, where a primary signature is defined as follows:
+The goal is to define the kind of metafunctions this library focuses on.
+To start with, we will categorize metafunctions by their primary signatures, where a primary signature is defined as follows:
 
-- <code>typename</code> for a type;
-- <code>auto</code> for a value;
-- the template head for a template.
+> A primary signature is:
+>
+> - `typename` for a type;
+> - `auto` for a value;
+> - the template head for a template.
 
-Namely, primary signatures extend the notion of template heads by two special cases. Now, we will define the conformed signatures.
+Namely, primary signatures extend the notion of template heads by two special cases.
+Now, we will define the 'conformed signatures' using recursion.
+The two cases added to the term will serve as the base cases in the definition.
 
-## Container || Sequence
+> A primary signature is conformed if one of the following is true:
+>
+> - It is `typename` or `auto`.
+> - It is a template head whose parameter list only consists of conformed primary signatures.
 
-For example, I use the words 'container' or 'sequence' to mean a template whose job is to hold its arguments.
-In this sense, the two words are interchangeable.
-However, I select the word 'container' when the template holds types exclusively, meaning its template head is `template<typename...>`, and the word 'sequence' when the template holds values exclusively, meaning its template head is `template<auto...>`.
-This specification is beneficial when both of them appear in the same context, where lengthy quantifiers must be applied if a single word denotes multiple sorts of holder templates.
+With all the preparations done, we can finally define the 'conformed metafunctions', which are the focal point of this library.
 
-## Element || Variable
+> A metafunction is conformed if its primary signature is conformed.
 
-Another example would be the use of the word 'element', which denotes a type in a container, and the word 'variable', which denotes a value in a sequence.
+The word 'function' is a shorthand for 'conformed metafunction'.
+Note that it differs from the ordinary use case of the word, which generally means a named block in C++.
+I adopted this abbreviation for several reasons:
+
+- Most metafunctions discussed in the documentation are conformed, which means repeating the quantifier is often redundant and distracting.
+- The term 'metafunction' already indicates the function-like behavior of templates. It is more natural to relate the word 'function' to a template in a metaprogramming library rather than a named block in the usual sense.
+- Only a few ordinary functions are mentioned in the documentation. When it appears, the term 'regular function' is used for differentiation.
+
+The term 'thoroughly conformed metafunction' is used when every outputting nested template of a function is required to be conformed.
+
+## Operation && Vessel
+
+Both words are synonyms for conformed metafunctions.
+The term 'operation' is selected when focusing on the function's functionality.
+Meanwhile, the term 'vessel' is selected when the function is only used for holding its arguments through an instantiation.
+
+The arguments held by a vessel are denoted as 'items'.
+
+```C++
+Vessel<Items...> // General representation of a vessel holding the items.
+```
+
+## Container && Sequence
+
+'Containers' and 'sequences' are special vessels. The term 'container' is selected when the template holds types exclusively, meaning its primary signature is `template<typename...>`. The term 'sequence' is selected when the template holds values exclusively, meaning its template head is `template<auto...>`.
+
+## Element && Variable
+
+The term 'element' denotes a type in a container, while the term 'variable' denotes a value in a sequence.
 Honestly, I would like to write 'type' instead of 'element' and 'value' instead of 'variable'.
-However, both words have been designated as the conventional names for type traits by the C++ community.
+However, both words are conventional names for type traits.
 To avoid possible confusion, I adopted the lengthier ones.
 
-The word 'variable' is inaccurate as nothing varies for a non-type parameter.
+The word 'variable' is inaccurate as nothing varies for a non-type argument.
 Other words like 'datum' and 'member' are considered.
 'Datum' is rejected since its plural form is irregular, a significant setback as it prohibits Find-and-Relace.
 I prefer 'member' over 'variable' since the former often denotes an element in math.
@@ -62,11 +95,11 @@ It commonly refers to a component of a class.
 Therefore, I rejected the word to avoid creating a mess.
 While 'variable' is inaccurate, I doubt this inaccuracy will become the source of confusion, and its resemblance to the word 'value' also gives it an edge.
 
-## Layer
+## Layer && Invocation Order
 
-Another example I would like to talk about is the use of the word 'layer'. An illustration might help in understanding the term.
+An illustration might help in understanding the term 'layer'.
 
-<pre><code>template<...> ----------------------------------+
+<pre><code>template<...> ---------------------------------------------+
 Metafunction                                               |
 {                                                      0th Layer
     template<...> -----------------------------------+     |
@@ -84,10 +117,112 @@ Metafunction                                               |
     }; ----------------------------------------------+     |
 }; --------------------------------------------------------+</code></pre>
 
-Each layer is a nested metafunction, except the *0*th one.
-A layer's number suggests its position in an invocation order.
+Essentially, each layer is a nested metafunction, except the *0*th one.
+A layer's number suggests its position in the outmost metafunction.
 To invoke the (*n* + 1)th layer, the *n*th layer must be instantiated first.
-This rule applies recursively, with the *0*th layer serving as the base case, which can be invoked directly.
+Therefore, the *n*th layer is defined recursively, with the *0*th layer serving as the base case, which can be invoked directly.
+
+This is the explanation given to the `*n*th layer` when I first started working on the documentation.
+Later, however, I realize it does not cover all the scenarios where I use this word.
+
+In the description for `Flip` functions, I wrote:
+
+> `Namespace::Flip` accepts an operation and flips its *0*th layer and *1*st layer.
+
+How do we flip nested metafunctions? The previous explanation won't make sense in this scenario.
+To solve this, we need to abstract the notion further.
+I introduce the term 'layer' to capture the sequential characteristic of nested metafunctions.
+But what has been sequenced?
+The following illustration might help.
+
+<pre><code><b>Metafunction</b>
+
+template&lt;...Args<sub>0</sub>&gt; ------------------ Declare Args<sub>0</sub>...
+Scope<sub>0</sub> { ---------------------------- Args<sub>0</sub>... are injected to the <i>0</i>th scope
+    template&lt;...Args<sub>1</sub>&gt; -------------- Declare Args<sub>1</sub>...
+    Scope<sub>1</sub> { ------------------------ Args<sub>1</sub>... are injected to the <i>1</i>st scope
+        template&lt;...Args<sub>2</sub>&gt; ---------- Declare Args<sub>2</sub>...
+        Scope<sub>2</sub> { -------------------- Args<sub>2</sub>... are injected to the <i>2</i>nd scope
+                  ...
+            template&lt;...Args<sub>Last</sub>&gt; ---- Declare Args<sub>Last</sub>...
+            Scope<sub>Last</sub> { -------------- Args<sub>Last</sub>... are injected to the last scope
+            };
+        };
+    };
+};</code></pre>
+
+After applying `Flip` to the metafunction, the illustration becomes the following.
+
+<pre><code><b>Flip&lt;Metafunction&gt;::RESULT</b>
+
+template&lt;...Args<sub>1</sub>&gt; ------------------ Declare Args<sub>1</sub>...
+Scope<sub>0</sub> { ---------------------------- Args<sub>1</sub>... are injected to the <i>0</i>th scope
+    template&lt;...Args<sub>0</sub>&gt; -------------- Declare Args<sub>0</sub>...
+    Scope<sub>1</sub> { ------------------------ Args<sub>0</sub>... are injected to the <i>1</i>st scope
+        template&lt;...Args<sub>2</sub>&gt; ---------- Declare Args<sub>2</sub>...
+        Scope<sub>2</sub> { -------------------- Args<sub>2</sub>... are injected to the <i>2</i>nd scope
+                  ...
+            template&lt;...Args<sub>Last</sub>&gt; ---- Declare Args<sub>Last</sub>...
+            Scope<sub>Last</sub> { -------------- Args<sub>Last</sub>... are injected to the last scope
+            };
+        };
+    };
+};</code></pre>
+
+The order of scopes is defined naively.
+It is an invariant for rearranged metafunctions.
+What was flipped is the declaration order of the parameters.
+Take `Plume`, `SensiblePlume`, and `CognatePlume` as examples:
+
+<pre><code><b>Plume</b>
+
+template&lt;typename...Elements&gt;
+Scope<sub>0</sub> {
+    template&lt;template&lt;typename...&gt; class...Cosmetics&gt;
+    Scope<sub>1</sub> {
+        template&lt;template&lt;typename...&gt; class Operation>&gt;
+        Scope<sub>2</sub> {
+        };
+    };
+};</code></pre>
+
+<pre><code><b>SensiblePlume</b>
+
+template&lt;typename...Elements&gt;
+Scope<sub>0</sub> {
+    template&lt;template&lt;typename...&gt; class Operation>&gt;
+    Scope<sub>1</sub> {
+        template&lt;template&lt;typename...&gt; class...Cosmetics&gt;
+        Scope<sub>2</sub> {
+        };
+    };
+};</code></pre>
+
+<pre><code><b>CognatePlume</b>
+
+template&lt;template&lt;typename...&gt; class Operation>&gt;
+Scope<sub>0</sub> {
+    template&lt;template&lt;typename...&gt; class...Cosmetics&gt;
+    Scope<sub>1</sub> {
+        template&lt;typename...Elements&gt;
+        Scope<sub>2</sub> {
+        };
+    };
+};</code></pre>
+
+Each function contains three scopes.
+The order of the scopes is invariant since it is defined by induction and only relies on the total number of scopes.
+What separates these functions is the arrangement of `Elements...`, `Cosmetics...`, and `Operation`.
+
+We will define the 'invocation order' first.
+
+> The invocation order of a thoroughly conformed metafunction is a map from the function's canonically defined scopes to a set of parameter lists.
+
+Finally, we will define the '*n*th layer'.
+
+> The *n*th layer is the projection from the *n*th scope to its corresponding parameter list.
+
+Now, we can understand flipping the *0*th layer and the *1*st layer as an exchange of the projections' destinations.
 
 ## Contents
 
