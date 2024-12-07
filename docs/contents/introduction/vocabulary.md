@@ -15,17 +15,6 @@ They are there for the convenience of authors who try to be as accurate as possi
 Understanding these terms shall not be a burden for the readers or users, as these terms shall be used intuitively and conventionally.
 This is what I want to achieve.
 
-<pre><code>// I didn't know what these things were called
-// until I started working on the documentation.
-// Yet, I was still able to use them in code.
-
-template ---------------------------------------------------+
-<                                                           |
-    template&lt;typename...&gt; ------> template-head       template-head
-    class ----------------------> type-parameter-key        |
-    Arg ------------------------> identifier                |
-> ----------------------------------------------------------+</code></pre>
-
 ## Metafunction && Function
 
 In C++, the word 'metafunction' does not have a decisive definition and often acts as a synonym for 'template'.
@@ -67,7 +56,7 @@ The term 'thoroughly conformed metafunction' is used when every outputting neste
 
 Both words are synonyms for conformed metafunctions.
 The term 'operation' is selected when focusing on the function's functionality.
-Meanwhile, the term 'vessel' is selected when the function is only used for holding its arguments through an instantiation.
+Meanwhile, the term 'vessel' is selected when the function is only used for holding its arguments from an instantiation.
 
 The arguments held by a vessel are denoted as 'items'.
 
@@ -122,7 +111,7 @@ A layer's number suggests its position in the outmost metafunction.
 To invoke the (*n* + 1)th layer, the *n*th layer must be instantiated first.
 Therefore, the *n*th layer is defined recursively, with the *0*th layer serving as the base case, which can be invoked directly.
 
-This is the explanation given to the `*n*th layer` when I first started working on the documentation.
+This is the explanation given to the '*n*th layer' when I first started working on the documentation.
 Later, however, I realize it does not cover all the scenarios where I use this word.
 
 In the description for `Flip` functions, I wrote:
@@ -220,359 +209,121 @@ We will define the 'invocation order' first.
 
 Finally, we will define the '*n*th layer'.
 
-> The *n*th layer is the projection from the *n*th scope to its corresponding parameter list.
+> The *n*th layer is the projection from the *n*th scope to the parameter list it maps to according to the invocation order.
 
 Now, we can understand flipping the *0*th layer and the *1*st layer as an exchange of the projections' destinations.
 
-## Contents
+## Summary
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>metafunction</td>
-      <td>A metafunction is a class template or an alias template.</td>
-    </tr>
-    <tr>
-      <td>signature</td>
-      <td>
-        A signature is:
-        <ul>
-          <li><code>typename</code> for a type;</li>
-          <li><code>auto</code> for a value;</li>
-          <li>the template head for a template.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>conformed</td>
-      <td>
-        A template head is conformed if one of the following is true:
-        <ul>
-          <li>
-            Its parameter list only consists of type template parameters(<code>typename</code>);
-          </li>
-          <li>
-            Its parameter list only consists of non-type template parameters(<code>auto</code>);
-          </li>
-          <li>
-            Its parameter list only consists of conformed template heads.
-          </li>
-        </ul>
-        A metafunction is conformed if its template head is conformed.
-      </td>
-    </tr>
-    <tr>
-      <td>function</td>
-      <td>A function is a conformed metafunction.</td>
-    </tr>
-    <tr>
-      <td>category</td>
-      <td>
-        Let M be the set of all functions, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same signature. Then a category is an equivalence class in M under &sim;.
-      </td>
-    </tr>
-  </tbody>
-</table>
+<dl>
+  <dt>Conform metafunction</dt>
+  <dd>
+    A metafunction is conformed if its primary signature is conformed.
+  </dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>vessel</td>
-      <td>function that transports arguments via its parameter list</td>
-    </tr>
-    <tr>
-      <td>packed vessel</td>
-      <td>instantiation of a vessel</td>
-    </tr>
-    <tr>
-      <td>operation</td>
-      <td>
-        An operation is
-        <ul>
-          <li>a function or</li>
-          <li>a type with a function as a member.</li>
-        </ul>
-          The word is used when the focus is on the function's functionality
-      </td>
-    </tr>
-    <tr>
-      <td>list</td>
-      <td>arrangement of tokens where tokens can be enumerated</td>
-    </tr>
-    <tr>
-      <td>type result</td>
-      <td>class member <code>type</code> of an instantiated function</td>
-    </tr>
-    <tr>
-      <td>invoke</td>
-      <td>instantiate</td>
-    </tr>
-    <tr>
-      <td>value result</td>
-      <td>class member <code>value</code> of an instantiated function</td>
-    </tr>
-    <tr>
-      <td>layer</td>
-      <td>A layer of a function is a member template of the function or a member template of a layer of the function</td>
-    </tr>
-    <tr>
-      <td><i>0</i>th layer</td>
-      <td>The function itself</td>
-    </tr>
-    <tr>
-      <td><i>n</i>th layer</td>
-      <td>A member template of <i>n-1</i>th layer</td>
-    </tr>
-    <tr>
-      <td>invocation order</td>
-      <td>The invocation order of a function is the arrangement of the function's layers</td>
-    </tr>
-    <tr>
-      <td>finally-returned function</td>
-      <td>the last layer of a given metafunction</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Conform primary signature</dt>
+  <dd>
+    A primary signature is conformed if one of the following is true:
+    <ul>
+      <li>It is <code>typename</code> or <code>auto</code>.</li>
+      <li>It is a template head whose parameter list only consists of conformed primary signatures.</li>
+    </ul>
+  </dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mold</td>
-      <td>
-        Function with the signature <code>template&lt;typename...&gt;</code>
-      </td>
-      </tr>
-      <tr>
-        <td>Page</td>
-        <td>
-          Function with the signature <code>template&lt;auto...&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>Road</td>
-        <td>
-          Function with the signature <code>template&lt;template&lt;typename...&gt;&nbsp;class...&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>Rail</td>
-        <td>
-          Function with the signature <code>template&lt;template&lt;auto...&gt;&nbsp;class...&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>Flow</td>
-        <td>
-          Function with the signature <code>template&lt;template&lt;template&lt;typename...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>Sail</td>
-        <td>
-          Function with the signature <code>template&lt;template&lt;template&lt;auto...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code>
-        </td>
-      </tr>
-  </tbody>
-</table>
+  <dt>Container</dt>
+  <dd>A container is a vessel that holds types.</dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Usage</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>warehouse(s)</td>
-      <td>parameter(s) for a Flow</td>
-    </tr>
-    <tr>
-      <td>stockroom(s)</td>
-      <td>parameter(s) for a Sail</td>
-    </tr>
-    <tr>
-      <td>container(s)</td>
-      <td>parameter(s) for a Road or a warehouse</td>
-    </tr>
-    <tr>
-      <td>sequence(s)</td>
-      <td>parameter(s) for a Rail or a stockroom</td>
-    </tr>
-    <tr>
-      <td>element(s)</td>
-      <td>parameter(s) for a Mold or a container</td>
-    </tr>
-    <tr>
-      <td>variable(s)</td>
-      <td>parameter(s) for a Page or a sequence</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Element</dt>
+  <dd>Elements denote the arguments held by a container.</dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>packed warehouse</td>
-      <td>instantiation of a warehouse</td>
-    </tr>
-    <tr>
-      <td>packed stockroom</td>
-      <td>instantiation of a stockroom</td>
-    </tr>
-    <tr>
-      <td>packed container</td>
-      <td>instantiation of a container</td>
-    </tr>
-    <tr>
-      <td>packed sequence</td>
-      <td>instantiation of a sequence</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Finally-returned function</dt>
+  <dd>The finally-returned function of a thoroughly conformed metafunction is the submetafunction corresponding to the last layer.</dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vocabulary</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>typelivore</td>
-      <td>A funtion that feeds on types</td>
-    </tr>
-    <tr>
-      <td>varybivore</td>
-      <td>A funtion that feeds on values</td>
-    </tr>
-    <tr>
-      <td>mouldivore</td>
-      <td> A funtion that feeds on Molds </td>
-    </tr>
-    <tr>
-      <td>pagelivore</td>
-      <td> A funtion that feeds on Pages </td>
-    </tr>
-    <tr>
-      <td>roadrivore</td>
-      <td>A funtion that feeds on Roads</td>
-    </tr>
-    <tr>
-      <td>raillivore</td>
-      <td>A funtion that feeds on Rails</td>
-    </tr>
-    <tr>
-      <td>cotanivore</td>
-      <td>A funtion that feeds on packed containers</td>
-    </tr>
-    <tr>
-      <td>sequnivore</td>
-      <td>A funtion that feeds on packed sequence</td>
-    </tr>
-    <tr>
-      <td>warehivore</td>
-      <td>A funtion that feeds on packed warehouses</td>
-    </tr>
-    <tr>
-      <td>stockivore</td>
-      <td>A funtion that feeds on packed stockrooms</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Function</dt>
+  <dd>A function is a conformed metafunction.</dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Species</th>
-      <th>Host</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>typella</td>
-      <td>typelivore</td>
-    </tr>
-    <tr>
-      <td>varbola</td>
-      <td>varybivore</td>
-    </tr>
-    <tr>
-      <td>moldiae</td>
-      <td>mouldivore</td>
-    </tr>
-    <tr>
-      <td>pagelis</td>
-      <td>pagelivore</td>
-    </tr>
-    <tr>
-      <td>roadria</td>
-      <td>roadrivore</td>
-    </tr>
-    <tr>
-      <td>raileus</td>
-      <td>raillivore</td>
-    </tr>
-    <tr>
-      <td>cotanis</td>
-      <td>cotanivore</td>
-    </tr>
-    <tr>
-      <td>sequena</td>
-      <td>sequnivore</td>
-    </tr>
-    <tr>
-      <td>waretus</td>
-      <td>warehivore</td>
-    </tr>
-    <tr>
-      <td>stockii</td>
-      <td>stockivore</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Item</dt>
+  <dd>
+    Items denote the arguments held by a vessel.
+  </dd>
 
-<table>
-  <thead>
-    <tr>
-      <th>Prefix</th>
-      <th>Use Case</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cognate</td>
-      <td>Used when a function firstly accepts an operation, which will later be instantiated with the result of the main algorithm performed by the function.
-      This prefix is not used when the function's name strongly suggests the operation's existence, such as <code>Agent</code>, <code>BindFront</code>, <code>BindBack</code>, and <code>Bind</code>.</td>
-    </tr>
-    <tr>
-      <td>Kindred</td>
-      <td>Used when a function lastly accepts operations or predicates that participate in the algorithm performed by the function</td>
-    </tr>
-  </tbody>
-</table>
+  <dt>Invocation order</dt>
+  <dd>
+    The invocation order of a thoroughly conformed metafunction is a map from the function's canonically defined scopes to a set of parameter lists.
+  </dd>
+
+  <dt>Layer</dt>
+  <dd>
+    The <i>n</i>th layer is the projection from the <i>n</i>th scope to the parameter list it maps to according to the invocation order.
+  </dd>
+
+  <dt>Metafunction</dt>
+  <dd>A metafunction is a class template or an alias template.</dd>
+
+  <dt>Operation</dt>
+  <dd>An operation is a conformed metafunction. The term is used when the focus is on the functionality of the metafunction.</dd>
+
+  <dt>Packed container</dt>
+  <dd>A packed container is an instantiation of a container.</dd>
+
+  <dt>Packed sequence</dt>
+  <dd>A packed sequence is an instantiation of a sequence.</dd>
+
+  <dt>Packed stockroom</dt>
+  <dd>A packed stockroom is an instantiation of a stockroom.</dd>
+
+  <dt>Packed warehouse</dt>
+  <dd>A packed warehouse is an instantiation of a warehouse.</dd>
+
+  <dt>Packed vessel</dt>
+  <dd>A packed vessel is an instantiation of a vessel.</dd>
+
+  <dt>Primary signature</dt>
+  <dd>
+    A primary signature is:
+    <ul>
+      <li><code>typename</code> for a type;</li>
+      <li><code>auto</code> for a value;</li>
+      <li>the template head for a template.</li>
+    </ul>
+  </dd>
+
+  <dt>Primary signature category</dt>
+  <dd>
+    Let M be the set of all primary signatures, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same signature. Then a category is an equivalence class in M under &sim;.
+  </dd>
+
+  <dt>Thoroughly conformed metafunction</dt>
+  <dd>A metafunction is thoroughly conformed if all of its submetafunctions are conformed.</dd>
+
+  <dt>Type result</dt>
+  <dd>The alias member <code>type</code> of an instantiated function.</dd>
+
+  <dt>Sequence</dt>
+  <dd>A sequence is a vessel that holds values.</dd>
+
+  <dt>Stockroom</dt>
+  <dd>A stockroom is a vessel that holds functions with the primary signature <code>template&lt;auto...&gt;</code>.</dd>
+
+  <dt>Submetafunction</dt>
+  <dd>A Submetafunction of a metafunction is one of the following:
+    <ul>
+      <li>a user-facing metafunction member or</li>
+      <li>a user-facing metafunction member of a submetafunction.</li>
+    </ul>
+  </dd>
+
+  <dt>Value result</dt>
+  <dd>The static constexpr data member <code>value</code> of an instantiated function.</dd>
+
+  <dt>Variable</dt>
+  <dd>Variables denote the arguments held by a sequence.</dd>
+
+  <dt>Vessel</dt>
+  <dd>
+    A vessel is a conformed metafunction that is used for holding its arguments from an instantiation.
+  </dd>
+
+  <dt>Warehouse</dt>
+  <dd>A warehouse is a vessel that holds functions with the primary signature <code>template&lt;typename...&gt;</code>.</dd>
+</dl>
