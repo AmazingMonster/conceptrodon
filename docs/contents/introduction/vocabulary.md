@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Vocabulary
 
-When I choose a technical expression to use in the documentation, I first attempt to keep it close to the relevant C++ terminologies since they are well-documented and familiar to a programmer.
+When I choose a technical expression to use in the documentation, I first attempt to keep it close to the relevant C++ terminologies since they are well-documented and familiar to programmers.
 However, C++ terms can be confusing. For example, it is unclear what the 'non-type' in the 'non-type template parameter' refers to, as it looks like the complement of all 'type template parameters'.
 Moreover, the term 'template template parameter' not only repeats the same word twice like a typo but also erases the differences between the parameter lists within template template parameters.
 The detection of the differences, however, is the key part of this library.
@@ -14,6 +14,23 @@ Strict definitions for conventional programming terms have little practical use.
 They are there for the convenience of authors who try to be as accurate as possible.
 Understanding these terms shall not be a burden for the readers or users, as these terms shall be used intuitively and conventionally.
 This is what I want to achieve.
+
+## Template-head
+
+The term 'template-head' is introduced by the standard.
+It is easier to explain the word by an example.
+
+<pre><code>template ---------------------------------------------------+
+<                                                           |
+    template&lt;typename...&gt; ------> template-head       template-head
+    class ----------------------> type-parameter-key        |
+    ...                                                     |
+    Args -----------------------> identifier                |
+> ----------------------------------------------------------+
+struct Vehicle;</code></pre>
+
+This library often uses the term without the hyphen.
+This is to make my grammar checker happy.
 
 ## Metafunction && Function
 
@@ -31,7 +48,7 @@ To start with, we will categorize metafunctions by their primary signatures, whe
 
 Namely, primary signatures extend the notion of template heads by two special cases.
 Now, we will define the 'conformed signatures' using recursion.
-The two cases added to the term will serve as the base cases in the definition.
+The two cases added earlier will serve as the base cases for the definition.
 
 > A primary signature is conformed if one of the following is true:
 >
@@ -48,14 +65,21 @@ I adopted this abbreviation for several reasons:
 
 - Most metafunctions discussed in the documentation are conformed, which means repeating the quantifier is often redundant and distracting.
 - The term 'metafunction' already indicates the function-like behavior of templates. It is more natural to relate the word 'function' to a template in a metaprogramming library rather than a named block in the usual sense.
-- Only a few ordinary functions are mentioned in the documentation. When it appears, the term 'regular function' is used for differentiation.
+- Only a few ordinary functions are mentioned in the documentation. When it appears, the term 'ordinary function' is used for differentiation.
 
-The term 'thoroughly conformed metafunction' is used when every outputting nested template of a function is required to be conformed.
+> A Submetafunction of a metafunction is one of the following:
+>
+> - a class member template or
+> - an alias member template or
+> - a class member template of a submetafunction of the metafunction or
+> - an alias template of a submetafunction of the metafunction.
+
+The term 'thoroughly conformed metafunction' is used when every submetafunction of a conformed metafunction is required to be conformed.
 
 ## Operation && Vessel
 
 Both words are synonyms for conformed metafunctions.
-The term 'operation' is selected when focusing on the function's functionality.
+The term 'operation' is selected when the function's (often unspecified) functionality is the focus.
 Meanwhile, the term 'vessel' is selected when the function is only used for holding its arguments from an instantiation.
 
 The arguments held by a vessel are denoted as 'items'.
@@ -66,13 +90,16 @@ Vessel<Items...> // General representation of a vessel holding the items.
 
 ## Container && Sequence
 
-'Containers' and 'sequences' are special vessels. The term 'container' is selected when the template holds types exclusively, meaning its primary signature is `template<typename...>`. The term 'sequence' is selected when the template holds values exclusively, meaning its template head is `template<auto...>`.
+'Containers' and 'sequences' are special vessels.
+The term 'container' is selected when the template holds types exclusively, meaning its primary signature is `template<typename...>`.
+The term 'sequence' is selected when the template holds values exclusively, meaning its primary signature is `template<auto...>`.
 
 ## Element && Variable
 
-The term 'element' denotes a type in a container, while the term 'variable' denotes a value in a sequence.
+The term 'element' denotes a type in a container.
+The term 'variable' denotes a value in a sequence.
 Honestly, I would like to write 'type' instead of 'element' and 'value' instead of 'variable'.
-However, both words are conventional names for type traits.
+However, 'type' and 'value' are conventional names for type traits.
 To avoid possible confusion, I adopted the lengthier ones.
 
 The word 'variable' is inaccurate as nothing varies for a non-type argument.
@@ -106,21 +133,22 @@ Metafunction                                               |
     }; ----------------------------------------------+     |
 }; --------------------------------------------------------+</code></pre>
 
-Essentially, each layer is a nested metafunction, except the *0*th one.
+Essentially, each layer is a submetafunction, except the *0*th one.
 A layer's number suggests its position in the outmost metafunction.
 To invoke the (*n* + 1)th layer, the *n*th layer must be instantiated first.
-Therefore, the *n*th layer is defined recursively, with the *0*th layer serving as the base case, which can be invoked directly.
+Therefore, the *n*th layer is defined recursively, with the *0*th layer serving as the base case, which is directly invocable.
 
-This is the explanation given to the '*n*th layer' when I first started working on the documentation.
+This is the explanation given to the `*n*th layer` when I first started working on the documentation.
 Later, however, I realize it does not cover all the scenarios where I use this word.
 
 In the description for `Flip` functions, I wrote:
 
 > `Namespace::Flip` accepts an operation and flips its *0*th layer and *1*st layer.
 
-How do we flip nested metafunctions? The previous explanation won't make sense in this scenario.
+How do we flip metafunctions?
+The previous explanation won't make sense in this scenario.
 To solve this, we need to abstract the notion further.
-I introduce the term 'layer' to capture the sequential characteristic of nested metafunctions.
+I introduce the term 'layer' to capture the sequential characteristic of submetafunctions.
 But what has been sequenced?
 The following illustration might help.
 
@@ -306,10 +334,12 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
   <dd>A stockroom is a vessel that holds functions with the primary signature <code>template&lt;auto...&gt;</code>.</dd>
 
   <dt>Submetafunction</dt>
-  <dd>A Submetafunction of a metafunction is one of the following:
+  <dd>A submetafunction of a metafunction is one of the following:
     <ul>
-      <li>a user-facing metafunction member or</li>
-      <li>a user-facing metafunction member of a submetafunction.</li>
+      <li>a class member template or</li>
+      <li>an alias member template or</li>
+      <li>a class member template of a submetafunction of the metafunction or</li>
+      <li>an alias template of a submetafunction of the metafunction.</li>
     </ul>
   </dd>
 
