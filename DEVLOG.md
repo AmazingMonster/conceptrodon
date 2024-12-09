@@ -1,5 +1,26 @@
 # Diary
 
+## 2024/12/09
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Study <i>An Introduction to Functional Programming Through Lambda Calculus</i> by Greg Michaelson</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Chapter 4</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/08
 
 ### Todo
@@ -1435,6 +1456,80 @@ So tired...
   </li>
 </ul>
 
+## Notes
+
+- `auto` compiles slower than `size_t`.
+- Check if it is possible to do SFINAE over `inherit same class multiple times` error.
+- Fold expression evaluates to its initiator when the variadic pack is of size zero. `(init op...op pack) == init` if `sizeof...(pack) == 0`.
+- Be careful with variadic concepts.
+- *An Introduction to Functional Programming Through Lambda Calculus* Chapter 4
+
+On page 68, the book says that:
+> However, in Chapter 2 we required all names in expressions to be replaced by their definitions before the expression is evaluated.
+
+I was puzzled by this sentence and the discussions after it. Here is how I finally understand it.
+
+Let us identify the problem first. The book says the following code will result in a replacement sequence that never terminates.
+
+<pre><code>def add x y =
+if iszero y
+then x
+else add (succ x) (pred y)</code></pre>
+
+This is because in order to apply the name `add` to arguments, we must replace `add` with its definition.
+However, this replacement introduces another name, which is again the `add`.
+We have to replace this new `add` according to the statement on page 68, introducing another `add` in the progress. This results in a never-ending sequence.
+
+<pre><code>   add two three
+== (
+    &lambda;x.&lambda;y.
+    if iszero y
+    then x
+    else add (succ x) (pred y)
+
+    two, three
+) == (
+    &lambda;x.&lambda;y.
+    if iszero y
+    then x
+    else
+    (
+      &lambda;x.&lambda;y.
+      if iszero y
+      then x
+      else add (succ x) (pred y)
+
+      (succ x) (pred y)
+    )
+
+    two, three
+) == ...</code></pre>
+
+The solution is to create a helper function that does not introduce infinite iteration of names.
+This helper function will terminate the replacement sequence.
+
+<pre><code>def add2 f x y =
+if iszero y
+then x
+else f f x y
+
+def add = add2 add2
+
+add two three ==
+add2 add2 two three ==
+&lambda;f.&lambda;x.&lambda;y.
+if iszero y
+then x
+else f f x y
+
+&lambda;f.&lambda;x.&lambda;y.
+if iszero y
+then x
+else f f x y
+
+two three
+</code></pre>
+
 ## Words
 
 - `Conjugate`
@@ -1491,10 +1586,3 @@ So tired...
 - `Coy`
 
 - `Kindred`
-
-## Notes
-
-- `auto` compiles slower than `size_t`.
-- Check if it is possible to do SFINAE over `inherit same class multiple times` error.
-- Fold expression evaluates to its initiator when the variadic pack is of size zero. `(init op...op pack) == init` if `sizeof...(pack) == 0`.
-- Be careful with variadic concepts.
