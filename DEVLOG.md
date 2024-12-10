@@ -1,5 +1,26 @@
 # Diary
 
+## 2024/12/10
+
+### Todo
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Study <i>An Introduction to Functional Programming Through Lambda Calculus</i> by Greg Michaelson</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Chapter 5 ~ 8. I think that concludes all I want to read.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ## 2024/12/09
 
 ### Todo
@@ -35,7 +56,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td>Chapter 3</td>
+          <td>Chapter 1 ~ 3</td>
         </tr>
       </tbody>
     </table>
