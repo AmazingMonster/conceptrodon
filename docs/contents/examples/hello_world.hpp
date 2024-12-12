@@ -3,8 +3,8 @@
 
 // This document will explain the mechanics and design decisions of the library.
 
-#ifndef CONCEPTRODON_EXEMPLAR_H
-#define CONCEPTRODON_EXEMPLAR_H
+#ifndef CONCEPTRODON_HELLO_WORLD_H
+#define CONCEPTRODON_HELLO_WORLD_H
 
 // Define dummy placeholder tokens for readability.
 #define TEMPLATE_PARAMETER_CATEGORY auto

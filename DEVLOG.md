@@ -1,8 +1,48 @@
-# Diary
+# Devlog
 
-## 2024/12/10
+## Index
 
-### Todo
+- [Diary](#diary)
+- [Notes](#notes)
+- [Words](#words)
+
+## Diary
+
+### 2024/12/11
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Hello World</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/10
 
 <ul>
   <li>
@@ -21,9 +61,7 @@
   </li>
 </ul>
 
-## 2024/12/09
-
-### Todo
+### 2024/12/09
 
 <ul>
   <li>
@@ -42,9 +80,7 @@
   </li>
 </ul>
 
-## 2024/12/08
-
-### Todo
+### 2024/12/08
 
 <ul>
   <li>
@@ -63,9 +99,7 @@
   </li>
 </ul>
 
-## 2024/12/07
-
-### Todo
+### 2024/12/07
 
 <ul>
   <li>
@@ -114,9 +148,7 @@
   </li>
 </ul>
 
-## 2024/12/06
-
-### Todo
+### 2024/12/06
 
 <ul>
   <li>
@@ -165,12 +197,10 @@
   </li>
 </ul>
 
-## 2024/12/05
+### 2024/12/05
 
 One day, shining stars will fall upon this library like soaps dropping inside a prison.
 
-### Todo
-
 <ul>
   <li>
     <table>
@@ -218,13 +248,11 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/12/04
+### 2024/12/04
 
 > It's also Jimmy's quest, to beat jimmypoopins.
 >
 > -- Summoning Salt
-
-### Todo
 
 <ul>
   <li>
@@ -243,9 +271,7 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/12/03
-
-### Todo
+### 2024/12/03
 
 <ul>
   <li>
@@ -279,9 +305,7 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/12/02
-
-### Todo
+### 2024/12/02
 
 <ul>
   <li>
@@ -330,9 +354,7 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/12/01
-
-### Todo
+### 2024/12/01
 
 <ul>
   <li>
@@ -381,9 +403,7 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/11/30
-
-### Todo
+### 2024/11/30
 
 <ul>
   <li>
@@ -417,9 +437,7 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/11/29
-
-### Todo
+### 2024/11/29
 
 <ul>
   <li>
@@ -453,11 +471,9 @@ One day, shining stars will fall upon this library like soaps dropping inside a 
   </li>
 </ul>
 
-## 2024/11/28
+### 2024/11/28
 
 I will succeed. Everyone will know my name.
-
-### Todo
 
 <ul>
   <li>
@@ -506,11 +522,9 @@ I will succeed. Everyone will know my name.
   </li>
 </ul>
 
-## 2024/11/27
+### 2024/11/27
 
 I hope one day, all my work will be appreciated.
-
-### Todo
 
 <ul>
   <li>
@@ -544,11 +558,9 @@ I hope one day, all my work will be appreciated.
   </li>
 </ul>
 
-## 2024/11/26
+### 2024/11/26
 
 So tired...
-
-### Todo
 
 <ul>
   <li>
@@ -597,9 +609,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/25
-
-### Todo
+### 2024/11/25
 
 <ul>
   <li>
@@ -663,9 +673,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/24
-
-### Todo
+### 2024/11/24
 
 <ul>
   <li>
@@ -714,9 +722,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/23
-
-### Todo
+### 2024/11/23
 
 <ul>
   <li>
@@ -750,9 +756,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/22
-
-### Todo
+### 2024/11/22
 
 <ul>
   <li>
@@ -801,9 +805,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/21
-
-### Todo
+### 2024/11/21
 
 <ul>
   <li>
@@ -867,9 +869,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/20
-
-### Todo
+### 2024/11/20
 
 <ul>
   <li>
@@ -933,9 +933,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/19
-
-### Todo
+### 2024/11/19
 
 <ul>
   <li>
@@ -1014,9 +1012,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/18
-
-### Todo
+### 2024/11/18
 
 <ul>
   <li>
@@ -1110,9 +1106,7 @@ So tired...
   </li>
 </ul>
 
-## 2024/11/17
-
-### Todo
+### 2024/11/17
 
 <ul>
   <li>
@@ -1161,8 +1155,6 @@ So tired...
 </ul>
 
 ## Before 2024/11/17
-
-### Todo
 
 <ul>
   <li>

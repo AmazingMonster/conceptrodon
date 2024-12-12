@@ -36,6 +36,7 @@ This is to make my grammar checker happy.
 
 In C++, the word 'metafunction' does not have a decisive definition and often acts as a synonym for 'template'.
 In this library, the word represents a class template or an alias template, as these are the only kinds of templates acceptable as template arguments in C++20.
+We will use the terms `class metafunction` and `alias metafunction` when the differentiation of the two cases is necessary.
 
 The goal is to define the kind of metafunctions this library focuses on.
 To start with, we will categorize metafunctions by their primary signatures, where a primary signature is defined as follows:
@@ -56,8 +57,21 @@ The two cases added earlier will serve as the base cases for the definition.
 > - It is a template head whose parameter list only consists of conformed primary signatures.
 
 With all the preparations done, we can finally define the 'conformed metafunctions', which are the focal point of this library.
+Since metafunctions are defined by combining two cases, we will specify when each case yields a conformed metafunction separately.
+This is necessary since C++ compilers treat class and alias templates differently.
 
-> A metafunction is conformed if its primary signature is conformed.
+For the convenience of our discussion, we will extend the concept of primary signature to parameter packs.
+
+> A primary signature is:
+>
+> - `typename` for `typename...`;
+> - `auto` for `auto...`;
+> - the template head of `Sig` for `Sig...`.
+
+Now:
+
+> - A class metafunction is conformed if its primary signature is conformed.
+> - An alias metafunction is conformed if its parameter list consists of one parameter pack whose primary signature is conformed.
 
 The word 'function' is a shorthand for 'conformed metafunction'.
 Note that it differs from the ordinary use case of the word, which generally means a named block in C++.
@@ -244,17 +258,35 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
 ## Summary
 
 <dl>
-  <dt>Conform metafunction</dt>
+  <dt>Alias metafunction</dt>
   <dd>
-    A metafunction is conformed if its primary signature is conformed.
+    An alias metafunction is an alias template.
+  </dd>
+  
+  <dt>Class metafunction</dt>
+  <dd>
+    A class metafunction is a class template.
   </dd>
 
-  <dt>Conform primary signature</dt>
+  <dt>Conformed alias metafunction</dt>
+  <dd>
+    An alias metafunction is conformed if its parameter list consists of one parameter pack.
+  </dd>
+
+  <dt>Conformed class metafunction</dt>
+  <dd>
+    A class metafunction is conformed if its primary signature is conformed.
+  </dd>
+
+  <dt>Conformed metafunction</dt>
+  <dd>A conformed metafunction is a conformed class metafunction or a conformed alias metafunction.</dd>
+
+  <dt>Conformed primary signature</dt>
   <dd>
     A primary signature is conformed if one of the following is true:
     <ul>
       <li>It is <code>typename</code> or <code>auto</code>.</li>
-      <li>It is a template head whose parameter list only consists of conformed primary signatures.</li>
+      <li>It is a template head whose parameter list only consists of the same conformed primary signatures.</li>
     </ul>
   </dd>
 
@@ -313,6 +345,9 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
       <li><code>typename</code> for a type;</li>
       <li><code>auto</code> for a value;</li>
       <li>the template head for a template.</li>
+      <li><code>typename</code> for <code>typename...</code>;</li>
+      <li><code>auto</code> for <code>auto...</code>;</li>
+      <li>the template head of <code>Sig</code> for <code>Sig...</code>.</li>
     </ul>
   </dd>
 
@@ -320,12 +355,15 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
   <dd>
     Let M be the set of all primary signatures, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same signature. Then a category is an equivalence class in M under &sim;.
   </dd>
-
-  <dt>Thoroughly conformed metafunction</dt>
-  <dd>A metafunction is thoroughly conformed if all of its submetafunctions are conformed.</dd>
-
-  <dt>Type result</dt>
-  <dd>The alias member <code>type</code> of an instantiated function.</dd>
+  
+  <dt>Rank</dt>
+  <dd>
+    <ul>
+      <li>The rank of <code>typename</code> is <code>0</code>;</li>
+      <li>The rank of <code>auto</code> is <code>0</code>;</li>
+      <li>Otherwise, the rank of a conformed primary signature, say <code>CPS</code>, is <code>1 + (the rank of parameter-primary-signature)</code> where <code>parameter-primary-signature</code> is the primary signature of <code>CPS</code>'s parameter list.</li>
+    </ul>
+  </dd>
 
   <dt>Sequence</dt>
   <dd>A sequence is a vessel that holds values.</dd>
@@ -342,6 +380,12 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
       <li>an alias template of a submetafunction of the metafunction.</li>
     </ul>
   </dd>
+
+  <dt>Thoroughly conformed metafunction</dt>
+  <dd>A metafunction is thoroughly conformed if all of its submetafunctions are conformed.</dd>
+
+  <dt>Type result</dt>
+  <dd>The alias member <code>type</code> of an instantiated function.</dd>
 
   <dt>Value result</dt>
   <dd>The static constexpr data member <code>value</code> of an instantiated function.</dd>
