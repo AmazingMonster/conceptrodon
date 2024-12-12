@@ -270,7 +270,7 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
 
   <dt>Conformed alias metafunction</dt>
   <dd>
-    An alias metafunction is conformed if its parameter list consists of one parameter pack.
+    An alias metafunction is conformed if its parameter list consists of one parameter pack whose primary signature is conformed.
   </dd>
 
   <dt>Conformed class metafunction</dt>

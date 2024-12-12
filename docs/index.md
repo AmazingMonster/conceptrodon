@@ -11,6 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Introduction
 
 ### [Vocabulary](./contents/introduction/vocabulary.md)
+
+### [Functional Nature](./contents/introduction/functional_nature.md)
 <!-- Introduction -- End -->
 
 <!-- Concepts -- Start -->
