@@ -8,6 +8,63 @@
 
 ## Diary
 
+### 2024/12/14
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/13
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/12
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/11
 
 <ul>

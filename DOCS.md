@@ -3,16 +3,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <h1>Index</h1>
 
-<!-- Prelude -- Start -->
-<details><summary><h2>Prelude</h2></summary>
-
-</details>
-<!-- Prelude -- End -->
-
 <!-- Introduction -- Start -->
 <details><summary><h2>Introduction</h2></summary>
 
 <h3><a href="./docs/contents/introduction/vocabulary.md">Vocabulary</a></h3>
+
+<h3><a href="./docs/contents/introduction/functional_nature.md">Functional Nature</a></h3>
 
 </details>
 <!-- Introduction -- End -->
