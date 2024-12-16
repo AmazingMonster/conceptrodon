@@ -8,6 +8,59 @@
 
 ## Diary
 
+### 2024/12/16
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Hello World</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/15
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Functional Nature</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/14
 
 <ul>
@@ -20,7 +73,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </table>
@@ -39,7 +92,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </table>
@@ -58,7 +111,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </table>
@@ -77,7 +130,7 @@
         </tr>
         <tr>
           <td>Progress</td>
-          <td></td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </table>

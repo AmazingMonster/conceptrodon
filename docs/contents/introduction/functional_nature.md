@@ -418,7 +418,7 @@ Fun
  -> auto
 ```
 
-We will translate the symbolic representation above into valid Haskell code.
+We will translate the symbolic representation above into  Haskell code.
 
 ```Haskell
 fun
@@ -427,7 +427,6 @@ fun
  -> Ellipsis Auto
  -> Ellipsis (Template (Ellipsis Auto))
  -> Auto
-fun = undefined
 ```
 
 Note that a metafunction is also a template acceptable as a template argument.
@@ -451,10 +450,10 @@ reinterpretedFun = reinterpret fun
 Let us examine more examples.
 
 ```C++
-template<typename...>
+template<typename Element>
 struct Gun
 {
-    using type = int;
+    using type = Element;
 };
 
 template<template<typename...> class Operation>
@@ -477,9 +476,17 @@ Gun
  -> typename
 ```
 
+Or in Haskell notations:
+
+```Haskell
+gun
+ :: Ellipsis Typename
+ -> Typename
+```
+
 What is the result of `Pun`?
 Since the structure of `Mold` depends on the structure of `Operation`, we do not know what is inside.
-Therefore, instead of a class member, we regard the function's return as the maximum nested submetafunction.
+Therefore, instead of a class member, we regard the return of the function as the maximum nested submetafunction, `Mold` in the case of `Pun`.
 We write out its type signature as follows:
 
 ```Haskell
@@ -487,3 +494,83 @@ Pun
  :: template<typename...> class...
  -> template<typename...> class
 ```
+
+Or in Haskell notations:
+
+```Haskell
+pun
+ :: Ellipsis (Template (Ellipsis Typename))
+ -> Template (Ellipsis Typename)
+```
+
+We will conclude this section with an example of composition.
+
+First, we compose `Gun` with `Fun`.
+
+```Haskell
+funGun
+ :: Ellipsis Typename
+ -> Ellipsis (Template (Ellipsis Typename))
+ -> Ellipsis Auto
+ -> Ellipsis (Template (Ellipsis Auto))
+ -> Auto
+funGun = fun . (`Dots` Empty) . gun
+```
+
+The backticks convert `Dots` into an infix operator, meaning ``Dots a b <=> a `Dots` b``.
+Then, we partially apply `` `Dots` `` to `Empty` so that the result from `Gun` will fill in the parameter before `` `Dots` ``. Therefore, :
+
+```Haskell
+ellipsisGun :: Ellipsis Typename -> Ellipsis Typename
+ellipsisGun =  (`Dots` Empty) . gun
+```
+
+Then, we will instantiate `funPun` by a `Typename` `void` and compose `gun` with the result.
+
+```Haskell
+voidifiedFunGun
+ :: Ellipsis (Template (Ellipsis Typename))
+ -> Ellipsis Auto
+ -> Ellipsis (Template (Ellipsis Auto))
+ -> Auto
+voidifiedFunGun = funGun $ Dots void Empty
+```
+
+The dollar sign `$` evaluates the right-side expression first. It is equivalent to a pair of parentheses surrounding the right-side expression.
+
+Finally, we compose `pun` with `funGun`.
+
+```Haskell
+funGunPun
+ :: Ellipsis (Template (Ellipsis Typename))
+ -> Ellipsis Auto
+ -> Ellipsis (Template (Ellipsis Auto))
+ -> Auto
+funGunPun = voidifiedFunGun . (`Dots` Empty) . pun
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1AImCgNaZatUkvrICeAZUboAwqloBXFgwkB2UhcAGTwGTAA5bwAjTGIQAA4ANlIAB1QFQkcGdy8ff1T0zIEQsMiWGLikm0tMeyyhAiZiAhzvXy4A21qHAQamghKI6NiE5IVG5ta8jpsJgdCh8pGkgEobVE9iZHYOAFpdgGp3FIBPYjxgBAIDgCYNG8kDgDFGYAOAWVQqQwBSDQBBfYHITKAAiAA1diFtgwlLsAJJYQR4GgjA7/FJMZAITC7G4AOg0f3%2BxJYGE89A%2BTFCBwA7jjiJhicSgQQTilGKwmQD0ExGgcACrszlsZkAoFMTxEYm8/n/KWoMWAw4AKnx6plfKYB2wVjwKQyCgO2p%2BAGZQTqWCk2Qcfn5XAdQagCEbtRBdbR9YbjSslazMFaDAQmabXCqzdhNfyBQGUkHMMa/YcY4G%2BQnQuNDA4%2BVliRnGsi0wcQCBBbH48aDrsI5Xq6bsILhcxRQD81m8EWzRbPAwsDQwugkx9MI0qD26gIDozQsHiClGY0egxidPBLF5yPi6X3XqDXhXVWa1EVof62XU8GDjvPXvXb6AavZxvrl2Dj2%2BwtBwCWYcx8uAX%2BxJbjqu7ekKHLNty/yng2HpevuV4pnGRbXvBRrgSKmArPe0F1rBoEIfK0oAjBIE3t6EBIRWqG3uiCrYUBeF0cR/x/ra5pvr2mD9pgX4kuKhyPuuC68U8PYrpgM7CSOok9sBVEoXBtEYZBOFCXOInoGJDDsRa6nPgcgHfgJBzAOJAJmf%2B0ElmRaGNhBXKMTWKmORZcmvu%2B3GfkOKTmRifnAUpFEKZeNFgU2XIMSRTEhQmYUIS5bA4b5OkeVxPF8T%2BByWOR%2B4AOJ%2BTlaEFTpNlBQlEVsKR5XoZVUFFbeJW6QcV4/IkGhOi6bUaJa1onCe%2BKmX5WXuFa6QJt1lndXShAILa7WAe1xJ/iVQFlQRtUOS2uE1jViHlopG32ZhUU7Wee1EYq0W7UdlEHaFF30ThpGXctPZNa%2BbGDRA3WdQo03YFabIDUNVlZQAbqgeB8ZD0PyXVxKw%2BgzWeRlQ7wrCBbZpe3UreJ7UHFEJzzRoSPdYjUP4FQskMKtJHrblRp3RecV7YlWHPUxj0sdVt2xVe3OoKdL0KhT0MojTH0cXjOkACSOs6RpI71bJDqNaRKCTKXTbSs0k0jEtae9%2BNEgBxsMMoAUM3ZzPIQ9R3s8LXNHa913nXz92sy7T1OWeruseblupRxBvU0btNyd9v2KwDQP9Qcg3a8Zyo6sQxAkAcGT0Aw2zEKS1KlaW8IAPJXjhLAF81C6bDpEArBway0JwACsvC%2BBwWikKgnAABKmBYViZxsWwTTcpo8KQBCaA3axmCAzcAJz4n4C%2Bmn4poLx0GiSOvfhSPonCSLwLASBoGikO3nfdxwvAKCA59Tx3DekHAsBIJgqi1AqZAUBATTAAoZQhhLBCAQKgWk7cJ5oCtHQHMAggFhFoKA8Bl9eDQJSHQEYlxkAL0SFwUg6DMHEHCFyTgaDUAwPoMQYuUpkEQOnoET%2ByB/jEAAWQxhtQGj4HbrwfgggRBiHYPvPh8glBqAYbofBBgjAgBMOYHK%2Bg8BRDvpANYqBrRZDvjfLu4NYjnCwCouupBiA9gcGwAUqAPCGLWAoYe2w9DjG4QgkBYD6HcF4AQRk7Bz60mIEwFInAeCNxbm3Bh19sBMO/gcVQSRdiJEeNgg4S9Ej4i4FePu8irCkB1PgIgxBbRjy4PXSe09sKkDnpIDQ%2BI7iJBuO1eINwF7NzqTcKoTcOBHwvmE9hd8H6lOCRwG4x9T7n1QV3dhj8tBlN0cQDIThJBAA)
+
+In this library, we compose functions using `Trip` or `ClassicTrip` from various namespaces. Both behave similarly to the dot `.` in Haskell.
+The `ClassicTrip` pulls the alias member `type` out of the instantiated function when the next function requests a `typename`.
+Meanwhile, the `Trip` directly passes the instantiated function as a `typename` if requested by the next function.
+
+```C++
+template<typename...Args>
+using FunGun = Mouldivore::ClassicTrip<Gun>
+::Road<Fun>
+::Commit
+::Mold<Args...>;
+
+template<template<typename...> class...Args>
+using VoidifiedFunGun = FunGun<void>
+::Road<Args...>;
+
+template<template<typename...> class...Args>
+using FunGunPun = Roadrivore::Trip<Pun>
+::Flow<VoidifiedFunGun>
+::Commit
+::Road<Args...>;
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgOykrgAyeAyYAHI%2BAEaYxBIaABykAA6oCoRODB7evgGp6ZkCoeFRLLHxXEm2mPaOAkIETMQEOT5%2BXIF2mA5Zjc0EJZExcQnJCk0tbXmdtpODYcPlo1WJAJS2qF7EyOwcAPT7ANQeKQCexHjACARHZhpmkkcAYozARwCyqFSGJhoAgocjkJlAARAAaAFpQrsGEpIQBJLCCPA0UZHf4pJjIBCYSFmAB0Gj%2B/xJ%2BwAVJTyS8vAwjlTyfsSQRMCwUgYWSYAMxuAhnFKMViYAki7nYEkTYheBw0hgkkz%2BKwAo4qo4stkczDc3ms9lMTk8vkC5hsEUEsVHZAGBQKM1ikmqo6S6W3ZTEVBEABKqCY6AdqoVSv%2Bjsd6r1BrcTC8RDtXPFypDKudMrdHtQyiYwC1CcTgf9idDus12rDxZ5UZjorjluttqr8eDBcdydd7q9TDo%2BabRzzOe7zaajmQloEE0wqhSxCO0VQniOADcxF5MD3FQQpVr/KDuRYe32mwrt1yg12m6X9VrDUWL9qK6hY9ga0wbWahJgAI7Lhi7BT2/cFrwMiMI5PQ7Wgey5UEjlTdtOx5N9P0YH8Hx3U8Ay3VCATQlVzwjO8zQANWaPAmGiehfzjbCjkAsJ3gzLMIKgmD00zS83CIy5SPIlDjy7Q9MNJPtcLY4SS35QVTXrJ8XxFDxBA7cJiAohtHRo4DvV9RjoLbVANL9Hk5KaRYlJ4k8MN4rCAQpKkjgAcVpekqSZAFRMNcSTRXbB6DYQQ/3%2BFs7NpeVFS7NT3iNFduSgrzWUYAgBP4izBMBBloIchlnP%2BVydQ1G83ONIUH2khQjgAeQFYh9SyPyAuUIKsJCoTrwjCKPLNGKfIIZTQqA94vlodAtPKuIqoEbUOriutzUopLEpPKzUq%2BLwBrwecSHYEA3FrPBkAAFUuFJHMpTKPIULFdk%2BLYVrW4hIsa5Lsse9zCqkq1nxK0D8FQGr1xdE5tr2g7gqDQtcpa5qROeyTpsfN6bROZo/IHKUUx0vS%2BPupsAo8FgWEIKje0bbsnoK6GhCuZhaG6/8QzCy6Bq0yNiDE0mV0%2BpxtXJ4BKamsUQBACL7SSg9zJB9Cj3mom1QhksZfyiThVe2szX%2BYBbtiwRqalum9K05j0Z5VX1c63mZrMiX5Qa7dLJSmy9MuG6Nv2vBDoyklTvOtmfXQB31tXSXHrlnLw0h1mirh03YdrEDfQ5yiAQC52UmBrtA7BkSg9al6YeK8Po6ZpHVVqnTnloVAAHcMbFxNsdQXH8Zp/2qNVNOQ5ZhW8/e18KbELX%2B2o3qQO9xnEZ5dnvvgnuqYffnhPp/TxWFgs5oxi2bdBtur3T2Xt/ltqla7g%2BZIJI3MA1rrC5VOnS4rvWS7LyvDbVs%2BTdM4K1%2BS/ibesylZXsuk3YuUzlDRWJ9iDAC1tfWk/8tJLWuutfmW13o7STtqf%2Bfl%2BYGzcM8IK8d/iILrnjeKAJ%2Bb9X0m4f44DI4JQWjZAiqA8D4DROgHBDAYGAKypnYBYcj5TUoRAvydN6GMNRHgTALDoEOSin/XBbg1qMIwSALB/DqGzVob/Vh/86oAKcsyLhu9eQgM7sfFRgjB6aNpNorS9tVoIJAKgnk2jFE30fuxBhTCxESLYbghsBD67EPwUo722oVFv2/gyCJkTMo/2pLtTAEwSocJiZEiJmV5RmC5GEK0XgsAQTcGgb8mAUgXzwXogxWdoY/RRrcfhND/KDh2gAfXenEAgEAJjoH5goIUzSKLYMkQwJxhtwFilIJbf4rC0GyPkQvWe4lFFYKGRQkZcZSGeAXuMsUawdwcA2LQTgABWXgfgOBaFIKgTgbhrDWCdFsHYkUMk8FIAQTQuyNgAGsQAHMkESSQnQuQaAOQ8AAbMCswiRkj7I4JIXgLAEgaFICcs5FyOC8AUCABFLzTm7NIHAWAMBEAgC2AQFI0ZyCUDQGyOgcQIhCk4KoRIwLITAqeMAZAw4pAEjMLwcRhASCML0PwQQIgxDsCkDIQQigVDqGxaQXQXBSDl0qikTgPA9mHOOa885nBSrRlJbcb4RwGVMpZUcNlHKflmCOBAHGKRqVTnMFyLgaxeBYq0BsCASBKV2voGQCgEBvX2pAMAKQZg%2BB0BZEpSg0QtXRDCM0M4qreBxuYMQM4pVojaB6Fip5lLOqlQYLQRNsqsDRC8MASMtAqZJtIFgFghhgDiBLXgW6vR5zxK1eOHo0Y9hPLCCyKFZzaB4GiJVNNHgsBavXHgOF3BeDtuIDOJQoJWQNuHUYV5GwqAGAgQRMR5dhonKeUK4QohxDipPVKtQWr5X6AbSga5lh9AjvRZADYqBilZHRRwSEHSoqmEsNYe4vBUALsuFgV9EANjdF6M4CArhpgdCCAwdAQwygVD0GkDI9RsieHaJhwoOG0MjEqDUOofR5iIb0DBnD/QWjEeWKRiYAwqMKuY/RxY6GVjQbubsCQ6qOBHMRVqlFRrGXMtZeyo4nKrUQFwHyh1jyXXPM3RsXEvpRhQdIJ8yQXICQAE4uT%2BEkBoSQjxgUaEBcC/T%2BhOAwtIHCp1BJgVcGBYkfTiRXPfK4AcwzwLhOypRWijFKnsUeoJZ6oleqyX%2BsDb62lbBODNBYPOfwkImBPmAlwfTBIuBEh5fgIg4HBWyBFee6Ql6lDXtlboMNSqmAqrnQJoTSKQM6uiwaqgRxkupfS5l942XctEmtba%2B1PYMlmGU26nFkW4txHJQGuuPrRg9bS29Iw2WqjhtoJG9FEAY2ypTQmmtR200ZqzQ4Gtea4oFqLVq0t5bK3VrnbW1dRgm1nPwK2xw7bv1nK7cgHtNb%2B21C1cO0dCaJ17DOdO2dTyF1LswCu%2Bt73aKbr4DuhQe7MAHuNDWk9ZWxUVdkFemVZzat3o3QBqwT7weQffZ%2B0cnBf0EH0qCanQHkVgcYR2t9ZHs1ZBcCh1jyHUOcZIwR7DWQRdYaKAwBjGG2O1AFw0SjeGZj89gwwOjCxSgS7Y2r3ISH2O66WIrnj2w%2BPOts4JzVgXODdeICltLGX1sDZy3ljQ1r5NFfG06qbqnSDqawPELTUL7OOZy6Z/wvn/D%2BC5GZyQLKFWte1ai2wIXpvhfgJF4l%2BqFtzeIAlvYyXTUsAUPOYc85BuagmAVhTAqFUE7PUTiV8gqtk50CALkirlVJua3b5F7WSXRiOIa0vTxy%2BV4XDXi8EwRtLbG46rkAewu4q9Yv31BfN%2BjErykFIjTq/6cabXggzSncsu27t6Nsb41ppO3f9Nmbs1XcITdwtxbPuYDLRWsQz2nl1prrQ68BfYC6/adqqDdosjA6CCg6yrg5jpnBQ5TqXBw7zpxCI7I5rpo5r7bqZhY77qHr46lYt4SDE6Sod43rd6U7GCPo2B07wAM44bfr7AdIPqAaWDAbnLc4QaMGa44ZC7uDq5IYhDi6MaS5y4y6EZZAK4rD8EUYsbCHUbK5a466yFMaG74YG4DDqH8abCW5ioD4BZD4cCO4sBl4V5V6z4sjz5yaFYkB%2B7OquqB7B6aYCYR4gBmA5ZchcgHJAp/KWY%2BH%2BBubGFtbp7oqYqB46YHIGYHKJBmDWaSD6bx5GZcA95QpciD5hHOFhYCbcqhFp45HuobALoZDOCSBAA%3D%3D)

@@ -25,11 +25,11 @@ type TeElTeElTy = Template (Ellipsis (Template (Ellipsis Typename)))
 -- template<typename...> class
 type TeElTy = Template (Ellipsis Typename)
 
--- template of type `template<template<typename...> class...>`
+-- Template of type `template<template<typename...> class...>`
 tem :: TeElTeElTy
 tem = undefined
 
--- arguments of type `template<typename...>`
+-- Arguments of type `template<typename...>`
 arg_0 :: TeElTy
 arg_0 = undefined
 
@@ -42,14 +42,14 @@ arg_2 = undefined
 arg_3 :: TeElTy
 arg_3 = undefined
 
--- create an argument pack
+-- Create an argument pack
 pack :: Ellipsis TeElTy
 pack = Dots arg_0 $ Dots arg_1 $ Dots arg_2 $ Dots arg_3 Empty
 
--- instantiate `tem` by the `pack`
+-- Instantiate `tem` by the `pack`
 result :: Typename
 result = instantiate tem pack
 
--- error silencer
+-- Error silencer
 main :: IO ()
 main = return ()
