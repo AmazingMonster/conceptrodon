@@ -8,6 +8,40 @@
 
 ## Diary
 
+### 2024/12/17
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Hello World</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove <code>Uni*</code> and <code>Duo*</code>. These conveniences are not consistent. The performance boost is not very visible.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/16
 
 <ul>
