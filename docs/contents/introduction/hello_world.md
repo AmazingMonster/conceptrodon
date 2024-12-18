@@ -3,6 +3,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Hello World
 
+- [Prologue](#hello-world-prologue)
+- [Implementation](#hello-world-implementation)
+  - [Failed Attempt](#hello-world-implementation-failed-attempt)
+  - [Adopted Method](#hello-world-implementation-adopted-method)
+- [Convention](#hello-world-convention)
+
+## Prologue<a id="hello-world-prologue"></a>
+
 Let us examine `boost::mp11::mp_bind_front`.
 
 ```C++
@@ -142,7 +150,7 @@ The result, however, is slightly arcane.
 Moreover, since each placeholder indicates a single item in a list, the function cannot express the rest of the arguments using a pack expansion.
 Therefore, we must decide beforehand the total number of the required arguments for the target operation, even if the operation is variadic.
 
-Alternatively, we can use `boost::mp11::mp_compose` to inject the result of `boost::mp11::mp_bind_front` to `boost::mp11::mp_fold_q` with the help of `boost::mp::mp_bind_back`.
+Alternatively, we can use `boost::mp11::mp_compose` to inject the result of `boost::mp11::mp_bind_front` to the first parameter of `boost::mp11::mp_fold_q` with the help of `boost::mp::mp_bind_back`.
 
 ```C++
 template<typename...Args>
@@ -224,7 +232,7 @@ static_assert(std::same_as<
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCAA7ABspAAOqAqETgwe3r56KWmOAkEh4SxRMQm2mPYFDEIETMQEWT5%2BXJXVGXUNBEVhkdFxiQr1jc05bcPdvSVlgwCUtqhexMjsHMxsCklMqwDUALJLtPgAbiSYuyaxVhoAgiZ3APQAVK/PuwBinugBmFQEuzez0eD1uBEwLCSBnBJgAzG5wZDoZg4QiAJ5JRisTAAOjxcOwu2QBgUCl2AHlMcQmDUCaDhsQvA5Pt9fv9QVcbrddjzdoioTSUfCCBisWxdgBJBjpGkkOl3Xm7BlMgHKYioIiHY6gxWcnWK3n85GokWYja4vHYehsQQKeXcg085XMgAimHqdEu1yuLrhXP1jsej12FiYSl2bjD7A5CsduyDLOOuwEqxxAYNRsFJtF5t2VohjAI9rjSoIjNd7qYdFR%2BZtRdh2HTuu9sZLPK8aSMfNFl1hLopVJpGVRUplRDIeethbpsK5JZ9fpjDsDwa%2BSYIAHc8Kmm4aIQKYcKc9jPnhiMNSN2zSehJg0Ax0MW486AW6PbRUR8zxfdrf74%2BG13Hk9VbNsO2CYArxRUD5z7XlKWiIcBFRIC2wQ6laXhVC215UdHFlCcv3PIsYJw3tsEvP8BEfUicJnOc4wXWclxLBMACU72WNITguSMlBAFi4wTNd0D5LdVkvBBDHQeg%2BQQC4aGIsTUF2bZqTYcFz1IVCE2k3ZiE488LnArsCHk/TMGGNNaL5fdjSPa9xSIn9TTFC4qIfS9XPNPEcXJMzojtQCbJfXY3yrD94WcghKLvajL38%2BTz18p9HRA5cwM7SDXOw3k4X7NUNVQLUaIy2C3Fyx10KQhgUJsktqswir6rIvC8AIy9osqg0CVi/9ut1YKysYhsQBATNwTCytq3hRLApS0bxtFRcbKY/0bImoV0Uci0cVuYADILW1UoNEzIJK3t%2B3Cma3H2w66wUBbsDGnLmNAtbBJ5Tbsx23y7swI6CCCxtQLOg5vku3ZCs1b5UX%2BwHHvxQC3vuWJfRR0EXjeENgnQD51UEQE3hBO5vuFOyswctynqJEkyUa4chtCixcfx2QORbDKye26m8QsTBgGCaUjGB9NQuh4rYfezmS257zsV82tC1FmywYu/KB0Qpr%2BcFhhheARGcUvJXbSelaMo%2Bu50zl482F8nWhYglWMrViGNYlkrUQdvWnbNjG0fNjnfStq2zFhYJiS8LBLjMMwIlQVICEeSEuC4HEECSJJzDMJcwfNLYdguePE/NvPsQLvYU64QO7lCoQvAiMsdhI1GGK%2BinDx53Nbi822LisIbFTBqgGEhyEAH0TjELwttuMap%2B8C4AFoQ3n6ehUbf30fW24wYANTHpJJ/X1Fq%2BRnewduYhgHHjRD%2BPxfUVhejQUv6/x64e%2BF5n1FJBfu4343zMF/E%2B8Jn7n1zllXYAR760DwMMOG78NCXivjfNouxUHjxzhAkOYIO5bXlnbPEqDnZgxZg%2BW4DANRJUhocLwxw8BnAMmNcheMCYtzqhlOhDCmHsBACJNk9Y3D10btSBwY0R4nTGp7eEe8pEgE9lbIa0jYbwhIX7HekxHDIHHmGJQjQIDDHQGNBQ2JdFBWahlVhlDqHREQTfZBGD35n2ego1Rt137YIoumCe/BjjjwAI6ogCJePelEG5NwcPaAkcw/QcAWLQTgABWXgfgOBaFIKgTgFVLDWCVEsFYFxzCwh4KQAgmh4kLAANYgCSRoHESTYQAA4zCSCaQATg0AkdpSSuBNOkIkjgkheAsAkBoZBaSMlZI4LwBQIBkHlPSfE0gcBYAwEQCAJYBAkheBihQCAaBIR0GiKEbEnBVBNPiEveIkhdjAGQMgXYUgcRmF4JgfA448DGLaPwQQIgxDsCkDIQQigVDqCWaQXQbQNzUiSJwHgCTkmpIqZkzg5Jdk7IBKgKguwLlXJuXch5TzJAvN2BADwRz6DEBjiUuYvBFlaAWBAJAhykjHLIPs1l7KQDACkGYPgdBNJzIgBEFFERggNDRPC3g4rmDEDROSCI2g7yLNKYcus5IGC0ClRCrAEQvDAEjLQWgczuC8CwCwQwwBxC6rPCqxhlkUWYFUJxcE0ryCCCqCiuBERqTyo8FgFFZY8CjLNaQHixB45KDdJaowcCjAVIWFQAwBs954EwBuBCaTSm/OEKIcQQLc2grUCiqF%2BgrUoGsNYfQeAIhzNgOaEAxcLwRvhZcypmSkg1FNUvIx%2BVTC5MsGYKZEbiBfMdZABYdh7XOAgK4MYrRSCBGCH0UoAw2h5HSAIBduRUhboYNMfoMQJhVBnbUEYTRPAtD0NOhwnQL2HrXce2wF6d0TAfSumY66p0FNWBIRFHAUmkEmbwaZuLLnXNufcx5zzgEQFwIQEgNKuB0rKYmhY8kmBYBiBAapIBJCwhxO02EsRJAaEkK0%2BI4yknxHafoTgwzSCjMkO0hpZgkmdJucR5psJ4ixGAyi6Zsz5loaWUy9ZzLNkYt2eQSgXKqWnLYJwBoLATixCXkwWmVqnmsbThk95iGx3fOBXmgFEhpBFqUCWiFuh%2BUwqYHCs1AGgMgdRRwdF2zdnJhxXiyDWmuxcF0ziO%2B5LUCUuiDSswqGGXLMk/J6IsmDlhbZVSlABgjCBa4MgmgtAhWUFFRC2Vkr3VFflYq5V4iw3qsLJq7VKK9UGqNSa91FqrU2oyfgAyd6eKmv0y65Auy1ilOCOCQZGSfV%2BrRAGtYGTg2htKRGqNmAY1tYgomvgKaFBpozVm91ub/kFos7IYt4KMm2fLQmgdVhLA1rrfACAjbm0xVbdwdtcwFioC7RkHtfa%2BxXesMO0Do7x31tw%2B0M9LgHxvqXQ%2BR9swN17pqNDzdNQ4frvB3egQXRRhXvGBjmo2OeifqPTe19uPF2TEaGj49P7lh/pQ/RwDyKIVgd8wS4k2nAs4j02ShD45kPRfQ6QTD2HKAAcY6MupOJJCkY0MRup8R4hcHiLCGjAmWecGEwsoXNSWPS6V7EXpcuw7kaabCRnsJmdTM16JxlAHXnq%2BtzM23HaI1pGcJIIAA)
 
-## Implementation
+## Implementation<a id="hello-world-implementation"></a>
 
 In the terminology of `boost::mp11`, the phrase 'quoted metafunction' refers to a class containing a metafunction member `fn`.
 In a sense, the surrounding class acts as quotation marks.
@@ -246,7 +254,7 @@ Using such members is similar to quoting texts from an article--we quote members
 Therefore, for the purpose of this library, the term 'quoted metafunction' is better used to describe the member templates, and  'returning a quoted metafunction' returns a member template without quotation marks.
 Following this thought, we will implement our metafunctions in such a way that the contexts are provided in steps, allowing manipulations to happen within each step before finally returning a quotable result.
 
-### Failed Attempt
+### Failed Attempt<a id="hello-world-implementation-failed-attempt"></a>
 
 One way to do so is to accept different kinds of parameters using nested class member templates.
 We will soon see the limitations of this method.
@@ -282,7 +290,13 @@ struct Example
 };
 ```
 
-Assuming we are creating a metafunction that transforms the variable at a given position in a sequence, invoking the metafunction by `Metafunction<Transformation>::Page<Index>::Page<Variables...>` is impossible since class member templates with the same name cannot appear adjacent to each other.
+Assuming we are creating a metafunction that transforms the variable at a given position in a sequence, invoking the metafunction by
+
+```C++
+Metafunction<Transformation>::Page<Index>::Page<Variables...>
+```
+
+is impossible since class member templates with the same name cannot appear adjacent to each other.
 Note that `::` indicates a nesting relationship on this occasion.
 
 One solution is to add a separation structure between the class and its problematic member.
@@ -301,4 +315,573 @@ struct Example
         };
     };
 };
+```
+
+Recall the metafunction we wanted to create earlier.
+Invoking the metafunction by
+
+```C++
+Metafunction<Transformation>::Page<Index>::Slash::Page<Variables...>
+```
+
+is now available.
+
+However, this creates another problem.
+Assume we inherit `Page` to a new name, say `Road`.
+
+```C++
+template<typename...>
+struct Example
+{
+    template<auto...>
+    struct Page
+    {
+        struct Slash
+        {
+            template<auto...>
+            struct Page
+            {
+                static constexpr bool value {true};
+            }; 
+        };
+    };
+
+    template<template<typename...> class...>
+    struct Road: public Page<> {};
+};
+```
+
+Since the name of the surrounding class changed to `Road`, the separation structure surrounding the nested `Page` is unnecessary, yet we still have to go through `Slash` to access this inherited `Page`.
+
+```C++
+static_assert(Example<>::Road<>::Slash::Page<>::value);
+```
+
+In addition to this, assume the inherited `Page` contains a member also called `Road`.
+
+```C++
+template<typename...>
+struct Example
+{
+    template<auto...>
+    struct Page
+    {
+        template<template<typename...> class...>
+        struct Road
+        {
+            static constexpr bool value {true};
+        };
+    };
+
+    template<template<typename...> class...>
+    struct Road: public Page<> {};
+};
+```
+
+A separation structure is needed since `Page<***>::Road` has the same name as the new surrounding class.
+Otherwise, the constructor of the descended `Road` will hide the name of the inherited one.
+We can no longer access the inherited `Road` from `Example<***>::Road<***>`, as `Example<***>::Road<***>::Road` will always refer to the constructor of `Example<***>::Road<***>`.
+
+```C++
+// Error
+static_assert(Example<>::Rail<>::Rail<>::value);
+```
+
+These behaviors are not predictable by higher-order metafunctions.
+Probing into arguments' inner structures to cross potential separation structures is necessary before every operation, which is complicated and inefficient.
+
+I first wrote the library using this method.
+Convoluted machinery was employed to remove or add separation structures whenever necessary.
+As a result, I implemented a seemingly simple metafunction `Skip` using pages-long macros and still could not handle all the cases.
+The added complexity was daunting and opposed to the goal of making metafunction composition intuitive.
+I gave it up.
+
+### Adopted Method<a id="hello-world-implementation-adopted-method"></a>
+
+After studying `boost::mp11` and `kvasir::mpl`, I adopted another approach, which uses alias member templates for interface and class member templates for implementation.
+
+Consider the following example:
+
+```C++
+template<typename...>
+struct Example
+{
+    template<typename...>
+    struct ProtoMold 
+    {
+        struct Slash
+        {
+            template<typename...>
+            struct ProtoMold 
+            {
+                struct Slash
+                {
+                    template<typename...>
+                    struct ProtoMold 
+                    {
+                        static constexpr bool value {true};
+                    };
+                };
+            };
+        };
+    };
+};
+```
+
+We still face the problem as before.
+Separation structures are necessary between adjacent class member templates with the same name.
+However, since the name of an alias template won't be injected into the instantiated class that it eventually refers to, we can reuse the name inside the said class.
+
+```C++
+template<typename...>
+struct Example
+{
+    template<typename...>
+    struct ProtoMold 
+    {
+        struct Slash
+        {
+            template<typename...>
+            struct ProtoMold 
+            {
+                struct Slash
+                {
+                    template<typename...>
+                    struct ProtoMold 
+                    {
+                        static constexpr bool value {true};
+                    };
+                };
+    
+                template<typename...Agreements>
+                using Mold = Slash::template ProtoMold<Agreements...>;
+            };
+        };
+    
+        template<typename...Agreements>
+        using Mold = Slash::template ProtoMold<Agreements...>;
+    };
+
+    template<typename...Agreements>
+    using Mold = ProtoMold<Agreements...>;
+};
+```
+
+This means the navigation within a class can be hidden inside the aliases, which consist of the interface of our metafunction.
+The arguments will be redirected to class templates for further processing.
+Since the class templates are not exposed to the users, we are not forced to name them following a rule.
+For example, we can avoid adding separation structures by using the names `ProtoMold_0`, `ProtoMold_1`, and  `ProtoMold_2`.
+However, we will follow the convention at the end of this article.
+This is because some metafunctions are implemented using macros.
+The fewer unique names there are, the fewer macros I need to write and the fewer mistakes I would make.
+
+However, this method brings a new problem.
+Since the interface of our metafunctions primarily consists of alias templates, a peculiar behavior of alias templates must be noted.
+
+Consider the following example:
+
+```C++
+template<typename...>
+struct Example
+{
+    template<auto>
+    struct ProtoPage {};
+
+    template<auto I>
+    using Page = ProtoPage<I>;
+
+    template<auto...Variables>
+    struct Detail
+    {
+        // Error
+        using type = Page<Variables...>;
+    };
+};
+```
+
+It fails since pack expansion cannot be used for a non-pack parameter when instantiating an alias template.
+To circumvent this limitation, we require the parameter list of every interface alias to contain one parameter pack and nothing else.
+This restriction is also shown in our definition of `conformed metafunctions`.
+Such metafunctions are the primary focus of this library.
+We will discuss them in Vocabulary.
+
+Following this restriction, we must introduce a layer of indirection when implementing `Capsule`.
+
+```C++
+template<typename...Elements>
+struct Capsule
+{
+    template<template<typename...> class Container>
+    struct Detail { using type = Container<Elements...>; };
+
+    template<template<typename...> class...Agreements>
+    using Road = Detail<Agreements...>::type;
+
+    // Instead of: 
+    // template<template<typename...> class Container>
+    // using Road = Container<Elements...>;
+};
+```
+
+This is the method used throughout the library.
+
+## Convention<a id="hello-world-convention"></a>
+
+The following example shows the complete layout of a general function.
+
+```C++
+// Define dummy placeholders for readability.
+#define TEMPLATE_PARAMETER_CATEGORY auto
+#define TYPE int
+#define VALUE true
+#define CONTENTS
+#define IMPLEMENTATION int
+#define POSSIBLY_A_TEMPLATE
+
+template<TEMPLATE_PARAMETER_CATEGORY...>
+struct Example
+{                
+    using type = TYPE;
+
+    static constexpr auto value {VALUE};
+
+
+
+
+    template<typename...Elements>
+    struct ProtoMold
+    {
+        struct Slash
+        {
+            template<typename...Arguments>
+            struct ProtoMold{};
+        };
+
+        template<typename...Agreements>
+        using Mold = Slash::template ProtoMold<Agreements...>;
+    };
+    
+    template<typename...Agreements>
+    using Mold = ProtoMold<Agreements...>;
+
+    template<typename...Args>
+    using Mold_t = Mold<Args...>::type;
+
+    template<typename...Args>
+    static constexpr auto Mold_v {Mold<Args...>::value};
+
+
+
+
+    template<auto...Variables>
+    struct ProtoPage {};
+
+    template<auto...Agreements>
+    using Page = ProtoPage<Agreements...>;
+
+    template<auto...Args>
+    using Page_t = Page<Args...>::type;
+
+    template<auto...Args>
+    static constexpr auto Page_v {Page<Args...>::value};
+
+
+
+
+    template<template<typename...> class...Containers>
+    struct ProtoRoad {};
+
+    template<template<typename...> class...Agreements>
+    using Road = ProtoRoad<Agreements...>;
+
+    template<template<typename...> class...Args>
+    using Road_t = Road<Args...>::type;
+
+    template<template<typename...> class...Args>
+    static constexpr auto Road_v {Road<Args...>::value};
+    
+
+
+
+    template<template<auto...> class...Sequences>
+    struct ProtoRail {};
+
+    template<template<auto...> class...Agreements>
+    using Rail = ProtoRail<Agreements...>;
+
+    template<template<auto...> class...Args>
+    using Rail_t = Rail<Args...>::type;
+
+    template<template<auto...> class...Args>
+    static constexpr auto Rail_v {Rail<Args...>::value};
+    
+
+
+
+    template<template<template<typename...> class...> class...Warehouses>
+    struct ProtoFlow {};
+
+    template<template<template<typename...> class...> class...Agreements>
+    using Flow = ProtoFlow<Agreements...>;
+
+    template<template<template<typename...> class...> class...Args>
+    using Flow_t = Flow<Args...>::type;
+
+    template<template<template<typename...> class...> class...Args>
+    static constexpr auto Flow_v {Flow<Args...>::value};
+
+
+
+
+    template<template<template<auto...> class...> class...Stockrooms>
+    struct ProtoSail {};
+    
+    template<template<template<auto...> class...> class...Agreements>
+    using Sail = ProtoSail<Agreements...>;
+
+    template<template<template<auto...> class...> class...Args>
+    using Sail_t = Sail<Args...>::type;
+
+    template<template<template<auto...> class...> class...Args>
+    static constexpr auto Sail_v {Sail<Args...>::value};
+
+
+
+
+    template<template<template<template<typename...> class...> class...> class...Sorrow>
+    struct ProtoSnow {};
+
+    template<template<template<template<typename...> class...> class...> class...Agreements>
+    using Snow = ProtoSnow<Agreements...>;
+
+    template<template<template<template<typename...> class...> class...> class...Args>
+    using Snow_t = Snow<Args...>::type;
+
+    template<template<template<template<typename...> class...> class...> class...Args>
+    static constexpr auto Snow_v {Snow<Args...>::value};
+
+
+
+
+    template<template<template<template<auto...> class...> class...> class...Melancholy>
+    struct ProtoHail {};
+    
+    template<template<template<template<auto...> class...> class...> class...Agreements>
+    using Hail = ProtoHail<Agreements...>;
+
+    template<template<template<template<auto...> class...> class...> class...Args>
+    using Hail_t = Hail<Args...>::type;
+
+    template<template<template<template<auto...> class...> class...> class...Args>
+    static constexpr auto Hail_v {Hail<Args...>::value};
+
+
+
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Silence>
+    struct ProtoCool {};
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Agreements>
+    using Cool = ProtoCool<Agreements...>;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Args>
+    using Cool_t = Cool<Args...>::type;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class...Args>
+    static constexpr auto Cool_v {Cool<Args...>::value};
+
+
+
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Tranquil>
+    struct ProtoCalm {};
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Agreements>
+    using Calm = ProtoCalm<Agreements...>;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Args>
+    using Calm_t = Calm<Args...>::type;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class...Args>
+    static constexpr auto Calm_v {Calm<Args...>::value};
+
+
+
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>
+    struct ProtoGrit {};
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Agreements>
+    using Grit = ProtoGrit<Agreements...>;
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Args>
+    using Grit_t = Grit<Args...>::type;
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Args>
+    static constexpr auto Grit_v {Grit<Args...>::value};
+
+
+
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>
+    struct ProtoWill {};
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Agreements>
+    using Will = ProtoWill<Agreements...>;
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Args>
+    using Will_t = Will<Args...>::type;
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Args>
+    static constexpr auto Will_v {Will<Args...>::value};
+
+
+
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Sunshines>
+    struct ProtoGlow {};
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Agreements>
+    using Glow = ProtoGlow<Agreements...>;
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Args>
+    using Glow_t = Glow<Args...>::type;
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...Args>
+    static constexpr auto Glow_v {Glow<Args...>::value};
+
+
+
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>
+    struct ProtoDawn {};
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Agreements>
+    using Dawn = ProtoDawn<Agreements...>;
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Args>
+    using Dawn_t = Dawn<Args...>::type;
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Args>
+    static constexpr auto Dawn_v {Dawn<Args...>::value};
+    
+
+
+
+    struct Commit
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+
+    struct Launch
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+
+    struct Ignite
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Kindle
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Prompt
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Propel
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Settle
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+    
+    struct Finish
+    {
+        template<typename...Agreements>
+        using Mold = IMPLEMENTATION;
+    };
+
+
+
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto idyl(...) {};
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto lark(...) {};
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto ease(...) {};
+    
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto free(...) {};
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto glee(...) {};
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto glad(...) {};
+    
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto rosy(...) {};
+    
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    static consteval auto rapt(...) {};
+
+
+
+
+    template<TEMPLATE_PARAMETER_CATEGORY...>
+    struct Detail 
+    {
+        template<TEMPLATE_PARAMETER_CATEGORY...>
+        struct Hidden 
+        {
+            template<TEMPLATE_PARAMETER_CATEGORY...>
+            struct Secret 
+            {
+                template<TEMPLATE_PARAMETER_CATEGORY...>
+                struct Covert 
+                {
+                    template<TEMPLATE_PARAMETER_CATEGORY...>
+                    struct Veiled 
+                    {
+                        template<TEMPLATE_PARAMETER_CATEGORY...>
+                        struct Trivia
+                        {
+                            template<TEMPLATE_PARAMETER_CATEGORY...>
+                            struct Unsaid
+                            {
+                                template<TEMPLATE_PARAMETER_CATEGORY...>
+                                struct Untold {};
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
+
+#undef TEMPLATE_PARAMETER_CATEGORY
+#undef TYPE
+#undef VALUE
+#undef CONTENTS
+#undef IMPLEMENTATION
+#undef POSSIBLY_A_TEMPLATE
 ```
