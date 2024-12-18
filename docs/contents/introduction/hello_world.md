@@ -137,10 +137,41 @@ static_assert(std::same_as<
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIaa4AMngMmAByPgBGmMQgAMxxpAAOqAqETgwe3r56KWmOAsGhESzRsWYatpj2BQxCBEzEBFk%2BftJ2mA4Z9Y0EReFRMfGJCg1NLTlctmN9IQOlQxUAlLaoXsTI7BzmcSHI3lgA1OZmkaipBAD0LElcXAB0CElJJyYaAIJv715pRofMbAUSSYm0OZwuJjiVg%2BPxCwH%2BrEwQJBmEONzukOhnw%2Bo2IXgchyEXkiBGIIIIXxMAHYsYc6YcCJgbgZGZC3AQAJ5JRiIw7vUgMrk8tiHKxxbBfemHWF/KgMY5xAAiaKSAH0AG5iLyYNnvEAgTXeVEAWlF%2BsN2shEqhlKpisxlJhv3hADUFcqbhqtTq4m4uFaHR8vjL4e9iMBVRp3SqvUa2XEAzanXC%2BeHVVxo56LT63JJE1iQ6mI2ZM2rs/H847vs7DoFS6raHhRmys96K%2BKBa24768x2Y%2BXfQnxZWgx9GcymKzfZzuQDMPcF2HgAoA8m/hYQuh65FN5TfZL6Z7%2BLR0KqAI6kA90z07hjoFtqxujAVLyMvtNTQ6qofYS8fKXpn%2B7wAWYe4Sh8%2Bpyrq4YKAu9wjti7yjJOeDIKqTAKEoTQQKM6D6goiLoSu%2B7/vSG53myLoCkSJJkg477FlaQFSkeninmebKBAKVGEsSpLkqunziksmIcCstCcAArLwfgcFopCoJwbjWNYhwKGsGyojsPCkAQmhiSsADWICSRo9ySXEAAcZiSJZACcGhUgAbHZklcJZ0gSRwki8CwEgaJUsnyYpHC8AoICVHpcliaQcCwDAiAgGsBBJF4BDkJQaA3HQMRhIinCqJZTnGk5kiHMAyDIIcUj3GYvCYPgRDEHgeFTPwggiGI7BSDIgiKCo6jRaQuhTAA7mSSScDw4lSTJ%2BkKZwADyaWpQQhyoFQhyFcVpXlZV1WSLVhwQB42X0MQxxmHEXBLLwUVaCsEBIFlSQ5WQFAQC9b0gMAUhmHwdCMsQ4UQJE823o0HJTbwEPEByi2RNonRRTpWVsIIi0MLQUNDVgkReMAbhiLQ4XcLwWAsIYwDiLjeDEMjeDqki82YKonRpVsOkhIyXnyY2kRknDHhYPNpJ4H5ZOkEzxBnEoipMlTjZGPpKxUAYy4ungmCjYts7Q71wiiOIPXtfIShqPNI36FTKAqZY%2Bh4JE4WwHOIDgs%2B0tTUVBkKUktSk8auGQoqpiWNYFS8Kg0vNVgzsQCsHRdM4ECuBMfhTEEcwlGUuSpOkAhp7n%2BQZP02dDFMie1D04yeK0eiV90Myl4MsQVzMhdt70zcLK3CcaZsEgzRw0mkEFkecFtRUlWVFVVTVJYQLghAkJd123bpKsrAgmBMFgsTx6QxmSHE9x2XEVKSBokg2U5AWSS5%2BicD5pB%2BZIdnmWYkkOaVZ9WXETlUlHvNEKYUIob2io9BKT0korTShlT6qAzq5XyhwRoLB1RUmNEwQ4%2BwqbVXfg8eSDVl4xz0KbTqxtpCm36hbIauh/rjSYJNMmQ8R5jwWhwZaKU0rrU2ttaeOCDB/C4AQ%2B4UYTqINeudVeZh173RitAr6514FKKGLgowIiuCVBoLQIGIMwZDVhjjHSRiEZIwcPrNGjACCY2xvNPGBMia0BJvrCmistjyXwPTLoTNSZELZsgDm%2BtubVHmvzQWHJhYeLus1CWOlpay0wPLSmRglagAgXwdWChNba11owfW5CjbdSobIGhg15L0OtsrUOVh7b8zjhAV27t0qe24N7JYKxUB%2BwyAHIOSoanh2CtHFqzNIAJ2qAzZOqda6TFIJnYoLci750yDM9OyQ861G7jnCuEyk51Hbqs%2Buuyq5NyzoszuNdshrOQk0LZ5c%2B7rAHjdR%2Bw85pDRCpPHaZV1HwhEfcQhx0l5NVXjdO6m9SDb13kMA%2BXln5%2BVMvcSQF8NBn1Mk5JyXAnJxHvkA95nBQGRXBUfd%2BkgMVUjciiq6V9LKJC8nEN5wV8XgIekPOquLGWhWZT7aWaRnCSCAA)
 
 `boost::mp11::mp_bind` works creatively.
-Not only does it replace the placeholders in its argument list, but it also detects the `binding` structure in its arguments and replaces their placeholders accordingly.
+Not only does it replace the placeholders in its argument list, but it also detects the 'binding' structures in its arguments and replaces their placeholders accordingly.
 The result, however, is slightly arcane.
 Moreover, since each placeholder indicates a single item in a list, the function cannot express the rest of the arguments using a pack expansion.
 Therefore, we must decide beforehand the total number of the required arguments for the target operation, even if the operation is variadic.
+
+Alternatively, we can use `boost::mp11::mp_compose` to inject the result of `boost::mp11::mp_bind_front` to `boost::mp11::mp_fold_q` with the help of `boost::mp::mp_bind_back`.
+
+```C++
+template<typename...Args>
+using BindAlt = mp_compose
+<
+    mp_bind_front<mp_list, Arg_0, Arg_1>::fn,
+    mp_bind_back<mp_fold_q, V, Subtract>::fn
+>
+::fn<Args...>;
+
+static_assert(std::same_as<
+    BindAlt<Arg_2>,
+    mp_fold_q<L, V, Subtract>
+>);
+
+using Arg_3 = mp_value<2>;
+
+using L_1 = mp_list<Arg_0, Arg_1, Arg_2, Arg_3>;
+
+static_assert(std::same_as<
+    BindAlt<Arg_2, Arg_3>,
+    mp_fold_q<L_1, V, Subtract>
+>);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISRqkrgAyeAyYAHI%2BAEaYxBIAHKQADqgKhE4MHt6%2B/oGp6Y4CoeFRLLHxXEl2mA6ZQgRMxATZPn4Btpj2RQwNTQQlkTFxibaNza25HQrjA2FD5SNVAJS2qF7EyOwc5gDMYcjeWADU5mbRqGkEAPQsyVxcAHQIyclnJhoAgh%2BfXulGx2YbAUySYW2OFyuJl2Vi%2BfzCwEBrEwILBmGOdwe0Nh3y%2BM2IXgcxyEXmiBGIYIIPxMAHYcccGccCJg7gZmdC3AQAJ7JRjI46fUhMnl8tjHKy7bA/RnHeEAqgMU67AAiGOSAH0AG5iLyYDmfEAgbXedEAWnFhuNuuhUph1Jpyux1Lh/0RADUlaq7lqdXrdm4uDanV8fnLEZ9iMB1RpPWqfSaObsg3aXQiBZH1VxY96rX63JJkziw%2Bmo2Zsxrc4nC87fq7jsFy%2BraHgZvqM4ES5mhRHS9WQ19maymOz/dzeUDMI8pz2FEHUwCLGF0J9aARG2g7mk9SH/dLGd7okv1VRiLIOd7mzNu%2B3r1HA5LDQrSHuGQej9EwQBrc8a/i0dDqgAjkKbpCiSZIUg4NqPgw1KSj8MFtsAChTo8fa4p8MzDngyDqkwChKM0EAzOghoKMieGzruXwyouDDLquSHqmYNrPjR%2B6/p4AGARywQgWBpLkpSc7fJKyzBhhxY9uquyNpW/osfBKaSXWwSZo2l5Uv60kdtJXC3sxBlJkpOI/Fhji4fhhEEMRBCkSA5FsJRHIvuKS4rlpbjSWYRmsa53p/txvFdscoHEoJkFaVKO7YOJMIcKstCcAArLwfgcFopCoJwbjWNYxwKOsmzonsPCkAQmgJasn4gMlGiPMluwJGYkgJAAnBoNIAGxtclVTSElHCSLwLASBogTpZl2UcLwCggIEFUZQlpBwLAMCICA6wEMkXgEOQlAbskdBxBEyKcKoCRdaaXWSMcwDIMgxxSI8Zi8Jg%2BBEMQeCkfp/CCCIYjsFIMiCIoKjqEtpC6PpADuFLJJwPCJSlaWVVlnAAPK7Tta6oFQxwXVdN13Q9T2SC9xwQB4dzHcQpxmLsXDLLwi1aKsEBIIdtP7RAXP0PEwBSD5NCrnEc0QNEaOHswxBcojvDS00XIY9E2i1ItZUbmwggYwwtBy5DWDRF4wBuGItBzdwvBYCwhjAOIht4MQ6t4JqKJo5gqi1Lt2xlWEzKDZlzbRBSsseFgaPkngo1W6QbvEBcSjKiydvNkYlWrFQBjIW6eCYDDGPjvLIPCKI4jA398hKGoaPQ/odsoHllj6Hg0RzbAE4gJCV7x4jl1VVlyQ9JbpokdCyqmJY1hmFN8dfVg7cQKsNR1M4ECuJMfj6SE8xlBUegFBkAibwfaRHwwgx70snTdPUswn/pK89H0zSX8MlRjP0D%2Bf6/u/vxIy8ipbAAfoFGpBJq8GmgTS611br3Ues9MsEBcCEBIPTRmzNyoZ1WAgTATAsDxCXqQGqkhdiPDarsGkARJAtS6uNZKPVQFDRGv4NqDUzDJQ6jdChTVdhdRpOAtG01ZrzSwUtdm60OabWxrtHmfMTpnQ4E0FgmoaSmiYMcQ4dsnpsKeJld6qD556ErgDcu0hK5gxrpDXQPk4ZMARlbZGHBUqCMhtNLG21drHDxtAomt0tEAi4Lox4MYqaoBpvzdBZhMGs2WlI%2BRZAKC83CUdfmKADBGCCVwQIItmTEHFpLSGitZbF2KcrVW6ti5a0YAQXW%2Bs0ZGxNmbWgFti421TtsTK%2BBnZ1DdpbfRXtkA%2B2Lv7LoaNg6hy5OHTpLMvoxzKvHROmBk62yMGnUA4i%2BDZwULnfOhdGDFxMWXIG5jZCWIhplGx9d06TysM3YOi8ICd27ntXu3B%2B7LFWKgIemQR5jxVLc6es84jz3dpAZeXQXZrw3p4Noegd6lH/vpQ%2BPRv4osyG/RYH8n53y/rC3Ij9IWr16LMTF%2B9H733xVvH%2BcxEVYpAYVDYwCmZMJcRA9GHBfGwM0RkxEQTHh6Mpigz66CmYs2waQXB%2BCRhEMGsNUgo06qPEkFQjQFC6pdS6lwLquwGGuKmpwERC0JUkLYZILVNI%2BpqoZhoVquwmG7FRm4w1Yi2ZONevqyBLrYmfLjmLTI/ggA%3D%3D%3D)
+
+This method allows appending a variable number of elements to the end of the target list.
+However, the technique is convoluted and not so adaptable to general cases.
 
 Overall, I'd like the composition to be more intuitive and the technique shall be consistent throughout the library.
 The reason why we find it difficult to handle the target list in `boost::mp11::mp_fold_q` is that the list is sealed inside the container `L`.
@@ -156,7 +187,7 @@ struct QuotedFoldQ
 };
 
 template<typename...Args>
-using BindFrontQuoted = mp_bind_front
+using BindOpt = mp_bind_front
 <
     QuotedFoldQ<V, Subtract>::fn,
     Arg_0, Arg_1
@@ -164,9 +195,110 @@ using BindFrontQuoted = mp_bind_front
 ::fn<Args...>;
 
 static_assert(std::same_as<
-    BindFrontQuoted<Arg_2>,
+    BindOpt<Arg_2>,
     mp_fold_q<L, V, Subtract>
 >);
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwapK4AMngMmAByPgBGmMQgZv6kAA6oCoRODB7evgFBaRmOAmER0SxxCUm2mPbFDEIETMQEOT5%2BgTV1WY3NBKVRsfGJyQpNLW15nWN9A%2BWVIwCUtqhexMjsHOb%2B4cjeWADU5mYxqOkEAPQsKVxcAHQIKSnHJhoAgq9vXhlGB8xsChSTA2B1O5xM/is72%2B4WAf1YmEBwMwB2utwhUI%2B7zGxC8DgOQi8MQIxGBBE%2BJgA7JiDrSDgRMNcDAyIW4CABPFKMBEHN6kemc7lsA5WfzYT50g4w35UBhHfwAEVRKQA%2BgA3MReTCst4gEAa7wogC0Ir1Bq1EPFkIplIVGIp0J%2BcIAavKldd1Zrtf43FxLfb3p9pXC3sRgCqNG7lZ7Daz/P7rY7YbywyquFGPebvW5JAnMcGU%2BGzBnVVm43mHV8nQcQiWVbQ8GNWZmveWxfyW7Gfbn29Gyz742KK4H3gymUwWT6OVz/ijnfzp0KUQBFf3Ykl4ggHZdeVAM9AAMU86FXgepErpY5SzOzi9ndwfoeACjXb0lBdldf4tHQKoAjs2qoNk2PpPgoD53Ja/Lztuw4fLaAZYm8V43qyd4IhBYGvgWFjhIexCyDue6YOgdYxHhKpUARggUj6F60kR%2B5Hj%2Bq4%2BjBhLEqSDiWnqsqkPRhYRvyT5prR4rvLxDA6mG4EPnBnwzI4yAqkwChKC0EBjOgeoKAiKkvnR7ySrhDD4YRu77tJRZQQJHrfr%2BAE%2BiE0H8hxJJkq%2BlqLBiHDLLQnAAKy8H4HBaKQqCcG41jWAcCirOsKLbDwpAEJovnLAA1iAAUaHcAX%2BAAHGYkgFQAnBolIAGylQFXAFdI/kcJIvAsBIGhBCFYURRwvAKCAQSpaFvmkHAsAwIgICrAQKReAQ5CUGg1x0PEkQIpwqgFZVRqVZIBzAMgyAHFIdxmLwJGECQeDaVwMiCCIYjsFIt3yEoahpaQug3QA7qSKScDwfmBcF73dQA8rNM1bqgVAHBtW07XtB1HZIJ0HBAHhLfQxBHEkXCLLwg1aMsEBIItKTLWQFAQGTFMgMAUhmHwdAMsQfUQDE73kcwxDsv9vBc807KgzE2iYA4fOkItbCCKDDC0LzQ2kFgMReMAbhiLQfXcLwWAsIYwDiIr%2BDEGLjhqoi72YKoYuzZsyXhAyjVhQ2MSkjzHhYO9JJ4K12ukObxCnEoCqMvrDZGGlyxUAYz7OngmBfaDM4S/wd2iOIT2py9KjqIrn36PrKDRZY%2Bh4DEfWwLOIBgmM/vDNwm3peFKT1FrRpaRCCqmJY1hmF1AfEFdFuQMsdim1kLimZMfg3aE4SDBUww3YUmQCNPegr/UcxDAkN1jw4PTjK0njtHo%2B/1L0LTb4vu%2B2Ef6970f18LHjKxrBsEiAxwQWkJ1vDdbDTa21dr7UOsdYsEBcAXWxklfGKVI7LAQJgJgWAEgQEyiASQ/g7ilX8JSSQGhJDFUqu1AK1V9CcGaqQVqkhSp5TMAFcqO1cGFX8JVSkv8QacF6v1eBQ1ibjRJpNCGs15rU1QJjFaa0ODNBYGqSkRomAHD2PrI6dD7hhXOkQQe11nr3QztILOigc7vV0IzH6TA/ray/j/P%2B4VODg2mrNA40NAHw12io34XB1F3EjOjCR5MsY438GYOBhNhpCJpljMRUThiePpqVLgQQaC0BZmzDmisBY8wllkoWItTYSylowAgst5bvWVqrdWtBNYS11mHTYYVjbj3NlrTR1tkC2wlg7Wo70XZu3ZB7BpBNB6%2B2SgHIOmAQ56yMOHUA/C%2BAxwUHHBOSdGAp1kPox6hjZDGLennRIBcI7dysCXF2FcoBVxrnNAO/1G6LGWKgFuWQ24d0VMc3u/d4g6OHugro49nAQFcA/YIpln5L1SOkVe2QT55GXpCre895jgvPofPowKUUCEvv0RFO8z73xhTPO%2BswcU30/m/BKZLGq2K4RwNxwDlEGC8T4vxUDtHBLxgTBBpAkEoOGL8xqVDWo5TuJIfBGhcE5UqpVLglV/BkM4YrbqPCBpcqyrQkV0rKS1XFUkQhBVkiNX8MDRV3C%2BFEy/qdBVXVTXhPuXXVmE9JBAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIaa4AMngMmAByPgBGmMQgAMwAHKQADqgKhE4MHt6%2BeqnpjgLBoREs0bFmAOy2mPaFDEIETMQE2T5%2B0naYDpmNzQTF4VEx8UkKTS1tuVy2EwMhQ2UjVQCUtqhexMjsHOZxIcjeWADU5maRqGkEAPQsyVxcAHQIyclnJhoAgh%2BfXulGx2YbAUySY22OFyuJjiVi%2BfxCwEBrEwILBmGOdwe0Nh3y%2B42IXgcxyEXkiBGIYIIPxMlRxx3pxwImDuBiZ0LcBAAnslGMjjp9SIzuby2McrHFsD8Gcd4QCqAxTnEACIY5IAfQAbmIvJh2Z8QCAtd50QBaMUGo066GSmHUypK7HUuH/REANUVKrumu1uribi41sdXx%2BssRn2IwDVGg9qu9xvZcUDtudCP5EbVXBjXstvrckiTONDacjZiz6pzCYLTt%2BLuOgTLatoeHGevTGkF4cjM2LarMVeDXyZLKYbL9XJ5QPRrsF45F6IAioG8eTCQRjvOvKgmegAGKedCL4O0qUMofJVm52eTx43zsKJefaVF%2BUN/i0dBqgCO7K9TZbfrvG9HmtQVp3XftvntINcU%2BM8L3ZK9kSAu8HyLCwQnQAB5ZI12hT11UiDC1SoYhZGpP0T3pDct0wXd90XP0wJJMkKQca0DXlUhKJ7dsewDYMJR%2BDiGFbYAFCAiCfnGEc8GQNUmAUJQWggcZ0ANBRkXk%2B8KK%2BaV0IYLCcNE3sQO4r03w/b8/UCUDBWY8lKQfa0VmxDg1loTgAFZeD8DgtFIVBODcaxrGOBQNi2dE9h4UgCE0Ny1gAaxATyNEeTzEjMSQEgATg0SoADYcs8rgEmkDyOEkXgWAkDR218/zAo4XgFBAds4r8tzSDgWAYEQEANgIZIvAIchKDQO46BiMJkU4VQEgKk0CskY5gGQZBjikR4zF4WjCBIPA1JmfhBBEMR2CkGRBEUFR1E60hdBmAB3Clkk4Hh3K8nz4oCzhMJG4a11QKhjnmxbltW9bNskbbjggDxJvoYhTjMOIuBWXgOq0NYICQCbkimsgKAgfHCZAYApDMPg6CZYhWogSIfsI5hiE5d7eGZ5pOUwyJtG6DqYomthBEwhhaDZ%2B6sEiLxgDcMRaFa7heCwFhDGAcRJbwYh%2BbwDUUR%2BzBVG6EadhikImQq/ym0iClWY8LAfvJPAaqV0g9eIC4lCVZk1abIx4rWKgDDE108EwJ7sMYdmruEURxEuk75CUNQfse/Q1ZQELLH0PBIla2BJxASFxjdkZuAWhKApwzJFZNVS8NMSxrDMRr3eIQ79cgNYuh6ZwIFcKY/BmIIFlKco8jSDIBEHieCkyQYx5GGYe/qPpJk8do9BX3o5gX4ZYmXuYZ8P/o96WA/u4i7YJE%2BjhvNIBreCa0GFqWla1o2rbSwgXB9uR6KMaxQDmsBAmAmBYFiBAJK/g4iPBynESokgNCSCygVOqnkir6E4FVUgNVJA5XSmYTyeVlrwMSHEAq1RH6/WarYNqQDOo4z6rjAaAMRpjRJqgRG01ZocGaCwDUlQTRMGOIcNWm0CFPH8ntIg7cjoxzOvHaQicbop3uroKmL0mBvSVrfe%2B1Cmr/SGiNY4wMX7gxWmIgEXBJGPGjPDLhBMkYoziGYQBWMuosNJkjDh3iRhWIpjlLg7YaC0FpvTRm91Oas2jtE7mvN%2BbRyFowAgotxY/SljLOWtAFbRxVr7HY/l8Dax6HrRW0ijbIBNtHc2tQfrW1tpye2hTMbtxdjFd2ntMDe1VkYP2oBGF8GDgoUO4dI6%2BRionRRF1lGyFUXdfyGj07%2B0blYbO1t85QELsXUa7t3oVxWGsVA1cBC13rsqVZzdW4xDkZ3KBNQ6iZBcAZY%2BpAR4lH3rPKeWQN7TBSJPeoZ9x7L1qDrAQa9Wi/KHg8sFDRd6j0%2BSfdeORoXSRaECpel9NjX3Rlgu%2B317rPzBm/URBhrG2Psb/WRLj0aY2AaQUB4CRj3IqjgmqqVHiSEQRoeBqUCoFS4AVOIGCH4/Sai1ehHjDmkGSvgzlArKglR5ajZBCQ4h4riASxqnA6WMNvjtUVhKdUMOxmsd26RnCSCAA%3D)
+
+Conceptrodon was created based on this idea.
+By exposing different kinds of parameters using member templates, this library unleashes the potential of pack expansions and allows us to handle each kind of parameters independently.
+The previous example will look like the following if metafunctions from this library are used.
+
+```C++
+template<typename...Args>
+using BindAnother = Mouldivore::BindFront
+<
+    Mouldivore::FoldLeft<Subtract::fn>
+    ::Mold<V>
+    ::Mold
+>
+::Mold<Args...>;
+
+static_assert(std::same_as<
+    BindAnother<Arg_0, Arg_1>::Mold<Arg_2>,
+    mp_fold_q<L, V, Subtract>
+>);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCAA7ABspAAOqAqETgwe3r56KWmOAkEh4SxRMQm2mPYFDEIETMQEWT5%2BXJXVGXUNBEVhkdFxiQr1jc05bcPdvSVlgwCUtqhexMjsHMxsCklMqwDUALJLtPgAbiSYuyaxVhoAgiZ3APQAVK/PuwBinugBmFQEuzez0eD1uBEwLCSBnBJgAzG5wZDoZg4QiAJ5JRisTAAOjxcOwu2QBgUCl2AHlMcQmDUCaDhsQvA5Pt9fv9QVcbrddjzdoioTSUfCCBisWxdgBJBjpGkkOl3Xm7BlMgHKYioIiHY6gxWcnWK3n85GokWYja4vHYehsQQKeXcg085XMgAimHqdEu1yuLrhXP1jsej12FiYSl2bjD7A5CsduyDLOOuwEqxxAYNRsFJtF5t2VohjAI9rjSoIjNd7qYdFR%2BZtRdh2HTuu9sZLPK8aSMfNFl1hLopVJpGVRUplRDIeethbpsK5JZ9fpjDsDwa%2BSYIAHc8Kmm4aIQKYcKc9jPnhiMNSN2zSehJg0Ax0MW486AW6PbRUR8zxfdrf74%2BG13Hk9VbNsO2CYArxRUD5z7XlKWiIcBFRIC2wQ6laXhVC215UdHFlCcv3PIsYJw3tsEvP8BEfUicJnOc4wXWclxLBMACU72WNITguSMlBAFi4wTNd0D5LdVkvBBDHQeg%2BQQC4aGIsTUF2bZqTYcFz1IVCE2k3ZiE488LnArsCHk/TMGGNNaL5fdjSPa9xSIn9TTFC4qIfS9XPNPEcXJMzojtQCbJfXY3yrD94WcghKLvajL38%2BTz18p9HRA5cwM7SDXOw3k4X7NUNVQLUaIy2C3Fyx10KQhgUJsktqswir6rIvC8AIy9osqg0CVi/9ut1YKysYhsQBATNwTCytq3hRLApS0bxtFRcbKY/0bImoV0Uci0cVuYADILW1UoNEzIJK3t%2B3Cma3H2w66wUBbsDGnLmNAtbBJ5Tbsx23y7swI6CCCxtQLOg5vku3ZCs1b5UX%2BwHHvxQC3vuWJfRR0EXjeENgnQD51UEQE3hBO5vuFOyswctynqJEkyUa4chtCixcfx2QORbDKye26m8QsTBgGCaUjGB9NQuh4rYfezmS257zsV82tC1FmywYu/KB0Qpr%2BcFhhheARGcUvJXbSelaMo%2Bu50zl482F8nWhYglWMrViGNYlkrUQdvWnbNjG0fNjnfStq2zFhYJiS8LBLjMMwIlQVICEeSEuC4HEECSJJzDMJcwfNLYdguePE/NvPsQLvYU64QO7lCoQvAiMsdhI1GGK%2BinDx53Nbi822LisIbFTBqgGEhyEAH0TjELwttuMap%2B8C4AFoQ3n6ehUbf30fW24wYANTHpJJ/X1Fq%2BRnewduYhgHHjRD%2BPxfUVhejQUv6/x64e%2BF5n1FJBfu4343zMF/E%2B8Jn7n1zllXYAR760DwMMOG78NCXivjfNouxUHjxzhAkOYIO5bXlnbPEqDnZgxZg%2BW4DANRJUhocLwxw8BnAMmNcheMCYtzqhlOhDCmHsBACJNk9Y3D10btSBwY0R4nTGp7eEe8pEgE9lbIa0jYbwhIX7HekxHDIHHmGJQjQIDDHQGNBQ2JdFBWahlVhlDqHREQTfZBGD35n2ego1Rt137YIoumCe/BjjjwAI6ogCJePelEG5NwcPaAkcw/QcAWLQTgABWXgfgOBaFIKgTgFVLDWCVEsFYFxzCwh4KQAgmh4kLAANYgCSRoHESTYQAA4zCSCaQATg0AkdpSSuBNOkIkjgkheAsAkBoZBaSMlZI4LwBQIBkHlPSfE0gcBYAwEQCAJYBAkheBihQCAaBIR0GiKEbEnBVBNPiEveIkhdjAGQMgXYUgcRmF4JgfA448DGLaPwQQIgxDsCkDIQQigVDqCWaQXQbQNzUiSJwHgCTkmpIqZkzg5Jdk7IBKgKguwLlXJuXch5TzJAvN2BADwRz6DEBjiUuYvBFlaAWBAJAhykjHLIPs1l7KQDACkGYPgdBNJzIgBEFFERggNDRPC3g4rmDEDROSCI2g7yLNKYcus5IGC0ClRCrAEQvDAEjLQWgczuC8CwCwQwwBxC6rPCqxhlkUWYFUJxcE0ryCCCqCiuBERqTyo8FgFFZY8CjLNaQHixB45KDdJaowcCjAVIWFQAwBs954EwBuBCaTSm/OEKIcQQLc2grUCiqF%2BgrUoGsNYfQeAIhzNgOaEAxcLwRvhZcypmSkg1FNUvIx%2BVTC5MsGYKZEbiBfMdZABYdh7XOAgK4MYrRSCBGCH0UoAw2h5HSAIBduRUhboYNMfoMQJhVBnbUEYTRPAtD0NOhwnQL2HrXce2wF6d0TAfSumY66p0FNWBIRFHAUmkEmbwaZuLLnXNufcx5zzgEQFwIQEgNKuB0rKYmhY8kmBYBiBAapIBJCwhxO02EsRJAaEkK0%2BI4yknxHafoTgwzSCjMkO0hpZgkmdJucR5psJ4ixGAyi6Zsz5loaWUy9ZzLNkYt2eQSgXKqWnLYJwBoLATixCXkwWmVqnmsbThk95iGx3fOBXmgFEhpBFqUCWiFuh%2BUwqYHCs1AGgMgdRRwdF2zdnJhxXiyDWmuxcF0ziO%2B5LUCUuiDSswqGGXLMk/J6IsmDlhbZVSlABgjCBa4MgmgtAhWUFFRC2Vkr3VFflYq5V4iw3qsLJq7VKK9UGqNSa91FqrU2oyfgAyd6eKmv0y65Auy1ilOCOCQZGSfV%2BrRAGtYGTg2htKRGqNmAY1tYgomvgKaFBpozVm91ub/kFos7IYt4KMm2fLQmgdVhLA1rrfACAjbm0xVbdwdtcwFioC7RkHtfa%2BxXesMO0Do7x31tw%2B0M9LgHxvqXQ%2BR9swN17pqNDzdNQ4frvB3egQXRRhXvGBjmo2OeifqPTe19uPF2TEaGj49P7lh/pQ/RwDyKIVgd8wS4k2nAs4j02ShD45kPRfQ6QTD2HKAAcY6MupOJJCkY0MRup8R4hcHiLCGjAmWecGEwsoXNSWPS6V7EXpcuw7kaabCRnsJmdTM16JxlAHXnq%2BtzM23HaI1pGcJIIAA)
+
+## Implementation
+
+In the terminology of `boost::mp11`, the phrase 'quoted metafunction' refers to a class containing a metafunction member `fn`.
+In a sense, the surrounding class acts as quotation marks.
+However, I would like to think of it differently.
+The word 'quoted' also describes a passage taken from a context.
+In the documentation of `boost::mp11`, after instantiation, a metafunction is often said to return a quoted metafunction, meaning the instantiated surrounding template is considered a part of the result.
+
+> `mp_not_fn<P>` returns a quoted metafunction `Q` such that `Q::fn<T…​>` returns `mp_not<P<T…​>>`.
+
+```C++
+template<template<class...> class P> struct mp_not_fn
+{
+    template<class... T> using fn = mp_not<P<T...>>;
+};
+```
+
+In my opinion, invoking a metafunction creates contexts for its member templates.
+Using such members is similar to quoting texts from an article--we quote members from an instantiated metafunction.
+Therefore, for the purpose of this library, the term 'quoted metafunction' is better used to describe the member templates, and  'returning a quoted metafunction' returns a member template without quotation marks.
+Following this thought, we will implement our metafunctions in such a way that the contexts are provided in steps, allowing manipulations to happen within each step before finally returning a quotable result.
+
+### Failed Attempt
+
+One way to do so is to accept different kinds of parameters using nested class member templates.
+We will soon see the limitations of this method.
+
+Consider the following example:
+
+```C++
+template<typename...>
+struct Example
+{
+    template<typename...>
+    struct Mold {};
+};
+```
+
+This is quite straightforward.
+However, such simplicity comes at a cost.
+Namely, defining a member with the same name as its surrounding class is forbidden in C++.
+Therefore, the following code won't compile.
+
+```C++
+template<typename...>
+struct Example
+{
+    template<auto...>
+    struct Page
+    {
+        // Error: Member 'Page' has the same name as its class
+        // clang(member_name_of_class)
+        template<auto...>
+        struct Page {}  
+    };
+};
+```
+
+Assuming we are creating a metafunction that transforms the variable at a given position in a sequence, invoking the metafunction by `Metafunction<Transformation>::Page<Index>::Page<Variables...>` is impossible since class member templates with the same name cannot appear adjacent to each other.
+Note that `::` indicates a nesting relationship on this occasion.
+
+One solution is to add a separation structure between the class and its problematic member.
+
+```C++
+template<typename...>
+struct Example
+{
+    template<auto...>
+    struct Page
+    {
+        struct Slash
+        {
+            template<auto...>
+            struct Page {}; 
+        };
+    };
+};
+```

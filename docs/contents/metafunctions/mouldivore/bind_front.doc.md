@@ -19,9 +19,10 @@ When invoked, the function adds the elements to the front of the argument list a
 ## Type Signature
 
 ```Haskell
-BindFront ::   template<typename...> class... 
-            -> typename...
-            -> template<typename...>
+BindFront
+ :: template<typename...> class... 
+ -> typename...
+ -> template<typename...>
 ```
 
 ## Structure
