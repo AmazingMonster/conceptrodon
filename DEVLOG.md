@@ -8,6 +8,74 @@
 
 ## Diary
 
+### 2024/12/19
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove <code>Uni*</code> and <code>Duo*</code>. These conveniences are not consistent. The performance boost is not very visible.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Those prefixes are kept since many implementations depend on them. However, they are no longer exposed to the users.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Reformate the index page.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/18
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Write <i>Hello World</i></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove <code>Uni*</code> and <code>Duo*</code>. These conveniences are not consistent. The performance boost is not very visible.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/17
 
 <ul>

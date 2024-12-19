@@ -25,7 +25,7 @@ namespace Omennivore {
 
 
 
-// value
+/**** value ****/
 /******************************************************************************************************/
 template<typename...Packages>
 struct Zip
@@ -47,7 +47,7 @@ struct Zip
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::value...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -68,7 +68,7 @@ struct Zip
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -79,7 +79,7 @@ struct Zip
 
 
 
-// type
+/**** type ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllMoldful<Packages...>
@@ -102,7 +102,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <typename TypicalAmong<Packages>::template ProtoPage<I>::type...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -123,7 +123,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -134,7 +134,7 @@ struct Zip<Packages...>
 
 
 
-// Mold
+/**** Mold ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllRoadful<Packages...>
@@ -157,7 +157,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Mold...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -178,7 +178,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -189,7 +189,7 @@ struct Zip<Packages...>
 
 
 
-// Page
+/**** Page ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllRailful<Packages...>
@@ -212,7 +212,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Page...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -233,7 +233,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -244,7 +244,7 @@ struct Zip<Packages...>
 
 
 
-// Road
+/**** Road ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllFlowful<Packages...>
@@ -267,7 +267,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Road...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -288,7 +288,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -299,7 +299,7 @@ struct Zip<Packages...>
 
 
 
-// Rail
+/**** Rail ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllSailful<Packages...>
@@ -322,7 +322,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Rail...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -343,7 +343,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -354,7 +354,7 @@ struct Zip<Packages...>
 
 
 
-// Flow
+/**** Flow ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllSnowful<Packages...>
@@ -377,7 +377,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Flow...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -398,7 +398,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -409,7 +409,7 @@ struct Zip<Packages...>
 
 
 
-// Sail
+/**** Sail ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllHailful<Packages...>
@@ -432,7 +432,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Sail...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -453,7 +453,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -464,7 +464,7 @@ struct Zip<Packages...>
 
 
 
-// Snow
+/**** Snow ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllCoolful<Packages...>
@@ -487,7 +487,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Snow...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -508,7 +508,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -519,7 +519,7 @@ struct Zip<Packages...>
 
 
 
-// Hail
+/**** Hail ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllCalmful<Packages...>
@@ -542,7 +542,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Hail...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -563,7 +563,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -574,7 +574,7 @@ struct Zip<Packages...>
 
 
 
-// Cool
+/**** Cool ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllGritful<Packages...>
@@ -597,7 +597,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Cool...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -618,7 +618,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
@@ -629,7 +629,7 @@ struct Zip<Packages...>
 
 
 
-// Calm
+/**** Calm ****/
 /******************************************************************************************************/
 template<typename...Packages>
 requires AllWillful<Packages...>
@@ -652,7 +652,7 @@ struct Zip<Packages...>
         using UniPage = Operation
         <TypicalAmong<Packages>::template ProtoPage<I>::template Calm...>;
 
-/**********/
+/**** Common Section ****//**** Start ****/
         template<template<typename...> class OuterOperation>
         struct Hidden
         {
@@ -673,7 +673,7 @@ struct Zip<Packages...>
 
         template<template<typename...> class...Agreements>
         using Road = Hidden<Agreements...>::type;
-/**********/
+/**** Common Section ****//**** End ****/
 
     };
     
