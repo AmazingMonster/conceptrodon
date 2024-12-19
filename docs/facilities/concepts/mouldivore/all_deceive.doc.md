@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::AllDeceive`
 
-<p style='text-align: right;'><a href="../../../index.md#conceptualizations">To Index</a></p>
+<p style='text-align: right;'><a href="../../concepts.md#mouldivore-all-deceive">To Index</a></p>
 
 ## Description
 
