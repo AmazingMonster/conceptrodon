@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Among`
 
-<p style='text-align: right;'><a href="../../../index.md#list-examinations">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#mouldivore-among">To Index</a></p>
 
 ## Description
 

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::EasyTypicalPaste`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-2">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#omennivore-easy-typical-paste">To Index</a></p>
 
 ## Description
 

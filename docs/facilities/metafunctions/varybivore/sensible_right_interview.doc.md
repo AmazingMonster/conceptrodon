@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::SensibleRightInterview`
 
-<p style='text-align: right;'><a href="../../../index.md#list-examinations-3">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-sensible-right-interview">To Index</a></p>
 
 ## Description
 

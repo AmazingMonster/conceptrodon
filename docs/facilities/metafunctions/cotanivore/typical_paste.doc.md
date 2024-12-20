@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Cotanivore::TypicalPaste`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications">To Index</a></p>
+<p style='text-align: right'><a href="../../../facilities/metafunctions.md#cotanivore-typical-paste">To Index</a></p>
 
 ## Description
 

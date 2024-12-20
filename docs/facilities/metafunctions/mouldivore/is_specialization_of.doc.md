@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::IsSpecializationOf`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#mouldivore-is-specialization-of">To Index</a></p>
 
 ## Description
 

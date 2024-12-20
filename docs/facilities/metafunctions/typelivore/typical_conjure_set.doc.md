@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::TypicalConjureSet`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-typical-conjure-set">To Index</a></p>
 
 ## Description
 

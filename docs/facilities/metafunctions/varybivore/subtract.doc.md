@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Subtract`
 
-<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-subtract">To Index</a></p>
 
 ## Description
 

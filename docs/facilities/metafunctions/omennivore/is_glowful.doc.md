@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::IsGlowful`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations-1">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#omennivore-is-glowful">To Index</a></p>
 
 ## Description
 

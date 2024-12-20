@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::KindredFoldLeftFirst`
 
-<p style='text-align: right;'><a href="../../../index.md#algorithms-4">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-kindred-fold-left-first">To Index</a></p>
 
 ## Description
 

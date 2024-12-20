@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::IsSameAs`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations-4">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-is-same-as">To Index</a></p>
 
 ## Description
 

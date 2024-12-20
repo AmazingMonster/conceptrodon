@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::TypicalReiterate`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-7">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-typical-reiterate">To Index</a></p>
 
 ## Description
 

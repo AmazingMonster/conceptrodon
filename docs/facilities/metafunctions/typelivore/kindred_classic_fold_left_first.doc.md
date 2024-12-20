@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::KindredClassicFoldLeftFirst`
 
-<p style='text-align: right;'><a href="../../../index.md#algorithms-3">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-kindred-classic-fold-left-first">To Index</a></p>
 
 ## Description
 

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Warehivore::Paste`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-8">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#warehivore-paste">To Index</a></p>
 
 ## Description
 

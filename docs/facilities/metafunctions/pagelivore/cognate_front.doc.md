@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::CognateFront`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-3">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#pagelivore-cognate-front">To Index</a></p>
 
 ## Description
 

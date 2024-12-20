@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::SolitaryIsDifferent`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations-4">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-solitary-is-different">To Index</a></p>
 
 ## Description
 

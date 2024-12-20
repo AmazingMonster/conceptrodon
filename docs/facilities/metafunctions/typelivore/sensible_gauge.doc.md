@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::SensibleGauge`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-6">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-sensible-gauge">To Index</a></p>
 
 ## Description
 

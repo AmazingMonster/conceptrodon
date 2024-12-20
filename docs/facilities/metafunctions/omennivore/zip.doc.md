@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::Zip`
 
-<p style='text-align: right;'><a href="../../../index.md#algorithms-1">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#omennivore-zip">To Index</a></p>
 
 ## Description
 

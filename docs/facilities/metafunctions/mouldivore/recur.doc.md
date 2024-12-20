@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Recur`
 
-<p style='text-align: right;'><a href="../../../index.md#algorithms">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#mouldivore-recur">To Index</a></p>
 
 ## Description
 

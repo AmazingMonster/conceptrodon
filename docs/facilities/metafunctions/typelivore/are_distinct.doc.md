@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::AreDistinct`
 
-<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-are-distinct">To Index</a></p>
 
 ## Description
 

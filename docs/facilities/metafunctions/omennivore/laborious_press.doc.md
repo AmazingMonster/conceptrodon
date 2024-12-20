@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Omennivore::LaboriousPress`
 
-<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-1">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#omennivore-laborious-press">To Index</a></p>
 
 ## Description
 

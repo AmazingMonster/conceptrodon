@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::FoldRightLast`
 
-<p style='text-align: right;'><a href="../../../index.md#algorithms-2">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#pagelivore-fold-right-last">To Index</a></p>
 
 ## Description
 

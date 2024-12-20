@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Raillivore::Trip`
 
-<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications-3">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#raillivore-trip">To Index</a></p>
 
 ## Description
 

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::IndependentLeftInterview`
 
-<p style='text-align: right;'><a href="../../../index.md#list-examinations">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#mouldivore-independent-left-interview">To Index</a></p>
 
 ## Description
 

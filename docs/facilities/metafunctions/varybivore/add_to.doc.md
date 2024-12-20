@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AddTo`
 
-<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-add-to">To Index</a></p>
 
 ## Description
 

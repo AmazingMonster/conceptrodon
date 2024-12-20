@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::IsSameAs`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations-3">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-is-same-as">To Index</a></p>
 
 ## Description
 

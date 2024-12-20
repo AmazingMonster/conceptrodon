@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::IsLess`
 
-<p style='text-align: right;'><a href="../../../index.md#arithmetic-examinations">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-is-less">To Index</a></p>
 
 ## Description
 

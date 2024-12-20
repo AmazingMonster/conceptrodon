@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Typelivore::SensibleRightInterview`
 
-<p style='text-align: right;'><a href="../../../index.md#list-examinations-2">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typelivore-sensible-right-interview">To Index</a></p>
 
 ## Description
 

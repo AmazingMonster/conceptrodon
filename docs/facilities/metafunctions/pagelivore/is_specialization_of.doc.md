@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::IsSpecializationOf`
 
-<p style='text-align: right;'><a href="../../../index.md#entity-examinations-2">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#pagelivore-is-specialization-of">To Index</a></p>
 
 ## Description
 

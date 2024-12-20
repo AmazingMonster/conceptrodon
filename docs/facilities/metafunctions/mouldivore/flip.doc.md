@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Mouldivore::Flip`
 
-<p style='text-align: right;'><a href="../../../index.md#higher-order-modifications">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#mouldivore-flip">To Index</a></p>
 
 ## Description
 

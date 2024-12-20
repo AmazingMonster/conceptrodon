@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::AreBoundedByLeftOpenRightClosedInterval`
 
-<p style='text-align: right;'><a href="../../../index.md#arithmetic-examinations">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-are-bounded-by-left-open-right-closed-interval">To Index</a></p>
 
 ## Description
 

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Varybivore::Negative`
 
-<p style='text-align: right;'><a href="../../../index.md#arithmetic-modifications">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#varybivore-negative">To Index</a></p>
 
 ## Description
 

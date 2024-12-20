@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Sequnivore::KindredRepack`
 
-<p style='text-align: right;'><a href="../../../index.md#list-modifications-4">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#sequnivore-kindred-repack">To Index</a></p>
 
 ## Description
 
