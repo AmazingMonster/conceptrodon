@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2024/12/20
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Organize documentations.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Organized <i>concepts</i>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/19
 
 <ul>

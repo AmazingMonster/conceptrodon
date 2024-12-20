@@ -3,15 +3,15 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pagelivore::AnyConfess`
 
-<p style='text-align: right;'><a href="../../../index.md#conceptualizations-1">To Index</a></p>
+<p style='text-align: right;'><a href="../../concepts.md#pagelivore-any-confess">To Index</a></p>
 
 ## Description
 
 `Pagelivore::AnyConfess` accepts a class template predicate and a list of elements.
 It returns true if there exists an element whose value result satisfies the predicate and returns false if otherwise.
 
-<pre><code>   Predicate, Elements...
--> (...||Predicate&lt;Elements::value&gt;::value)</code></pre>
+<pre><code>   Pred, Es...
+-> (...||Pred&lt;Es::value&gt;::value)</code></pre>
 
 ## Structure
 
@@ -24,27 +24,33 @@ concept AnyConfess = REQUIREMENT;
 
 `AnyConfess` turns a fold expression of a class template predicate over `||` into a concept so that it can be used for subsumption.
 
-The following code will fail since `(...||Pred_0<*>::value)` and `(...||Pred_0<*>::value) && (...||Pred_1<*>::value)` are both atomic:
+Since `(...||Pred_0<***>::value)` and `(...||Pred_0<***>::value) && (...||Pred_1<***>::value)` are both atomic.
+Both candidates are considered equally good.
+Thus, the call is ambiguous.
 
 ```C++
+/**** Pred_0 ****/
 template<auto...>
 struct Pred_0
 {
     static constexpr bool value {true};
 };
 
+/**** Pred_1 ****/
 template<auto...>
 struct Pred_1
 {
     static constexpr bool value {true};
 };
 
+/**** Vay ****/
 template<auto I>
 struct Vay
 {
     static constexpr auto value {I};
 };
 
+/**** fun ****/
 template<typename...Args>
 requires (...||Pred_0<Args::value>::value)
 constexpr bool fun(){return false;}
@@ -53,14 +59,17 @@ template<typename...Args>
 requires (...||Pred_0<Args::value>::value) && (...||Pred_1<Args::value>::value)
 constexpr bool fun(){return true;}
 
+/**** Test ****/
+// Error
 static_assert(fun<Vay<1>>());
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwArKSuADJ4DJgAcj4ARpjEIGYA7KQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCUmpCi1tHQXdEwNDldVjAJS2qF7EyOwcBJgsaQa7Jv5uTF5EAHRXx9gmGgCCE8ReDgDUysSY6AD6Gnf3JmSVger1BrzmjmQrzQDAmmFUaWIr1iqE8rwAbmIvJhXoCLARnphAQARY7AgHJUn%2Bcn/Xb7Q5Ek5nS7Xfy3B5PF4Ed6fH5cf54/5g8EtSHQgRwhFIlFozHeHF4gnYklkgWU1UPWl7A5MI5M86oV4ASRu/05bwAsgJUEQGABPNXk4UQvBQmGSxGvZmGuXY3FAk3q6lqqk0h50nV6twEO1pRisTBXC73YjABSmh6fACOXjwnwUrwgScBbhLHy%2Bv2ObhTaZAIF9jOwdYby3%2B7t2UuRqNoryoXgYEFbQM%2BBA2DF7YiUqvVmvD2oZVZjceYbCTNfTbP%2B2dz%2BcLxeSpYP5Z%2BfxO6%2BbWMbF/ly1xZgAbOZ73vrgey7zvvyz6mFNflWy/0wVsHnbeFPRlHs%2BwHIcLBHMdXiVRkrBnAEOVFV1viYBQlDaah%2ByrK0GBtAQHROL9bjZQdW2pDhVloThAl4PwOC0UhUE4UtLGscF1k2BUzH8HhSAITRaNWABrEBAnvC4AA57ykQJknvSQAE5/GUgT9E4SReBYCQNA0UhmNY9iOF4X8jJEljaNIOBYBgRAQHWAg0nOchKDQfY6ASKIE04VR5IAWhU15gGQKEpAuMxeC%2BQgSDwdA9H4QQRDEdgpBkQRFBUdQbNIXQuFIAB3YgmDSTgeDohimNEtjOAAeXONzuVQKhXkC%2B8QskMKIteKKzELDxvPoJFzEE5ZeGsrRVggJAvLSHyyAoCAFqWkBgCkMw%2BDoXZiF/CBYjq2IIlaO1Kt4E7mGIO0GtibRMAcC7SC8thBAahhaHO/KsFiLxgFOWhaF/bheCwFhDGAcQfrzR7HHRTAQdY%2BFHvObYhIiXZ6Py2g8FiMqbo8LA6oJPB9NB0gEeIFElGJPZIdxoxRNWKgDDTAA1PBMGKhrl2elLhFEcRMoFnK1Dqwr9EhlBrGsfQ8d/SBVlQNJGhBoKJnQY5iVMLjLDMUyqeIRLEfgVY7DhnIXAYdxPE6PQwgiYYqlGIrimyARpj8N3Mg9hgFhGRIiothw%2Bkmdo7YKYP6ktgR%2BjaAOXaD2xw69vQ5gTp3Fld83eK2CRqo4RjjLqsyOuC0LwsiyRosLXB4rGgSuEm4TmdWBBMCYLBEkHUhJMkfwLnU5JJA0SQzEke9DOk1TtI4XTSH0wSLgU%2B9ZNU2SuHvQJJC4QJ1PvEv8rMiyQCs5m7McubnOa9yVrW0a/LYThWhYdFkiCphoQMIx%2BtUi4uAXGRvgIgxskpFQFmlYW0hRZKHFvlXQ21SrlQuoXYuJleBmSaq5c4rw2pemIG/D%2BX9kA/2AH/ABQChqoBGgkO8/gzAt2mrZa%2BD8EgeVWjQxao0QCv3fkFUhkMuCqS4EZGgtA9oHSOvlK6Z1nqyJundB6T0KavUYAQD6X06q/X%2BoDYGz1wYM22KxfAnxQ4IyRrFVQqNdjPUxvUOquN8ZnSJsYqaxtyZCSpjTTAdMIZGEZqAGyLM2YKE5tzXmjB%2BayCgRlGBsgxZ5VYogqWTNdZWEsPLWIite4qzVpwDWBAtb%2BB1rLfWhsEhgNNkrHosc/AQFcGnIqjsKiBz0O7RoTT0i%2B0aInJY0dehx1TpHb2tTQ5DPmFnNpwdhn5FGRnQYUyk4FzWBsfOzc57oNLpwAhRDP7f0hhQwBGg64gJIPQ5uU026kA7l3UYvdsYLyXv/MeyR97JGSP4cek9d5H1MpwU%2B59gmX3gNfFyLUOFsOIE/bYr9QosAUOiKE6JhEXAZBMWKZywHJRiULOJWV5BwKSToAIJUyoVVBmg2qx9Gq31au1OFPUEVIoxKi9F3IIDDW4XQ8a/gmEX1YVwpakKhU8KRWkNI3wUWqW%2BOyzChCVI7QkQkKRx1To3Xkeq26904bPTUe9T630TGYD%2BgDMQ%2BiKaGICW40gpjLYWLqijZAaM7GCAcTjPGBM7SuJJh4563jMi%2BPpgEiIQSZp8FCeEnmfMKaQLxRIeJ2UiUS1JWQmWesbBOJycrVWOQQYAHpNbpoyRYA2mCjYm2zWMxo1tbZzIdjbPprtuklByF0jpOQm3JxDo0eOEd60DLqX2rt6dZn2xmZM1pyyNkKDzhlKlfzME7MZa8ZlyK2W6kRhy%2BuoCLn8uCe3Tu3dKCFyeUkf%2B/ggiBDHqIjQl7lKyUXfVcytgz6twPX3EAA8AH%2BFkjvAS177wCWUnPfw1L/kvuYcsQuMUn0n3fTNVYVMsjOEkEAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwapK4AMngMmAByPgBGmMQB/qQADqgKhE4MHt6%2BAUGp6Y4CYRHRLHEJ/kl2mA6ZQgRMxATZPn6Btpj2RQwNTQQlUbHxibaNza25HQrjA%2BFD5SNVAJS2qF7EyOwcAPQAVAd7ANTKxJjoAPoaR4d7OyYaAIIEmCzJBi8m/m5MXkQAdICvtgHo8ZsQvA4TmdLhpQSYAOxWJ5HVFHGZMRzII5oBgzTCqZLEI4xVCeI4ANzEXkwR0RFgIEMwiIAIl9kY9Wez4U99odoecLlwbod7k8Xm8Pszvr8AUD/CCnuDIQQBZcuPCkaC0ejGlicQJ8YTiaTyVTvLT6YyaVz/BzbfbebcjgA1JgATxFBzFz1e70x0p%2Bf1QRwAksDQcqoW73ZqOTqMfrcUaiUdZSHzTS6Ujwwi2XbNfnHY8%2BQcjlQvAwvXdQRL/Z9vgR3clGKxMID/o9iMAFBGnmcAI5ePBnBRHCAdxFuKenQVw75dnsgECZ6XYZer5ag5MvY0ksm0cuViBbpFnAgbKtUMRKbl5nm%2ByUBr5uJst5hsDuL3sK0GD4ejuOk4ItOIGzrCL7fhu1JrtBFrLHSZgAGzmEhQFAiBM4wkKkHdgocE2gqBGYFuTw7gSqamoeFYMCe9LnpeRzWtKVj3k8oKlscAAqmAzNWPo7DsRzYMQxAkJGep4MgFxMAoSjNNQlYvjGL4ar%2BConludocKstCcAArLwfgcFopCoJw06WNY6LrJslpmP4PCkAQmg6asADWID6Uh/wABxIVI%2BkIkhkgAJz%2BMFDn6Jwki8CwEgaEExmmeZHC8PhQQuSZOmkHAsAwIgIDrAQyR/OQlBoG8dDxJEbacKo/kALQhUcwDINiUj/GYvDnIQJB4Ogej8IIIhiOwUgyIIigqOo2WkLoXCkAA7sQTDJJwPC6QZRmuWZnAAPJ/KVqqoFQRwNUhzWSK17VHJ1Zjjh4VX0MS5iOcsvBZVoqwQEglXJNVZAUBA/2AyAwBSGYfB0C8xD4RAMS7TE4RNO6G28MjzDEO6%2B0xNotRZU5lVsII%2B0MLQaNzVgMReMAPy0LQ%2BHcLwWAsIYwDiFTI4E3gFK8btBK1H82xOeELx6XNtB4DEq3Yx4WC7YyeDxczpB88QpJKCyrzs1LRiuasVAGD2Lp4JgS37e%2B6OTcIojiBNw3yEoai7Qt%2Bjsyg1jWPo0v4ZAqyoMkPRM41MzoF8LKmFZlhmCl6vEAN/P%2B503SZC4DDuJ4bR6KE8xlBUegFBkAiTH4i1Fz0gz5yMi01HUAh9BMWe5LXXQ8w3sxV8MCS17Mpd6BizRd4sPerAotlbBIW0cIZpDJbwqXnU1LVtR1khdeOuB9a9DlcB9zkG6sCCYEwWAJCepCeZI/j/OFCKSBokhmJISGJd5oXRRwsWkPF/hmP8/gkIIl8v4Xy%2Bl9JcAiqFXyc9dqpXSiATKBtcoFV%2BkVI6ZVgagxerVNg9Vl7XWQAYIwd1Qr/C4P8UyvUiAJ0GotR2o17bSEdtNF2c1dBQxWmtdG09Z7zz2hwQ6JU/hHFOkvS6LUiHs1IeQyhj1UDPXiIhP%2B%2B8vo5TQdg%2BI5UQYKIBi9FAxCIahS4EEGgtBYbw0RnNTGqNrY2OxrjfGDhrbE0YAQMmFNdrU1pvTRm1tWa622KZfAZw6h8yZlQ1QQsXjWzFl0XaUsZao3lkEz6CcVZOXVprTA2s2ZGD1qAbKhtjYKFNubS2jBrYMLtuNZhshWGzVMhw92%2Bso5WEsD7GIfsL6B2DpwUOBBw7%2BEjl7GOcd4i0KThfOuPR06ZxyGXYIGdh4F3LmkYuWRm6LIrpkFZNcU7t16H3LZA8271yOf0PZPcxj9H7r3S5edu5TzWBsSee9P58LgZwcRV0cSGJkRQ64EAt40OUXvT6h9SDH1PiMC%2BnkTFBAlt/X%2B%2Bl/hhX0qFMwmLkK%2BUgSFWBc14G2EQQfIpKD4BoOKsdbRmjiC4O2E0FgLUWAKApNiCkXAyFShmD1fANCBpDVkIw2pNsGmuwCMtVa61ma8J2oSg6GCTpnVUMy1l7LOX/G5aqCAT09FKLev4VRyCNG6MBjS01%2Bi2XJGSBcDloULhaouCq5hMN4iWKRijbGdjPU4zxgTFxCiSbuPJpTYJmAaZ0zEH41WAT8mpNICEnm4SBZROQMLWJgh4mS2lrLd0KTFbpOtlktIOSdb5PCIU76fASllItlbVW1SxoSDqVNZ2jSdASsMZ7aONhEndIDkHTITMdhh27e0iwscF7x0Tv2g55y5l3KWegK5hd1k9EXTs4ojyR6nNTh3W5JzW57ouUPbdqyblNwWQPTuZ6a5jwnuNWVBKUrfOdUcFlbLKQaq1ZvPlJAwVGqKUfE%2BZ9KDT2RQEf%2BeKHJmFg1wXyGgkIYufQvTgCCkFAcviAa%2B5DQH6Sfv4fSiGHLBU/v4OVL60qku%2BtPbqKGBEQsw%2BrdIzhJBAA)
 
-By turning `(...||Pred_0<*>::value)` and `(...||Pred_1<*>::value)` into concepts, we allow compilers to perform proper subsumption.
+By turning `(...||Pred_0<***>::value)` and `(...||Pred_1<***>::value)` into concepts, we allow compilers to perform proper subsumption.
 
 ```C++
+/**** fun ****/
 template<typename...Args>
 requires AnyConfess<Pred_0, Args...>
 constexpr bool fun(){return false;}
@@ -69,6 +78,7 @@ template<typename...Args>
 requires AnyConfess<Pred_0, Args...> && AnyConfess<Pred_1, Args...>
 constexpr bool fun(){return true;}
 
+/**** Test ****/
 static_assert(fun<Vay<1>>());
 ```
 
@@ -79,9 +89,10 @@ template<template<auto...> class Predicate, typename...Elements>
 concept AnyConfess = (...||Predicate<Elements::value>::value);
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwArKSuADJ4DJgAcj4ARpjEAdIADqgKhE4MHt6%2BAcGp6Y4C4ZExLPGJ/tJ2mA6ZQgRMxATZPn5Btpj2RQwNTQQl0XEJSbaNza25HQrjAxFD5SNVAJS2qF7EyOwcBJgsyQa7Jv5uu/uHmMduTF5EAHQPx9gA1MgGCgrPysSY%2BKK7pGeBAAnslGKxMA87th6GxBAoniYNABBNAMLbJAjPZEMYEeBhUTAfZ7HAAizwgUJMAHY3DS3N9fnh/pcTjC9owCAoQCAAG5iLys7A8/neTDLY5WFFI5EAegAVIqlcqVbKZQqlc8ACpErnPZVqlEalUmxWG5Eys4HJhHE43e6PfzYGUzYheBxfH7oAD6GhlNKlyOeweeMxtzNeAhmmFUyWIz1iqE8z1FgpJ1IsBDdl2ppMl/tz%2BelKKtFyu9tQVKdLqz7qxjJ9XALgZDocajmQkYY0dj8cTydTmHTmezNLz/kDY6LFpLe2ttuut1QzwAkoiUa6688ALICVBEXHNmWtsMdrs9uPPCspgVDgNrwsTgvjyez8421mnUHgthQ5HEYAEWrFEfgARy8PAfk%2BHE8QEQkPiuBtfUBf9AKrZ0UTRC8%2ByTWhnioLwGAgCUMx%2BAgNgYfCxCUfNC2LZFSw/K4QTBZhfweVCgIw/9MHAyCiWxXF8XgoCGS9ZDsQAhR0JJMwADZzDkwTYIJIlRKQrgUKk9CZSw3ZewTXD8MI4iAzIiigVHJ86JnZFT2Zb0mA%2BBICGoQirl3Bh9wEYEribasnWIiUnxRDhVloThAl4PwOC0UhUE4OlLGsUN1k2O8zH8HhSAITQwtWABrEBAkkO4NEkLhqX8DRAg0eS5LMAAORr9E4SReBYCQNA0UgYrihKOF4bkety2KwtIOBYBgRAQHWAhkluchKDQfY6ASKIIU4VRGrkgBaOTJGeYBkE7KQ7jMXgmSIYg8HQPR%2BEEEQxHYKQZEERQVHUMbSF0TSAHdiCYZJOB4cLIuivL4s4AB5W4FqxVAqGeba9oOo6TueM6zApDxVvoeNzCy5ZeFGrRVggJAVuSNayAoCAqZpkBgCkMw%2BDoXZiG5CBYkh2IIiaYEQd4PnmGIYFodibRalG7KVrhAhoYYWhBe%2BrBYi8YBrloWhuW4XgsBYQxgHEVX%2BLqXkiUhmNalubZsoiXYIu%2B2g8FiQGxY8LBIazPBOr10gLeIRMlFJPYjZdow8tWKgDEAgA1PBMD%2B6HWKFt7hFEcRXoe%2BQlDUSHfv0I2UGsax9Fd7lIFWVBMUyXXdpmdAyVMZLLDMfrA5urBK%2BIzpukyFwGHcTw2j0MJ5jKCo9AKDIBEmPxNJnnpBknkZNJqOoBD6CYR9ydeuml%2BpZhX4ZEnX2Z570MNmhPxYz9WBQ0q2CQwY4KLeshgbkZ2/bDuO07SrYwgLgQgJBZJExJlHVYCBMBMCwIkXuRVJD%2BDuAATn8NSSQ5UzCSDkt1QIclUGtQ4O1UgnUsp3DklwOSjVUGNWoSVLggR0FyQ/t9AaQ0QAjSjhNaaFNZpw0WnTBm%2BMNpsE4E0FgvJqS7SYK8AwRhMaoLuFwMql18DXVuvdWQT0s7SBzh9fO31dCswBkDIWr9359V4ANWG81bjPERleYgUiZFyLeEbJRKiyo41QHjBI4CzDExyjw/hIiEhLXpn46m%2BMQCSOkbtDxRguCoK4D1GgtAOZcx5t9EWAs055LFhLKWDg05y05IrZWkM1Yay1jrNOBtw7bDivgH45tLbfWtsgW2acHZdEhi7N2AtPbNJJjdP22VA7B0wKHQ2RgI6gDGtHWOCgE5JxTowNOOddEvX0bIQxX04omKLpHFuVhLDl1iD3autcoycAbgQJu/hSRnOsO3GxndbqWyrn3Q%2BzgICuEvppcepRT7TzSLPLIu8F6kCXpkW%2BU9979y3hfaFV8D6b16MfCeYLz79CBWMfoCK14Pyfi9SxEN2GcGca42R8jPEpO8RoCkIDrrgK4ME0m%2BVSAwLgSMXuTtSHkOUeVakzDqRVUkDgg6mlrFQ0GrYLhISlm8PgPwua8NInhOIGI7Yki0YsAULyTsvJGUXBmOo0BXdtGPUzrs9OByC4BFIGY4GesKVsP6jDQRCMkb6sOoa41KYzUfhmL4/xBNMr%2BE5aEym0SaZavjbE41yRkjelNag705qCCORcQdNmmSEjZN5vzMWBTS3i0ltLMpfj5aVJVi0zA6tNZiHqf7Rp8zRmkFaYfC2us4pdJ6f7PpTs4qDPdrBL230fYTN4FMtIMyw7zIiIssmfAVlrOTqnf22y7USD2e9POhydDOoUcYUuFzBnXPirc7snBZSNxLq3Cw7z4qfO7vAB%2BGKeiD2HjkGFIKFiIthRCnoBK4XFBxXfdFyKsX4rRUiv5cGb5QeA9fFoCHCUodBdBjlawNjPzw07Kxn9qX%2BueIGk1IbdhhuARosBhMOWQKWdA2B8DKCvyFSAMwyj/BBFqhVbqfHqQ0M9TYzgnDuEsdIEgwIaDAiNXkqgyQqCqoYK4P4Yh/hKVeoVVy5Yr8LpiflcxsmqxA7pGcJIIAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwapK4AMngMmAByPgBGmMQgkv6kAA6oCoRODB7evgFBaRmOAmER0SxxCUm2mPbFDEIETMQEOT5%2BgTV1WY3NBKVRsfGJyQpNLW15nWN9A%2BWVIwCUtqhexMjsHAD0AFR7%2BweHR/tbJhoAgrv7ANQAkiwp9GyCTPXXB6cXV8c/x5/nZ3OBEwDwMwJM/jcwNBr0wELcTC8RAAdKiIdhrsgDAoFNdlMRMPhRMDSNcCABPFKMViYVHI7BPRgEBTowFoBgbFIEa7nBjkjwMKiYHHXCEAEWuEDpJgA7G5ZW58YS8MS4ZCGSCmQoQCAAG5iLxq7A6/XeTCLCFWC6A76/E42g7XAAqwuZ73tXzth3%2BDpuSvQAH0NO69v9oY9YfDESi0f5sICxsQvA48QTAxpAbKredrrnrjNHMhMQIxphVCliNcYqhPNdTYbRTKLAQk3CZWLLZn253rZ6/WmA1wQzswyCI%2BDIdHUNK4wmW8nuf7B13s3n801C8WGKXy5Xq7X65hG83W7KO/5s2eewC%2B3trgA1Jjk4ejmEThFI1B3VkXRMLh9PiugJrgWKpbjuFbXFOdYGkeWa3FeF5duel63js1xUF4DAvoC4ZgmqUKUtSbB0ucxDACys4XASACOXh4ASuK8vyAhCji8JLkEPLkQoM7xhc7IQXuNa0BhWEQBaTYEgQazYVQYhKJ23a9kCY74fCFJUswJGomRFE/mRmB0Qxwo8nyApsZRioDlxem8bGGLmAAbM5ZksYKwpWUuXCknZfFsiWwK7lWIliQwElZtJslkqeSHKTelyOi6Yw4b%2BG4qgGTA4vEBDUFh8KPuS8JcKycYSRaF4cMstCcAArLwfgcFopCoJw8qWNY%2BarOscFmP4PCkAQmhVcsADWIC1U5yIABxOVItUyk5kgAJz%2BItfX6Jwki8CwEgaEEjXNa1HC8NqQRDU1VWkHAsAwIgICrAQKRIuQlBoA8dDxJENKcKos0ALRLdcwDIEWUjImYvDKkQxB4Ogej8IIIhiOwUgyIIigqOol2kLoPkAO7EEwKScDw1V1Q1w0tZwADySLPdyqBUNcf1OYDkjA6D1zg2YkoeB99CVuY/WLLwF1aMsEBIO9KSfWQFAQDLcsgMAUhmHwdDAsQ2oQDEVMxOEzTkqTvAG8wxDkjTMTaJgDgm6Q73PAQNMMLQxs41gMReMACK0LQ2rcLwWAsIYwDiB7JkOHgurClTZa20imwDeEwI1TjtB4DERMWx4WBUy2eC7YHpAx8Q1ZKGKIKhxnRjDcsVAGBR954Jg%2BM01p9uI8IojiGjXeY2oVN4/oocoNY1j6Jn2qQMsqBclkAf/WM6DiqYHWWGYR2l7DWDTxJXS2/ULgMO4njtHooThIMFTDD5hSZAIkx%2BHf6QPwwcxDAkPl2IfPTjK0Z88jf1qL/AQvQWgfxvl/Ww/8n56BmBAq%2B8xb7LAUN1DYEhyYcHqqQQ6vBjoswBkDEGYNJAQ0lLgQgJBRR9S4KLQaddlgIEwEwLACR97jSSMiVaMpJAaEkGYSQTl9qTWWptDg21SC7X8GYZE/gnIymmv4aatVapcDWstaauCqbHVOiAc6ddrp3Slg9emL0FZK0Ft9Ngv0iEcyxKHbmy1kRcGRM1aGJA4YI1kMjXu0h%2B5KEHjjXQ6tCbExNlgnBeDqYcDpk9JE1wmaELZkDBxRgnEuLcXzVAAt4g0JkfQ8WV0TGWPiK9RWOTZaCxQAYIwXBlpcCCDQWgWsdZ6xxmbI29tOkWytjbO2xdHZMhdm7Kmntva%2B39vbYO1dNjNXwASKOMcA7uNUAnYE9sU61CphnLORtc5zLFrDIuA1S7l0wJXEORga6gEuvXRuChm6t3bowTuPie6o38bIAe2NmohJHrXNeVhLCTxiHvWe88SycCXgQFe/gxRAusJvfB284axxngfKOzgICuDgT5S%2BZRP56HvvUPFqRX71EgQsYB3QwGwMAc/TF9RwH9CQUS7%2B9LciMoQaywlUDMErDWBguh4iok6M4Mk9mmJanAAya44MEBKEw3yXQsWjDSDMNYcMDhe0ghp0kdI2qyIVq1WWmYM1ZgnLTXUUtbRONdG2H0Qwu5Rj4AmMegzcppTiDWM2M0FgQMWAKF1EWXU9TkT4TGFDfAMMvE%2BS7r4z56N5CBN%2BToAIpAwkk0DpEym9raZmMZszVQgbg2hvDZG7kEB%2BZVLycLfwhTDElMqXLL1LbqkhpSCkAMYbloBkrQGEt/jNbxDafrQ2FtukTsttbQ%2B9shmCBGe7eZmAvY%2BzEFM4uMzrmHNIAs3%2Byy45rOQInTZghtnp0ztnFieccYFxObwM56QLlV2ueEW5Es%2BAPKeW3DuxcE0fIkF8jGqah4ZplWPdeNhdngpapC7cnAtjL0g8CiwyKWqot3vAVBICsV%2BBxSfMlBLr7UvJUULIZKSVZCpbfJlf8%2Bhkp/nhllNHoE8sY//VjAq0FCtRrmu1R0JVDuuEGkNdYK2whSoqmN1DhaqudRLJhLC2GUCwQagIsibV9TMDprg00NBOVNQJ/BnA9EGLuWNEYLjlG1QEf4WqBm%2BqLXEf4PNgmToKZGuIyGxmYlqosyXUdWREhAA%3D)
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/concepts/any_confess.hpp)
-- [unit test](../../../../tests/unit/concepts/pagelivore/any_confess.test.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/concepts/any_confess.hpp)
+- [Unit test](../../../../tests/unit/concepts/pagelivore/any_confess.test.hpp)
+- [Example](../../../code/facilities/concepts/pagelivore/any_confess/implementation.hpp)

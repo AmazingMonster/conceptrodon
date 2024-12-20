@@ -401,3 +401,49 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
   <dt>Warehouse</dt>
   <dd>A warehouse is a vessel that holds functions with the primary signature <code>template&lt;typename...&gt;</code>.</dd>
 </dl>
+
+## Convention
+
+<dl>
+  <dt><code>***</code></dt>
+  <dd>It represents an unspecific component in an expression.</dd>
+  <dd>For example, <code>template&lt;***&gt;</code> represents a random template head.</dd>
+
+  <dt><code>Con</code></dt>
+  <dd>Container</dd>
+
+  <dt><code>Cons</code></dt>
+  <dd>Containers</dd>
+
+  <dt><code>E</code></dt>
+  <dd>Element</dd>
+
+  <dt><code>Es</code></dt>
+  <dd>Elements</dd>
+
+  <dt><code>I/J/K</code></dt>
+  <dd>Index or indices</dd>
+
+  <dt><code>Seq</code></dt>
+  <dd>Sequence</dd>
+
+  <dt><code>Seqs</code></dt>
+  <dd>Sequences</dd>
+
+  <dt><code>Stoc</code></dt>
+  <dd>Stockroom</dd>
+
+  <dt><code>Stocs</code></dt>
+  <dd>Stockrooms</dd>
+
+  <dt><code>V</code></dt>
+  <dd>Variable</dd>
+
+  <dt><code>Vs</code></dt>
+  <dd>Variables</dd>
+
+  <dt><code>Ware</code></dt>
+  <dd>Warehouse</dd>
+
+  <dt><code>Wares</code></dt>
+  <dd>Warehouses</dd>
