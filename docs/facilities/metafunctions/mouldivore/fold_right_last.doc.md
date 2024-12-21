@@ -10,13 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Mouldivore::FoldRightLast` accepts an operation and returns a function.
 When invoked, the function right-folds its argument list using the operation with the last argument as the initiator.
 
-<pre><code>   Operation
--> Initiator, E<sub>0</sub>, E<sub>1</sub>..., E<sub>n</sub>
--> Operation&lt;E<sub>0</sub>,
+<pre><code>   Oper
+-> Init, Arg<sub>0</sub>, Arg<sub>1</sub>..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>0</sub>,
         &vellip;
-   Operation&lt;E<sub>n-1</sub>,
-   Operation&lt;E<sub>n</sub>,
-       Initiator
+   Oper&lt;Arg<sub>n-1</sub>,
+   Oper&lt;Arg<sub>n</sub>,
+       Init
    &gt;::value
    &gt;::value
         &vellip;

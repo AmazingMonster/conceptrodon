@@ -11,8 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked with an operation, the function extracts the list of items from the vessel and instantiates the operation with the result.
 
 <pre><code>   PackedVessel
--> Operation
--> Operation&lt;Upack(PackedVessel)&gt;</code></pre>
+-> Oper
+-> Oper&lt;(unpack)PackedVessel&gt;</code></pre>
 
 ## Type Signature
 

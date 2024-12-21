@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of elements and returns a function.
 When invoked, the function adds the elements to the front of the argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
--> Elements...
--> Arguments...
--> Operation&lt;Elements..., Arguments...&gt;</code></pre>
+<pre><code>   Oper
+-> Es...
+-> Args...
+-> Oper&lt;Es..., Args...&gt;</code></pre>
 
 ## Type Signature
 

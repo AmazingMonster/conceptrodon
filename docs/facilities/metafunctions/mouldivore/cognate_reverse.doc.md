@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Mouldivore::CognateReverse` accepts an operation and returns a function.
 When invoked, the function instantiates the operation with its argument list but in reversed order.
 
-<pre><code>   Operation
--> E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
--> Operation&lt;E<sub>n</sub>, E<sub>n-1</sub>, ..., E<sub>0</sub>&gt;</code></pre>
+<pre><code>   Oper
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>n</sub>, Arg<sub>n-1</sub>, ..., Arg<sub>0</sub>&gt;</code></pre>
 
 ## Type Signature
 

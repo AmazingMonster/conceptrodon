@@ -10,7 +10,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::IsSameAs` accepts a element and returns a function.
 When invoked by an argument, the function returns true if the argument is the same as the element and returns false if otherwise.
 
-<pre><code>Target -> Element -> Element == Target ? true : false</code></pre>
+<pre><code>   Target
+-> E
+-> E `same as` Target ?
+   true : false</code></pre>
 
 ## Type Signature
 

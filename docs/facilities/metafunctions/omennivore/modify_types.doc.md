@@ -16,17 +16,17 @@ The result will be stored inside `Capsule`.
    std::make_index_sequence&lt;I<sub>1</sub>&gt;,
                     &vellip;
    std::make_index_sequence&lt;I<sub>n</sub>&gt;
--> Operation
+-> Transf
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>m</sub>
 -> Capsule
    <
              Arg<sub>0</sub>,
              Arg<sub>1</sub>,
               &vellip;
-       Arg<sub>I<sub>0</sub>-1</sub>, Operation&lt;Arg<sub>I<sub>0</sub></sub>&gt;, Arg<sub>I<sub>0</sub>+1</sub>,
-       Arg<sub>I<sub>1</sub>-1</sub>, Operation&lt;Arg<sub>I<sub>1</sub></sub>&gt;, Arg<sub>I<sub>1</sub>+1</sub>,
+       Arg<sub>I<sub>0</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>0</sub></sub>&gt;, Arg<sub>I<sub>0</sub>+1</sub>,
+       Arg<sub>I<sub>1</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>1</sub></sub>&gt;, Arg<sub>I<sub>1</sub>+1</sub>,
               &vellip;
-       Arg<sub>I<sub>n</sub>-1</sub>, Operation&lt;Arg<sub>I<sub>n</sub></sub>&gt;, Arg<sub>I<sub>n</sub>+1</sub>,
+       Arg<sub>I<sub>n</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>n</sub></sub>&gt;, Arg<sub>I<sub>n</sub>+1</sub>,
               &vellip;
              Arg<sub>m</sub>
    ></code></pre>

@@ -10,14 +10,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::Sieve` accepts a list of predicates and returns a function.
 When invoked, the function removes every argument that satisfies all of the predicates from its argument list. The result will be kept inside a `Shuttle`.
 
-<pre><code>   Predicates...
--> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+<pre><code>   Preds...
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
 -> Shuttle
    <
-       (...&&Predicates&lt;V<sub>0</sub>&gt;) ? Nothing : V<sub>0</sub>,
-       (...&&Predicates&lt;V<sub>1</sub>&gt;) ? Nothing : V<sub>1</sub>,
+       (...&&Preds&lt;Arg<sub>0</sub>&gt;::value) ? (nothing) : Arg<sub>0</sub>,
+       (...&&Preds&lt;Arg<sub>1</sub>&gt;::value) ? (nothing) : Arg<sub>1</sub>,
                             &vellip;
-       (...&&Predicates&lt;V<sub>n</sub>&gt;) ? Nothing : V<sub>n</sub>
+       (...&&Preds&lt;Arg<sub>n</sub>&gt;::value) ? (nothing) : Arg<sub>n</sub>
    ></code></pre>
 
 ## Type Signature

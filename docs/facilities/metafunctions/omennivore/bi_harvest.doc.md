@@ -13,15 +13,15 @@ Suppose every element has an alias member `type` and a static constexpr data mem
 
 - When invoked by a container, the function collects the type results from the elements and instantiates the container with the collection.
 
-<pre><code>   Elements...
--> Operation
--> Operation&lt;Elements::type...&gt;</code></pre>
+<pre><code>   Es...
+-> Oper
+-> Oper&lt;Es::type...&gt;</code></pre>
 
 - When invoked by a sequence, the function collects the value results from the elements and instantiates the sequence with the collection.
 
-<pre><code>   Elements...
--> Operation
--> Operation&lt;Elements::value...&gt;</code></pre>
+<pre><code>   Es...
+-> Oper
+-> Oper&lt;Es::value...&gt;</code></pre>
 
 ## Type Signature
 

@@ -10,13 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Sequnivore::TypicalPaste` accepts a list of packed sequences.
 It concatenates them together and uses the first sequence to hold the result.
 
-<pre><code>   Sequence<sub><i>0</i></sub>&lt;Vs<sub><i>0</i></sub>...&gt;, Sequence<sub><i>1</i></sub>&lt;Vs<sub><i>1</i></sub>...&gt;, ..., Sequence<sub><i>n</i></sub>&lt;Vs<sub><i>n</i></sub>...&gt;
--> Sequence<sub><i>0</i></sub>&lt;Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
+<pre><code>   Seq<sub><i>0</i></sub>&lt;Vs<sub><i>0</i></sub>...&gt;, Seq<sub><i>1</i></sub>&lt;Vs<sub><i>1</i></sub>...&gt;, ..., Seq<sub><i>n</i></sub>&lt;Vs<sub><i>n</i></sub>...&gt;
+-> Seq<sub><i>0</i></sub>&lt;Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
 
 `Sequnivore::TypicalPaste` can also handle `std::integer_sequence`. The function `static_cast` integers to fit into the first sequence.
 
-<pre><code>   Sequence<sub><i>0</i></sub>&lt;Type<sub>0</sub>, Vs<sub><i>0</i></sub>...&gt;, Sequence<sub><i>1</i></sub>&lt;Type<sub>1</sub>, Vs<sub><i>1</i></sub>...&gt;, ..., Sequence<sub><i>n</i></sub>&lt;Type<sub>n</sub>, Vs<sub><i>n</i></sub>...&gt;
--> Sequence<sub><i>0</i></sub>&lt;Type<sub>0</sub>, Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
+<pre><code>   Seq<sub><i>0</i></sub>&lt;Type<sub>0</sub>, Vs<sub><i>0</i></sub>...&gt;, Seq<sub><i>1</i></sub>&lt;Type<sub>1</sub>, Vs<sub><i>1</i></sub>...&gt;, ..., Seq<sub><i>n</i></sub>&lt;Type<sub>n</sub>, Vs<sub><i>n</i></sub>...&gt;
+-> Seq<sub><i>0</i></sub>&lt;Type<sub>0</sub>, Vs<sub><i>0</i></sub>..., Vs<sub><i>1</i></sub>..., ..., Vs<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

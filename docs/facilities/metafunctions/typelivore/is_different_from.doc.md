@@ -10,7 +10,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::IsDifferentFrom` accepts a element and returns a function.
 When invoked by an argument, the function returns true if the argument differs from the element and returns false if otherwise.
 
-<pre><code>Target -> Element -> Element != Target ? true : false</code></pre>
+<pre><code>   E
+-> Arg
+-> Arg `different from` E ?
+   true : false</code></pre>
 
 ## Type Signature
 

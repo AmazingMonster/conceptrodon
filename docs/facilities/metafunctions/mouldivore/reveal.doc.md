@@ -11,7 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked, the function instantiates the operation with the arguments and becomes its type result.
 Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
 
-<pre><code>Operation -> Mold&lt;&ast;&gt;=Operation&lt;&ast;&gt;::type</code></pre>
+<pre><code>   Operation
+-> using Mold&lt;***&gt; = Operation&lt;***&gt;::type</code></pre>
 
 ## Type Signature
 

@@ -13,19 +13,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 In that case, it returns a function.
 When invoked, the function collects all arguments with indices greater or equal to the given index from its argument list and instantiates the operation with the collection.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I
--> E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>I</sub>, ..., E<sub>n</sub>
--> Operation&lt;E<sub>I</sub>, E<sub>I+1</sub>, ..., E<sub>n</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>I</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
 When invoked by an operation, the function collects all arguments of indices within the interval from its argument list and instantiates the operation with the collection.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I, J
--> E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I</sub>, ..., E<sub>J-1</sub>, ..., E<sub>n</sub>
--> Operation&lt;E<sub>I</sub>, ..., E<sub>J-1</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I</sub>, ..., Arg<sub>J-1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>I</sub>, ..., Arg<sub>J-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

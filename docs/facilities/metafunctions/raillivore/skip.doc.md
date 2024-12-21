@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Raillivore::Skip` accepts an operation and sinks its *0*th layer to the bottom of the invocation order.
 
-<pre><code>   Operation{FirstLayer{...LastLayer}}
--> FirstLayer{...LastLayer{Operation}}</code></pre>
+<pre><code>   <i>0</i>th Layer { <i>1</i>st Layer {...Last Layer {***}}}
+-> <i>1</i>st Layer {...Last Layer { <i>0</i>th Layer {***}}}</code></pre>
 
 ## Type Signature
 

@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Upend` accepts a list of elements and returns a function.
 When invoked by an operation, the function instantiates the operation with the previously provided elements but in reversed order.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n</sub>
--> Operation
--> Operation&lt;Element<sub>n</sub>, Element<sub>n-1</sub>, ..., Element<sub>0</sub>&gt;</code></pre>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Oper&lt;E<sub>n</sub>, E<sub>n-1</sub>, ..., E<sub>0</sub>&gt;</code></pre>
 
 ## Type Signature
 
@@ -68,7 +68,7 @@ We can pull out the variable of a given index by asking `decltype` the return ty
 For this purpose, we will convert an index into a type via `std::integral_constant`.
 So, the final mapping will be as follows:
 
-<pre><code>std::integral_constant&lt;I&gt; -> Element<sub>I</sub></code></pre>
+<pre><code>std::integral_constant&lt;I&gt; -> E<sub>I</sub></code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the elements out in reversed order. Here's the entire implementation:
 

@@ -10,7 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Among` accepts a list of elements and returns a function.
 When invoked by an index, the function returns the element at the index from the list.
 
-<pre><code>...Element<sub><i>i</i></sub>... -> I -> Element<sub><i>i</i></sub></code></pre>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I</sub>, ..., E<sub>n</sub>
+-> I
+-> E<sub>I</sub></code></pre>
 
 ## Type Signature
 

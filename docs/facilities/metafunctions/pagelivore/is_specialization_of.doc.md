@@ -11,8 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by a type, the function returns true if the type is created by an instantiation of the sequence and returns false if otherwise.
 
 <pre><code>   Sequence
--> PackedVessel
--> PackedVessel == Sequence&lt;Variables...&gt; ?
+-> Entity
+-> Entity == Sequence&lt;Vs...&gt; ?
    true : false</code></pre>
 
 ## Type Signature

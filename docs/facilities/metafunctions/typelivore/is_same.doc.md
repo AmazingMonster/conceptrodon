@@ -12,7 +12,7 @@ It returns true if the target is the same as every element;
 otherwise, it returns false.
 
 <pre><code>   Target, E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
--> (Target same as E<sub>0</sub>) && (Target same as E<sub>1</sub>) && ... && (Target same as E<sub>n</sub>)</code></pre>
+-> (Target `same as` E<sub>0</sub>) && (Target `same as` E<sub>1</sub>) && ... && (Target `same as` E<sub>n</sub>)</code></pre>
 
 ## Type Signature
 

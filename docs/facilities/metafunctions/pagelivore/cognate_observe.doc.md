@@ -10,9 +10,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::CognateObserve` accepts an operation and returns a function.
 When invoked, the function collects the indices of the arguments that can be evaluated to `true` and instantiates the operation with the collection.
 
-<pre><code>   Operation
--> ..., true<sub>i<sub>0</sub></sub>, ..., true<sub>i<sub>1</sub></sub>, ..., true<sub>i<sub>n</sub></sub>, ...
--> Operation&lt;i<sub>0</sub>, i<sub>1</sub>, ..., i<sub>n</sub>&gt;</code></pre>
+<pre><code>   Oper
+-> Preds...
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper
+   <
+       Arg<sub>0</sub> ? (nothing) : 0,
+       Arg<sub>1</sub> ? (nothing) : 1,
+                  &vellip;
+       Arg<sub>n</sub> ? (nothing) : n
+   ></code></pre>
 
 ## Type Signature
 

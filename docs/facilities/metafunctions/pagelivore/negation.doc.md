@@ -9,9 +9,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Pagelivore::Negation` accepts a predicate and returns a function. When invoked, the function returns true if the predicate instantiated by the arguments evaluates to false and returns false if otherwise.
 
-<pre><code>   Predicate
--> Arguments...
--> not Predicate&lt;Arguments...&gt;::value</code></pre>
+<pre><code>   Pred
+-> Args...
+-> not Pred&lt;Args...&gt;::value</code></pre>
 
 ## Type Signature
 

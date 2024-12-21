@@ -9,7 +9,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Amid` accepts a list of variables and returns a function. When invoked by an index, the function returns the variable at the index from the list.
 
-<pre><code>...Variable<sub><i>i</i></sub>... -> I -> Variable<sub><i>i</i></sub></code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>n</sub>
+-> I
+-> V<sub>I</sub></code></pre>
 
 ## Type Signature
 
@@ -73,7 +75,7 @@ We can pull out the variable of a given index by asking `decltype` the return ty
 For this purpose, we will convert an index into a type via `std::integral_constant`.
 So, the final mapping will be as follows:
 
-<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;Variable<sub>I</sub>&gt;</code></pre>
+<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;Variablv<sub>I</sub>&gt;</code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the variable out when provided with an index. Here's the entire implementation:
 

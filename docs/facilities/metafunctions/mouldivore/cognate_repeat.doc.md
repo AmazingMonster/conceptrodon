@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts the times of repetitions and returns a function.
 When invoked, the function repeats its argument list the given number of times and uses the result to instantiate the operation.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> N
--> Elements...
--> Operation&lt;Elements...<sub>1</sub>, Elements...<sub>2</sub>, ..., Elements...<sub>N</sub>&gt;</code></pre>
+-> Args...
+-> Oper&lt;Args...<sub>1</sub>, Args...<sub>2</sub>, ..., Args...<sub>N</sub>&gt;</code></pre>
 
 ## Type Signature
 

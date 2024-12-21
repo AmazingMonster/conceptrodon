@@ -10,17 +10,17 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::KindredFoldLeftFirst` accepts a list of variables and returns a function.
 When invoked by an operation, the function left-folds the list using the operation with the first variable as the initiator.
 
-<pre><code>   Initiator, V<sub>0</sub>, V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>n</sub>
--> Operation
--> Operation&lt;
-   Operation&lt;
-        &vellip;
-   Operation&lt;
-   Operation&lt;
-       Initiator, V<sub>0</sub>
+<pre><code>   Init, V<sub>0</sub>, V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>n</sub>
+-> Oper
+-> Oper&lt;
+   Oper&lt;
+      &vellip;
+   Oper&lt;
+   Oper&lt;
+       Init, V<sub>0</sub>
    &gt;::value, V<sub>1</sub>
    &gt;::value, V<sub>2</sub>
-        &vellip;
+      &vellip;
    &gt;::value, V<sub>n</sub>
    &gt;::value</code></pre>
 

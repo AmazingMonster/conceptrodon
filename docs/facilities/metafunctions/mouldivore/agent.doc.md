@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Mouldivore::Agent` accepts an operation and returns a function.
 When invoked by a packed container, the function extracts the list of elements from the packed container and instantiates the operation with the list.
 
-<pre><code>   Operation
--> Container&lt;Elements...&gt;
--> Operation&lt;Elements...&gt;</code></pre>
+<pre><code>   Oper
+-> Con&lt;Es...&gt;
+-> Oper&lt;Es...&gt;</code></pre>
 
 ## Type Signature
 

@@ -14,18 +14,20 @@ then, it collects the type result of each packed sequence and invokes the operat
 
 Check out **Examples** for more information.
 
-<pre><code>   Variable
--> Operation
--> ...Sequence<sub><i>i</i></sub>...
--> Operation&lt;...Sequence<sub><i>i</i></sub>&lt;Variable&gt;::type...&gt;</code></pre>
-<pre><code>   ...Variable<sub><i>i</i></sub>...
--> Operation
--> Sequence
--> Operation&lt;...Sequence&lt;Variable<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
-<pre><code>   ...Variable<sub><i>i</i></sub>...
--> Operation
--> ...Sequence<sub><i>i</i></sub>...
--> Operation<...Sequence<sub><i>i</i></sub>&lt;Variable<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+<pre><code>   V
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;V&gt;::type, Transf<sub>1</sub>&lt;V&gt;::type, ..., Transf<sub>n</sub>&lt;V&gt;::type&gt;</code></pre>
+
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Oper
+-> Transf
+-> Oper&lt;Transf&lt;V<sub>0</sub>&gt;::type, Transf&lt;V<sub>1</sub>&gt;::type, ..., Transf&lt;V<sub>n</sub>&gt;::type&gt;</code></pre>
+
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;V<sub>0</sub>&gt;::type, Transf<sub>1</sub>&lt;V<sub>1</sub>&gt;::type, ..., Transf<sub>n</sub>&lt;V<sub>n</sub>&gt;::type&gt;</code></pre>
 
 ## Type Signature
 

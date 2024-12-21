@@ -12,11 +12,11 @@ Its first layer accepts an index, which indicates a location in a list.
 Its second layer accepts a list of new variables and returns a function.
 When invoked, the function injects new variables into the location of its argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I
--> NewVariables...
--> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I</sub>, ..., Arg<sub>n</sub>
--> Operation&lt;Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, NewVariables..., Arg<sub>I</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
+-> Vs...
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Vs..., Arg<sub>I</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

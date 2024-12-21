@@ -10,10 +10,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::Among` accepts a list of sequences. Its first layer accepts an index and returns a function.
 When invoked, the function instantiates the sequence at the index from the list with its arguments and returns the result.
 
-<pre><code>   ...Sequence<sub><i>i</i></sub>...
+<pre><code>   Seq<sub>0</sub>, Seq<sub>1</sub>, ..., Seq<sub>I</sub>, ..., Seq<sub>n</sub>
 -> I
--> Variables...
--> Sequence&lt;Variables...&gt;</code></pre>
+-> Vs...
+-> Seq<sub>I</sub>&lt;Vs...&gt;</code></pre>
 
 ## Type Signature
 

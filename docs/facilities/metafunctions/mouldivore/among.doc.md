@@ -10,10 +10,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Mouldivore::Among` accepts a list of containers. Its first layer accepts an index and returns a function.
 When invoked, the function instantiates the container at the index from the list with its arguments and returns the result.
 
-<pre><code>   Container<sub>0</sub>, Container<sub>1</sub>, ..., Container<sub>I</sub>, ..., Container<sub>n</sub>
+<pre><code>   Con<sub>0</sub>, Con<sub>1</sub>, ..., Con<sub>I</sub>, ..., Con<sub>n</sub>
 -> I
--> Elements...
--> Container<sub>I</sub>&lt;Elements...&gt;</code></pre>
+-> Es...
+-> Con<sub>I</sub>&lt;Es...&gt;</code></pre>
 
 ## Type Signature
 

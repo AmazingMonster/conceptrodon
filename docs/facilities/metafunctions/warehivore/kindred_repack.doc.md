@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Warehivore::KindredRepack` accepts a list of packed warehouses and returns a function.
 When invoked by an operation, the function concatenates the packed warehouses and instantiates the operation with the result.
 
-<pre><code>   Warehouse<sub><i>0</i></sub>&lt;Cons<sub><i>0</i></sub>...&gt;, Warehouse<sub><i>1</i></sub>&lt;Cons<sub><i>1</i></sub>...&gt;, ..., Warehouse<sub><i>n</i></sub>&lt;Cons<sub><i>n</i></sub>...&gt;
--> Operation
--> Operation&lt;Cons<sub><i>0</i></sub>..., Cons<sub><i>1</i></sub>..., ..., Cons<sub><i>n</i></sub>...></code></pre>
+<pre><code>   Ware<sub><i>0</i></sub>&lt;Cons<sub><i>0</i></sub>...&gt;, Ware<sub><i>1</i></sub>&lt;Cons<sub><i>1</i></sub>...&gt;, ..., Ware<sub><i>n</i></sub>&lt;Cons<sub><i>n</i></sub>...&gt;
+-> Oper
+-> Oper&lt;Cons<sub><i>0</i></sub>..., Cons<sub><i>1</i></sub>..., ..., Cons<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

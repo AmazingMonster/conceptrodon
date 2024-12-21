@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::Agent` accepts an operation and returns a function.
 When invoked by a packed sequence, the function extracts the list of variables from the packed sequence and instantiates the operation with the list.
 
-<pre><code>   Operation
--> Sequence&lt;Variables...&gt;
--> Operation&lt;Variables...&gt;</code></pre>
+<pre><code>   Oper
+-> Seq&lt;Vs...&gt;
+-> Oper&lt;Vs...&gt;</code></pre>
 
 ## Type Signature
 

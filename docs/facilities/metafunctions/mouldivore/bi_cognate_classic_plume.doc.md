@@ -8,41 +8,26 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Mouldivore::BiCognateClassicPlume` accepts an operation.
-Its first layer accepts a list of containers and returns a function.
-When invoked, the function places its arguments into the containers via a process similar to pack expansion;
-then, it collects the type result of each packed container and invokes the operation with the collection.
+Its first layer accepts a list of transformations and returns a function.
+When invoked, the function instantiates the transformations using its arguments via a process similar to pack expansion;
+then, it invokes the operation by the type results collected from the instantiated transformations.
 
 Check out **Examples** for more information.
 
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> Element
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::type...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Arg
+-> Oper&lt;Transfs<sub>0</sub>&lt;Arg&gt;::type, Transfs<sub>1</sub>&lt;Arg&gt;::type, ..., Transfs<sub>n</sub>&lt;Arg&gt;::type&gt;</code></pre>
 
-<pre><code>   Operation
--> Container
--> ...Element<sub><i>i</i></sub>...
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Transf&lt;Arg<sub>0</sub>&gt;::type, Transf&lt;Arg<sub>1</sub>&gt;::type, ..., Transf&lt;Arg<sub>n</sub>&gt;::type&gt;</code></pre>
 
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> ...Element<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
-
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> Element
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::type...&gt;</code></pre>
-
-<pre><code>   Operation
--> Container
--> ...Element<sub><i>i</i></sub>...
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
-
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> ...Element<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;Arg<sub>0</sub>&gt;::type, Transf<sub>1</sub>&lt;Arg<sub>1</sub>&gt;::type, ..., Transf<sub>n</sub>&lt;Arg<sub>n</sub>&gt;::type&gt;</code></pre>
 
 ## Type Signature
 
@@ -142,7 +127,7 @@ struct Vay;
 template<auto I>
 struct AddZero 
 { 
-    using type = Vay<I>; 
+    using type = Vay; 
 };
 
 template<auto I>

@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of elements containing pegs and returns a function.
 When invoked, the function replaces the pegs in the element list with arguments at the corresponding position from its argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> E<sub>0</sub>, E<sub>1</sub>, ..., Peg&lt;I<sub>0</sub>&gt;, ..., Peg&lt;I<sub>1</sub>&gt;, ..., Peg&lt;I<sub>k</sub>&gt;, ..., E<sub>m</sub>
--> Arg<sub>0</sub>, Arg<sub>1</sub>...
--> Operation&lt;E<sub>0</sub>, E<sub>1</sub>, ..., Arg<sub>I<sub>0</sub>-1</sub>, ..., Arg<sub>I<sub>1</sub>-1</sub>, ..., Arg<sub>I<sub>k</sub>-1</sub>, ..., E<sub>m</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;E<sub>0</sub>, E<sub>1</sub>, ..., Arg<sub>I<sub>0</sub>-1</sub>, ..., Arg<sub>I<sub>1</sub>-1</sub>, ..., Arg<sub>I<sub>k</sub>-1</sub>, ..., E<sub>m</sub>&gt;</code></pre>
 
 ## Type Signature
 

@@ -10,7 +10,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::Maximum` accepts a list of variables and returns the maximum.
 
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> max(V<sub>0</sub>, V<sub>1</sub>, ...,V<sub>n</sub>)</code></pre>
+-> (max) V<sub>0</sub>, V<sub>1</sub>, ...,V<sub>n</sub></code></pre>
 
 ## Type Signature
 

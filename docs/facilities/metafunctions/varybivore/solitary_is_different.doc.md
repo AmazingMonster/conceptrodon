@@ -10,7 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::SolitaryIsDifferent` accepts two variables.
 It returns true if they are different and returns false otherwise.
 
-<pre><code>Left, Right -> Left different from Right ? true : false</code></pre>
+<pre><code>   Left, Right
+-> Left `different from` Right ?
+   true : false</code></pre>
 
 ## Type Signature
 

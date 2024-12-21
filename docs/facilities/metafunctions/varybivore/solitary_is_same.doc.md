@@ -10,7 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::SolitaryIsSame` accepts two variables.
 It returns true if they are the same and returns false otherwise.
 
-<pre><code>Left, Right -> Left same as Right ? true : false</code></pre>
+<pre><code>   Left, Right
+-> Left `same as` Right ?
+   true : false</code></pre>
 
 ## Type Signature
 

@@ -9,14 +9,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Mouldivore::RightReview` accepts a predicate and returns a function. When invoked, the function returns true if the predicate evaluates to true for every relative-order-reversing pair of its arguments and returns false if otherwise.
 
-<pre><code>   Predicate
+<pre><code>   Pred
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, Arg<sub>2</sub>, ..., Arg<sub>i</sub>, Arg<sub>i+1</sub>, ..., Arg<sub>n-1</sub>, Arg<sub>n</sub>
-->   Predicate&lt;Arg<sub>1</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>2</sub>, Arg<sub>0</sub>&gt; && ... && Predicate&lt;Arg<sub>i</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>0</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>0</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>0</sub>&gt;
-  && Predicate&lt;Arg<sub>2</sub>, Arg<sub>1</sub>&gt; && ... && Predicate&lt;Arg<sub>i</sub>, Arg<sub>1</sub>&gt; && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>1</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>1</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>1</sub>&gt;
+->   Pred&lt;Arg<sub>1</sub>, Arg<sub>0</sub>&gt;::value && Pred&lt;Arg<sub>2</sub>, Arg<sub>0</sub>&gt;::value && ... && Pred&lt;Arg<sub>i</sub>, Arg<sub>0</sub>&gt;::value && Pred&lt;Arg<sub>i+1</sub>, Arg<sub>0</sub>&gt;::value && ... && Pred&lt;Arg<sub>n-1</sub>, Arg<sub>0</sub>&gt;::value && Pred&lt;Arg<sub>n</sub>, Arg<sub>0</sub>&gt;::value
+  && Pred&lt;Arg<sub>2</sub>, Arg<sub>1</sub>&gt;::value && ... && Pred&lt;Arg<sub>i</sub>, Arg<sub>1</sub>&gt;::value && Pred&lt;Arg<sub>i+1</sub>, Arg<sub>1</sub>&gt;::value && ... && Pred&lt;Arg<sub>n-1</sub>, Arg<sub>1</sub>&gt;::value && Pred&lt;Arg<sub>n</sub>, Arg<sub>1</sub>&gt;::value
               &vellip;
-  && Predicate&lt;Arg<sub>i+1</sub>, Arg<sub>i</sub>&gt; && ... && Predicate&lt;Arg<sub>n-1</sub>, Arg<sub>i</sub>&gt; && Predicate&lt;Arg<sub>n</sub>, Arg<sub>i</sub>&gt;
+  && Pred&lt;Arg<sub>i+1</sub>, Arg<sub>i</sub>&gt;::value && ... && Pred&lt;Arg<sub>n-1</sub>, Arg<sub>i</sub>&gt;::value && Pred&lt;Arg<sub>n</sub>, Arg<sub>i</sub>&gt;::value
               &vellip;
-  && Predicate&lt;Arg<sub>n</sub>, Arg<sub>n-1</sub>&gt;</code></pre>
+  && Pred&lt;Arg<sub>n</sub>, Arg<sub>n-1</sub>&gt;::value</code></pre>
 
 ## Type Signature
 

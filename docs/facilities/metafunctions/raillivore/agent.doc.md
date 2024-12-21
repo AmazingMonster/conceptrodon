@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Raillivore::Agent` accepts an operation and returns a function.
 When invoked by a packed stockroom, the function extracts the list of sequences from the packed stockroom and instantiates the operation with the list.
 
-<pre><code>   Operation
--> Stockroom&lt;Sequences...&gt;
--> Operation&lt;Sequences...&gt;</code></pre>
+<pre><code>   Oper
+-> Stoc&lt;Seqs...&gt;
+-> Oper&lt;Seqs...&gt;</code></pre>
 
 ## Type Signature
 

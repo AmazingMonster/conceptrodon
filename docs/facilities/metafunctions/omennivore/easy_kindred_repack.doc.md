@@ -11,8 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by an operation, the function concatenates the packed vessels and instantiates the operation with the result.
 
 <pre><code>   Vessel<sub><i>0</i></sub>&lt;Items<sub><i>0</i></sub>...&gt;, Vessel<sub><i>1</i></sub>&lt;Items<sub><i>1</i></sub>...&gt;, ..., Vessel<sub><i>n</i></sub>&lt;Items<sub><i>n</i></sub>...&gt;
--> Operation
--> Operation&lt;Items<sub><i>0</i></sub>..., Items<sub><i>1</i></sub>..., ..., Items<sub><i>n</i></sub>...></code></pre>
+-> Oper
+-> Oper&lt;Items<sub><i>0</i></sub>..., Items<sub><i>1</i></sub>..., ..., Items<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

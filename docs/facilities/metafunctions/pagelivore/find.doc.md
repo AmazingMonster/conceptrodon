@@ -10,10 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::Find` accepts a list of predicates and returns a function.
 When invoked, the function returns the index of the first argument that satisfies all predicates, or `-1` if it cannot find the argument.
 
-<pre><code>   Predicates...
+<pre><code>   Preds...
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Exist (...&& Predicates&lt;Arg<sub>I</sub>&gt;::value) ?
-   I : -1</code></pre>
+-> (...&&Preds&lt;Arg<sub>0</sub>&gt;::value) ? 0 : (
+   (...&&Preds&lt;Arg<sub>1</sub>&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;Arg<sub>n</sub>&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

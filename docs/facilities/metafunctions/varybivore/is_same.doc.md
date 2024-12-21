@@ -12,7 +12,7 @@ It returns true if the target is the same as every variable;
 otherwise, it returns false.
 
 <pre><code>   Target, V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> (Target same as V<sub>0</sub>) && (Target same as V<sub>1</sub>) && ... && (Target same as V<sub>n</sub>)</code></pre>
+-> (Target `same as` V<sub>0</sub>) && (Target `same as` V<sub>1</sub>) && ... && (Target `same as` V<sub>n</sub>)</code></pre>
 
 ## Type Signature
 

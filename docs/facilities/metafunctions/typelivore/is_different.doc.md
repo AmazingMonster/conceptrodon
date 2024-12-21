@@ -12,7 +12,7 @@ It returns true if the target is different from every element;
 otherwise, it returns false.
 
 <pre><code>   Target, E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
--> (Target different from E<sub>0</sub>) && (Target different from E<sub>1</sub>) && ... && (Target different from E<sub>n</sub>)</code></pre>
+-> (Target `different from` E<sub>0</sub>) && (Target `different from` E<sub>1</sub>) && ... && (Target `different from` E<sub>n</sub>)</code></pre>
 
 ## Type Signature
 

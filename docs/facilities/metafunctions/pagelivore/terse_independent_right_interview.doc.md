@@ -14,11 +14,14 @@ then, it returns the index of the first argument that satisfies all newly formed
 
 `Pagelivore::TerseIndependentRightInterview` prepares fewer base cases than `Pagelivore::IndependentRightInterview`.
 
-<pre><code>   Predicates...
--> RightSides...
+<pre><code>   Preds...
+-> Vs...
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Exist (...&& Predicates&lt;Arg<sub>I</sub>, RightSides...&gt;::value) ?
-   I : -1</code></pre>
+-> (...&&Preds&lt;Arg<sub>0</sub>, Vs...&gt;::value) ? 0 : (
+   (...&&Preds&lt;Arg<sub>1</sub>, Vs...&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;Arg<sub>n</sub>, Vs...&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

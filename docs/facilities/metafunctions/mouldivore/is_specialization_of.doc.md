@@ -11,8 +11,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by a type, the function returns true if the type is created by an instantiation of the container and returns false if otherwise.
 
 <pre><code>   Container
--> PackedVessel
--> PackedVessel == Container&lt;Elements...&gt; ?
+-> Entity
+-> Entity == Container&lt;Es...&gt; ?
    true : false</code></pre>
 
 ## Type Signature

@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of variables and returns a function.
 When invoked, the function adds the variables to the end of the argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
--> Variables...
--> Arguments...
--> Operation&lt;Arguments..., Variables...&gt;</code></pre>
+<pre><code>   Oper
+-> Vs...
+-> Args...
+-> Oper&lt;Args..., Vs...&gt;</code></pre>
 
 ## Type Signature
 

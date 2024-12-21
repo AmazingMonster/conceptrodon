@@ -10,9 +10,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::Observe` accepts a list of variables and returns a function.
 When invoked by an operation, the function collects the indices of the variables that can be evaluated to `true` and instantiates the operation with the collection.
 
-<pre><code>   ..., true<sub>i<sub>0</sub></sub>, ..., true<sub>i<sub>1</sub></sub>, ..., true<sub>i<sub>n</sub></sub>, ...
--> Operation
--> Operation&lt;i<sub>0</sub>, i<sub>1</sub>, ..., i<sub>n</sub>&gt;</code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Preds...
+-> Oper
+-> Oper
+   <
+       V<sub>0</sub> ? (nothing) : 0,
+       V<sub>1</sub> ? (nothing) : 1,
+                  &vellip;
+       V<sub>n</sub> ? (nothing) : n
+   ></code></pre>
 
 ## Type Signature
 

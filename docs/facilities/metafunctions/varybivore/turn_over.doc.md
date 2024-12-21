@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::TurnOver` accepts a list of variables and returns a `Shuttle` packed with the previously provided variables but in reversed order.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>n</sub>
--> Variable<sub>n</sub>, Variable<sub>n-1</sub>, ..., Variable<sub>0</sub></code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Shuttle&lt;V<sub>n</sub>, V<sub>n-1</sub>, ..., V<sub>0</sub>&gt;</code></pre>
 
 ## Type Signature
 

@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of indices in ascending order, which indicates positions in a list, and returns a function.
 When invoked, the function removes its arguments at positions indicated by the index list and instantiates the operation with the arguments left.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I<sub>0</sub>, I<sub>1</sub>, ..., I<sub>n</sub>
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>m</sub>
--> Operation
+-> Oper
    <
             Arg<sub>0</sub>,
             Arg<sub>1</sub>,

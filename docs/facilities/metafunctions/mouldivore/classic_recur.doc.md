@@ -11,12 +11,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of predicates and returns a function.
 When invoked, the function instantiates the operation with its arguments and uses the type result to call the operation repeatedly until the type result satisfies all the predicates.
 
-<pre><code>   Operation
--> Predicates...
+<pre><code>   Oper
+-> Preds...
 -> Args...
--> (...&&Predicates&lt;Operation&lt;Args...&gt;::type&gt;) ? Operation&lt;Args...&gt;::type : (
-   (...&&Predicates&lt;Operation&lt;Operation&lt;Args...&gt;::type&gt;::type&gt;) ? Operation&lt;Operation&lt;Args...&gt;::type&gt;::type : (
-   (...&&Predicates&lt;Operation&lt;Operation&lt;Operation&lt;Args...&gt;::type&gt;::type&gt;::type&gt;) ? Operation&lt;Operation&lt;Operation&lt;Args...&gt;::type&gt;::type&gt;::type : (
+-> (...&&Preds&lt;Oper&lt;Args...&gt;::type&gt;::value) ? Oper&lt;Args...&gt; : (
+   (...&&Preds&lt;Oper&lt;Oper&lt;Args...&gt;::type&gt;::type&gt;::value) ? Oper&lt;Oper&lt;Args...&gt;::type&gt; : (
+   (...&&Preds&lt;Oper&lt;Oper&lt;Oper&lt;Args...&gt;::type&gt;::type&gt;::type&gt;::value) ? Oper&lt;Oper&lt;Oper&lt;Args...&gt;::type&gt;::type&gt; : (
             &vellip;
    )))</code></pre>
 

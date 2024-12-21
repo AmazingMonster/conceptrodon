@@ -11,19 +11,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts an initiator and returns a function.
 When invoked, the function left-folds its argument list using the operation and the initiator.
 
-<pre><code>   Operation
--> Initiator
--> E<sub>0</sub>, E<sub>1</sub>, E<sub>2</sub>, ..., E<sub>n</sub>
--> Operation&lt;
-   Operation&lt;
-        &vellip;
-   Operation&lt;
-   Operation&lt;
-       Initiator, E<sub>0</sub>
-   &gt;, E<sub>1</sub>
-   &gt;, E<sub>2</sub>
+<pre><code>   Oper
+-> Init
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, Arg<sub>2</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;
+   Oper&lt;
       &vellip;
-   &gt;, E<sub>n</sub>
+   Oper&lt;
+   Oper&lt;
+       Init, Arg<sub>0</sub>
+   &gt;, Arg<sub>1</sub>
+   &gt;, Arg<sub>2</sub>
+      &vellip;
+   &gt;, Arg<sub>n</sub>
    &gt;</code></pre>
 
 ## Type Signature

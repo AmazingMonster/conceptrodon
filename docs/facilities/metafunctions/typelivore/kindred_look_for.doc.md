@@ -11,10 +11,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by a predicate, the function returns the index of the first element that satisfies the predicate, or `-1` if it cannot find the element.
 This function is created to exhibit the power of fold expression and to compare with `Typelivore::Find`.
 
-<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Predicate
--> Exist Predicate&lt;Arg<sub>I</sub>&gt;::value ?
-   I : -1</code></pre>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Pred
+-> Preds&lt;E<sub>0</sub>&gt;::value ? 0 : (
+   Preds&lt;E<sub>1</sub>&gt;::value ? 1 : (
+      &vellip;
+   Preds&lt;E<sub>n</sub>&gt;::value ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

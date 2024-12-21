@@ -15,8 +15,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 The result will be stored in a `Shuttle`.
 
-<pre><code>   Variables...
--> MakeMathematicalSet(Variables...)</code></pre>
+<pre><code>   Args...
+-> Shuttle&lt;(make set)&lt;Args...&gt;&gt;</code></pre>
 
 ## Type Signature
 

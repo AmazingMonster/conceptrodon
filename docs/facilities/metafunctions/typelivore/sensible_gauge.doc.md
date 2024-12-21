@@ -9,23 +9,25 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::SensibleGauge` accepts a list of elements.
 Its first layer accepts an operation and returns a function.
-When invoked by containers, the function places the elements into the containers via a process similar to pack expansion;
-then, it collects the value result of each packed container and invokes the operation with the collection.
+When invoked by a list of transformations, the function instantiates the transformations using the elements via a process similar to pack expansion.
+Then, it invokes the operation by the value results collected from the instantiated transformations.
 
 Check out **Examples** for more information.
 
-<pre><code>   Element
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::value...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> Container
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
+<pre><code>   E
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transfs<sub>0</sub>&lt;E&gt;::value, Transfs<sub>1</sub>&lt;E&gt;::value, ..., Transfs<sub>n</sub>&lt;E&gt;::value&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf
+-> Oper&lt;Transf&lt;E<sub>0</sub>&gt;::value, Transf&lt;E<sub>1</sub>&gt;::value, ..., Transf&lt;E<sub>n</sub>&gt;::value&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;E<sub>0</sub>&gt;::value, Transf<sub>1</sub>&lt;E<sub>1</sub>&gt;::value, ..., Transf<sub>n</sub>&lt;E<sub>n</sub>&gt;::value&gt;</code></pre>
 
 ## Type Signature
 

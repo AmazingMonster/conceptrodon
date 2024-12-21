@@ -7,25 +7,27 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Typelivore::SensibleClassicPlume` accepts a list of elements.
+`Typelivore::ClassicPlume` accepts a list of elements.
 Its first layer accepts an operation and returns a function.
-When invoked by containers, the function places the elements into the containers via a process similar to pack expansion;
-then, it collects the type result of each packed container and invokes the operation with the collection.
+When invoked by a list of transformations, the function instantiates the transformations using the elements via a process similar to pack expansion;
+then, it invokes the operation by the value results collected from the instantiated transformations.
 
 Check out **Examples** for more information.
 
-<pre><code>   Element
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::type...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> Container
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::type...&gt;</code></pre>
+<pre><code>   E
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;E&gt;::type, Transf<sub>1</sub>&lt;E&gt;::type, ..., Transf<sub>n</sub>&lt;E&gt;::type&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf
+-> Oper&lt;Transf&lt;E<sub>0</sub>&gt;::type, Transf&lt;E<sub>1</sub>&gt;::type, ..., Transf&lt;E<sub>n</sub>&gt;::type&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;E<sub>0</sub>&gt;::type, Transf<sub>1</sub>&lt;E<sub>1</sub>&gt;::type, ..., Transf<sub>n</sub>&lt;E<sub>n</sub>&gt;::type&gt;</code></pre>
 
 ## Type Signature
 

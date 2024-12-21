@@ -9,7 +9,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Amidst` accepts a list of variables and returns a function. When invoked by an index, the function returns the variable at the index from the list.
 
-<pre><code>   ...Variable<sub><i>i</i></sub>... -> I -> Variable<sub><i>i</i></sub></code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>n</sub>
+-> I
+-> V<sub>I</sub></code></pre>
 
 ## Type Signature
 

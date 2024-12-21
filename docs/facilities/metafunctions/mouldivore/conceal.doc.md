@@ -11,9 +11,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked, the function instantiates the operation with the arguments and returns the result using alias member `type`.
 Overall, `Conceal` turns an operation into its `Typical` counterpart.
 
-<pre><code>   Operation
--> Arguments...
--> Mold { type=Operation&lt;Arguments...&gt; }</code></pre>
+<pre><code>   Oper
+-> Args...
+-> struct { using type=Oper&lt;Args...&gt;; }</code></pre>
 
 ## Type Signature
 

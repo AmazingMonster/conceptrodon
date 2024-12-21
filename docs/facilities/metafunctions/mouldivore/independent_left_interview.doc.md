@@ -12,11 +12,14 @@ Its first layer accepts a list of elements and returns a function.
 When invoked, the function first binds the elements to the front of every predicate;
 then, it returns the index of the first argument that satisfies all newly formed predicates, or `-1` if it cannot find the argument.
 
-<pre><code>   Predicates...
--> LeftSides...
+<pre><code>   Preds...
+-> Es...
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Exist (...&& Predicates&lt;LeftSides..., Arg<sub>I</sub>&gt;::value) ?
-   I : -1</code></pre>
+-> (...&&Preds&lt;Es..., Arg<sub>0</sub>&gt;::value) ? 0 : (
+   (...&&Preds&lt;Es..., Arg<sub>1</sub>&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;Es..., Arg<sub>n</sub>&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

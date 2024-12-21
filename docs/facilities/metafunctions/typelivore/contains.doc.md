@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::Contains` accepts a list of elements and returns a predicate.
 When invoked by an argument, the predicate returns true if the argument is in the previously provided list and returns false if otherwise.
 
-<pre><code>   Elements...
--> Argument
--> Argument &in; Elements... ?
+<pre><code>   Es...
+-> Arg
+-> Arg &in; Es... ?
    true : false</code></pre>
 
 ## Type Signature

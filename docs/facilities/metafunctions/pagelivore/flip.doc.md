@@ -9,7 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Pagelivore::Flip` accepts an operation and flips its *0*th layer and the *1*th layer.
 
-<pre><code>ZerothLayer{FirstLayer} -> FirstLayer{ZerothLayer}</code></pre>
+<pre><code>   <i>0</i>th Layer { <i>1</i>st Layer }
+-> <i>1</i>st Layer { <i>0</i>th Layer }</code></pre>
 
 ## Type Signature
 

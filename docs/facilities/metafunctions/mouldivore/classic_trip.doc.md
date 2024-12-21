@@ -23,18 +23,18 @@ Then, it returns two commitment functions and twelve continuation functions.
 
 In general, this function composes operations together in a similar fashion to `.` in Haskell.
 
-<pre><code>   Operation<sub>0</sub>
--> Operation<sub>1</sub>
+<pre><code>   Oper<sub>0</sub>
+-> Oper<sub>1</sub>
        &vellip;
--> Operation<sub>n-1</sub>
--> Operation<sub>n</sub>
--> Arguments...
--> Operation<sub>n</sub>&lt;
-   Operation<sub>n-1</sub>&lt;
+-> Oper<sub>n-1</sub>
+-> Oper<sub>n</sub>
+-> Args...
+-> Oper<sub>n</sub>&lt;
+   Oper<sub>n-1</sub>&lt;
        &vellip;
-   Operation<sub>1</sub>&lt;
-   Operation<sub>0</sub>&lt;
-       Arguments...
+   Oper<sub>1</sub>&lt;
+   Oper<sub>0</sub>&lt;
+       Args...
    >::Member
    >::Member
        &vellip;

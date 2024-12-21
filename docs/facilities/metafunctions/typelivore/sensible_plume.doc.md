@@ -9,23 +9,24 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::SensiblePlume` accepts a list of elements.
 Its first layer accepts an operation and returns a function.
-When invoked by containers, the function places the elements into the containers via a process similar to pack expansion;
-then, it collects every packed container and instantiates the operation with the collection.
+When invoked by a list of transformations, the function instantiates the transformations using its arguments via a process similar to pack expansion and invokes the operation by the instantiated transformations.
 
 Check out **Example** for more information.
 
-<pre><code>   Element
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::value...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> Container
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
-<pre><code>   ...Element<sub><i>i</i></sub>...
--> Operation
--> ...Container<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
+<pre><code>   E
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;E&gt;, Transf<sub>1</sub>&lt;E&gt;, ..., Transf<sub>n</sub>&lt;E&gt;&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf
+-> Oper&lt;Transf&lt;E<sub>0</sub>&gt;, Transf&lt;E<sub>1</sub>&gt;, ..., Transf&lt;E<sub>n</sub>&gt;&gt;</code></pre>
+
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;E<sub>0</sub>&gt;, Transf<sub>1</sub>&lt;E<sub>1</sub>&gt;, ..., Transf<sub>n</sub>&lt;E<sub>n</sub>&gt;&gt;</code></pre>
 
 ## Type Signature
 

@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of containers and returns a function.
 When invoked, the function adds the containers to the end of the argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
--> Containers...
--> Arguments...
--> Operation&lt;Arguments..., Containers...&gt;</code></pre>
+<pre><code>   Oper
+-> Cons...
+-> Args...
+-> Oper&lt;Args..., Cons...&gt;</code></pre>
 
 ## Type Signature
 

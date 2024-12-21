@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::Pop` accepts a list of elements and pops the last one. The result is stored in `Capsule`.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n-1</sub>, Element<sub>n</sub>
--> Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>n-1</sub></code></pre>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n-1</sub>, E<sub>n</sub>
+-> Capsule&lt;E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

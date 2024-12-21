@@ -9,8 +9,6 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::AreDistinct` accepts a list of variables. It returns true if no two variables in the list are the same and returns false if otherwise.
 
-<pre><code>Variables... -> AreDistinct ? true : false</code></pre>
-
 ## Type Signature
 
 ```Haskell

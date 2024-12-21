@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Cotanivore::KindredRepack` accepts a list of packed containers and returns a function.
 When invoked by an operation, the function concatenates the packed containers and instantiates the operation with the result.
 
-<pre><code>   Container<sub><i>0</i></sub>&lt;Es<sub><i>0</i></sub>...&gt;, Container<sub><i>1</i></sub>&lt;Es<sub><i>1</i></sub>...&gt;, ..., Container<sub><i>n</i></sub>&lt;Es<sub><i>n</i></sub>...&gt;
--> Operation
--> Operation&lt;Es<sub><i>0</i></sub>..., Es<sub><i>1</i></sub>..., ..., Es<sub><i>n</i></sub>...></code></pre>
+<pre><code>   Con<sub><i>0</i></sub>&lt;Es<sub><i>0</i></sub>...&gt;, Con<sub><i>1</i></sub>&lt;Es<sub><i>1</i></sub>...&gt;, ..., Con<sub><i>n</i></sub>&lt;Es<sub><i>n</i></sub>...&gt;
+-> Oper
+-> Oper&lt;Es<sub><i>0</i></sub>..., Es<sub><i>1</i></sub>..., ..., Es<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 

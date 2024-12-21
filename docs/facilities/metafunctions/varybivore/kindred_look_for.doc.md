@@ -11,10 +11,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 When invoked by a predicate, the function returns the index of the first variable that satisfies the predicate, or `-1` if it cannot find the variable.
 This function is created to exhibit the power of fold expression and to compare with `Varybivore::Find`.
 
-<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Predicate
--> Exist Predicate&lt;Arg<sub>I</sub>&gt;::value ?
-   I : -1</code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Pred
+-> Preds&lt;V<sub>0</sub>&gt;::value ? 0 : (
+   Preds&lt;V<sub>1</sub>&gt;::value ? 1 : (
+      &vellip;
+   Preds&lt;V<sub>n</sub>&gt;::value ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

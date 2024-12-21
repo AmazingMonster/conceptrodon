@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::CognateSegment` accepts an operation and returns a function.
 When invoked by a list of indices in ascending order, the function collects the differences between adjacent indices and instantiates the operation with the collection.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I<sub>0</sub>, I<sub>1</sub>, ..., I<sub>i-1</sub>, I<sub>i</sub>, ..., I<sub>n-1</sub>, I<sub>n</sub>
--> Operation&lt;I<sub>0</sub>, I<sub>1</sub>-I<sub>0</sub>, ..., I<sub>i</sub>-I<sub>i-1</sub>, ..., I<sub>n</sub>-I<sub>n-1</sub>&gt;</code></pre>
+-> Oper&lt;I<sub>0</sub>, I<sub>1</sub>-I<sub>0</sub>, ..., I<sub>i</sub>-I<sub>i-1</sub>, ..., I<sub>n</sub>-I<sub>n-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

@@ -9,9 +9,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Reiterate` accepts a list of variables and returns a function. When invoked by the times of repetitions, the function repeats the list the given number of times and stores the result inside `Shuttle`.
 
-<pre><code>   Variables...
+<pre><code>   Vs...
 -> N
--> Variables...<sub>1</sub>, Variables...<sub>2</sub>, ..., Variables...<sub>N</sub></code></pre>
+-> Capsule&lt;Vs...<sub>1</sub>, Vs...<sub>2</sub>, ..., Vs...<sub>N</sub>&gt;</code></pre>
 
 ## Type Signature
 

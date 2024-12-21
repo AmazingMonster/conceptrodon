@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::Upend` accepts a list of variables and returns a function.
 When invoked by an operation, the function instantiates the operation with the previously provided variables but in reversed order.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>n</sub>
--> Operation
--> Operation&lt;Variable<sub>n</sub>, Variable<sub>n-1</sub>, ..., Variable<sub>0</sub>&gt;</code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Oper
+-> Oper&lt;V<sub>n</sub>, V<sub>n-1</sub>, ..., V<sub>0</sub>&gt;</code></pre>
 
 ## Type Signature
 
@@ -78,7 +78,7 @@ We can pull out the variable of a given index by asking `decltype` the return ty
 For this purpose, we will convert an index into a type via `std::integral_constant`.
 So, the final mapping will be as follows:
 
-<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;Variable<sub>I</sub>&gt;</code></pre>
+<pre><code>std::integral_constant&lt;I&gt; -> Vay&lt;V<sub>I</sub>&gt;</code></pre>
 
 Now, we will assemble an overload set and instruct compilers to pull the variables out in reversed order. Here's the entire implementation:
 

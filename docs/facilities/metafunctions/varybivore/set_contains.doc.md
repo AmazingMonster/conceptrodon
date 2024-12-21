@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::SetContains` accepts a set of nonrepetitive variables and returns a predicate.
 When invoked by an argument, the function returns true if the argument is in the previously provided set and returns false if otherwise.
 
-<pre><code>   Variables...
--> Argument
--> Argument &in; Variables... ?
+<pre><code>   Vs...
+-> Arg
+-> Arg &in; Vs... ?
    true : false</code></pre>
 
 ## Type Signature

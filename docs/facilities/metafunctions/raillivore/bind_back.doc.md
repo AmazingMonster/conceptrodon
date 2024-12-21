@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of sequences and returns a function.
 When invoked, the function adds the sequences to the end of the argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
--> Sequences...
--> Arguments...
--> Operation&lt;Arguments..., Sequences...&gt;</code></pre>
+<pre><code>   Oper
+-> Seqs...
+-> Args...
+-> Oper&lt;Args..., Seqs...&gt;</code></pre>
 
 ## Type Signature
 

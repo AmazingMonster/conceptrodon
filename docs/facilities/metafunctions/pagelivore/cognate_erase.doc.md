@@ -13,19 +13,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 In that case, it returns a function.
 When invoked, the function removes the argument at the index from its argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I
--> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>n</sub>
--> Operation&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I+1</sub>, ..., V<sub>n</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I</sub>, Arg<sub>I+1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I+1</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
 When invoked, the function removes the arguments of indices within the interval from its argument list and invokes the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I, J
--> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>J-1</sub>, ..., V<sub>n</sub>
--> Operation&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>J</sub>, ..., V<sub>n</sub>&gt;</code></pre>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I</sub>, ..., Arg<sub>J-1</sub>, Arg<sub>J</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>J</sub>, ..., Arg<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

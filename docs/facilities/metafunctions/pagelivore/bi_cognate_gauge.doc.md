@@ -8,41 +8,26 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Pagelivore::BiCognateGauge` accepts an operation.
-Its first layer accepts a list of sequences and returns a function.
-When invoked, the function places its arguments into the sequences via a process similar to pack expansion;
-then, it collects the value result of each packed sequence and invokes the operation with the collection.
+Its first layer accepts a list of transformations and returns a function.
+When invoked, the function instantiates the transformations using its arguments via a process similar to pack expansion;
+then, it invokes the operation by the value results collected from the instantiated transformations.
 
 Check out **Examples** for more information.
 
-<pre><code>   Operation
--> ...Sequence<sub><i>i</i></sub>...
--> Variable
--> Operation&lt;...Sequence<sub><i>i</i></sub>&lt;Variable&gt;::value...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Arg
+-> Oper&lt;Transfs<sub>0</sub>&lt;Arg&gt;::value, Transfs<sub>1</sub>&lt;Arg&gt;::value, ..., Transfs<sub>n</sub>&lt;Arg&gt;::value&gt;</code></pre>
 
-<pre><code>   Operation
--> Sequence
--> ...Variable<sub><i>i</i></sub>...
--> Operation&lt;...Sequence&lt;Variable<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Transf&lt;Arg<sub>0</sub>&gt;::value, Transf&lt;Arg<sub>1</sub>&gt;::value, ..., Transf&lt;Arg<sub>n</sub>&gt;::value&gt;</code></pre>
 
-<pre><code>   Operation
--> ...Sequence<sub><i>i</i></sub>...
--> ...Variable<sub><i>i</i></sub>...
--> Operation<...Sequence<sub><i>i</i></sub>&lt;Variable<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
-
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> Element
--> Operation&lt;...Container<sub><i>i</i></sub>&lt;Element&gt;::value...&gt;</code></pre>
-
-<pre><code>   Operation
--> Container
--> ...Element<sub><i>i</i></sub>...
--> Operation&lt;...Container&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
-
-<pre><code>   Operation
--> ...Container<sub><i>i</i></sub>...
--> ...Element<sub><i>i</i></sub>...
--> Operation<...Container<sub><i>i</i></sub>&lt;Element<sub><i>i</i></sub>&gt;::value...&gt;</code></pre>
+<pre><code>   Oper
+-> Transf<sub>0</sub>, Transf<sub>1</sub>, ..., Transf<sub>n</sub>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper&lt;Transf<sub>0</sub>&lt;Arg<sub>0</sub>&gt;::value, Transf<sub>1</sub>&lt;Arg<sub>1</sub>&gt;::value, ..., Transf<sub>n</sub>&lt;Arg<sub>n</sub>&gt;::value&gt;</code></pre>
 
 ## Type Signature
 

@@ -10,12 +10,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::Conditional` accepts two variables and returns several functions.
 Check out **Examples** for more details.
 Overall, `Conditional` yields one of the two variables according to the boolean evaluation of a condition.
-<pre><code>IfTrue, IfFalse -> true -> IfTrue</code></pre>
-<pre><code>IfTrue, IfFalse -> false -> IfFalse</code></pre>
+
 <pre><code>   IfTrue, IfFalse
--> Predicates
--> Arguments...
--> (...&&Predicates&lt;Arguments...&gt;::value) ?
+-> Arg
+-> Arg ? IfTrue : IfFalse</code></pre>
+
+<pre><code>   IfTrue, IfFalse
+-> Arg
+-> Arg::value ? IfTrue : IfFalse</code></pre>
+
+<pre><code>   IfTrue, IfFalse
+-> Preds...
+-> Args...
+-> (...&&Preds&lt;Args...&gt;::value) ?
    IfTrue : IfFalse</code></pre>
 
 ## Type Signature

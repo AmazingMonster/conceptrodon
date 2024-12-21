@@ -11,12 +11,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of predicates and returns a function.
 When invoked, the function instantiates the operation with its arguments and uses the result to call the operation repeatedly until the result satisfies all the predicates.
 
-<pre><code>   Operation
--> Predicates...
+<pre><code>   Oper
+-> Preds...
 -> Args...
--> (...&&Predicates&lt;Operation&lt;Args...&gt;&gt;) ? Operation&lt;Args...&gt; : (
-   (...&&Predicates&lt;Operation&lt;Operation&lt;Args...&gt;&gt;&gt;) ? Operation&lt;Operation&lt;Args...&gt;&gt; : (
-   (...&&Predicates&lt;Operation&lt;Operation&lt;Operation&lt;Args...&gt;&gt;&gt;&gt;) ? Operation&lt;Operation&lt;Operation&lt;Args...&gt;&gt;&gt; : (
+-> (...&&Preds&lt;Oper&lt;Args...&gt;&gt;::value) ? Oper&lt;Args...&gt; : (
+   (...&&Preds&lt;Oper&lt;Oper&lt;Args...&gt;&gt;&gt;::value) ? Oper&lt;Oper&lt;Args...&gt;&gt; : (
+   (...&&Preds&lt;Oper&lt;Oper&lt;Oper&lt;Args...&gt;&gt;&gt;&gt;::value) ? Oper&lt;Oper&lt;Oper&lt;Args...&gt;&gt;&gt; : (
             &vellip;
    )))</code></pre>
 

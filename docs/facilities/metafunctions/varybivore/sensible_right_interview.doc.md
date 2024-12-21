@@ -12,11 +12,14 @@ Its first layer accepts a list of predicates and returns a function.
 When invoked, the function first binds the arguments to the end of every predicate;
 then, it returns the index of the first variable that satisfies all newly formed predicates, or `-1` if it cannot find the variable.
 
-<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Predicates...
--> RightSides...
--> Exist (...&& Predicates&lt;Arg<sub>I</sub>, RightSides...&gt;::value) ?
-   I : -1</code></pre>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>n</sub>
+-> Preds...
+-> Interviewers...
+-> (...&&Preds&lt;E<sub>0</sub>, Interviewers...&gt;::value) ? 0 : (
+   (...&&Preds&lt;E<sub>1</sub>, Interviewers...&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;E<sub>n</sub>, Interviewers...&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

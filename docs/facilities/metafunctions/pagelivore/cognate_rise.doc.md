@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::CognateRise` accepts an operation and returns a function.
 When invoked, the function sorts the arguments in ascending order and instantiates the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> Operation&lt;V<sub>i<sub>0</sub></sub> &lt; V<sub>i<sub>1</sub></sub> &lt; ... &lt; V<sub>i<sub>n</sub></sub>&gt;</code></pre>
+-> Oper&lt;V<sub>i<sub>0</sub></sub>, V<sub>i<sub>1</sub></sub>, ..., V<sub>i<sub>n</sub></sub>&gt; where V<sub>i<sub>0</sub></sub> &lt; V<sub>i<sub>1</sub></sub> &lt; ... &lt; V<sub>i<sub>n</sub></sub></code></pre>
 
 ## Type Signature
 

@@ -13,19 +13,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 In that case, it returns a function.
 When invoked by an operation, the function removes the element at the index from the list and instantiates the operation with the result.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>I</sub>, E<sub>I+1</sub>, ..., E<sub>n</sub>
 -> I
--> Operation
--> Operation&lt;Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>I+1</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>I+1</sub>, ..., E<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
 When invoked by an operation, the function removes the elements of indices within the interval from the list and invokes the operation with the result.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>J-1</sub>, ..., Element<sub>n</sub>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>I</sub>, ..., E<sub>J-1</sub>, E<sub>J</sub>, ..., E<sub>n</sub>
 -> I, J
--> Operation
--> Operation&lt;Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, Element<sub>J</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>J</sub>, ..., E<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

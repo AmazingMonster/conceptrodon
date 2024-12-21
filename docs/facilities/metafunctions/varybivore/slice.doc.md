@@ -13,19 +13,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 In that case, it returns a function.
 When invoked by an operation, the function collects all variables with indices greater or equal to the given index from the list and instantiates the operation with the collection.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>, Variable<sub>I</sub>, ..., Variable<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
 -> I
--> Operation
--> Operation&lt;Variable<sub>I</sub>, Variable<sub>I+1</sub>, ..., Variable<sub>n</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;V<sub>I</sub>, ..., V<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
 When invoked by an operation, the function collects all the variables of indices within the interval from the list and instantiates the operation with the collection.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>J-1</sub>, ..., Variable<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>J-1</sub>, ..., V<sub>n</sub>
 -> I, J
--> Operation
--> Operation&lt;Variable<sub>I</sub>, ..., Variable<sub>J-1</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;V<sub>I</sub>, ..., V<sub>J-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

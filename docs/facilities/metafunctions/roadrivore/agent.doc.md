@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Roadrivore::Agent` accepts an operation and returns a function.
 When invoked by a packed warehouse, the function extracts the list of containers from the packed warehouse and instantiates the operation with the list.
 
-<pre><code>   Operation
--> Warehouse&lt;Containers...&gt;
--> Operation&lt;Containers...&gt;</code></pre>
+<pre><code>   Oper
+-> Ware&lt;Cons...&gt;
+-> Oper&lt;Cons...&gt;</code></pre>
 
 ## Type Signature
 

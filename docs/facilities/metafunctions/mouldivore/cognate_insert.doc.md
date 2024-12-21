@@ -13,11 +13,11 @@ Its second layer accepts a list of indices in ascending order, which indicates p
 When invoked, the function inserts its arguments into their corresponding positions, which is indicated by the index list, of the previously provided element list.
 Then, The function instantiates the operation with the inserted list.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>m</sub>
 -> I<sub>0</sub>, I<sub>1</sub>, ..., I<sub>n</sub>
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>k</sub>
--> Operation
+-> Oper
    <
              E<sub>0</sub>,
              E<sub>1</sub>,

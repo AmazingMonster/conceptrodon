@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::CognateHarvest` accepts an operation and returns a function.
 When invoked, the function collects the value result from its arguments and instantiates the operation with the collection.
 
-<pre><code>   Operation
--> Elements
--> Operation&lt;Elements::value...&gt;</code></pre>
+<pre><code>   Oper
+-> Es
+-> Oper&lt;Es::value...&gt;</code></pre>
 
 ## Type Signature
 

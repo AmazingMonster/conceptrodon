@@ -12,19 +12,19 @@ Its first layer accepts a transformation.
 Its second layer accepts a list of indices in ascending order, which indicates positions in a list, and returns a function.
 When invoked, the function transforms its arguments at positions indicated by the index list using the transformation. Then, The function instantiates the operation with the modified argument list.
 
-<pre><code>   Operation
--> Transformation
+<pre><code>   Oper
+-> Transf
 -> I<sub>0</sub>, I<sub>1</sub>, ..., I<sub>n</sub>
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>m</sub>
--> Operation
+-> Oper
    <
                     Arg<sub>0</sub>,
                     Arg<sub>1</sub>,
                      &vellip;
-       Arg<sub>I<sub>0</sub>-1</sub>, Transformation&lt;Arg<sub>I<sub>0</sub></sub>&gt;, Arg<sub>I<sub>0</sub>+1</sub>,
-       Arg<sub>I<sub>1</sub>-1</sub>, Transformation&lt;Arg<sub>I<sub>1</sub></sub>&gt;, Arg<sub>I<sub>1</sub>+1</sub>,
+       Arg<sub>I<sub>0</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>0</sub></sub>&gt;, Arg<sub>I<sub>0</sub>+1</sub>,
+       Arg<sub>I<sub>1</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>1</sub></sub>&gt;, Arg<sub>I<sub>1</sub>+1</sub>,
                      &vellip;
-       Arg<sub>I<sub>n</sub>-1</sub>, Transformation&lt;Arg<sub>I<sub>n</sub></sub>&gt;, Arg<sub>I<sub>n</sub>+1</sub>,
+       Arg<sub>I<sub>n</sub>-1</sub>, Transf&lt;Arg<sub>I<sub>n</sub></sub>&gt;, Arg<sub>I<sub>n</sub>+1</sub>,
                      &vellip;
                     Arg<sub>m</sub>
    ></code></pre>

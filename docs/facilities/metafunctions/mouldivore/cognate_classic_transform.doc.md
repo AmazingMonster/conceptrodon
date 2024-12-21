@@ -12,18 +12,16 @@ Its first layer accepts a list of predicates.
 Its second layer accepts a transformation and returns a function.
 When invoked, the function transforms its arguments that satisfy all the predicates with the transformation and instantiates the first operation with the result.
 
-<pre><code>   FirstOperation
--> Predicates...
--> Transformation
--> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>i</sub>, ..., V<sub>n</sub>
--> FirstOperation
+<pre><code>   Oper
+-> Preds...
+-> Transf
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
+-> Oper
    <
-       (...&&Predicates&lt;V<sub>0</sub>&gt;) ? Transformation&lt;V<sub>0</sub>&gt;::type : V<sub>0</sub>,
-       (...&&Predicates&lt;V<sub>1</sub>&gt;) ? Transformation&lt;V<sub>1</sub>&gt;::type : V<sub>1</sub>,
+       (...&&Preds&lt;Arg<sub>0</sub>&gt;::value) ? Transf&lt;Arg<sub>0</sub>&gt;::type : Arg<sub>0</sub>,
+       (...&&Preds&lt;Arg<sub>1</sub>&gt;::value) ? Transf&lt;Arg<sub>1</sub>&gt;::type : Arg<sub>1</sub>,
                                     &vellip;
-       (...&&Predicates&lt;V<sub>i</sub>&gt;) ? Transformation&lt;V<sub>i</sub>&gt;::type : V<sub>i</sub>,
-                                    &vellip;
-       (...&&Predicates&lt;V<sub>n</sub>&gt;) ? Transformation&lt;V<sub>n</sub>&gt;::type : V<sub>n</sub>
+       (...&&Preds&lt;Arg<sub>n</sub>&gt;::value) ? Transf&lt;Arg<sub>n</sub>&gt;::type : Arg<sub>n</sub>
    ></code></pre>
 
 ## Type Signature

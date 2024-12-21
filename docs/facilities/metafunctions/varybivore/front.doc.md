@@ -11,10 +11,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts an amount and returns a function.
 When invoked by an operation, the function collects variables of the amount from the front of the list and instantiates the operation with the collection.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
 -> I
--> Operation
--> Operation&lt;Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

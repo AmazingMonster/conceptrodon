@@ -405,9 +405,39 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
 ## Convention
 
 <dl>
+  <dt><code>(phrase)&lt;Arg&gt;</code></dt>
+  <dd>It turns a phrase into a symbolic prefix function.</dd>
+  <dd>
+    For example, <code>(make set)&lt;Items...&gt;</code> returns a new list <code>S</code> such that <code>S</code>:
+    <ul>
+      <li>contains every item in the <code>Items...</code>;</li>
+      <li>doesn't contain repetitive items;</li>
+      <li>preserves the relative order as in <code>Items...</code>.</li>
+    </ul>
+  </dd>
+  <dd>Angle brackets may be omitted if the indication is evident.</dd>
+
+  <dt><code>(nothing)</code></dt>
+  <dd>It represents nothingness.</dd>
+  <dd>For example, <code>Operation<(nothing)> <=> Operation&lt;&gt;</code>.</dd>
+
+  <dt><code>(unpack)</code></dt>
+  <dd>It extracts items from a packed vessel.</dd>
+  <dd>For example, <code>using PackedVessel = Vessel&lt;Items...&gt;</code>,  then <code>Operation<(unpack)PackedVessel> <=> Operation&lt;Items...&gt;</code>.</dd>
+
   <dt><code>***</code></dt>
   <dd>It represents an unspecific component in an expression.</dd>
   <dd>For example, <code>template&lt;***&gt;</code> represents a random template head.</dd>
+
+  <dt><code>`phrase`</code></dt>
+  <dd>It turns a phrase into a symbolic infix function.</dd>
+  <dd>For example, <code>A `overlaps` B</code> returns true if <code>A</code> overlaps <code>B</code> and returns false if otherwise.</dd>
+
+  <dt><code>Arg</code></dt>
+  <dd>Argument</dd>
+
+  <dt><code>Args</code></dt>
+  <dd>Arguments</dd>
 
   <dt><code>Con</code></dt>
   <dd>Container</dd>
@@ -424,6 +454,18 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
   <dt><code>I/J/K</code></dt>
   <dd>Index or indices</dd>
 
+  <dt><code>Init</code></dt>
+  <dd>Initiator</dd>
+
+  <dt><code>Inits</code></dt>
+  <dd>Initiators</dd>
+
+  <dt><code>Oper</code></dt>
+  <dd>Operation</dd>
+
+  <dt><code>Opers</code></dt>
+  <dd>Operations</dd>
+
   <dt><code>Seq</code></dt>
   <dd>Sequence</dd>
 
@@ -435,6 +477,12 @@ Now, we can understand flipping the *0*th layer and the *1*st layer as an exchan
 
   <dt><code>Stocs</code></dt>
   <dd>Stockrooms</dd>
+
+  <dt><code>Transf</code></dt>
+  <dd>Transformation</dd>
+
+  <dt><code>Transfs</code></dt>
+  <dd>Transformations</dd>
 
   <dt><code>V</code></dt>
   <dd>Variable</dd>

@@ -13,19 +13,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 In that case, it returns a function.
 When invoked by an operation, the function removes the variable at the index from the list and instantiates the operation with the result.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, V<sub>I+1</sub>, ..., V<sub>n</sub>
 -> I
--> Operation
--> Operation&lt;Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>, Variable<sub>I+1</sub>, ..., Variable<sub>n</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I+1</sub>, ..., V<sub>n</sub>&gt;</code></pre>
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
 When invoked by an operation, the function removes the variables of indices within the interval from the list and invokes the operation with the result.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I</sub>, ..., Variable<sub>J-1</sub>, ..., Variable<sub>n</sub>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>J-1</sub>, V<sub>J</sub>, ..., V<sub>n</sub>
 -> I, J
--> Operation
--> Operation&lt;Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>I-1</sub>, Variable<sub>J</sub>, ..., Variable<sub>n</sub>&gt;</code></pre>
+-> Oper
+-> Oper&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>J</sub>, ..., V<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

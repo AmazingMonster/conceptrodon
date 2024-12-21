@@ -10,14 +10,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::FoldRight` accepts an operation. Its first layer accepts an initiator and returns a function.
 When invoked, the function right-folds its argument list using the operation and the initiator.
 
-<pre><code>   Operation
--> Initiator
--> V<sub>0</sub>, V<sub>1</sub>..., V<sub>n</sub>
--> Operation&lt;V<sub>0</sub>,
+<pre><code>   Oper
+-> Init
+-> Arg<sub>0</sub>, Arg<sub>1</sub>..., Arg<sub>n</sub>
+-> Oper&lt;Arg<sub>0</sub>,
         &vellip;
-   Operation&lt;V<sub>n-1</sub>,
-   Operation&lt;V<sub>n</sub>,
-       Initiator
+   Oper&lt;Arg<sub>n-1</sub>,
+   Oper&lt;Arg<sub>n</sub>,
+       Init
    &gt;::value
    &gt;::value
         &vellip;

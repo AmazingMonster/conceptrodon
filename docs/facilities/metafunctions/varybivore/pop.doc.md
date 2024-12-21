@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Varybivore::Pop` accepts a list of variables and pops the last one. The result is stored in `Shuttle`.
 
-<pre><code>   Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>n-1</sub>, Variable<sub>n</sub>
--> Variable<sub>0</sub>, Variable<sub>1</sub>, ..., Variable<sub>n-1</sub></code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n-1</sub>, V<sub>n</sub>
+-> Capsule&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n-1</sub>&gt;</code></pre>
 
 ## Type Signature
 

@@ -10,7 +10,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::All` accepts a list of variables. It returns true if all variables can be evaluated to `true` and returns false if otherwise.
 
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> bool(V<sub>0</sub>) && bool(V<sub>1</sub>) && ... && bool(V<sub>n</sub>)</code></pre>
+-> (bool)V<sub>0</sub> && (bool)V<sub>1</sub> && ... && (bool)V<sub>n</sub></code></pre>
 
 ## Type Signature
 

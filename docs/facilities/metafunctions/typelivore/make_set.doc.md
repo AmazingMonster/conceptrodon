@@ -15,8 +15,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 The result will be stored in a `Capsule`.
 
-<pre><code>   Elements...
--> MakeMathematicalSet(Elements...)</code></pre>
+<pre><code>   Args...
+-> Capsule&lt;(make set)&lt;Args...&gt;&gt;</code></pre>
 
 ## Type Signature
 

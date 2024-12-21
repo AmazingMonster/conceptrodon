@@ -12,7 +12,7 @@ It returns true if the target is different from every variable;
 otherwise, it returns false.
 
 <pre><code>   Target, V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> (Target different from V<sub>0</sub>) && (Target different from V<sub>1</sub>) && ... && (Target different from V<sub>n</sub>)</code></pre>
+-> (Target `different from` V<sub>0</sub>) && (Target `different from` V<sub>1</sub>) && ... && (Target `different from` V<sub>n</sub>)</code></pre>
 
 ## Type Signature
 

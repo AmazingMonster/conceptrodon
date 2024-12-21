@@ -10,10 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Mouldivore::LookFor` accepts a predicate and returns a function.
 When invoked, the function returns the index of the first argument that satisfies the predicate, or `-1` if it cannot find the argument.
 
-<pre><code>   Predicate
+<pre><code>   Pred
 -> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Exist Predicate&lt;Arg<sub>I</sub>&gt;::value ?
-   I : -1</code></pre>
+-> Pred&lt;Arg<sub>0</sub>&gt;::value ? 0 : (
+   Pred&lt;Arg<sub>1</sub>&gt;::value ? 1 : (
+            &vellip;
+   Pred&lt;Arg<sub>n</sub>&gt;::value ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

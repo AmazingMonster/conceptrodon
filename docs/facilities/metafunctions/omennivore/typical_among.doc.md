@@ -17,16 +17,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 - Suppose the vessel is a sequence containing variables. In that case, It returns a function. When invoked by an index, the function returns the variable at the index via the member `value`.
 
-<pre><code>   Sequence&lt;O<sub>0</sub>, O<sub>1</sub>, ..., O<sub>I</sub>, ..., O<sub>n</sub>&gt;
+<pre><code>   Seq&lt;V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I</sub>, ..., V<sub>n</sub>&gt;
 -> I
--> O<sub>I</sub></code></pre>
+-> V<sub>I</sub></code></pre>
 
 - Suppose the vessel contains operations. In that case, its first layer accepts an index and returns a function. When invoked, the function instantiates the operation at the index with its arguments and returns the result.
 
-<pre><code>   Vessel&lt;O<sub>0</sub>, O<sub>1</sub>, ..., O<sub>I</sub>, ..., O<sub>n</sub>&gt;
+<pre><code>   Vessel&lt;Oper<sub>0</sub>, Oper<sub>1</sub>, ..., Oper<sub>I</sub>, ..., Oper<sub>n</sub>&gt;
 -> I
 -> Args...
--> O<sub>I</sub>&lt;Args...&gt;</code></pre>
+-> Oper<sub>I</sub>&lt;Args...&gt;</code></pre>
 
 ## Type Signature
 

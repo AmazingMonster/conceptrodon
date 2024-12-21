@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Pagelivore::Situational` accepts a list of predicates and returns a function.
 When invoked, the function returns its first argument if the argument list satisfies all the predicates and returns its second argument if otherwise.
 
-<pre><code>   Predicates...
+<pre><code>   Preds...
 -> IfTrue, IfFalse, Others...
--> (...&&Predicates&lt;IfTrue, IfFalse, Others...&gt;::value) ?
+-> (...&&Preds&lt;IfTrue, IfFalse, Others...&gt;::value) ?
    IfTrue : IfFalse</code></pre>
 
 ## Type Signature

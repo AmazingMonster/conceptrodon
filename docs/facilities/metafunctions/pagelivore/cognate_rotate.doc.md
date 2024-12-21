@@ -11,12 +11,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts an amount and returns a function.
 When invoked, the function relocates arguments of the given amount from the front to the end of its argument list and instantiates the operation with the result.
 
-<pre><code>   Operation
+<pre><code>   Oper
 -> I
--> V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
--> Operation&lt;
-       V<sub>I</sub>, V<sub>I+1</sub>, ..., V<sub>n</sub>,
-       V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>
+-> Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>, Arg<sub>I</sub>, ..., Arg<sub>n</sub>
+-> Oper
+   &lt;
+       Arg<sub>I</sub>, Arg<sub>I+1</sub>, ..., Arg<sub>n</sub>,
+       Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>I-1</sub>
    &gt;</code></pre>
 
 ## Type Signature

@@ -12,11 +12,14 @@ Its first layer accepts another list of variables and returns a function.
 When invoked by predicates, the function first binds the second list to the end of every predicate;
 then, it returns the index of the first variable that satisfies all newly formed predicates, or `-1` if it cannot find the variable.
 
-<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> RightSides...
--> Predicates...
--> Exist (...&& Predicates&lt;Arg<sub>I</sub>, RightSides...&gt;::value) ?
-   I : -1</code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Interviewers...
+-> Preds...
+-> (...&&Preds&lt;V<sub>0</sub>, Interviewers...&gt;::value) ? 0 : (
+   (...&&Preds&lt;V<sub>1</sub>, Interviewers...&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;V<sub>n</sub>, Interviewers...&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 

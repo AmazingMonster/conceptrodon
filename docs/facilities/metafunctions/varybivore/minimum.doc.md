@@ -10,7 +10,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::Minimum` accepts a list of variables and returns the minimum.
 
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
--> min(V<sub>0</sub>, V<sub>1</sub>, ...,V<sub>n</sub>)</code></pre>
+-> (min) V<sub>0</sub>, V<sub>1</sub>, ...,V<sub>n</sub></code></pre>
 
 ## Type Signature
 

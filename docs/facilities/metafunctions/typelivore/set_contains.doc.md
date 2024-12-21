@@ -10,9 +10,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Typelivore::SetContains` accepts a set of nonrepetitive elements and returns a predicate.
 When invoked by an argument, the function returns true if the argument is in the previously provided set and returns false if otherwise.
 
-<pre><code>   Elements...
--> Argument
--> Argument &in; Elements... ?
+<pre><code>   Es...
+-> Arg
+-> Arg &in; Es... ?
    true : false</code></pre>
 
 ## Type Signature

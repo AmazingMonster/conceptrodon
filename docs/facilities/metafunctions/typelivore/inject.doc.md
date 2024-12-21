@@ -12,11 +12,11 @@ Its first layer accepts an index, which indicates a location in the list.
 Its second layer accepts a list of new elements and returns a function.
 When invoked by an operation, the function injects new elements into the location and instantiates the operation with the result.
 
-<pre><code>   Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I</sub>, ..., Element<sub>n</sub>
+<pre><code>   E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, E<sub>I</sub>, ..., E<sub>n</sub>
 -> I
--> NewElements...
--> Operation
--> Operation&lt;Element<sub>0</sub>, Element<sub>1</sub>, ..., Element<sub>I-1</sub>, NewElements..., Element<sub>I</sub>, ..., Element<sub>n</sub>&gt;</code></pre>
+-> Args...
+-> Oper
+-> Oper&lt;E<sub>0</sub>, E<sub>1</sub>, ..., E<sub>I-1</sub>, Args..., E<sub>I</sub>, ..., E<sub>n</sub>&gt;</code></pre>
 
 ## Type Signature
 

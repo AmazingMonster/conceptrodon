@@ -10,10 +10,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Varybivore::KindredFind` accepts a list of variables and returns a function.
 When invoked by predicates, the function returns the index of the first variable that satisfies all predicates, or `-1` if it cannot find the variable.
 
-<pre><code>   Arg<sub>0</sub>, Arg<sub>1</sub>, ..., Arg<sub>n</sub>
--> Predicates...
--> Exist (...&& Predicates&lt;Arg<sub>I</sub>&gt;::value) ?
-   I : -1</code></pre>
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>n</sub>
+-> Preds...
+-> (...&&Preds&lt;V<sub>0</sub>&gt;::value) ? 0 : (
+   (...&&Preds&lt;V<sub>1</sub>&gt;::value) ? 1 : (
+            &vellip;
+   (...&&Preds&lt;V<sub>n</sub>&gt;::value) ? n : -1
+   ))</code></pre>
 
 ## Type Signature
 
