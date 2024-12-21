@@ -30,9 +30,10 @@ When invoked by an operation, the function collects all arguments of indices wit
 ## Type Signature
 
 ```Haskell
-CognateSlice ::   template<typename...> class...
-               -> auto...
-               -> template<typename...>
+CognateSlice
+ :: template<typename...> class...
+ -> auto...
+ -> template<typename...>
 ```
 
 ## Structure

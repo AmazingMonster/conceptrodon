@@ -21,7 +21,8 @@ The result will be stored in a `Capsule`.
 ## Type Signature
 
 ```Haskell
-MakeSet :: template<typename...>
+MakeSet
+ :: template<typename...>
 ```
 
 ## Structure

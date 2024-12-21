@@ -17,7 +17,10 @@ When invoked by an index, the function returns the variable at the index from th
 ## Type Signature
 
 ```Haskell
-Among :: typename... -> auto... -> auto
+Among
+ :: typename...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

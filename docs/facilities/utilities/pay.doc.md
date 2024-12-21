@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Pay`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#pay">To Index</a></p>
 
 ## Description
 
-`Pay` accepts a sequence and returns the sequence via member `Page`.
+`Pay` accepts a `Page` operation and returns the operation via member `Page`.
 
-<pre><code>Sequence -> Sequence</code></pre>
+<pre><code>   Oper
+-> struct { using Page = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Pay ::   template<auto...> class...
-           -> template<auto...>
+Pay
+ :: template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

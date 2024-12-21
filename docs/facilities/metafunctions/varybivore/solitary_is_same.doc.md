@@ -17,7 +17,9 @@ It returns true if they are the same and returns false otherwise.
 ## Type Signature
 
 ```Haskell
-SolitaryIsSame :: auto... -> auto
+SolitaryIsSame
+ :: auto...
+ -> auto
 ```
 
 ## Structure

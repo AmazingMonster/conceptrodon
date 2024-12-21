@@ -17,12 +17,14 @@ When invoked by a list of indices in ascending order, the function collects the 
 ## Type Signature
 
 ```Haskell
-CognateSegment ::   template<auto...> class...
-                 -> template<auto...> class
+CognateSegment
+ :: template<auto...> class...
+ -> template<auto...> class
 
---The list can also be provided using `std::index_sequence`.
-CognateSegment ::   template<auto...> class...
-                 -> template<typename...> class
+--The list can also be provided via `std::index_sequence`.
+CognateSegment
+ :: template<auto...> class...
+ -> template<typename...> class
 ```
 
 ## Structure

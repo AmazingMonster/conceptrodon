@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Arcadia`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#arcadia">To Index</a></p>
 
 ## Description
 
@@ -14,7 +14,8 @@ It also contains a regular function, `size`, which returns the number of items i
 ## Type Signature
 
 ```Haskell
-Arcadia ::   template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...>
+Arcadia
+ :: template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

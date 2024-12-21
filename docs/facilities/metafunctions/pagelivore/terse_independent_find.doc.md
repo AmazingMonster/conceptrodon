@@ -23,9 +23,10 @@ When invoked, the function returns the index of the first argument that satisfie
 ## Type Signature
 
 ```Haskell
-TerseIndependentFind ::   template<auto...> class...
-                              -> auto...
-                              -> auto
+TerseIndependentFind
+ :: template<auto...> class...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

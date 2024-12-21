@@ -17,8 +17,9 @@ When invoked by a packed sequence, the function extracts the list of variables f
 ## Type Signature
 
 ```Haskell
-Agent ::   template<auto...> class...
-        -> template<typename...>
+Agent
+ :: template<auto...> class...
+ -> template<typename...>
 ```
 
 ## Structure

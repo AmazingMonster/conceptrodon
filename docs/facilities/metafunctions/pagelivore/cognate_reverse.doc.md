@@ -17,8 +17,9 @@ When invoked, the function instantiates the operation with its argument list but
 ## Type Signature
 
 ```Haskell
-CognateReverse ::   template<auto...> class...
-                 -> template<auto...>
+CognateReverse
+ :: template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Hay`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#hay">To Index</a></p>
 
 ## Description
 
-`Hay` accepts a `Hail` and returns the `Hail` via member `Hail`.
+`Hay` accepts a `Hail` operation and returns the operation via member `Hail`.
 
-<pre><code>Hail -> Hail</code></pre>
+<pre><code>   Oper
+-> struct { using Flow = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Hay ::   template<template<template<template<auto...> class...> class...> class...> class...
-           -> template<template<template<template<auto...> class...> class...> class...>
+Hay
+ :: template<template<template<template<auto...> class...> class...> class...> class...
+ -> template<template<template<template<auto...> class...> class...> class...>
 ```
 
 ## Structure

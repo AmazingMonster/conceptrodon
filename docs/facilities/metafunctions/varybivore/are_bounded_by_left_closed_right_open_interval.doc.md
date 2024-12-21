@@ -18,10 +18,10 @@ otherwise, the predicate returns false.
 ## Type Signature
 
 ```Haskell
-AreBoundedByLeftClosedRightOpenInterval ::
-   auto...
--> auto...
--> auto
+AreBoundedByLeftClosedRightOpenInterval
+ :: auto...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

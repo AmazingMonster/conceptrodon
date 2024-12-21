@@ -19,9 +19,10 @@ When invoked, the function replaces the pegs in the variable list with arguments
 ## Type Signature
 
 ```Haskell
-Bind ::   template<auto...> class...
-       -> auto...
-       -> template<auto...>
+Bind
+ :: template<auto...> class...
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

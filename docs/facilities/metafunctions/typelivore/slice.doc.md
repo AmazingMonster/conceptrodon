@@ -30,9 +30,10 @@ When invoked by an operation, the function collects all the elements of indices 
 ## Type Signature
 
 ```Haskell
-Slice ::   typename...
-        -> auto...
-        -> template<template<typename...> class...>
+Slice
+ :: typename...
+ -> auto...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

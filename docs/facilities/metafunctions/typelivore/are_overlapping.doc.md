@@ -18,9 +18,10 @@ When invoked, the predicate returns true if the list created by appending argume
 ## Type Signature
 
 ```Haskell
-AreOverlapping ::   typename...
-                 -> typename...
-                 -> auto
+AreOverlapping
+ :: typename...
+ -> typename...
+ -> auto
 ```
 
 ## Structure

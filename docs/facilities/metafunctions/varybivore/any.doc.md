@@ -16,7 +16,9 @@ It returns true if any of the variables can be evaluated to `true` and returns f
 ## Type Signature
 
 ```Haskell
-Any :: auto... -> auto
+Any
+ :: auto...
+ -> auto
 ```
 
 ## Structure

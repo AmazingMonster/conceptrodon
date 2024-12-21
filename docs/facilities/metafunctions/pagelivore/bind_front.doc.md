@@ -19,9 +19,10 @@ When invoked, the function adds the variables to the front of the argument list 
 ## Type Signature
 
 ```Haskell
-BindFront ::   template<auto...> class... 
-            -> auto...
-            -> template<auto...>
+BindFront
+ :: template<auto...> class... 
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

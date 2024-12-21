@@ -3,18 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Peg`
 
-<p style='text-align: right;'><a href="../../index.md#utility-symbols-peg">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#peg">To Index</a></p>
 
 ## Description
 
 `Peg` accepts a index and returns the index via member `value`.
 
-<pre><code>Index -> Index</code></pre>
+<pre><code>   I
+-> struct { value = I; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Peg :: auto... -> auto
+Peg
+ :: auto...
+ -> auto
 ```
 
 ## Structure

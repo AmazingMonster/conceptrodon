@@ -34,9 +34,10 @@ The result will be stored inside `Shuttle`.
 ## Type Signature
 
 ```Haskell
-ModifyValues ::   typename...
-               -> template<auto...> class...
-               -> template<auto...>
+ModifyValues
+ :: typename...
+ -> template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

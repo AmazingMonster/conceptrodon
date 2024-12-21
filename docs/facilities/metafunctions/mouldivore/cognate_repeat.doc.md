@@ -19,9 +19,10 @@ When invoked, the function repeats its argument list the given number of times a
 ## Type Signature
 
 ```Haskell
-CognateRepeat ::   template<typename...> class...
-                -> auto...
-                -> template<typename...>
+CognateRepeat
+ :: template<typename...> class...
+ -> auto...
+ -> template<typename...>
 ```
 
 ## Structure

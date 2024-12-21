@@ -17,7 +17,9 @@ When invoked by an operation, the function concatenates the packed containers an
 ## Type Signature
 
 ```Haskell
-KindredRepack :: typename... -> template<typename...>
+KindredRepack
+ :: typename...
+ -> template<typename...>
 ```
 
 ## Structure

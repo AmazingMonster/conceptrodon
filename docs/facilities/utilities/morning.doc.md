@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Morning`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#morning">To Index</a></p>
 
 ## Description
 
@@ -14,7 +14,8 @@ It also contains a regular function, `size`, which returns the number of items i
 ## Type Signature
 
 ```Haskell
-Morning ::   template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
+Morning
+ :: template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

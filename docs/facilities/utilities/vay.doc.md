@@ -3,18 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Vay`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#vay">To Index</a></p>
 
 ## Description
 
 `Vay` accepts a variable and returns the variable via member `value`.
 
-<pre><code>Variable -> Variable</code></pre>
+<pre><code>   V
+-> struct { Vay = V; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Vay :: auto... -> auto
+Vay
+ :: auto...
+ -> auto
 ```
 
 ## Structure

@@ -16,7 +16,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-TypicalAmong :: typename... -> auto... -> typename
+TypicalAmong
+ :: typename...
+ -> auto...
+ -> typename
 ```
 
 ## Structure

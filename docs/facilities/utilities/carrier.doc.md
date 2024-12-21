@@ -3,16 +3,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Carrier`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#carrier">To Index</a></p>
 
 ## Description
 
 `Carrier` accepts a list of sequences and returns a function.
 When invoked by an operation, the function instantiates the operation with the sequences.
 
-<pre><code>   Sequences...
--> Operation
--> Operation&lt;Sequences...&gt;</code></pre>
+<pre><code>   Seqs...
+-> Oper
+-> Oper&lt;Seqs...&gt;</code></pre>
 
 It also contains a regular function, `size`, which returns the total number of the sequences.
 
@@ -21,8 +21,9 @@ It also contains a regular function, `size`, which returns the total number of t
 ## Type Signature
 
 ```Haskell
-Carrier ::   template<auto...> class...
-          -> template<template<template<auto...> class...> class...>
+Carrier
+ :: template<auto...> class...
+ -> template<template<template<auto...> class...> class...>
 ```
 
 ## Structure

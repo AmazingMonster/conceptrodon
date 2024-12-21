@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Wiy`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#wiy">To Index</a></p>
 
 ## Description
 
-`Wiy` accepts a `Will` and returns the `Will` via member `Will`.
+`Wiy` accepts a `Will` operation and returns the operation via member `Will`.
 
-<pre><code>Will -> Will</code></pre>
+<pre><code>   Oper
+-> struct { using Will = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Wiy ::   template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
+Wiy
+ :: template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

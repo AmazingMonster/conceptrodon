@@ -17,7 +17,9 @@ otherwise, it returns false.
 ## Type Signature
 
 ```Haskell
-IsGreater :: auto... -> auto
+IsGreater
+ :: auto...
+ -> auto
 ```
 
 ## Structure

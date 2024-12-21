@@ -32,8 +32,9 @@ The result will be stored inside `Shuttle`.
 ## Type Signature
 
 ```Haskell
-RemoveValues ::   typename...
-               -> template<auto...>
+RemoveValues
+ :: typename...
+ -> template<auto...>
 ```
 
 ## Structure

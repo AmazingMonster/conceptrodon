@@ -34,9 +34,10 @@ The result will be stored inside `Capsule`.
 ## Type Signature
 
 ```Haskell
-ModifyTypes ::   typename...
-              -> template<typename...> class...
-              -> template<typename...>
+ModifyTypes
+ :: typename...
+ -> template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

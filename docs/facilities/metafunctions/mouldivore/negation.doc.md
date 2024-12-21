@@ -16,9 +16,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-Negation ::   template<auto...> class...
-           -> auto...
-           -> auto
+Negation
+ :: template<auto...> class...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

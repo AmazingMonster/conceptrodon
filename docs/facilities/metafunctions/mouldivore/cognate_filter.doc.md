@@ -24,9 +24,10 @@ When invoked, the function removes every argument that satisfies all of the pred
 ## Type Signature
 
 ```Haskell
-CognateFilter ::   template<typename...> class...
-                -> template<typename...> class...
-                -> template<typename...>
+CognateFilter
+ :: template<typename...> class...
+ -> template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

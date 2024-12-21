@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Gly`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#gly">To Index</a></p>
 
 ## Description
 
-`Gly` accepts a `Glow` and returns the `Glow` via member `Glow`.
+`Gly` accepts a `Glow` operation and returns the operation via member `Glow`.
 
-<pre><code>Glow -> Glow</code></pre>
+<pre><code>   Oper
+-> struct { using Glow = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Gly ::   template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
+Gly
+ :: template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

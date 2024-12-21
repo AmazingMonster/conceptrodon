@@ -17,8 +17,9 @@ When invoked by a list of packed containers, the function concatenates the packe
 ## Type Signature
 
 ```Haskell
-Repack ::   template<typename...> class...
-         -> template<typename...>
+Repack
+ :: template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

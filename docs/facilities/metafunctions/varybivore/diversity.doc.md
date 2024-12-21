@@ -23,8 +23,9 @@ The resulting list will be held inside a `Shuttle`.
 ## Type Signature
 
 ```Haskell
-Diversity ::   auto...
-            -> template<auto...>
+Diversity
+ :: auto...
+ -> template<auto...>
 ```
 
 ## Structure

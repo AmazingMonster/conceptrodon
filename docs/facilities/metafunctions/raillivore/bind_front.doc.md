@@ -19,9 +19,10 @@ When invoked, the function adds the sequences to the beginning of the argument l
 ## Type Signature
 
 ```Haskell
-BindFront ::   template<template<auto...> class...> class... 
-            -> template<auto...> class...
-            -> template<template<auto...> class...>
+BindFront
+ :: template<template<auto...> class...> class... 
+ -> template<auto...> class...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

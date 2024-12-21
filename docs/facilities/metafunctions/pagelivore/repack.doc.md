@@ -23,8 +23,9 @@ When invoked by a list of packed sequences, the function concatenates the packed
 ## Type Signature
 
 ```Haskell
-Repack ::   template<auto...> class...
-         -> template<typename...>
+Repack
+ :: template<auto...> class...
+ -> template<typename...>
 ```
 
 ## Structure

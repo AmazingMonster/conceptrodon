@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Sny`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#sny">To Index</a></p>
 
 ## Description
 
-`Sny` accepts a `Snow` and returns the `Snow` via member `Snow`.
+`Sny` accepts a `Snow` operation and returns the operation via member `Snow`.
 
-<pre><code>Snow -> Snow</code></pre>
+<pre><code>   Oper
+-> struct { using Snow = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Sny ::   template<template<template<template<typename...> class...> class...> class...> class...
-           -> template<template<template<template<typename...> class...> class...> class...>
+Sny
+ :: template<template<template<template<typename...> class...> class...> class...> class...
+ -> template<template<template<template<typename...> class...> class...> class...>
 ```
 
 ## Structure

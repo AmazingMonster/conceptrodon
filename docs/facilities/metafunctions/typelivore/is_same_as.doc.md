@@ -18,9 +18,10 @@ When invoked by an argument, the function returns true if the argument is the sa
 ## Type Signature
 
 ```Haskell
-IsSameAs ::   typename...
-           -> typename...
-           -> auto
+IsSameAs
+ :: typename...
+ -> typename...
+ -> auto
 ```
 
 ## Structure

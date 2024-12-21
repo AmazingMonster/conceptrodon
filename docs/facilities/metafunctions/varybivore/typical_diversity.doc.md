@@ -23,9 +23,10 @@ The resulting list will be held inside a `Shuttle`.
 ## Type Signature
 
 ```Haskell
-TypicalDiversity ::   auto...
-                   -> auto...
-                   -> typename
+TypicalDiversity
+ :: auto...
+ -> auto...
+ -> typename
 ```
 
 ## Structure

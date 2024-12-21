@@ -16,7 +16,9 @@ It subtracts all the variables from the target.
 ## Type Signature
 
 ```Haskell
-Subtract :: auto... -> auto
+Subtract
+ :: auto...
+ -> auto
 ```
 
 ## Structure

@@ -28,8 +28,9 @@ The type result of the operation is used for continuation.
 ## Type Signature
 
 ```Haskell
-KindredClassicFoldLeftFirst ::  typename...
-                      -> template<template<typename...> class...>
+KindredClassicFoldLeftFirst
+ ::  typename...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

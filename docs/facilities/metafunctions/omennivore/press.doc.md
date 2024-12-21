@@ -12,7 +12,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-Press :: typename... -> template<typename...>
+Press
+ :: typename...
+ -> template<typename...>
 ```
 
 ## Structure

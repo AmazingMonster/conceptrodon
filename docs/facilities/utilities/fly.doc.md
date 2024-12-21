@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Fly`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#fly">To Index</a></p>
 
 ## Description
 
-`Fly` accepts a `Flow` and returns the `Flow` via member `Flow`.
+`Fly` accepts a `Flow` operation and returns the operation via member `Flow`.
 
-<pre><code>Flow -> Flow</code></pre>
+<pre><code>   Oper
+-> struct { using Flow = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Fly ::   template<template<template<typename...> class...> class...> class...
-           -> template<template<template<typename...> class...> class...>
+Fly
+ :: template<template<template<typename...> class...> class...> class...
+ -> template<template<template<typename...> class...> class...>
 ```
 
 ## Structure

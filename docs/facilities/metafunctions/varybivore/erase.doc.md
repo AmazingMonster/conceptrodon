@@ -30,9 +30,10 @@ When invoked by an operation, the function removes the variables of indices with
 ## Type Signature
 
 ```Haskell
-Erase ::   auto...
-        -> auto...
-        -> template<template<auto...> class...>
+Erase
+ :: auto...
+ -> auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

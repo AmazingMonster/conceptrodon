@@ -16,8 +16,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-Reiterate ::   typename...
-            -> template<auto...>
+Reiterate
+ :: typename...
+ -> template<auto...>
 ```
 
 ## Structure

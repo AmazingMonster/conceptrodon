@@ -19,9 +19,10 @@ When invoked, the function replaces the pegs in the element list with arguments 
 ## Type Signature
 
 ```Haskell
-Bind ::   template<typename...> class...
-       -> typename...
-       -> template<typename...>
+Bind
+ :: template<typename...> class...
+ -> typename...
+ -> template<typename...>
 ```
 
 ## Structure

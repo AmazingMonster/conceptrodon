@@ -17,8 +17,9 @@ When invoked, the function collects the value result from its arguments and inst
 ## Type Signature
 
 ```Haskell
-CognateHarvest ::   template<auto...> class...
-                 -> template<typename...>
+CognateHarvest
+ :: template<auto...> class...
+ -> template<typename...>
 ```
 
 ## Structure

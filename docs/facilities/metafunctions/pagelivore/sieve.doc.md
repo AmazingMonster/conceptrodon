@@ -23,8 +23,9 @@ When invoked, the function removes every argument that satisfies all of the pred
 ## Type Signature
 
 ```Haskell
-Sieve ::   template<auto...> class...
-        -> template<auto...>
+Sieve
+ :: template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

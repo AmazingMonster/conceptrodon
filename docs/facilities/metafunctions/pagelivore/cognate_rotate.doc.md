@@ -23,9 +23,10 @@ When invoked, the function relocates arguments of the given amount from the fron
 ## Type Signature
 
 ```Haskell
-CognateRotate ::   template<auto...> class...
-                -> auto...
-                -> template<auto...>
+CognateRotate
+ :: template<auto...> class...
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

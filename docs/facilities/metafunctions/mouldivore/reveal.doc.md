@@ -17,8 +17,9 @@ Overall, `Reveal` turns a `Typical` operation into its non-prefixed counterpart.
 ## Type Signature
 
 ```Haskell
-Reveal ::   template<typename...> class... 
-         -> template<typename...>
+Reveal
+ :: template<typename...> class... 
+ -> template<typename...>
 ```
 
 ## Structure

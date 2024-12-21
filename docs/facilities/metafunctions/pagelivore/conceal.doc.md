@@ -18,9 +18,10 @@ Overall, `Conceal` turns an operation into its `Typical` counterpart.
 ## Type Signature
 
 ```Haskell
-Conceal ::   template<auto...> class... 
-          -> auto...
-          -> typename
+Conceal
+ :: template<auto...> class... 
+ -> auto...
+ -> typename
 ```
 
 ## Structure

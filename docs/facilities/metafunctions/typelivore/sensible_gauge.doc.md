@@ -32,9 +32,10 @@ Check out **Examples** for more information.
 ## Type Signature
 
 ```Haskell
-SensibleGauge ::   typename... 
-                -> template<auto...> class...
-                -> template<template<typename...> class...>
+SensibleGauge
+ :: typename... 
+ -> template<auto...> class...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

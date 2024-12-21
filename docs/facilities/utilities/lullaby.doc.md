@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Lullaby`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#lullaby">To Index</a></p>
 
 ## Description
 
@@ -21,8 +21,9 @@ It also contains a regular function, `size`, which returns the total number of t
 ## Type Signature
 
 ```Haskell
-Lullaby ::   template<template<template<template<typename...> class...> class...> class...> class...
-          -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
+Lullaby
+ :: template<template<template<template<typename...> class...> class...> class...> class...
+ -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

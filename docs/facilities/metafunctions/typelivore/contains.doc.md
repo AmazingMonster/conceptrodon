@@ -18,9 +18,10 @@ When invoked by an argument, the predicate returns true if the argument is in th
 ## Type Signature
 
 ```Haskell
-Contains ::   typename...
-           -> typename...
-           -> auto
+Contains
+ :: typename...
+ -> typename...
+ -> auto
 ```
 
 ## Structure

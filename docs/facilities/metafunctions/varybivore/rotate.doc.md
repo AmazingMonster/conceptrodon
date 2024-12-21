@@ -23,9 +23,10 @@ When invoked by an operation, the function relocates variables of the given amou
 ## Type Signature
 
 ```Haskell
-Rotate ::   auto...
-         -> auto...
-         -> template<template<auto...> class...>
+Rotate
+ :: auto...
+ -> auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

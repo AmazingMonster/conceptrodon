@@ -17,7 +17,9 @@ Otherwise, it returns false.
 ## Type Signature
 
 ```Haskell
-IsUnequal :: auto... -> auto
+IsUnequal
+ :: auto...
+ -> auto
 ```
 
 ## Structure

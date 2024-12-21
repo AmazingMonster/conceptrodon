@@ -24,8 +24,9 @@ When invoked, the function collects the indices of the arguments that can be eva
 ## Type Signature
 
 ```Haskell
-CognateObserve ::   template<auto...> class...
-                 -> template<auto...>
+CognateObserve
+ :: template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

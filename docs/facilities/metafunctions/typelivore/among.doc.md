@@ -17,7 +17,9 @@ When invoked by an index, the function returns the element at the index from the
 ## Type Signature
 
 ```Haskell
-Among :: typename... -> template<auto...>
+Among
+ :: typename...
+ -> template<auto...>
 ```
 
 ## Structure

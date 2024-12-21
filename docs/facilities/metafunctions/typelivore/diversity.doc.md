@@ -23,8 +23,9 @@ The resulting list will be held inside a `Capsule`.
 ## Type Signature
 
 ```Haskell
-Diversity ::   typename...
-            -> template<typename...>
+Diversity
+ :: typename...
+ -> template<typename...>
 ```
 
 ## Structure

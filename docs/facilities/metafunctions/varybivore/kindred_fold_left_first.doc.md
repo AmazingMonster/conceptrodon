@@ -27,9 +27,10 @@ When invoked by an operation, the function left-folds the list using the operati
 ## Type Signature
 
 ```Haskell
-KindredFoldLeftFirst ::   auto...
-                -> template<auto...> class...
-                -> auto
+KindredFoldLeftFirst
+ :: auto...
+ -> template<auto...> class...
+ -> auto
 ```
 
 ## Structure

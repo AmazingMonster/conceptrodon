@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Coy`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#coy">To Index</a></p>
 
 ## Description
 
-`Coy` accepts a `Cool` and returns the `Cool` via member `Cool`.
+`Coy` accepts a `Cool` operation and returns the operation via member `Cool`.
 
-<pre><code>Cool -> Cool</code></pre>
+<pre><code>   Oper
+-> struct { using Cool = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Coy ::   template<template<template<template<template<typename...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<typename...> class...> class...> class...> class...>
+Coy
+ :: template<template<template<template<template<typename...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<typename...> class...> class...> class...> class...>
 ```
 
 ## Structure

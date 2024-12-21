@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Shuttle`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#shuttle">To Index</a></p>
 
 ## Description
 
@@ -23,8 +23,9 @@ Check out **Examples** for all the abilities of `Shuttle`.
 ## Type Signature
 
 ```Haskell
-Shuttle ::   auto...
-          -> template<template<auto...> class...>
+Shuttle
+ :: auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

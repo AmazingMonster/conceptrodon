@@ -21,7 +21,8 @@ It concatenates them together and uses the first sequence to hold the result.
 ## Type Signature
 
 ```Haskell
-Paste :: template<typename...>
+Paste
+ :: template<typename...>
 ```
 
 ## Structure

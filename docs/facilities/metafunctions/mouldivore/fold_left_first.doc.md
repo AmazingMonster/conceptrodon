@@ -27,9 +27,10 @@ When invoked, the function left-folds its argument list using the operation with
 ## Type Signature
 
 ```Haskell
-FoldLeftFirst ::   template<auto...> class...
-                -> auto...
-                -> auto
+FoldLeftFirst
+ :: template<auto...> class...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

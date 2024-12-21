@@ -21,9 +21,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-LeftReview ::   template<auto...> class...
-             -> auto...
-             -> auto
+LeftReview
+ :: template<auto...> class...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

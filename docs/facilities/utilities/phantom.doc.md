@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Phantom`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#phantom">To Index</a></p>
 
 ## Description
 
@@ -21,8 +21,9 @@ It also contains a regular function, `size`, which returns the total number of t
 ## Type Signature
 
 ```Haskell
-Phantom ::   template<template<auto...> class...> class...
-          -> template<template<template<template<auto...> class...> class...> class...>
+Phantom
+ :: template<template<auto...> class...> class...
+ -> template<template<template<template<auto...> class...> class...> class...>
 ```
 
 ## Structure

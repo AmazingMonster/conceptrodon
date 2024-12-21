@@ -22,9 +22,10 @@ This function is created to exhibit the power of fold expression and to compare 
 ## Type Signature
 
 ```Haskell
-KindredLookFor ::   auto...
-          -> template<auto...> class...
-          -> auto
+KindredLookFor
+ :: auto...
+ -> template<auto...> class...
+ -> auto
 ```
 
 ## Structure

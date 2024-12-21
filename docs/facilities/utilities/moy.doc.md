@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Moy`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#moy">To Index</a></p>
 
 ## Description
 
-`Moy` accepts a container and returns the container via member `Mold`.
+`Moy` accepts a `Mold` operation and returns the operation via member `Mold`.
 
-<pre><code>Container -> Container</code></pre>
+<pre><code>   Oper
+-> struct { using Mold = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Moy ::   template<typename...> class...
-           -> template<typename...>
+Moy
+ :: template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

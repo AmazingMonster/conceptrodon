@@ -16,7 +16,9 @@ This function is provided to compare against `Omennivore::Press`.
 ## Type Signature
 
 ```Haskell
-LaboriousPress :: typename... -> template<typename...>
+LaboriousPress
+ :: typename...
+ -> template<typename...>
 ```
 
 ## Structure

@@ -19,9 +19,10 @@ When invoked, the function adds the containers to the end of the argument list a
 ## Type Signature
 
 ```Haskell
-BindBack ::   template<template<typename...> class...> class... 
-           -> template<typename...> class...
-           -> template<template<typename...> class...>
+BindBack
+ :: template<template<typename...> class...> class... 
+ -> template<typename...> class...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

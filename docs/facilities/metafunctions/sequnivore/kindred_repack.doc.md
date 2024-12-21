@@ -23,7 +23,9 @@ When invoked by an operation, the function concatenates the packed sequences and
 ## Type Signature
 
 ```Haskell
-KindredRepack :: typename... -> template<template<auto...> class...>
+KindredRepack
+ :: typename...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

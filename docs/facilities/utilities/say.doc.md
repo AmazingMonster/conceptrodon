@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Say`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#say">To Index</a></p>
 
 ## Description
 
-`Say` accepts a `Sail` and returns the `Sail` via member `Sail`.
+`Say` accepts a `Sail` operation and returns the operation via member `Sail`.
 
-<pre><code>Sail -> Sail</code></pre>
+<pre><code>   Oper
+-> struct { using Sail = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Say ::   template<template<template<auto...> class...> class...> class...
-           -> template<template<template<auto...> class...> class...>
+Say
+ :: template<template<template<auto...> class...> class...> class...
+ -> template<template<template<auto...> class...> class...>
 ```
 
 ## Structure

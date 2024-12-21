@@ -18,9 +18,10 @@ When invoked by a type, the function returns true if the type is created by an i
 ## Type Signature
 
 ```Haskell
-IsSpecializationOf ::   template<auto...> class...
-                     -> typename...
-                     -> auto 
+IsSpecializationOf
+ :: template<auto...> class...
+ -> typename...
+ -> auto 
 ```
 
 ## Structure

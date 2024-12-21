@@ -17,8 +17,9 @@ When invoked by an operation, the function concatenates the packed warehouses an
 ## Type Signature
 
 ```Haskell
-KindredRepack ::   typename... 
-         -> template<template<typename...> class...>
+KindredRepack
+ :: typename... 
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

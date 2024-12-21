@@ -18,9 +18,10 @@ When invoked, the function instantiates the sequence at the index from the list 
 ## Type Signature
 
 ```Haskell
-Among ::   template<auto...> class...
-        -> auto...
-        -> template<auto...>
+Among
+ :: template<auto...> class...
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

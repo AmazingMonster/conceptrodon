@@ -19,7 +19,9 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-TypicalConjureSet :: typename... -> typename
+TypicalConjureSet
+ :: typename...
+ -> typename
 ```
 
 ## Structure

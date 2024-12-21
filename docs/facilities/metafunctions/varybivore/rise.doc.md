@@ -17,8 +17,9 @@ When invoked by an operation, the function sorts the variables in ascending orde
 ## Type Signature
 
 ```Haskell
-Rise ::   auto...
-       -> template<template<auto...> class...>
+Rise
+ :: auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

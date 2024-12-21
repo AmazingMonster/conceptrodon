@@ -18,9 +18,10 @@ When invoked, the function returns true if the previously provided elements cont
 ## Type Signature
 
 ```Haskell
-Has ::   typename...
-      -> typename...
-      -> auto
+Has
+ :: typename...
+ -> typename...
+ -> auto
 ```
 
 ## Structure

@@ -30,9 +30,10 @@ When invoked, the function removes the arguments of indices within the interval 
 ## Type Signature
 
 ```Haskell
-CognateErase ::   template<auto...> class...
-               -> auto...
-               -> template<auto...>
+CognateErase
+ :: template<auto...> class...
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

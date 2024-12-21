@@ -16,7 +16,8 @@ It concatenates them together and uses the first stockroom to hold the result.
 ## Type Signature
 
 ```Haskell
-Paste :: template<typename...>
+Paste
+ :: template<typename...>
 ```
 
 ## Structure

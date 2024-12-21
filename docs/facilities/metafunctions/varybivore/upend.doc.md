@@ -17,8 +17,9 @@ When invoked by an operation, the function instantiates the operation with the p
 ## Type Signature
 
 ```Haskell
-Upend ::   auto...
-        -> template<template<auto...> class...>
+Upend
+ :: auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

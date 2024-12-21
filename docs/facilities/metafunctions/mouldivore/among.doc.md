@@ -18,9 +18,10 @@ When invoked, the function instantiates the container at the index from the list
 ## Type Signature
 
 ```Haskell
-Among ::   template<typename...> class...
-        -> auto...
-        -> template<typename...>
+Among
+ :: template<typename...> class...
+ -> auto...
+ -> template<typename...>
 ```
 
 ## Structure

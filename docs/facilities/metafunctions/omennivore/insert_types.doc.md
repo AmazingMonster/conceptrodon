@@ -34,9 +34,10 @@ The result will be stored inside `Capsule`.
 ## Type Signature
 
 ```Haskell
-InsertTypes ::   typename...
-              -> typename...
-              -> template<typename...>
+InsertTypes
+ :: typename...
+ -> typename...
+ -> template<typename...>
 ```
 
 ## Structure

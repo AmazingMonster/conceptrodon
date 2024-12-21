@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Prefix`
 
-<p style='text-align: right;'><a href="../../index.md#instruments">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#prefix">To Index</a></p>
 
 ## Description
 

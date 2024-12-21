@@ -17,7 +17,9 @@ It returns true if they are different and returns false otherwise.
 ## Type Signature
 
 ```Haskell
-SolitaryIsDifferent :: auto... -> auto
+SolitaryIsDifferent
+ :: auto...
+ -> auto
 ```
 
 ## Structure

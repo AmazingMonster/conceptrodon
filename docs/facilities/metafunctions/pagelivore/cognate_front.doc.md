@@ -19,9 +19,10 @@ When invoked, the function collects arguments of the amount from the front of it
 ## Type Signature
 
 ```Haskell
-CognateFront ::   template<auto...> class...
-               -> auto...
-               -> template<auto...>
+CognateFront
+ :: template<auto...> class...
+ -> auto...
+ -> template<auto...>
 ```
 
 ## Structure

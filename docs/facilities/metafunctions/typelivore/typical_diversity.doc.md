@@ -23,9 +23,10 @@ The resulting list will be held inside a `Capsule`.
 ## Type Signature
 
 ```Haskell
-TypicalDiversity ::   typename...
-                   -> typename...
-                   -> typename
+TypicalDiversity
+ :: typename...
+ -> typename...
+ -> typename
 ```
 
 ## Structure

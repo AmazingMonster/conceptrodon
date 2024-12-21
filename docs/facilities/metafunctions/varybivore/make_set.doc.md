@@ -21,7 +21,8 @@ The result will be stored in a `Shuttle`.
 ## Type Signature
 
 ```Haskell
-MakeSet :: template<auto...>
+MakeSet
+ :: template<auto...>
 ```
 
 ## Structure

@@ -16,32 +16,54 @@ When invoked with an operation, the function extracts the list of items from the
 
 ## Type Signature
 
-This function has multiple signatures.
-
 ```Haskell
-Send :: typename... -> template<template<typename...> class...>
+Send
+ :: typename...
+ -> template<template<typename...> class...>
 
-Send :: typename... -> template<template<auto...> class...>
+Send
+ :: typename...
+ -> template<template<auto...> class...>
 
-Send :: typename... -> template<template<template<typename...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<typename...> class...> class...>
 
-Send :: typename... -> template<template<template<auto...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<auto...> class...> class...>
 
-Send :: typename... -> template<template<template<template<typename...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<typename...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<auto...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<auto...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<typename...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<typename...> class...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<auto...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<auto...> class...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...>
 
-Send :: typename... -> template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
+Send
+ :: typename...
+ -> template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

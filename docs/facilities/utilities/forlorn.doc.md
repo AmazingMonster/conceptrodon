@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Forlorn`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#forlorn">To Index</a></p>
 
 ## Description
 
@@ -21,8 +21,9 @@ It also contains a regular function, `size`, which returns the total number of t
 ## Type Signature
 
 ```Haskell
-Forlorn ::   template<template<template<typename...> class...> class...> class...
-          -> template<template<template<template<template<typename...> class...> class...> class...> class...>
+Forlorn
+ :: template<template<template<typename...> class...> class...> class...
+ -> template<template<template<template<template<typename...> class...> class...> class...> class...>
 ```
 
 ## Structure

@@ -19,9 +19,10 @@ When invoked, the function adds the sequences to the end of the argument list an
 ## Type Signature
 
 ```Haskell
-BindBack ::   template<template<auto...> class...> class... 
-           -> template<auto...> class...
-           -> template<template<auto...> class...>
+BindBack
+ :: template<template<auto...> class...> class... 
+ -> template<auto...> class...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

@@ -32,8 +32,9 @@ The result will be stored inside `Capsule`.
 ## Type Signature
 
 ```Haskell
-RemoveTypes ::   typename...
-              -> template<typename...>
+RemoveTypes
+ :: typename...
+ -> template<typename...>
 ```
 
 ## Structure

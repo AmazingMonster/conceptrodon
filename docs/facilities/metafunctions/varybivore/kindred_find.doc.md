@@ -21,9 +21,10 @@ When invoked by predicates, the function returns the index of the first variable
 ## Type Signature
 
 ```Haskell
-KindredFind ::   auto...
-              -> template<auto...> class...
-              -> auto
+KindredFind
+ :: auto...
+ -> template<auto...> class...
+ -> auto
 ```
 
 ## Structure

@@ -18,9 +18,10 @@ When invoked by an argument, the function returns true if the argument is in the
 ## Type Signature
 
 ```Haskell
-SetContains ::   auto...
-              -> auto...
-              -> auto
+SetContains
+ :: auto...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

@@ -18,9 +18,10 @@ When invoked by an argument, the function returns true if the argument differs f
 ## Type Signature
 
 ```Haskell
-IsDifferentFrom ::   auto...
-                  -> auto...
-                  -> auto
+IsDifferentFrom
+ :: auto...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

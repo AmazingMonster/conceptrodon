@@ -17,9 +17,10 @@ When invoked, the function returns true if its argument list satisfies all of th
 ## Type Signature
 
 ```Haskell
-Conjunction ::   template<typename...> class... 
-              -> typename...
-              -> auto
+Conjunction
+ :: template<typename...> class... 
+ -> typename...
+ -> auto
 ```
 
 ## Structure

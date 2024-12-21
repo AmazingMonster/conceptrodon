@@ -21,7 +21,8 @@ The result will be stored in a `Capsule`.
 ## Type Signature
 
 ```Haskell
-ConjureSet :: template<typename...>
+ConjureSet
+ :: template<typename...>
 ```
 
 ## Structure

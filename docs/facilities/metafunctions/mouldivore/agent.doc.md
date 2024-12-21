@@ -17,8 +17,9 @@ When invoked by a packed container, the function extracts the list of elements f
 ## Type Signature
 
 ```Haskell
-Agent ::   template<typename...> class...
-        -> template<typename...>
+Agent
+ :: template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

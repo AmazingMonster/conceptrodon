@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Gry`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#gry">To Index</a></p>
 
 ## Description
 
-`Gry` accepts a `Grit` and returns the `Grit` via member `Grit`.
+`Gry` accepts a `Grit` operation and returns the operation via member `Grit`.
 
-<pre><code>Grit -> Grit</code></pre>
+<pre><code>   Oper
+-> struct { using Flow = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Gry ::   template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
+Gry
+ :: template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

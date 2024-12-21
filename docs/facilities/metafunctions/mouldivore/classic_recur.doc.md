@@ -23,9 +23,10 @@ When invoked, the function instantiates the operation with its arguments and use
 ## Type Signature
 
 ```Haskell
-ClassicRecur ::   template<typename...> class...
-               -> template<typename...> class...
-               -> template<typename...>
+ClassicRecur
+ :: template<typename...> class...
+ -> template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure

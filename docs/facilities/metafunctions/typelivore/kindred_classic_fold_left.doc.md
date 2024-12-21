@@ -30,9 +30,10 @@ The type result of the operation is used for continuation.
 ## Type Signature
 
 ```Haskell
-KindredClassicFoldLeft ::   typename...
-                  -> typename...
-                  -> template<template<typename...> class...>
+KindredClassicFoldLeft
+ :: typename...
+ -> typename...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

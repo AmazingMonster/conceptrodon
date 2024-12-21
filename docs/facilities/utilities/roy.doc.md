@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Roy`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#roy">To Index</a></p>
 
 ## Description
 
-`Roy` accepts a warehouse and returns the warehouse via member `Road`.
+`Roy` accepts a `Road` operation and returns the operation via member `Road`.
 
-<pre><code>Warehouse -> Warehouse</code></pre>
+<pre><code>   Oper
+-> struct { using Road = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Roy ::   template<template<typename...> class...> class...
-           -> template<template<typename...> class...>
+Roy
+ :: template<template<typename...> class...> class...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

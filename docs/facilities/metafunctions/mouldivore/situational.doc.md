@@ -18,9 +18,10 @@ When invoked, the function returns its first argument if the argument list satis
 ## Type Signature
 
 ```Haskell
-Situational ::   template<typename...> class...
-              -> typename...
-              -> typename
+Situational
+ :: template<typename...> class...
+ -> typename...
+ -> typename
 ```
 
 ## Structure

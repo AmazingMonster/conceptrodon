@@ -16,7 +16,9 @@ It concatenates them together and uses the first stockroom to hold the result.
 ## Type Signature
 
 ```Haskell
-TypicalPaste :: typename... -> typename
+TypicalPaste
+ :: typename...
+ -> typename
 ```
 
 ## Structure

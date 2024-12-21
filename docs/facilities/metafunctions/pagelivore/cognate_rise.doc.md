@@ -17,8 +17,9 @@ When invoked, the function sorts the arguments in ascending order and instantiat
 ## Type Signature
 
 ```Haskell
-CognateRise ::   template<auto...> class...
-              -> template<auto...>
+CognateRise
+ :: template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

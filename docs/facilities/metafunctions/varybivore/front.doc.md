@@ -19,9 +19,10 @@ When invoked by an operation, the function collects variables of the amount from
 ## Type Signature
 
 ```Haskell
-Front ::   auto...
-        -> auto...
-        -> template<template<auto...> class...>
+Front
+ :: auto...
+ -> auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

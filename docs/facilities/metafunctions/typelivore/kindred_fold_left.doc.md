@@ -29,9 +29,10 @@ The function left-folds the list using the operation and the initiator.
 ## Type Signature
 
 ```Haskell
-KindredFoldLeft ::   typename...
-           -> typename...
-           -> template<template<typename...> class...>
+KindredFoldLeft
+ :: typename...
+ -> typename...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

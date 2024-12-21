@@ -25,9 +25,10 @@ When invoked, the function right-folds its argument list using the operation wit
 ## Type Signature
 
 ```Haskell
-FoldRightLast ::   template<typename...> class...
-                -> typename...
-                -> typename
+FoldRightLast
+ :: template<typename...> class...
+ -> typename...
+ -> typename
 ```
 
 ## Structure

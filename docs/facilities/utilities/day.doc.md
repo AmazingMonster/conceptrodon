@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Day`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#day">To Index</a></p>
 
 ## Description
 
-`Day` accepts a `Dawn` and returns the `Dawn` via member `Dawn`.
+`Day` accepts a `Dawn` operation and returns the operation via member `Dawn`.
 
-<pre><code>Dawn -> Dawn</code></pre>
+<pre><code>   Oper
+-> struct { using Dawn = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Day ::   template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
+Day
+ :: template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...>
 ```
 
 ## Structure

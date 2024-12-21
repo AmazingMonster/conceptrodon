@@ -19,9 +19,10 @@ When invoked by an operation, the function creates copies of the element of the 
 ## Type Signature
 
 ```Haskell
-Duplicate ::   typename...
-            -> auto...
-            -> template<template<typename...> class...>
+Duplicate
+ :: typename...
+ -> auto...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

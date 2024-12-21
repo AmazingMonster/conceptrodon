@@ -16,7 +16,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-AddTo :: auto... -> auto... -> auto
+AddTo
+ :: auto...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

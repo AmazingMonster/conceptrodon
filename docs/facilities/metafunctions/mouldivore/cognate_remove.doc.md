@@ -30,9 +30,10 @@ When invoked, the function removes its arguments at positions indicated by the i
 ## Type Signature
 
 ```Haskell
-CognateRemove ::   template<typename...> class...
-                -> auto...
-                -> template<typename...>
+CognateRemove
+ :: template<typename...> class...
+ -> auto...
+ -> template<typename...>
 ```
 
 ## Structure

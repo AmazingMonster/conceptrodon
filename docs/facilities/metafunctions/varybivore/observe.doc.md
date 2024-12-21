@@ -24,8 +24,9 @@ When invoked by an operation, the function collects the indices of the variables
 ## Type Signature
 
 ```Haskell
-Observe ::   auto...
-          -> template<template<auto...> class...>
+Observe
+ :: auto...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

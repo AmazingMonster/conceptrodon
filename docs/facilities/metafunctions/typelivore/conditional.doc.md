@@ -27,26 +27,30 @@ Overall, `Conditional` yields one of the two elements according to the boolean e
 
 ## Type Signature
 
-This function has multiple signatures.
-
 ```Haskell
-Conditional :: typename... -> template<auto...>
+Conditional
+ :: typename...
+ -> template<auto...>
 ```
 
 ```Haskell
-Conditional :: typename... -> template<typename...>
+Conditional
+ :: typename...
+ -> template<typename...>
 ```
 
 ```Haskell
-Conditional ::   typename... 
-              -> template<typename...> class...
-              -> template<typename...>
+Conditional
+ :: typename... 
+ -> template<typename...> class...
+ -> template<typename...>
 ```
 
 ```Haskell
-Conditional ::   typename... 
-              -> template<auto...> class...
-              -> template<auto...>
+Conditional
+ :: typename... 
+ -> template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure

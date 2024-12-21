@@ -3,16 +3,16 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Capsule`
 
-<p style='text-align: right;'><a href="../../index.md#transportations">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#capsule">To Index</a></p>
 
 ## Description
 
 `Capsule` accepts a list of elements and returns a function.
 When invoked by an operation, the function instantiates the operation with the elements.
 
-<pre><code>   Elements...
--> Operation
--> Operation&lt;Elements...&gt;</code></pre>
+<pre><code>   Es...
+-> Oper
+-> Oper&lt;Es...&gt;</code></pre>
 
 It also contains a regular function, `size`, which returns the total number of the elements.
 
@@ -21,8 +21,9 @@ It also contains a regular function, `size`, which returns the total number of t
 ## Type Signature
 
 ```Haskell
-Capsule ::   typename...
-          -> template<template<typename...> class...>
+Capsule
+ :: typename...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

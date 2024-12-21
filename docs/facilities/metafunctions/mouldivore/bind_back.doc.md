@@ -19,9 +19,10 @@ When invoked, the function adds the elements to the end of the argument list and
 ## Type Signature
 
 ```Haskell
-BindBack ::   template<typename...> class... 
-           -> typename...
-           -> template<typename...>
+BindBack
+ :: template<typename...> class... 
+ -> typename...
+ -> template<typename...>
 ```
 
 ## Structure

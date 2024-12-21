@@ -32,9 +32,10 @@ Check out **Examples** for more information.
 ## Type Signature
 
 ```Haskell
-SensibleClassicPlume ::   typename... 
-                       -> template<typename...> class...
-                       -> template<template<typename...> class...>
+SensibleClassicPlume
+ :: typename... 
+ -> template<typename...> class...
+ -> template<template<typename...> class...>
 ```
 
 ## Structure

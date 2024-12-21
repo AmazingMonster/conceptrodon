@@ -17,7 +17,9 @@ otherwise, it returns false.
 ## Type Signature
 
 ```Haskell
-IsSame :: typename... -> typename
+IsSame
+ :: typename...
+ -> typename
 ```
 
 ## Structure

@@ -15,7 +15,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Type Signature
 
 ```Haskell
-TurnOver :: template<auto...>
+TurnOver
+ :: template<auto...>
 ```
 
 ## Structure

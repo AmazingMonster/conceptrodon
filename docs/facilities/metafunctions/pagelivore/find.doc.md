@@ -21,9 +21,10 @@ When invoked, the function returns the index of the first argument that satisfie
 ## Type Signature
 
 ```Haskell
-Find ::   template<auto...> class...
-       -> auto...
-       -> auto
+Find
+ :: template<auto...> class...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

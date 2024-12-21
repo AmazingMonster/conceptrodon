@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Ray`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#ray">To Index</a></p>
 
 ## Description
 
-`Ray` accepts a stockroom and returns the stockroom via member `Rail`.
+`Ray` accepts a `Rail` operation and returns the operation via member `Rail`.
 
-<pre><code>Stockroom -> Stockroom</code></pre>
+<pre><code>   Oper
+-> struct { using Rail = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Ray ::   template<template<auto...> class...> class...
-           -> template<template<auto...> class...>
+Ray
+ :: template<template<auto...> class...> class...
+ -> template<template<auto...> class...>
 ```
 
 ## Structure

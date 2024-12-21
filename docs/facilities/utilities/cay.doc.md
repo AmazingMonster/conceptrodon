@@ -3,19 +3,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Cay`
 
-<p style='text-align: right;'><a href="../../index.md#identities">To Index</a></p>
+<p style='text-align: right;'><a href="../utilities.md#cay">To Index</a></p>
 
 ## Description
 
-`Cay` accepts a `Calm` and returns the `Calm` via member `Calm`.
+`Cay` accepts a `Calm` operation and returns the operation via member `Calm`.
 
-<pre><code>Calm -> Calm</code></pre>
+<pre><code>   Oper
+-> struct { using Calm = Oper; }</code></pre>
 
 ## Type Signature
 
 ```Haskell
-Cay ::   template<template<template<template<template<auto...> class...> class...> class...> class...> class...
-           -> template<template<template<template<template<auto...> class...> class...> class...> class...>
+Cay
+ :: template<template<template<template<template<auto...> class...> class...> class...> class...> class...
+ -> template<template<template<template<template<auto...> class...> class...> class...> class...>
 ```
 
 ## Structure

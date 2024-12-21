@@ -18,9 +18,10 @@ otherwise, the predicate returns false.
 ## Type Signature
 
 ```Haskell
-AreGreaterThan ::   auto...
-                 -> auto...
-                 -> auto
+AreGreaterThan
+ :: auto...
+ -> auto...
+ -> auto
 ```
 
 ## Structure

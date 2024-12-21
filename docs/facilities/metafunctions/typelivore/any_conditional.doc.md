@@ -27,26 +27,30 @@ Overall, `AnyConditional` yields one of the two elements according to the boolea
 
 ## Type Signature
 
-This function has multiple signatures.
-
 ```Haskell
-AnyConditional :: typename... -> template<auto...>
+AnyConditional
+ :: typename...
+ -> template<auto...>
 ```
 
 ```Haskell
-AnyConditional :: typename... -> template<typename...>
+AnyConditional
+ :: typename...
+ -> template<typename...>
 ```
 
 ```Haskell
-AnyConditional ::   typename... 
-                 -> template<typename...> class...
-                 -> template<typename...>
+AnyConditional
+ :: typename... 
+ -> template<typename...> class...
+ -> template<typename...>
 ```
 
 ```Haskell
-AnyConditional ::   typename... 
-                 -> template<auto...> class...
-                 -> template<auto...>
+AnyConditional
+ :: typename... 
+ -> template<auto...> class...
+ -> template<auto...>
 ```
 
 ## Structure
