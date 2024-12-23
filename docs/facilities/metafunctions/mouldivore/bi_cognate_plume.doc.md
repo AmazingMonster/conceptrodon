@@ -122,9 +122,11 @@ We will see six examples that present different use cases of `Mouldivore::BiCogn
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Vay ****/
 template<auto>
 struct Vay;
 
+/**** AddZero ****/
 template<auto I>
 struct AddZeroHelper
 { 
@@ -134,6 +136,7 @@ struct AddZeroHelper
 template<auto...Args>
 using AddZero = AddZeroHelper<Args...>::type;
 
+/**** AddOne ****/
 template<auto I>
 struct AddOneHelper
 { 
@@ -143,6 +146,7 @@ struct AddOneHelper
 template<auto...Args>
 using AddOne = AddOneHelper<Args...>::type;
 
+/**** AddTwo ****/
 template<auto I>
 struct AddTwoHelper
 {
@@ -152,16 +156,20 @@ struct AddTwoHelper
 template<auto...Args>
 using AddTwo = AddTwoHelper<Args...>::type;
 
+/**** Operation ****/
 template<typename...>
 struct Operation;
 
+/**** SupposedResult ****/
 using SupposedResult = Operation<Vay<0>, Vay<1>, Vay<2>>;
 
+/**** Result ****/
 using Result 
 = BiCognatePlume<Operation>
 ::Rail<AddZero, AddOne, AddTwo>
 ::Page<0>;
 
+/**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
@@ -169,12 +177,15 @@ static_assert(std::same_as<Result, SupposedResult>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Supposed Result */
 using SupposedResult_1 = Operation<Vay<1>, Vay<2>, Vay<3>>;
 
+/**** Result ****/
 using Result_1 = BiCognatePlume<Operation>
 ::Rail<AddOne>
 ::Page<0, 1, 2>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
@@ -182,12 +193,15 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Supposed Result ****/
 using SupposedResult_2 = Operation<Vay<0>, Vay<2>, Vay<4>>;
 
+/**** Result ****/
 using Result_2 = BiCognatePlume<Operation>
 ::Rail<AddZero, AddOne, AddTwo>
 ::Page<0, 1, 2>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
@@ -195,6 +209,7 @@ static_assert(std::same_as<Result_2, SupposedResult_2>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** TypeAddZero ****/
 template<typename Element>
 struct TypeAddZeroHelper
 { 
@@ -204,6 +219,7 @@ struct TypeAddZeroHelper
 template<typename...Args>
 using TypeAddZero = TypeAddZeroHelper<Args...>::type;
 
+/**** TypeAddOne ****/
 template<typename Element>
 struct TypeAddOneHelper
 { 
@@ -213,6 +229,7 @@ struct TypeAddOneHelper
 template<typename...Args>
 using TypeAddOne = TypeAddOneHelper<Args...>::type;
 
+/**** TypeAddTwo ****/
 template<typename Element>
 struct TypeAddTwoHelper
 { 
@@ -222,13 +239,16 @@ struct TypeAddTwoHelper
 template<typename...Args>
 using TypeAddTwo = TypeAddTwoHelper<Args...>::type;
 
+/**** Supposed Result ****/
 using SupposedResult_3 = Operation<Vay<0>, Vay<1>, Vay<2>>;
 
+/**** Result ****/
 using Result_3 
 = BiCognatePlume<Operation>
 ::Road<TypeAddZero, TypeAddOne, TypeAddTwo>
 ::Mold<std::integral_constant<int, 0>>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_3, SupposedResult_3>);
 ```
 
@@ -236,16 +256,20 @@ static_assert(std::same_as<Result_3, SupposedResult_3>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Supposed Result ****/
 using SupposedResult_4 = Operation<Vay<1>, Vay<2>, Vay<3>>;
 
+/**** Result ****/
 using Result_4 = BiCognatePlume<Operation>
 ::Road<TypeAddOne>
-::Mold<
+::Mold
+<
     std::integral_constant<int, 0>,
     std::integral_constant<int, 1>,
     std::integral_constant<int, 2>
 >;
 
+/**** Test ****/
 static_assert(std::same_as<Result_4, SupposedResult_4>);
 ```
 
@@ -253,16 +277,20 @@ static_assert(std::same_as<Result_4, SupposedResult_4>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Supposed Result ****/
 using SupposedResult_5 = Operation<Vay<0>, Vay<2>, Vay<4>>;
 
+/**** Result ****/
 using Result_5 = BiCognatePlume<Operation>
 ::Road<TypeAddZero, TypeAddOne, TypeAddTwo>
-::Mold<
+::Mold
+<
     std::integral_constant<int, 0>,
     std::integral_constant<int, 1>,
     std::integral_constant<int, 2>
 >;
 
+/**** Test ****/
 static_assert(std::same_as<Result_5, SupposedResult_5>);
 ```
 
@@ -368,7 +396,7 @@ struct BiCognatePlume
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGISdKuADJ4DJgAcj4ARpjEEmZmpAAOqAqETgwe3r56KWmOAiFhkSwxcQCcAOy2mPYFDEIETMQEWT5%2BATV1GY3NBEUR0bHxiQpNLW05XLbj/aGDpcNVAJS2qF7EyOwcBJgsSQa7JgDMbrv7h5gnZwCeSYysmAB0LyfYANTIBgoK7wDy92ITHqbxMGgAgmNiF4HO8LHgPMBmLtlNkrhCTJUrBD3rj3ucDsCrqcCZdrkwvEQXk83p9vgpqQARTAANzwWwUoJxeKhMII72UxFQRAASkw6GDwXj3pjsVLpXiAPSK94AWS8tEcB0w7yEmAAjl5GBzJQqlSr1Zq8Nr3gA1Zp4JhReic7lm0lE8mU1DU%2B3ER3OzCc47YU1m9682HMpoSt0K2Vh8N4rxpIz4u46k6M/6A4EZa7Mtkm05%2BgMut7U0HHOVJzGMk5yxMK5VqjVa%2Bi6g1GhgmuPSlt/MJ2h1O8t9vEeo6nClEYf%2B0fE0Pj3GR/nR8W0a6lhdc%2BVmhPLhUp0LAdP3GXHbMA2J5gQF1nsoNbkeBiuvEMNpvSuufjGHyfEm4M4%2Bi84LAMQmB7IwBDBkue5Hqmp7KEwwCZpe7zrhKpxgRBUGCAy77YCAIAEBmv7wT%2B1aSk2AHXLR07epWIZ0kwPwYQ%2BWy7tKq4CkKoobveRaLk2B7wf2KqDjqeqGsa6JiearZWja26Bq68m4vRQGMS8Knlh%2Bh48Zhm6HqJSbSseaakeeWY5jeIKnIWj7PvOqlvjSH5USZlT1p54JfhOeyElOWlUqB4GQWw%2BFceGFlIShaHZkZ1w4RF0EEe5REkWRvnft55E0YFZIkoVnoMaFGUsT81IpXhMHRbisXvGKdAXtmgrCqgzWbth4W1elVaNnGmnDRmzBsExHxfKx6WOcWcHcQQ0Kwu1oqoEw6AiVi/m4i2lrtjqHiCOKYTEGpSa7W21odtg9CRXV/4lcFVkPONLw3X19UKoZmAxsZ6kylth7mYhZ4JbZQL2W4s1Pqc713bBE3kbWeW%2Bdt7wXUpHaHTGJ1neGA5DnDaVoyN9xjTqROCJ9C1LWuP0CbDt3QdTeKmWZDUg89rXg7eDCCY%2BwZuJTBBuQNaOUYN/2ky9zxhbh8MsxzJ5qp46Dc0lPXy2lE3Ec9SOsyjkvSsNj2Ac95MTZVvzQ59PErZ1a0bQ5HHCXGbNmgTB2yMdsR4x7FqXTawt%2Bwq0sW29TNRfp/3fb94uA/9wPK1zNnXhD%2BbO0J1zB6LHk1uGEvUQ9FylbcZOPNVvUK9HSaNaqqvq/TWFuDV8M61l9z67ihd/vBJsl09o0V4RVuV1rUfzcmIMio73P2zP63JVX2uEflhtF35EKKgAVLve/7wfiqSjve/vAAKkGMHvPvR9bwf983xv5jHKEXxeFgF5uGgPaYEkdXR5KTSwFdw8XtN1SWQDvTvAAJIgMWnyd44J0DoAAFqxFQAACVqICaiWIZRxkaindCYDriwLzvgvy69e6QPKuCYgwBYKSkakg1B6DuYsLQUKLBtAcHYXof1EMutsoQNNl6WcZC4I8RYZJbhOCMR4KbIQjM3MSGnGgTKSw7wuBi3kT5ERA9ALAWqvw3czDkGSXYeYsIsjYjJX4e3PWqMIQ0NQDAuBtNEHILPgAd0wdg2x8j85K0ssomyqi3DqOsO8MwOjKF6I3i44xDDTEgxYT41xNk0m%2BJscQOxDCHHCISaIkkQ82DvGFu4hBZ8MwcPQTk3BFgKFJxCdZYhYhs6RwIMRFkYgjQDQoT3Te4Iw7DyeHQ5J0dGrVPuLUoU3NpmYFmX4nhti%2BH5MIkIzuTjhnFLLjLcpnTKmwgWdI6x/jcmBKaVPZOoS2ndSFp07pvTMyaO0eQ3B8TqG7PNqM8ZjCIRTJqVYsGJzgX1LWQIzKjj9FBTNqUimhzo48VBegdJ9TLmKM5rc7M4ThZPO8C8xpMT3m6Pys4758Kkn/PBICmZXjfHzKBai7J5y8mQs2cSGFRU9nhwypKHiadeZkvBCfXe7wABieBTr8mwKoVgNpH690akILwSQ8iYHQCKIMbZuaCshuEjQbxSDDnuW87AxrwnEtDHnDejUtUKB1dRdC8JETIhUGia4eqM5wWIl1ZKyDOGoGNaczAwb6WoF3MRZCqFriGptb3MYeZkAAH1pqxAIBAMY6BiIKEeKmwW9q2zGpVWq1IGrC2ajeMsYVort6dm/mrWV8qOyKqGcq1V6rNXas1Mmrgurcz6vaacM1Fqh1uCtaO%2B5xwqzWslna7tBBe3cxdagJERJUQ%2BEAl6u80dfUMxbsCyNIBo2AQ0Ma6Y0TYn8qaI4FNaaWiZoINmkAua2D5uuBWxdF6S2ds/b2qtNb97nwQFKxtcqLg6lbUwkGP6y1dodT2sw/a7IZzcAao1JrrgTsw6cSQM7hXzoQ4upDNkV1rpRB60426%2Ba7pAH67CAb0FhvQJJZj6Sj0ntjee41VrhWJtvfmpQD6s05rzaxD9C7k2JF1B2uDf6rXVu2bWiV6wWgIHKeBhVe9b5tpg7JpQ8G2zJuOMh9OO60NjrjeanDbgR02d4/G3Tys/0maddmMjbqN1sE9QO71kpfWO2uCiwNxqUWsfPky9jtH660Cdm4ETIBQi7HAmIZN39E1U1OEl41Vmr0Qn4%2ByQT6bH3PtfZgd9pwXPFv0%2BWyT06QyKclspyVVACDqabRB6%2B2nbV6dLQZv9khTNCpLGOuzlqMPhPq9a2dPXnOScG6RhEq7POUbcNRo9C84thbCEemLcWmwJaS5gFLtA0sCAyyLLLggctGoO0%2B4iR2TtnYYBd642WtG3bjIdwQx2gSnfS00TLbh3u8YxI569SaivCfuy%2BsTBb5vVb67Vojya8MNcA6fIQeBVBtY082yD3WlW9d/ZJgArENwd9yrOTqwxNsdaPpsEenmT5dS3yPus3T5lDO6fV0cC6cYLTGIt0pY2EULkXfG7dVtcO7z7Ht/ee69q7BAbshlILLh7P2nsA8MJd4H12Ptq414lrXCuddA5B7uPLkIb2FfvRmhLZWKtuD/aTxHJOUek4A9WDgqxaCcFJ7wPwHAtCkFQJwNw1gokKFU1sDRxweCkC6SH33qwADWIBSeSCeBoSQXBKjHA0KTjQZgABspezAAA5K/6E4JIXgLAJAaDPcH0P4eOC8AUCAM9yetCrDgLAGAiAQDrAIEkSk5BKBoH2HQWI4RHicFUJX0vABaUvg3gDIGQFo7PZheAasICQPA2bpj8EECIMQ7ApAyEEIoFQ6gU%2BkF0NMbxQIkicB4H7gPQfNC8Hb38SkcffkVAKgd4JfVfdfd4TfbfKQJ4JDCADwGfegYgePLgZYXgXvX3UgCAJAafJIWfMgCgCAPAggkAYAKQRIGgTUX2SgKIX/UgKIUIZoG4D/XgRg5gYgG4P4KIbQTABwVg0gafO6QcWgFgx/LAKILwYAICWgWgLvbgXgLAFgQwYAcQcQqVPgxwFkIMegzAVQPgykbYRPI7f3R/WgPAKIIETgjwLAegxaPARvBQ0gbQ4gKIMtZkZQowcwowX/VYKgAwBhW0PATAbxa8YPRPM/YQUQcQa/SIu/NQeg5/fQFQlAKPSwfQCwrvSAVYVAP%2BDIeQlfLNLMUwSwawMwNvFw/0LALIiAVYOwTQjIFwBgdwTwdoPQYIeYEoMoXIVIdIAQSYPwaYPIPohgAYLo4YaYeohwHoWYAYvQKY%2BoXoFoMYoYOISY2Y1oqYGYPoFYxYNYuo2PK/L/DgQPUgVvP/TgMA5fNfDfLfHfOA94CAXAQ/FA5%2BNAjA3w1YBATAdaYYWo0gDPSQY4J4coY4SoSQXPMwSQUvZvUnUvcoWvDgevUgRvBPJ4UvLgUvSvcoSvTErPLgUnUE0vM4%2Bg9vTvbvJPXw7AofHAkfQAifIgkg5A%2BfNgTgZoFgFkSoFfJgFiNMLgcoJ4LgHPfffAIgKovQSIi/GI6QOIpQBIx/XQRIV/Jgd/BQ440484sPTgAAsfSkd4EA94dkzk7k3k08fkwUnPR4xA/A5A%2BPMwdAyklPfvXA1AJA2ISfYg10m04YI0rkqaIwfkrgM9Kg3YU6Wg%2Bg9g5ggQyMzg7g3g/gpwoQ6CEQsQ0PCQqQmQuQgQpQlQtQtMjQ6Y7Q%2BQ0PPQgw3YAQkw%2Bg8wyw5gmw7YUPewxwxPFwtwpQDw3Mk8Kk/wlCBQIIkIsIgQyU6Iq/GU2QeIh/UPRU5InwkoqwdI6smonIvI87TgQop9YotIiwcov/So4/HQ7IroBo5wCAVwOY6YDo4oVYno/IDIM85IXo%2BoXY7oyY2oI8hoDY7IQYw86YgQJYuYS8vY%2BYj8to9YnYzoq8tAtYDYLYCQdUn/R/dvQ04gDkrknk/0s0gUoUjQR454sU1Ah0zA5YL4n4rAOIf40w5E1EgU3PSoQkyoAvSQKE9faYTUsk2wCkwi6k%2BAWk0fIAj0pkufBfDgdkyAlgBQFkbfFkc0y4MYEUl44/CU2QKUkcm/eQOUicnQEAY4UgZU1Uz/REjU0k7U%2Bk4A0AkSwbMSiS94KSgUmS/kBAr0gg%2BPY4Aiqk2kgSwgqfRy5AkACStVZNGy5NOy1NZC9fPgOgUMrvCAOgx/GMsQxPOKuMzQgQpMwQFM%2Bg9M6QsQLMpwnMrw%2BsxQgsrQnQx/Us5AQwisn7Uw0Pasqwm4Osuw/0Js3gFs9wvYDsnwp0vgAI3s4I0IsmQcpS4ciQUc2/dSxIrS6c4wTcjIqIRcsPZcl7TgRUETWcsoio2IKo/c/4hYxok85ou8i8hYZ8%2B8m8/ozYr84Yx88CwCl87oX84CrY3ah6sCgCk6xNCYC6oC1646iYg46Co4gy%2BCtvS48y94SyyS6SokMYHC0UkgfCj4p04i34si44yikAMwAU44Y4UnYvPPZvbGyoLEkkhCzgcknvT4gE/wUnEE0nSvMvcoSQKoQmrgbS0w44YGi4jvR0vvY4vfEmkG7mwi1YFwtIZwSQIAA%3D%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEIGYAbFykAA6oCoRODB7evgHBmdmOAuGRMSzxiSlpdpgOuUIETMQE%2BT5%2BQbaY9mUMLW0EFdFxCUmptq3tnYU9CjMjEWPVE3UAlLaoXsTI7BwA9ABUp2fnF5dnhyYaAIInZwDUAJIs6fRsgkwDT%2Bc390eV2BVwBd1udwImHeBihJgAzG4oTCfpgEUiAJ7pRisTAAOgJCOwT2QBgUCieAHlscQfrkiRDFsQvA4nhY8B5gMwocoCmj7iZAlZ7k9RU9kR9UeiJbC0YimF4iAS8USSWSFMqACKYABueH2CgZIrFTJZBCeymIqCIACUmHQIWKnoLhXcnU7DocngBZLy0RwfTBPISYACOXkYBsd7tFnp9foD9CeADU2ngmLF6IbjTGZVL5YrUMrU8R05nMIb4dhozHTazta0HTn3S6azGxV5skZxVigwjNVSaXSBOjtXqo4iS2Ws0TlQz4a7287ApqEa62x6vb7/XhA8GwxGGFHm5uqZEU2mMzOT2K83CC0QL6Wr3LqzfRXXzQ37bR0VOX0abrtq277up2ETAD22LOvCA7Ugkw4MKOur6hWf6XuWs6ElWa4bmKgqrguEJ4aKd5ym4CpKgSdzAMQmDQowBCVm%2BQExuB3bKEwwB9rBTzfg6iI0XRDGCBq2HYCAIAEL2uHNgRsngs2ZHStCkr3hRhZzlWapMOSfEofsgFOp%2BFpWraP7IeOr5tiBrHunGlLniG4aRvydmntuiZBv%2B5bZu5t6qbK6KUUWBI%2BTOOGgSZ/G/qBtlLk67GQdJ0H9oOCEDJZqHoc%2BvlYSqOFEXFK4KSR4qBfmGlUXiQn0V8TFGe2SUWlxPEDjF6K1SJTFaRJUkyUVdnyYNbbKYiY1VaFBXEqSuliTVtF1YxzFts1dp0DBA6WtaqDrb%2BgmLd183zuuSkVepE0pTibC9Tp5JagZaGRXZJnbbaqBMOgNlCmVcaebuSYeN8KzEH5S5/QmANBtgnzLWVl29swN0EjDR2NbWBDMvWmCNrF/mivFCWis1V2beltKZYiY6oZWbio/VzG9QpS7Dad%2BNPBDO57kDjaRKDv1eo50Ow6J8PneRV1I8L3Xo%2B60U4xZiL04xstOoTRMk72ZPwRT9JU49tPK4I%2BUnWVrPEaBCPYlLypdQzqsdl2kHep46Bkx1B3CQzvWSVdzP4SVI1nSiF3i9KiO4rds16dThnPcZmNmqZO02h9X361Zsvq/Zgvnjz9p82D7ac15TxGw1lth%2BNEfI3i5crVFifY7jZs/aBiVO1BbXk4hWVx3TIsNVWTODSzgds0uVvXfi1GHfb8dNZ3Lu0G7aUe24dvLT7/XYv7BPjxbdmXVXmLW5H4l3fNm%2BiwvxOd6nn1k29u1p51c9b%2BJpUHwKgIgn//wQiBMcJ4AAxPAoNzTYFUKwPcADf7/3/mCYiZh4QRFJF4LAME3BoCPJgdIQ8WKAPOBeDEfxrgQgmiFQCJlUwYlKvA04Tw7joHQAALQSKgMhpwwSUMLK8ahTdzTMLYRwgAEn0GkxEhTOmbJrVKvFaHoheCdGR4Jv6KUhCfEKttiDAAbncZqwj2FWjJkYsREiEidV0cdKsvsBpsyAUwlhQsuHHB4VovhyjnomWEULcRtBJECmkatTupM0qKMRC8Z0lgnhcFNkEwibNeHVTuNYwChjnHnjSr4yI/jJGCWsdvP2QcHjEOEQAFQAO6cLgZokO5EQr8O8YIpx6AqmoDyZYoJi5HYQS7mTCJbgonWCeGYeJajEmH2SVNVJej0mdwqdU0xLD2mdOIFYvRRT7GH0cTrRCrj3H1PDmfWuAisbmj2ZTBxxChBeHSCUTA6AbQVgTAciEzVbn3KyI855ChXlpUuXrNwgyNBElICQ9EcSqzgsGWMwq1YSmON%2Ba82pa0Xn%2BlUWldknJuQqD5OiQFI5nqST2p1FhxjUDgpyZgKlKzqmAUkpxbi6JQWFWuc8cpFZzS1MWHSZAAB9OaCQCAQEWOgSSChcSCtpsi/04LPkPKeeiggRINj0NKQgxBRDnghhwW7KBMCky1KAZq0EOybl3MVU8WV3KwQfMtd8pVfz/T8q4NrIclNgVMDoYiKF2AYXevRHC/1ELETwnnAi9ljCbVvPuGi51BBXVk2xagLkqJeQ%2BHIoSpCxKQCksEpk6y9xGWtRZeCtIozxnasYZyxYsa7i8scAKoV7RRUEHFSASVbBpXohta6%2BVDqlBOoTK61V6qTWmuNcQ8pCBwH6ugTCIMU7J1mp/hqxhCrHXWuVfW%2B1Xyh19rMO6jKQKQVgtDW4YNAafVuEkBG8dxCY2ovvsq/lR6sUclTbijNbACUer1ixElisN7ko4bS9AQtwPtIZSAJl5ENDlvBcGh9HKuX1sbfqaVShW1iolVK3SvbX1mAHfun5RGx2IpXcCMEjiQE7HaAgMuC7YHkIYVR2p1bgHlN7GYkxtSp5SzLoPM5SduPYl4x0ix6zumqI7n0sJCjA1K0HpJHUYgIwqKkZMtdAnz41TSc9ZqYnMASbJsZiTayNk2L6sUqNXGeOFvrbptgQmZbNPOU8czhbLMyZCfJrW4SlMD26qp9TfYYl%2BrXJi9RFCT6Sz07M/RRmHMQaybxLzqXMCWYKZs8Sdjd6UY5Sl9pTm4s12lvVETrIMurKk1IiwsnendgUwOQZ5dQveHCw15DC5ovaY0c5me%2Bm5mGc7jVpZaVxuSYCZYnL1n8tyjs8GQdjzt0Jt3Z3TdB7X3wmPbrIlXqb2spDYMv116g33sK9Gndz6%2Bl9t28RXiKa008nxYibNMGH7pzcBlil4KMuQc88V%2Blubl7fdwyACIUJaJiH5Tg3lxtERQ/BcdqtbHPNoZ5a0JtWHhVto7V2zAPbET3ZI4q%2B7FG7PsbcZx0BeAqAEEYwaxd9aJ1UaQejrbq2n2sYMZtlbw6XWSD273ScQWzsXqvRe8N8KUPXfW7d7sfbhcfpxemt7bgPu5q%2B%2BiAHkQYNg8e24NsEOoeYBh7QOHAgEcqqR4IFHYKTftskmbi3VuGA2/RMj2Jjvmym8EOb2klv4etER24b3yGBRsvNahutWO%2BW45w87zt%2BGZWvukMt0jgvE13qrGqq71Oaec7wKoRnTHDVLt52zldHP13AK527Hn3D3n86z32/wIvPVnuhZL89gzc8IsjTH%2BXKLefxpHR31XX71eZr/SeolgG82v0RL9sDQPxOFv%2B8D1ABvXZG6dx213Qf3ee7twQB30KD8u4D27kPhhbfh/tz7y/fvk9H9h3fsPEfAJo7rxjuPvOGGza5IeOEOhOxObg7eZOjq7elOHAWwtAnA/gvAfgHAWgpAqAnAxulgIyCg9G%2Bw0S8IPApABAmg8BWwAA1gEJIHiBoJIFwIEPCBoP4BoCkMkGYAABwcH6CcCSC8AsASAaAIaoHoGYEcC8AKAgAIakFoHwGkBwCwAwCIAgA7AEDpCKjkCUBoDvB0AJBRC4icCqAcHJAAC0yQwuwAyAyAsSNBZgvAjyhAJAeA4qaQ/AggIgYg7AUgMgggigKg6gshpAugaQlStI6QnAPACBSBKBZBGBnAlIio6h5oqAVATwRhph5hTwlh1hUgeIR6EAHgOh9AxAhBXAGwvAMhWgWwEASA2h6QuhZAFAEAdRDRIAwAUgxGNA/oCQkhEAsQsRsQEQbQGIERvAgxzAxAGIlIsQ2gjQMhxB2h9UjktAIxgRWAsQXgwAFEtAtAkh3AvAWALAhgwA4gax4CcxeAOoFYsRmAqgjQioBwxBZuiBgRtAeAsQtIkxHgWAsRmMeAAh%2BxpAVxxAsQ3y2oRxRgbxRgZBWwVABgeiyYeAmAlS8EqBxBbhwgog4g3hGJfhagsRwR%2BgxxKA1g1g%2Bg7xkhkAWwqA%2BCuQexJhYq/YpgOBlgZgohwJpYWAlJEAWwDQTQzgEArgcwfgaQYQKwVQNQegJQOQAgwpUpWQMpDAowEpEw9QfQFxAgQwswngXQegfJAwWpywlQ4wiQ9QSwcpZpwwypJpEgvJ%2BBXhURHAyBpAIhvAYhaRxhZhFhVhNheRTwEAuAjhJR5gRB5RJBMJWwCAmAn0EwPJpAVBkg8IeIAAnPCIEJIHQWYJIMkEIf4MkMmTwRwHwaQAIUQXiKkMkBwcmRwVwMkP4PQf4KmckC6bEWIRIVIeGbIdUUoTUSoYkRoU0S0cUfoWwJwG0CwDqIECYUwDpN2FwMmXiFwLQfYfgEQJyXoBiR4didILiUoPiYEboMRqEUwOEfsY6c6a6XERwAkWoYqE8CkR6RkcLrNHOQuUuRoP6YUfUcUYQWYGGZUXIb2UOQkJoc0agEURMC%2Be0cmVwAhl0VCKDJQP0YEeMcMaMaQKhZMdMbMQ4OhYsYxMsasegesZsdsbsehYcccaccRecU0FcXsegbcfcVCOhc8bEW8R8cMd8QcOgX8QCcQcCaCUoOCVRRBDCXwPCQoIiciaiehZuViV4TubIHiQEegYeUSdCcyVYJYOSbENydSbSdbpwAye2kyaSayeyQkJydcVSb0P0LkC4AwO4DqYUKKU5daWsKaRkAqQMBad5aULkB5ZKWqfZZqeaS5SKXZRqYMEsEFaqdMMMH5byu0HFaaXabsPsLaYWRea2ZwI%2BV6bOZBPOYubQf6YGWuaUf%2BRGaQFGTGYkHGS8cWaWQuXQYEI2YEIwZIFmeYWkJeW2bYB2QBd2fAL2aoUkaBcBcQCOQcOOZkSwAoDqNYTqMVbKIsCuUGc4RubIFuYpT4fIHuapToCAPCKQMeaeZEdlTEYEWITeUkfeakaoHNQtUtStaiHWgUeBd%2BQkIQfCFVV2fIbUZ9Q0RNUDcUSAItfcvystcmfyqtYmo9TuXQAhb0chegZhascQejdhXMXheBUsQwCsbESRVsWIORYCZRZCTxQcbRY4PRTcXccgA8axQHi8egRxZ8RiNxb8aWPxbwIJWCdCKJdCf9XCVxFJUiSidbHJdtQpRIEpb4QdQScdRpcYOZTYBxfpRgYZR7pwIcLhlpdYGyW6Ryc4TZXGfqQ5YKU5X5WKcaZ5fKQFbKRFQ7YqalXqeqfyTFYlc7SFdFYaW7ZadqQUJFclUaasMFelXsA6ZdS2ddXlQjU8PNYtU8NDXiHDWVauSQJVRUdVbVVgPVY6U1UkAufCPCP4CwfQUIaXYEJWbHaIZwO2dIdVQmf4Cmf4BwSkMmZIMmYwWmVwCdS8fCFdfXeIZ2VUY6XYXXW6Q3WPeQUCT0Q5ZIEAA%3D%3D%3D)
 
 ## Links
 

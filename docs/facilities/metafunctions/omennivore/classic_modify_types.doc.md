@@ -74,7 +74,7 @@ template<auto I>
 struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Vay>
+template<typename Val>
 struct UnaryMinus
 {
     using type = Vay<-Vay::value>;

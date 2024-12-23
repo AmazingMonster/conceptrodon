@@ -53,7 +53,7 @@ template<auto I>
 struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Vay>
+template<typename Val>
 struct AddOneHelper
 {
     using type = Vay<Vay::value + 1>;
@@ -62,7 +62,7 @@ struct AddOneHelper
 template<typename...Args>
 using AddOne  = AddOneHelper<Args...>::type;
 
-template<typename Vay>
+template<typename Val>
 struct IsGreaterThanNine
 {
     static constexpr auto value

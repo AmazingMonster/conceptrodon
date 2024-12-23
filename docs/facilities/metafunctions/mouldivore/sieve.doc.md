@@ -48,14 +48,14 @@ template<auto I>
 struct Vay
 { static constexpr auto value {I}; };
 
-template<typename Vay>
+template<typename Val>
 struct DivisibleByTwo
 {
     static constexpr bool value
     {Vay::value % 2 == 0};
 };
 
-template<typename Vay>
+template<typename Val>
 struct DivisibleByThree
 {
     static constexpr bool value
