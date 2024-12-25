@@ -53,9 +53,10 @@ struct BiHarvest
 
 ## Example
 
-- We will collect the type results from `Crop<0>, Crop<1>` to instantiate `Operation_0` and collect the value results from `Crop<0>, Crop<1>` to instantiate `Operation_1`.
+- We will collect the type results from `Crop<0>, Crop<1>` to instantiate `Oper_0`.
 
 ```C++
+/**** Crop ****/
 template<int I>
 struct Crop
 {
@@ -63,12 +64,11 @@ struct Crop
     static constexpr int value {I};
 };
 
+/**** Operation ****/
 template<typename...>
-struct Operation_0;
+struct Oper_0;
 
-template<auto...>
-struct Operation_1;
-
+/**** Metafunction ****/
 template<template<typename...> class...Args>
 using Metafunction_0 = BiHarvest
 <
@@ -77,6 +77,28 @@ using Metafunction_0 = BiHarvest
 >
 ::Road<Args...>;
 
+/**** SupposedResult ****/
+using SupposedResult_0 = Oper_0
+<
+    std::integral_constant<int, 0>,
+    std::integral_constant<int, 1>
+>;
+
+/**** Result ****/
+using Result_0 = Metafunction_0<Oper_0>;
+
+/**** Test ****/
+static_assert(std::same_as<Result_0, SupposedResult_0>);
+```
+
+- We will collect the value results from `Crop<0>, Crop<1>` to instantiate `Oper_1`.
+
+```C++
+/**** Operation ****/
+template<auto...>
+struct Oper_1;
+
+/**** Metafunction ****/
 template<template<auto...> class...Args>
 using Metafunction_1 = BiHarvest
 <
@@ -85,27 +107,24 @@ using Metafunction_1 = BiHarvest
 >
 ::Rail<Args...>;
 
-using SupposedResult_0 = Operation_0
-<
-    std::integral_constant<int, 0>,
-    std::integral_constant<int, 1>
->;
+/**** SupposedResult ****/
+using SupposedResult_1 = Oper_1<0, 1>;
 
-using SupposedResult_1 = Operation_1<0, 1>;
+/**** Result ****/
+using Result_1 = Metafunction_1<Oper_1>;
 
-using Result_0 = Metafunction_0<Operation_0>;
-using Result_1 = Metafunction_1<Operation_1>;
-
-static_assert(std::same_as<Result_0, SupposedResult_0>);
+/**** Test ****/
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
 - Note that the `crops` are not required to have both member `type` and `value`. In the following example, we will collect the type results from `std::type_identity<int>, std::type_identity<int*>` to instantiate `Operation_2`
 
 ```C++
+/**** Operation ****/
 template<typename...>
-struct Operation_2;
+struct Oper_2;
 
+/**** Metafunction ****/
 template<template<typename...> class...Args>
 using Metafunction_2 = BiHarvest
 <
@@ -114,10 +133,13 @@ using Metafunction_2 = BiHarvest
 >
 ::Road<Args...>;
 
-using SupposedResult_2 = Operation_2<int, int*>;
+/**** SupposedResult ****/
+using SupposedResult_2 = Oper_2<int, int*>;
 
-using Result_2 = Metafunction_2<Operation_2>;
+/**** Result ****/
+using Result_2 = Metafunction_2<Oper_2>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
@@ -148,7 +170,7 @@ struct BiHarvest
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCAAnADMpAAOqAqETgwe3r56KWmOAkEh4SxRMQDs5baY9gUMQgRMxARZPn5c1bUZDU0ERWGR0XGJCo3NrTkdo739JWUglQCUtqhexMjsHASYLEkG2ybxbgQAnkmMrJgAdDduxKhJCofYJhoAgqPEXg4A1BZ4AAkmgA3TCjV5vEzlKzvH5wn7bXb7TCHY47PZMA5HU7nZhsG5XZ4/ZAGBQKH4AeXOxExGWeEPhP0%2B3wIPwAIphGnQGfCoTC3ozGV40kYEWdMD9DmzKdTaQJUTiLmwfncHgoQCBFQT6fELJLYbzymzDvyeXDERisWikZiUdjxXjrjciSSmGSCW9gMRMDtGAQnvEXga4cLgsAfgAlVBMdCS%2BLSjlc2ioz3e32CBTawMaxUmiFm/UC%2BEW5EK9Glo5MLxELPYYmk8lU6Jyhj04NMghfX4AvDoLCt9t8gtCkXhxVx6VNml1VGqx4a4FiLxOwmBk2FxlQ426/Ptku2ss2q1VmvOwP1t2Zm6pn1sDNtosh0eRph0Cc/Ht9xgpr23v1X1dsBzcU83eLdQMhd4AHoACo4PghDEKgiFYPgn4ABUwX9H4EOQ6DEII3Dd0hMx4mCEkvCwOM3DQBgNiSf0HxQhCfgAMTwYhRh%2BbBVFYPYJSIsD3n3K1glZABJB9mV%2BOd82hAtQ1FccpQ7dANTEzAvTEAB9WjpkEVExNIH5JLXHd22mRxkGJARRkwVQkmIH4xJ%2BRdvAlPlJKNCDwPMyC3hEu1jgdS5awhaTWSnFttI0HzhPLA9K2rVAwveCKZWbOptK4OKAoSq1AoVEL8TPOtXXda9iGAAMgzeRTwwAWU5JgqC8Oiso0d9/iBYhQXBMCjgLWSjliwNSCG%2B4klRHK1wG2qNSjGMUyqgCdVNeKjyCwqktPQCLwqq43hWh96p%2BJrGla9qMmyrrARBLD80G9thrcUbsHG57JumpjZreBbX2TI4juqsK/IhU6hC8JI8kwdAIzBLxaAIGL3yijrHrcAtRjUkANK02hdNsxoDKOIyfjej7H1U9TBE0mkCb04mCEMwRjJm2q1uIiGoZhuGEaRm6VLR66ZtetnOaEurn3hhREeRzqVPOlq2oca7RrcYWBBiiWpbDSN%2BeRrh3yVy7Va10XNYYbKdfCxorO0y9ogICBsY1BRLgdgM3BluWYuMyHodSWGfYFt7Fggyy8GQT2lGaF2CBx922E91EQ8N/2eaDvnZYF9nw7B/C0KETBaNjHi%2BPoHD4Lw/ztuC3FQtK22u0i2UsrMXK6674qVxdBsPWO37TpNlX29unq%2BuZgbMYshPgPObTez9QgThZ5mxqxufNXFRf%2B0cU415gn75pARb0GWkGm4L3XRQD3m0%2B0sxUbb66O9J1nnMEI%2BzPWm/wwfp%2Bitmqm3bqiS2j8bZpTtlHGOTt46Jw9m6VOBtH4Z0DkobOvs37YHzvyDgyxaCcAAKy8D8BwLQpBUCcExpYawTJVjrA8qRHgpACCaHwcsAA1iAIhZgrjlDMJIAAHEIohGhYi8I0AANiEYkQhHBJC8BYBIDQGhSBkIoVQjgvB1RqLYeQ/BpA4CwBgIgEAqwCBJGrOQSgaBdh0GiKES4nBVBCKkQAWikZIH4wBkDWSkFcMwvBYaEBIL2PQ/BBAiDEOwKQMhBCKBUOoAxpBdAdAAO40iSJwHgBDiGkPYZQzgFJqxWNZKgKgPxXEeK8T4vxPwAlPwgB4ex9AnLmHiFwRYvB9FaGWBAJAdikgOLIBQCAQyRkgGAFIMwfA6DbE4pQCIhSIjBCaCcHJvBVnMGICcCkERtAl30Swuxd4CAUgYLQDZKSsARC8MANwYhaDqm4LwLALBDDAHEDcjiRy8B9UKfZEu1ZNgsI0vIihtA8ARBpLsjwWBCmdjwMo15pBQTEAiEHDkHyjBQqMOw5YVADDVQAGp4EwOkpsZCWGROEKIcQcTaWJLUIUtJ%2BhPkoGsNYfQ0L1SQGWA8OoLz3HYylKYWhlgzCaPRcQJefKIDLDsH85wEBXATHaKQQIwQBilCGB0PI6QBDqtyKkQ1DBZiDBiFMGoyr6hjBaJ4NoeglVmztTMbVcw9W2HtcaqY9qLW6qtYqhhGwJB5I4CQ9RhStFVLcZ47xvj/GSECT8CAuBQntOYd01hBLlgIEwDGIYCrSDcMkPEK4CRyiSA0JIQRUjVFEKkbEfQnBFGkGUZ0q4UiuAyNiEIntRDJBcCIQkKRUaUlaJ0SAPRBKjGmIGeY0p1ixkTLaU4tgnAmgsGBOUdxTALyii4LEK4XArgUJCUQWVakOi0uiQy6QTKlAspSboWZmSmDZNeeGyNGjeBaJKZY6sPwKk/C3TuvdB7wxHpPWe1NLThltMlKRMw2bemGIXau6INjxmoFaUMMDu7XRGCPVwNRNAkbRHVBAZZKTtnrM2aQOjuz9mHIcAx05foLlXMKbc%2B5jzaDPIY%2B8z53yKH4G9KrAFKSgXIBBQx8FhSoUwvWfCzYFCkUopYeizFShsUibDLOolTBSXkspbiBjt76WxIfbIZlySKGvvZfi8VVhLA8oiPKgVDEMjCtFfGFz1gpV/plXK%2BAiqbWupcAwdwjrJiauiwG%2BY%2BrTV1F9ckFLGREtepdXUHo4xYsapy90f1HrLXOp9QV8r7rihla6SsNYoa6vyJ/dGzgoHiDbt3fuojUHj2ns6mm/Al6kOdNQ7m0g%2BbC0xGLfIttHbj01vKCOyo8Ra2SC8R0X9RTtG2GnTmgx/T51IAsWU7DmHiDrs2Fu2pLAFDAmssCaDyJRjBKG2E698S6UxIkDZhJT77M6BAIkd9n7cktojQUidxSl3lMqdd7xt37uuSe7aLizTcMIeiCN%2BIY2DtGMGRjkZZ3CdtJAPd6G2lHuxG0s95G8O5kUcWdRlZazdkMaY3sg5Rz2O4bOVx65YnMB3IeU8l5LDhO4rU2835kmwSAtUMC7Y8naYQt4Ep2FJxVOItlZp3g2msU7H0/ivHRmTMUqpRZ2Qd7rOfbs6yoHTnjBcrc0pzzlDvO2U4FBV2AXJXSuiFeuX/LOi2qizF7IGqtU1cDSa/IGQ0sGrqFlq1IfXV5YdRH51EXcslej0l71vQ0vTGaMnsN9XGFl%2Ba5DzRbX4c/ERw9lH2w0fpuGx0rpPTxuTawNN8Nc2QBmGPfEeIRCxFDtUcP8oMjx01527o/bfSuEgEkOUQJS2uBSFiIthIXAqjyPiNXv9nBO8HfDUEmfR%2BdtocWMsdFaRnCSCAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBJcAJykAA6oCoRODB7evnrJqY4CQSHhLFExXPG2mPb5DEIETMQEmT5%2BXJXV6XUNBIVhkdGxCQr1jc3ZbcPdvcWlgwCUtqhexMjsHAD0AFTbO7t7%2BzvrJhoAgls7ANQAkiyJ9GyCTDUXu0en5wefB28nxycEmFuBgBJgAzG4CABPRKMViYAB0iLcxFQiQUYOwf2GxC8DguFjwAAkGgA3TDDP4mADsVlOF3pFwBQKemDBEMBdxZbKhMOYbER8IxF2QBgUCguAHkYcQnukMX8GRdsbiCBcACKYep0BUM6m0k6KxVeVJGRnQzAXMFqyXS2UCbnmvkW5GohQgEA8hGI%2BWgiyWum6qlqsH6nX0pmckHgiPA1nRx1wgVCkVMMUCk7AYiYQGMAjo0GYgP043BYAXABKqCY6EtoOtGq1tDZGazOcECiTBfdnpDlKL/oNDJjXOjHNjbKYXiInewwtF4ql0TtDHl/eVeMJeHQWBX/b1YcNJdNntr1sXMpqbJdaPdJLEXi9goLIYHiupwd9fcH4bHI/ZzKjNxJ2nb0CznVMO0RFtswePNV2/C4jzLcsmDoU8Lk3bdGGbTMYNzSCn2wbtzV7U531I353i%2BajXj%2BD5NguAAxPBiGGC5sFUVg7gtWiqJomifkpMxQWCEUvCwWs3DQBhVkSODnzIvjtgua8XkOP5h0A4JVSueD11Va9KRpA8kLNGF0OGdB3W0zBMzEAB9aTJkENltNIa4fX1RVJkcZBhQEYZMFURJiAubSLjvbwLT1XSgwo8jP0Us5dhtJdnl4/5f0Az0nRnLECBxPFz3sjR4qUhiAFlNSYKgvBk9L1NOTS43/SMWpyxNQNnFM0yg4hgHzQsTlMqr6lq%2Br0hK9CCWJYgyQpMjwQPQzwVKgtSGWlFEjZLh4Pg91K2rZt%2BoIzyv3oi4hC8RJckwdBy3JLxaFVDLTKum6Ujuh6FCeggpqtVLiBKyklrXAgrJAGy7NoRyAvqFzwTci41uwDawYhqGZRhpz4YIVzBHc3aFN%2BZ9Eso5LLm%2B361O2H5TKp57/rrC5RpquqHEmta3GKlGyop5SABVyRexqTh8vBkHsiDogICBLPdBQ4Sl/M3AZv6NHc97bvux7GZRuY%2Bfo/jPh%2BC6hEwaSaw4rj6BpzZTeNgTzpS89lztn5monKdUDy059MB%2ByidDcqWeq8aOYEd2NKy9qY69kDCPA3r4ROE74JGsP2ZqQPpqJUlhZBtxNtRNkUbRhCVrcImhv2kAUO1cFU4GvKybolKtc%2BnWfueqPTje67tbVnOAeKom3A1i5q8NlK1d74aTWQ3W/q4dDWfD7Ox9Hs6kouoW2Iy8XJelxo5fBhWldTNkh7aS6B876%2BMQN1vysdvYHcuAWEBYq3OKBHjRaNq/UWbdLiuwarTaOAF2oJn5F1fKhVVTFTMNPS4a8s7pDnp7UcUCHS8k6onHqBEm6DT%2BBnMa6CBD2TMLnWa808aLSLujYiMJ7JblzIQSE%2BM8brQPPLD05pWE7kcFCLhmw9rEwOlWdAx1m5wOfvzBiHclBd2pq9Bet8PrKKHtQke0oqFcPctpMRpNg4KIrEvOe9Ml5UNXpnCalDkHgiQdvcmu9hZz0PsrJQJ8%2BGKzYMrK%2B1izCazvlooJj8KIcAWLQTgABWXgfgOBaFIKgTgRdLDWCVEsFY0VhI8FIAQTQUSFgAGsQCxMkPCDQAAOMwZg4hxC4LEmp1SuBUipNIGJHBJC8BYBIDQGtEnJNSRwXgboNaFKSVE0gcBYAwEQCAJYBBEhTnIJQNAtw6DRFCHCTgqhqkADYAC0BzJAXGAMgPyUh4RmF4HdQgJAtx6H4IIEQYh2BSBkIIRQKh1BTNILoNoAB3GUiROA8GiXEhJRSUmcAlFOFZqpUBUAuPs45pzzmXMnpU6hEAPCbPoKFcwoIuBzF4JMrQCwIBIA2YkLZZAKAQFpfSkAwApDBJoM9aIboIARBhREYIDRITgt4AK5gxBIQSgiNoC2kz8kbNghKBgtBhX/KwBELwwAgK0FoG6bgvAsAsEMMAcQaqWKyrwPNGFQULZTjWPkmyXTkm0DwBEGUEqPBYBhQVPAfT9WkDJMQCIn0NRGqMC6owRSFhUAMANAAangTAQLFyJPyS84QohxCfPTT8tQMLAX6GNSgaw1h9CurdJABYqIah6qOZZK0pgMmWDMMMwNxA2EVogAsOwFrnAQFcGMVopBAjBD6CUAYbRchpAEIOnIKRp0MGmP0Mo7Re21BGE0TwLQ9A9ojuuqYo6ZgTtsBu2dEwN1LvHWUbt2TVgSEhRweJpAhm8BGaiw5JyzkXKuTii4EBcAPKJXkslBSo0LAQJgasAwu2kDKZIUE8I4igg6RoSQZhJAHIGbEg5CQuk9NIH0kl8IDlcAOdUuIrSDkVKaUhg5z6YUjLGSACZUaZnzOpYshFqzGXMsJTstgnAGgsBJFSI5TBwKmniPCLgVS7n4CIO2qybR01vKzdIHNSg83/N0MEkFTAwX6ofU%2Bl9sKODwuWVOC4yL33orOSmSTcRpNVL/fiulhLLTCTMCBil0yOO8eiGsplqACUDHs2yxpGtOUAlYpQPl/yxVCpFaQBLEqpUyocElhVuYlUqpheqzV2rdVJcNca01yT8BZg5la/5NrkB2qS46mFLq3VCs9WsZJPq/X5MDcGpQobSullYzGpg8bE3Jt5EllTmaPnqdkLmv5ySdOFsjY2qwlgy0RE7VWuS6Ra31rrKt6wLbX1to7fAbtVQ10uAYO4Ld4xh03cvbMSd86ahnqSK99IT3j27pqF0UYd2h2/c6Bew9y6d2nsBxDg9RRweksWMsO98OunGYY5wGzn6JNlikzJjQf6AMKY8yS7zYHSAQagzEGDeHekgFBI51DVJYlxHaaCNDGHJBtBM4x2wzHQNTKpexpASzEWBf88QfjawhMYpYAoEkfkSRSdjMMOTgGnnKdkKpmbXz5CaYWzoWnpA9MGYhfoKF9H/kjPM4iqzKLVDS9l/LxXLI2J4uC256IRPQQk/5zMmlbv6Wi/94SkAcubr2QV3EeySu/p2/U3QaLPK4vJJS6q/JKe0uysy8FxVyrVXlcwBqrVYgiv%2BpK%2BG9rBrzVVfJNa1QtqAQNcEFUJrrr3WQja969tXXeA9ZDYCAbkaffDdG0mlNk2NfTYkLN75uv80G4MCtkt63mtbZSTtgKnB1jy0O821t0RFM18rauvd13btZCHSO2HV6515HSO9qdNRvsruBwIf7m7z87su3ut/T/ocA4/%2BejDmOs9jeojh8kZtChbujrHhcDLnLhFE7gCC7gTiQETqSuSqTuTlgJTg%2Bvhn0vUvCKCKCLEs0hzgMkQVSGRubsMpwExixvzqUiAJILEohm0lSAMtUpII0lwLUmYHRl0qCJATQaMnzpSg%2BrctQa%2BrQaIcUgGtyukEwUAA)
 
 ## Links
 

@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2024/12/25
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Collect the code of examples to a different folder.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Finished <code>Mouldivore</code> and <code>Omennivore</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/24
 
 My girlfriend wants to break up with me.
