@@ -123,6 +123,7 @@ We will see six examples that present different use cases of `Pagelivore::BiCogn
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** AddZero ****/
 template<auto I>
 struct AddZero 
 { 
@@ -130,6 +131,7 @@ struct AddZero
     {I}; 
 };
 
+/**** AddOne ****/
 template<auto I>
 struct AddOne
 { 
@@ -137,6 +139,7 @@ struct AddOne
     {I + 1}; 
 };
 
+/**** AddTwo ****/
 template<auto I>
 struct AddTwo
 { 
@@ -144,16 +147,20 @@ struct AddTwo
     {I + 2}; 
 };
 
+/**** Operation ****/
 template<auto...>
 struct Operation;
 
+/**** SupposedResult ****/
 using SupposedResult = Operation<0, 1, 2>;
 
+/**** Result ****/
 using Result 
 = BiCognateGauge<Operation>
 ::Rail<AddZero, AddOne, AddTwo>
 ::Page<0>;
 
+/**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
@@ -161,12 +168,15 @@ static_assert(std::same_as<Result, SupposedResult>);
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_1 = Operation<1, 2, 3>;
 
+/**** Result ****/
 using Result_1 = BiCognateGauge<Operation>
 ::Rail<AddOne>
 ::Page<0, 1, 2>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
@@ -174,12 +184,15 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_2 = Operation<0, 2, 4>;
 
+/**** Result ****/
 using Result_2 = BiCognateGauge<Operation>
 ::Rail<AddZero, AddOne, AddTwo>
 ::Page<0, 1, 2>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
@@ -187,6 +200,7 @@ static_assert(std::same_as<Result_2, SupposedResult_2>);
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** TypeAddZero ****/
 template<typename Element>
 struct TypeAddZero 
 { 
@@ -194,6 +208,7 @@ struct TypeAddZero
     {Element::value}; 
 };
 
+/**** TypeAddOne ****/
 template<typename Element>
 struct TypeAddOne
 { 
@@ -201,6 +216,7 @@ struct TypeAddOne
     {Element::value + 1}; 
 };
 
+/**** TypeAddTwo ****/
 template<typename Element>
 struct TypeAddTwo
 { 
@@ -208,13 +224,16 @@ struct TypeAddTwo
     {Element::value + 2}; 
 };
 
+/**** SupposedResult ****/
 using SupposedResult_3 = Operation<0, 1, 2>;
 
+/**** Result ****/
 using Result_3 
 = BiCognateGauge<Operation>
 ::Road<TypeAddZero, TypeAddOne, TypeAddTwo>
 ::Mold<std::integral_constant<int, 0>>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_3, SupposedResult_3>);
 ```
 
@@ -222,8 +241,10 @@ static_assert(std::same_as<Result_3, SupposedResult_3>);
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_4 = Operation<1, 2, 3>;
 
+/**** Result ****/
 using Result_4 = BiCognateGauge<Operation>
 ::Road<TypeAddOne>
 ::Mold<
@@ -232,6 +253,7 @@ using Result_4 = BiCognateGauge<Operation>
     std::integral_constant<int, 2>
 >;
 
+/**** Test ****/
 static_assert(std::same_as<Result_4, SupposedResult_4>);
 ```
 
@@ -239,8 +261,10 @@ static_assert(std::same_as<Result_4, SupposedResult_4>);
 Then, we will collect `value` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_5 = Operation<0, 2, 4>;
 
+/**** Result ****/
 using Result_5 = BiCognateGauge<Operation>
 ::Road<TypeAddZero, TypeAddOne, TypeAddTwo>
 ::Mold<
@@ -249,6 +273,7 @@ using Result_5 = BiCognateGauge<Operation>
     std::integral_constant<int, 2>
 >;
 
+/**** Test ****/
 static_assert(std::same_as<Result_5, SupposedResult_5>);
 ```
 
@@ -354,7 +379,7 @@ struct BiCognateGauge
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEIGYawQAOqAqETgwe3r4BaRlZAuGRMSzxicnBdpgO2UIETMQEuT5%2BQbaY9o4Cjc0EpdFxCUkptk0tbfmdCpODEcMVo9UAlLaoXsTI7BwEmCypBvsmAMxu%2B4fHmGduTF5EAHTPZ9gA1MgGCgpvAPKpCSYvQYrxMGgAgnNiF4HG8LHgPMBmPsAOL3YA3CEmQJWCFvfFvS5HIE3c5E663e5PF6nd6fJjfZ6PAAimAAbngdgpQXiCVCYQQ3spiKgiAAlJh0MHgglvbG4mWygkAemVbwAsl5aI4jpg3kJMABHLyMLnSpUqtWa7V4XVvABqzTwTFi9G5vIt5JJlIeqCZjuIztdmG5tPNFre/NhrKaUo9Svl4YjBK8mSMhIAngC5admX8AcQgdlbqyOWbzgGg27XiAQGyxCamaDTgrk9jmWcFUmlaqNVqdfR9UaTQwzfHZb3fpEHU6XfRu7KvSdzlTUDPA3PSdgF3yCNDo5hY7RbpXNzzFRbE%2BOI6mIsBM9mznn/oDgSX2ZyQyfZ8Ga3WG5gTZhi2O74u2nbSqBhIHMSy53L6TLgsAxCYAcjAEKG27Xvit7psoTAYjmeYxpKx7nEhKFoYIChAdgtYEFmpKtgS4EgVi8ZLqSFwwRSK4ITSdJfD8pafuespRoKwqiqgEpSucIk7GJLE4lBk7TgaxqmpiF49la/a2oOp7Bu6OmLjx3p8dSjxGdWYbYZGe4Cm8JFxqZynMcmOFpveDGPrm%2BavsW8kfopFY/rZdH/t4gECRB9msV29mcT6VkUahbDUUpFq4fe%2BGEU%2BzmHqRtxpVRGG0fRjFxTpCWQRx5lwclll%2BgJHxCYhyHpehmHdjlbyybQRFCiK4rFeRnVlTRsVseC3ZNdxVwWRcjHMGwtFtQyU0siFX52TpEnDdJYqoEw6Ddlebn4r21oDnqHiCJKkTECZybXfpdrYPQGUYVB82%2BYwrAxY8n2TVlSoHS5x7xSp9myn1/1DS%2BhZvsFZa7W4IPfZhtb1tFtHVW2gQdjNql6Tadr3bGT0vRGal6pj6G/Q1XH/at9NfYze3JhDRVyRjHOCGDsoXZ5KbeQ%2BeoFUjRYCO%2BaOhvzZV/rjjbTR5CZE9VTOLY1K2Ax1lFY0LYt3hqnjoENkMlRNWMVSA/0E8pxOJTpf3M7crP6619LfIVaNgwdUniidZ2o6JXPuaTfzTpTj0JDTFpveTg4M5lSXu2Setrc8Nm7Vhl0OfugpW9D6vJvDjGIwWMsgmHoVuLn2NRarjzNmXTta%2BnOss1nQOlUbEfZeL6rm5bvNkW4/fdXbDszcLmsk/V3cexny0Amz60%2B1tU%2BZYPbx9cdp1DUHMkh9bhvT2rkELy70rKgAVI/T/Py/yp38/bwACohhhbzP2/EIH4v2AU/ABs0sRmFOBET4XgsA5jcGgUcmBUg/T2tKeaq43gAElzwHXBOgdAAAtBIa5r4WDlPGOYRZkAfAEHMTAqhUjEDeJglW2l54WBwTfChs0b51XBBg302DcGOVhPg9AU5tLyh4eJJojgaGIPoYw5hrCALnRxFguUlg3hcASjw2q7EBGr0wTgvaeCCGfwAO6oDITI3c1DaEMCUUwlhQi2HqM4Vo8hZg9HX2dvwv6vc3ipwICIouX9GLiOISKfROI7H4iofIxxziVFuLUfGeUIScZqO4X4zuRjl6Z3XoDYJAtQlmNEYKT%2BkSCGSNsd2RJnJkn7GUa4ogbx3EZJxFk5ukttG6NyViPhhjAnFLYKUpWFTwnVIBOIqxNihnkIaXIppiiWkuNUdFDxPS2FeLeD4wZvD/EjOMfxVuUynLSxRi7IBj83gADE8DPUFNgVQrA7T/34X1IQXhUjpCUOgMUIZ%2BxV0CrLc4GhSA6KhT44CLsD7Au1Po/y8JETIkwGiLwGJbhXKCvnWsA0SoEOiagKF4jJFkosdY88tY8pcQ0G3fhjTkAAH1NoJAIBAOY6BawKEBmyhWQKFD9ihT8v5GRMCAsReU7Aqx8m3PvkORBFtXnvMHJ8wx3zfn/MlUK/sLKuCguRkFNwXAYVQtOIyzV4s9XagNUNVFqAkQkkxdi84uLwX4pAIS8itTIg0pAHS24kLoX7KteAyEKzWXspaFyggPKQB8rYAK24tqCAGtFdqiVUrhV2t0bSOVi9wQKq/ggJ5Kq3lXD1BqiNWrxUArTSyswRqa7BvNW8SQ4bpQItzem5tBVHXOtROiLiHra5ep9ZPYlJDKUSMiLO%2BZAag0QqhWasNcKmVRoFUoWN3LeX8oZKm6VTbM31t1ce2Fsr5Uf3uZsFoCBgmVo%2BaAr54sxU6pzfq04LaUZuBDWuy9%2BSe1fuRXmQd6LXWjurijCdZ9zgzMwFEmdETZl%2BswFChDczqV7VrCPWgoc3B7pABEfYyExAsrWYYcpbgSNQoZcBbcRbmXbo5XGhNSbMApvOI204p6P08deIWm5N68BUAIA%2B1VVa/4vutabd92bG2SB/SagDFqu0QmA3apTA6EROogyOnF0G8XSgJXBtwmG0MBrwwR5ZCaSOYDI7QCjdCmiC3OLRt49HsCkFs7WezjnnNONc9Rjz%2BbvO%2BeI4IBzhYnOUbczRwQMLzzqcjdQlju7437uTYe7jx7pD6izQ2vLgnr1P31HgVQ4nH1qurTJ2tb7Cvnt7Sy/wynwV/vbZ2jdsn0yNtazptFLqDPuqM56kz3qzMWaIchqbFKUOIapTYnDIBrO3Ai/5mLgWqHxY815nzlDMuRdI5tuLIXEs6NePt/ah2NvkdO7cDzgGsTdYjcxmNnKiMca424PrfGFPHv8CVlsHB1i0E4P4XgfgOBaFIKgTgbhrDWEjHenYWjTg8FIAQTQIP1gAGsAiSEeBoSQXBAinA0P4DQZgABs1OzAAA56f6E4JIXgLAJAaEhVDmHcOOC8AUCASFWPocg9IHAWAMBEAgE2AQVIDxyCUDQIcOgCQoiA04Koen1OAC01OlPAGQDQqQjwzC8ElYQEgeAeVmv4IIEQYh2BSBkIIRQKh1Ai9ILoM1ljCypE4DwUH4PIfY9h5wX4Dw5eClQFQN4mudd67eAbo3hPm0QA8Mr%2BgzDzDo9WLwYXWh1gQCQEr1IKuyAUAgCXsvIBgBSDMHwOg%2BxnqUFiCH2IERmgZn97wdvzBiAZl%2BLEbQdRhcY6V99KctAu8e6wLELFdxaC0AF9wXgWAWCGGAOIGfTyR94DZCGEPDC6gPF2Bj%2BzYOPe0DwLEQs/ePBYBD3uPA7OV%2BkH38QWIErWTr6MFfow2P1gqADBgAFB7Q8BMBLEXwocMdbdhBRBxAndYDXc1AQ8vd9AN8UBEdLB9Br8BdIB1hUAUFshl9tduUnxTBLBrBkheBUB39AwsA8CIB1hah6hnAIBXBpg/AzUwhFhyhKg9B/ligchPB2gBCihgQhg%2BDRgzUWDgR%2BgpgRD8gZDuhd8%2Bh5hJCRhEgZD5hOC9AqEWgNDlgtDmCUdHdA8OAIdSBucaDOBY8tddd9dDcdEU83gIBcALcs9IEuBc9McAD1gEBMBTpRgmDSB8dJBThHgABOU4QISQYnMwSQanTnfwanSI5nDgVnUgdndHR4anLganenSI%2BnfI/wEnfwaI6nKwkPXnfnQXXwkXQvSXIvaXCPeXCvKvTPNXNgTgZoFgNkQIbXJgDadMLgSIx4LgInM3fAIgegvQWA%2B3BA6QJApQFAj3XQevH3JgP3Ffcwyw6w0PDgcPWXB4N4aPFhYgPogYoY%2BkEYsYiYjQVw9PUvTPNHMwHw/PUXZojohIBXSvVADPUYXo/o7XG42vSIrgSFGgbUeOFvNvDvfvbvUgXvTvQfYfBwRE8fdCSfafGHWfefMQJfREtfDfLfXEnfeoffZfGHI/ZAE/RE8/EPK/G/Tve/XYGHJ/F/DHd/T/JQb/Eku8AAvgYA0A8AyA9eRE%2BY%2BAx3JY2QZA93GHdY9A//CgqwbApkxgggoguhTgUg%2BNcgrAiwag2HOgq3A/fAroHobIFwBgdwRQrgkIG0ww/gs1QQ4EXQl08Q7IJ06Qi01QhgeQ1oO0vQlQ1g/09Q3gzQvQnQoM7QgYb04wjYLYHYCQXY4PD3Xnc4y4wY4Y%2B8UY8YonVw9wmYtHbwvPPw0gAIoIxIEIi/TI7IsY4nQIcowIMnSQBIvXM1fYmo2wOoj4xo%2BAZomXSPX4744gLo3YXohPFgBQNkGhNkPM64OYKYjwq3OY2QBY6U53eQFY%2BUnQEAXjTY7YgPdIvY6osPVoqPGPScpTac2cjpBckkOYR4/454hINHU4d4wUr4l8svEcn8zPOsZAP5FlecyIllRc9Na8hvaE5vCAVvD3ZEhE1/RCgfIfEfDE/4ifBgKfEPPE4ABfQk1/Yk3/Nk1fckxwSkw/VQY/fYekqLC/GHJk2/DMVkx/QMTk3gbkr/A4fk//BooUgiEUiAqAiU9cqUiQGUl3Hc1A/cpU4wA0nA2IDU2HLUpxTgZUPdFUqgnnE0hg%2BAZgkM4Ea020vIe0ngsoSMj0zIN0mM0gV0r0iMow4My0tQgYd0300MgM%2BMqMty2y/QhYCypy7wxM7YMwk8tMnnWw68t4W8uch8/YJ8tw6YkgEsz8ho/wwIrAas8wuspIMY04U4fwSnEnTnAqwIAoqo9MzgWooXcssI/wKI/wenGnSIyQSIsnGIrgXjC/U4CKmwvneogvcw03SqyKgavs9Yd/TIZwSQIAA%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEIGaSAMykAA6oCoRODB7evgHBmdmOAuGRMSzxiclpdpgOuUIETMQE%2BT5%2BQbaY9mUMLW0EFdFxCUmptq3tnYU9CjMjEWPVE3UAlLaoXsTI7BwA9ABUp2fnF5dnhyYaAIInZwDUAJIs6fRsgkwDT%2Bc390eV2BVwBd1udwImHeBihJhSbihMJ%2BmHhbiYXiIADocfDsE9kAYFAongB5dIJH65PEQxbELwOJ4WPAeYDMKEAcQxwFR9xMgSs9yewqeSI%2BKLRYthqIRGOxuJS%2BMJTGJOKxABFMAA3PD7BQ0oUiukMghPZTEVBEABKTDoEJFT35gruDodh0OTwAsl5aI4PpgnkJMABHLyMPX213C91en1%2B%2BhPABqbTwTFi9H1hqjUolssxqDVyeIqfTmH1isjUeNjM1rTtWddTsrUZFXmyRlFAE8KY6UuqyRTiFSBGjNTqIwiiyWM3iQCAtWIw2qaSlnS3HYF1fDnc23R7vb68P7AyGwwwIw292TIkmU2n6LuRTm4XmiLfi/eZdhH8Lq6ba7atBolOn4Gi6LZNpeLZthEwBdj28L9uSlIDKO2q6mWwF3qWs7zoumDLhWq4/huW7EXyUHCs%2BMrovmap3MAxCYNCjAEOW36UU8MEdsoTA8r2/YAXaCIMUxLGCAohHYHOBDdjKa4ivyZE7g21GStC4ovrR8pYniBJEiSY4YWBDp/maFrWoBaHjl%2BzaQeBUYxqSN5BqG4a8g5roxge8YBiBpaZp5Dpqa%2BBY4v5M4VpxZlCUBnH2euDrcXBskIX2A4odSCJGfsWEfgFuELt4BEKt%2B5FBYpm7bhCJEhdpYVYqJzFfGxJnQe2cG8fxiFPLFaJNeJbFSTJcnVQ2SljeCqkadK6nIlpcoNXpyqqjiA0texzbJU8Np0AJ5mWqgu1ASJjHNaxkmlZNzZ1bdcnMGwUn6Sql0auhE4cZ5ZnmodVqoEw6B2QKJHeXGR4Jh43wrMQgXrqDh7HtgnwXbVM25oi92sCVWJI4Nm3RQQ9I1pgdZxRVwoJYlwrbalAY9chQ6odl72YQiuMbYV%2BFSZN64TeVIP7mDx6Q3WkQwwL14BuzrGo/NNG0w9UvI4IbVVoTJq9STVls8rBCq42wOcUlHXwXT6UM8ODDWRh5ZuNLKuKnORVLld5W81V/OcXdFKK/RZ14/rxuwV6njoPtfWnWJG3DSAtM85Vyk1dNctzZp8uY49pXPcSms2fr30WUd/2A8zedRZ5lOOR6zkBiLtpi7DLbw75Tz261Xto1pCtY2qbf4%2BTTwxVr9YD5XiU03J%2B0W0zbg5TRfec8V3NuxBHsqQP3uMD3a3%2Bxz5frttnqh%2BHw8nW460XTHccrxTa9J55t2d%2BnPvb7pirZ69F8Sfr21/QD%2B0/WtMXfqu9L6ux3HfCiDwQQwP%2BBCIExwngADE8Aw1NNgVQrBjxwMBLAvBYIapmBSBEQkXgsC9jcGgc8mB0itXLvA84Tw7joHQAALQSKgP41wIR1UWq8MCZlmFsI4Y6PkApRFfVaI4ZABIBCLEwKodIxAnh8Odh5B0ToXh8wsBI7R98EFMJYTXLhpwwS8PzPw8ugijGRBquI5siwqQyKofIxRyjVH4SBhYF4jpLBPC4No3RkCprQOeEIgAKgAd04TgyET80R8K0VY9WjIInRLsTohxUjdSyIYK4pRKiLFqK8T46wTwzCBLsYnKBBjp65BMccMx8TQrc3uGZOpI5PahNOIGLw6QSiYHQFaMscYGlgm2kIPpAyhkjN9FPQcls0QaFIP4lZFSiLrwMcMhQozYm/1maaGq6VmSsnZJgLkXgeRog6Vbcuc5jr9RYewi0KyhE11eSwqJqAwJzi6jRDQK5NmMPCWWU0sTHHSIAPovQSAQCAix0BzgUFjaFtttlxhWZM/pWRBnot9HiDY11cF4NgWCAxQYqFhwwVghMsSEEktBPoxhWLpl4rBdw%2B4Eypk4pmTs30kKuDzMyp0twXA1krJSICplzw2VjIhPsvlBABX7ROagNkKILlXIRDcn5IAHkiRsbZe4vy%2BL/JWWK8pUqanAtBXKtp2TkCoqUO0eFBBEUgGRWwVFaI2UCsxdypQvK4wCoJUS7pDLLhkuBQgVBVLMEwgDHSiNwICHEp6Synlsq9kmwzYG31ZghWMyym4ZZ5SVmSCtSErZBy7V3AVcGgtPVVXqs5NyGiOq7l6u1ufJ5HCPnoHeYY9AXzdV/KWeatZlaGHPBBYsWtELdROtha691nrMDeoRPm/12K80HMhes7AhKun0uTRy8NyCdjtAQK3eN2Cz0ntPY06VPTwlySEc8mJZ7N6K1brrARKTTSvopO%2BkRGSJGmQdbk/J7iimePGgKNuTtPFryCdUqtwK32Gtrd%2BrGv7Br/qJoBzDA7bFiMyQ2Bdzi5FQjcYUt8xT4MWEQ3hYqvidEBJQ1UsNBigOYDSZ%2B0xPDmkYxfmwPDLUCMa14/xsDWSnFQZowUjxxUvHMbUWxy1nGxFoenemgNuKa3ZuDrmgzirIUpELYshEpaLUHu44wrNZ7638os0c/szazmavbQspmn17nAIRNJ3tLynhBZI5gFZYWR2dqPrQEubgEVzgiFCRiYhIUuNaA7NwyWVkAqImVIFM7bXgodUul1iWPUopVD6vdaRek7tM8GyVioj2FcffexhKCqAEGvdShNtaH3JtTeekzQa5lGY7KN31khLMz1sxKqdabEGOcE5yk202VUsjVZ5tt1yfNZT83qgLbgws111bF%2BLWT3XJcwKl2g6XqOGD1giHLTw8vYFIFdpLghbtDnuxlp7aJXsBMVJ9ijbrvspb%2Bw9vJmXnvZcEJO%2BhGzn2INney1bdxKNlbhRVtdG63DTe3ayvdFaWv2fax154Qg8CqB6zemliaqeU6fda6n%2BmxsY9Z3WnNHPfX%2BFm8W0tZhy2LfPSt7nzmlUC6bVtlt5zdvav250w7f94thY/ZF4jg6ovpJi6HNEX2QA3buzDxxWXXvvbB5I67P3TcA4t4j/xeJrcQdt1DtLDv4evbs3yFHbOX3FbPdjmF5WIeVa9dVzde7/DE8zTH0Nq4OBbFoJwfwvA/AcC0KQVAnA3DWDKQoS9%2BxfEpB4KQAgmhk9bAANYBEkFiDQAAOMwZgACcbeuD%2BGb03rggRAjSFTxwSQvAWASA0MszP2fc8cF4AoEAyzK9Z%2BT6QOAsAYCIBADsAg6RMTkEoGgd4dAEhRCxpwVQTeABsABaS/M3gDIBkVILEZheCDMICQPAiKxX8EECIMQ7AUgMgggigKg6gy%2BpAugYqkSQ46QnAPAKeaeGeVeOenApImIu%2BpoqAVATwF%2BN%2Bd%2BTwD%2BT%2BDeBaEAHgR%2B9Ayi5gZeGwvAS%2BWgWwEASAh%2B6Qx%2BZAFAEALBbBIAwAUgIuNAvoCQ8%2BEAsQKBsQEQbQnY8BvA4hzAxAnYpIsQ2gjQS%2B5eh%2BLUzktAUhEBWAsQly6ItAtA8%2B3AvAWALAhgwA4gOhqCKheAWoZYKBCijQmIBw5eN2Q%2B2etAeAsQQ48hHgWAKBhMeAY%2BJhpA9hxAsQOKmo5hRgXhRgVeWwVABgwACgiYeAmAkSyEme5ev%2Bwgog4gQBuRoBagKBUB%2BgFhKABelg%2Bg3h8%2BkAWwqAtCuQxh1%2BCKiEpglg1gZg0%2B4RxYWAdREAWwDQTQzgEArgcwfgYqYQKwVQNQegJQOQAgEx8xWQixDAowsxEwYqwxAwQwswngXQegOxzQSwGx4wiQ2xSwyxlxwwZxawFxQxxegBiBHA6epAU%2BvAM%2BuBV%2Bt%2B9%2Bj%2B/iJBTwEAuAH%2BVBRCXAtBFeCRWwCAmAAMEwgxpAdeqQWIbeKQA%2BGgkgyQl%2BE%2B/gl%2Bbe%2BgnAI%2BpAY%2BZeWIl%2BXAl%2BTebevel%2B/gkgXeaJl%2B7xKBM%2Bc%2BC%2BUJy%2BjBG%2BTBW%2BGBe%2BHBXBlBp%2BbAnAbQLAWogQ1%2BTAz0HYXAbeWIXAjeb%2B%2BARAfReguR/%2BBR0gRRSgJREBugIuMBTAcBJhLxbxHxqBHA6BO%2BmITw2B3x%2BBM2yocpCpSpGgQJ5BrBlBpeZgkJ9BK%2BvJQpCQ%2B%2BnBqAFBEwLpvBneyyAhUIMMlAohEBshkh0hpAKZ8hihyhDgaZ6hrEmh2h2euh%2BhYgRhaZZhFhVhRZNhTQ9hxh2eThyALhaZ7hKBXhPhkh/hBw2eQRIR5e4RkRSg0RlZsECRfAyRqR6RmRPsaZmp%2BRgBOpsgxR4B2ehp5R8RHRVg1R7ZAxDRTRcinArRbq7RVRFg3RnxvRX%2BDh9RvQ/QuQLgDA7gBxhQUxj5dxcxYqCxAw1xGQqxAw75Wxt5thAgexHQz5kxQFIxgwpxMx5xRxVx4F8FtxsF9xEgjxuw%2BwaFhJrxyBEBXxeBvxspcE8pipjeQJIJappeEJdB0JpAsJ8JiQiJQ%2BxJpJCpmJgQ/gbe/eKQWJkgd%2BYqlpbJtgHJAZ3J8AvJ2%2BmBoZwZxAIpBw4pBBLACgWoMiWoJF0oiwKpoJX%2BGpsgWpC5wB8gepK5OgIAaQxpppCB2FFprJaB/JWBOBqgilylql6lKIc6ZB4Z3pCQpeKQ/pY5QZXlbB0lQVlB84yA/SkKalbekKGlSqTlOpdA8ZwhSZ2eGZ2h5e6VWZKhuZ4ZGhDAWhKBxZwABhZZoRFZsR3ZphNZjgdZjhqgzhUILZP2HhvA7ZvhnYXZgRxYfZvAA5UR0II58RXJ45fEk5GRWRs5el85Egi5IBxlpRZl65xgp5NRsQu5Oe%2B5eSnAhwiWm5XRPRCQfR15iJxxox4xiFr56AAFFxv5pQuQP5X5uQN1RxfQwF0FwwP5Z1H17QL1Nx%2BxBQEFjiv1KFH56Fewzx1luF0%2BnAuBzlKlTw0VWIcV5FqpJAVF/lXJMJcJWAjFLxLFSQCpKQKQ/g3eDJE%2BxNgQVJLJeFnA7Ji%2BtFyJ/gqJfegQE%2BTekgneXALeZgzJQ%2BKQ0NnxdNnJDBLxr%2BNNMNs%2BIt1eYRQh95kgQAA%3D%3D)$Done$
 
 ## Links
 

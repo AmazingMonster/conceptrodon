@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2024/12/26
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Collect the code of examples to a different folder.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Finished <code>Pagelivore</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/25
 
 <ul>
