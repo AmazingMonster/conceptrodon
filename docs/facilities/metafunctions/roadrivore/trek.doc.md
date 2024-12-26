@@ -373,22 +373,19 @@ Here is the entire implementation.
 template<template<template<typename...> class...> class Radio>
 struct Trek
 {
-    /**** Define Road ****//* Start */
+    /**** Define Road ****/
     // `Car` is a `Mold`.
     template<template<typename...> class Car>
     struct ProtoRoad
     {
-       /**** Commitment ****//* Start */
+       /**** Commitment ****/
        struct Commit
        {
-           /**** Conjuration ****//* Start */
+           /**** Conjuration ****/
            // `Radio` and `Car` are composed here.
            template<template<typename...> class...Signals>
            using Road = Send<Radio<Signals...>>::template Road<Car>;
-           /**** Conjuration ****//* End */
 
-           
-           /**** Transition ****//* Start */
            // Helper function for the member template `Snow`.
            // This function transports the conjuration function `Road` without invoking it, 
            // allowing further process by other higher-order functions.
@@ -399,13 +396,12 @@ struct Trek
                using type = RoadVessel<Road>;
            };
 
+           /**** Transition ****/
            template<template<template<template<typename...> class...> class...> class...Agreements>
            using Snow = Detail<Agreements...>::type;
-           /**** Transition ****//* End */
        };
-       /**** Commitment ****//* End */
 
-       /**** Continuation ****//* Start */
+       /**** Continuation ****/
        // This function composes the conjuration function `Road` and the `Agreements...`.
        // Note that even though `Agreements...` is variadic, it only allows a single argument.
        // This is because `Agreements...` will be used to invoke `Trek<*>::ProtoRoad`,
@@ -417,56 +413,49 @@ struct Trek
        // `Agreements` will be used to invoke `Trek<*>::ProtoSail.
        template<template<template<auto...> class...> class...Agreements>
        using Sail = Trek<Commit::template Road>::template ProtoSail<Agreements...>;
-       /**** Continuation ****//* End */
     };
 
     template<template<typename...> class...Agreements>
     using Road = ProtoRoad<Agreements...>;
-    /**** Define Road ****//* End */
 
-    /**** Define Sail ****//* Start */
+    /**** Define Sail ****/
     // This function is the similar the `ProtoRoad` defined above.
     // It handles the case where `Car` is a `Rail`.
     template<template<template<auto...> class...> class Car>
     struct ProtoSail
     {
-       /**** Commitment ****//* Start */
+       /**** Commitment ****/
        struct Commit
        {
-           /**** Conjuration ****//* Start */
+           /**** Conjuration ****/
            template<template<typename...> class...Signals>
            using Road = Send<Radio<Signals...>>::template Sail<Car>;
-           /**** Conjuration ****//* End */
 
-           /**** Transition ****//* Start */
            template<template<template<template<typename...> class...> class...> class RoadVessel>
            struct Detail
            {
               using type = RoadVessel<Road>;
            };
 
+           /**** Transition ****/
            template<template<template<template<typename...> class...> class...> class...Agreements>
            using Snow = Detail<Agreements...>::type;
-           /**** Transition ****//* End */
        };
-       /**** Commitment ****//* End */
 
-       /**** Continuation ****//* Start */
+       /**** Continuation ****/
        template<template<typename...> class...Agreements>
        using Road = Trek<Commit::template Road>::template ProtoRoad<Agreements...>;
 
        template<template<template<auto...> class...> class...Agreements>
        using Sail = Trek<Commit::template Road>::template ProtoSail<Agreements...>;
-       /**** Continuation ****//* End */
     };
 
     template<template<template<auto...> class...> class...Agreements>
     using Sail = ProtoSail<Agreements...>;
-    /**** Define Sail ****//* End */
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMxmpK4AMngMmAByPgBGmMQSABzSAA6oCoRODB7evgFBaRmOAmER0SxxCVzJtpj2xQxCBEzEBDk%2BfoG19VlNLQSlUbHxSdIKza3teV3j/YPllaMAlLaoXsTI7BwA9NsA1EJ4LCm0eDSY6HsmAGwaQq43GntUXgwOWQB0JhoAggSYxwM/xM/jcBAAnilGKxMHtlExkABrC4ANUwCjsIOw3x%2B42IXgcB1cVwA7FYSQAREFWX44/6ApjA0H0k6MzAgsGQ6FsD68rF7ZAGDF7DyCJjheKkPYQqHMHm87D0NiCBRYnF4gkEIkMdAc0XNCXEDmKgGMAgKXlffzY604kxknF7J3SgGsplg11A9nMrlyzCW/mCpjCgDyUOIjKyat%2Bzr2GsJFMwBtojuduz2AEkGAA3VDIq63MPxSMCR57ADuhAQ0oQsMeJuV5oDty%2BMed9osey8GSM0q5V38FL2RYjDWNSrNFr5tv8nftVNndrbTpZXo5q7Z699MID1oFQqnHx%2BwGImFNKujP1j3fCwD2ACVUExLiCh4nkxzj6fz03p9gQCAMrejSPzztSS5/J6m7MlB7obu6TBeEQu7YPuwaHoGB4HEQSLEKgqAsFK8Hem4iHIX%2BaEYpa9wAI5eIwmyqravzxlq9w6hyTSoLh%2BEsJxmB0Qx6IoZeHapiusEkcR66SRyZGoChlEYXuQahuGJYMJesasXs77iimy57OmWa5vmjwjhpZaVgQ1Y2XWty0fRbzCXyLbiaSnY3r2QEDkOFljqCjlCcpNpzpS4G0oZ0kwQycGyaC8mKapIVKZaX5no2THYoZXl3kI%2Bm%2BbpSb6Z%2BJ4ZZOKEAUBEWgeFi6RaBvzpo897Pk4ZZ4AoexMAWGiPs%2BjytpBsVSfFHojVuso7hRyVJVhrX4Kgl46QAKqeiJ2g6hnbAAVHtO1FTQEQPk%2Blz7TtuwHX0rR7Bd7nNbcpFGrceydd1vUALKeLqblRWN0WclN8pWqhyUii0WnOjpyh4UQ/W6oZYmGWm50igRLCEI2t37Zd2H9Ld2zuVDBD4oSHgsBjBBE06SNXrG9NGajoraOsGnY3tuPXVqd3IwzD19W1S0vYYL6PRDwungKBGFBcey1qeQ0M/TAMq9uwOYeh1F4MAzC0Fl1P07lJ3PoV7G6qCC3tYF2u6yFWJVZJxvm24T1qvVdNK06u37WjDAs6OWTsxdu17NgOoExBnvtrz9Pe3texrYYRSB%2BdnMTNzhMx7G6YABJ1OGzyvO8AjPCQNawmwFTxC6I29TnJW/R7nvpitCBvS8bwNNKEYMAoaStF1dlS37rNdx3xcML1p0pi91kIGsWrhKZt6vQQUoG9n%2BxiLQqCVr2LytPLewpHhjFdTE4J7KgdnEHL2vywAtCQWC3%2BPDQWhvzoq/9P8TT6QP%2BhmgeOamsgHoSdmiDEdRIZRx0npOgn8aZbSblHL2%2BwADqsISZJyoNXIeaAR4BxLm/QOLVTpliIL1eGkDMSN1QYbHsd4fKvggeiTEFtyEzhAvQsC7tEE1zdKNP%2B41BEyWEUBP0ICqJgOkSDVKvJ0o/n1lnZ0RshAMF3oVeBKZQSKMypVQCXIar0LjgdROvdMgl1TiHMOZ1M4oKQQubhfMmbo0xmaIOuNbERwakrUxvtHAMC8GzaxV104%2BIcUZfYrd25Fy7mgY46R0Tl2Hv7NmJCS5kIGsLcOQ9Hh6Iqq5DQis%2Bb7EiNfLBCBGR7EwNmRgNY1jAGrPksqSjmxPDetmFoeA2rIClIQK%2BDBaCX23rvLqPVGH0G6sQYAPgzQlNjtEtuXU3pxFEN2eyvxWn6KKRWOgtA9hxC7EoS4lCl55k2WtTAG1QQGJhtfVA8NHikANumcsbdkDViqV1AQwzBmwhSC0GE/xb6PFdnQhm39xFq0AXI2aCjtmThgdeRhTtCpXJuS7NxBAHa1yedaXFgi4Sw0eZwtwBSVQiT4THFuyzC6d0DgkmWg9aypNHoHDJk8sk/SeCLFJLTvw7K%2BBCxZvUKXmisvsw5sINmnNQK9HMFzeoYo5Hckl%2BU6ALNjFC0RMVdWkSQgpGRKV4VHkRReZikS1EFRYSq0E5NKaEq9E7e2gFHb3KIBqnR5LzW/hBsYlxPt9ThGCV3UJodw48ybrwkC7kdVrn/tyWFGtZHiuUU3I28NCoetJQNXRvq7bu2zqjRMR1YRZvDd4qN90S2YDLQcAq4auYRM3gnOlnLXosthBkDGBhb55NuDmp5L0sBlsuEwGIqA6lauMlqKpOp6BdoFMGWE7z4ibPBR08ZVCG7FLjb/fVANErGqkV1V2lrtIk01MSh5Xr3K0z8a4im7jBCeJDs2qNSsdIOsIAbB9qD/HM3ZVYnG77wmftQfG6CgMk2nq1jrMQ6b6GZtOqbB4FtBacRtohql/43W1zvfaiGXD%2BGAYEGksNoGDpVvsaR1G5jk4gY5mB/GEGo5QbiuI/6MK4MnuNawqBOjsqRMvaTLU2j%2BH/vocclezDBwCfYW4fFoVJN1VjSoiSXGtOHu4wA3jcLgF8bNYKpFF7UFqI0eWLRxUEH5pM5Sv8VUjFFoA/RnujHJ6VsjfYpWMbXlPspljLzdjI6BvjsGoJISqN4xumx7VB6E0wckUZtNyLVGoqzba9aepsVOrZC6gl%2BGiVDrJWmql6nIkcaEfq49BnQF1dTQWtLTprV0HRdl%2B1uWivOuU3l/4N7PUlTs%2BVBz/qXOx1cYIENUXmPUe8/etToXNM6e04l2rKaTWGeMyNiVZmWuoq9dm9VQ2fX2b9W7ZxXta31sO8FiJfmGqmPOhzHEccVrYCECtHGr3nvPdo7SMw/hwiCi8FgAcbgkJ0EIOCUSvwj2GpEixK9hIhAICQgQegNU6S6dg3%2BdUyOtSkRSAoLwmPqXDUPTxvHSOxPg2J6TzAAB9LgWO4c4%2BS/6mn16ick/oIzswrOKeJfh%2BRBrdsudkxaMQPA8RBf%2BP8lkK8TbwP2JF/KlE3SJ1k%2BEzpBXAhGq1TnH9Vb0GJHTTF5afU4oIjECQ8TWnEnEbIM9kbOTQ4ecM5y2KQ0TE3Co/R2TtwGvpda%2B9DabA5WFtOKWwI4X7PzcbbSk1vbMneyZfkxJ4bbTHOGKhFjxbTVUZ64YEr6LNGILy/Ug0TsyvWOq7GvJPYH1SeOBODLo0lrddV6yLG53X94/qxT3AmzByxIF4N/FiaiNQQb1Vnp/jVvDQvKzmr09RJBLOWXyJ2rGZ71D4J0VD8nXvc2/4hvzYHIMy4eRVJyfNWEe8gAFLNdT3eeEwA6zycX6fwKAknIX9BGb1oFb1OHiB2iv15ClEf2v3G1JGj18X72hXn22yUWRSNi%2BloBfC/yl3bw5Ez1Ox2yyj61hHf2TRI1pHH0r2LGrzfTmxC0eyL27wEDcFoJiwzmx2EUb2Dx6RiG13x1p2LzcE2ku1j1Nwbwfwt15CCmcjtydGHw/CdxEJRVk37BYQ90D2kMYg5G4NDyxEjyd3gIn0QJW3v1F0TwRTO1kNfwfBtQzxH1KksIMWqj4UoMYOoKyBYLu2rULx9gADE8BbctRsBVBWAThYRa9Yt7E1EvAUgZZ0B7x0QW9Cp1CSIUjmdOI0cCAMcSIuANAdogg9gwAOAdoii3ZsApQ0iBdApMjsiORcj8ipQiiSiOAyiLsIJ0DioO0strkORi9QJQQqi8NlMcQAJ8U3Bi8rBQRcjXUMDzZhMAJCNximDsgOQmjSjCtWpbN5iQAf0qZydM1EjgDCoPpOi4kshRiyU0iuAKimB6c%2BdBjBdZhHBkBGd0J4gCAIBxh0AAIFAYRXjfcEjec14DgYi4jASW8sQlg5cllYR%2BBaAd4947xHgni8AXi3jWgywFB55ywupsSUlUBljxlJYmUklvj8dIw0SoFWhPiCBviQBfi2B/iOR3IzY98hCs5WTQQ%2BiORBiLi80XZbjecmdri6chT%2BdWis4%2BTnYJi6iNAZjvob8U8FiTtBDVjij1ihihthNYwt9YwhBQTSTwTgC7RrQoT3Z/F/DAjQ4QjARwiy95sGCfZ7gCFLhgjQipkIj2C2cTdONKdkDzCxcbC6AfgZlloD8TILl4ZHdDd3JXdVD5NNjaAQzgA9RBSGdmcbi7imcHiXDDCOCTC48kDcdJCSzkz00jYIzkR08hxKzMAoz7DdEZkQonM899iMtDiCBmdjjTiGVnAQB1Fd5L9FUqzOEVMGoUTKSlBqSvifi/jgwOQjTOyRT9TYjDSOzISap/FnSBBXSbSwjWCaMOAVhaBOAABWXgPwDgLQUgVATgIQywawOMNYDYOsQHHgUgHFK8o8lYREEAU8swD4a4U8gATjMDMH/K4H8H8GAskGuGuJPI4EkF4BYAkA0A0FIEvOvNvI4F4AUBAHQs/K0BWDgFgBgEQBAAXhSCQnIEoCZToHiEiBhE4FUESGuAfmuEkD2GAGQGQD2CkA%2BDMF4AuEIBIDwG%2BOuP4EEBEDEHYCkBkEEEUBUHUC/NIF0GuPLAjBSE4B4GPLPIvM0F4GwpDCQioq1FQCoD2BYrYo4q4p4r4skAEr2AgHJhSHotBTfKWF4EIqPNIAgCQDovoDIAoAgACpGGACkCCBoGAPiDwogBiAMtIBiHCBaHBG0t4CSuYGIHBBDBiG0EwAcDStIASUbBDCGVSpUqwBiC8GAFInhLwu4F4CwBYEMGAHEAqoCPyscDqXquvMwFUHyqQi2HfPCH%2BAQuvNOBiAjCyo8CwASpJiOEKrqWIEnSUETGaqMFOCMAMpWCoAMGAAUBRBl3LCLEvPfMkuEFEHEDkvOsUrUASrUv0BapQGsGsH0DwBiDwsgBWAJPfk4Afi%2BNfFMAfMsDMCwqWulywE%2BogBWDsE6vOIgFcCmD8GuNCAlAWBGGuMKEsWyE8A6D0CxoaHmGGCqG6DhoEC5iRr0Fhoni5iJqrhJtmEmFxryGuMZoGDRuJokBhufM2C5v0D0owoSuwsstYvYs4u4t4v4rMCctwBEvcv8C4E8o/O2pWFrGfBGGhtIF/MkH8A%2BGAv8BJEkA0EkDMFgrQtPOuGAv5sQuQoCC4EAq4GuESGAsSEdtPMkC4BAv8GuEFpUuwtwvwuVq/OIrIr8oopMuouCtCuIEYrYE4BaBYGzBJAfh6iDF7C4GAo%2BHtt6vwCIAhr0HOukquukBuqUDupUt0CCA0tuLSt0o4HPN9qws4GMoIFMqvgsoTqTpTrQnTszuzqcpcrcquEBzMCVu8uIv8uljcpopCqnsCpAE7uTrTvCuAtyL4DoBBVivipUoypSsKt3qypyryoKoaqKvRjNFKuGQSsquqtqr1kKqaparauvPwFPHeG6oSr6oGv%2BEKpGrqASomqmvBBmq2GvPmpQtPqWpWswDWqftvG2r4D2oOqOpOsKsLsutkpLtkFuuUuvMrseq2qBqsEsDeo%2BvgG%2BpSF%2Bo4H%2BtpMBpepBrBviAhvRHIdJonhcB1EppRp1DpsWExvSGxq4dIAJqyF4YxrYYaApuZuRokd6HTjEYZvTiEbZoUb5oUB5tkrrobswsMs4GmUTuTtToMF7qzo%2BCeAgFlrzuHoVrHpVtIDVpfkoDrqQtIBQugrMckBJBApJBJH8BNtgo9sbt0ZwtsEDvHt8tDqQEosjtornoYqYo4ATpspYAUGzF4uzAzo%2BC9HGCEtztEvEvkoupkokCwYUrLtwZ0ACFIGrq0oaq0f0r9ubojrMo7uIBYGSdSfScyeya1Gcriflv8FseDt8snuOGnqjv6ZADSdiMZwyeAsZx6deLaY4vXuitt0oG3uvIPvKvfO2aPs6sKuKovrKuvswCqpqu3nqvfMfo2tAcao6vfpYZUq/uQEGt/sEH/pUsAZSpAbmulwgffKgaSVgY2vgeGd2qYH2sOswGOtlDQdkCLswcKZwfuqqeMeMHoZsAmqhooaoe2BnKIesFBsMvBrEpYa%2BtkecARs4ekb0FRrKE5v4Y8yEZEZKA5vpqprqDJsaCUdpdZq5ZpvkfZb4dsF5dyBkZUeFYxu5vWF5sVutu0aFr0aSc4pSbSb2DmaybZHGBlryflsVq8rsYcY1ucdtrMEzqgtPNPONtyI0CgpJCdqCZvM4ADoIrse1pJA%2BD8Y0B8c8dYtuFPOgutv8AaabpCfHrrsEqdf9qDqIpWCWoyGcEkCAA%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKz%2BpK4AMngMmAByPgBGmMQgZpJcpAAOqAqETgwe3r4BQemZjgJhEdEscQlJKXaYDtlCBEzEBLk%2BfoG2mPYlDE0tBGVRsfGJybbNre35XQpTQ%2BEjlWM1AJS2qF7EyOwcAPQAVMcnp2fnh/smGgCCRycA1AAimKmujMh4mAoPp1e39wuQLO/xu1xuBEwLFSBkhJgAzG4CABPN7MNgPZRMZAAa0w6AAat87AjsOD5sQvA4HkJXA8TAB2KwMp4Iqy3cGQ6GwzAIpFQmFMOGIlFo1iYAB0UtJD2QBgUPw8giYSzID1FjHFUol2HobEEClJ5IIlOptIY6D5Suaqr5uqhjAICm1RvhZI5TPBD296oFPL5XMFwqRqM1bBdbtl8p%2BAHk3sQhdkjbcfQ8KVSCM9MDbaF6fft9g8AJIMABuqDx9IAbBo4/FEwITDWHgB3QgIdUITDVjT2/VOl01iV572MiwPLyZIzq0P0%2BFPB51hN9O16x3O6Vutn0lls8Ej33coW8kV%2B48B0PoyWb7BRpgK7U3YDETAOg3Jm6pyfhYAPABKqBMOgc4Li8OZ8k%2BL5vgON4gCAGp7h6rLwuyYK3IG/qnkewYYeeiJMF4RARrecr3huw6RqRCo0kQuLEKgqAsKQh5BiebgEURN53g%2BUq0gAjl4HzfB%2B6Zmq4fJNKgdEMSwEmYAJQnka67pgp6KY%2BrhOFnlp2FsRxqDEdxSmUdGi7xg2DAfqmomZmBKq5up3oFsWZYVt2Ta1uZK7Nm2BAdn57k1vxgkMLsSlDgeY4TlOv4aiBZn1iuiLBYpxHboyyGoQemlsTlAbaXphEGVxVHGSR0aPs%2Br79oaW6OdFP40vZ8V2XQEFVdBZVwQhKH7ruvUcgCwLDSC4KAocxbctBFm/CcoLjSNwKgmNhYeX%2BQFOB5Dx4D8TA9gBQEecO6EFflulnaxF5iuGJUVbdZH/htqAiSaGYPAAKi%2BOJ9ahqbjVmNARP%2BgHAX8B7OR57HEFtO0PHtHkALKeJaEX1XlWGXSKl5avd1FQ1ZPo2Zi9FEAdlr1WOB75qcDweCwLCEP2s3HKCqaE691J0wzBBU6OamfmzbP/Uq2jbDNYP1YLDwQzW634M9zaGMBkMtFtLTdmg0IZPiDxdi%2Bx0C1L3ro/y51Y9d14UeVZHakIeDAMwtC1SpRs%2Bt%2B05k/F5qWoicubcl9uO2VpLdQVwOHYi%2BNbgNaGG0bzkABI9PGDxUF4oV9KnJCdt2bArMQLE8j2QgMKgLZHbzQuFu9CCw2nGfZOqCYMAo6StD8AWygIovLo39cNAI%2B0g1tvkIFsmbhOWOKNYQzGV39hZiLQZeNWnrR6w8qT0WFPwxMiDyoAFBe18AesALQkFgBf930zrzxpp0Y5hpuYy/z8alehmlV/d1W0Z4eEmJD0AmrsiatQcnHKWlNJau2loWAA6t2E0hgFBUHiDnLuDAe4zRvo3Naw9mxECHkBIkCpgGo0gbA92sVZwIgXGTUhJJfbD2jr9WBGVEKx1gdLGmn0UFZEHhLShbMTaiMfm/PCIYLY/xtrjMqRlKpQRqiAo21CaSlxbC1bM9l2pKPXMRbqoZOFQP6llGBPDHjWnCF4cWc1K7ORrnXdOA8GBdy1koDuXZMHYMzrgwe%2BDDqKwtBgjykFqr6OlBQqWzlIiHyQQgIUDxMClkYJ2LYp8exhM6oODQ20filhaHgDayBmKEAPgwWg%2B8l5l12mmH89A4bEGAD4R0BtonV1rj8WGcRRCTkCrcDqNUcmtjoLQB4cRoo6yIZPNyPZPqYG%2BoiQ4IcQDKBJqgMmHlSD2MLC2WuyAOwJJ%2BAISp5TuypBaOKSEBcVbQyiYLMRZspFhktjKb%2BUosnKLqsItRns6EfS%2BlaRi3NQ66QASsnKxND4bJYW4T5ESracJ2R9TpqdnGZ01kUb4GC0BYLFr49FeDZYENyUrEJNZ4UGhyW0wWMsBl6PfD5UZ4zux9OAtM1ylYPLzMWW4ZZbo4JrOhUIeyNKRHiMea/fSMieJ/3eRKSlToVFuxik1Og8UeVAvpoQUFrFwUCvgmHIVRARVtURIq4OMdUwcJjtlCVErsY3Tlb/C1Kjfkg3isamFEc4WDIRa6Mxcd/ovEBt2U1YyhELxRU4hug9Yad0yAzAwBdO4eS9Zs5sWBQ3ASYDEVAKSxVwOLJmBJFp6CeI1vebsez4j9Pxs2WG8NZY6Pucbe1TyTbSrkTKxUqtvnWQ5pmL14bIr82iTTLmjNHTM0uJXImk6ebmOgcIv6E7u74sbpG2Bkr36OteSZWREo7YOzEM7e%2B3p3VAS9uJX2T0JKB1PWlA1kKR2Rz7WSW15jUw7skT%2BnCe6e2AbkQAxhwD%2B2wLAdotqX6fTLu4SqxqcV/kMKAbmZhEcP1sNdjawN3D/p8JbgI1xW7XZ/tyu21%2BH8cbOsPW83%2BdHD2uvA67NRJcy5aPAuav1VLYLwSMVawWOH9zmOFrIaxtiWaVzI1dF5QGFXcaVcxr8qq/nzgBQsrVILDVgs2c%2Bo16zdO%2BoZTBRFn7hHSafpIrtNHZUMdlUxl2gtWPNX%2BZqyOwKdXab1bp7Auqi7Dp0Vx4zlqsM7kysJuOFmJHBms3Z%2BR8qHMHmc%2Bq/5AWzVGfCTx0zWVTERYWotc480aYADE8DEHmA8bAqhWAwm7EI/LBWhH7jMPCcIcovBYDnG4XFuxUiKZUmNGmQgECEQIA0oRnaippVuETYbo36BIqGpYpgqQFBeHLTO0EoiAM3mNKaTM7FVvrZPIG7b0jdszcHbTFba36AAH0uCLYhA687iLLv7eu0d%2B7ZgnvCxaMQL4BcJsUefrFg9tnvnzv%2B4D37NMlx3dycDp5%2BkHgEkKbmhbkOrvw40D9ekaMQe/p2zZ8i1oVQRHKyoyD4EKZjqlmopDanDu3bYmT1UtU3BzYIGNtiaOAcY5PB%2B7AT7QtCcGpFwn/7XtxcUZl/rSWVMev%2BeA3Rcuup8beEi3L4v/rw64Jtzk4iUcI3W44GEMOscfb1z9O1HbidU6u%2BAnczJwvi%2B/adCmiJ55ndk8BtnFPtlfsm5xEnNJ5IhV2IHld1miyRSU9TwLbh/fxDkgpUKbEixPqF6O0LD9kdTalAAKWVRe1VWJgDuSZ7IcnKfkrh6EnyE3tAze0EB4cTPUpmKF6z8Y2D2uuF58o8TxL9U1FI1oMrJn0Pa9uBV0FtXEKjVMAryLvqrvY66/jHdswBuTr56IXzopMRMcqSJvDn7HpQtRbB9bWVKV09nvqgn6Dcc4P09VYzhczPjup4j8JREh%2BAupIq%2BtO6%2BtulGRuBeJOsunUbqKmLmamc%2BGW2SvGPUOWYBS2xwNIXgqQWK6Af43wpuu%2BNwrGOBeBBBt2mY/y3%2BmOSeN2x2D2EkI23OtBXAGghwZgzEYAHAhw3BykzENBmA2%2BTB82bEbBHBXBPBfB0c2eZm/0CM2ifixGditwY%2BihhK/iambmbgOOfIP2BqPm4IcEhm1uiIbBKy4%2BPsKkcEr6OhW%2B%2Bhbg3BvBHAKy60Zq1hIAC6sOjwFBRBQivyhBze8UChzQShxhsKghD2Ah9B32AaeWvC3wToxB8wiYyAd2ZE8QBAEA8w6AcECg4o6RHOvhzezEQgZB2s%2BBgRPMboawv2HS3Y/AtAy8bY04HkKRjgaRGRrQW0CgY8LYPwfRGCqAXk2Qu0L4bieBIAxoqRhRSgrQ2RBAuRIA%2BRbAhRfIB43scebg88mxiIuhiI%2BhvmIAhmkRKQn2LOwhMh884RPqphbg5hBqlhKiKiNhie5%2BfITh0hRxbhaGjm3oUeqYZRuBFRxRi6YINR3hjWQIRWjwtIuKwEVWNW42KhdwUJS08RjwJYU8mAnsSOEBHaL2vu0BwGPxNwTSL0H2WJbkZMKul%2BCuiGtCampJ5Jb6X2QhZxkRhxWuGBz2BJfJQ%2B0u4O8WLqTSj%2BJBqqVJeIqmC4kpOJIMSBZJwA6uaBGJWBoJxBARlBD2wR6hsafgIAbG5ciIsphhchCRFWQi7ReAnRZC8xOReRBR94fIoJUR2BwJSglRlBpItRKEHAGwtAnA/gvAfgHAWgpAqAnA2xlg1gaYWwOw7kLWPApABAmgfpGwOIAQkgEoGgAAHGYGYAAJwFlcD%2BC5k5lcAMgMjSABkcCSC8AsASAaAaCkAhlhkRkcC8AKAgDNkpmhl%2BmkBwCwAwCIAgDjypCETkCUCYp0DxCRDiicCqA5lVhnxViSAPDADIDIAPBSAShmC8D4iEAkB4C5EpD8CCAiBiDsBSAyCCCKAqDqB9mkC6ApAtgJipCcA8D%2BmBnBmpnhmcAxiETjmZioBUAPCLnLmrnrmbnblZk74QB0ypAzk3KJlrC8C9laAbAQBIDTn0BkAUAQA4VjDABSCcE0DN7xBdkQAxC/kxDhAtDIgfm8C0XMDEDIgxgxDaD1C9lJmaz9gxgVIMWPlYAxBeDADsRNFdncC8BYAsCGDADiBCVlZcV4ApKSVhmYCqD1CER7BJnhCQg1lhmt4xAJisUeBYC/kmh4ANlSWkApLEB5pKAvCyVGCt5GCpkbBUAGBKkEhfAth1ghlJlnnCCiDiDXlBV3lqC/nPn6ByUoDWDWD6B4AxBdmQAbDDG3ycBnw5F0KmDRmWBmBtl2UA5YApUQAbB1AuIuAWgzB%2BApChBLAVBVB6BFBEY1XNUZBEbDCNVjC1A9DKUCADDTCeAdB6AVV9CDWLDlCjAJC1ALBtWzWDBdXTUSDlVxm7ArX6Dfktm/ntlgVLkrlrkblbk7lwW4CHnIXwhcCoXJnuUbBdhARjBlWkAZmSDwgSgFnwhVkaCSBJA1gaD%2BBVgFmbW1n1kgCXUShVhcBVg5kFnllVj%2BDJD%2BAfVVjbWPntmdndk3V9mYXDlYWjmAUTn4WEXEBzlsCcAtAsClgMhnx7SkTThcAFkShcDZn7n4BEDFV6BBUXmhXSDhVKCRWPm6CcGvkraMVfkcBBmo1tn/kE3AWgXgUHV3j02M3M25LwWMSIW4X0gtZmDXXoX9l43E2TkEUa1IUoAGBGAM1sF8B0DXKUXUWPnMX0WMWkBO2sXsWcUOAu28WOj8WVK/nCWiXiVOwu0yVyUKVhn4AvgNCqW/kaVaWQgu16U9C/lGUmXIhmV7BhmWXWVJl2UOWYBOXh0/juV8BeUKA%2BWYB%2BVogu1c0hVXm82yARUPlhlC0xVuW5VWCWCJXJXwBpV9ajGZXZXzid3WAFW8D5rxDFXfB93dC9DZBVXuDDX5B1UWhLX5ztXFDZDzVpAdV9Dr1NW9Xz0DVzXL21Vz39X9ALAH09WTCDA70pGtA30zWrXbDrVXXA2S2tkT2cB7UQVrl02/gM1M3ZkPAQBnXs3a2XV623WkD3VXyUDi11mkANnwiM3fUMhI2Vnwg/WSCrkpDf1/kdm2CY36043wB41jmE1Tmm24Wk17AU2QUsAKClhbmljAM8jzCs3nXHmc2yDc0N03nyD80t06Bg2kAi3vlSXi1f07Uy0EBAUHzy1MMsNsMcPHgVbq3QhIVQPwgwPY0DnYW0PxDG3E0gCsO4F3bsMFl3acMEB3aqCrk23kXlaUAO1hlu2CVJmeMe1cXe3Aq%2B0CUB2YAiViVLySVJlh0uVZ3SVKUx0z2Pnx3IDaVJ2CAp2Plp30WZ0WUA6528D53axF0uUl0GOeXL4V2%2BX%2BW138P10SCN23kiNRXiMW3GDxXd1GWlX90ZUHD2mj35WFVT3Hkz2pUX2VUQCuA731VTUb0pAtV9A71zPZDP2jV9UuITUP2rPjXX0NXLULVDV5Dn2P2TXLCH2v3xkbU1myNo2/2ONrnMOsMPDWMSh2NgMQPZzmDQNoWwPwOPVIOg2FkSjwjwiBDfVsEaBAsMjQ1S0/3ENdk9mwMvX%2BDvUVkMhNk5mSDFlcB5lmAo01nwg/nXPENkPi17nQtENfPY0bB2WZDOCSBAA%3D%3D%3D)$Done$
 
 ## Links
 

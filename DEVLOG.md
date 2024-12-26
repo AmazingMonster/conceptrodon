@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2024/12/27
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Collect the code of examples to a different folder.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Only <code>Varybivore</code> left.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/26
 
 <ul>
@@ -47,38 +66,6 @@
 </ul>
 
 ### 2024/12/24
-
-My girlfriend wants to break up with me.
-Life is weird.
-She wants money, but she doesn't want me to buy stuff for her. I am poor, but I'd love to give all my money to her.
-I never thought I would love her so much.
-We lived together in a rented apartment, but we never talked to each other.
-When she left, we fell in love with each other.
-Life is weird.
-I don't know what I am supposed to do.
-I hate nothing.
-I am blessed enough to meet her.
-I love her so much.
-And I just realized right now.
-I will fight for her to stay.
-I can not give up now.
-I know she loves me.
-I know I love her.
-It's the insecurity that tears us apart
-It is this society that makes us insecure.
-I will achieve everything I am going for.
-I will give her everything I promised her,
-even if we break up.
-I am young and ambitious.
-I will live a heroic and short life.
-I am the hero I promised my youth to be.
-If the beforelife and afterlife are endless nights,
-this life is my only brightness.
-No one can persuade me that I am already old.
-I am forever young and forever strong.
-Yes, I am just a nobody rambling nonstop and making everything about me.
-And she liked this version of me.
-What the fuck!
 
 <ul>
   <li>
