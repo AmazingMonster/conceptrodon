@@ -74,5 +74,6 @@ struct CognateHarvest
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_harvest.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_harvest.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_harvest/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_harvest.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_harvest.test.hpp)

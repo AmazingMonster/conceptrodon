@@ -49,15 +49,19 @@ alias Rotate
 We will rotate the first three variables from `0, 1, 2, 2` and instantiate `Operation` with the result.
 
 ```C++
+/**** Operation ****/
 template<auto...>
 struct Operation;
 
+/**** SupposedResult ****/
 using SupposedResult = Operation<2, 0, 1, 2>;
 
+/**** Result ****/
 using Result = Rotate<0, 1, 2, 2>
 ::Page<3>
 ::Rail<Operation>;
 
+/**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
@@ -133,5 +137,6 @@ struct Rotate
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/rotate.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/rotate.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/rotate/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/rotate.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/rotate.test.hpp)

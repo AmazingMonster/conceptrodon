@@ -177,5 +177,6 @@ struct Among<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/among.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/among.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/among/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/among.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/among.test.hpp)

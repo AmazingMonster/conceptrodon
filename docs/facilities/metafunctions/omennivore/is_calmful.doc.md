@@ -73,5 +73,6 @@ struct IsCalmful<Perseverance<Tranquil...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_calmful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_calmful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_calmful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_calmful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_calmful.test.hpp)

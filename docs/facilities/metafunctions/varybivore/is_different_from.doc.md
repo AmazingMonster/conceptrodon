@@ -86,5 +86,6 @@ struct IsDifferentFrom
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/is_different_from.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/is_different_from.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/is_different_from/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/is_different_from.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/is_different_from.test.hpp)

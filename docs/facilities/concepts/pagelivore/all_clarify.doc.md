@@ -86,6 +86,6 @@ concept AllClarify = (...&&Predicate<Variables>::value);
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/pagelivore/all_clarify/implementation.hpp)
 - [Source code](../../../../conceptrodon/pagelivore/concepts/all_clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/all_clarify.test.hpp)
-- [Example](../../../code/facilities/concepts/pagelivore/all_clarify/implementation.hpp)

@@ -162,5 +162,6 @@ struct KindredFind<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/kindred_find.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/kindred_find.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/kindred_find/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/kindred_find.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/kindred_find.test.hpp)

@@ -83,5 +83,6 @@ using Paste = TypicalPaste<Args...>::type;
 
 ## Links
 
-- [source code](../../../../conceptrodon/stockivore/paste.hpp)
-- [unit test](../../../../tests/unit/metafunctions/stockivore/paste.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/paste/implementation.hpp)
+- [Source code](../../../../conceptrodon/stockivore/paste.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/stockivore/paste.test.hpp)

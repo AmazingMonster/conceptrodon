@@ -73,5 +73,6 @@ struct IsWillful<Sunshine<Perseverance...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_willful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_willful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_willful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_willful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_willful.test.hpp)

@@ -3,6 +3,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Metafunctions
 
+- **Prelude**
+
+- **Introduction**
+
+  - [Hello World](../introduction/hello_world.md)
+  - [Vocabulary](../introduction/vocabulary.md)
+  - [Functional Nature](../introduction/functional_nature.md)
+
+- **Facilities**
+
+  - [Concepts](../facilities/concepts.md)
+  - [Utilities](../facilities/utilities.md)
+
 <!-- Typelivore -- Start -->
 ## Typelivore <a id="typelivore"></a>
 

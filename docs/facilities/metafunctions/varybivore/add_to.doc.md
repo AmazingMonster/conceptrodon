@@ -93,5 +93,6 @@ struct AddTo
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/add_to.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/add_to.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/add_to/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/add_to.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/add_to.test.hpp)

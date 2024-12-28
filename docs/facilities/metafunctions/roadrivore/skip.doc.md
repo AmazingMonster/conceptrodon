@@ -272,5 +272,6 @@ struct Skip: public LoadSkip<Operation> {};
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/roadrivore/skip.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/skip.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/skip/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/roadrivore/skip.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/skip.test.hpp)

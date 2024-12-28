@@ -123,5 +123,6 @@ struct AreDistinct
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/are_distinct.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/are_distinct.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/are_distinct/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/are_distinct.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/are_distinct.test.hpp)

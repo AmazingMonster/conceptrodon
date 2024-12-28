@@ -203,5 +203,6 @@ struct Erase
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/erase.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/erase.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/erase/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/erase.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/erase.test.hpp)

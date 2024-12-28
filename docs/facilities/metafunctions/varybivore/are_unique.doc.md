@@ -58,5 +58,6 @@ struct AreUnique
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/varybivore/are_unique.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/are_unique.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/are_unique/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/varybivore/are_unique.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/are_unique.test.hpp)

@@ -79,5 +79,6 @@ struct Reveal
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/reveal.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/reveal.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/reveal/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/reveal.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/reveal.test.hpp)

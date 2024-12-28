@@ -83,5 +83,6 @@ struct Conceal
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/conceal.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/conceal.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/conceal/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/conceal.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/conceal.test.hpp)

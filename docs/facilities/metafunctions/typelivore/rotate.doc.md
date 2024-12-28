@@ -125,5 +125,6 @@ struct Rotate
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/rotate.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/rotate.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/rotate/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/rotate.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/rotate.test.hpp)

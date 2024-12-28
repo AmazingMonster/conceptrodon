@@ -66,5 +66,6 @@ using MakeSet = TypicalDiversity<>
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/typelivore/make_set.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/make_set.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/make_set/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/typelivore/make_set.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/make_set.test.hpp)

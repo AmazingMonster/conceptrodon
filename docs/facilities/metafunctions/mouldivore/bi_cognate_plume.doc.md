@@ -400,5 +400,6 @@ struct BiCognatePlume
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/bi_cognate_plume.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/bi_cognate_plume.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/bi_cognate_plume/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/bi_cognate_plume.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/bi_cognate_plume.test.hpp)

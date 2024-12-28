@@ -73,5 +73,6 @@ struct IsFlowful<Sorrow<Warehouses...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_flowful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_flowful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_flowful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_flowful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_flowful.test.hpp)

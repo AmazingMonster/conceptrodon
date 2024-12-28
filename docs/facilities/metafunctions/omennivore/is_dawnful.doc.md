@@ -73,5 +73,6 @@ struct IsDawnful<Sunlight<Sunshines...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_dawnful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_dawnful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_dawnful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_dawnful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_dawnful.test.hpp)

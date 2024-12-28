@@ -151,5 +151,6 @@ struct FoldRightLast
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/fold_right_last.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/fold_right_last.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/fold_right_last/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/fold_right_last.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/fold_right_last.test.hpp)

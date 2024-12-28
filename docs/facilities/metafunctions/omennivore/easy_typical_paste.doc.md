@@ -68,7 +68,7 @@ using Result_1 = EasyTypicalPaste
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
-- We paste `Warehouse_0<Con_0>`,  `Warehouse_1<Con_1, Con_2>` and `Warehouse_2<Con_3>` together:
+- We paste `Ware_0<Con_0>`,  `Ware_1<Con_1, Con_2>` and `Ware_2<Con_3>` together:
 
 ```C++
 /**** Warehouses ****/
@@ -109,7 +109,7 @@ using Result_2 = EasyTypicalPaste
 static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
-- We paste `Stockroom_0<Seq_0>`,  `Stockroom_1<Seq_1, Seq_2>` and `Stockroom_2<Seq_3>` together:
+- We paste `Stoc_0<Seq_0>`,  `Stoc_1<Seq_1, Seq_2>` and `Stoc_2<Seq_3>` together:
 
 ```C++
 /**** Stockrooms ****/
@@ -226,5 +226,6 @@ struct EasyTypicalPaste<Packages...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/omennivore/easy_paste.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/easy_typical_paste.type.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/easy_typical_paste/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/omennivore/easy_paste.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/easy_typical_paste.type.test.hpp)

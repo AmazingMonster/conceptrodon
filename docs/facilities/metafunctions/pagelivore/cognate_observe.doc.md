@@ -144,5 +144,6 @@ struct CognateObserve
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_observe.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_observe.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_observe/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_observe.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_observe.test.hpp)

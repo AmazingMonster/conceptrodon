@@ -142,5 +142,6 @@ struct CognateRotate
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_rotate.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_rotate.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_rotate/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_rotate.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_rotate.test.hpp)

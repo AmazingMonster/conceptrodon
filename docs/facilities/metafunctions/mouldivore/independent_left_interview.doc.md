@@ -153,5 +153,6 @@ struct IndependentLeftInterview
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/independent_left_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/independent_left_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/independent_left_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/independent_left_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/independent_left_interview.test.hpp)

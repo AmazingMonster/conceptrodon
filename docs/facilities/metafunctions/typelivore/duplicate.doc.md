@@ -120,5 +120,6 @@ struct Duplicate
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/duplicate.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/duplicate.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/duplicate/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/duplicate.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/duplicate.test.hpp)

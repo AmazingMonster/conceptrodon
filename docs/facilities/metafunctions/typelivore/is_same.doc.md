@@ -65,6 +65,6 @@ constexpr bool IsSame_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/is_same.hpp)
-
-- [unit test](../../../../tests/unit/metafunctions/typelivore/is_same.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/is_same/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/is_same.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/is_same.test.hpp)

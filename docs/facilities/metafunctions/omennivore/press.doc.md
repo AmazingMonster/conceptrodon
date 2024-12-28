@@ -204,5 +204,6 @@ struct Press
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/press.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/press.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/press/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/press.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/press.test.hpp)

@@ -56,5 +56,6 @@ struct Negative
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/negative.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/negative.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/negative/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/negative.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/negative.test.hpp)

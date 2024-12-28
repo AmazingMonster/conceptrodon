@@ -3,7 +3,7 @@
 /**********************/
 
 #include <cstddef>
-#include <ranges>
+#include <algorithm>
 #include <array>
 
 /**** Typelivore::TypicalAmong ****/

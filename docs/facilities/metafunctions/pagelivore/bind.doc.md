@@ -170,5 +170,6 @@ struct Bind
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/pagelivore/bind.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/bind.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/bind/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/pagelivore/bind.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/bind.test.hpp)

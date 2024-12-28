@@ -264,5 +264,6 @@ struct Flip
 
 ## Links
 
-- [source code](../../../../conceptrodon/raillivore/flip.hpp)
-- [unit test](../../../../tests/unit/metafunctions/raillivore/flip.test.hpp)
+- [Example](../../../code/facilities/metafunctions/raillivore/flip/implementation.hpp)
+- [Source code](../../../../conceptrodon/raillivore/flip.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/raillivore/flip.test.hpp)

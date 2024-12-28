@@ -107,5 +107,6 @@ struct TypicalTurnOver<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/turn_over.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/typical_turn_over.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/typical_turn_over/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/turn_over.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/typical_turn_over.test.hpp)

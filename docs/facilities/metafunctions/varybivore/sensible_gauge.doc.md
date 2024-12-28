@@ -220,5 +220,6 @@ struct SensibleGauge<Variable>
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/sensible_gauge.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/sensible_gauge.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/sensible_gauge/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/sensible_gauge.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/sensible_gauge.test.hpp)

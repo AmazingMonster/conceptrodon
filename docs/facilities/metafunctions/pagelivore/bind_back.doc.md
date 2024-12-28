@@ -91,5 +91,6 @@ struct BindBack
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/bind_back.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/bind_back.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/bind_back/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/bind_back.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/bind_back.test.hpp)

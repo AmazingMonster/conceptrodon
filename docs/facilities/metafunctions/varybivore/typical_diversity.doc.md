@@ -146,5 +146,6 @@ struct TypicalDiversity: public Vay<InspectedVariables>...
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/diversity.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/typical_diversity.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/typical_diversity/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/diversity.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/typical_diversity.test.hpp)

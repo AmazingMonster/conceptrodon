@@ -68,6 +68,6 @@ constexpr bool IsDifferent_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/is_different.hpp)
-
-- [unit test](../../../../tests/unit/metafunctions/varybivore/is_different.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/is_different/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/is_different.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/is_different.test.hpp)

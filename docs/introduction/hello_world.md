@@ -3,12 +3,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Hello World
 
-- [Index](../index.md#introduction-hello-world)
-- [Prologue](#hello-world-prologue)
-- [Implementation](#hello-world-implementation)
-  - [Failed Attempt](#hello-world-implementation-failed-attempt)
-  - [Adopted Method](#hello-world-implementation-adopted-method)
-- [Convention](#hello-world-convention)
+- [**Index**](../index.md#introduction-hello-world)
+- [*Prologue*](#hello-world-prologue)
+- [*Implementation*](#hello-world-implementation)
+  - [*Failed Attempt*](#hello-world-implementation-failed-attempt)
+  - [*Adopted Method*](#hello-world-implementation-adopted-method)
+- [*Convention*](#hello-world-convention)
 
 ## Prologue <a id="hello-world-prologue"></a>
 

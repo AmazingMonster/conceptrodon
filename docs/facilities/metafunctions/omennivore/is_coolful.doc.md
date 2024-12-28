@@ -73,5 +73,6 @@ struct IsCoolful<Consistency<Silence...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_coolful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_coolful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_coolful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_coolful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_coolful.test.hpp)

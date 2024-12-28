@@ -107,13 +107,13 @@ struct KindredRepack<SequenceA<TA, VariableAs...>, SequenceB<TB, VariableBs...>,
 /**** Example ****/
 /*****************/
 
-/**** New Vessel ****/
+/**** NewVessel ****/
 template<std::make_signed_t<std::size_t>...Args>
 requires (sizeof...(Args) == 4)
-struct Sequence;
+struct NewVessel;
 
 /**** SupposedResult ****/
-using SupposedResult = Sequence<0, 1, 2, 3>;
+using SupposedResult = NewVessel<0, 1, 2, 3>;
 
 /**** Result ****/
 using Result = KindredRepack
@@ -121,7 +121,7 @@ using Result = KindredRepack
     std::integer_sequence<int, 0>, 
     std::index_sequence<1, 2>,
     std::index_sequence<3>
->::Road<Sequence>;
+>::Road<NewVessel>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

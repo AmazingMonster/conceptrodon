@@ -164,5 +164,6 @@ struct CognateInject
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_inject.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_inject.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_inject/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_inject.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_inject.test.hpp)

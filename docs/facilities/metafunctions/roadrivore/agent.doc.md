@@ -94,5 +94,6 @@ struct Agent
 
 ## Links
 
-- [source code](../../../../conceptrodon/roadrivore/agent.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/agent.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/agent/implementation.hpp)
+- [Source code](../../../../conceptrodon/roadrivore/agent.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/agent.test.hpp)

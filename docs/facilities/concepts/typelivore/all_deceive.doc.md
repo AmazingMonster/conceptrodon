@@ -85,6 +85,6 @@ concept AllDeceive = (...&&(not Predicate{}(Elements::value)));
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/typelivore/all_deceive/implementation.hpp)
 - [Source code](../../../../conceptrodon/typelivore/concepts/all_deceive.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/all_deceive.test.hpp)
-- [Example](../../../code/facilities/concepts/typelivore/all_deceive/implementation.hpp)

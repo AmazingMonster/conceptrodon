@@ -82,5 +82,6 @@ struct Diversity
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/diversity.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/diversity.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/diversity/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/diversity.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/diversity.test.hpp)

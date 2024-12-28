@@ -133,5 +133,6 @@ struct CognateFront
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_front.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_front.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_front/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_front.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_front.test.hpp)

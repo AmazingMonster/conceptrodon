@@ -137,5 +137,6 @@ struct Disjunction
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/disjunction.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/disjunction.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/disjunction/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/disjunction.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/disjunction.test.hpp)

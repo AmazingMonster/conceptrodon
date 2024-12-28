@@ -79,5 +79,6 @@ struct Contains
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/contains.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/contains.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/contains/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/contains.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/contains.test.hpp)

@@ -86,5 +86,6 @@ struct Negation
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/negation.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/negation.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/negation/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/negation.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/negation.test.hpp)

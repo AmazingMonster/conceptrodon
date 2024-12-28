@@ -226,5 +226,6 @@ struct RemoveTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/omennivore/remove_types.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/remove_types.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/remove_types/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/omennivore/remove_types.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/remove_types.test.hpp)

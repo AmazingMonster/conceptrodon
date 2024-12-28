@@ -147,5 +147,6 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/diversity.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/typical_diversity.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/typical_diversity/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/diversity.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/typical_diversity.test.hpp)

@@ -135,5 +135,6 @@ struct Sieve
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/sieve.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/sieve.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/sieve/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/sieve.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/sieve.test.hpp)

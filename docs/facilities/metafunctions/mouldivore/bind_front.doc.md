@@ -91,5 +91,6 @@ struct BindFront
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/bind_front.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/bind_front.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/bind_front/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/bind_front.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/bind_front.test.hpp)

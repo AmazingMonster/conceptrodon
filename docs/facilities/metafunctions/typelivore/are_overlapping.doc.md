@@ -155,5 +155,6 @@ struct AreOverlapping
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/are_overlapping.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/are_overlapping.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/are_overlapping/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/are_overlapping.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/are_overlapping.test.hpp)

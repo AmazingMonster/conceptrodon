@@ -206,5 +206,6 @@ struct CognateInsert
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/pagelivore/cognate_insert.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_insert.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_insert/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/pagelivore/cognate_insert.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_insert.test.hpp)

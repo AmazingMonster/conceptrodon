@@ -131,5 +131,6 @@ struct Front
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/front.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/front.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/front/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/front.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/front.test.hpp)

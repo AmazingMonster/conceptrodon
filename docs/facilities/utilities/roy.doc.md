@@ -34,34 +34,37 @@ struct Roy
 ## Examples
 
 This function injectively maps a warehouse to a type.
-In the following example, We will create an overload set of `fun` using warehouses `War_0` and `War_1`.
+In the following example, We will create an overload set of `fun` using warehouses `Ware_0` and `Ware_1`.
 
 ```C++
+/**** Operations ****/
 template<template<typename...> class...>
-struct War_0 {};
+struct Ware_0 {};
 
 template<template<typename...> class...>
-struct War_1 {};
+struct Ware_1 {};
 
-constexpr auto fun(Roy<War_0>) { return false; }
+/**** fun ****/
+constexpr bool fun(Roy<Ware_0>) { return false; }
 
-constexpr auto fun(Roy<War_1>) { return true; }
+constexpr bool fun(Roy<Ware_1>) { return true; }
 
-static_assert(not fun(Roy<War_0>{}));
-
-static_assert(fun(Roy<War_1>{}));
+/**** Tests ****/
+static_assert(not fun(Roy<Ware_0>{}));
+static_assert(fun(Roy<Ware_1>{}));
 ```
 
 If we only want compilers to perform an argument-dependent lookup, we can utilize `decltype` and `std::declval` to avoid defining the function body.
 
 ```C++
-constexpr auto gun(Roy<War_0>) -> std::false_type;
+/**** gun ****/
+constexpr auto gun(Roy<Ware_0>) -> std::false_type;
 
-constexpr auto gun(Roy<War_1>) -> std::true_type;
+constexpr auto gun(Roy<Ware_1>) -> std::true_type;
 
-static_assert(not decltype(gun(std::declval<Roy<War_0>>()))::value);
-
-static_assert(decltype(gun(std::declval<Roy<War_1>>()))::value);
+/**** Tests ****/
+static_assert(not decltype(gun(std::declval<Roy<Ware_0>>()))::value);
+static_assert(decltype(gun(std::declval<Roy<Ware_1>>()))::value);
 ```
 
 ## Implementation
@@ -75,8 +78,9 @@ struct Roy
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCAAbKQADqgKhE4MHt6%2BASlpGQKh4VEssfFJdpgOmUIETMQE2T5%2BgVU1AnUNBMWRMXGJtvWNzbltwz1hfWUDCQCUtqhexMjsHASYLMkGGyb%2BbhtbO5h7B5vbTLv7BACeyYysmAB0L3vYANTIBgoKL09vn2%2BCneAHUGpgEEslG8TBoAIIKAjELwOd4AEUw9GATGQN1hcJMAHYrPD3mT3ocLlczkdLidrncHmw/gCvkwfn8PIImFNiAoYaTyV50kZ3gAlVBMdDvPZo0HgyHC%2BluLn1Xm/V7%2BbB7EkEwlonX4/EAegAVOaLZarcaTZb3gAVbBCe1Cd6Wm3ws1W70Wj0E%2BGU46nQN04OM5jMzUfNkcqP4xHI1Fg4gAfQ0MuJRIN/l1%2BJD1Pzytu9wjzyjgPZGv%2BWvjSJRBHlqa4Gas%2BsN8NtFveADE8HyG/bMIi3b6jfC0AxEZhVMliO8mF4iO8qF4GBAMVicXj9sm0285i33sRMARlgxl2JoTmMwaO%2BOBFOZ3OF0uV2uN5hsbjTruuPvD8ep7EOedb0hYN5jgi9SOMgKaVnEBAQAwqANm%2B66Yp%2BW4/g0e41pm%2BpzHM7b%2BlBlx4LB8GNNQq7oZu347jhf54a2aKEcRnbmu8QjVAI0qDsO7qQeY/hhF8XhYDK%2ByLnQhDbtqd5whOj6zvOi6oO8wA0R%2BX7bm4u4aP%2BAC0AKIugIAgFQl6YCmxZgZBSkbE%2BqlLpp74YTp2FNkZJkEGZICgTZjLsfCiJkRRPwIUhKHvFgXy2dANGmeZsW0AAbmIpzaVhDGpgZNZahAhFzOZ6XeJgRE5pBoUwXBEVUSl8WuRASUgClpWZe52V6YxMIFUVJViF45U6hwCy0JwACsvB%2BBwWikKgnBuNY1jvAoSwrJgMpmP4PCkAQmijQsADWIATZITwaJIXCEv4GgTRoZgJAkZgABwvfonCSLwLASBoGikDNc0LRwvAKCA/37bNo2kHAsAwIgIBLAQySLuQlBoFsdBxBEjycKoL0JIZCSSBpyDIO8UhPGYvCYPgRDEHgZlcDIggiGI7BSCz8hKGoB2kLozMAO7EEwyScDwY2TdNfPAwA8ouKMNqgVDvPjhPE6T5OU2Y7wQB4mP0HOwlcHMvCQ1oCwQEgGPJFjZAUBANt2yAwBSGYfB0BsfKUNEfPRGEDQ3OLvD%2B8wxA3LL0TaNUkO7RjbCCLLDC0EHUOkFg0ReMAbhiLQYPcLwWAsIYwDiGn%2BDHjUqVDnz07VIuay7WEGzjWntB4NEIvhx4WB80ieA/QXpDV8Q0RpJgGLF0Y7dGAdCxUAYwAKAAangmCC7LJbB1zbPiJz/CCIoKjqGnAv6CXKDLZY%2Bgd2DkALKgySOA%2BnCGaZsqmJY1hmEDI8M1gd9Cq2Awh0PwEBXCjD8MzEIUxSjlD0KkdIz8sieBaAggoyDehwIGMzdoyCugjFQbkXBID8ETCwf0eIuCJiQL0KFRoFCZhUIWGtZYqwJCSw4FNAGMtOCqwJkTEmwAyYU3OjrCAuBCAkC2jtU2e054LAQJgKUAwgEnUkP4J4ABOfwhJJCXTMJIBIf0JoJC0R9DgX1SA/R2k8BIXAEgvS0S9BxZ0uATR0UkQGvBgag3BvIqGlt4ZW0RgrVGDsnaGxxmwTgDQWCpUJIZJgFZRRcC0U8LgF0aZ0xIIzPQB9hCiD3tIApR9eanxAO7YWotg6cO4d4%2BanB5bI0XO8ZW85iDxMScktkqT0mZPTHrVABs4gyLMHI820MQmRLiGjR2wzbaGxAHEhJhlemuy0Vwf6NBaBezBhAX2adQ6B23sc8Okdo4OG3vHRgBAk4pz5hnLOOdaB523kXEuZc5oVxjngau%2Bc5p12QA3bezdMR83bp3QOPc1hzX7oPXaI8x5KEnp8sIoBAl8EXivNeG8t5DwKbvDmJTZBlJPnNXQ7sDCz0/lYa%2BkLAEPyfpkfOb9fIfyvhYH%2BPi/6MxrvfYB9hkEuAYO4IhUCgiisYfA5miDCgoJyBKuVmDYGULoaQ2oNDxXqqFZq7o0qcFDG6LQ6h%2BrVVMI4YsNhHM6nSzTsDDpXSkkpOABTfpF1daSPpjIk2ZsFGkCUSo%2BIQDW5WJseky6hIPGEhupIQxxNmYNN8bYfxkygnwBCUjRWcyZnEGiWsOJGsWAKFSuTVKaSnjHERNkqR/98myCJRIElh8ebkp0HkapYsC62p4fappYSlYq0LSTYtpb3jlvSVWhsQyRlG22v4CZc8YbWwWXbHNq6lmluSMkFME6UxTrgp04mHtdlxH2YcuaZzU67SvRcmO1zhkJzucnVO3zMCZ2zrnfOu0PnT1hYXPsvz/m11UPXDYoLBDgrbh3LuNwYV9wZgi3gSLx6ounuipdC8mBL1XuvTejBt6EqKcSrmZK%2Ba6ECNS4wnKb7REZfNZlL8ODGiSrS7%2Bv84j/35UAvBmQRVisVXoGBJQ1WyowZkE1%2BQkGZANVQwVvzOhasEyQ3VimzUiYtaawhymjUMPNTKlh612EmwsfU3hHBHVFpLWWitU7PU5LnbIv1gTFHKKwMGzhYbKnpP8P4Ca90rp/V84SRxvagacD8RDf16iJraImi9R6WjJBaJurorglHOD%2BDteFkGASLacOpmFnxEW8uHWHmevjkggA)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGz%2BpK4AMngMmAByPgBGmMQgkgCspAAOqAqETgwe3r4BQemZjgJhEdEscQnJtpj2JQxCBEzEBLk%2BfoG19dlNLQRlUbHxiSkKza3t%2BV3j/YMVVaMAlLaoXsTI7BwA9ABU%2BweHR8cH2yYaAIJ7BwDUAJIsqfRsgkwNN4dnl9cnvydfF3OFwImEeBhBJgAzG4QWC3pgoTDQU94YiCABPVKMViYAB0%2BKh2BuyAMCgU%2BNxhOJpIUNwA6i1MAg1kpCUDxsQvA4bgAlVDooEmADsVkuN3FN1hKIh0Kl4IRssx2LYFKpJKYZIpHle4XiCjZYolXkyRl5qCY6BuUIAIvTGczjQq3NrmrriOSCZDsFDRYChdafYLvn8Q58gT9djcAGJ4d0EG7YVSsJ6YD6ncOhzMAjO3ADyWOIb2ytLDlzlqNlyPlaKVzBVnqJ6s1DfZBE53IZxEwAH0NFaRcKA5DfUDyzKkXDxxisXW8Q3qRqPZSva32/HOz2uP2rP7A5cc/sblQvAw0/sAWgGONMKpUsQbjFUJ4jyeIHyBdCN73CUttzcuwQ6ynlQYissO/YBvulyXtet73o%2Bz7Hgwb78oiX5cD%2Bf4AUBkqcgqFgQUGVyHDcAAqmDjCW6aXLMjjIN2i7xAQEAMKg8ZIShH5uF%2BGhsgO/pLEse4XLReD0YxrTUK%2B75oYy3YYSu/HWoJwkHpmfwAhGNxCJgl6Womyb0GeuyaepobZvuZiQuEJJeFgVqKli3ZtkwhD6iuUHEbcwAnsZF4CLBd43EwXhEDcPnITJn5ybxXq/gAtFS4zoCAIAgbQSjOUqqnQQFIJwcFoWoOF0modFXbyZhiVejcyWpW2Xg9tO%2BFEVp5GUX5rZFuJZJMSxbE3FgJLNdAr51SAQ20AAbmIiJRdxMVsl6ECCUsqUzd4mBCcOXV0QxvWSZNI0RRA42TRtc1lQtFUKd6y2retYiNdtFgcCstCcEkvB%2BBwWikKgnBuNY1i1WsGypuYkI8KQBCaG9KwANYgEkki4hoAAcZhmAAnNjXBJBj6NcEKQrSB9HCSLwLASBoGikD9f0AxwvAKCAdOw79b2kHAsAwIgIBrAQqSheQlBoI8dDxJEOKcKo6P%2BPF/iSOFyDIDcUi4mYvCYPgRDEHgKVcDIggiGI7BSMb8hKGocOkLoRsAO6FqknA8O9n3fbbTO5qFwvxqgVA3HLCtKyrasa2YNwQB4Ev0PekNcEsvAc1oKwQEg4upJLZAUBAmfZyAwBSGYfB0CC7qUDEtsxOELToq7vA18wxDormMTaLpHPQ%2BLLwELmDC0PXnOkFgMReMAbhiBlDcj6ChjAOIw/4F2Dh4FNFG2zeumhVs0PhCC5N/bQeAxIWLceFgtttng1PcLw6/EI%2BSjWnPRjH0YcMrFQBjAAoABqeBMAO3zIwGe/ATaiHEBbcBVsVDqGHvbfQ88UDA0sPoE%2BrNIArFQKkBorMODxWSjaUwlhrBmEZg/fWWBMErW6J3bILgGDuE8B0PQoRdQLBGEbIoWQBBTD8NwjIvCGDzGGAkI2dh6ECD6JMFh%2BQJF1CkY0CYAwOFiL0LMWReQBG2BUaIyoXCVgKDBpsCQ7sOBfXpl7TgQd5aK2VsAVW6tUaRwgLgQgJArRWUTsnT%2BKwECYAtCMWhSNJCQlxNjSEpMNCSDMJIfwtMkj%2BGxvoTglNSDUyhrifwXB/Do2xkTfwKN8aRKCAzXgTMWZsxhp/bmfN04C19iLXO%2Bc47SzYJwFoLAppCnikwBcpouDY1xFwNG2tdYkANnoGBpsoHSBgYoOBttdAlydkwF2d9zGWPKf9TgPshahRuAHWxIdlbqkGcM0ZfZo6oFjvELxkIzBJxqZzNOGdblZzjqLPOHyC7nKLnjOmNBaDl1ZhAKuw8m51xnlClubcO4OBnj3RgfcB5Dz%2BqPcek9aDTzvrPFg89F4YtjPQ9e%2BC/pb2QDvGe%2B86i22PqfOuF8th/WvrfaGD8n6YBfgSt%2B4RQCvL4D/f%2BgDgEzjAbIWZ5t5myEWTbBBIAS4GA/iQqwaCGU0Owbg4snBCEEHQMQ1BFhyEVMoQbDeWC6Gr2cBAVw/C2FMP0YsQRxRsj2pdcIp1XCrUNBkW0OROjJHWuUXMNRBjxG6P6O6yNrQvXiKMSY82WzPbDyZic%2BxAzgDq0uWjKO7i9YPJ8S81O/jAlYASLQ8m6TMnDJiUKJI2MSaQlifEyQRsdmVNsNUlOXMeb80Fn7b5rSpYyw4F00OLAFBTTVlNIZuJ5TjHGR4qh0zJWQOlZbOV8C/q6EhKQNZGy3apIsSmxmeymn%2B0DqoCdU6Z1zoXfGG5dz45WUhM8ntbyUC/K%2BS079Ixp2pFSN2Wd2NuwPu7Ne%2BZZc9SV2rrXFuML4Ot3bp3JFtze790HrbTFE8p74OhlgXlC8WW8GXqSjew9KXUrxbSw%2BvAGVn3RMyq%2B%2Bt2X33iFynlhL%2BW1O/kwX%2BACgEgJ%2BtDGZ66JAysEFu5ZIA93KuMEa9BMRNX/W1QFTg2w6qqrIRQ%2BIVCLW0KDQ0RhzDtEOvQHGvQPCGjRus9kSzCiejSJUdGozvQ9FhudTG/1ZmJEefKOoxOqx1imKC%2BTbZ1iOBBxvdOm4IH53wnGHmiZL6obvr8aQAJQSK3mOrYq4ZkJIRJAJm22mhWhR5KsamzgVT2YZdCUkCJxMhS03RpIPGXBMZmCCOTSEp6Kk1eLfDY9WsqtnuZkNwSpAH6ZGcJIIAA%3D%3D%3D)$Done$
 
 ## Links
 
-- [source code](../../../conceptrodon/roy.hpp)
+- [Example](../../code/facilities/utilities/roy/implementation.hpp)
+- [Source code](../../../conceptrodon/roy.hpp)

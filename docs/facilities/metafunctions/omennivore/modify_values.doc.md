@@ -276,5 +276,6 @@ struct ModifyValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/omennivore/modify_values.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/modify_values.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/modify_values/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/omennivore/modify_values.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/modify_values.test.hpp)

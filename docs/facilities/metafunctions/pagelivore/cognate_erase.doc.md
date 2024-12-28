@@ -224,5 +224,6 @@ struct CognateErase
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_erase.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_erase.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_erase/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_erase.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_erase.test.hpp)

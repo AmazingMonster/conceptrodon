@@ -127,5 +127,6 @@ struct KindredLookFor
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/kindred_look_for.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/kindred_look_for.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/kindred_look_for/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/kindred_look_for.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/kindred_look_for.test.hpp)

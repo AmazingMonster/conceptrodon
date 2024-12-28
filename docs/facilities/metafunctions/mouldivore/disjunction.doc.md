@@ -146,5 +146,6 @@ struct Disjunction
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/disjunction.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/disjunction.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/disjunction/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/disjunction.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/disjunction.test.hpp)

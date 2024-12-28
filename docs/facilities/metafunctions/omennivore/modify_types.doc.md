@@ -271,5 +271,6 @@ struct ModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/omennivore/modify_types.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/modify_types.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/modify_types/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/omennivore/modify_types.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/modify_types.test.hpp)

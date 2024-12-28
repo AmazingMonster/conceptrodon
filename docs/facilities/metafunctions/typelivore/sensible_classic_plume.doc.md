@@ -214,5 +214,6 @@ struct SensibleClassicPlume<Element>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/sensible_classic_plume.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/sensible_classic_plume.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/sensible_classic_plume/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/sensible_classic_plume.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/sensible_classic_plume.test.hpp)

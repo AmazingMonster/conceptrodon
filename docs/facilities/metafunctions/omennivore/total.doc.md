@@ -67,5 +67,6 @@ struct Total<Container<Elements...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/total.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/total.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/total/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/total.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/total.test.hpp)

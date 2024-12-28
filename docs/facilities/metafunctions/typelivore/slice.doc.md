@@ -204,5 +204,6 @@ struct Slice
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/slice.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/slice.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/slice/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/slice.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/slice.test.hpp)

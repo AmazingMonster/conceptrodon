@@ -90,41 +90,6 @@ I adopted this abbreviation for several reasons:
 
 The term 'thoroughly conformed metafunction' is used when every submetafunction of a conformed metafunction is required to be conformed.
 
-## Operation && Vessel
-
-Both words are synonyms for conformed metafunctions.
-The term 'operation' is selected when the function's (often unspecified) functionality is the focus.
-Meanwhile, the term 'vessel' is selected when the function is only used for holding its arguments from an instantiation.
-
-The arguments held by a vessel are denoted as 'items'.
-
-```C++
-Vessel<Items...> // General representation of a vessel holding the items.
-```
-
-## Container && Sequence
-
-'Containers' and 'sequences' are special vessels.
-The term 'container' is selected when the template holds types exclusively, meaning its primary signature is `template<typename...>`.
-The term 'sequence' is selected when the template holds values exclusively, meaning its primary signature is `template<auto...>`.
-
-## Element && Variable
-
-The term 'element' denotes a type in a container.
-The term 'variable' denotes a value in a sequence.
-Honestly, I would like to write 'type' instead of 'element' and 'value' instead of 'variable'.
-However, 'type' and 'value' are conventional names for type traits.
-To avoid possible confusion, I adopted the lengthier ones.
-
-The word 'variable' is inaccurate as nothing varies for a non-type argument.
-Other words like 'datum' and 'member' are considered.
-'Datum' is rejected since its plural form is irregular, a significant setback as it prohibits Find-and-Relace.
-I prefer 'member' over 'variable' since the former often denotes an element in math.
-Yet again, the word 'member' already has an established meaning in programming.
-It commonly refers to a component of a class.
-Therefore, I rejected the word to avoid creating a mess.
-While 'variable' is inaccurate, I doubt this inaccuracy will become the source of confusion, and its resemblance to the word 'value' also gives it an edge.
-
 ## Layer && Invocation Order
 
 An illustration might help in understanding the term 'layer'.
@@ -254,6 +219,26 @@ Finally, we will define the '*n*th layer'.
 > The *n*th layer is the projection from the *n*th scope to the parameter list it maps to according to the invocation order.
 
 Now, we can understand flipping the *0*th layer and the *1*st layer as an exchange of the projections' destinations.
+
+## Rearranged functions
+
+Based on the discussions above, each function in this library consists of three components:
+
+- Parameter lists.
+- Invocation order.
+- Effect.
+
+A function's effect is the action it will perform over its parameter lists.
+Generally speaking, a function's effect is independent of its invocation order since different orders do not change the final parameter lists eventually received by the algorithm.
+We will characterize the similarity of functions that only differ in their invocation orders by the term 'rearrangement'.
+
+> A function `F` is a rearrangement of another function `G` if `F` and `G` have the same parameter lists and perform the same effect. We say `F` and `G` are rearranged functions.
+
+## Cognate
+
+This prefix is used when a function's 0th layer accepts an operation, which will later be instantiated by the resulting list from the function's effect. This prefix is not used when the function's name strongly suggests the operation's existence, such as `Agent`, `BindFront`, `BindBack`, and `Bind`.
+
+## Kindred
 
 ## Summary
 

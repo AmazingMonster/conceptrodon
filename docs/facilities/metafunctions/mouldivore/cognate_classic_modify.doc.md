@@ -198,5 +198,6 @@ struct CognateClassicModify
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/mouldivore/cognate_classic_modify.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_classic_modify.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_classic_modify/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/mouldivore/cognate_classic_modify.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_classic_modify.test.hpp)

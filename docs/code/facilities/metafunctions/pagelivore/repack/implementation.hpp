@@ -85,16 +85,16 @@ struct Repack
 /**** Example ****/
 /*****************/
 
-/**** Sequence ****/
+/**** NewVessel ****/
 template<std::make_signed_t<std::size_t>...Args>
 requires (sizeof...(Args) == 4)
-struct Sequence;
+struct NewVessel;
 
 /**** SupposedResult ****/
-using SupposedResult = Sequence<0, 1, 2, 3>;
+using SupposedResult = NewVessel<0, 1, 2, 3>;
 
 /**** Result ****/
-using Result = Repack<Sequence>
+using Result = Repack<NewVessel>
 ::Mold
 <
     std::integer_sequence<int, 0>, 

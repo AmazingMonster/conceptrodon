@@ -223,5 +223,6 @@ struct Plume<Element>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/plume.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/plume.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/plume/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/plume.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/plume.test.hpp)

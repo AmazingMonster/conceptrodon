@@ -177,5 +177,6 @@ struct ReconformedKindredLeftInterview
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/reconformed_kindred_left_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/reconformed_kindred_left_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/reconformed_kindred_left_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/reconformed_kindred_left_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/reconformed_kindred_left_interview.test.hpp)

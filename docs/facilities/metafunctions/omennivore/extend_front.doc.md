@@ -239,5 +239,6 @@ struct ExtendFront<Container<PreexistingElements...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/extend_front.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/extend_front.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/extend_front/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/extend_front.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/extend_front.test.hpp)

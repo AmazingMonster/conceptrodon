@@ -67,5 +67,6 @@ struct Among
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/among.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/among.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/among/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/among.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/among.test.hpp)

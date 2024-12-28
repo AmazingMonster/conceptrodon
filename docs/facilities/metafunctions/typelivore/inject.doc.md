@@ -149,5 +149,6 @@ struct Inject
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/inject.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/inject.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/inject/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/inject.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/inject.test.hpp)

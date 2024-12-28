@@ -87,5 +87,6 @@ struct CognateHarvest
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/cognate_harvest.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_harvest.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_harvest/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_harvest.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_harvest.test.hpp)

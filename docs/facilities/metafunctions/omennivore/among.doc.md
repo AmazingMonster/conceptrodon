@@ -338,7 +338,7 @@ using Result = At<2>;
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
-- We will pick out the operation at index two from `Vessel<War_0, War_1, War_2, War_3>`.
+- We will pick out the operation at index two from `Vessel<Flow_0, Flow_1, Flow_2, Flow_3`.
 
 ```C++
 /**** Vessel ****/
@@ -431,5 +431,6 @@ struct Among<Container<Elements...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/omennivore/among.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/among.type.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/among/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/omennivore/among.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/among.type.test.hpp)

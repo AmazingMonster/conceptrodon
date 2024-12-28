@@ -60,9 +60,9 @@ struct KindredRepack<WarehouseA<ContainerAs...>, WarehouseB<ContainerBs...>, Oth
 
 #include <concepts>
 
-/**** New Vessel ****/
+/**** NewVessel ****/
 template<template<typename...> class...>
-struct Warehouse;
+struct NewVessel;
 
 /**** Vessels ****/
 template<template<typename...> class...>
@@ -88,7 +88,7 @@ template<typename...>
 struct Con_3;
 
 /**** SupposedResult ****/
-using SupposedResult = Warehouse<Con_0, Con_1, Con_2, Con_3>;
+using SupposedResult = NewVessel<Con_0, Con_1, Con_2, Con_3>;
 
 /**** Result ****/
 using Result = KindredRepack
@@ -96,7 +96,7 @@ using Result = KindredRepack
     Warehouse_0<Con_0>, 
     Warehouse_1<Con_1, Con_2>,
     Warehouse_2<Con_3>
->::Flow<Warehouse>;
+>::Flow<NewVessel>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

@@ -210,7 +210,7 @@ struct ClassicTrip
 
 We will see two examples that demonstrate conjuration and transition.
 
-- In the first example, we will compose `OperationA<Capsule>::Mold`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
+- In the first example, we will compose `oper_0<Capsule>::Mold`, `oper_1<10>::Mold`, and `oper_2<'*'>::Rail`.
 
 ```C++
 /**** Shuttle ****/
@@ -467,5 +467,6 @@ struct ClassicTrip
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/classic_trip.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/classic_trip.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/classic_trip/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/classic_trip.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_trip.test.hpp)

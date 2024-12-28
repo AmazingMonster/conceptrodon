@@ -163,5 +163,6 @@ struct TerseIndependentRightInterview
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/terse_independent_right_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/terse_independent_right_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/terse_independent_right_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/terse_independent_right_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/terse_independent_right_interview.test.hpp)

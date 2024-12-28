@@ -221,5 +221,6 @@ struct ClassicRecur
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/classic_recur.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/classic_recur.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/classic_recur/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/classic_recur.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_recur.test.hpp)

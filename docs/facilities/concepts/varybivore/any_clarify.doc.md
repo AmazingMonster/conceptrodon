@@ -78,6 +78,6 @@ concept AnyClarify = (...||Predicate(Variables));
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/varybivore/any_clarify/implementation.hpp)
 - [Source code](../../../../conceptrodon/varybivore/concepts/any_clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/any_clarify.test.hpp)
-- [Example](../../../code/facilities/concepts/varybivore/any_clarify/implementation.hpp)

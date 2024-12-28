@@ -146,5 +146,6 @@ struct Conjunction
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/conjunction.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/conjunction.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/conjunction/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/conjunction.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/conjunction.test.hpp)

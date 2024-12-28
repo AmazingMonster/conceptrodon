@@ -93,6 +93,6 @@ concept Falsify = not Predicate<Variables...>::value;
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/pagelivore/falsify/implementation.hpp)
 - [Source code](../../../../conceptrodon/pagelivore/concepts/falsify.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/falsify.test.hpp)
-- [Example](../../../code/facilities/concepts/pagelivore/falsify/implementation.hpp)

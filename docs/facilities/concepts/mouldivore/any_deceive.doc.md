@@ -86,6 +86,6 @@ concept AnyDeceive = (...||(not Predicate<Elements>::value));
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/concepts/any_deceive.hpp)
-- [unit test](../../../../tests/unit/concepts/mouldivore/any_deceive.test.hpp)
 - [Example](../../../code/facilities/concepts/mouldivore/any_deceive/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/concepts/any_deceive.hpp)
+- [Unit test](../../../../tests/unit/concepts/mouldivore/any_deceive.test.hpp)

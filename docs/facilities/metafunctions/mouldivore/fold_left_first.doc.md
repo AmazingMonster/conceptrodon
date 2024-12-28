@@ -151,5 +151,6 @@ struct FoldLeftFirst
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/fold_left_first.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/fold_left_first.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/fold_left_first/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/fold_left_first.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/fold_left_first.test.hpp)

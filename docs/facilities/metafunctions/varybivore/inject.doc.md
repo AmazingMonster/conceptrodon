@@ -160,5 +160,6 @@ struct Inject
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/inject.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/inject.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/inject/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/inject.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/inject.test.hpp)

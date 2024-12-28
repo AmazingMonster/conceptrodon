@@ -161,5 +161,6 @@ struct AreOverlapping
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/are_overlapping.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/are_overlapping.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/are_overlapping/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/are_overlapping.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/are_overlapping.test.hpp)

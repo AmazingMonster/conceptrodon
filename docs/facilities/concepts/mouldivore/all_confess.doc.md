@@ -86,6 +86,6 @@ concept AllConfess = (...&&Predicate<Elements>::value);
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/mouldivore/all_confess/implementation.hpp)
 - [Source code](../../../../conceptrodon/mouldivore/concepts/all_confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/mouldivore/all_confess.test.hpp)
-- [Example](../../../code/facilities/concepts/mouldivore/all_confess/implementation.hpp)

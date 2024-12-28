@@ -198,7 +198,7 @@ struct Trek
 
 We will see two examples that demonstrate conjuration and transition.
 
-- In the first example, we will compose `OperationA<2>::Rail`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
+- In the first example, we will compose `oper_0<2>::Rail`, `oper_1<10>::Mold`, and `oper_2<'*'>::Rail`.
 
 ```C++
 /**** Shuttles ****/
@@ -453,5 +453,6 @@ struct Trek
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/raillivore/trek.hpp)
-- [unit test](../../../../tests/unit/metafunctions/raillivore/trek.test.hpp)
+- [Example](../../../code/facilities/metafunctions/raillivore/trek/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/raillivore/trek.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/raillivore/trek.test.hpp)

@@ -193,5 +193,6 @@ struct KindredFoldRight<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/kindred_fold_right.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/kindred_fold_right.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/kindred_fold_right/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/kindred_fold_right.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/kindred_fold_right.test.hpp)

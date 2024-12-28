@@ -59,13 +59,13 @@ struct KindredRepack<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others.
 
 #include <tuple>
 
-/**** Operation ****/
+/**** NewVessel ****/
 template<typename...Args>
 requires (sizeof...(Args) == 4)
-struct Operation;
+struct NewVessel;
 
 /**** SupposedResult ****/
-using SupposedResult = Operation<int, float, float*, double>;
+using SupposedResult = NewVessel<int, float, float*, double>;
 
 /**** Result ****/
 using Result = KindredRepack
@@ -73,7 +73,7 @@ using Result = KindredRepack
     std::tuple<int>, 
     std::tuple<float, float*>,
     std::tuple<double>
->::Road<Operation>;
+>::Road<NewVessel>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

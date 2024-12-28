@@ -84,5 +84,6 @@ struct Agent
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/agent.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/agent.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/agent/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/agent.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/agent.test.hpp)

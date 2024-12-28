@@ -62,5 +62,6 @@ struct IsPageful<Sequence<Variables...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_pageful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_pageful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_pageful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_pageful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_pageful.test.hpp)

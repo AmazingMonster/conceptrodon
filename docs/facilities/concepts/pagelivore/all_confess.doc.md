@@ -93,6 +93,6 @@ concept AllConfess = (...&&Predicate<Elements::value>::value);
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/pagelivore/all_confess/implementation.hpp)
 - [Source code](../../../../conceptrodon/pagelivore/concepts/all_confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/all_confess.test.hpp)
-- [Example](../../../code/facilities/concepts/pagelivore/all_confess/implementation.hpp)

@@ -67,6 +67,6 @@ constexpr bool IsSame_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/is_same.hpp)
-
-- [unit test](../../../../tests/unit/metafunctions/varybivore/is_same.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/is_same/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/is_same.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/is_same.test.hpp)

@@ -78,6 +78,6 @@ concept AllClarify = (...&&Predicate{}(Variables));
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/typelivore/all_clarify/implementation.hpp)
 - [Source code](../../../../conceptrodon/typelivore/concepts/all_clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/all_clarify.test.hpp)
-- [Example](../../../code/facilities/concepts/typelivore/all_clarify/implementation.hpp)

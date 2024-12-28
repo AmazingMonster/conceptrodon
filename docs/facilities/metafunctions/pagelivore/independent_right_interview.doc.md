@@ -161,5 +161,6 @@ struct IndependentRightInterview
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/independent_right_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/independent_right_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/independent_right_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/independent_right_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/independent_right_interview.test.hpp)

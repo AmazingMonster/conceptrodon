@@ -92,5 +92,6 @@ struct Reveal
 
 ## Links
 
-- [source code](../../../../conceptrodon/roadrivore/reveal.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/reveal.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/reveal/implementation.hpp)
+- [Source code](../../../../conceptrodon/roadrivore/reveal.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/reveal.test.hpp)

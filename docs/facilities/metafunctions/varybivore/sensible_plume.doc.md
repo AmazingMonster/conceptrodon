@@ -87,6 +87,7 @@ We will see three examples that present different use cases of `Varybivore::Sens
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** Transformations ****/
 template<auto I>
 using ZeroStar = std::integral_constant<int, I>;
 
@@ -96,9 +97,11 @@ using OneStar = std::integral_constant<int, I>*;
 template<auto I>
 using TwoStars = std::integral_constant<int, I>**;
 
+/**** Operation ****/
 template<typename...>
 struct Operation;
 
+/**** SupposedResult ****/
 using SupposedResult = Operation
 <
     std::integral_constant<int, 0>,
@@ -106,10 +109,12 @@ using SupposedResult = Operation
     std::integral_constant<int, 0>**
 >;
 
+/**** Result ****/
 using Result = SensiblePlume<0>
 ::Road<Operation>
 ::Rail<ZeroStar, OneStar, TwoStars>;
 
+/**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
 ```
 
@@ -117,6 +122,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_1 = Operation
 <
     std::integral_constant<int, 0>*,
@@ -124,10 +130,12 @@ using SupposedResult_1 = Operation
     std::integral_constant<int, 2>*
 >;
 
+/**** Result ****/
 using Result_1 = SensiblePlume<0, 1, 2>
 ::Road<Operation>
 ::Rail<OneStar>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
@@ -135,6 +143,7 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 Then, we will collect `type` members of the results to instantiate `Operation`.
 
 ```C++
+/**** SupposedResult ****/
 using SupposedResult_2 = Operation
 <
     std::integral_constant<int, 0>,
@@ -142,10 +151,12 @@ using SupposedResult_2 = Operation
     std::integral_constant<int, 2>**
 >;
 
+/**** Result ****/
 using Result_2 = SensiblePlume<0, 1, 2>
 ::Road<Operation>
 ::Rail<ZeroStar, OneStar, TwoStars>;
 
+/**** Test ****/
 static_assert(std::same_as<Result_2, SupposedResult_2>);
 ```
 
@@ -215,9 +226,10 @@ struct SensibleClassicPlume<Variable>
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCCSAJykAA6oCoRODB7evnppGY4CoeFRLLHxXLaY9kUMQgRMxAQ5Pn6BdpgOWQ1NBCWRMXEJyQqNza15VWN9A2UVEgCUtqhexMjsHASYLCkG2yb%2BbkxeRAB0FwBqTXhM0fQKh9gA1CYaAIJjxF4Oz0KMGXumDcBgUGWQylymDe7xMAHYrB9nsjnttdvtoUc0XsmAcsQBPFKMViYC5nJ7PZCghTPADyROIuKyTxhKOeXx%2BBGeymIqCIACVUEx0KyUfDEe82WyAPTS54AWS8tEce0wz2uxFuQMeSKlyNlCqVKvof0wAEcvIwNjrJXrUTscXi3NiMYdjqdUGSKVSmGCyR4FGxHMhHv5sKK9RzfgARTCNOgRqXixN255eDJGVGEtWHaN0hlMgQpu1ugNBvAht0arUPJ5esOHCWp%2BHRxsw4v6uWK5V4VXqm53Wu6vUG2nhU0Wq3Q4dSl24zHOh2uo4nc4Xb3U55luMVlkztlRrmx%2BO0UvpcumBv7sUIjtS9NhYBZomvfx5%2BlxQsMO9ss%2BBneXm41aDpgobYPW4b%2BE2JZwq2UHtteyJzk6yELqunrrmGlLUv654AWBd4Ppm/JMHQr55sepGnkc27BgoEEgCABDZm2M4tqxsIzqhbrcQSRLMGwEHYb69EXO8wDEJgOyMAQBEzkRT6CsK5HcryApCiKRziZJ0mCKJ5INvBHzsUZnFmbx7pEP2mogXunwEN8vz/AwgL0CCIkVpCPgLsBQJ2cmXFLvOPFBSh2YCaSmEvD6YL5p%2BdR2QeDmcqpfKoEpIpsbeiHPKO46%2BfQd4Gt2xpqv8k4MNad4WRZ6FCTF%2Bm0RWcm2nqCnPCRZG5nFjIJTlf4XqGQEDn5YYQRxv6wRxiY1aFC7MfxJL1ThYkSVJbB6YlKLtRlKk8mlGVutp60yfpLKmSZEowtKABUd33Q90rXfdAAq2BCC991PR8t0PX931meY/hhFSXhYK%2BbhoJVmApLJ/kfLVHrPAAknZ7UAFpxKgvTECpYzoIxYTbBJYgAPpQzMghukTpAo%2BdV0I3NbroXTV7vO1Y6YDjeMEATIBE5gJO0OTAiUwQ1OCLTqNhjd02M%2BiwUrkj0vhh87UvQA7tj4w0t1%2BOE4IguMsLFONFTRw06z2B3XL7w1eFS1RTCh49V%2BtsGi9oFchoCHsxmT5CF4KQFJg6D8qBRoqR%2BvXMsZRyJvr/OG0LIsuWb4sW5Lzw%2B2GpAJ7zBvE8bqdixLBC0zn1t5zOicCynpuGBnbiW5XNtx5BDN%2B4%2BHUR8qKnOa5wLUp5UJupXMKMYdRzR27bOT1RbqY7yOO05zK/PJr2tNARF0fDMwakyJcQEBAicKCSh9DeHChGrTgfB%2BkofX0aTyLO7cqe2MzxcL77X3yHYde4EFJlwKOBY%2BqwnjjXAuSci5kwbubZuWdW7V1auyGBddi4IKbpbH%2BMtUFJT5pg%2BBot05l1pmYJ4st262x2kAkB/cAR4CBO5MEI9vJj1plUZ4lC54gCnm4GeCU%2BGdWooI8ION6a%2B33hWS%2BShminxgefNgl83TP2VCAu%2BQcAHqOAXg7Ab9d7vA9l7Hhv9/Z/G0Y/QBN8NFmDAfFWOkC3D5yIcnLBpDG7kOzk8AhKJa7uJIWnLxmdy7fyoX45EAS4Em08Ygy2vDrbUMgR3cx3ddGk3sd1AezC3LDwhKPI4GguEULspPDSbohHMhEQvI4S8t5kDpBI8YtNN44x3p3GRyA5HH0UXzZRmBVFHAyWYLRD8lA2KNJk1%2BjYODLFoJwAArLwPwHAtCkFQJwFxlhrDslWOsHMZh/A8FIAQTQczlgAGsQCLMkGcDQkguBwn8BoRZGgzAADYPlmAABw/P0JwSQvAWASA0MU1Z6zNkcF4AoEAxSzlrLmaQOAsAYCIBAKsAgKRTjkEoGgXYdA4gRBJJwVQPyPkAFoPmSGeMAZAyBv53LMLwUOhASB4AJlUfgggRBiHYFIGQghFAqHUIi0gugqga0ZCkTgPB5lLJWecjZnBaSnGxVyVAVBnhkspdS2l9LGVnHsRADwBL6C4yBlwRYvAEVaGWBAJA%2BKUiErIBQCATqXUgGAFIUZNBlRxFhRAaISrohhCaPiWVvBQ3MGIPiWk0RtBdARSc/FG0CBjloBGsVWBoheGAMcWgtBYXcF4FgFghhgDiGzXgSS3QABuoElWYFUF0U4mwTkCwWWK2gzDGSxo8FgJVDk8AgpLaQBtxBoiP1jOWowPajDnOWFQAwwAFCXDwJgDWH5VknO5cIUQ4gBV7uFWoJVEr9AVpQNYaw%2BhmGwsgMsVAsMsjFopfjXMpgdmWDMJCidmosD3ogMsTo3RnAQFcJMPwVQQhhEGOUYYVQCiZAEJB/I6RkMMDmEMSo1Rag9HGC0TwbQ9AgbqDjfosH5gIdsAR1D0wCNYfg5UYD%2ByNhLABRwZZpAIW8Chdq8lVKaV0oZVII1zwIC4DZRao5VqbWLuWAgTAwphhAdINcyQ/gziJH8HCSQDyzCSA%2BWCxZHzkhdqBaQEFxyzgfK4B8n5iQfl2duVwRZ2mPncaVVCmFcLTmLuRWih1GK1U4rdR681xK2CcCaCwOtcIKVMGEpmLgiQzhcHuSy/ARB/16D3byw90hj1KFPWK3QoypVMBlSW%2BVnHFViqhaqrFpxniaueDFuLCWktPhS2l%2B54nTXOvNa8I5ZhrV%2BcRfax1qAzVxFxe66bg3hjtfiz6IwKWuDFL9dsYggbg1iujeGyNpADuxvjYmhwR3U0yQzVm9ZOa80FqLUdstFaq13ZrUmvADbi3rOba27YR3O1Kp7dEPt%2BIB2bHWcO0dJyJ1TqUDO17j5/PLqYKu9dm7t1Hbywe/lhXZAntFessrF6F2fqsJYW90RAOPufaLTgb7eYfuvd%2B39cR/2Nofbhz7YGINEamEEBg6BGMLEQ%2BhuodHUji6yCL6jpH8N9El/LgQ5HZc4ZmBMfnUGaOzEo9h9jChWP8pq1xnjyqOBteILF%2BLiXVvddS%2BljQ4nJPZeG8csbtqLmkEU8p%2BIqnzPAoCKlh5cI3NwmeZIAz1Kqhm%2B87YXznv7WBaQJi9Vc3wtEpJRwGLeqWAKDrQyutPWMRjEy1JjluXZD5bx4K%2BQxWic6ACKQCrVW5UcdN15lVIWNVapzzSvPBfnhF9SyXrkJqFsurd/4D3/mgsZ9dXiif5qQAF%2BDqTYfpNR%2BHyt9SvgdBtu7ZDWG2NR2TtxoTUmy702003aVfd/NYgntjpe3OyHpaPv1sbWKv7yA22A8Nl2usiDmDhDkOpqDDrwHDtOjsEjguhNnwCumuhuluvxNjlXrjhIPjkKvXmek3gYGTizjYCDjThsnTi5JwNKPrOTtYD%2Brxn%2Bhypzqpsrn4OBkLpLjBqUPrmLoUFkJLkhnUGriRjUDzvULRlrkIXhirgxnrkxiRmIbkNrhrhRpwbIVaisGsGxmoV2h3vVpwJbiwLnvnoXsXvOF/BJlliQG7rJuNnagpkplgH7jVhZiCmYKlv4P4Ism8o8mCu4XCPZp5rodCvHvCvJmpgkIslposj8p8okEkM8jplwIEF2v4HVpCpwHJhNjVsygEWkUEYnssBOhkM4JIEAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEEmYapAAOqAqETgwe3r4BwemZjgLhkTEs8YlcybaY9iUMQgRMxAS5Pn5BdQ3Zza0EZdFxCUkpCi1tHfndEwNDFVVjAJS2qF7EyOwcAPQAVAeHR8cnhzsmGgCC%2B4cA1ACSLKn0bIJMjbdH51c3p3%2Bn30uF0uBEwTwMoJMAGY3EwvEQAHRIgBqrTwTFi9AU0OwwImxC8DluQkYmUxKjymGBJkCViutwZt1B4PeVJhzOerOhbgIAE9UoxWJgkQicbdkAYFApbgB5AXEd7ZHHAxm3fGEgi3ZTEVBEABKqCY6FuKsZNLpl1Vqo5ELZPLBnMhMLhiKRYolTClIo8CjYjmQ2KhuPpVoZ6qJABFMC06KbQ%2Ba46HGV5MkYmfzMCaoRHZfLFQJuT6/XgA9zUcR0eTA9gRcqoRakybAhHoRbE9aHbbuTauc74aha0HxZLpUXoyXlSHQ%2BHNVGY7RCxli6Yg%2B2zbS16GUxFgOmBVmc3KEvmGIvfeOV25y5WsTjB7j65umy3H1cnz2nfaWZ%2BXQO3UOPS9JEx39asn23NM9SYOgD1uOdoIXGEQJLBR7xAEA%2BQFVtExpF82ynJlO17L9HTtTDBTYe9h09VCkUuYBiEwMFGAIMCCIg3cDSNWDtV1VAuPQbl6MY5jBFo0VV1fIFm2wt8rg/O1f1ua8MXoSdLhnYlSTwcllEpMs0VUtlg2khtGQU7siM/cjmEo/9sGoqVc2PRp1NVTTeP1Q1jRwjcCI7b8yKsxT%2ByowDxOQ0tV385NU04hDYKPBVXKQpcL0DK9DPJO97Nky11zw6kCIs9lgu7DNbOFezHPE4SmNeVi3NindbgEnidS8o0hIY%2BqWPEus2xkqTgV%2Bf4xr2QFRtuAAxPBiAmW5sFUVhnkzL4RvGzbAWpMwoQiCUvCwLMeQzAB9AgFUINigV2/bvCO7k0AYLZUka6KgR%2BI5bgAFQVBgFH4YgWBPaV1vksq%2ByIB51I424AC0ElQfpiFgiZ0HQiJQQYsRTqeuZBG5THSGhyT8JBCHYX7EmTNhmVImR1GCHRkBMcwbHaFxgR8YIQnBGJ%2B4cT2PLgRKymoYF97Ye%2BgB3JHJmlaEczRjHBDZhUObxloCZhInqYOYXPruJKT0%2BM4RYpmyhXvPELo1ZzkqVYbDYOYkvFSIpMHQPVMAULxaE1MHLlhoQ3Y9r2fb9zVFftk9qRhRNlZZ1X2c5/6tZ5nW%2BduDQcVIBOmZVrH1dT7neYIYmc6DPY84IxPWZTzXDAztxdcr7B9bfUmiuuL7vd9/3TYOQFYb7yPYJJf6dPoPSfDtNvgXQgTuWNlKTMXhDuQRnVkeJunMB3n7ZeRsCnZ7u5vp9gOzauOZ/VOmiEgICBE4UIV74y0f/eJkP3YyT3P4ztgZYBsz6bTGpNL6JInrGiWitegg8JobTAeA7uU0f5hwAQg4ecVXa/yUOHfuBBTpcESnmVync3D52ZvXYujdtYtyzm3auVDC5qxxnQ5uusuCCxrvlMMBck5F3YVzdOZdiZmEFnHB8ZMpqYMDiPCO/tiHj20rpfSMIUi3C4OI9Si9vLLzIY7NeIAoKxhhHvZGA1UFfQvgtQOt8SzvyUG0Z%2BAjX5sHftyABxDv6hz/gQyOxCcTANPqNZBxwIHnwQHNGBy1wRrWvqA8JETrF3HQf4uRiTg5%2BPwd4swpCXJKgoSwwRbCNYiKbmI7OucSk0OEWnSpmdy5aJ4bU5OtCKn0N1hIquQtO7SNSS7TJQ9gQKMIadfJ0cJ5kmnuotwmjtG3B6cYpe5jDEFneuvMxbgt5y1aLvemkxiYyz2fNKxckkk/Uvlgm2ipkBOMfq45m7jMCeJhHk3xeD/6KKIcskJFgOCrFoJwfwvA/AcC0KQVAnBKGWGsGqdYmxMzmChDwUgBBNCAtWAAawCJIBEGgAAcZgzAAE5SVcH8ESwlXBAiBGkMCjgkheAsAkBoFI4LIXQo4LwBQIAUgYohYC0gcBYAwEQCAdYBBUjwnIJQNATw6AJCiEKTgqhCUADYAC0GrJC3GAMgZAWj8VmF4J7QgJA8Do20fwQQIgxDsCkDIQQigVDqCFaQXQ2jpYKlSJwHgQKQVgsxVCzgMp4Qys1KgKgtx1Xat1fqw1xqET5IgB4RV9AUYoq4MsXggqtCrAgEgBVqQlVkAoBAEtZaQDACkGYPgdBQTzUoLEENsQIitF5P63g7bmDEF5DKWI2hMAOG7aQBVDU6a0C7R6rAsQvDAFhLQWgfLuC8CwMDIw4hZ1zRHY4AAbj7ENmBVAjvhNsNFrNGWQtoDpBU/aPBYBDRdPArK12kEPcQWIf8oybuALeowmLVhUAMMABQyI8CYGlkecFaLbXCFEOIJ18HXVqBDV6/QhhjDWGsPoHSfLICrFQK9bIq6tVo0VqYOFlhki8FQJ%2BisWACMQFWHYPd2QXAMHcJ4ToegwgRGGJUUY2iihZAENMPwImMhiYYAsEY1QejsYEMjdoPH8jaLYw4PokxBgCcWMJ2wOmJN6DmG0OTQnqiscRVsCQgaOCgtIJyujnBY2ap1Xqg1RqpAptuBAXAFqs27RzXmoDqwECYCNKMFjpBcWSChAiUlUJ6UaEkGYSQGr2X%2BA1aS/QnBmWkFZaihEGquAasJaSmlGr/CSEpYljVjmQ3ct5fy9FQGRXiqLZKiNsqK1VszSqtgnBWgsH3YELVTBqJpi4KShEXACVmvwEQRjeh4P2qQ9IFDSg0Met0PWn1TA/Vrrsw5pzoaODhulfCW40bXPxr1R6KbM25saF8%2Bm0tmaTS7TMLm1rQrC3FtQBmhIcrK2A/e6MB7taKUpBoP7BIfKICto9b2ztY6Uf9sHcO0d76J0sSnTOyFc6F1LpXWOjdWHt2E93Vpw9q7IUnrPaCMdV6Q23tiPe3kj7tiQpfW%2BtFn7v1KF/RTncbWQNMDAxBqDMGx2rcQ46jbshUPushbtzDgGqNWEsHh2IzGiMka5pwcjTNKM4Zo1yhjVqj2EcU1p5wEBXDGe0fx8o8m9CicaE7tI0nGjmaWBp%2BoSmmhGbU5J23jQVN%2B4M6Z1TeQw8x6j5ZtYGwbM5ty/Z4NHruW3fc5N3c03ZsEt8/5pbn3UU/fzVi0g4XIuJGi4y/LhWZspcCP4UldKoSpfSzVhrWfODNYFW10VEqpWRpB315VqqODDYTSwBQ%2B6jX7oL7aCYC2AtWpW7INbCvnXyC2yrnQIAoSkH24dgN6eTuNbDd1qNMbVCz/n4v5frIFpprB2WsvUIK9D4B0D8t8r39M0QAF93ZTol9SVToV8iF78NtG14cW020O1%2B00ckCB0h090x1cdBB8cQ0idF0xBSd31yct1ud11qcD0j0PUGdkBz1mdVZr1eA2cOcudn0Kw%2BdeABcf0wQRdAM/s%2BBQNwNINoMBRYNeA5cHUJBFcXV990Mj91dsNqMbA2c9coUDd/pOAdhlZNdrBaMoVLcmN4BWNA87c/AHcuMvcXdBN/dvdihsgvcPdshE8TNjCI8Q849nDehlMdMnCNM3DeNfD5g9M3c08FBrNHVjtM8uUXMYDbg58F9bhwCEQoDi9FsSAy9gtfsC0wsIssA687NG8QAyUEQoQoR/AqUat2USjAgyte8oieVbAWtK9lgcUQBJB/AEtaVAh2VCVJAKUuBiUzB6tGUoRIjnN6imi7NTVaixiQs/tVhP1MhnBJAgA)$Done$
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/sensible__plume.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/sensible__plume.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/sensible_plume/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/sensible_plume.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/sensible_plume.test.hpp)

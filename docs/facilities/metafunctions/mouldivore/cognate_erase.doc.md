@@ -212,5 +212,6 @@ struct CognateErase
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/cognate_erase.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_erase.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_erase/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_erase.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_erase.test.hpp)

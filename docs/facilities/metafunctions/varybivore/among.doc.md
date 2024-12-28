@@ -110,5 +110,6 @@ struct Among<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/among.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/among.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/among/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/among.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/among.test.hpp)

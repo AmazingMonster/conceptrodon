@@ -61,9 +61,9 @@ struct KindredRepack<StockroomA<SequenceAs...>, StockroomB<SequenceBs...>, Other
 
 #include <concepts>
 
-/**** New Vessel ****/
+/**** NewVessel ****/
 template<template<auto...> class...>
-struct Stockroom;
+struct NewVessel;
 
 /**** Vessels ****/
 template<template<auto...> class...>
@@ -89,7 +89,7 @@ template<auto...>
 struct Seq_3;
 
 /**** SupposedResult ****/
-using SupposedResult = Stockroom<Seq_0, Seq_1, Seq_2, Seq_3>;
+using SupposedResult = NewVessel<Seq_0, Seq_1, Seq_2, Seq_3>;
 
 /**** Result ****/
 using Result = KindredRepack
@@ -97,7 +97,7 @@ using Result = KindredRepack
     Stockroom_0<Seq_0>, 
     Stockroom_1<Seq_1, Seq_2>,
     Stockroom_2<Seq_3>
->::Sail<Stockroom>;
+>::Sail<NewVessel>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

@@ -73,5 +73,6 @@ struct IsRoadful<Warehouse<Containers...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_roadful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_roadful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_roadful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_roadful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_roadful.test.hpp)

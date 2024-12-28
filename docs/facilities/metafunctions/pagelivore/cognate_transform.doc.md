@@ -178,5 +178,6 @@ struct CognateTransform
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_transform.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_transform.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_transform/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_transform.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_transform.test.hpp)

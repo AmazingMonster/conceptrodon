@@ -198,7 +198,7 @@ struct Trek
 
 We will see two examples that demonstrate conjuration and transition.
 
-- In the first example, we will compose `OperationA<2>::Rail`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
+- In the first example, we will compose `oper_0<2>::Rail`, `oper_1<10>::Mold`, and `oper_2<'*'>::Rail`.
 
 ```C++
 template<auto...>
@@ -216,9 +216,9 @@ struct Capsule_2;
 template<template<auto...> class...>
 struct Carrier;
 
-/**** OperationA ****//* Start */
+/**** oper_0 ****//* Start */
 template<auto Variable>
-struct OperationA
+struct oper_0
 { 
     template<template<typename...> class...Containers>
     struct Detail
@@ -229,11 +229,11 @@ struct OperationA
     template<template<typename...> class...Agreements>
     using Road = Detail<Agreements...>::type;
 };
-/**** OperationA ****//* End */
+/**** oper_0 ****//* End */
 
-/**** OperationB ****//* Start */
+/**** oper_1 ****//* Start */
 template<auto Multiplier>
-struct OperationB
+struct oper_1
 {
     template<typename...>
     struct Detail {};
@@ -253,11 +253,11 @@ struct OperationB
     template<typename...Agreements>
     using Mold = Carrier<Detail<Agreements>::template Page...>;
 };
-/**** OperationB ****//* End */
+/**** oper_1 ****//* End */
 
-/**** OperationC ****//* Start */
+/**** oper_2 ****//* Start */
 template<auto Variable>
-struct OperationC
+struct oper_2
 {
     template<template<auto...> class...Sequences>
     struct Detail
@@ -268,14 +268,14 @@ struct OperationC
     template<template<auto...> class...Agreements>
     using Rail = Detail<Agreements...>::type;
 };
-/**** OperationC ****//* End */
+/**** oper_2 ****//* End */
 
 /**** First Example ****//* Start */
 using SupposedResult = Capsule<Capsule_1<Shuttle<10*2, '*'>>, Capsule_2<Shuttle<10*2, '*'>>>;
 
-using Metafunction = Trek<OperationA<2>::Road>
-::Road<OperationB<10>::Mold>
-::Sail<OperationC<'*'>::Rail>
+using Metafunction = Trek<oper_0<2>::Road>
+::Road<oper_1<10>::Mold>
+::Sail<oper_2<'*'>::Rail>
 ::Commit;
 
 using Result = Metafunction::Road<Capsule_1, Capsule_2>;
@@ -286,10 +286,10 @@ static_assert(std::same_as<Result, SupposedResult>);
 static_assert(std::same_as<
     Send
     <
-        Send<OperationA<2>::Road<Capsule_1, Capsule_2>>
-        ::Road<OperationB<10>::Mold>
+        Send<oper_0<2>::Road<Capsule_1, Capsule_2>>
+        ::Road<oper_1<10>::Mold>
     >
-    ::Sail<OperationC<'*'>::Rail>
+    ::Sail<oper_2<'*'>::Rail>
     ,
     SupposedResult
 >);
@@ -459,5 +459,6 @@ struct Trek
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/roadrivore/trek.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/trek.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/trek/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/roadrivore/trek.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/trek.test.hpp)

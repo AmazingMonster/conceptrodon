@@ -268,5 +268,6 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/omennivore/classic_modify_types.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/classic_modify_types.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/classic_modify_types/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/omennivore/classic_modify_types.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/classic_modify_types.test.hpp)

@@ -96,5 +96,6 @@ struct Conceal
 
 ## Links
 
-- [source code](../../../../conceptrodon/roadrivore/conceal.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/conceal.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/conceal/implementation.hpp)
+- [Source code](../../../../conceptrodon/roadrivore/conceal.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/conceal.test.hpp)

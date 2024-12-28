@@ -184,5 +184,6 @@ struct CognateTransform
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/cognate_transform.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_transform.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_transformation/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_transform.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_transform.test.hpp)

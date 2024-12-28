@@ -145,13 +145,13 @@ using Metafunction = TypicalAmong<Vessel<Flow_0, Flow_1, Flow_2, Flow_3>>
 
 /**** Dummy Arguments ****/
 template<template<typename...> class...>
-struct War_0;
+struct Ware_0;
 
 template<template<typename...> class...>
-struct War_1;
+struct Ware_1;
 
 /**** Test ****/
-static_assert(std::same_as<Flow_2<War_0, War_1>, Metafunction<War_0, War_1>>);
+static_assert(std::same_as<Flow_2<Ware_0, Ware_1>, Metafunction<Ware_0, Ware_1>>);
 
 /************************/
 /**** Third Example ****/

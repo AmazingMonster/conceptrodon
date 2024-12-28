@@ -74,5 +74,6 @@ constexpr auto Add_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/add.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/add.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/add/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/add.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/add.test.hpp)

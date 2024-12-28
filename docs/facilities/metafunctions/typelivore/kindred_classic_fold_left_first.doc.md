@@ -166,5 +166,6 @@ struct KindredClassicFoldLeftFirst<Initiator, First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/kindred_classic_fold_left_first.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/kindred_classic_fold_left_first.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/kindred_classic_fold_left_first/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/kindred_classic_fold_left_first.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/kindred_classic_fold_left_first.test.hpp)

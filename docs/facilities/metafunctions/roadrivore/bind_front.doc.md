@@ -104,5 +104,6 @@ struct BindFront
 
 ## Links
 
-- [source code](../../../../conceptrodon/roadrivore/bind_front.hpp)
-- [unit test](../../../../tests/unit/metafunctions/roadrivore/bind_front.test.hpp)
+- [Example](../../../code/facilities/metafunctions/roadrivore/bind_front/implementation.hpp)
+- [Source code](../../../../conceptrodon/roadrivore/bind_front.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/roadrivore/bind_front.test.hpp)

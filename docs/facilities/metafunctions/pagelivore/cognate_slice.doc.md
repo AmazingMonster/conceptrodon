@@ -67,7 +67,7 @@ alias CognateSlice
 
 We will see two examples that demonstrate two different use cases.
 
-In the first example, we will collect all variables from `0, 1, 2 ,2` starting from index two.
+- In the first example, we will collect all variables from `0, 1, 2 ,2` starting from index two.
 Then, we instantiate `Operation` with the resulting list.
 
 ```C++
@@ -87,7 +87,7 @@ using Result = CognateSlice<Operation>
 static_assert(std::same_as<SupposedResult, Result>);
 ```
 
-In the second example, we will collect variables between indices one and three from `0, 1, 2, 2`. Then, we instantiate `Operation` with the resulting list.
+- In the second example, we will collect variables between indices one and three from `0, 1, 2, 2`. Then, we instantiate `Operation` with the resulting list.
 
 ```C++
 /**** SupposedResult ****/
@@ -221,5 +221,6 @@ struct CognateSlice
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/cognate_slice.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_slice.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_slice/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_slice.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_slice.test.hpp)

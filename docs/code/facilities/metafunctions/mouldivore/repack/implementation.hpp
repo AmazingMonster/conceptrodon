@@ -53,16 +53,16 @@ struct Repack
 #include <tuple>
 #include <concepts>
 
-/**** Container ****/
+/**** NewVessel ****/
 template<typename...Args>
 requires (sizeof...(Args) == 4)
-struct Container;
+struct NewVessel;
 
 /**** SupposedResult ****/
-using SupposedResult = Container<int, int*, int**, int***>;
+using SupposedResult = NewVessel<int, int*, int**, int***>;
 
 /**** Result ****/
-using Result = Repack<Container>
+using Result = Repack<NewVessel>
 ::Mold
 <
     std::tuple<int>,

@@ -58,5 +58,6 @@ using Pop = TypicalPop<Elements...>::type;
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/pop.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/pop.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/pop/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/pop.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/pop.test.hpp)

@@ -67,7 +67,7 @@ alias CognateSlice
 
 We will see two examples that demonstrate two different use cases.
 
-In the first example, we will collect all elements from `int, int*, int**, int**` starting from index two.
+- In the first example, we will collect all elements from `int, int*, int**, int**` starting from index two.
 Then, we instantiate `Operation` with the resulting list.
 
 ```C++
@@ -87,7 +87,7 @@ using Result = CognateSlice<Operation>
 static_assert(std::same_as<SupposedResult, Result>);
 ```
 
-In the second example, we will collect elements between indices one and three from `int, int*, int**, int**`.
+- In the second example, we will collect elements between indices one and three from `int, int*, int**, int**`.
 Then, we instantiate `Operation` with the resulting list.
 
 ```C++
@@ -206,5 +206,6 @@ struct CognateSlice
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/cognate_slice.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_slice.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_slice/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_slice.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_slice.test.hpp)

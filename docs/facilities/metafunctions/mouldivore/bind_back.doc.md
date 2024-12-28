@@ -91,5 +91,6 @@ struct BindBack
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/bind_back.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/bind_back.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/bind_back/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/bind_back.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/bind_back.test.hpp)

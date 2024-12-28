@@ -75,5 +75,6 @@ constexpr bool All_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/all.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/all.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/all/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/all.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/all.test.hpp)

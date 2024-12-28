@@ -120,5 +120,6 @@ struct LookFor
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/look_for.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/look_for.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/looke_for/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/look_for.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/look_for.test.hpp)

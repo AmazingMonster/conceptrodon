@@ -49,7 +49,7 @@ alias CognateInject
 
 ## Examples
 
-We will inject `double, double*` into one of `int, int*, int**, int**`. Then, we will instantiate `Operation` with the resulting list.
+We will inject `double, double*` into index `1` of `int, int*, int**, int**`. Then, we will instantiate `Operation` with the resulting list.
 
 ```C++
 /**** Operation ****/
@@ -153,5 +153,6 @@ struct CognateInject
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/mouldivore/cognate_inject.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_inject.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_inject/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_inject.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_inject.test.hpp)

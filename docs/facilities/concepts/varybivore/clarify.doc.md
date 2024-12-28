@@ -78,6 +78,6 @@ concept Clarify = Predicate(Variables...);
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/varybivore/clarify/implementation.hpp)
 - [Source code](../../../../conceptrodon/varybivore/concepts/clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/clarify.test.hpp)
-- [Example](../../../code/facilities/concepts/varybivore/clarify/implementation.hpp)

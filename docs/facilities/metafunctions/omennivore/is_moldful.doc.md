@@ -62,5 +62,6 @@ struct IsMoldful<Container<Elements...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_moldful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_moldful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_moldful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_moldful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_moldful.test.hpp)

@@ -86,6 +86,6 @@ concept Clarify = Predicate<Variables...>::value;
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/pagelivore/clarify/implementation.hpp)
 - [Source code](../../../../conceptrodon/pagelivore/concepts/clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/clarify.test.hpp)
-- [Example](../../../code/facilities/concepts/pagelivore/clarify/implementation.hpp)

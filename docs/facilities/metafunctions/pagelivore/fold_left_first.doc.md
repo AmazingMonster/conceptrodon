@@ -150,5 +150,6 @@ struct FoldLeftFirst
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/fold_left_first.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/fold_left_first.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/flod_left_first/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/fold_left_first.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/fold_left_first.test.hpp)

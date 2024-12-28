@@ -83,5 +83,6 @@ using Paste = TypicalPaste<Args...>::type;
 
 ## Links
 
-- [source code](../../../../conceptrodon/warehivore/paste.hpp)
-- [unit test](../../../../tests/unit/metafunctions/warehivore/paste.test.hpp)
+- [Example](../../../code/facilities/metafunctions/warehivore/paste/implementation.hpp)
+- [Source code](../../../../conceptrodon/warehivore/paste.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/warehivore/paste.test.hpp)

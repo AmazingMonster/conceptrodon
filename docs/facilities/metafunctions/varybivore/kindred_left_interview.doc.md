@@ -190,5 +190,6 @@ struct KindredLeftInterview<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/kindred_left_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/kindred_left_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/kindred_left_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/kindred_left_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/kindred_left_interview.test.hpp)

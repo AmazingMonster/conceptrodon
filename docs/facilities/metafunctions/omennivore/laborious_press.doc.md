@@ -208,5 +208,6 @@ struct LaboriousPress
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/laborious_press.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/laborious_press.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/laborious_press/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/laborious_press.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/laborious_press.test.hpp)

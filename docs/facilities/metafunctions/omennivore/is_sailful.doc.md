@@ -73,5 +73,6 @@ struct IsSailful<Melancholy<Stockrooms...>>
 
 ## Links
 
-- [source code](../../../../conceptrodon/omennivore/is_sailful.hpp)
-- [unit test](../../../../tests/unit/metafunctions/omennivore/is_sailful.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/is_sailful/implementation.hpp)
+- [Source code](../../../../conceptrodon/omennivore/is_sailful.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/is_sailful.test.hpp)

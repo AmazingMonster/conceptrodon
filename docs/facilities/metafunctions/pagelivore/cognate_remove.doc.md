@@ -183,5 +183,6 @@ struct CognateRemove
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/pagelivore/cognate_remove.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_remove.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/cognate_remove/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/pagelivore/cognate_remove.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_remove.test.hpp)

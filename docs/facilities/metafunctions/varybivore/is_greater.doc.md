@@ -71,6 +71,6 @@ constexpr bool IsGreater_v
 
 ## Links
 
-- [source code](../../../../conceptrodon/varybivore/is_greater.hpp)
-
-- [unit test](../../../../tests/unit/metafunctions/varybivore/is_greater.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/is_greater/implementation.hpp)
+- [Source code](../../../../conceptrodon/varybivore/is_greater.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/is_greater.test.hpp)

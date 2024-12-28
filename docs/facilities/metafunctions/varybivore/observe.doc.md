@@ -144,5 +144,6 @@ struct Observe
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/varybivore/observe.hpp)
-- [unit test](../../../../tests/unit/metafunctions/varybivore/observe.test.hpp)
+- [Example](../../../code/facilities/metafunctions/varybivore/observe/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/varybivore/observe.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/varybivore/observe.test.hpp)

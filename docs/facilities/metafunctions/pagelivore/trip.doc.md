@@ -210,7 +210,7 @@ struct Trip
 
 We will see two examples that demonstrate conjuration and transition.
 
-- In the first example, we will compose `OperationA<Shuttle>::Page`, `OperationB<10>::Mold`, and `OperationC<'*'>::Rail`.
+- In the first example, we will compose `oper_0<Shuttle>::Page`, `oper_1<10>::Mold`, and `oper_2<'*'>::Rail`.
 
 ```C++
 /**** Shuttle ****/
@@ -423,5 +423,6 @@ struct Trip
 
 ## Links
 
-- [source code](../../../../conceptrodon/pagelivore/trip.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/trip.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/trip/implementation.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/trip.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/trip.test.hpp)

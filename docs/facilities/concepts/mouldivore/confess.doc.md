@@ -84,6 +84,6 @@ concept Confess = Predicate<Elements...>::value;
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/mouldivore/confess/implementation.hpp)
 - [Source code](../../../../conceptrodon/mouldivore/concepts/confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/mouldivore/confess.test.hpp)
-- [Example](../../../code/facilities/concepts/mouldivore/confess/implementation.hpp)

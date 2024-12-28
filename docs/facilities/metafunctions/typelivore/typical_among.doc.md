@@ -108,5 +108,6 @@ struct TypicalAmong<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/among.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/typical_among.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/typical_among/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/among.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/typical_among.test.hpp)

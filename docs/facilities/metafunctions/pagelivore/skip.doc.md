@@ -268,5 +268,6 @@ struct Skip: public LoadSkip<Operation> {};
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/pagelivore/skip.hpp)
-- [unit test](../../../../tests/unit/metafunctions/pagelivore/skip.test.hpp)
+- [Example](../../../code/facilities/metafunctions/pagelivore/skip/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/pagelivore/skip.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/pagelivore/skip.test.hpp)

@@ -175,5 +175,6 @@ struct CognateRemove
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/descend/mouldivore/cognate_remove.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_remove.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/cognate_remove/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/descend/mouldivore/cognate_remove.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_remove.test.hpp)

@@ -167,5 +167,6 @@ struct FoldLeft
 
 ## Links
 
-- [source code](../../../../conceptrodon/mouldivore/fold_left.hpp)
-- [unit test](../../../../tests/unit/metafunctions/mouldivore/fold_left.test.hpp)
+- [Example](../../../code/facilities/metafunctions/mouldivore/fold_left/implementation.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/fold_left.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/mouldivore/fold_left.test.hpp)

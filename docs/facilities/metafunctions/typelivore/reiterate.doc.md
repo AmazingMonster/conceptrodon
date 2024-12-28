@@ -76,5 +76,6 @@ struct Reiterate
 
 ## Links
 
-- [source code](../../../../conceptrodon/descend/typelivore/reiterate.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/reiterate.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/reiterate/implementation.hpp)
+- [Source code](../../../../conceptrodon/descend/typelivore/reiterate.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/reiterate.test.hpp)

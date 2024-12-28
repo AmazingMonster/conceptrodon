@@ -182,5 +182,6 @@ struct SensibleRightInterview<First, Second, Others...>
 
 ## Links
 
-- [source code](../../../../conceptrodon/typelivore/sensible_right_interview.hpp)
-- [unit test](../../../../tests/unit/metafunctions/typelivore/sensible_right_interview.test.hpp)
+- [Example](../../../code/facilities/metafunctions/typelivore/sensible_right_interview/implementation.hpp)
+- [Source code](../../../../conceptrodon/typelivore/sensible_right_interview.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/typelivore/sensible_right_interview.test.hpp)

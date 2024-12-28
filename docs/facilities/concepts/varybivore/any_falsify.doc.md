@@ -78,6 +78,6 @@ concept AnyFalsify = (...||(not Predicate(Variables)));
 
 ## Links
 
+- [Example](../../../code/facilities/concepts/varybivore/any_falsify/implementation.hpp)
 - [Source code](../../../../conceptrodon/varybivore/concepts/any_falsify.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/any_falsify.test.hpp)
-- [Example](../../../code/facilities/concepts/varybivore/any_falsify/implementation.hpp)
