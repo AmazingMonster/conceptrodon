@@ -1142,6 +1142,30 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./metafunctions/mouldivore/classic_fold_left_first.doc.md">ClassicFoldLeftFirst</a>
+    <a id="mouldivore-classic-fold-left-first"></a>
+  </dt>
+  <dd>Left-fold a list using an operation with the first element as the initiator.</dd>
+
+  <dt>
+    <a href="./metafunctions/mouldivore/classic_fold_left.doc.md">ClassicFoldLeft</a>
+    <a id="mouldivore-classic-fold-left"></a>
+  </dt>
+  <dd>Left-fold a list using an operation with a given initiator.</dd>
+  
+  <dt>
+    <a href="./metafunctions/mouldivore/classic_fold_right_last.doc.md">ClassicFoldRightLast</a>
+    <a id="mouldivore-classic-fold-right-last"></a>
+  </dt>
+  <dd>Right-fold a list using an operation with the last element as the initiator.</dd>
+  
+  <dt>
+    <a href="./metafunctions/mouldivore/classic_fold_right.doc.md">ClassicFoldRight</a>
+    <a id="mouldivore-classic-fold-right"></a>
+  </dt>
+  <dd>Right-fold a list using an operation with a given initiator.</dd>
+
+  <dt>
     <a href="./metafunctions/mouldivore/classic_recur.doc.md">ClassicRecur</a>
     <a id="mouldivore-classic-recur"></a>
   </dt>

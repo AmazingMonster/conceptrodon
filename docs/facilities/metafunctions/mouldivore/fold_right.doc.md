@@ -18,10 +18,10 @@ When invoked, the function right-folds its argument list using the operation and
    Oper&lt;Arg<sub>n-1</sub>,
    Oper&lt;Arg<sub>n</sub>,
        Init
-   &gt;::value
-   &gt;::value
+   &gt;::type
+   &gt;::type
         &vellip;
-   &gt;::value</code></pre>
+   &gt;::type</code></pre>
 
 ## Type Signature
 
@@ -29,15 +29,14 @@ When invoked, the function right-folds its argument list using the operation and
 FoldRight
  :: template<typename...> class...
  -> typename...
- -> typename...
- -> typename
+ -> template<typename...>
 ```
 
 ## Structure
 
 ```C++
 template<template<typename...> class>
-struct FoldLeft
+struct FoldRight
 {
     template<typename>
     alias Mold

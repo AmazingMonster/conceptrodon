@@ -131,12 +131,12 @@ Trek
 
 ```Haskell
 -- End in Conjuration
-Trek
+Trek'
  :: Commitment
  -> template<typename...>
 
 -- End in Transition
-Trek
+Trek'
  :: Commitment
  -> template<template<template<typename...> class...> class...>
 ```

@@ -115,7 +115,7 @@ Skip
 ```
 
 ```Haskell
-Skip
+Skip'
  :: Commitment
  -> template<typename...>
 ```

@@ -32,8 +32,7 @@ When invoked, the function left-folds its argument list using the operation and 
 FoldLeft
  :: template<typename...> class...
  -> typename...
- -> typename...
- -> typename
+ -> template<typename...>
 ```
 
 ## Structure

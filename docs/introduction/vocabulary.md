@@ -3,6 +3,23 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Vocabulary
 
+- [**To Index**](../index.md#introduction-vocabulary)
+- [*Prologue*](#prologue)
+- [*Template-head*](#template-head)
+- [*Metafunction && Function*](#metafunction-and-function)
+- [*Namespaces*](#namespaces)
+- [*Members*](#members)
+- [*Layer && Invocation Order*](#layer-and-invocation-order)
+- [*Rearrangement*](#rearrangement)
+  - [*Cognate*](#rearranged-functions-cognate)
+  - [*Kindred*](#rearranged-functions-kindred)
+- [*Summary*](#summary)
+  - [*Terms*](#summary-terms)
+  - [*Prefixes*](#summary-prefixes)
+  - [*Symbols*](#summary-symbols)
+
+## Prologue <a id="prologue"></a>
+
 When I choose a technical expression to use in the documentation, I first attempt to keep it close to the relevant C++ terminologies since they are well-documented and familiar to programmers.
 However, C++ terms can be confusing. For example, it is unclear what the 'non-type' in the 'non-type template parameter' refers to, as it looks like the complement of all 'type template parameters'.
 Moreover, the term 'template template parameter' not only repeats the same word twice like a typo but also erases the differences between the parameter lists within template template parameters.
@@ -15,7 +32,7 @@ They are there for the convenience of authors who try to be as accurate as possi
 Understanding these terms shall not be a burden for the readers or users, as these terms shall be used intuitively and conventionally.
 This is what I want to achieve.
 
-## Template-head
+## Template-head <a id="template-head"></a>
 
 The term 'template-head' is introduced by the standard.
 It is easier to explain the word by an example.
@@ -32,13 +49,13 @@ struct Vehicle;</code></pre>
 This library often uses the term without the hyphen.
 This is to make my grammar checker happy.
 
-## Metafunction && Function
+## Metafunction && Function <a id="metafunction-and-function"></a>
 
 In C++, the word 'metafunction' does not have a decisive definition and often acts as a synonym for 'template'.
 In this library, the word represents a class template or an alias template, as these are the only kinds of templates acceptable as template arguments in C++20.
 We will use the terms `class metafunction` and `alias metafunction` when the differentiation of the two cases is necessary.
 
-The goal is to define the kind of metafunctions this library focuses on.
+The goal is to define the kind of metafunction this library focuses on.
 To start with, we will categorize metafunctions by their primary signatures, where a primary signature is defined as follows:
 
 > A primary signature is:
@@ -90,7 +107,174 @@ I adopted this abbreviation for several reasons:
 
 The term 'thoroughly conformed metafunction' is used when every submetafunction of a conformed metafunction is required to be conformed.
 
-## Layer && Invocation Order
+## Namespaces <a id="namespaces"></a>
+
+We will define an equivalence relation on functions to characterize their primary signatures.
+
+> Let M be the set of all functions, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same signature.
+
+We will focus our attention on several equivalence classes by &sim;.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Primary Signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Typelivore</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Varybivore</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Mouldivore</code></td>
+      <td><code>template&lt;template&lt;typename...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Pagelivore</code></td>
+      <td><code>template&lt;template&lt;auto...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Roadrivore</code></td>
+      <td><code>template&lt;template&lt;template&lt;typename...&gt; class...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Raillivore</code></td>
+      <td><code>template&lt;template&lt;template&lt;auto...&gt; class...&gt; class...&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+In addition to these namespaces, a couple more are introduced to contain functions whose parameters are of the form `Vessel<Items...>`.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Primary Signature of <code>Vessel</code></th>
+      <th>Primary Signature of <code>Items</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Cotanivore</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+      <td><code>typename</code></td>
+    </tr>
+    <tr>
+      <td><code>Sequnivore</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+      <td><code>auto</code></td>
+    </tr>
+    <tr>
+      <td><code>Warehivore</code></td>
+      <td><code>template&lt;template&lt;typename...&gt; class...&gt;</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Stockivore</code></td>
+      <td><code>template&lt;template&lt;auto...&gt; class...&gt;</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+Finally, general-purpose functions that do not fit any previously mentioned namespaces are kept in `Omennivore`.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Omennivore</code></td>
+      <td>General-purpose functions</td>
+    </tr>
+  </tbody>
+</table>
+
+## Members <a id="members"></a>
+
+We will provide several names for the equivalence classes by &sim;. These names will be used to represent a function within the corresponding equivalence class in the documentation.
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Primary Signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Mold</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Page</code></td>
+        <td><code>template&lt;auto...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Road</code></td>
+        <td><code>template&lt;template&lt;typename...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Rail</code></td>
+        <td><code>template&lt;template&lt;auto...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Flow</code></td>
+        <td><code>template&lt;template&lt;template&lt;typename...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Sail</code></td>
+        <td><code>template&lt;template&lt;template&lt;auto...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Snow</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;typename...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Hail</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;auto...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Cool</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;typename...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Calm</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;auto...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Grit</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;typename...&gt; class...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Will</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;auto...&gt; class...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Glow</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;typename...&gt; class...&gt; class...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>Dawn</code></td>
+        <td><code>template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;template&lt;auto...&gt; class...&gt; class...&gt; class...&gt; class...&gt;&nbsp;class...&gt;&nbsp;class...&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+
+The interface members of this library's functions are always named after their corresponding equivalence classes.
+
+## Layer && Invocation Order <a id="layer-and-invocation-order"></a>
 
 An illustration might help in understanding the term 'layer'.
 
@@ -168,9 +352,9 @@ Scope<sub>0</sub> { ---------------------------- Args<sub>1</sub>... are injecte
 The order of scopes is defined naively.
 It is an invariant for rearranged metafunctions.
 What was flipped is the declaration order of the parameters.
-Take `Plume`, `SensiblePlume`, and `CognatePlume` as examples:
+Take `Typelivore::Plume`, `Typelivore::SensiblePlume`, and one struture of `Mouldivore::BiCognatePlume` as examples:
 
-<pre><code><b>Plume</b>
+<pre><code><b>Typelivore::Plume</b>
 
 template&lt;typename...Elements&gt;
 Scope<sub>0</sub> {
@@ -182,7 +366,7 @@ Scope<sub>0</sub> {
     };
 };</code></pre>
 
-<pre><code><b>SensiblePlume</b>
+<pre><code><b>Typelivore::SensiblePlume</b>
 
 template&lt;typename...Elements&gt;
 Scope<sub>0</sub> {
@@ -194,7 +378,7 @@ Scope<sub>0</sub> {
     };
 };</code></pre>
 
-<pre><code><b>CognatePlume</b>
+<pre><code><b>Mouldivore::BiCognatePlume</b>
 
 template&lt;template&lt;typename...&gt; class Operation>&gt;
 Scope<sub>0</sub> {
@@ -220,7 +404,7 @@ Finally, we will define the '*n*th layer'.
 
 Now, we can understand flipping the *0*th layer and the *1*st layer as an exchange of the projections' destinations.
 
-## Rearranged functions
+## Rearrangement <a id="rearrangement"></a>
 
 Based on the discussions above, each function in this library consists of three components:
 
@@ -234,13 +418,115 @@ We will characterize the similarity of functions that only differ in their invoc
 
 > A function `F` is a rearrangement of another function `G` if `F` and `G` have the same parameter lists and perform the same effect. We say `F` and `G` are rearranged functions.
 
-## Cognate
+We will use several prefixes in the function's name to distinguish rearranged functions.
 
-This prefix is used when a function's 0th layer accepts an operation, which will later be instantiated by the resulting list from the function's effect. This prefix is not used when the function's name strongly suggests the operation's existence, such as `Agent`, `BindFront`, `BindBack`, and `Bind`.
+### Cognate <a id="rearranged-functions-cognate"></a>
 
-## Kindred
+This prefix is used when a function's *0*th layer accepts an operation, which will later be instantiated by the resulting list from the function's effect.
+For example, `Mouldivore::BiCognatePlume` is a rearrangement of `Typelivore::Plume`. The function first takes in an operation.
+After being provided with `Cosmetics...` and `Elements...`, the function transforms `Elements...` by `Cosmetics...` and instantiates the operation by the result.
+(Meanwhile, `Bi` indicates the function handles two scenarios).
 
-## Summary
+For simplicity, I didn't use this prefix when the function's name strongly suggests the operation's existence, such as `Mouldivore::Agent`, `Mouldivore::BindFront`, `Mouldivore::BindBack`, and `Mouldivore::Bind`.
+We categorize such functions as 'higher-order modifications' and view them in a way so that they always return a modified operation by altering the parameter lists or the invocation order.
+
+For example, `Mouldivore::Agent` first accepts an operation.
+When provided with a packed vessel, the function extracts the items to invoke the operation.
+Meanwhile, `Omennivore::Send` first accepts a packed vessel and performs the same effect after being provided with an operation.
+Therefore, `Agent` is `CognateSend`.
+However, the name `Agent` is shorter and more descriptive.
+
+```C++
+template<template<typename...> class Operation>
+struct Agent
+{
+    template<typename>
+    struct Detail {};
+
+    template<template<typename...> class Container, typename...Elements>
+    struct Detail<Container<Elements...>>
+    { using type = Operation<Elements...>; };
+
+    template<typename...Agreements>
+    using Mold = Detail<Agreements...>::type;
+};
+```
+
+```C++
+template<typename>
+struct Send {};
+
+template<template<typename...> class Container, typename...Elements>
+struct Send<Container<Elements...>>
+{
+    template<template<typename...> class Operation>
+    struct Detail 
+    { using type = Operation<Elements...>; };
+
+    template<template<typename...> class...Agreements>
+    using Road = Detail<Agreements...>::type;
+};
+```
+
+### Kindred <a id="rearranged-functions-kindred"></a>
+
+This prefix is used when a function's last layer accepts operations or predicates that participate in the algorithm performed by the function. Let us consider the structures of `Mouldivore::Find` and `Typelivore::KindredFind`.
+
+```C++
+template<template<typename...> class...Predicates>
+struct Find
+{
+    template<typename...Elements>
+    alias Mold
+    {
+        static constexpr std::make_signed_t<size_t> value
+        {RESULT};
+    };
+};
+```
+
+```C++
+template<typename...Elements>
+struct KindredFind
+{
+    template<template<typename...> class...Predicates>
+    alias Road
+    {
+        static constexpr std::make_signed_t<size_t> value
+        {RESULT};
+    };
+};
+```
+
+In `Mouldivore::Find`, the predicates are accepted first.
+When provided with a list of elements, the function returns the index of the first element that satisfies all the predicates, or `-1` if the element is not found.
+
+The rules for the prefix `Cognate` do not apply here since the predicates must be invoked in order to perform the algorithm, meaning the effects of the predicates matter.
+In terms of `Cognate`, the first accepted operation acts as a box to present the result of the function's effect, meaning the operation's effect doesn't matter to `Cognate` functions.
+
+Theoretically, it is possible to have prefixed and non-prefixed functions in the same namespace.
+For example, the `KindredFind` in the namespace `Mouldivore` will have the following structure.
+
+```C++
+template<template<typename...> class...Items>
+struct KindredFind
+{
+    template<template<template<typename...> class...> class...Predicates>
+    alias Road
+    {
+        static constexpr std::make_signed_t<size_t> value
+        {RESULT};
+    };
+};
+```
+
+`Mouldivore::KindredFind` will return the index of the first item that satisfies all the predicates, or `-1` if the item is not found.
+
+Therefore, prefixes are necessary to prevent potential name collisions.
+
+## Summary <a id="summary"></a>
+
+### Terms <a id="summary-terms"></a>
 
 <dl>
   <dt>Alias metafunction</dt>
@@ -338,7 +624,7 @@ This prefix is used when a function's 0th layer accepts an operation, which will
 
   <dt>Primary signature category</dt>
   <dd>
-    Let M be the set of all primary signatures, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same signature. Then a category is an equivalence class in M under &sim;.
+    Let M be the set of all primary signatures, define &sim; as follows: &forall; (x, y) &isin; M, x &sim; y &iff; x and y have the same primary signature. Then a category is an equivalence class in M under &sim;.
   </dd>
   
   <dt>Rank</dt>
@@ -348,6 +634,11 @@ This prefix is used when a function's 0th layer accepts an operation, which will
       <li>The rank of <code>auto</code> is <code>0</code>;</li>
       <li>Otherwise, the rank of a conformed primary signature, say <code>CPS</code>, is <code>1 + (the rank of parameter-primary-signature)</code> where <code>parameter-primary-signature</code> is the primary signature of <code>CPS</code>'s parameter list.</li>
     </ul>
+  </dd>
+
+  <dt>Rearrangement</dt>
+  <dd>
+    A function <code>F</code> is a rearrangement of another function <code>G</code> if <code>F</code> and <code>G</code> have the same parameter lists and perform the same effect. We say <code>F</code> and <code>G</code> are rearranged functions.
   </dd>
 
   <dt>Sequence</dt>
@@ -387,7 +678,41 @@ This prefix is used when a function's 0th layer accepts an operation, which will
   <dd>A warehouse is a vessel that holds functions with the primary signature <code>template&lt;typename...&gt;</code>.</dd>
 </dl>
 
-## Convention
+### Prefixes <a id="summary-prefixes"></a>
+
+<dl>
+  <dt>Bi</dt>
+  <dd>It indicates the function handles types and values.</dd>
+
+  <dt>Burdensome</dt>
+  <dd>It indicates the function handles types, value, <code>Mold</code>s, <code>Page</code>s, <code>Road</code>s, <code>Rail</code>s, <code>Flow</code>s, <code>Sail</code>s, <code>Snow</code>s, <code>Hail</code>s.</dd>
+
+  <dt>Classic</dt>
+  <dd>It indicates the function will use the alias member <code>type</code> of the targets when a type is requested.</dd>
+
+  <dt>Cognate</dt>
+  <dd>It indicates the function's <i>0</i>th layer accepts an operation, which will later be instantiated by the resulting list from the function's effect.</dd>
+
+  <dt>Cosmopolitan</dt>
+  <dd>It indicates the function handles types, value, <code>Mold</code>s, <code>Page</code>s, <code>Road</code>s, <code>Rail</code>s, <code>Flow</code>s, <code>Sail</code>s, <code>Snow</code>s, <code>Hail</code>s, <code>Cool</code>s, <code>Calm</code>s.</dd>
+
+  <dt>Easy</dt>
+  <dd>It indicates the function handles types, value, <code>Mold</code>s, and <code>Page</code>s.</dd>
+
+  <dt>Kindred</dt>
+  <dd>It indicates the function's last layer accepts operations or predicates that participate in the algorithm performed by the function.</dd>
+
+  <dt>Simple</dt>
+  <dd>It indicates the function handles types, value, <code>Mold</code>s, <code>Page</code>s, <code>Road</code>s, and <code>Rail</code>s.</dd>
+
+  <dt>Toilsome</dt>
+  <dd>It indicates the function handles types, value, <code>Mold</code>s, <code>Page</code>s, <code>Road</code>s, <code>Rail</code>s, <code>Flow</code>s, and <code>Sail</code>s.</dd>
+
+  <dt>Typical</dt>
+  <dd>It indicates the function will return a type by the alias member <code>type</code>.</dd>
+</dl>
+
+### Symbols <a id="summary-symbols"></a>
 
 <dl>
   <dt><code>(phrase)&lt;Arg&gt;</code></dt>

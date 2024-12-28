@@ -131,12 +131,12 @@ ClassicTrip
 
 ```Haskell
 -- End in Conjuration
-ClassicTrip
+ClassicTrip'
  :: Commitment
  -> template<auto...>
 
 -- End in Transition
-ClassicTrip
+ClassicTrip'
  :: Commitment
  -> template<template<template<auto...> class...> class...>
 ```

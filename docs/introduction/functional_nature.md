@@ -3,6 +3,19 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # Functional Nature
 
+- [**To Index**](../index.md#introduction-functional-nature)
+- [*Prologue*](#prologue)
+- [*Types*](#types)
+  - [*`typename` && `auto`*](#types-typename-and-auto)
+  - [*`*...`*](#types-ellipsis)
+  - [*`template<*>`*](#types-template)
+- [*Partial Application*](#partial-application)
+- [*Currying*](#currying)
+- [*Type Signature*](#type-signature)
+- [*Separators*](#separators)
+
+## Prologue <a id="prologue"></a>
+
 I did not create the library with any functional concepts in mind, mostly because I was oblivious to the relevant knowledge.
 However, the idea of composing functions is natural and familiar, as passing a lambda expression to a standard algorithm is already prevalent.
 The library is based on C++ facilities and explained in C++ terms.
@@ -13,7 +26,7 @@ Haskell is the language we will be using in this documentation.
 Functional analogs will only serve as illustrations of the library's facilities and will not be explained in detail.
 For example, while lambda calculus is the foundation of functional languages, we will not dive into this concept since our illustrations will be based on the high-level abstractions implemented by Haskell.
 
-## Types
+## Types <a id="types"></a>
 
 The primary reason why we use Haskell is its type-check system.
 We will employ the system to validate our compositions.
@@ -52,14 +65,14 @@ using RoadPage = Road<Page>;
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwCcpK4AMngMmAByPgBGmMQgAMwapAAOqAqETgwe3r7%2BQemZjgJhEdEscQnJtpj2JQxCBEzEBLk%2BfoG19dlNLQRlUbHxSSkKza3t%2BV3j/YMVVaMAlLaoXsTI7BwA9NsA1B6pAJ7EeMAIBHtmGmaSewBijMB7ALKoVIYmGgCCu3tCygAIgANAC0YU2DCUoIAklhBHgaCM9t9UkxkAhMKCzAA6DRfb4EgiYFipAzEkyJNwEI6pRisTA4pmU7AE8bELwOV6edB7EwAdis/MBlKsPyJJLJTApVKYXiITJxLLZBA5XOUTGAmD5goFIsSYsJP2JpPJmEp1MlZotNLpzDYipZe2QBgUCkdiVZP3ZnMuACVUExeQKhfrDRLTdLzVSTVKZW45QrmZ7na73cmvd8fVy/Uw6DrQ6KCQSvJkjNzaOgYYI%2BYlARX0BbwgRlQaCX97nnaAo9mXNnyAGwaZsmId7dCoTA9hioS4saUYwcaROoUcaJU/UvhZ4arXVy6U%2Bu76NuEeeovizdlneazAAeQitaPt4tXFbho7XZ7fe1a7fY4nKc9hnOcFwQJdbXpNg1w3b4t3LN5KwfX86wbV932LK9tz2AMg0Q4NUNwxsqXwjCfk/Ohv3Cfs11IgDJ2nWc9nnAhFzXWNrVleVUA9bBUyYN0YJLa8cK7fCn1EugLVI8820vOCRNzOhjwkpTaAtY8yN%2BfZO0o3tqN/IdNPooCQOYsCIKtKMbVpKDGQzfjBKHWD4OeIiVMPHDA2ItxNNkiwOBWWhOAAVl4PwOC0UhUE4NxrGsXs1g2X8zESHhSAITRApWABrEAQvXMxAgADg0AIQuKgdEkkMx%2BUkAd9E4SReBYCQNBSCKopijheAUEAUkyyLAtIOBYBgRAQDWAhUnlchKDQUk6HiSIGU4VRKtBAc7mAZBkD2KQcTMXhMHwIhTnQPR%2BEEEQxHYKQZEERQVHUIbSF0LhSAAd2IJhUk4HggtC8Ksuizg73lGbLnePZ1oHTbtt2/bJEOvYIA8Rb6GIPlUq4JZeEGrQVggJAFtSJayAoCBSfJkBgCkMw%2BDoYliD6iAYhBmJwhaI5/t4TnmGII47xibRMAcXnSAWthBAfWgederAYi8YAE1obsJawecjHEBW8GIMXHAANynEHMFUMX5S2dLmzqEHaDwGIfsFjwsBB1U8Fa7heGN4gYgyTBARJQxgHtowspWKgDGABQADU8EwT67ztCWruEURxHu1OnrUEH3v0YOUHiyx9AdvrIBWVBUgaPqOFBcZiMBUxLGsa5eFQH3zpN8vugN7IXAYdxPA6PRQnCIZKhGD6iiyAQpj8KeMhnhh5mGBIPrsXuBD6SYh/yde6k3xoJgGMeFkn2xj7nvRZlaFeJ7XlYFCSzYJEBjgwtITq284GGNq2vYdp7QOmYVGuBCAkGxmlPGGVw4rExEGEYEBcogEkIkHEAREh1Q0DVeq7UQoDiCMFDgzVSCtTSjiAcXABzFQCMVKhIVJBcBChghqX9QY9VsP1GBQ0ibjWJpNCGs1KbU0xitNgnAWgsENvyUETB%2BLli4AEHEXA8THVOiQPAF0PqpxuhnaQWclA51eroBm31fq8zfh/Nh3VwbTXlHsaGkjpGyPkc8RRyi8So3RmTTGkCzDQIJsNfhIj4hzSpqgDGIwnEyJdMHRRXAUg0FoMzVm7NXr825hLDJgthai3Fl7SWETpYEFlvLKKitlaq3VgUzWwcdblL1r3Y2NcopmwtsSCWNsiFRXto7bmLsthRXdp7dKPs/ZKEDlrEO25w58CjrHeOidk4FJ0enO6%2BjZDZxelFEx%2Bcw5NysMXXpZckHRSrtkGudcCANwOS3LqHdNFd1ORvBwfcICuCvh9Ue5RV56Gng0T5aRF4NDvosfePQt6X13vPHurzIVzFPr89eUK8gwpvifH599X6rHWC/XGjV37A1et1PY0SXGxIUUolRGhQHqKxuYKB%2BNYGkHgVgBIpyiEkLIUo7B/JmH8n5NVW4W0PrWM4L1LhgTeHwH4VNSGYSQnEDEVsSR/8WAKENntQ27izTjDUeA86l1ZC6PWQ9eQhjtk6CSF9H6f0vaWKJV1MGgioZUFJcQFgaqNVap1VGcYXiIk%2BPiJAxIATZnBMDeTBVkbMYgE1akVIAB9bVARE26oIIm1V%2BimbxFSRzLmgsskFqFiLA2EspaMBKQwOWIMKkqzENU9KtTtaDN4PgfWrzmmm3NsgS2nTBC21er0p2RwBlu1OCM728RxkByDtrGZPC5magWQnJOjAU7GrWRIDZj0LW52tQYfZRcbDHPgBXc5Aga7bHroXZulhW7RQeVgE5j8D5wr8O8gegLvnjzBUC4o2RAX/OyKC8%2BLyGjbzaNC6%2Bb6IPH1A2vC%2B/RAXooQ9ip%2BuK7oOs/iDElWbmLer2CmnE6baUGsgbjJlPC4GYAQeyt%2BXKCg4kSIkEKBVGHtRY/yahOHiXis4QNZleVJBKIFRoRR2CuCJAHCFfkZgGEEsSI67%2BHCpVvyOrxp1qnmU%2B0yM4SQQA%3D%3D%3D)
 
-Restricted by C++ syntax,  we must declare the kind of parameters the template accepts inside its template head.
+Restricted by C++ syntax,  we must declare the kind of parameter the template accepts inside its template head.
 
 - The `Mold` accepts types, hence the `typename` and `...` inside `template<*>`.
 - Similarly, the `Page` accepts values, hence the `auto` and `...` inside `template<*>`;
 - the `Road` accepts containers, hence the `template<typename...> class` and `...` inside `template<*>`;
 - the `Rail` accepts sequences, hence the `template<auto...> class` and `...` inside `template<*>`.
 
-### `typename` && `auto`
+### `typename` && `auto` <a id="types-typename-and-auto"></a>
 
 To utilize the type-check in Haskell, we want to translate these declarations into Haskell types.
 The translations for `typename` and `auto` are naive.
@@ -68,12 +81,14 @@ We simply define types using the corresponding names.
 ```Haskell
 -- typename
 data Typename
+```
 
+```Haskell
 -- auto
 data Auto
 ```
 
-### `*...`
+### `*...` <a id="types-ellipsis"></a>
 
 Then, we will translate the ellipsis into a Haskell type.
 In C++, `*...` is the syntax to declare a parameter pack.
@@ -98,7 +113,7 @@ For example, `0, 1, 2` and `0, 1, 2, 3` will be values of `auto...` where `auto.
 data Ellipsis a = Empty | Dots a (Ellipsis a)
 ```
 
-### `template<*>`
+### `template<*>` <a id="types-template"></a>
 
 Then, we will translate the surrounding `template<*>` into a Haskell type.
 `template<*>` accepts a primary signature and raises its rank by one. Hence, we will represent `template<*>` as a higher-kinded type of kind `* -> *`.
@@ -173,7 +188,7 @@ result = instantiate tem pack
 The `result` is of course undefined.
 Thanks to Haskell's lazy evaluation, we are allowed to talk nonsense.
 
-## Partial Application
+## Partial Application <a id="partial-application"></a>
 
 Let us create an ordinary C++ function called `charPlusPlus`.
 It pastes three `char` values into a `std::string`.
@@ -218,7 +233,7 @@ cPlusPlus = charPlusPlus 'c'
 We applied a function requiring three arguments to one argument and obtained a function requiring two arguments.
 Since the application is not completed until the other two arguments are provided, the process is called 'partial application'.
 
-## Currying
+## Currying <a id="currying"></a>
 
 When I said that the Haskell version of `charPlusPlus` is a function requiring three arguments, it is inaccurate.
 As we already saw, when supplied with an argument of type `Char`, `charPlusPlus` produced a new function.
@@ -318,7 +333,7 @@ auto curry(auto f)
 
 This is currying.
 
-## Type Signature
+## Type Signature <a id="type-signature"></a>
 
 The type signatures in Haskell summarize the type characteristics of objects and serve as the targets for the type-checking system.
 We already saw them in our `charPlusPlus` examples, where the type signatures appear in the first line of the definitions.
@@ -574,3 +589,175 @@ using FunGunPun = Roadrivore::Trip<Pun>
 ```
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgOykrgAyeAyYAHI%2BAEaYxBIaABykAA6oCoRODB7evgGp6ZkCoeFRLLHxXEm2mPaOAkIETMQEOT5%2BXIF2mA5Zjc0EJZExcQnJCk0tbXmdtpODYcPlo1WJAJS2qF7EyOwcAPT7ANQeKQCexHjACARHZhpmkkcAYozARwCyqFSGJhoAgocjkJlAARAAaAFpQrsGEpIQBJLCCPA0UZHf4pJjIBCYSFmAB0Gj%2B/xJ%2BwAVJTyS8vAwjlTyfsSQRMCwUgYWSYAMxuAhnFKMViYAki7nYEkTYheBw0hgkkz%2BKwAo4qo4stkczDc3ms9lMTk8vkC5hsEUEsVHZAGBQKM1ikmqo6S6W3ZTEVBEABKqCY6AdqoVSv%2Bjsd6r1BrcTC8RDtXPFypDKudMrdHtQyiYwC1CcTgf9idDus12rDxZ5UZjorjluttqr8eDBcdydd7q9TDo%2BabRzzOe7zaajmQloEE0wqhSxCO0VQniOADcxF5MD3FQQpVr/KDuRYe32mwrt1yg12m6X9VrDUWL9qK6hY9ga0wbWahJgAI7Lhi7BT2/cFrwMiMI5PQ7Wgey5UEjlTdtOx5N9P0YH8Hx3U8Ay3VCATQlVzwjO8zQANWaPAmGiehfzjbCjkAsJ3gzLMIKgmD00zS83CIy5SPIlDjy7Q9MNJPtcLY4SS35QVTXrJ8XxFDxBA7cJiAohtHRo4DvV9RjoLbVANL9Hk5KaRYlJ4k8MN4rCAQpKkjgAcVpekqSZAFRMNcSTRXbB6DYQQ/3%2BFs7NpeVFS7NT3iNFduSgrzWUYAgBP4izBMBBloIchlnP%2BVydQ1G83ONIUH2khQjgAeQFYh9SyPyAuUIKsJCoTrwjCKPLNGKfIIZTQqA94vlodAtPKuIqoEbUOriutzUopLEpPKzUq%2BLwBrwecSHYEA3FrPBkAAFUuFJHMpTKPIULFdk%2BLYVrW4hIsa5Lsse9zCqkq1nxK0D8FQGr1xdE5tr2g7gqDQtcpa5qROeyTpsfN6bROZo/IHKUUx0vS%2BPupsAo8FgWEIKje0bbsnoK6GhCuZhaG6/8QzCy6Bq0yNiDE0mV0%2BpxtXJ4BKamsUQBACL7SSg9zJB9Cj3mom1QhksZfyiThVe2szX%2BYBbtiwRqalum9K05j0Z5VX1c63mZrMiX5Qa7dLJSmy9MuG6Nv2vBDoyklTvOtmfXQB31tXSXHrlnLw0h1mirh03YdrEDfQ5yiAQC52UmBrtA7BkSg9al6YeK8Po6ZpHVVqnTnloVAAHcMbFxNsdQXH8Zp/2qNVNOQ5ZhW8/e18KbELX%2B2o3qQO9xnEZ5dnvvgnuqYffnhPp/TxWFgs5oxi2bdBtur3T2Xt/ltqla7g%2BZIJI3MA1rrC5VOnS4rvWS7LyvDbVs%2BTdM4K1%2BS/ibesylZXsuk3YuUzlDRWJ9iDAC1tfWk/8tJLWuutfmW13o7STtqf%2Bfl%2BYGzcM8IK8d/iILrnjeKAJ%2Bb9X0m4f44DI4JQWjZAiqA8D4DROgHBDAYGAKypnYBYcj5TUoRAvydN6GMNRHgTALDoEOSin/XBbg1qMIwSALB/DqGzVob/Vh/86oAKcsyLhu9eQgM7sfFRgjB6aNpNorS9tVoIJAKgnk2jFE30fuxBhTCxESLYbghsBD67EPwUo722oVFv2/gyCJkTMo/2pLtTAEwSocJiZEiJmV5RmC5GEK0XgsAQTcGgb8mAUgXzwXogxWdoY/RRrcfhND/KDh2gAfXenEAgEAJjoH5goIUzSKLYMkQwJxhtwFilIJbf4rC0GyPkQvWe4lFFYKGRQkZcZSGeAXuMsUawdwcA2LQTgABWXgfgOBaFIKgTgbhrDWCdFsHYkUMk8FIAQTQuyNgAGsQAHMkESSQnQuQaAOQ8AAbMCswiRkj7I4JIXgLAEgaFICcs5FyOC8AUCABFLzTm7NIHAWAMBEAgC2AQFI0ZyCUDQGyOgcQIhCk4KoRIwLITAqeMAZAw4pAEjMLwcRhASCML0PwQQIgxDsCkDIQQigVDqGxaQXQXBSDl0qikTgPA9mHOOa885nBSrRlJbcb4RwGVMpZUcNlHKflmCOBAHGKRqVTnMFyLgaxeBYq0BsCASBKV2voGQCgEBvX2pAMAKQZg%2BB0BZEpSg0QtXRDCM0M4qreBxuYMQM4pVojaB6Fip5lLOqlQYLQRNsqsDRC8MASMtAqZJtIFgFghhgDiBLXgW6vR5zxK1eOHo0Y9hPLCCyKFZzaB4GiJVNNHgsBavXHgOF3BeDtuIDOJQoJWQNuHUYV5GwqAGAgQRMR5dhonKeUK4QohxDipPVKtQWr5X6AbSga5lh9AjvRZADYqBilZHRRwSEHSoqmEsNYe4vBUALsuFgV9EANjdF6M4CArhpgdCCAwdAQwygVD0GkDI9RsieHaJhwoOG0MjEqDUOofR5iIb0DBnD/QWjEeWKRiYAwqMKuY/RxY6GVjQbubsCQ6qOBHMRVqlFRrGXMtZeyo4nKrUQFwHyh1jyXXPM3RsXEvpRhQdIJ8yQXICQAE4uT%2BEkBoSQjxgUaEBcC/T%2BhOAwtIHCp1BJgVcGBYkfTiRXPfK4AcwzwLhOypRWijFKnsUeoJZ6oleqyX%2BsDb62lbBODNBYPOfwkImBPmAlwfTBIuBEh5fgIg4HBWyBFee6Ql6lDXtlboMNSqmAqrnQJoTSKQM6uiwaqgRxkupfS5l942XctEmtba%2B1PYMlmGU26nFkW4txHJQGuuPrRg9bS29Iw2WqjhtoJG9FEAY2ypTQmmtR200ZqzQ4Gtea4oFqLVq0t5bK3VrnbW1dRgm1nPwK2xw7bv1nK7cgHtNb%2B21C1cO0dCaJ17DOdO2dTyF1LswCu%2Bt73aKbr4DuhQe7MAHuNDWk9ZWxUVdkFemVZzat3o3QBqwT7weQffZ%2B0cnBf0EH0qCanQHkVgcYR2t9ZHs1ZBcCh1jyHUOcZIwR7DWQRdYaKAwBjGG2O1AFw0SjeGZj89gwwOjCxSgS7Y2r3ISH2O66WIrnj2w%2BPOts4JzVgXODdeICltLGX1sDZy3ljQ1r5NFfG06qbqnSDqawPELTUL7OOZy6Z/wvn/D%2BC5GZyQLKFWte1ai2wIXpvhfgJF4l%2BqFtzeIAlvYyXTUsAUPOYc85BuagmAVhTAqFUE7PUTiV8gqtk50CALkirlVJua3b5F7WSXRiOIa0vTxy%2BV4XDXi8EwRtLbG46rkAewu4q9Yv31BfN%2BjErykFIjTq/6cabXggzSncsu27t6Nsb41ppO3f9Nmbs1XcITdwtxbPuYDLRWsQz2nl1prrQ68BfYC6/adqqDdosjA6CCg6yrg5jpnBQ5TqXBw7zpxCI7I5rpo5r7bqZhY77qHr46lYt4SDE6Sod43rd6U7GCPo2B07wAM44bfr7AdIPqAaWDAbnLc4QaMGa44ZC7uDq5IYhDi6MaS5y4y6EZZAK4rD8EUYsbCHUbK5a466yFMaG74YG4DDqH8abCW5ioD4BZD4cCO4sBl4V5V6z4sjz5yaFYkB%2B7OquqB7B6aYCYR4gBmA5ZchcgHJAp/KWY%2BH%2BBubGFtbp7oqYqB46YHIGYHKJBmDWaSD6bx5GZcA95QpciD5hHOFhYCbcqhFp45HuobALoZDOCSBAA%3D%3D)
+
+## Separators <a id="separators"></a>
+
+Since we give each primary signature a unique name, having member templates of the same primary signature in a class is impossible.
+
+We shall avoid such scenarios as much as possible since higher-order functions will not know which member to pick based on the primary signature alone.
+
+However, such flexibility is necessary sometimes.
+In that case, we surround the suitable members with a separator structure.
+Let us check out the structure of `Roadrivore::Trip`.
+
+```C++
+template<template<template<typename...> class...> class>
+struct Trip
+{
+    struct Commit
+    {
+        template<template<typename...> class...>
+        alias Road = CONJURATION;
+
+        template<template<template<template<typename...> class...> class...> class>
+        alias Snow = TRANSITION;
+    };
+
+    template<template<typename...> class>
+    alias Road = RECURSION;
+
+    template<template<auto...> class>
+    alias Rail = RECURSION;
+
+    template<template<template<typename...> class...> class>
+    alias Flow = RECURSION;
+
+    template<template<template<auto...> class...> class>
+    alias Sail = RECURSION;
+
+    template<template<template<template<typename...> class...> class...> class>
+    alias Snow = RECURSION;
+
+    template<template<template<template<auto...> class...> class...> class>
+    alias Hail = RECURSION;
+
+    template<template<template<template<template<typename...> class...> class...> class...> class>
+    alias Cool = RECURSION;
+
+    template<template<template<template<template<auto...> class...> class...> class...> class>
+    alias Calm = RECURSION;
+
+    template<template<template<template<template<template<typename...> class...> class...> class...> class...> class>
+    alias Grit = RECURSION;
+
+    template<template<template<template<template<template<auto...> class...> class...> class...> class...> class>
+    alias Will = RECURSION;
+
+    template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class>
+    alias Glow = RECURSION;
+
+    template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class>
+    alias Dawn = RECURSION;
+};
+```
+
+`Roadrivore::Trip` contains 12 member templates for continuation, meaning they will accept new operations to compose with the existing one.
+To invoke the composed function, we need a template of the primary signature `template<template<typename...> class...>`, which is named `Road` and collides with the continuation member `Road`.
+The separator structure `Commit` is added for them to coexist.
+
+We will create a type called `Commitment` to indicate the separators in Haskell.
+
+```Haskell
+-- Separator
+data Commitment
+```
+
+Note that `Roadrivore::Trip` has infinite type signatures as the implementation uses recursion. Nonetheless, the function's type signature will always end with `Commitment`. Then, we add an apostrophe to the function's name and continue the type signature from `Commitment` to the result.
+
+```Haskell
+-- Compose with Mold
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<typename...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Page
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<auto...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Road
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<typename...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Rail
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<auto...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Flow
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<typename...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Sail
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<auto...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Snow
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<typename...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Hail
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<auto...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Cool
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<template<typename...> class...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Calm
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<template<auto...> class...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Grit
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+
+-- Compose with Will
+Trip
+ :: template<template<typename...> class...> class...
+ -> template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...
+ -> ...
+ -> Commitment
+```
+
+```Haskell
+-- End in Conjuration
+Trip'
+ :: Commitment
+ -> template<template<typename...> class...>
+
+-- End in Transition
+Trip'
+ :: Commitment
+ -> template<template<template<template<typename...> class...> class...> class...>
+```

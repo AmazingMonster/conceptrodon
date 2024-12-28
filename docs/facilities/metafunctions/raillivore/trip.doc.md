@@ -144,12 +144,12 @@ Trip
 
 ```Haskell
 -- End in Conjuration
-Trip
+Trip'
  :: Commitment
  -> template<template<auto...> class...>
 
 -- End in Transition
-Trip
+Trip'
  :: Commitment
  -> template<template<template<template<auto...> class...> class...> class...>
 ```

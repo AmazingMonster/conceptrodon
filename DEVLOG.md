@@ -8,6 +8,44 @@
 
 ## Diary
 
+### 2024/12/29
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Finish the library.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Mostly done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2024/12/28
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Collect the code of examples to a different folder.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2024/12/27
 
 <ul>

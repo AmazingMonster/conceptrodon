@@ -17,18 +17,17 @@ When invoked, the function right-folds its argument list using the operation wit
    Oper&lt;Arg<sub>n-1</sub>,
    Oper&lt;Arg<sub>n</sub>,
        Init
-   &gt;::value
-   &gt;::value
+   &gt;::typename
+   &gt;::typename
         &vellip;
-   &gt;::value</code></pre>
+   &gt;::typename</code></pre>
 
 ## Type Signature
 
 ```Haskell
 FoldRightLast
  :: template<typename...> class...
- -> typename...
- -> typename
+ -> template<typename...>
 ```
 
 ## Structure

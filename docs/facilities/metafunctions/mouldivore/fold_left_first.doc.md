@@ -28,9 +28,8 @@ When invoked, the function left-folds its argument list using the operation with
 
 ```Haskell
 FoldLeftFirst
- :: template<auto...> class...
- -> auto...
- -> auto
+ :: template<typename...> class...
+ -> template<typename...>
 ```
 
 ## Structure
