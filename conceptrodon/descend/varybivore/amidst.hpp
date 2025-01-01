@@ -5,6 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_AMIDST_H
 
 #include "conceptrodon/prefix.hpp"
+#include "conceptrodon/vay.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -17,18 +18,14 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    static constexpr auto idyl(Prefix<I> auto..., auto target, ...)
-    { return target; };
-
-    template<auto...Variables>
-    struct ProtoPage
-    { static constexpr auto value { idyl(Variables...) }; };
-
-    template<auto...Variables>
-    using Page = ProtoPage<Variables...>;
-
-    template<auto...Variables>
-    static constexpr auto Page_v { idyl(Variables...) };
+    template<typename Target>
+    static constexpr auto idyl
+    (
+        Prefix<I> auto...,
+        Target,
+        ...
+    )
+    -> Target;
 };
 
 }
@@ -42,7 +39,14 @@ struct Amidst
     struct ProtoPage
     {
         static constexpr auto value 
-        { Varbola::Midst<std::make_index_sequence<I>>::idyl(Variables...) };
+        {
+            decltype
+            (
+                Varbola::Midst<std::make_index_sequence<I>>
+                ::idyl(Vay<Variables>{}...)
+            )
+            ::value
+        };
     };
 
     template<auto...Agreements>
@@ -50,7 +54,14 @@ struct Amidst
 
     template<size_t I>
     static constexpr auto Page_v 
-    { Varbola::Midst<std::make_index_sequence<I>>::idyl(Variables...) };
+    {
+        decltype
+        (
+            Varbola::Midst<std::make_index_sequence<I>>
+            ::idyl(Vay<Variables>{}...)
+        )
+        ::value
+    };
 };
 
 }}

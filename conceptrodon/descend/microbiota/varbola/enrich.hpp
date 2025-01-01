@@ -23,11 +23,19 @@ struct Enrich<std::index_sequence<I...>>
         template
         <
             template<auto...> class Operation,
-            Prefix<I>...FrontTargets,
             typename...BackTargets
         >
-        static consteval auto idyl()
-        -> Operation<FrontTargets::value..., NewVariables..., BackTargets::value...>;
+        static consteval auto idyl
+        (
+            Prefix<I> auto...front_targets,
+            BackTargets...
+        )
+        -> Operation
+        <
+            decltype(front_targets)::value...,
+            NewVariables...,
+            BackTargets::value...
+        >;
     };
 
     template<auto...NewVariables>

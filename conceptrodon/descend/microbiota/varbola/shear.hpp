@@ -20,10 +20,13 @@ struct Shear<std::index_sequence<I...>>
     template
     <
         template<auto...> class Operation,
-        Prefix<I>...,
         typename...Targets
     >
-    static consteval auto idyl()
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Targets...
+    )
     -> Operation<Targets::value...>;
 };
 

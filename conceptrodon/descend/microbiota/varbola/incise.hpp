@@ -16,15 +16,14 @@ struct Incise {};
 template<size_t...I, size_t...J>
 struct Incise<std::index_sequence<I...>, std::index_sequence<J...>>
 {
-    template
-    <
-        template<auto...> class Operation,
-        Prefix<I>...,
-        Prefix<J>...Targets,
-        typename...
-    >
-    static consteval auto idyl()
-    -> Operation<Targets::value...>;
+    template<template<auto...> class Operation>
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Prefix<J> auto...targets,
+        ...
+    )
+    -> Operation<decltype(targets)::value...>;
 };
 
 }}

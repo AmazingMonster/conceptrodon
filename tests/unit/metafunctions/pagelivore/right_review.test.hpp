@@ -40,6 +40,7 @@ struct LessThan
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 VALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page_v<SHEEP_SPROUT(40)>);
+VALID(RightReview<Pagelivore::Negation<Varybivore::IsSame>::Page>::Page<SHEEP_SPROUT(40)>::value);
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 /******************************************************************************************************/
 

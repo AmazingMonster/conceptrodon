@@ -19,7 +19,7 @@ struct CognateRotate
         using Mold = decltype
         (
             Typella::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

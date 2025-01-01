@@ -16,8 +16,17 @@ struct Shear {};
 template<size_t...I>
 struct Shear<std::index_sequence<I...>>
 {
-    template<template<typename...> class Operation, Prefix<I>..., typename...Targets>
-    static consteval auto idyl() -> Operation<Targets...>;
+    template
+    <
+        template<typename...> class Operation,
+        typename...Targets
+    >
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Targets...
+    )
+    -> Operation<typename Targets::type...>;
 };
 
 }}

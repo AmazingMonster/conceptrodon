@@ -20,7 +20,7 @@ struct Front
         using Rail = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

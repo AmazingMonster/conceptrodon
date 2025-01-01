@@ -19,8 +19,22 @@ struct Enrich<std::index_sequence<I...>>
     template<typename...NewElements>
     struct ProtoMold
     { 
-        template<template<typename...> class Operation, Prefix<I>...FrontTargets, typename...BackTargets>
-        static consteval auto idyl() -> Operation<FrontTargets..., NewElements..., BackTargets...>;
+        template
+        <
+            template<typename...> class Operation,
+            typename...BackTargets
+        >
+        static consteval auto idyl
+        (
+            Prefix<I> auto...front_targets,
+            BackTargets...
+        )
+        -> Operation
+        <
+            typename decltype(front_targets)::type...,
+            NewElements...,
+            typename BackTargets::type...
+        >;
     };
 
     template<typename...NewElements>

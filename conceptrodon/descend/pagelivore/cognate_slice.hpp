@@ -24,7 +24,7 @@ struct CognateSlice
         using Page = decltype
         (
             Varbola::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 
@@ -36,7 +36,7 @@ struct CognateSlice
         using Page = decltype
         (
             Varbola::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 

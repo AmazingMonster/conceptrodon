@@ -23,7 +23,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -35,7 +35,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

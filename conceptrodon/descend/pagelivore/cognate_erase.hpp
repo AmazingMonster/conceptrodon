@@ -24,7 +24,7 @@ struct CognateErase
         using Page = decltype
         (
             Varbola::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 
@@ -36,7 +36,7 @@ struct CognateErase
         using Page = decltype
         (
             Varbola::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 

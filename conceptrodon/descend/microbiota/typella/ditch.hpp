@@ -19,11 +19,19 @@ struct Ditch<std::index_sequence<I...>>
     template
     <
         template<typename...> class Operation,
-        Prefix<I>...FrontTargets,
-        typename,
         typename...BackTargets
     >
-    static consteval auto idyl() -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        Prefix<I> auto...front_targets,
+        auto,
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 
 }}

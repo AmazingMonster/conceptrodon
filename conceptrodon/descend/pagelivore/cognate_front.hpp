@@ -20,7 +20,7 @@ struct CognateFront
         using Page = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 

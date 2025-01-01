@@ -17,7 +17,10 @@ struct Rotate
     {
         template<template<typename...> class...Agreements>
         using Road = decltype
-        (Typella::Swivel<std::make_index_sequence<Amount>>::template idyl<Agreements..., Elements...>());
+        (
+            Typella::Swivel<std::make_index_sequence<Amount>>
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+        );
     };
 
     template<auto...Agreements>

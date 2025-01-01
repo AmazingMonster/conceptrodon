@@ -16,9 +16,27 @@ struct LeftInspect {};
 template<size_t...I>
 struct LeftInspect<std::index_sequence<I...>> 
 {
-    template<template<auto...> class Predicate, Prefix<I>..., typename OnDuty, typename...RestVayVariables>
-    static consteval auto idyl()
-    -> std::bool_constant<(...&&Predicate<OnDuty::value, RestVayVariables::value>::value)>;
+    template
+    <
+        template<auto...> class Predicate,
+        typename Inspector,
+        typename...RestVays
+    >
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Inspector,
+        RestVays...
+    )
+    -> std::bool_constant
+    <(...&&
+        Predicate
+        <
+            Inspector::value,
+            RestVays::value
+        >
+        ::value
+    )>;
 };
 
 }}

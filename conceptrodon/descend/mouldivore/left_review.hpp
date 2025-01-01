@@ -24,7 +24,7 @@ struct LeftReview
                     decltype
                     (
                         Moldiae::LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Elements...>()
+                        ::template idyl<Predicate>(std::type_identity<Elements>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Elements) - 1>{})
@@ -44,7 +44,7 @@ struct LeftReview
                 decltype
                 (
                     Moldiae::LeftInspect<std::make_index_sequence<I>>
-                    ::template idyl<Predicate, Elements...>()
+                    ::template idyl<Predicate>(std::type_identity<Elements>{}...)
                 )::value
             ));
         }(std::make_index_sequence<sizeof...(Elements) - 1>{})

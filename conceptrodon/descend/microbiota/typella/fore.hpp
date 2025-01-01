@@ -16,8 +16,13 @@ struct Fore {};
 template<size_t...I>
 struct Fore<std::index_sequence<I...>>
 {
-    template<template<typename...> class Operation, Prefix<I>...Targets, typename...>
-    static consteval auto idyl() -> Operation<Targets...>;
+    template<template<typename...> class Operation>
+    static consteval auto idyl
+    (
+        Prefix<I> auto...targets,
+        ...
+    )
+    -> Operation<typename decltype(targets)::type...>;
 };
 
 }}

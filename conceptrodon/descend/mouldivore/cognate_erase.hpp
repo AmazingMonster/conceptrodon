@@ -24,7 +24,7 @@ struct CognateErase
         using Mold = decltype
         (
             Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
     
@@ -35,7 +35,7 @@ struct CognateErase
         using Mold = decltype
         (
             Typella::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

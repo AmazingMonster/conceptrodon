@@ -24,7 +24,7 @@ struct Erase
         using Rail = decltype
         (
             Varbola::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 
@@ -36,7 +36,7 @@ struct Erase
         using Rail = decltype
         (
             Varbola::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

@@ -26,7 +26,7 @@ struct Inject
                 (
                     Varbola::Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Agreements..., Vay<Variables>...>()
+                    ::template idyl<Agreements...>(Vay<Variables>{}...)
                 );
             };
         };

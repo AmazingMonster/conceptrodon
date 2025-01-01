@@ -26,7 +26,7 @@ struct CognateInject
                 (
                     Varbola::Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Operation, Vay<Variables>...>()
+                    ::template idyl<Operation>(Vay<Variables>{}...)
                 );
             };
         };

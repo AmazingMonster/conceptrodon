@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TYPELIVORE_AMIDST_H
 
 #include "conceptrodon/prefix.hpp"
+#include <type_traits>
 #include <utility>
 
 namespace Conceptrodon {
@@ -16,15 +17,14 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    template<Prefix<I>..., typename Target, typename...>
-    static constexpr auto idyl() -> Target;
-
-    template<typename...Elements>
-    struct Detail
-    { using type = decltype(idyl<Elements...>()); };
-
-    template<typename...Elements>
-    using Mold = Detail<Elements...>::type;
+    template<typename Target>
+    static constexpr auto idyl
+    (
+        Prefix<I> auto...,
+        Target,
+        ...
+    )
+    -> Target::type;
 };
 
 }
@@ -38,7 +38,10 @@ struct Amidst
     struct Detail
     {
         using type = decltype
-        (Typella::Midst<std::make_index_sequence<I>>::template idyl<Elements...>());
+        (
+            Typella::Midst<std::make_index_sequence<I>>
+            ::idyl(std::type_identity<Elements>{}...)
+        );
     };
 
     template<auto...Agreements>
@@ -46,7 +49,10 @@ struct Amidst
 
     template<size_t I>
     using UniPage = decltype
-    (Typella::Midst<std::make_index_sequence<I>>::template idyl<Elements...>());
+    (
+        Typella::Midst<std::make_index_sequence<I>>
+        ::idyl(std::type_identity<Elements>{}...)
+    );
 };
 
 }}

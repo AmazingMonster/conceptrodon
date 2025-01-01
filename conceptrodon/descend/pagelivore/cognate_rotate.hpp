@@ -21,7 +21,7 @@ struct CognateRotate
         using Page = decltype
         (
             Varbola::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 

@@ -23,7 +23,7 @@ struct CognateSlice
         using Mold = decltype
         (
             Typella::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -39,7 +39,7 @@ struct CognateSlice
                 std::make_index_sequence<Start>,
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

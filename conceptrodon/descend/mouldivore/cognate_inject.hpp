@@ -23,7 +23,7 @@ struct CognateInject
             (
                 Typella::Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template idyl<Operation, Elements...>()
+                ::template idyl<Operation>(std::type_identity<Elements>{}...)
             );
         };
 

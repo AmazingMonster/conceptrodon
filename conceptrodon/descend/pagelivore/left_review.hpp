@@ -6,7 +6,6 @@
 
 #include "conceptrodon/descend/microbiota/pagelis/left_inspect.hpp"
 #include "conceptrodon/vay.hpp"
-#include <utility>
 
 namespace Conceptrodon {
 namespace Pagelivore {
@@ -26,7 +25,7 @@ struct LeftReview
                     decltype
                     (
                         Pagelis::LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Vay<Variables>...>()
+                        ::template idyl<Predicate>(Vay<Variables>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Variables) - 1>{})
@@ -46,7 +45,7 @@ struct LeftReview
                 decltype
                 (
                     Pagelis::LeftInspect<std::make_index_sequence<I>>
-                    ::template idyl<Predicate, Vay<Variables>...>()
+                    ::template idyl<Predicate>(Vay<Variables>{}...)
                 )::value
             ));
         }(std::make_index_sequence<sizeof...(Variables) - 1>{})

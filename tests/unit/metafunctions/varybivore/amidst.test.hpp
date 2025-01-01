@@ -38,7 +38,7 @@ using SupposedResult = Shuttle<SHEEP_SPROUT(240)>;
 
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
 template<size_t I>
-constexpr auto At = Amidst<SHEEP_SPROUT(240)>::ProtoPage<I>::value;
+constexpr auto At = Amidst<SHEEP_SPROUT(240)>::Page<I>::value;
 #include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
 
 

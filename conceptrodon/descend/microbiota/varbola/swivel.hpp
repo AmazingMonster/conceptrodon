@@ -13,17 +13,20 @@ namespace Varbola {
 template<typename>
 struct Swivel {};
 
-template<size_t...J>
-struct Swivel<std::index_sequence<J...>>
+template<size_t...I>
+struct Swivel<std::index_sequence<I...>>
 {
     template
     <
         template<auto...> class Operation,
-        Prefix<J>...FrontTargets,
         typename...BackTargets
     >
-    static constexpr auto idyl()
-    -> Operation<BackTargets::value..., FrontTargets::value...>;
+    static constexpr auto idyl(Prefix<I> auto...front_targets, BackTargets...)
+    -> Operation
+    <
+        BackTargets::value...,
+        decltype(front_targets)::value...
+    >;
 };
 
 }}

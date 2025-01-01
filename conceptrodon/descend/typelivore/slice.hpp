@@ -23,7 +23,7 @@ struct Slice
         using Road = decltype
         (
             Typella::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -35,7 +35,7 @@ struct Slice
         using Road = decltype
         (
             Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

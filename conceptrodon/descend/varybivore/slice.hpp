@@ -24,7 +24,7 @@ struct Slice
         using Rail = decltype
         (
             Varbola::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 
@@ -36,7 +36,7 @@ struct Slice
         using Rail = decltype
         (
             Varbola::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

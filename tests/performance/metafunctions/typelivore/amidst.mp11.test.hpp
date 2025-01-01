@@ -79,7 +79,7 @@ SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 template<size_t I>
-using At = Amidst<SHEEP_SPROUT(240)>::UniPage<I>;
+using At = Amidst<SHEEP_SPROUT(240)>::Page<I>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #define SHEEP_PREFIX    \

@@ -135,7 +135,7 @@ static_assert(std::same_as<MakeNestedMap<int, int*>, SupposedNestedMap>);
 - **Introduction**
   - [Hello World](./docs/introduction/hello_world.md)
   - [Vocabulary](./docs/introduction/vocabulary.md)
-  - [Functional Nature](./introduction/functional_nature.md)
+  - [Functional Nature](./docs/introduction/functional_nature.md)
 - **Facilities**
   - [Metafunctions](./docs/facilities/metafunctions.md)
   - [Concepts](./docs/facilities/concepts.md)

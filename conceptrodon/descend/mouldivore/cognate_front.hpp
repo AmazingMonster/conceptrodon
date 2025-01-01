@@ -19,7 +19,7 @@ struct CognateFront
         using Mold = decltype
         (
             Typella::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

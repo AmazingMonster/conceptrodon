@@ -19,11 +19,19 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     template
     <
         template<typename...> class Operation,
-        Prefix<I>...FrontTargets,
-        Prefix<J>...,
         typename...BackTargets
     >
-    static consteval auto idyl() -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        Prefix<I> auto...front_targets,
+        Prefix<J> auto...,
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 
 }}

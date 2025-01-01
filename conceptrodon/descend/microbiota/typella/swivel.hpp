@@ -16,8 +16,21 @@ struct Swivel {};
 template<size_t...J>
 struct Swivel<std::index_sequence<J...>>
 {
-    template<template<typename...> class Operation, Prefix<J>...FrontTargets, typename...BackTargets>
-    static constexpr auto idyl() -> Operation<BackTargets..., FrontTargets...>;
+    template
+    <
+        template<typename...> class Operation,
+        typename...BackTargets
+    >
+    static constexpr auto idyl
+    (
+        Prefix<J> auto...front_targets,
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename BackTargets::type...,
+        typename decltype(front_targets)::type...
+    >;
 };
 
 }}

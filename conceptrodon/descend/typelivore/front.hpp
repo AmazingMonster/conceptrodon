@@ -19,7 +19,7 @@ struct Front
         using Road = decltype
         (
             Typella::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

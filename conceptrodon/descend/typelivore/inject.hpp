@@ -23,7 +23,7 @@ struct Inject
             (
                 Typella::Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template idyl<Agreements..., Elements...>()
+                ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
             );
         };
 
