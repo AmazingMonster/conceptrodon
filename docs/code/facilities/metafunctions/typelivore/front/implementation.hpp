@@ -20,14 +20,14 @@ struct Fore {};
 template<size_t...I>
 struct Fore<std::index_sequence<I...>>
 {
-    template
-    <
-        template<typename...> class Operation,
-        // We use `Prefix<I>...` to enumerate `Targets`.
-        Prefix<I>...Targets,
-        typename...
-    >
-    static consteval auto idyl() -> Operation<Targets...>;
+    template<template<typename...> class Operation>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...targets,
+        ...
+    )
+    -> Operation<typename decltype(targets)::type...>;
 };
 
 /**** Front ****/
@@ -41,7 +41,7 @@ struct Front
         using Road = decltype
         (
             Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

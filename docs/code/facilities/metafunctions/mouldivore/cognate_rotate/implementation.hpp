@@ -6,31 +6,40 @@
 #include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
-
-/**** Swivel ****/
-template<typename>
-struct Swivel {};
-
-template<size_t...J>
-struct Swivel<std::index_sequence<J...>>
-{
-    template
-    <
-        template<typename...> class Operation,
-        Prefix<J>...FrontTargets,
-        typename...BackTargets
-    >
-    static constexpr auto idyl()
-    // Note the position change of `FrontTargets...` and `BackTargets.`.
-    -> Operation<BackTargets..., FrontTargets...>;
-};
 
 /************************/
 /**** Implementation ****/
 /************************/
 
+/**** Swivel ****/
+template<typename>
+struct Swivel {};
+
+template<size_t...I>
+struct Swivel<std::index_sequence<I...>>
+{
+    template
+    <
+        template<typename...> class Operation,
+        typename...BackTargets
+    >
+    static constexpr auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Collect the rest.
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename BackTargets::type...,
+        typename decltype(front_targets)::type...
+    >;
+};
+
+/**** CognateRotate ****/
 template<template<typename...> class Operation>
 struct CognateRotate
 {
@@ -41,7 +50,7 @@ struct CognateRotate
         using Mold = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

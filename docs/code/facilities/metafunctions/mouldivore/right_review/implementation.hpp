@@ -6,7 +6,7 @@
 #include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /************************/
@@ -20,11 +20,27 @@ struct RightInspect {};
 template<size_t...I>
 struct RightInspect<std::index_sequence<I...>> 
 {
-    template<template<typename...> class Predicate, Prefix<I>..., typename OnDuty, typename...RestElements>
-    static consteval auto idyl()
-    // We combine the results using a fold expression over `&&`.
-    // The pack we are folding is `RestElements...`.
-    -> std::bool_constant<(...&&Predicate<RestElements, OnDuty>::value)>;
+    template
+    <
+        template<typename...> class Predicate,
+        typename Inspector,
+        typename...RestElements
+    >
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Inspector,
+        RestElements...
+    )
+    -> std::bool_constant
+    <(...&&
+        Predicate
+        <
+            typename RestElements::type,
+            typename Inspector::type
+        >
+        ::value
+    )>;
 };
 
 /**** RightReview ****/
@@ -43,7 +59,7 @@ struct RightReview
                     decltype
                     (
                         RightInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Elements...>()
+                        ::template idyl<Predicate>(std::type_identity<Elements>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Elements) - 1>{})

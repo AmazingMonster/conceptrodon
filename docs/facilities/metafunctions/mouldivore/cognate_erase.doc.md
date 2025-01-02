@@ -118,15 +118,19 @@ We want to count elements one by one up to the desired number.
 We will do this by pack expansion, meaning we will create a pack of the proper size and then expand the pack alongside the elements to enumerate.
 
 We will use variadic functions for this purpose.
-Note that using `void*` like when we implement `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
+Note that using `void*` as in the implementation of `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `CognateErase` using concept expansion.
 
-- In the case where the second layer of `CognateErase` only accepts one index, we want to remove the element at the index from the list.
+We will expand the concept `Prefix<***>` alongside the arguments.
 
 ```C++
 template<typename, auto>
 concept Prefix = true;
+```
 
+- In the case where the first layer of `CognateErase` only accepts one index, we want to remove the element at the index from the list.
+
+```C++
 template<typename>
 struct Ditch {};
 
@@ -136,19 +140,26 @@ struct Ditch<std::index_sequence<I...>>
     template
     <
         template<typename...> class Operation,
-        Prefix<I>...FrontTargets,
-        typename,
         typename...BackTargets
     >
-    static consteval auto idyl()
-    -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Remove the next.
+        auto,
+        // Collect the rest.
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 ```
 
-`Prefix<I>...FrontTargets` tells compilers that this function template is only allowed when `FrontTargets` satisfies `Prefix<FrontTargets, I>...`
-In our case, since `Prefix` always evaluates to `true`, it constrains nothing.
-
-- In the case where the second layer of `CognateErase` accepts two indices, we want to remove the elements between them.
+- In the case where the first layer of `CognateErase` accepts two indices, we want to remove the elements between them.
 
 ```C++
 template<typename, typename>
@@ -160,18 +171,29 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     template
     <
         template<typename...> class Operation,
-        // We use `Prefix<I>...` to reach the start of the unwanted elements.
-        Prefix<I>...FrontTargets,
-        // We use `Prefix<J>...` to enumerate the elements we want to erase.
-        Prefix<J>...,
         typename...BackTargets
     >
-    static consteval auto idyl()
-    -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Expand `Prefix<J>` to count the unwanted arguments.
+        Prefix<J> auto...,
+        // Collect the rest.
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 ```
 
-Finally, we will make an interface to accept arguments and generate the `std::index_sequence`:
+Finally, we will make an interface to accept arguments and generate the `std::index_sequence`.
+
+Note that we wrap the elements inside `std::type_identity`.
+This ensures we can create objects to invoke ordinary functions.
 
 ```C++
 template<template<typename...> class Operation>
@@ -187,7 +209,7 @@ struct CognateErase
         using Mold = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -198,8 +220,12 @@ struct CognateErase
         template<typename...Elements>
         using Mold = decltype
         (
-            Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Elements...>()
+            Expunge
+            <
+                std::make_index_sequence<Start>,
+                std::make_index_sequence<End-Start>
+            >
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -208,7 +234,7 @@ struct CognateErase
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEEgDMGqQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJXCm2mPalDEIETMQEeT5%2BQfWNOS1tBOXRcQnJqQqt7Z0FPZODw5XV4wCUtqhexMjsHAD0AFSHR8cnp/u7JhoAggdHANQAIphprozIeJgKd8cX17dnAJOvyulxBZiSEWQ3iwdxMSTcXkctEIAE84dhQeYIQwoV4YXC3MhJugsFR0Zi/sc7spiJgaKpvkdgQRMCw0gYWQSCCiXsw2KQ7kxEahydc0DjngRqbT6bCkg87gRiF5MHCrNdQf9AdrDsCtXcAJJs%2BhsQRMJqM3WanU284Um5Uh6EZAIS1264s43m1Xw7m81g%2BjHXSbKhyPZ2ukyBKyBB5q%2B2e9neglZABemAA%2BgQAHS5g2iq4hrxhp0EF0pgjoEAgCJYVQZpQARxVEoJBtz2fJSSDIOjoLuA8VrKTnOug7lbn748HiY5PrcfsYAY76LuUKYCi%2BAHkXsRzTlSFPp9K6XhVG30R2AGLEWQAFTawEwBAUh7Hx8VPKX/KP08XfMwDsLCYZAAGsH2IJ8X1/Atx3mRxkDXARJkwAA3MRBWFO48HQFFaAgFZfwAWlXHcEn3AQCRve9H2fBQOwFYCwIgqD6NzLt1V7OMkk4617mwVQ0i8IxMDdZlhznLkvwAgV/wDAsizDAShJE2E%2B1jeMNQ9CTk3hNNMxzPMBX0rMOwAKQUpViylZThKfCsqxrBg6wbTBmzeed23Y7tjMrata0wesmxbbYCTMlduwLKNOPHWdk3fAcCV/WKdM5X1pOXbzsDXAxNzuMi9yaN8rg/O5dl2O4AHVRK8JRYQANg0GlT3PeF827FdGsVVA7lpEDXQIBBRPmdo7lQKhFSGu5hIAd0MFl0DuBpWUYF9OwS6dmvpC8OtzajBBYujitK8qqpquqTEarazzCy92K6ogloYHxyJZSbROW00XzuGbRLmwRuqWvclHWkqP2u1q3As3bs2Oj85LYICQPA2joI22DB3gvBEPFFD0NoTDHpwvCCOI0jdwohgqNvA7UbY2G7iYlHILoiKMR4zENI5rSHXuDxgGYFlsGB0SflBOK0oXVL5wRwCspyjdtwpppLNDKV%2BcFnARc5mKZ2llM8HTUyst/RSpRpVAiGUJgnzUmNuN4jaJfnEypQNZzAoxgczelS3UGt%2By2o91qe3HaLkr1r1JdljtsBNVaFC96daoiYA7gAWU8Ra4QVLAoUXCOBwgQvp1Lcs9L8kAWCYUDMwCoK3JCzzg67UPSsHatnew3DaAJArKYFOOVsEen0VJjbx0I7mwcSrnHZnoco5dw2DLuAZ2mMleszubBnKT2lmzwWkvggdepSS%2BUd%2BcwiNp9i2rZt%2Bcz8HvfIvRvsJ8jkcZYyxHcyHr6ic34L3HCnIwGcs5ylzpgfOX4S7F0/seWyIkHLVmrrXDM9dXLuVbPCM%2B6JfKOXQXXYO2Cm4El3ugIi%2BDIrAPbh3EAXdia93hP3IqO944jzZuPEBg4p661ng7e0KUl4EiFEQDsVxgC0mHtBOhg4wFpwDqJHOvsH6BzcFImRgC2aaS4novitoAR6ipFeI%2Bkwd6qFYOyUWTJDFGNOMCTE4JITQhUfCcU2w0hyJ7PY/KyschiXFvrdK/o/6dmAT7NhOQDGUnuEILwaRiiYHQAAJU%2BF4WgUoxbXEUWvRJyS0kZKyVA/xr0YnwgiAQAUVTDg1MEIcDi9p9Tp2fEwKgwkHCBJyVcZ2Ukwly2zFcSCQCex5Naa0DpOILSqI1t6YWG55zRMosA6syiCRcALNWTOtB0AEmGcAUetD576nSQoTJ2S7G5KyOAs5FzSkTPaZ0lWlTBD1IIPsd5dTsINP2E0nm%2Bo7yfEuVaYMrQEIZkVgkAgEBiTVgUAGSFQC3AJKSZkFJdyskCkxQQdE/DmkOMBCY%2BJMCBCLQEtY%2BgQS4mEscQS%2BJBT0VFPOSUnpeTUWFJxRmLgpTllU1edUn5Hy/nHPpYcDObSpldIENS3pISFy/0GQc0ZoJxmSueTkblpS5lC21qwgJKyexrMfhsgUSQtkgB2Xs%2BEyrdHTz8Ti2VeSuU8tUY8qVTRuUEiqV8r5nyhWNNFQCqkQKLE9KxsgJFSh2iwsrgitgSKCQcqZS67FxSCBeu7PwjgaxaCcH8LwPwHAtCkFQJwSclhrB3AUBsLYKjwQ8FIAQTQOa1igQCJIbMGgAAcZgzAAE5%2B1cH8D27tXBAiBGkHmjgkheAsAkBoVIRaS1lo4LwBQIBUjNuLTm0gcBYAwEQCADYBAhLVIoBANAbI6AJCiAGTgqhu31SIvVSQdxgDIEQlIbMZheApMICQHCeh%2BCCBEGIdgUgZCCEUCodQO7SC6C4KQGae40icB4Lm/NhaW2ls4FuREZ6xoTUfc%2B1977P13G/WYO4EAPDXvoMQWEDaVi8G3VoNYEAkBXrSDesgF7uO8ZAMAKQZg%2BB0BZMQDdEBYg4diBENoKJ0O8Dk8wYgKItyxG0DA7djar1fS3AwWgin4NYFiF4YAbgxC0A3dwXgWBq5GHECZo%2B2m8CoU%2BDhwKMDEQ7EbVUhoOHkSxD3GpjwWAcNKjwPO2zpB3PEFiOip4DngDIiMC2tYVADCHIAGofBmmRItjaQPCFEOISDxWYNqBw4h/QhhjDWGsPoPAsQN2QDWKgbxOQbNEWJDnUwlbLBmBXXF4gOEPNtd6K55wEBXAzD8EhsIEQRhVDGEh4o2QBBzb0OtpoixRg1Em9K5oUwOieC6HoOwU3jsLCW0sVbtgTtbaQyNIYt39sSDWDWzY2wPv6Cw6QZdvBV13BIy%2Bt9H6v2duoxAXAAHGNYi4Cxpt6W1hDSYFgRIBFSDtskEkbM/akiTo0JIMwkhGoaH8PVftf2Z1zpAEkLg2Z6pcHqt2/tY76r%2BEkMOgn9UAc4dXeuzdyOd0ccPZx49BHETkEoAJhjd62CcDaCwVCgQiJMAVuArg/bsyM5Lf%2Bogo2qxIeK2Bsr0gKtKCq/B3QomUNMDQ7ZzDHAC38/g6u/Dp7EREZB0%2BsHmu07a9112mjdGeMMaY0kMwSO2O7ol3LhIMvL2oHo2MdcRhtdcFSDQLJCQpMyfgyphTSnSBF7UxprTDgS96dWgZozOHTPmcs7QazJf7N1acyW/AtIunuZs/r1Q3mWQl/89OktQWQsojCzsEtkXouNriwlpQSWO%2Bp3S3wLLChcuYHy7yEvpvSsQYt7ISrcGS229q2l/rVhLBNZa/AdrnXkKcB65WPrDXBvDYSEb8bWPLtHZcGciexCGcj2xWwOx2xyGAMgLKDe3AIu2WiOzPmAP/yaDPjAOWGe0ezOwKCwJuwqHe0R3WG%2Bwg2d1d0B1ww4F91IzfXT0Dx1z1xo1h0N0j0R1YxR1IDRwx0oGd1nVIHnSSB12J0CH8H7QnSSBJzJ25zdxXU4CFy3XX33SPRPTPSTwT2IAVx2GVzIxYAUFQkQlQiDznEmD/XwENyAxN1kDNyPyg3kCtzPx0Hp2Q1QyUzIOw3dzwylylHGhBx0L0IMKMO9AsVoxT3DwSEjySBj0UK41CN4zUNiIYxAH0KSQzEMP7QzGMIzVUFfTE1z0k0oALxLTL2M0bWKIr202rxT300M2My70wDMwsysxs0bXb0cxnzsxc17w83gy82QB8xH0EAC3gwnwU2nwi1G3n14EX0S1ZFXzS1Fw3xti3zywK33ysMPwkGP2g3sOqycIMCvw/xsCC1ayxw6yaBs12DhWv2sCGyBxGzGxOM%2B0QKaEAPcBwPmxAPQAwPuxgNyHeO20yA2wYG%2BIO1QP6GwPyA%2BLBIEHQLgMwIe0GBQJOxBN%2By%2BzrV%2B2nXIIF04F8LfV0P0LuDSOzEyKYLMJIFYKiNF1R0wHRzGCx2nT4PnQHWzCSCSH8BHW50XVZMCFZxkKBzkNsGF1jxWDbRAEkH8Hx3HUCEXW7UkCHS4F7TMD52nSSHcNkLXRF3Y2d1/T5MoPYKpNizzxyDFKAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwA7KSuADJ4DJgAcj4ARpjEEv4AzKQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJXCm2mPalDEIETMQEeT5%2BQfWNOS1tBOXRcQlJqQqt7Z0FPZODw5XV4wCUtqhexMjsHAD0AFSHR8cnp/u7JhoAggdHANQAIphprozIeJgKd8cX17dnAJOvyulxBZmSEWQ3iwdxMyTcBAAni8APoEYhMQgKOHYUHmCEMKFeGFwtxeRy0QiInF48GQ6GYWHw5CTdBYKg066g/77O7KYiYGiqb5HYEETAsNIGcWkpEvZhsUh3Jjk1Ccq5oQnPAh8gVCpkPO7oryYOFWLl/QFWoHc453ACSkvobEETCaIsOwJ51sBwNt9wehGQCA951B4qdbtN8LljFY0dx10mxC8DkeQZDJkCVkCDzNeOuEalUdJWQAXpg0QA6Gv29XJ1M6wMEYOlgjoEAgCJYVQopQARxNWtJ9prVZpyUTIOzoLuc6NEuLMuu86Zblnq/nRel0YRyLjbDHOLuUKYCi%2BAHkXhimqQN5ujfuFZgxxYmMgANYAFTawEwBGxFd53VVd5kcZATwESZMAANzEZVVTuPB0ERWh7zuCB0NXXZdjubBVDSQx0FhAA2DR%2BUFPBVBHGkyKNVBIK8QQjQQRlfx8RgALuKhiFQFgWMZHjZHHICHwooUaMnBCiDHITBDRX9/wUO9RM3HC7gAJQlVAYMZAhWLuSJVAIESrgfOcVSIFSzPM9S8kaAS7gFSZTPMu430/H9iD/ACj1UlZ0IAWmPK8EjdHJ0NJLCtyfeM7iwKFY2oXj5KmHyFBWTtYzHay3NjZ93Pfb9FIArL9z8my5wnc1pzzZIav9Q48IIpi/1DMVFx3WVYsVR95XjetjTTfC0laxksxzOqGsLTqS3hctKxM2slQW6sawAKUGlNhpaoxd1ZTtu0wXsByHbYRyPScVvbQ6GB7PtMEHN5d3Wy7cUnPEZ1U7cS1UqLVNXH6ZRjHqXxrY9T3PO5QpvHJcvM/L41fIqvPSyKPtUsC8AgzVoLg2hpIY5DUPQzCAfndSRqI0jyL1KjJNxOiiEY5j9LY7yOMEL4hP4tnuJSkzorncT6fhOspMs1BZIFhTvKU%2BGH0pgjqZMMiReo%2BFNo%2BpmGLQJidT5piAHdDHFYj2JdXyhd1SiNbcLXsEJnLrbszwHL55zBfJucPOKuXfPB/ygpC69woEdH129vqD0ZBLaCSuSCFl9LMpAbKawVzdEbYQrPJKhQypeCrV2qz6poLG47Q8YBmHFbAMSUdrw1m4GERb3ds7B8cpMhy9Q6aLbGzuava5wBvTS5L7KoXSNW9Wpbu6nUChp1flUCIZQmDaias3Li1p6B/a8ArNEHTu46QPnBs0zXjet93e1z41pfgKnvL2%2B6/rDxrbBnU47EMbT1XF4LIRg7gAFlPDEThIaOOsZrZkyAeZZsrZ5o3RACwJgH5KxHROo9M6D8n4Thfm5OcWV25IRQmheEMMw4MBxBAA6ad9womQpxKkpJf4Sn/jSGcuYxwBSjgFeqkVcz5n3oDD%2B81j6LTuAMdoK0ZGn2wHdS%2Bc4BSDjwM5DC8idRRWSIaFR6BBHT2vqvXid8/ykl0UqIxajYRvwRlIvcX8u5cMtgAkhm4QERGABAqBBp4qYESvuBB1tVwjTGuE4C8JokPiYZg7BrCn4PSesOeEuicSZ1IVfdBiScEpNOs9Thd1AqZMATkqqFTKnkNnoyYm1C3C0IHpORh6DYysKwIIDh8J3E8I%2Bnwh4AjrbCJqiXMRIiJFbmcZLMcVxgACm4VzexPiwGb23gY3U69UDrN3PMxZHi3riNqscxqPoARejtAAMS0ZMZqrApSMh%2BGc85pw/RcjpISBka5NTbDSABdUZzob9xyE3GadTP4xyOUmFewKwotOmpXe4QgvBpGKJgdAWkFBeHjmCq4qy/EorRZkDFWKcV6M2c0iK8IIgECVLSw49LBCHFLvvHkED/xMCoExBwoLnngqXB3UGczvKeNBASjlrRuWEndDA4eqAa5RnrmeXcVLw6AM7Ls0kXB1SdkgbQdApIriiqOZMkElp7hktxfy/FoC/FWopYacBnLpW8vVW4WlTKCD7C9YypCzL9isvNUipqX5Pg6htVjZAKIzxKHaG0jsIAFDxhjQAtwRL0WYs%2BOSpUDqcSjIrt6V5NoLVNSEMEgQxF8IPPoHiotxbRSFrtBmklWbsXWsbdcCVLalBtvJSiLggS1X0JpYIX1gaPpmqBc6qVPL3Q2sPpC58IrgBiq7XayVXK505AHYEkeSrx6kmHbqkAWr4RcCVMkE9%2BrDXwmNau01iL2UOrxRKh1u65Uzq3TKndOrR10v9d68d46g1ArDXcyNrRwKprjQQBNnZk1sFTdY1Fmb30Xs0tm%2BOA781mg4GsWgnB/C8D8BwLQpBUCcHXJYawdwFAbC2ONcEPBSAEE0PhtYH4AiSCrBoAAHGYMwABOITtR%2BN8a4IEQI0hCMcEkLwFgEgNAaFIKR8jlGOC8ALiptjZH8OkDgLAGAiAQAbAIKNOlFAIBoElHQBIUR4ycFUHxkigUSKSDuMAZAEEpBVjMLwDFhASDIT0PwQQIgxDsCkDIQQigVDqD06QXQF6jYYjSJwHgBGiMkfYxRzgF5yQWbuKgKgdxnOufc557zdxfNmAwh4Wz9BiCwmYysXgumtBrAgEgGzaQ7NkCs71/rIBgBSDMHwOg4piAFwgLEXLsQIhtERBl3gC3mDEERBeWI2hgm6ZYzZy2F4GC0GW4lrAsQvDADcGIWgBduC8CwJgow4gztaN23gXSd3yPHWCeSHYLHaUNFy5SWIGINseCwLl9EeBFP3dILpYgsQSVPCe8ASkRh2NrCoAYVdAA1D4RtQqkZY2F4QohxDRdJ3FtQuXkv6EMMYaw1h9B4FiAXSAaxUD/JyHdwKrIYGmBo5YMw6mEfEDYeziAaw7DvecBAVwMw/AXrCBEEYVQxgXuKNkAQiu9Ba6aIsUYNReiy%2BaFMDonguh6Bl26s3CxVdLA17Yc3uuL3zHaIb9XNRpcMe2BILLHBiOqdyxpsrLm3Mea8z5njdWIC4CC81/EXA2uscx2sViTAsCJCl6QLjkhkhViE8kaTGhJBmEkGRDQ/gSJCf0JweTpBFPJC4FWEiXASJ8aExJki/hJC1CLyRYPiWNNaZADpzHBnjPddM4V8k5BKBDaaw5tgnA2gsBgoEQKTATwGDAVwITVYW/ffwEQcXHYL2k4ixT6QVOlA08S7ocbqWmDpfuwHoPaneAaYK%2BZ8kxXSvlYR474M41YH5H71Z8R9ZNYtbJBmAp4db6bT6L4JDz7WaQHDanhGD75cAqY0DxwJAzZzaJZrZLYrakAkEbZbY7YOBkEHacRHYna5bnaXbXa0C3ZkGPYM4vbkb4ACi8qfa5Y/bIB/ZkGA6ybkYg5g6IgQ47DkbQ6w4sYI5I5KAo5cG%2BIT7Y5bwKD46YCE7yhkGX7k5RY36yDU4JbkaP704Y6C5WCWAs5s7wCc7c5QScB87tgC5M7C6i4JBn6fCOEm624uB3Su4hB3Se7LCa6ZDa65CW4FCRElA5DhFO425NC6IhEpH9Dm5JHG7u4W75BK7O724VBG7%2B7rCbB%2B7J516B45bD6cBh4VYeaYF%2BL76H68YYTx6n4wHJ7tZp6kAZ5Z6UAB4N5N4H6l6BD%2BBCZSbJBl4V595D7qacCj7j56ZdZT5IBmYWaoHIHEDL47Br6VYsAKAwQQQwQtE7iTABYn7Bbn4xZk6RYSAmGxZ37mE6AgCpDP6v6ZZVEf4h75az46glZlYHFHEnFnFRh3IQANZQEJAwHJDwET5IHoFNZbFIljDHFoooinFCYojnFJyqDuYTb4HTaUBEHkYUGnYsbklUG7a0F8SHbHanY8GYAXZXY3Z3YsacHPayEPZvb8F%2BGJZCEiFw5iHA6s5SEyFQ7i4KG8BKHI4ShqEY4rF8A47aEE5E4GGyBX7GG3FmG05vFWGM5C42Ag6S5OFNB3a7AHQ2HWAi5f5i4S7%2BEZFy4K6xEFEq7FFe565RFNAhH66JEO4lFu4NCm5pGunW7Bm266LZHW4u5hlu5ZEBmemVH0blFRbv41ELEcBAkeaHHHF3BYlVi4ntFXGJ6tY9ErHp6YCZ5jA56ybDEgDCZVjJDJD%2BD%2BCl44EaDNmBAd7zFf6LG2Bj6p4Vm54gCSD%2BCF6SaBDKZ8aSCiZcACZmCD6ybJAZl9maZDmdYB7%2Ba9l5brkIErBrAI5ZDOCSBAA)
 
 ## Links
 

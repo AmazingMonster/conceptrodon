@@ -3,7 +3,6 @@
 /**********************/
 
 #include <utility>
-#include <cstddef>
 
 /**** ExtendFront ****/
 template<typename...>
@@ -22,7 +21,7 @@ struct Vay
 { static constexpr auto value {Variable}; };
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /**** Shuttle ****/
@@ -45,26 +44,27 @@ struct ModifyValues<std::index_sequence<I...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename Target,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
-        // Note that `Shuttle` is instantiated by values
-        // extracted from the template parameters.
-        // This is because we will pack every variable
-        // into `Vay`.
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            Target,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Shuttle
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             Operation<Target::value>::value,
-            BackTargets::value...
+            BackArgs::value...
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<template<auto...> class...Agreements>
@@ -79,29 +79,34 @@ struct ModifyValues<std::index_sequence<I...>, std::index_sequence<J...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Shuttle
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             Operation<FirstTarget::value>::value,
-            MiddleTargets::value...,
+            decltype(middle_args)::value...,
             Operation<SecondTarget::value>::value,
-            BackTargets::value...
+            BackArgs::value...
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<template<auto...> class...Agreements>
@@ -117,34 +122,43 @@ struct ModifyValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename ModifyValues<OtherSequences...>
-            ::template Rail<Operation>
-            ::template Page<BackTargets::value...>
+            decltype
+            (
+                ModifyValues<OtherSequences...>
+                ::template Rail<Operation>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Page
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             Operation<FirstTarget::value>::value,
-            MiddleTargets::value...,
+            decltype(middle_args)::value...,
             Operation<SecondTarget::value>::value
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<template<auto...> class...Agreements>

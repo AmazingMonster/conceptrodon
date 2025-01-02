@@ -3,7 +3,6 @@
 /**********************/
 
 #include <utility>
-#include <cstddef>
 
 /**** ExtendFront ****/
 template<typename...>
@@ -22,7 +21,7 @@ struct Vay
 { static constexpr auto value {Variable}; };
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /**** Shuttle ****/
@@ -40,88 +39,88 @@ struct RemoveValues {};
 template<auto...I>
 struct RemoveValues<std::index_sequence<I...>>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
-    // Note that `Shuttle` is instantiated by values
-    // extracted from the template parameters.
-    // This is because we will pack every variable
-    // into `Vay`.
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> Shuttle
     <
-        FrontTargets::value...,
-        BackTargets::value...
+        decltype(front_args)::value...,
+        BackArgs::value...
     >;
 
     template<auto...Agreements>
-    using Page = decltype(idyl<Vay<Agreements>...>());
+    using Page = decltype(idyl(Vay<Agreements>{}...));
 };
 
 template<auto...I, auto...J>
 struct RemoveValues<std::index_sequence<I...>, std::index_sequence<J...>>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        // We use `Prefix<J>...` to go across the distance
-        // between two targets.
-        Prefix<J>...MiddleTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the first unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Expand `Prefix<I>...` to reach the second unwanted item.
+        Prefix<J> auto...middle_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> Shuttle
     <
-        FrontTargets::value...,
-        MiddleTargets::value...,
-        BackTargets::value...
+        decltype(front_args)::value...,
+        decltype(middle_args)::value...,
+        BackArgs::value...
     >;
 
     template<auto...Agreements>
-    using Page = decltype(idyl<Vay<Agreements>...>());
+    using Page = decltype(idyl(Vay<Agreements>{}...));
 };
 
 /**** Recursive Case ****/
 template<auto...I, auto...J, typename...OtherSequences>
 struct RemoveValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherSequences...>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        // We use `Prefix<J>...` to go across the distance
-        // between two targets.
-        Prefix<J>...MiddleTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the first unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Expand `Prefix<I>...` to reach the second unwanted item.
+        Prefix<J> auto...middle_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> ExtendFront
     <
-        typename RemoveValues<OtherSequences...>
-        ::template Page<BackTargets::value...>
+        decltype
+        (
+            RemoveValues<OtherSequences...>
+            ::idyl(BackArgs{}...)
+        )
     >
     ::template Page
     <
-        FrontTargets::value...,
-        MiddleTargets::value...
+        decltype(front_args)::value...,
+        decltype(middle_args)::value...
     >;
 
     template<auto...Agreements>
-    using Page = decltype(idyl<Vay<Agreements>...>());
+    using Page = decltype(idyl<>(Vay<Agreements>{}...));
 };
 
 /*****************/

@@ -102,7 +102,7 @@ static_assert(std::same_as<SupposedResult, Result>);
 
 ## Implementation
 
-The implementation of `InsertTypes` is similar to that of `Typelivore::Inject`. However, since now we must deal with a variadic number of indices, we will perform recursion over the total number of the `std::index_sequence`s.
+We will perform recursion over the total number of the `std::index_sequence`s.
 
 - **Base Case:** Handle several amounts directly.
 - **Recursive Case:**
@@ -124,10 +124,11 @@ struct ExtendFront<Container<Elements...>>
 };
 ```
 
-We will use `Prefix` to enumerate arguments like in `Typelivore::Amidst`.
+The index pack within each `std::index_sequence` will be wrapped into `Prefix` to produce concept packs.
+Then, we expand the concept packs alongside the arguments to reach the desired positions.
 
 ```C++
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 ```
 
@@ -140,6 +141,9 @@ struct Capsule;
 
 Here is a simplified version of the implementation.
 
+Note that we wrap the elements inside `std::type_identity`.
+This ensures we can create objects to invoke the ordinary function.
+
 ```C++
 template<typename...>
 struct InsertTypes {};
@@ -151,22 +155,23 @@ struct InsertTypes<std::index_sequence<I...>>
     template<typename NewElement, typename...>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the desired position.
+            Prefix<I> auto...front_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             NewElement,
-            BackTargets...
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -179,27 +184,27 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>>
     template<typename FirstNewElement, typename SecondNewElement, typename...>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new element.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new element.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             FirstNewElement,
-            MiddleTargets...,
+            typename decltype(middle_args)::type...,
             SecondNewElement,
-            BackTargets...
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -213,32 +218,35 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
     template<typename FirstNewElement, typename SecondNewElement, typename...OtherNewElements>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new element.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new element.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename InsertTypes<OtherSequences...>
-            ::template Mold<OtherNewElements...>
-            ::template Mold<BackTargets...>
+            decltype
+            (
+                InsertTypes<OtherSequences...>
+                ::template Mold<OtherNewElements...>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Mold
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             FirstNewElement,
-            MiddleTargets...,
+            typename decltype(middle_args)::type...,
             SecondNewElement
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -246,7 +254,7 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBIAbACcpAAOqAqETgwe3r56KWmOAkEh4SxRMVwJtpj2BQxCBEzEBFk%2BflxVNRn1jQRFYZHRcYkKDU0tOe0jPX0lZUMAlLaoXsTI7BwA9ABUO7t7%2BwdbGyYaAILbuwDUACKYSa6MyHiYCpd7x2cXh9/7H6cn/zMAGZgshvFhLiYgW4vI5aIQAJ5Q7AA8wghhgrwQqFuZAjdBYKjI1GfPaXZTETA0VRvXZ/AiYFhJAwMnEEBH3ZhsUiXNIAL0wAH0CMSzmgMXcCOTKdTIUDrpcCMQvJgoVYzgCvltLm4mEkFF56LSdvTGcymKzoezOaxMAA6B2i04jZUOHV6g30NUk85k7CqBkMdAAMWIsmNRwBDKZLNVVo5jFtDrtTpdXjd/sDIbDgkhAHYrHnrt6NWdo%2BbLW5y7G2QmufbHUDsJcwUwFK8PIImMFojzrYm2MnsPQ2IIFKmlempZnXKHZDjOw0e8QccPGYwCApk8Sm6iCwDLofFWaa/GbYOHaFMAB3NejzdOo%2BXLxpIyXACynnQcoVi%2B7IRXaEr1vEcNy3B0eTvMDt13IF1X%2BIsS3%2BUkflQ95NTJABJGN1y7WoIz%2BLU0J%2BP4oxPC04yrOsk0bFEzjTN1MIYJQmgAFQTV4TH3RC4J9LVLgsNtMHdJQCLImMKJxJhYVQZNMInV0pSYliCHY%2B5x2hfEQBAYIsFUQUlAARxVCUcUwmCUV3DV9zOJ9q0ks8B2E4CoMEPtqIvFMrNOJ8GKlClUCIT9aHQA8jy4%2BCnzs8jWVsqLDxxML4qfDYNkuAB1YSX2EkxYg0CkqTwVQzORbc8sVVBLkYHxogoyE8rnQRWMaYBMAfPKUzi5KjwK6kSqbZNGtUlq2oUUgku6xUPIbO1BOQABrZriFah8uqix9kqmRxkBbAQRkwAA3MRLmkohLjwdAEVoCB5gmp8AFpkXdfVDVVNan0S97kqGpaVvAu1xq%2B%2BKXNAty7uSubFpGzdtyBuVLPg8HD3syt%2B3rZNTmASlcIfbzupfYJgA/L8f0uLAwX7CALqunFMex%2B9/uRG7bt4tauOLVnkJ8o8UcotGaLtOnMBxjS6O5w8CbfYLvyhBUAqCr9aax4WGYspD2fVssYso07ZIdTCeV15MACkFKnS5lOiVSOJxLSdKDTB9KMky1jMiyeTt3THYMzBjMeSjjbV7yIom3na3PYTgzwYgRhBnH3Ijy4hEwcV0Dj%2B8E6ctW1r86VAtQaWJpDuGw7hz7xcm1KMqy0TcvymUiv67Ayo0CqqoYGriDquufuh8cOqRqLesb6F5IGh1e%2BW0bAYr7qq8y59a7y4fiuhU3x5TcqzuASqmGQMN20VBBhPwKZTLhlK0qiAhr2FhhFWvSrRj%2BzrZ%2BSlecXX5uHXfC70HoX609B52WmsmSGgDVpvwSnjTaDRtq7WYgyI6tAToyXOpda6t04aPSbM9T0b0oFyjcMAo8k8X4QRIYeKOMcCDpw3DPSaR5f4EgAX3ZMDDGFJxTgINON5XIEA4Yw8BbDHRl1gojEu2tw5ZwdELEWG14qSyJtLUm5NaCU2prQJW9NoK0WZkhD6PEJEVzDo5dGsjlbyJgRLV8yiSayzzgrEK2iVa6K8gjPcHNjH8QAEopxWGkA6wldSiXQlrCSlYjb60NjJE2mdzF2gAPIEGPsQZOfsJSiwBLnS2bEbaaQIOgbSXsna%2BxdpRcytEPaFOKQ7UpGTXZr3dpcZJqT0nlMZsHGyJipFmNtJcahsc%2BGgwEVNROydU50LcmMmRSSUnRCmbjMWvlJxunlgXRWbNundVLoQ8unDLjzxrjlZeDdV5uDHt/TerczrVTYF3Bk9UNBkNGnXV%2BByP6j1KhPHMw0p6bkEZXNKC9spPM%2BW4L%2BLc247xOvvVIrx5lkzwGfV2F8jxV2vrfRgD8n5sModKQq5zIU/z/qw/5Y18X808sI8lg8FFRS2ngHa4p9rINQWdTRN1B44ObDOIMQ06XQkpdNC2zErZqReDiVp0R2n%2B06cszh2lebE2cdCaVxBFnyvxUq7WKrQrQhpeQ9xgqFXxR1RE4ShcxHELRVQ35ED/qAu6oM2hwz474uYf/TADr2H4omTwxZJrNaENMVRCOGNLEM3pU%2BJRerVEp3UQmKmGCXEiwsvozmhivE%2Bmiha6RCS5FRusYvQmcaHHrMLtCQtbidyIyMXxYivwMJXH9KwZkwkwm%2BkbXSH0aJQTghytCcUawkhLIbVcAAakwBEYlwkVh1mgy52TVlSinUiayFheRwKZQg/aqgkjEHZZVZBKp8wWHkkY/M2bSxdp2Hg16s7TihqpTNM2bpdQvS9JzZtd73xtSYFQLwGJ8KdufaA2Ry0slnFjX%2BhogHgMZFJrk626lURCpzjUkALAmDzSFCUn2DTKJcGRICu22HcOCnw87f2OIzD3WI02UjmHyN4bqQR8pOIgT3TME6J02lK1uDXTiejJHLhCehPdIEonxNuHugAVh3GLfjisq2QaDt4skQgvBJDyJgdAfjPRSk7bGrTOnUh6YM4aKUDiP34JxDJjQ0np3CYY9gHkMmeOMbE85iTUmvMyckE5pEEmFOwQ8Te3xLwrOPtjZZ9RpNYMAaAw4DI9mfNuEc/59Lnm3PeeC24QLYXg38VYi8IzPb6LbuQIKNsKkIB2wULaGrGk3Cmd0/pqL6ieRxZFE2Fm8EOCLFoJwOTvA/AcC0KQVAnBiGWGsLyZYqwcrAh4KQAgmhBuLHmiAOTkg7QaAABxmDMPEeIXA5OHYO1wPMeZpDDY4JIXgLAJAaA0KQcbk3pscF4AoEAb31sTcG6QOAsAYCIBAMsAgSRYTkEoGgJkdAFm2k4KoA7sR7qxEkJcYAyAdpSDtGYXgenCAkAunofgggRBiHYFIGQghFAqHUID0guh2jXi7kkTgPAhsjbGxtqbnBEmwmh1KVAVBLio/R5j7HuPLj47MJcCAHgEf0EPWiLg8xeAA60IsCASB4dJER2QCgEADdG5AMAKQZg%2BB0AZDHSgER%2BcRGCI0BEXPeDO%2BYMQBEiSIjaBTgD1b8P7yJIYLQN3zOsARC8MAXUtBaC/e4LwLA2GjDiEj9HAPeAgmJ8m47fxDJ3fkEENUfn8IIhd29x4LA/OlR4Ge0n0gQTiARHM7cVPwB4RGA24sKgBhgAKAnc8a8iTORF4p8IUQ4hacT4Z2ofnrP9CGGMNYaw%2Bg8ARF%2B5ARYqBR0ZET/dfEstTBzcsGYT7zfiAXRePARYdgs/OAgK4cYbRSCBB7LMQY7Q8jpAEC/3IqQv%2BDAMwAw5QHQD%2BdQowzQngrQeg9%2BKWAg3QTQIBpQX%2BtgUB/%2BkwUBKBcwGuSwKwawEgPOHAo272/OX2EuaOGOWOOOeOe2CuEAuAJOauK2mua2Peiwx8TAWAMQN0pA22kgQIdo8QQIt2GgkgZgkgeUGgcmlQ92j2pAz2QIXAdosQFQB28QV2sQu252IhsQZBzOX2P2f27BgOuuYOeuEOwuMOJuZuquoQyOHAjQLAB0eY90TALYBgb4XA8QdoKhee%2BARAV%2BRS7QE%2BVO0%2B0gs%2BSg8%2BzOug1u7Oeo7uxBpBH2vAX2QuUOsIlwYulBUuWOrY3hvh/hiuyuhuqukIwIZgbB2uQOlhdhvYthqAKugwBRluZ2b2NA6i0Qv2EAjuzOnuruReAx3uvu/uDgReweG4oe4e/OUeMeceCeReKey%2B6ek2%2BAlIKWOe/O%2BeyAsI6wq2wQDI92k25eleCI1e6wk2deDeq2zereSg7eKxhMPefA/eg%2Bw%2Bo%2BjA4%2Bsg4RNOkRsgc%2BTOk2cRS%2B3eJ%2BVglg6%2Bm%2Bt%2BU2e%2Be0nAh%2BhSx%2Bq%2BZ%2BF%2B0QwRN%2B2%2B4BCBfgT%2BQYmBb%2BQYOBaBP%2BtQBJpJGQxJYB8BtQSB0B2Qr%2BNJXQ2BH%2BoBcBGBMBEw6B0wrJqB5Qd%2Bi2hBeB92KR5BnAuR1Bnhy%2BcuRR%2B2iuTBQRFRyh1RHBpAXBPBlAxBChShvh4heYcm8QN2QIEhUhkg7QqRAu32tgJhNR5h8AlhkOIusOpuTRZRSObAnAzh0uLACgB0O0B0PhdosYIwROgRpOIRdOk%2B1OEg/x9O0RQJOgIAQIpACRnOSeyRfOhhgu1hou4uqg3pvp/pgZwZUoSurpRuSpQIKpZhwO%2Bu5Zquzp9RMQfpOmgoAZ8QgoJZgo%2BZkRtu3RDuTuLu3uQxQ5PufuAeExTRIeYeEeaxmA0eseYgixjeyxaelxyememxN%2BzOOxexRehxpezOpxruFxteV%2BNxvAdxbejITx3eNZfeTAA%2BQ%2BN4nx42q2YRU%2BfxkZgJC%2BSZoJK%2Bp%2BNg5eW%2BfBu%2BtQieGwWk4J1g5%2BaRl%2B1%2BIFd%2B1QEBLg%2BJnJr%2B7%2BxQbJ3%2BgBZJ6FAB%2BQlJvJuB2JtJHJDJcByFOJdJVJ7JPQBJUwyBxFX%2BApBBNOGZBhn24pPZlwPpfplw7ZQZFEIw8pYZLBypWuqp6pgwfB8hT2IAJ2doQIQIcmF2Zpr2yleYsQB2nFaRnAxh/2qpAhcmwh12eYr2B2kgZ2XAR2Zg%2Bh92QImZXFVptpxBhOullpklZhiwzeaQzgkgQAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBIA7GakAA6oCoRODB7evnrJqY4CQSHhLFExXPG2mPb5DEIETMQEmT5%2BXJXV6XUNBIVhkdFxCQr1jc3ZbcPdvcWlgwCUtqhexMjsHAD0AFTbO7t7%2B5vrJhoAgls7ANQAIpiJrozIeJgKF7tHp%2BcHX3vvJ8d/ZgAzMFkN4sBcTIC3F5HLRCABPSHYf7/T6bC7KYiYGiqV47X4ETAsRIGQmQtwEeF3ZhsUgXJgw1BI/5oBirRIEDFYnEQwFXC4EYheTCQqynVG7C5uJiJBReeh47YEokkphkqGU6msTAAOj1zNOwyFDilMrl9FFKI%2BkuwqkJDHQADFiLJFYd/oTiaSRRqqYxtXqdQaTkavCbbfanS7BBDYlZYldLeLTp7VeqKSrveTNf62IGkRdQUwFC8PIImMFonSczTdXrsPQ2IIFMHQ%2BG7a5nbJyWX6pXiOSG0TGAQFPnAciJyi4/8LnOBZm1T6KX7a4HQpgAO5Dpuj4Pzi5eVJGC4AWU86F5/N7FZCA6hG%2B3jZHY71dJ3L/Hk7FfwTSb%2B1rfEBbwSpcACSXrDuWNRur8aLAd8vweou6Y1gG%2BpToagphpyYEMEojQACp%2Bi8Jgzn%2BgI/qB2wXBYxaYKaSiwchXpLuSDJEIGYGtthJp4QRBDEXcLZQsM6AgCAwRYKoAD6SgAI7Cmyy5gV%2BwZkT%2BB6plmvpamwFyPh%2BgjVqu6FBphJwHm2nKYqgRDnrQ6CzvOGnOQec7aWxum5nWOp0cgADWJzEMAInIqc7nzpMjjIIWAjDJgABuYj0oyFx4Og8K0G57kQDlkVzus6wXLaiSGJeJgAGwaJi2J4Ko5LcVO1UCqgFxYkwyAIAKCAMVgqRYpeuRpAIQYRQVB61TijUFhxqCBlQ0YEDJDShaQ%2BUFUVUqeNUPUMViwz0iFPifhtkX%2BUFIWvmNlkFXMZ0XAAtAW0qyvKIrjZF5IPVppn6VgoI5tQS0rVdcwSTmgbrZ9E0GVuRkENDt2wwKf0MRdwWhRDfr5jDB7MpRVrI%2B5nmoWjgYnMAWJQXuFkTUewTAGeF5XhcAO0EDGVZRAYnY3cMkZSOCLkpT1O7mFrkJoGcz3YTMNkYmcsAcTpPLmheZ6qLmA0xLMMMyeDkVXyXJ2aghsi1T2vi2pSsK/%2BLFpsuc1cXSzt6gAUjxxq4fh0SCSR5K85JDqYLJClKasjVfnSQdSaHcmYIpDzLu7Nvhb%2Bmnzqr2Zoxcjp4MQwyGc%2Bxmo3pDFCJgrLoMXNMmeXakw9ZJv2ReOWuXjWcoWr5N6hjV37gV0V4LFrIJcltCpUQ6WZdlndznl8/uVtpXlRC1VTfVM3NRorXtZgnXdQQvUXMNMH8MQe0XDQheciEm4XFUNM3Sjc6bw1UJNdgU/zXqi2yKDNaP15wr1UGVB068arci3lCT2O894dS6lfM%2B6Rr4kCvkoauFx76PxLgQF%2Br937kjgd/N2OoWAZXQPQQBCgkavwuFtTIu1j77WeJyVaJ1mwEJRv3UKuNiYHnukvZ6E5TRvQtEvb6S9frlzZlXDmfpgYANWgocGIBIZvmAXOfOt9a67joa/dWfV5FAwoegKhmAaFqI0TqAxKNK7Vz0SOOxsMjG0U6pdLG6icb6kkVOW2S9s7eTXJrS2OtB6RX1kzQ2rN2ac1njzAg4lvH80FoIYWUItbhKnORK40tZaZznHbAJKtu45wbqEsWL4ImHmPNElmkJ%2BS2Vbo5C2VSuEYW/NORWVFAI0QAEpV2WKkRKDFpRMRAimMpUIyFgVdoyQM7t64%2BUDAAeRYcQSuSdlK6xDLxH2AkhLPEDkkiSccw6JwjipaOFxY4hwudsyOsCbnrN6psy5ydrrqRnDDIJK5ZE6KLvDPByzawXAcQIGuwK65lxWXqV50QnHNhqc3ZpZs27yx%2BQIrurEyYVL8h4zGuyJrD1HvFQkE8f4zyyg9Re2LIqgPARVDe0CP5uC/lVXe09EFHxPiggQaDL4sOvgXQ6OCn67m4bDIhn9ZoLL/iDFRLiJqMrXpymVbgSGcoQQfJBwr%2BUMEFRgqukLsFblwc/LRXI6pspIT/QMZiLE0OVZtYqTCq6cmFQddhx1rZWt4V8peQj6VPQLBGTsS0HpSJDQeOJforV0voQefifsjkiTcAi95jzniNxjQVCG3dmatKhJmpFo5c1JvnGchJAbJZ5L1MG%2BhjaCo1IPAW3FDFzZ%2BLcFatxca7hKMEFYvmvkXWRUBQQMtY6Sa537ZgCAjrqEqOsT42xVqIUOjLVG/xvSQ1/KMRTMJ4tW3ziiUWo2/I50QC5rQRJyScwCywOkykbSrbVJyfGetOoZb/nxhRXdWlpn/LhTqLJx66anrqee1maLzaZKPZ%2BTp9t/1E3gghOCNpVCsBJAxSZZwEI/CJuYYEbIwQMXJKydktN07UXRAANSYPCZiUyO3sTShyrC3sLgMcROKOMtz6gxTivhQkYDL5zQuBPYUsYLDcX/bGHpqHJSvXNLh/EDsdLAZCeZdOzcVPvXtn09Ep5MD1CoF4NkME8P7t7qBgeFkz0mbMxZhwqDGkXBTURAO4ooQ5SDiwJgAVLHnITtm8kXAkQuP84F4L9zQtXPJGYR6EWJxRdOSAALQWBZxfDsnckgJHpmHUhZCScG3A8fJMlyL3HGOVcBNVirUJHoAFYCbp1K23TJV0ba7rROCrwiRciYHQIM80nI8NnqEANobI3njyk5O5/TFooSNbcBoBrtWmspewHSVbRXUs1cRE1%2BrB3VuSA20dtwLW2uGfw5cUb83mMnDPQ9jmrMnNMHM5Z9I5JVvrdO5ttw%2B2duHfJOd/xXTkx3ZooRNhT3SUrRLH7O9EkFDakR%2BSV7iN%2BuDZSMNrHSICn/A4AsWgnBmu8D8BwLQpBUCcB7ZYawtylgrHI0CHgpACCaBJwsAKIBmuSB1BoAAHGYMwABOcXXBmsi%2BF%2BUWI0gyccEkLwFgEgNAaFIFTmndOOC8AUCATXXPqck9IHAWAMBEAgCWAQRIMJyCUDQMSOgiLtScFUMLyqj1KqSAuMAZAsUpA6jMLwYbhASAZT0PwQQIgxDsCkDIQQigVDqBN6QXQbRNzEBlJwHgpPyeU%2B57TzgqyYR285KgKgFwPde5937gPFwg9mAuBADwzv6CX2I1wOYvBjdaAWBAJATvEgu7IBQCAw/R8gGAFIBINAObRANxACIReIjBAaPCXPvA1/MGIPCVZERtAeq36QJ3u5VkMFoJvtPWAIheGANKWgtADfcF4FgALRhxA34Lh6vAoyX806hxDKEgn7BCEhK405wgRDZ574eBYBF6Ch4Bq6v6kCjLEARB443Af7ABwhGDc4LBUAGChR0ZPCbirLUgn7R7CCiDiAJ5UHJ5qBF4Z76CGDGDWDWD6B4ARAG6QALCoAcjpAv6PRiSNKmCM6WBmA65oHECCw8EQALB2C/7OAQCuBjCtCkCBCVgzADBtAGpqE5ApAjQMDTD9BlDtBKG1AjBNCeAtB6CKGuYCBdCNAmElA6G2BWH6ETBWEuGzDd6LDLCrASD54cAU5a5F667V6e7e6%2B7%2B6B6C7N4QC4Dh6d7s496c74ELC9RMBYAxDyGkB86SCAg6ji6AgK4aCSBmCSDVQaDNaVTi76CcAq6kBq6AhcA6iVRcCVTC7i5y6VQC7S4lGVRhFp66766G7pEm4D6W6D7W5l727j6T4d6hBu4cANAsCJSxCPRMCFgGAnhcDi46htGAH4BEAyHiRtBUGx60HSD0FKCMFp66AJBZ456v7BGhHa68C66l624wgXCV6RG16%2B5Fh7EHFHEt5t4j4d4QhAhmBpF96m4zGLFVgLGoDt4DDAkz5S6a7z6EiFyUAr5p474b4n5El74H5H4OAn5n4jgX5X5F63736P7P4n7v6sFf4074BYiub/5F5AHIAwhrAc5gFVBF5QEwHwhwFrA06IHIEc5oEYFKBYFsmMz4F8BEEKAkFbjkGMCUGyBXHx43GyAMGp406PEsF4FiFWCWCcHcHwB8ECHxScDCFJKiHsESFSHRBnHPB2nmEOF%2BAqEOieEaEOg%2BFuF6E2HjBJCGE1ChlmH2E1BOHWFZDqHxmdDeFaGmF2EeERkpnplFCZl%2BEKAs6BF%2BFK7vHhGcAAnRE7GsGN6glC4t5JGnHQmtFwkZGkBZE5GUDBFNEtEHHlGxDNbi6xCxCAgVFVGSBtAfHF5662DjHwlTHwAzE27l4O4T6omQmu5sCcBrF14sAKCJSxSJT7E6jejDCh4nER7nGJ7UFx4SCGlJ53Emk6AgCAikDPGJBb5vGF4jEl5zEV5V6qB7kHlHknlnmcit4bmj4tmAhtmTFm5D5QUd5rlIkxCHmDYyTHni4yTgUyRAU3F0C4lL4Ek06knX4c5kXknH4oHUmCC0nX4cmYB34P5iDMkoGsmf5Slv4/7cnelp58kCmgGCAilp5ikb6SkIEyGym8DymYFEjKl4HwWEFMDEGkHalU4c6XE0EGk3nGlMGvnmlsHiE2BQFyH2k1Av7rC8yWnWCSGfHSGyE%2BmpnKGqE5n%2BAhkZmuFmHhnJkGF5DpCxl2FPx%2BmJlBnOWWFTCeW%2BHuHdBhV5l9BeVBH%2BGs5JVlk/k66Vn4UXD7mHmSZgVLiHSJGXkpGtm97tmdkDB5FK69kgAS46iAiAjNYy6Tka4NWxBdHDEZWzkG5G7tkFHNbFHy4a7C6SBS5cCi5mBDFK6AjpWfGcBlWTHBEh6dVzWzkLkLBoGpDOCSBAA%3D%3D%3D)
 
 ## Links
 

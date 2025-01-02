@@ -13,8 +13,8 @@ namespace Typella {
 template<typename>
 struct Swivel {};
 
-template<size_t...J>
-struct Swivel<std::index_sequence<J...>>
+template<size_t...I>
+struct Swivel<std::index_sequence<I...>>
 {
     template
     <
@@ -23,7 +23,7 @@ struct Swivel<std::index_sequence<J...>>
     >
     static constexpr auto idyl
     (
-        Prefix<J> auto...front_targets,
+        Prefix<I> auto...front_targets,
         BackTargets...
     )
     -> Operation

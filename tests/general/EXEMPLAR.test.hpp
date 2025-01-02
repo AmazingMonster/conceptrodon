@@ -6,7 +6,7 @@
 
 namespace Conceptrodon {
 namespace GeneralTests {
-namespace Exemplar {
+namespace TestExemplar {
 
 }}}
 

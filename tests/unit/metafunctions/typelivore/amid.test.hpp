@@ -60,6 +60,65 @@ SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
 
 
 
+/******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    std::integral_constant<int,
+#define SHEEP_SUFFIX    \
+    >&
+#define SHEEP_SEPARATOR \
+    ,
+
+using SupposedResult_1 = Capsule<SHEEP_SPROUT(240)>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SHEEP_PREFIX    \
+    std::integral_constant<int,
+#define SHEEP_SUFFIX    \
+    >&
+#define SHEEP_SEPARATOR \
+    ,
+template<size_t I>
+using At_1 = Amid<SHEEP_SPROUT(240)>::UniPage<I>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE \
+    SupposedResult_1
+
+#define SHEEP_PREFIX    \
+    At_1<
+#define SHEEP_SUFFIX    \
+    >
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
 }}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

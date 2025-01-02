@@ -6,7 +6,7 @@
 #include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /**** Capsule ****/
@@ -41,84 +41,88 @@ struct RemoveTypes {};
 template<auto...I>
 struct RemoveTypes<std::index_sequence<I...>>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> Capsule
     <
-        FrontTargets...,
-        BackTargets...
+        typename decltype(front_args)::type...,
+        typename BackArgs::type...
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl<Agreements...>());
+    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
 };
 
 template<auto...I, auto...J>
 struct RemoveTypes<std::index_sequence<I...>, std::index_sequence<J...>>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        // We use `Prefix<J>...` to go across the distance
-        // between two targets.
-        Prefix<J>...MiddleTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the first unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Expand `Prefix<I>...` to reach the second unwanted item.
+        Prefix<J> auto...middle_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> Capsule
     <
-        FrontTargets...,
-        MiddleTargets...,
-        BackTargets...
+        typename decltype(front_args)::type...,
+        typename decltype(middle_args)::type...,
+        typename BackArgs::type...
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl<Agreements...>());
+    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
 };
 
 /**** Recursive Case ****/
 template<auto...I, auto...J, typename...OtherSequences>
 struct RemoveTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSequences...>
 {
-    template
-    <
-        // We use `Prefix<I>...` to enumerate `FrontTargets`.
-        Prefix<I>...FrontTargets,
-        // We drop the next argument.
-        typename,
-        // We use `Prefix<J>...` to go across the distance
-        // between two targets.
-        Prefix<J>...MiddleTargets,
-        // We drop the next argument.
-        typename,
-        typename...BackTargets
-    >
-    static consteval auto idyl()
+    template<typename...BackArgs>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>...` to reach the first unwanted item.
+        Prefix<I> auto...front_args,
+        // Remove the next argument.
+        auto,
+        // Expand `Prefix<I>...` to reach the second unwanted item.
+        Prefix<J> auto...middle_args,
+        // Remove the next argument.
+        auto,
+        // Collect the rest arguments.
+        BackArgs...
+    )
     -> ExtendFront
     <
-        typename RemoveTypes<OtherSequences...>
-        ::template Mold<BackTargets...>
+        decltype
+        (
+            RemoveTypes<OtherSequences...>
+            ::idyl(BackArgs{}...)
+        )
     >
     ::template Mold
     <
-        FrontTargets...,
-        MiddleTargets...
+        typename decltype(front_args)::type...,
+        typename decltype(middle_args)::type...
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl<Agreements...>());
+    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
 };
 
 }

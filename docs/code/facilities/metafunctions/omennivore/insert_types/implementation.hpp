@@ -3,10 +3,9 @@
 /**********************/
 
 #include <utility>
-#include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /**** Capsule ****/
@@ -38,22 +37,23 @@ struct InsertTypes<std::index_sequence<I...>>
     template<typename NewElement, typename...>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the desired position.
+            Prefix<I> auto...front_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             NewElement,
-            BackTargets...
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -66,27 +66,27 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>>
     template<typename FirstNewElement, typename SecondNewElement, typename...>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new element.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new element.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             FirstNewElement,
-            MiddleTargets...,
+            typename decltype(middle_args)::type...,
             SecondNewElement,
-            BackTargets...
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -100,32 +100,35 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
     template<typename FirstNewElement, typename SecondNewElement, typename...OtherNewElements>
     struct ProtoMold
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new element.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new element.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename InsertTypes<OtherSequences...>
-            ::template Mold<OtherNewElements...>
-            ::template Mold<BackTargets...>
+            decltype
+            (
+                InsertTypes<OtherSequences...>
+                ::template Mold<OtherNewElements...>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Mold
         <
-            FrontTargets...,
+            typename decltype(front_args)::type...,
             FirstNewElement,
-            MiddleTargets...,
+            typename decltype(middle_args)::type...,
             SecondNewElement
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -165,4 +168,4 @@ using SupposedResult = Capsule<Vay<0>, Vay<-1>, Vay<2>, Vay<-3>, Vay<4>, Vay<-5>
 using Result = Metafunction<Vay<0>, Vay<2>, Vay<4>>;
 
 /**** Test ****/
-static_assert(std::same_as<SupposedResult, Result>);
+static_assert(std::same_as<Result, SupposedResult>);

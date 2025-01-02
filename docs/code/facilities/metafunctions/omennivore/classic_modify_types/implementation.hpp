@@ -3,7 +3,6 @@
 /**********************/
 
 #include <utility>
-#include <cstddef>
 
 /**** ExtendFront ****/
 template<typename...>
@@ -17,7 +16,7 @@ struct ExtendFront<Container<Elements...>>
 };
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /**** Capsule ****/
@@ -40,22 +39,27 @@ struct ClassicModifyTypes<std::index_sequence<I...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename Target,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            Target,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
-            typename Operation<Target>::type,
-            BackTargets...
+            typename decltype(front_args)::type...,
+            typename Operation<typename Target::type>::type,
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -70,29 +74,34 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
-            typename Operation<FirstTarget>::type,
-            MiddleTargets...,
-            typename Operation<SecondTarget>::type,
-            BackTargets...
+            typename decltype(front_args)::type...,
+            typename Operation<typename FirstTarget::type>::type,
+            typename decltype(middle_args)::type...,
+            typename Operation<typename SecondTarget::type>::type,
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -108,34 +117,42 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename ClassicModifyTypes<OtherSequences...>
-            ::template Road<Operation>
-            ::template Mold<BackTargets...>
+            decltype
+            (
+                ClassicModifyTypes<OtherSequences...>
+                ::template Road<Operation>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Mold
         <
-            FrontTargets...,
-            typename Operation<FirstTarget>::type,
-            MiddleTargets...,
-            typename Operation<SecondTarget>::type
+            typename decltype(front_args)::type...,
+            typename Operation<typename FirstTarget::type>::type,
+            typename decltype(middle_args)::type...,
+            typename Operation<typename SecondTarget::type>::type
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>

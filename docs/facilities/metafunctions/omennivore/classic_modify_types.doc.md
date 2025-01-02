@@ -109,7 +109,6 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-The implementation of `ClassicModifyTypes` is similar to that of `Omennivore::InsertValues`.
 We will perform recursion over the total number of the `std::index_sequence`s.
 
 - **Base Case:** Handle several amounts directly.
@@ -132,10 +131,11 @@ struct ExtendFront<Container<Elements...>>
 };
 ```
 
-We will use `Prefix` to enumerate arguments like in `Typelivore::Amidst`.
+The index pack within each `std::index_sequence` will be wrapped into `Prefix` to produce concept packs.
+Then, we expand the concept packs alongside the arguments to reach the items at the intended positions.
 
 ```C++
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 ```
 
@@ -147,6 +147,9 @@ struct Capsule;
 ```
 
 Here is a simplified version of the implementation.
+
+Note that we wrap the elements inside `std::type_identity`.
+This ensures we can create objects to invoke the ordinary function.
 
 ```C++
 template<typename...>
@@ -161,22 +164,27 @@ struct ClassicModifyTypes<std::index_sequence<I...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename Target,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            Target,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
-            typename Operation<Target>::type,
-            BackTargets...
+            typename decltype(front_args)::type...,
+            typename Operation<typename Target::type>::type,
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -191,25 +199,30 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>>
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> Capsule
         <
-            FrontTargets...,
-            typename Operation<FirstTarget>::type,
-            MiddleTargets...,
-            typename Operation<SecondTarget>::type,
-            BackTargets...
+            typename decltype(front_args)::type...,
+            typename Operation<typename FirstTarget::type>::type,
+            typename decltype(middle_args)::type...,
+            typename Operation<typename SecondTarget::type>::type,
+            typename BackArgs::type...
         >;
 
         template<typename...Agreements>
@@ -229,34 +242,42 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
     {
         template
         <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We will transform the next argument.
             typename FirstTarget,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            // We will transform the next argument.
             typename SecondTarget,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl()
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>...` to count arguments before the first target.
+            Prefix<I> auto...front_args,
+            // Transform the next argument.
+            FirstTarget,
+            // Expand `Prefix<J>...` to go across the distance between two targets.
+            Prefix<J> auto...middle_args,
+            // Transform the next argument.
+            SecondTarget,
+            // Collect the rest.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename ClassicModifyTypes<OtherSequences...>
-            ::template Road<Operation>
-            ::template Mold<BackTargets...>
+            decltype
+            (
+                ClassicModifyTypes<OtherSequences...>
+                ::template Road<Operation>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Mold
         <
-            FrontTargets...,
-            typename Operation<FirstTarget>::type,
-            MiddleTargets...,
-            typename Operation<SecondTarget>::type
+            typename decltype(front_args)::type...,
+            typename Operation<typename FirstTarget::type>::type,
+            typename decltype(middle_args)::type...,
+            typename Operation<typename SecondTarget::type>::type
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl<Agreements...>());
+        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -264,7 +285,7 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxBIAHABspAAOqAqETgwe3r56KWmOAkEh4SxRMVwJtpj2BQxCBEzEBFk%2BflxVNRn1jQRFYZHRcYkKDU0tOe0jPX0lZUMAlLaoXsTI7BwA9ABUO7t7%2BwdbGyYaAILbuwDUACKYSa6MyHiYCpd7x2cXh9/7H6cn/zMAGZgshvFhLiYgW4vI5aIQAJ5Q7AA8wghhgrwQqFuZAjdBYKjI1GfPaXbCqAiuABixFkb12fypLCSBipOIICPuzDYADp%2BcSziNiF4HOTKTS6YJIQB2Kwy65QqxnAHM1lMdnQtVszAcrmMViYfm85GXMFMBSvDyCJjBaKkS6c7mG43YehsQQKQWnYWigjiqkMdC02Q460NO3EHFuzAeggKY3EoEolVygGXDOO2PqzVuJ0Gvn80KYADuMbjXuT6czXjSRkuAFlPOhIUDrpdw7aQlHocWy%2B7GPHjQ7y4OEwKq0Dlf8FUqSecycpiJgaKoGTsmdmdXrnWwHWkAF6YAD6BG9aAxd39S5XeDXUPbBBFuqn86%2BWw7TCSCi89HXR1VLcNRfPN9R5I0JxTH0nz9T9v1/F9pwBd8flQgDSSuABJFkBxtWp/z%2BFC0O%2BP5AJw4CdwLCCTSrIUYLFNwDEtPBkCbfAqARAAVfVXhMNNZ1fFUMJ2S4LAtTBPyUAiyJzECmFhVBjUw71fQYpi0lYjA8A47j7krNx8RAEBgiwVRjyUABHLxHhAzDE0nKC%2BOnTMs3I3NtQorUwJdSCzXUy4AHl7mIDUMm9FzVOvOkiAAJVQJh0GrDMnKSlzXNk1KXJxTK0ozDYNkuAB1CTawkkx4g0G9VxxZTk0TCrHVQS5GB8aJgMhCqQ0ETjGmATB43KjQTTOXLcqqu8auRY0uoIHriD6%2BNSBy3L8qKiSSzoWhHRChgFH4YgWEdBAJJCSlLl61rBGG05RrS/NwMuOaFqWkbbsze6fN5MTkAAaye/qvVe3LwtGqZHGQM0BBGTAADcxHOhTLjwdAEVoCB5mWy4AFpTTcL8f3oTHsqBt6Zv%2Bod%2BRem63ozD62EC4LQoEHFyeRIz8ypmmM2%2Bv7eoBxMSayyckMF96gPc7zC15U5gGXWMxxB3La2CYBG2bVt2ywMF8wgZHUZxGW5YrezsHRjHBOp5KBJFy30u3LVxZAunqNNc1LWNQ3MHlz1FcuZX6zihKNcuJdUFi%2BLEuhT3vYpmiUQtvjFQTs4PNzeSiCUh108U/kACkVPo/1GItDS2O0rieJxQzjKDTAzMs6zLxqk39wIdAjJMuvzMwKybJxXOTe9FKSdTp3Hco8CTb8kuGba2pfcikPotQQPEpJ4fbZc0eiehTGXNW4q/akwbxtUSa6oFBqiGahhWpCqkOo0Mm%2BYGirrq5pfbzP6FauwaapVmi/BQnMuYH3Wptbahg9okEOgQY6lxTr%2BgunGd%2BXNnaXGpHgYgIxyYgJpmAo%2BZUKqn37lNS%2BGhGqXGAE1JgyA6SWiOhJfAUwm6ixWgVKIBASxewYI6EsTVRgLQTHvTMJDoT5wvryBsyN0D0HJsAkReUCqHw2rQLaT4oH7VgfAxB515qXQIKgmm6ChCYAvOgXBijHSS2ojzeRO8oK3TBixSGu0qRwy2tnJGKM0YYzYdjXG%2BMEI7zcFY5%2B81%2BaUysegoKc8wrQkwdgwBESzzJnZvqPBb1pEEjkUA4c0SbGz3vvEtwpjzGszSSADmVi7F5IFP4pMNtbrby8ruai0cKy%2Bxcv7VWTZaAtgfJcLWtAdZ61oAbWWXtjaQTNnOde1t5xb3Hg7NyTsbFTzduOaWkyY6VkcTWOsqtV7B1DuHBKEyjZjkHgnBZQkFxXBimYlYaQYYSTxlJd4Ml7Z4wUpnBGGc84OmdsaAKcDoimN7pePZAJF7F2YppdiFc9JVzbh3Wu9ce6NzWM3SCrd2411Mt3SF2LxEt0CmC4gEKsUvEHqmZyYtVkcmWaBNpGz/KxOKczWittF6nJXhHVKG9mnjwabvfx%2B9lElWPsQ5c1Uf5kJNFfJqLU2D3yIU/AB9i35WLEW4X%2B/9ZDyMybdAhqj1E7WgQdRhCC65IP0SggpbSMFYJwS/Y1o0CGlUfrqiRf9yGUOoedOhqRXhgqGXgFh2LxWZlWpw7hjA%2BECLyTq2VE1xEKuybIzARqrGmogRo3aWjrW6OQYOIxb0TFmIEBYt1jqqLGlqSkwGm9MxdMzM4iGF5oYeP%2BU1MZ6NMY42TAGSUoZRWhOjbTQpcLS5aR0pXaEoLjqUsxTZLZbbcrs0dpcVeOIOVMwYButKW7Vlq36TiRtQjaUtuSty26J7ZJnrXje1sE6X0uXCVeqJk7rFOv3fPBJLrkkLTZlUjJVjM25Kbfkn9MTGYAdKVWoMFTsDpPuA4uZ/x/EtJZfW/kHSFZ3tGj0p9wdhmjJ8RcqZVyZnzHNvSq2ScmkMoyis1juHJ6%2BU2R7HZnSiMZhI8cwZfLd1R14zRuOmHE5SeEsRDcyEyQUlYKyCSnzZNydIiqYEoJwRlWhBeNYSQBrcoU1cAAakwBE0kU7Mq8b/GFhdLgWaRHSy4HbXHQ1UEkYgvbLgeOsrKCwylrayiY2%2BMkchmDEARNI2%2Brw1OnBw%2Bgiz4zuWL0i40GLwRayojTCTEj%2BZg7OZxFjFLRl/MvnjkhW5WH7kiTxvBP8CWkvrMgg5kUDEgmE2TnVj8DZ%2BpMCoF4DE%2BFmvMuBfh%2Ba0Kzgkf6w0IbI2MjBxnSxMu87kUqjFTy1FIAWBMB%2BieTuGLiUgS4MiTJ1c9sHePEdol1KcRAixlwJ753UqXf24d9Fd2%2B7QgAKxY0e2dkz3KjKibcBl6LsWcsg5AH0yObhThTeuTbd8lwhBeCSHkTA6BHkE39Alkj6PMepGx7j38/pBkNYJiBYr0INDnac5ZkrQPsAOlp24MwDP2cA650z6EkhedImhFjX7SYqvhYeS8cn1nTiCalyM4Oc3BvDYcCU9n9Pkxs7524FnWuhcc8Fw9w3/PjduFFw5GTvXHovHx4yBzoVkDHhLtEAgEBq4KENE7/SZORkOiJ1jnH8vUnYHowCDgixaCcF%2B7wPwHAtCkFQJwUJlhrBueWKsMqwIeCkAIJocPiwfogF%2B5IXkGhYhmDMAATkr1wX7ZfYhcBlDKaQkeOCSF4CwCQGgNCkFj/HxPHBeAKBAD33Pcfw%2BkDgLAGAiAQDLAIEkWE5BKBoBZHQaIoRDScFUAkLG8RJBUOQBDKQvIzC8Gx4QEgyM9D8EECIMQ7ApAyEEIoFQ6hx%2BkF0O0EsIUkicB4BHlHjHnngnpwAFLCIvv6KgFQJcDvvEHvgfsAEfpcCfmYJcBAB4GvvQD5miFwPMLwGPloIsBAEgKvkkOvmQBQBAGQRQSAMAFIGYHwHQFSNgpQBECAREMEJlv/rwJwVFgiAFBENoGYmPtnqvnGAFAwLQAiCAVgBEF4MAHjGosPtwLwFgHtkYOIB/vgMuKrq8iofHnXE8lSDweQIINUCAfCBECFNFh4FgCAU%2BHgJ3qoaQK8sQBECTrcBocAPCEYHnosFQAYMAAoGZs8CWLErHtnrfsIKIOIE/tEa/moCAV/voIYMYNYNYPoHgBEMPpAIsKgEZhkCoVjPiA%2BKYCnpYGYP3m4cQMjC8PAIsHYCIRkC4EGOMG0KQIEHaLMIMO0HkOkAIO0bkKkAMQwDMAMOUB0M0QIN0GMJ4K0HoE0arjMaML0N0RMYsasUMZMKseMaUL0Y0enmsBIIARwNHr3iAQPrAbvvvofsfiXmgRALgJfjgVnvgTnv4YsMdAlIMOjKQIXpIECLyJXkCM3hoJIGYJIBVBoL9vEJXvoJwO3qQJ3kCFwLyPEFwPELEJXg3vEMXrXiCYkH3rwAPkPiPh8ePsQTPiQXPhAUvlQTQdgZvmwJwI0CwDDDKFjEwNPPWFwJXryGiYYfgEQLUe3O0NEffnEdIAkUoEkR/roIwT/l%2BDwaceccSaARwOAQvrCJcNAdcfAbceaLyfyYKegZgeQdgZCMCGYO8YQRPjSYyfaAyagFgYMEafQTXj3jQCMtEMPhAOwR/nwdwS4UGdFoIcIQ4KYeIYOJIdIbIZgPIYoWILQCodnuoWkVofHjoc0foSAUYcgLCOsNnsEFSK3vHlYTYQiHYesPHo4c4dnm4R4UoF4RmSrP4XwEESEWEREaYRKbEY/tKbIIke/vHgqakX4eUVYJYFkTkQ0QnoUVDJwCUW3GURkZUdUdEKKfUXkVMcsX4BAK4NsZ0UGHsXMH0SMbUEef0bUKeb0bubULMc0PMRMPeV0LsesfsZMVMHMdkB0d%2BWscUBsXgUsCsMccBa3mqZcZwPqQgTyarHyQKaXugc8SKVaaibaZ8aQN8VgDEH8a3kiSifyeCTKL9pXk3kCBCVCZIO0OqaSbYOSXaVSfADSfPpAcvtQS6RaRvlvhwGybcSwAoDDBDDDAhTqCMOfsKVfmKc/jEQ/hIIOS/rKSOToCAECKQEqX/qoaqcAR/gPlqZAbqTAaoPxYJcJaJcBCMGaZxRQWhUCBhZSZPqQdZdgexY6TEEJZjseCJZXseGJQQMeMZdKcwb6WwRwVwdFqYaGQIUISIVGS6RIVITIdoQmQoUoSmaYemZoTWWoVgjmfUR/vmYWaYSWRYR/hWZltWQ4bUfWbwI2Z4bGK2X4Q5YEUwMEaEaWD2S4X2XJfEUOUpckapeOekRUTYFYbkX8QUbUCoRsIZJOdYFUSSTUXUeNY0dUNMfuYec%2BR0V0YBZ%2BcMfkBkFeReRkLeV%2BWtXuY%2BUeUsQ%2Be%2BbtWebYFsVtZsdMB%2BWeYcaBY/tpRcbpdBYFZcAJUJX5uZVSJZU8ZJa8ehQQZhdhb8acQRSAFXryECECL9nXtRd3sjTKFid9f3pwGSaPphQCb9sCY3jKN3rEJIDXhUBXokK3kCDpbjYPhSUQacWfjjSSXjczfnq4b6S0ZIEAA)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGe1wAyeAyYAHI%2BAEaYxCBmGgDMpAAOqAqETgwe3r56KWmOAkEh4SxRMXGJdpgOGUIETMQEWT5%2BXLaY9gUMdQ0ERWGR0bEJtvWNzTltCmN9wQOlQxUAlLaoXsTI7BwA9ABU%2BweHR8e72yYaAIJ7BwDUACKYSa6MyHiYCjeHZ5fXJ39H3wu5yBZniwWQ3iwNxM8TcXkctEIAE8YdhgcDfrsbthVARXAAxYiyT4HQF4lhJAx4mFuAhIp7MNgAOhZqOB02IXgc2NxBKJgmhAHYrIK7jCrJdgeTKUxqbDpVTMDS6QzWJgWUzUTcIUwFB8PIImHMyDcVYw1RrsPQ2IIFGzLhyuQQeXiGOhCbIaQb6saaVbMDaCAoNWz4mjJcLgTdo6aAzK5bT6ebmSzQpgAO7%2BwN2sNRmNeNJGG4AWU86Gh8TuN29RpCxBpacz1sYQY1pGxzdtIdz8QlQNF4vRP0ON2UxEwNFUJP2ZLjiuVScZmHbTHhqHtFzQDE2SWdY4neCnMKrBE5St7Q6uI7cTCSCi89Gnpylc9l58TqpTmtzDtPTurt73vQg6SsO/zgV8GIjgAkhSnb1F0T6ApiEH/ICL5wW%2BC6fuqrI/hcjrcm4Bh6ngyClvgVBIgAKkmHwmJGA4XqBV63BYuqYABShIRh8bvquRAatBG6Ec6xG6mk5EYHgVG0U8OZuNM6AgCAwRYKoAD6SgAI5eC877Qd2aL4QxfYxrGmEJgqWHyouFp4dg2okR8ADyTzELKGQbuZomjkSRAAEqoEw6B5tGplheZFl8ZF5k0rFUXRmaS43NRDTAJgBCkAliXJfZTLscgADWFzEMAdqXIl4X4VVNzTJ5yDagI0yYAAbmINwCagNx4OgSK0DlNwQIN5nbNsPJJIY5YmAAbBo%2B6TjSwlhiGc2mt1aBeAK6U%2BC2HxRPw46mggnFjBlBCapVtUxgth5LVqXUalQ/IEBp6UKNlV3XTcY2pR5DAKIdLDHZxIS4p1ZW7YIl0XN90ZpWVmWfbDcO/VknQgzc47TDDcM3IVJVlcGrJfVFSyDQAtFqN53g%2BSqk3FsIjTGeVsDcWAQma1AvW9RNLCpZptszSV2WzbnRJ5AjYcmnEI%2BdAtJqiCtPMjeOs5xBOleVyu4bjVWhn2g3WVZou6xcwDjgGe3eVVBbBMAJZlhWVYc7QXO9f1EBKTrGm9S2yI0ublvZmyjF3BqSzk8xKPhUxhuk8b76J9LS5GU5EkakHmBW7aNvRnbRZBSFzt%2BaggXBaFsJZznrYOSB/ZitHvHzrCj0stBK5rhqABSIl/kRzlkRRMk0XRNLe6pbqYJpOl6duBlGe2E9qdPWmYLp%2Bk0t3RkbhFCevlZB9J6bac6nqNzix5XR53V/d7v5qBF6FpN7zHUXJwzMbxZ/uWmzc%2BJ4GINMOWSNhamj/kIaoAh0AgKymA9WGpNZE0GjfHyCEyJNQBnidqtBOprh6n1AaP8hpgN%2BjiSabpoRzVuqoe6K1WRrSIE1LazodrZhuAdEgp0To3BoEA50Z1Mp62%2BjQuhjk25MmerIXm5VVao3GtRf6gMSDAwIDwsGrDIaBmEddAB/DYFyO%2BmQ1QFDprUPHItWEvd6GakYd1YA3UmDICJOfNRnF8D1XnhwzK6Zs4MFNOmbqgjWxgNEVYh6XcWQsF6ugegMiPqkIUUooGmMNEQ2AFDC6YDIFbhgelUBxDRrjXRtUARPDsZZMKTGJB5UQzEPJsQqmYYAK02AsQ7%2Bb9arq3ZtUN2SZubSPevzEAgsWSGOut0y%2BksGApzVP/QBwD8kEB1krEZSZxldL/q7Lm0T0CxMwPE4ZoymQbKqpM9y0zZlsxydA2BKyww61Ob/HC%2BMnGE21msp4dTOlfx7PHH5SUj5XLNhbbOIcaq20LA7UstBpqVh6ZzfpHsBpV1BTXYm35sAQEjvXOKcdLzmWTvKIFtkcKn2cpnNF4LwxvwLg7J%2BJcxxl0fhXQOVK9o7ybvilimIbgBWqOsNIrVOI3m4pBS4RKbyRKZB3PBgkWTd3bAglkLk3HEEgRveeOYaW%2BXEqRKSlFR7yXHgQZSk91Jr01ZsJai9b5mpXjPdec9rVWNtaqk66qnX6QxbvSM%2B9LJJxJR%2BGW5KJIXwudfCF0ZfJMvLiFSKr8ulAvaUzKpIsXl6MWYjOBabwEvJuW6Ax8CT4shqRVAFFYaW1Xqo4RqW4Wo4Lld1ZFg1hq5uMaYqh80LF3VhMtbAq0NDrWYdtLRe1vGHW4ZxPh0xTRLJ0bVMJbh%2B1Nqejzd6Tyoq/UUYYZRxBVHqOnpojJ2iwGZoIEW9t41yFTS7Uu6xA6GFDqYQ4zqzjUgfDcezPAnjNjeIIL4xgASglLODKEnttDwnNIkbs/Z8TN1FL%2BrulJX60lsJbAuqqBa8nZoQzGNGngMZfoqZhxKZbvm1QaRWppjkcSundC9FBqaK3mW2YrXNbaWNVT1ZJYeskx6wnddEDVzr3g71zeZAWR8%2BWssExGryUa8Y3BUsiiAZaIqigjmAqjtVUExikwGx2sKmNuGLS8tjTwBmCEOTrIWubzkS0jcGlK567mfPPNgR5ZmZYIr6ZZ2DcShm2bGd5lKUynPdOw25s0qyYspuMv8pNAbgWUuDtbRT5k6VGbhS7Xp7tCFe1NT7P2ggA6orS7nXMYcI5RzMl/blQJ/UxWJcl0lIaHLpz1KlsF6Wq35ihTJ4ux5S5xsrm4au2ZOWGwa1BVC4rWL7B5KwSknF5soVQuhSUoJwSQk4jSLcO4gy7zAotgAakwJEPEJVBq6jcft7I743HOyiCMFhb4NUwS1ExxAm03BwXpIUFhhJxyFI3f5vK5DMGIEiYswQCxXYuJK7p52UU6se5DhoMO4flsTf1%2B2ea9vwuezSCmKOVL/Y8/XBiYPLy8ppkBVbpJm42Wc/lPunIiKATplTk7WJiyZSYFQLaNQBAI6RyWpkWttXAiy/z%2BoQvtyIWGzxoe0l%2BPGslMxtBZqWBMCKgch1lrRM0i4KicZE9df699lPR1Vr3zxAplwR3ZvIoW71wbm3RvN6wgAKwUwd6bky%2BEVJPxpBj6HsOGAFg3CpGFY2pdTdpyOIQXgkh5EwOgflQFnTzayyntPqQM9Z4fM6ZXXPgKwmJ7CDQZunsXZJ4H7A7Yq9uDMLXlv/v2/19hJILvKJYQUx96GBLSfbjF7dgjrL4/S/wrl4L4XTmW817DM37vbhG%2Br/763vvNJ4g757/vtwQ%2Bewj55SOai7wc9M9/A1N6epogEEK2ahQao780mn%2B2fP6fM/vBL6iWrwIHAKwtAnAPuvAfgHAWgpAqAnApmlg1gdUawGwe2oIPApAyykBQBKwRUIAPukgTIGgAAHGYGYAAJykFcA%2B5EGEFcCCiCjSAgEcCSC8AsASAaAaCkAQFQEwEcC8AKAgAcEYFaArBwCwAwCIAgBrAEBJDwjkCUBoAUh0DRChBqicCqCEEzQUwzSSA3DADICNRSBMhmC8AZ6EAkC9R6D8CCAiBiDsBSAyCCCKAqDqCYGkC6BtDpgeRJCcA8DAGgHgGaC8A8EuTwgyHOioBUA3DqGaHaG6H6E3CGFmBDQeCKH0A/bmDxBcBLC8BCFAGkAQBIAKFJBKFkAUAQBFElEgDABSBmB8B0B4hAKUARCBGkARDBCY4%2BG8BtFQ5IguQRDaClKdGkAKGBguQMC0BIgtFYARBeDAA3i0C0D8HcC8BYC65GDiCuH4Djg1DCpLFQHTwCp4hDHBB4iMFQGIgRAeTQ4eBYAtGnh4CsHLGkDCrEARCF4PBrHACIhGCBErBUAGDlSnZvDpjiwQFoFWHCCiDiD2EQlOFqAtHuH6CGDGDWDWD6B4ARD8GQArCoC7gZBLEUxKTHimDwGWBxBBEvHEB%2BxYnYrtCdAZAuBugTCtCkCBBzAlBlC5CpDpACDMlcn5AZD9AclDBTAdClK1AzB8min0kCA9CNBCmDAxBTCSmeAtB6D1TynsmKkSArAKBIGbA6n6D%2BGcEtE8FREaFaE6F6EGH4FJEQC4BmHpGoHZHoG/ErAnQhRDC0k4GSDxBMikHxD0EaCSBmCSBzQaA%2B4zSkFGlMEsEgCZFMgzRcAzSEGkE0EzR4GUEBkzQmmuE8F8ECGumYEiHiEFGSGhGyFlEVFpEqFsCcANAsCtSCgUxMDpxFhcCkFMhcAEEmH4BEBUnKRtAQk2HQnSCwlKDwmuG6C1GeG3idF%2BEcBgG5ncGcAhHSHwg3ARHmkxE6E6jtmdndlDoQApHFFpHQighmAum5EiGFGoCpHRByHlF3mnlDB7nVEUEcE0BuzRD8EQDNGuHdEdFPGAXQ59EDEOBDEjEthjETFTGYAzFzFiCLFDGrHIkbFQFbHim7EtEHHIDwhbBoEnEdAtEXFXFIg3FbBQH3GPFoEvFvFKAfFoX2y/F8AAkKBAkZiglDHDlQl2FjmyBwkuFQHTlIk/EklWCWDomYnwA4l4nNScCEmmrEmolkncGUnUkyV0ninOAQCuBSmslugKkLBKnJDcldD6V5A8kMBGWcnSnaXdAqnZAslVAi4OW9A2UimjC9D6UamzDFDalZGrDrAGmBWMFLlcFBGcDbmWltkOwdldkEFDQOn9nnmZFXlumkAelYAxC0mMHMGkCsHxCdnBmCg%2B6kF0HxAhlhmSBtARXQGcAFmCEsWiESFSFhGPnVnKGqEcANmxEsAKCtSNStTxWKjTC9mOkWFDmyAjl8UOHyATlCU6DxmkCzneHLELnhWmmrkVnhGRGqB9UDVDUjVvizrHnPklGpXxDpXFn5G3n3mlHyHnVpEgCDVp4aTDWkEaSjWvT7Vjn1E/lNEtEgWTHAXtGgX9GDFPFQWCAwUg0YXwWzHzHIVPGoXrGUUrGAJYXvA4WqCHEEW8BEVnG8CkWY4UV3FUk0W8B0XvEBhMU/E3X/FMCAnAlcVPE8W2ESD8WOELUInLUGBiUqU2AXE0myVdBLHbDeziXWDknQHqVYAi1aWuWMnuCqmTAGXoAeUmWWXmWq0sna2ClanGXqlimuVylNC63G0yluWan%2BVG3KneUW32023zC2W6n6l2EbUBF5lRW/U3D9WDV/bHV4inXJUkCpVZE5EZVZVekLn5WsFkFMjxDxA%2B5UE1XsFJ2CgpnLmRW8G2CFnXnYEgCSA%2B7%2Bm0GCjsGEGSAUFcDEFmA5mMHxBe0rm50F0xnGHZ31Ut0ZUvFpDOCSBAA%3D)
 
 ## Links
 

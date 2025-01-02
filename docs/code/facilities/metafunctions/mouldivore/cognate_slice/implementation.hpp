@@ -6,10 +6,14 @@
 #include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
-/**** Swivel ****/
+/************************/
+/**** Implementation ****/
+/************************/
+
+/**** Shear ****/
 template<typename>
 struct Shear {};
 
@@ -19,13 +23,16 @@ struct Shear<std::index_sequence<I...>>
     template
     <
         template<typename...> class Operation,
-        // We use `Prefix<I>...` to enumerate the
-        // unwanted arguments.
-        Prefix<I>...Unwanted,
         typename...Targets
     >
-    static consteval auto idyl()
-    -> Operation<Targets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the uwanted arguments.
+        // Collect the rest.
+        Prefix<I> auto...,
+        Targets...
+    )
+    -> Operation<typename Targets::type...>;
 };
 
 /**** Incise ****/
@@ -35,24 +42,20 @@ struct Incise {};
 template<size_t...I, size_t...J>
 struct Incise<std::index_sequence<I...>, std::index_sequence<J...>>
 {
-    template
-    <
-        template<typename...> class Operation,
-        // We use `Prefix<I>...` to reach the start of `Targets`.
-        Prefix<I>...,
-        // We use `Prefix<J>...` to enumerate the elements
-        // we want to collect.
-        Prefix<J>...Targets,
-        typename...
-    >
-    static consteval auto idyl()
-    -> Operation<Targets...>;
+    template<template<typename...> class Operation>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the uwanted arguments.
+        Prefix<I> auto...,
+        // Expand `Prefix<J>` to collect the proper number of arguments.
+        Prefix<J> auto...targets,
+        // Remove the rest.
+        ...
+    )
+    -> Operation<typename decltype(targets)::type...>;
 };
 
-/************************/
-/**** Implementation ****/
-/************************/
-
+/**** CognateSlice ****/
 template<template<typename...> class Operation>
 struct CognateSlice
 {
@@ -66,7 +69,7 @@ struct CognateSlice
         using Mold = decltype
         (
             Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -77,8 +80,12 @@ struct CognateSlice
         template<typename...Elements>
         using Mold = decltype
         (
-            Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Elements...>()
+            Incise
+            <
+                std::make_index_sequence<Start>,
+                std::make_index_sequence<End-Start>
+            >
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

@@ -5,7 +5,8 @@
 #include <utility>
 #include <cstddef>
 
-template<typename, size_t>
+/**** Prefix ****/
+template<typename, auto>
 concept Prefix = true;
 
 /************************/
@@ -25,13 +26,21 @@ struct Enrich<std::index_sequence<I...>>
         template
         <
             template<typename...> class Operation,
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
             typename...BackTargets
         >
-        static consteval auto idyl() ->
-        // `NewElements...` are injected in the return type.
-        Operation<FrontTargets..., NewElements..., BackTargets...>;
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to count the arguments from the front.
+            Prefix<I> auto...front_targets,
+            // Collect the rest.
+            BackTargets...
+        )
+        -> Operation
+        <
+            typename decltype(front_targets)::type...,
+            NewElements...,
+            typename BackTargets::type...
+        >;
     };
 
     template<typename...NewElements>
@@ -53,11 +62,9 @@ struct CognateInject
                 template<typename...Elements>
                 using Mold = decltype
                 (
-                    // Note that we use a parameter pack in the template head
-                    // even though the function only allows one operation.
                     Enrich<std::make_index_sequence<Index>>
                     ::template ProtoMold<NewElements...>
-                    ::template idyl<Operation, Elements...>()
+                    ::template idyl<Operation>(std::type_identity<Elements>{}...)
                 );
             };
         };

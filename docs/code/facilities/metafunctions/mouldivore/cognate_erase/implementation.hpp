@@ -2,6 +2,7 @@
 /**** Dependencies ****/
 /**********************/
 
+#include <type_traits>
 #include <utility>
 #include <cstddef>
 
@@ -23,12 +24,22 @@ struct Ditch<std::index_sequence<I...>>
     template
     <
         template<typename...> class Operation,
-        Prefix<I>...FrontTargets,
-        typename,
         typename...BackTargets
     >
-    static consteval auto idyl()
-    -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Remove the next.
+        auto,
+        // Collect the rest.
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 
 /**** Expunge ****/
@@ -41,14 +52,22 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     template
     <
         template<typename...> class Operation,
-        // We use `Prefix<I>...` to reach the start of the unwanted elements.
-        Prefix<I>...FrontTargets,
-        // We use `Prefix<J>...` to enumerate the elements we want to erase.
-        Prefix<J>...,
         typename...BackTargets
     >
-    static consteval auto idyl()
-    -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Expand `Prefix<J>` to count the unwanted arguments.
+        Prefix<J> auto...,
+        // Collect the rest.
+        BackTargets...
+    )
+    -> Operation
+    <
+        typename decltype(front_targets)::type...,
+        typename BackTargets::type...
+    >;
 };
 
 /**** CognateErase ****/
@@ -65,7 +84,7 @@ struct CognateErase
         using Mold = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation, Elements...>()
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -76,8 +95,12 @@ struct CognateErase
         template<typename...Elements>
         using Mold = decltype
         (
-            Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Elements...>()
+            Expunge
+            <
+                std::make_index_sequence<Start>,
+                std::make_index_sequence<End-Start>
+            >
+            ::template idyl<Operation>(std::type_identity<Elements>{}...)
         );
     };
 

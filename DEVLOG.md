@@ -8,6 +8,8 @@
 
 ## Diary
 
+### 2025/01/01
+
 All thanks to [gracicot](https://www.reddit.com/user/gracicot/) for pointing out a bug in the library. Clang allows the following code while it shouldn't.
 
 ```C++
@@ -51,8 +53,6 @@ struct Tester<std::index_sequence<I...>>
 It fails due to the reason above.
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,selection:(endColumn:19,endLineNumber:28,positionColumn:19,positionLineNumber:28,selectionStartColumn:19,selectionStartLineNumber:28,startColumn:19,startLineNumber:28),source:'%23include+%3Cutility%3E%0A%23include+%3Ccstddef%3E%0A%0Atemplate%3Ctypename,+auto%3E%0Aconcept+Prefix+%3D+true%3B%0A%0Atemplate%3Ctypename%3E%0Astruct+Tester+%7B%7D%3B%0A%0Atemplate%3Csize_t...I%3E%0Astruct+Tester%3Cstd::index_sequence%3CI...%3E%3E%0A%7B%0A++++template%0A++++%3C%0A++++++++template%3Ctypename...%3E+class+Operation,%0A++++++++Prefix%3CI%3E...Targets,%0A++++++++typename...%0A++++%3E%0A++++static+consteval+auto+fun()+-%3E+Operation%3CTargets...%3E%3B%0A%0A++++%0A++++template%0A++++%3C%0A++++++++template%3Ctypename...%3E+class+Operation,%0A++++++++Prefix%3CI%3E...Targets,%0A++++++++typename...%0A++++%3E%0A++++struct+Cla+%7B%7D%3B%0A%7D%3B%0A%0A'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:54.082299150881774,l:'4',m:100,n:'0',o:'',s:0,t:'0'),(g:!((h:output,i:(compilerName:'armv7-a+clang+19.1.0',editorid:1,fontScale:14,fontUsePx:'0',j:2,wrap:'1'),l:'5',n:'0',o:'Output+of+x86-64+clang+19.1.0+(Compiler+%232)',t:'0'),(h:compiler,i:(compiler:clang1910,filters:(b:'0',binary:'1',binaryObject:'1',commentOnly:'0',debugCalls:'1',demangle:'0',directives:'0',execute:'1',intel:'0',libraryCode:'0',trim:'1',verboseDemangling:'0'),flagsViewOpen:'1',fontScale:14,fontUsePx:'0',j:2,lang:c%2B%2B,libs:!(),options:'-std%3Dc%2B%2B20',overrides:!(),selection:(endColumn:1,endLineNumber:1,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:1,startColumn:1,startLineNumber:1),source:1),l:'5',n:'0',o:'+x86-64+clang+19.1.0+(Editor+%231)',t:'0')),header:(),k:45.917700849118226,l:'4',m:100.00000000000003,n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4)
-
-### 2025/01/01
 
 <ul>
   <li>
