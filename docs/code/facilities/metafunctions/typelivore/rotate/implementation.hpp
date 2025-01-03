@@ -17,17 +17,26 @@ concept Prefix = true;
 template<typename>
 struct Swivel {};
 
-template<size_t...J>
-struct Swivel<std::index_sequence<J...>>
+template<size_t...I>
+struct Swivel<std::index_sequence<I...>>
 {
-    template<
+    template
+    <
         template<typename...> class Operation,
-        Prefix<J>...FrontTargets,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static constexpr auto idyl()
-    // Note the position change of `FrontTargets...` and `BackTargets.`
-    -> Operation<BackTargets..., FrontTargets...>;
+    static constexpr auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_args,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        typename BackArgs::type...,
+        typename decltype(front_args)::type...
+    >;
 };
 
 /**** Rotate ****/
@@ -41,7 +50,7 @@ struct Rotate
         using Road = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

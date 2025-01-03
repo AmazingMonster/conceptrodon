@@ -24,11 +24,27 @@ struct LeftInspect {};
 template<size_t...I>
 struct LeftInspect<std::index_sequence<I...>> 
 {
-    template<template<auto...> class Predicate, Prefix<I>..., typename OnDuty, typename...RestVariables>
-    static consteval auto idyl()
-    // We combine the results using a fold expression over `&&`.
-    // The pack we are folding is `RestVariables...`.
-    -> std::bool_constant<(...&&Predicate<OnDuty::value, RestVariables::value>::value)>;
+    template
+    <
+        template<auto...> class Predicate,
+        typename Inspector,
+        typename...RestArgs
+    >
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Inspector,
+        RestArgs...
+    )
+    -> std::bool_constant
+    <(...&&
+        Predicate
+        <
+            Inspector::value,
+            RestArgs::value
+        >
+        ::value
+    )>;
 };
 
 template<template<auto...> class Predicate>
@@ -46,7 +62,7 @@ struct LeftReview
                     decltype
                     (
                         LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Vay<Variables>...>()
+                        ::template idyl<Predicate>(Vay<Variables>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Variables) - 1>{})

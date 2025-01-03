@@ -12,13 +12,13 @@ struct Vay
     static constexpr auto value {Variable};
 };
 
-/************************/
-/**** Implementation ****/
-/************************/
-
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
+
+/************************/
+/**** Implementation ****/
+/************************/
 
 /**** Midst ****/
 template<typename>
@@ -27,8 +27,14 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    template<Prefix<I>...Nah, typename Target, typename...>
-    static constexpr auto idyl() -> Target;
+    template<typename Target>
+    static constexpr auto idyl
+    (
+        Prefix<I> auto...,
+        Target,
+        ...
+    )
+    -> Target;
 };
 
 /**** Amidst ****/
@@ -38,13 +44,14 @@ struct Amidst
     template<size_t I>
     struct ProtoPage
     {
-        static constexpr auto value
+        static constexpr auto value 
         {
             decltype
             (
                 Midst<std::make_index_sequence<I>>
-                ::template idyl<Vay<Variables>...>()
-            )::value
+                ::idyl(Vay<Variables>{}...)
+            )
+            ::value
         };
     };
 

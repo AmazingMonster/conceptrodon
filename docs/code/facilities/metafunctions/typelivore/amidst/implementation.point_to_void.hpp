@@ -5,20 +5,13 @@
 #include <utility>
 #include <cstddef>
 
-/**** Label ****/
-template<typename Treasure, typename Key>
-struct Label
-{ 
-    static constexpr auto idyl(Key) -> Treasure;
-};
-
 /************************/
 /**** Implementation ****/
 /************************/
 
-/**** VoidPointer ****/
+/**** PointToVoid ****/
 template<auto>
-using VoidPointer = void*;
+using PointToVoid = void*;
 
 /**** Midst ****/
 template<typename>
@@ -27,8 +20,7 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    // We use `VoidPointer<I>...` to enumerate unwanted arguments.
-    static constexpr auto idyl(VoidPointer<I>..., auto* target, auto*...)
+    static constexpr auto idyl(PointToVoid<I>..., auto* target, auto*...)
     { return target; }
 };
 

@@ -79,7 +79,7 @@ We will use variadic functions for this purpose.
 Note that using `void*` as in the implementation of `Typelivore::Amidst` is impossible since `void*` erases the type characteristics of the arguments, which, however, are the things we want to keep.
 Therefore, we will only implement `CognateRotate` using concept expansion.
 
-We will expand the concept `Prefix<***>` alongside the arguments.
+We will expand the constraint `Prefix<***>` alongside the arguments.
 
 ```C++
 template<typename, auto>

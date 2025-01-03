@@ -16,9 +16,9 @@ struct Vay
 /**** Implementation ****/
 /************************/
 
-/**** Prefix ****/
-template<typename, auto>
-concept Prefix = true;
+/**** PointToVoid ****/
+template<auto>
+using PointToVoid = void*;
 
 /**** Midst ****/
 template<typename>
@@ -27,8 +27,7 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    // We use `Prefix<I> auto...` to enumerate unwanted arguments.
-    static constexpr auto idyl(Prefix<I> auto..., auto target, auto...)
+    static constexpr auto idyl(PointToVoid<I>..., auto* target, auto*...)
     { return target; }
 };
 

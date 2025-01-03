@@ -28,16 +28,22 @@ struct Ditch<std::index_sequence<I...>>
     template
     <
         template<auto...> class Operation,
-        Prefix<I>...FrontTargets,
-        typename,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static consteval auto idyl() -> 
-    // Note that `Operation` is invoked by values
-    // extracted from the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
-    Operation<FrontTargets::value..., BackTargets::value...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_targets,
+        // Remove the next.
+        auto,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        decltype(front_targets)::value...,
+        BackArgs::value...
+    >;
 };
 
 /**** Expunge ****/
@@ -50,18 +56,22 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     template
     <
         template<auto...> class Operation,
-        // We use `Prefix<I>...` to reach the start of the unwanted variables.
-        Prefix<I>...FrontTargets,
-        // We use `Prefix<J>...` to enumerate the variables we want to erase.
-        Prefix<J>...,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static consteval auto idyl() ->
-    // Note that `Operation` is invoked by values
-    // extracted from the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
-    Operation<FrontTargets::value..., BackTargets::value...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_args,
+        // Expand `Prefix<J>` to count the unwanted arguments.
+        Prefix<J> auto...,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        decltype(front_args)::value...,
+        BackArgs::value...
+    >;
 };
 
 /**** Erase ****/
@@ -78,7 +88,7 @@ struct Erase
         using Rail = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 
@@ -89,8 +99,12 @@ struct Erase
         template<template<auto...> class...Agreements>
         using Rail = decltype
         (
-            Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            Expunge
+            <
+                std::make_index_sequence<Start>,
+                std::make_index_sequence<End-Start>
+            >
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

@@ -286,7 +286,7 @@ struct Example
         // Error: Member 'Page' has the same name as its class
         // clang(member_name_of_class)
         template<auto...>
-        struct Page {}  
+        struct Page {}; 
     };
 };
 ```
@@ -312,7 +312,7 @@ struct Example
         struct Slash
         {
             template<auto...>
-            struct Page {}; 
+            struct Page {};
         };
     };
 };

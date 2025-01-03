@@ -31,17 +31,21 @@ struct Enrich<std::index_sequence<I...>>
         template
         <
             template<auto...> class Operation,
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl() ->
-        // `NewVariables...` are injected in the return type.
-        // Note that `Operation` is invoked by values
-        // extracted from the template parameters.
-        // This is because we will pack every item
-        // of `Variables...` into `Vay`.
-        Operation<FrontTargets::value..., NewVariables..., BackTargets::value...>;
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to count the arguments from the front.
+            Prefix<I> auto...front_args,
+            // Collect the rest.
+            BackArgs...
+        )
+        -> Operation
+        <
+            decltype(front_args)::value...,
+            NewVariables...,
+            BackArgs::value...
+        >;
     };
 
     template<auto...NewVariables>
@@ -60,14 +64,12 @@ struct Inject
             template<auto...NewVariables>
             struct ProtoPage
             {
-                // Note that we use a parameter pack in the template head
-                // even though the function only allows one operation.
                 template<template<auto...> class...Agreements>
                 using Rail = decltype
                 (
                     Enrich<std::make_index_sequence<Index>>
                     ::template ProtoPage<NewVariables...>
-                    ::template idyl<Agreements..., Vay<Variables>...>()
+                    ::template idyl<Agreements...>(Vay<Variables>{}...)
                 );
             };
         };

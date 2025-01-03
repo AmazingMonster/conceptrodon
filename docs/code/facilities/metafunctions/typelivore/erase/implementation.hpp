@@ -23,11 +23,22 @@ struct Ditch<std::index_sequence<I...>>
     template
     <
         template<typename...> class Operation,
-        Prefix<I>...FrontTargets,
-        typename,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static consteval auto idyl() -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_args,
+        // Remove the next.
+        auto,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        typename decltype(front_args)::type...,
+        typename BackArgs::type...
+    >;
 };
 
 /**** Expunge ****/
@@ -40,13 +51,22 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
     template
     <
         template<typename...> class Operation,
-        // We use `Prefix<I>...` to reach the start of the unwanted elements.
-        Prefix<I>...FrontTargets,
-        // We use `Prefix<J>...` to enumerate the elements we want to erase.
-        Prefix<J>...,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static consteval auto idyl() -> Operation<FrontTargets..., BackTargets...>;
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_args,
+        // Expand `Prefix<J>` to count the unwanted arguments.
+        Prefix<J> auto...,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        typename decltype(front_args)::type...,
+        typename BackArgs::type...
+    >;
 };
 
 /**** Erase ****/
@@ -63,7 +83,7 @@ struct Erase
         using Road = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 
@@ -80,7 +100,7 @@ struct Erase
                 // `End-Start` is the number of elements we will erase.
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Agreements..., Elements...>()
+            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
         );
     };
 

@@ -61,12 +61,18 @@ struct TypicalConjureSet
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
     {
-        template<Prefix<I>...FrontElements, typename Inspecting, typename...>
-        static consteval auto idyl() -> std::conditional_t
+        template<typename Inspecting, typename...BackArgs>
+        static consteval auto idyl
+        (
+            Prefix<I> auto...,
+            Inspecting,
+            BackArgs...
+        )
+        -> std::conditional_t
         <
-            (...||std::is_same_v<FrontElements, Inspecting>),
+            (...||std::is_same_v<Inspecting, BackArgs>),
             Capsule<>,
-            Capsule<Inspecting>
+            Capsule<typename Inspecting::type>
         >;
     };
 
@@ -81,7 +87,7 @@ struct TypicalConjureSet
             decltype
             (
                 Detail<std::make_index_sequence<I>>
-                ::template idyl<Elements...>()
+                ::idyl(std::type_identity<Elements>{}...)
             )...
         >::type;
     };

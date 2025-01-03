@@ -42,27 +42,23 @@ struct InsertValues<std::index_sequence<I...>>
     template<auto NewVariable, auto...>
     struct ProtoPage
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
-        // `NewVariable` is injected in the return type.
-        // Note that `Shuttle` is instantiated by values
-        // extracted from the template parameters.
-        // This is because we will pack every variable
-        // into `Vay`.
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the desired position.
+            Prefix<I> auto...front_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Shuttle
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             NewVariable,
-            BackTargets::value...
+            BackArgs::value...
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<auto...Agreements>
@@ -75,27 +71,27 @@ struct InsertValues<std::index_sequence<I...>, std::index_sequence<J...>>
     template<auto FirstNewVariable, auto SecondNewVariable, auto...>
     struct ProtoPage
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new variable.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new variable.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> Shuttle
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             FirstNewVariable,
-            MiddleTargets::value...,
+            decltype(middle_args)::value...,
             SecondNewVariable,
-            BackTargets::value...
+            BackArgs::value...
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<auto...Agreements>
@@ -109,32 +105,35 @@ struct InsertValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
     template<auto FirstNewVariable, auto SecondNewVariable, auto...OtherNewVariables>
     struct ProtoPage
     {
-        template
-        <
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            // We use `Prefix<J>...` to go across the distance
-            // between two targets.
-            Prefix<J>...MiddleTargets,
-            typename...BackTargets
-        >
-        static consteval auto idyl()
+        template<typename...BackArgs>
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to reach the position for the first new variable.
+            Prefix<I> auto...front_args,
+            // Expand `Prefix<J>` to reach the position for the second new variable.
+            Prefix<J> auto...middle_args,
+            // Collect the rest arguments.
+            BackArgs...
+        )
         -> ExtendFront
         <
-            typename InsertValues<OtherSequences...>
-            ::template Page<OtherNewVariables...>
-            ::template Page<BackTargets::value...>
+            decltype
+            (
+                InsertValues<OtherSequences...>
+                ::template Page<OtherNewVariables...>
+                ::idyl(BackArgs{}...)
+            )
         >
         ::template Page
         <
-            FrontTargets::value...,
+            decltype(front_args)::value...,
             FirstNewVariable,
-            MiddleTargets::value...,
+            decltype(middle_args)::value...,
             SecondNewVariable
         >;
 
         template<auto...Agreements>
-        using Page = decltype(idyl<Vay<Agreements>...>());
+        using Page = decltype(idyl(Vay<Agreements>{}...));
     };
 
     template<auto...Agreements>

@@ -22,21 +22,26 @@ struct Vay
 template<typename>
 struct Swivel {};
 
-template<size_t...J>
-struct Swivel<std::index_sequence<J...>>
+template<size_t...I>
+struct Swivel<std::index_sequence<I...>>
 {
-    template<
+    template
+    <
         template<auto...> class Operation,
-        Prefix<J>...FrontTargets,
-        typename...BackTargets
+        typename...BackArgs
     >
-    static constexpr auto idyl()
-    // Note the position change of `FrontTargets...` and `BackTargets.`
-    // Note that `Operation` is invoked by values extracted from
-    // the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
-    -> Operation<BackTargets::value..., FrontTargets::value...>;
+    static constexpr auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...front_args,
+        // Collect the rest.
+        BackArgs...
+    )
+    -> Operation
+    <
+        BackArgs::value...,
+        decltype(front_args)::value...
+    >;
 };
 
 /**** Rotate ****/
@@ -50,7 +55,7 @@ struct Rotate
         using Rail = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

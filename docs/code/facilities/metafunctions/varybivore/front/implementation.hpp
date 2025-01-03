@@ -25,18 +25,14 @@ struct Fore {};
 template<size_t...I>
 struct Fore<std::index_sequence<I...>>
 {
-    template
-    <
-        template<auto...> class Operation,
-        // We use `Prefix<I>...` to enumerate `Targets`.
-        Prefix<I>...Targets,
-        typename...
-    >
-    // Note that `Operation` is invoked by values
-    // extracted from the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
-    static consteval auto idyl() -> Operation<Targets::value...>;
+    template<template<auto...> class Operation>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the arguments from the front.
+        Prefix<I> auto...targets,
+        ...
+    )
+    -> Operation<decltype(targets)::value...>;
 };
 
 /**** Front ****/
@@ -50,7 +46,7 @@ struct Front
         using Rail = decltype
         (
             Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements..., Vay<Variables>...>()
+            ::template idyl<Agreements...>(Vay<Variables>{}...)
         );
     };
 

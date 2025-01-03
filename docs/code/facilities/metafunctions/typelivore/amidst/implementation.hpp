@@ -5,13 +5,13 @@
 #include <utility>
 #include <cstddef>
 
-/************************/
-/**** Implementation ****/
-/************************/
-
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
+
+/************************/
+/**** Implementation ****/
+/************************/
 
 /**** Midst ****/
 template<typename>
@@ -20,8 +20,10 @@ struct Midst {};
 template<size_t...I>
 struct Midst<std::index_sequence<I...>>
 {
-    template<Prefix<I>...Nah, typename Target, typename...>
-    static constexpr auto idyl() -> Target;
+    template<typename Target>
+    static constexpr auto idyl
+    (Prefix<I> auto..., Target, ...)
+    -> Target::type;
 };
 
 /**** Amidst ****/
@@ -34,7 +36,7 @@ struct Amidst
         using type = decltype
         (
             Midst<std::make_index_sequence<I>>
-            ::template idyl<Elements...>()
+            ::idyl(std::type_identity<Elements>{}...)
         );
     };
 

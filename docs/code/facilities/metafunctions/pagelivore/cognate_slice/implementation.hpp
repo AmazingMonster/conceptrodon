@@ -28,16 +28,15 @@ struct Shear<std::index_sequence<I...>>
     template
     <
         template<auto...> class Operation,
-        // We use `Prefix<I>...` to enumerate the
-        // unwanted arguments.
-        Prefix<I>...Unwanted,
         typename...Targets
     >
-    static consteval auto idyl()
-    // Note that `Operation` is invoked by values
-    // extracted from the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the uwanted arguments.
+        Prefix<I> auto...,
+        // Collect the rest.
+        Targets...
+    )
     -> Operation<Targets::value...>;
 };
 
@@ -48,22 +47,17 @@ struct Incise {};
 template<size_t...I, size_t...J>
 struct Incise<std::index_sequence<I...>, std::index_sequence<J...>>
 {
-    template
-    <
-        template<auto...> class Operation,
-        // We use `Prefix<I>...` to reach the start of `Targets`.
-        Prefix<I>...,
-        // We use `Prefix<J>...` to enumerate the variables
-        // we want to collect.
-        Prefix<J>...Targets,
-        typename...
-    >
-    static consteval auto idyl()
-    // Note that `Operation` is invoked by values
-    // extracted from the template parameters.
-    // This is because we will pack every item
-    // of `Variables...` into `Vay`.
-    -> Operation<Targets::value...>;
+    template<template<auto...> class Operation>
+    static consteval auto idyl
+    (
+        // Expand `Prefix<I>` to count the uwanted arguments.
+        Prefix<I> auto...,
+        // Expand `Prefix<J>` to collect the proper number of arguments.
+        Prefix<J> auto...targets,
+        // Remove the rest.
+        ...
+    )
+    -> Operation<decltype(targets)::value...>;
 };
 
 /**** CognateSlice ****/
@@ -80,7 +74,7 @@ struct CognateSlice
         using Page = decltype
         (
             Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 
@@ -91,8 +85,12 @@ struct CognateSlice
         template<auto...Variables>
         using Page = decltype
         (
-            Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation, Vay<Variables>...>()
+            Incise
+            <
+                std::make_index_sequence<Start>,
+                std::make_index_sequence<End-Start>
+            >
+            ::template idyl<Operation>(Vay<Variables>{}...)
         );
     };
 

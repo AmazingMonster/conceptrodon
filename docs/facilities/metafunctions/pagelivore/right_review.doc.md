@@ -71,38 +71,61 @@ static_assert(! RightReview<IsNoLess>::Page<1, 0, 2, 2>::value);
 For every variable in the list, we will check if it satisfies the predicate if paired with every variable behind it.
 We will implement this process in two steps.
 
-First, when given an index, we query the predicate with the pairs consisting of the variable at the index and every variable behind it.
+- First, when given an index, we query the predicate with the pairs consisting of the variable at the index and every variable behind it.
+
+We will expand the constraint `Prefix<***>` alongside the arguments to pick out the element at the index.
 
 ```C++
 template<typename, auto>
 concept Prefix = true;
+```
 
+`RightInspect` will help us translate `std::index_sequence` into a pack of indices.
+
+```C++
 template<typename>
 struct RightInspect {};
 
 template<size_t...I>
 struct RightInspect<std::index_sequence<I...>> 
 {
-    template<template<auto...> class Predicate, Prefix<I>..., typename OnDuty, typename...RestVariables>
-    static consteval auto idyl()
-    // We combine the results using a fold expression over `&&`.
-    // The pack we are folding is `RestVariables...`.
-    -> std::bool_constant<(...&&Predicate<RestVariables::value, OnDuty::value>::value)>;
+    template
+    <
+        template<auto...> class Predicate,
+        typename Inspector,
+        typename...RestElements
+    >
+    static consteval auto idyl
+    (
+        Prefix<I> auto...,
+        Inspector,
+        RestElements...
+    )
+    -> std::bool_constant
+    <(...&&
+        Predicate
+        <
+            RestElements::value,
+            Inspector::value
+        >
+        ::value
+    )>;
 };
 ```
 
-Second, we perform the first step with every index and combine the results.
+- Second, we perform the first step with every index and combine the results.
 
-We will transform variables into types so that we can use them as parameter types in the declaration of `idyl`.
+We will encode value information into types by `Vay` to avoid defining the body of helper functions.
 
 ```C++
 template<auto Variable>
 struct Vay
-{ static constexpr auto value {Variable}; };
+{
+    static constexpr auto value {Variable};
+};
 ```
 
 ```C++
-// Immediately invoked lambda.
 []<size_t...I>(std::index_sequence<I...>)
 {
     return
@@ -110,8 +133,7 @@ struct Vay
         decltype
         (
             RightInspect<std::make_index_sequence<I>>
-            // Note that each variable is kept inside `Vay`.
-            ::template idyl<Predicate, Vay<Variables>...>()
+            ::template idyl<Predicate>(Vay<Variables>{}...)
         )::value
     ));
 }(std::make_index_sequence<sizeof...(Variables) - 1>{})
@@ -135,7 +157,7 @@ struct RightReview
                     decltype
                     (
                         RightInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate, Vay<Variables>...>()
+                        ::template idyl<Predicate>(Vay<Variables>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Variables) - 1>{})
@@ -147,7 +169,7 @@ struct RightReview
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGwArKSuADJ4DJgAcj4ARpjEIAAcZqQADqgKhE4MHt6%2BAcEZWY4C4ZExLPGJKbaY9qUMQgRMxAR5Pn5BdQ05za0E5dFxCcmpCi1tHQXdEwNDldVjAJS2qF7EyOwcAPQAVAeHR8cnezsmGgCC%2B4cA1AAimGmujMh4mAq3R%2BdXN6f/xx%2BlwuwLMAGYIshvFhbiYwW4vI5aIQAJ5w7Ag8wQhhQrwwuFuZATdBYKjozG/I63ZTETA0VRfQ5AgiYFhpAwsgkEFHPZhsUi3JiI1Dkq5oHFPAjU2n02Fg%2B63AjELyYOFWK4gv57W4ANSYKMZB2ZrPZTE58KFRF1rTwTFi9FFlwmyoc1rRGoA7BZbnNHMhbuKJphVGliILhbcAG5iFWwr164i2%2B2qj33NVxtNg9XAykAvPfTVUgCSbPobEEZpyhrOhfzdaBtYOtwASnhgAgCEWGApnq6C1cWaWzar4dzeawRxirs6vK7W%2B3O93e1KTF7V5nsyDB6bzW4sgAvTAAfQIADpz0XHTO522O12e5gHATiSAQBEsKoj0oAI4qiUEotz1PckwWwWFPWzW4oMVE0ORHNxtzgglLVQID0QDAwFE%2BGlMHwUQWQFHD6QA9EgIFMdGAnW4AHkGHuREUXInlKLYIDmw%2BAgEyTegFEdaCfRaP0AwEINo1ocMrTwdAUVoCBlhBfidh2W4AHVMGEqoInUggEHU2kFC8WgCE%2BLwsiMQVbn4Wh0FuYNQw%2BLIBFuVBIwSWF/A0cx/C8kwPOAq5FOUgAVXTbjSJhkAAa1uAB3dTWnUqz8HMvBPl8jR2ImLi7R4tC/IU6CAFp0JfEBYlQTwj0DFpBAJCA0LMbzGpwvDhwJTLOJtHKPlfMSVQFWj6O5XqY0nEbvEweTQLVTFUxmjVcybecO3YyN3hi6tjSHXdELai1hTQ0CMKYLDpVwvB8MnEFrylZaCFW9bZsg6Ddt3FCgOy5NeOmgLoJu6VUCIZQmGAVVfqg1dnv4qDfQu4TuxZEMw3Kzwo1GgrobjKHMegkxAisQJMz3PBDxPIDL1AiBSvfYMv0wX9XngwDz3ReTwZxiG13Zjn%2BNpAgNgYDGef4%2BqWcaryICF4XMawKEKKl6WRYVxXMbu%2B9l2fAh0FfFgmEi48ac/H8/y2Ejpp%2By4Vel19XvUqSZIJFqLuHAU9TReFPp40iWcptnLat6HlnGlVlZ55Ypuxjn1yprWdb1g2GA/OmGf/eED0wVAqCAiBPY%2BZZbkK24uHJNdUz9qO5qzcD/c5jcKRrmDtvg97z1z76pwb0yImAakQfUuEFRpQHUGB0GCTbw6MSzWa64W6463zIEtVuAAxPBiAmW5sFUVh2XU/t54XgEG0W7UiwUKJUFCBzNq3WC9rcFDblCAUn%2BbK8lVnKVz8v6%2BsKeoWsN/TVTssjCq4k%2BpgwbpDZ%2Bcop4KmbBmeawJK6blPrcIKHFb7TkEhdI8J0lBtAgHdB6mAYoAQvlfBy6JXyj3ghoAUXABSpFuGYGhIBIER3rlqI%2BJwl5UiEI%2BAQNlt673oNgw%2BvDTgn2uMpVaCQlC3A0IKRORdrq4OQPgrCCQCAQDAGAFst57qYDWmQihv9qGgVoX3AkTClHMOYewzhaoOCrFoJwQIvA/AcC0KQVAnA3DWGsD6dYmx%2B7gh4KQAgmhXGrEiiAQIkhTwaBSGYAAnGkrggQUlJC4B6D00h3EcEkLwFgEgNAMO8b4/xHBeAKBAAw6JPjXGkDgLAGAiAQDrAIGkRE5BKBoDZHQBIUQJycFUEkfwhV/CSFuMAZA/opCnjMLwc6RBEzayYfwQQIgxDsCkDIQQigVDqGaaQXQTCYrECYGkTgPA3EeK8TEvxnBqKIl6VKTOtwJlTJmXMhZRcklmFuBADwQz6BhixFwZYvAmlaFWBAJAgy0jDLIBQCAyLUUgGAFIVINAjIKMoLEZ5sQIitBRHc3gpLmDEBRNRWI2hHxNMiYM8sBBaK0ApWcrAsQvDAEfrQWg9TuC8CwLrIw4huXryZXgVywrfHBkfIibYkSIgsiKb45EsRrm0o8FgZ5So8BlJFaQVyxBypKEeOK4AyIjAxNWFQAwwAFA6nWtRXklLDnCFEOIA52z5BKDUM8i5%2BhDDGCCZYfQeBYj1MgKsVAaRGjCsKsSAephLDWDMNUs1Gyepxp6DK5wEBXDTD8EwsIWlFijCYcUbIAhS16FrY0BYIxEhMLsIWpokx2ieE6HoDtDg%2BjdpbVUatthu0NvbcOytraJCrAUKErYc79CPNIFU3gNTvmTOmbM%2BZiygUgtwIQEgsIIkwqifa1YukmBYESHJUg8TJBglPGksEBSNCSDMJIDyGhAj%2BDSSu4ppSQBgi4KefwXB/BJDSbkoIkgsmvv8Gu55NS6kNIvc0hFHTEVdPeX09FmKIWjLYJwVoLBIwekKkwY65kuBpNPGBhV%2BB1lST0P63ZvrpD%2BuOUGs5uhUhXJuZSh5HBPHIbOTUt5PTETOSoFu35syoRhqLvRxjIKwUoohaesEZhz1wpaThwjCR%2BkYtQOC0YSmjB0a4Aw/FLIN5EpJWS2lnrqXkvpYyhwnrWWMHZQwTlzyeV8oFUKz1Yqw2St8fgWkg65XPMVcgZVnq1X1GeVqnVKI9XbF8Ya41kSzUWswFaiL3d7V8CdS6t1HqTXsZ9fsrjsgeOnN8fx0Ndr01WEjVq2N96E1Js4CmrWaaI0WCzRunNUk833oHY0FwidJ0hETiOpYNbMh1tyL2goq2Sg5GW2OmbQ6BgLYOwIfobQ9ttvHUdzbZarvnZnaOtt87F37JE2J9dLyODyZ3TRnudGGPJMPcxk9UK9OXtINe29lARMlNIGUsE9GP0ekCGk/JYJP3fvg%2BJ6pnA0ONLK20zp3SPkmaM8QYj2wyN/JYAoSM/pIz/bghMVZwONlsdkBx%2BrXqmvBpA6QQTtyRVvaeRJ15eHPlydUNT2n9PGfDk3qCszmm3JYjBGDzDrSkVK9RaT7XEKOHIDSGkI8DO0lHiZwQI8UuuN0Hs/UiAxKzluZcya53dKGVMu82ZtlHKuVRcwLy/lYhQsmvCxK7LorpWxZ6mchLSWTUpY1bwdL5KssGsTHl3gBXMhFdZCVu1GvHUg0q2Q91jBPW1b2RIBrRzA3NZ0Hzgw7WRtRpjfAeNiacjCp2C%2BDrmbs0JFzT1%2Bd9RO1zfcDdvQFaKizu2%2BthbTbdsPZWwWwdp2J2T/baPtfXb5jL/2xv/It25j3Zn495dC6NhLuhYB97KHODfOl3TqMcuWQK6Pes7T0LYXg8h6Me9RSsOZS6Sp4YIYIgQ2S8GFSYBHoUG2OG6uOtg6G%2Bm4cD6IAkggQL6eSHoFSSQkgmSXAqSSGRSYIIuOOtSGG8KImKy8Bn2P%2BmGqwZqjkfgkgQAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAGwArKSuADJ4DJgAcj4ARpjEIACcABykAA6oCoRODB7evgHBmdmOAuGRMSzxiam2mPZlDEIETMQE%2BT5%2BQfWNuS1tBBXRcQnJaQqt7Z2FPZODw1U14wCUtqhexMjsHAD0AFSHR8cnp/u7JhoAggdHANQAIpjprozIeJgKd8cX17dnAJOvyulxBZgAzBFkN4sHcTOC3F5HLRCABPeHYUHmSEMaFeWHwtzISboLBUDFYv7HO7KYiYGiqb5HYEETAsdIGVmEgiol7MNikO5MJGoCnXNC454EGl0hlw8EPO4EYheTDwqzXUH/fZ3ABqTFRTMOLLZHKYXIRwqIeraeCYsXoYqukxVDht6M1AHYLHd5o5kHcJZNMKp0sQhSK7gA3MSquHe/XEO0OtWeh7q%2BPp8EakFUwH5n5a6kASXZ9DYgnNuSN5yLBfrwLrhzuACU8MAEARiwwFC83YXrqyy%2Ba1QieXzWKPMdcXV43W2O12e33pSZvWusznQUOzRa3NkAF6YAD6BAAdBfi07Z/P253u73MA5CSSQCAIlhVMelABHVWSwliwvM8KXBbA4S9HM7mgpVTU5NVrhg%2BU3FBJCkJ3eDCStVBgIxQMDAUL5aUwfBRFZUhULQ6Dx0YSc7gfFcSAoxCqKVXlaLYYCW0%2BAhsHLRgCAUSjoKdJC/TwAMg1ZGNaAja08HQVFaGEu4IBUpDiIZQC8Ow4DmKuVj6OXJ8iDIdSYO4yY%2BLZASFFwljoJWFSAFo8NfEBYlQTxjykwwCBUwkIFwsx/HMUKHLQ4jSJHcyRIRWK0Ms3j%2BMEBQ3xk1V9MMpCGJMkh0tjBCDNY0TWIK7wiqQpywPVLE01qzU82bBdO24qMPgAdxrE1hz3DCYstEVcLA/CmEImUSIkgbp2dZU52lFqCDazq6qgmD%2Br3XSL0TZN6CEmqIpvaVaVQIhlCYYBKpgtc1qo8TJIEYNQ3DTzPGjQqEpuhKkJMQIrECLN9zwI9T2Aq8wIgdyPxDb9MD/N5RzcICLwxJyIsMr70ey6C6QITYGG%2B1igpRkKwrUrHsaQrBoRownsfJ4rKcpxbcufBF3JYJgAGsT2hr9f3/bZtJqg7GaZ7K3w2zA7gUpTCSiqaLWwCB9XRBEdvtPaKXXNNgLRsXxZglZytVOm0JWarbuyjdIYIdA305nnjz52H4YA9ngcwVAqGAlXbU1z4VjuZy7i4bWrDTfWMfq7MILFjcGtzMWpawobtv9lN9pmpCvGyIwaQu6X4UVE6zsLwkNcz4bMWzOrN0pG56wLYFtTuAAxPBiEmO5sFUVgOWlgdG6bwFGyanViwUKJUFCT4viHlPButUJBWw1trzmt1J%2Bn2fCNWlT7sDR7WWeu5XtkjKrpE707lCeUa8VFtM0ThPa8a4fmwAFR47rQXu48xpKHaBARay1MAdUAlPGec8MRvnOpdQkGhBRcEFGYVBsCQCX0tg3bUI9Tgt2pEIJ8Ah0A9z7mWQezImx4PwTg3YrZMBRgSEoO4GghQMFIWHGcrR/QAMIgkAgEAwBgFbHeJajCVoIm3tAveYE4HlwRCg1hqD0FyMwYVS2HA1i0E4IEXgfgOBaFIKgTgKFLDWF9BsLYRcIQ8FIAQTQWi1hcxAIESQZ4NApDMGYJISQuCBE8SkLgnpPTSB0RwSQvAWASA0EggxRiTEcF4GlJBDjDFaNIHAWAMBEAgA2AQdISJyCUDQOyOgCQoiTk4KoFI/hnL%2BEkHcYAyAAxSDPGYXgk1TIKT0PwQQIgxDsCkDIQQigVDqHSaQXQKCOrECYOkTgPBtG6P0Y44xnAADySJCnSm9ncGpdSGlNJaaHdxZhVIeDKfQcM2IuArF4GkrQawIBIFKekcpZAKAQDeR8kAwApBoJoLQVkXdKCxDWbECIbRUSLN4JC5gxBUQbNiNoEysLSClIrAQDZDBaAwsmVgWIXhgBuDELQNK3BeBYE5kYcQBLO4mTwEwilRiQxPiRDsOxERWThKMSiWIczEUeCwGs5UeBomUtIEw4gnklBPBpcAFERhHFrCoAYYAChdSdQ2XydFfThCiHEMM/VYy1BrOmfoQwxhrDWH0HgWIaVIBrFQOkJoFLnIkmLqYcxlgzAJOlUmLAjqIBrDsIy5wEBXAzD8CgsIEQRjVDGCgkoOQBDRr0CmpoixRiJBQWGhw/QpgdE8F0PQ%2BamgDHaNmxNubbBFvTXmot1blh3PWJsbYEhlkcD0aQeJvBEn7NqfUxpzTWlnNUrgQgJA4S2PufYlVawECYCYFgRIIbSAuMkOCM8SRwShI0JIMwkh/CxMCP4JI%2BhOCRNINE8EXAzz%2BC4P4FIqQn1uP8bu/wva1mJOSSAVJKrMk5JeXk7ZRSvk/OuZUtgnA2gsCjJ6ZyTBRr5y4EkM897WX4G6fbFB%2BqBlGukCapQZrJm6DQbM%2BZsKu09r7esjgWyClIjuHsg5w6UPAFDuhzDFzUBXISDO8EZg52PIySByDCRinfL4%2B865KADBGDQ1wJBQKQVpQgOCyZ8LoXou04i5FqKHDosxQJHFeK1mEuJaS2g5L0XUqtXSox%2BA6QFuZWstlyAOXou5Q0NZ/LBWomFTsIxYqJV2OlbKzA8qHMRFAOk1V6rNXat1ZK/DhqhlEdkKaiZRjyOWuVd6qwlg7UOvgM611uR3WeoVIV6wfr%2B0BoUp8MrvRw1%2BEjRwhtIQOHNqTRkLIqa8glsKMmgbWb41LD6%2BWwtgwuvTYEJWoYE2c1lvrcNmNdaFjLZrZ2tt1jdvhNoz%2Bzgg7DmNOhFarjGGPETuw9O25ImF2kCXSusY67wnXtvehg9npAhJBCeCQ9x7JAoLo7%2B2w/753xaA/AED%2BSdlSYk8QaDOw4NHJYAoKMAYoxobPPBSYnS7uBt6bIAjGWRnyBIzlnQIBwSkEowsylNHVmTMSYxnZLGqD7PR5j7HuP8fSggJc2TAnsTgke9D8TMmPmI%2Bl3JrH6R0jHhx0kY8AvjyqAaXwOgamwUQqhYi3TBukUorRZKkzggzP4qc5gIlJKyUUrsfZ2lwWqUMtc81yZHmvOSp87y3g/noVBdFUmMLvAItZCi2yGLyrodqoukl8BOrGB6tJ%2BliQmXRlU/NbT/L1qfU2H5cG8rbrOC7FfLV31/qEiBua061rBaI1RvW3oONlQVujdKLkLrmbci9drfN5oa2CgbcH4t/vq3Zst8bVt9vO3W0KCsR21th2WcJJO5rxpGOsfRn5yObuEBJ2mUE3ch5T2XursoF2z7IAfFnnBOCQIASQexIf56Z937WecD/QB%2BLziQCSCBA7rBKeixIpCSB%2BJcBeIhSXocDghr79rf5Q5PJdodKf7r5JLIFOJSrMK5AAFAA%3D%3D)
 
 ## Links
 

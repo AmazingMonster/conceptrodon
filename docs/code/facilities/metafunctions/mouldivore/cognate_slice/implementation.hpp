@@ -28,8 +28,8 @@ struct Shear<std::index_sequence<I...>>
     static consteval auto idyl
     (
         // Expand `Prefix<I>` to count the uwanted arguments.
-        // Collect the rest.
         Prefix<I> auto...,
+        // Collect the rest.
         Targets...
     )
     -> Operation<typename Targets::type...>;

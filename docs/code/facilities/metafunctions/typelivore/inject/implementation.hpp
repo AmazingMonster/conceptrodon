@@ -6,7 +6,7 @@
 #include <cstddef>
 
 /**** Prefix ****/
-template<typename, size_t>
+template<typename, auto>
 concept Prefix = true;
 
 /************************/
@@ -26,13 +26,21 @@ struct Enrich<std::index_sequence<I...>>
         template
         <
             template<typename...> class Operation,
-            // We use `Prefix<I>...` to enumerate `FrontTargets`.
-            Prefix<I>...FrontTargets,
-            typename...BackTargets
+            typename...BackArgs
         >
-        static consteval auto idyl() ->
-        // `NewVariables...` are injected in the return type.
-        Operation<FrontTargets..., NewElements..., BackTargets...>;
+        static consteval auto idyl
+        (
+            // Expand `Prefix<I>` to count the arguments from the front.
+            Prefix<I> auto...front_args,
+            // Collect the rest.
+            BackArgs...
+        )
+        -> Operation
+        <
+            typename decltype(front_args)::type...,
+            NewElements...,
+            typename BackArgs::type...
+        >;
     };
 
     template<typename...NewElements>
@@ -49,14 +57,12 @@ struct Inject
         template<typename...NewElements>
         struct ProtoMold
         {
-            // Note that we use a parameter pack in the template head
-            // even though the function only allows one operation.
             template<template<typename...> class...Agreements>
             using Road = decltype
             (
                 Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template idyl<Agreements..., Elements...>()
+                ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
             );
         };
 

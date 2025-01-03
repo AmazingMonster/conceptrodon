@@ -73,7 +73,6 @@ static_assert
 - Note that the order matters when the predicate is not commutative.
 
 ```C++
-/**** Test ****/
 // Reverse Vay<0> and Vay<1>
 static_assert
 (
@@ -90,7 +89,7 @@ We will implement this process in two steps.
 
 - First, when given an index, we query the predicate with the pairs consisting of the element at the index and every element behind it.
 
-We will expand the concept `Prefix<***>` alongside the arguments to pick out the element at the index.
+We will expand the constraint `Prefix<***>` alongside the arguments to pick out the element at the index.
 
 ```C++
 template<typename, auto>
