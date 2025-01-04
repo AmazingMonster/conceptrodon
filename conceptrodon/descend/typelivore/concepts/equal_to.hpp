@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TYPELIVORE_EQUAL_H
-#define CONCEPTRODON_TYPELIVORE_EQUAL_H
+#ifndef CONCEPTRODON_TYPELIVORE_EQUAL_TO_H
+#define CONCEPTRODON_TYPELIVORE_EQUAL_TO_H
 
 #include "conceptrodon/omennivore/concepts/valuable.hpp"
 #include "conceptrodon/varybivore/concepts/equal_to.hpp"

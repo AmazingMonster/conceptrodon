@@ -21,12 +21,8 @@ namespace Cotanivore {
 namespace UnitTests {
 namespace TestPaste {
 
-// In this test, we will paste
-//  std::tuple<>,
-//  Capsule<std::integral_constant<int, 0>>,
-//  ...,
-//  Capsule<std::integral_constant<int, 239>>
-// together.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"

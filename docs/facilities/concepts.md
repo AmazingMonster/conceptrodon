@@ -96,6 +96,10 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd>Conceptualize the negation of a callable type predicate.</dd>
 </dl>
 <!-- Conceptualizations -- End -->
+
+<!-- Arithmetic Examinations -- Start -->
+### Arithmetic Examinations <a id="varybivore-arithmetic-examinations"></a>
+
 <!-- Typelivore -- End -->
 
 <!-- Varybivore -- Start -->

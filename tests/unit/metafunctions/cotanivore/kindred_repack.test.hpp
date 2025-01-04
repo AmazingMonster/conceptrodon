@@ -21,11 +21,8 @@ namespace Cotanivore {
 namespace UnitTests {
 namespace TestKindredRepack {
 
-// In this test, we will paste
-//  Capsule<std::integral_constant<int, 0>>,
-//  ...,
-//  Capsule<std::integral_constant<int, 239>>
-// together and place the result in Tester.
+
+
 
 /******************************************************************************************************/
 template<typename...Elements>
