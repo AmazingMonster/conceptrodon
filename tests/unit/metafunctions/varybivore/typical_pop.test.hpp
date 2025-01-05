@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_POP_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_POP_H
 
-#include "conceptrodon/descend/varybivore/pop.hpp"
+#include "conceptrodon/varybivore/pop.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

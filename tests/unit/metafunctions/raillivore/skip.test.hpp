@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/raillivore/skip.hpp"
+#include "conceptrodon/raillivore/skip.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

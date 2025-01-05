@@ -35,5 +35,5 @@ concept AnyUnvaluable
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/descend/descend/any_unvaluable.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/any_unvaluable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_unvaluable.test.hpp)

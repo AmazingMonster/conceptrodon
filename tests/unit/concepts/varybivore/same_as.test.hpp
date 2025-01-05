@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SAME_AS_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SAME_AS_H
 
-#include "conceptrodon/descend/varybivore/concepts/same_as.hpp"
+#include "conceptrodon/varybivore/concepts/same_as.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

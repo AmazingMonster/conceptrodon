@@ -182,5 +182,5 @@ struct CognateClassicTransform
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_classic_transform/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_classic_transform.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_classic_transform.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_classic_transform.test.hpp)

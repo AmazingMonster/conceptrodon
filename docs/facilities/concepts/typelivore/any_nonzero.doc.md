@@ -34,5 +34,5 @@ concept AnyNonzero
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/any_nonzero.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/any_nonzero.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/any_nonzero.test.hpp)

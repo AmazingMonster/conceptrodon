@@ -41,5 +41,5 @@ concept Unpageful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/unpageful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unpageful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unpageful.test.hpp)

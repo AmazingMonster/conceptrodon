@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_NEGATIVE_ONE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_NEGATIVE_ONE_H
 
-#include "conceptrodon/descend/typelivore/concepts/all_negative_one.hpp"
-#include "conceptrodon/descend/typelivore/concepts/any_negative_one.hpp"
+#include "conceptrodon/typelivore/concepts/all_negative_one.hpp"
+#include "conceptrodon/typelivore/concepts/any_negative_one.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

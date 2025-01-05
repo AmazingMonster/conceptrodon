@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/mouldivore/cognate_reverse.hpp"
+#include "conceptrodon/mouldivore/cognate_reverse.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

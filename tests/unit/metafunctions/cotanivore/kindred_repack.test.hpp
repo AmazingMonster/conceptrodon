@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/cotanivore/kindred_repack.hpp"
+#include "conceptrodon/cotanivore/kindred_repack.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

@@ -65,5 +65,5 @@ using ConjureSet = TypicalConjureSet<Elements...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/conjure_set/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/typelivore/conjure_set.hpp)
+- [Source code](../../../../conceptrodon/typelivore/conjure_set.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/conjure_set.test.hpp)

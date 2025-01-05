@@ -140,5 +140,5 @@ struct KindredRepack<WarehouseA<ContainerAs...>, WarehouseB<ContainerBs...>, Oth
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/warehivore/kindred_repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/warehivore/kindred_repack.hpp)
+- [Source code](../../../../conceptrodon/warehivore/kindred_repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/warehivore/kindred_repack.test.hpp)

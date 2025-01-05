@@ -34,5 +34,5 @@ concept EqualTo
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/equal_to.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/equal_to.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/equal_to.test.hpp)

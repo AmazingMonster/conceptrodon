@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/omennivore/modify_values.hpp"
+#include "conceptrodon/omennivore/modify_values.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ROTATE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ROTATE_H
 
-#include "conceptrodon/descend/varybivore/rotate.hpp"
+#include "conceptrodon/varybivore/rotate.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

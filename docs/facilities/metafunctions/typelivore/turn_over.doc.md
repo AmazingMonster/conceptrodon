@@ -59,5 +59,5 @@ using TurnOver = TypicalTurnOver<Elements...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/turn_over/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/typelivore/turn_over.hpp)
+- [Source code](../../../../conceptrodon/typelivore/turn_over.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/turn_over.test.hpp)

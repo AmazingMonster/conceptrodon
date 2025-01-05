@@ -29,5 +29,5 @@ concept Zero = EqualTo<Arg, 0>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/zero.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/zero.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/zero.test.hpp)

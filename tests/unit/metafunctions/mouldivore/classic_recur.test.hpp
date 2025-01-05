@@ -6,8 +6,8 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/typelivore/pop.hpp"
-#include "conceptrodon/descend/mouldivore/classic_recur.hpp"
+#include "conceptrodon/typelivore/pop.hpp"
+#include "conceptrodon/mouldivore/classic_recur.hpp"
 #include "conceptrodon/mouldivore/agent.hpp"
 #include "conceptrodon/capsule.hpp"
 

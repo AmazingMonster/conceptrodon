@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_BOUNDED_BY_LEFT_CLOSED_RIGHT_OPEN_INTERVAL_H
 
-#include "conceptrodon/descend/typelivore/concepts/bounded_by_left_closed_right_open_interval.hpp"
-#include "conceptrodon/descend/typelivore/concepts/no_less_than.hpp"
-#include "conceptrodon/descend/typelivore/concepts/less_than.hpp"
+#include "conceptrodon/typelivore/concepts/bounded_by_left_closed_right_open_interval.hpp"
+#include "conceptrodon/typelivore/concepts/no_less_than.hpp"
+#include "conceptrodon/typelivore/concepts/less_than.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

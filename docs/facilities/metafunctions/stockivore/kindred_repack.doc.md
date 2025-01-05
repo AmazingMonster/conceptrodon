@@ -140,5 +140,5 @@ struct KindredRepack<StockroomA<SequenceAs...>, StockroomB<SequenceBs...>, Other
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/roadrivore/kindred_repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/stockivore/kindred_repack.hpp)
+- [Source code](../../../../conceptrodon/stockivore/kindred_repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/stockivore/kindred_repack.test.hpp)

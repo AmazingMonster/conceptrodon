@@ -34,5 +34,5 @@ concept GreaterThan
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/greater_than.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/greater_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/greater_than.test.hpp)

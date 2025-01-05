@@ -26,5 +26,5 @@ concept AllFlowful = Mouldivore::AllConfess<IsFlowful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/all_flowful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/all_flowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_flowful.test.hpp)

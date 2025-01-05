@@ -180,5 +180,5 @@ struct CognateSegment
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_segment/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_segment.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/cognate_segment.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_segment.test.hpp)

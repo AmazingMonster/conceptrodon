@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NO_GREATER_THAN_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NO_GREATER_THAN_H
 
-#include "conceptrodon/descend/typelivore/concepts/equal_to.hpp"
-#include "conceptrodon/descend/typelivore/concepts/less_than.hpp"
-#include "conceptrodon/descend/typelivore/concepts/no_greater_than.hpp"
+#include "conceptrodon/typelivore/concepts/equal_to.hpp"
+#include "conceptrodon/typelivore/concepts/less_than.hpp"
+#include "conceptrodon/typelivore/concepts/no_greater_than.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

@@ -128,5 +128,5 @@ struct CognateFront
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_front/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_front.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_front.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_front.test.hpp)

@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/mouldivore/sieve.hpp"
+#include "conceptrodon/mouldivore/sieve.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

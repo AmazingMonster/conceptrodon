@@ -29,5 +29,5 @@ concept NegativeOne = EqualTo<Arg, -1>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/negative_one.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/negative_one.test.hpp)

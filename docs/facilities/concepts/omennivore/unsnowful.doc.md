@@ -41,5 +41,5 @@ concept Unsnowful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/unsnowful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unsnowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unsnowful.test.hpp)

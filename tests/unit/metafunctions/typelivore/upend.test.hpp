@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/typelivore/upend.hpp"
+#include "conceptrodon/typelivore/upend.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

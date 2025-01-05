@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_GRITFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_GRITFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/gritful.hpp"
+#include "conceptrodon/omennivore/concepts/gritful.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

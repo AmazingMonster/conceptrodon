@@ -28,5 +28,5 @@ concept AnyPegNonzero
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/any_peg_nonzero.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/any_peg_nonzero.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_peg_nonzero.test.hpp)

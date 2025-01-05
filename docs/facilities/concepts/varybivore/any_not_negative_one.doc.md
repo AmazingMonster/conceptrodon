@@ -34,5 +34,5 @@ concept AnyNotNegativeOne
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/any_not_negative_one.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/any_not_negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/any_not_negative_one.test.hpp)

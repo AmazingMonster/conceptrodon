@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEGFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEGFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/any_pegful.hpp"
+#include "conceptrodon/omennivore/concepts/any_pegful.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

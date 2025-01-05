@@ -36,5 +36,5 @@ concept BoundedByLeftOpenRightClosedInterval
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/bounded_by_left_open_right_closed_interval.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/bounded_by_left_open_right_closed_interval.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/bounded_by_left_open_right_closed_interval.test.hpp)

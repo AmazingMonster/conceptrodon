@@ -31,5 +31,5 @@ concept DifferentFrom
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/different_from.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/different_from.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/different_from.test.hpp)

@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NONZERO_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NONZERO_H
 
-#include "conceptrodon/varybivore/concepts/descend/descend/nonzero.hpp"
-#include "conceptrodon/varybivore/concepts/descend/greater_than.hpp"
+#include "conceptrodon/varybivore/concepts/nonzero.hpp"
+#include "conceptrodon/varybivore/concepts/greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

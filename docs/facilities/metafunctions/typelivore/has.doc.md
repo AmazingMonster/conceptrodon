@@ -150,5 +150,5 @@ struct Has
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/has/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/descend/typelivore/has.hpp)
+- [Source code](../../../../conceptrodon/typelivore/has.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/has.test.hpp)

@@ -41,5 +41,5 @@ concept Unrailful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/unrailful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unrailful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unrailful.test.hpp)

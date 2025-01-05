@@ -26,5 +26,5 @@ concept Railful = Mouldivore::Confess<IsRailful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/railful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/railful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/railful.test.hpp)

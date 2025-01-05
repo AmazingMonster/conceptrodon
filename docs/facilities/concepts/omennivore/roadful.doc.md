@@ -26,5 +26,5 @@ concept Roadful = Mouldivore::Confess<IsRoadful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/roadful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/roadful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/roadful.test.hpp)

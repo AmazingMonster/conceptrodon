@@ -27,5 +27,5 @@ concept Unpegful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/unpegful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unpegful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unpegful.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SNOW_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SNOW_H
 
-#include "conceptrodon/descend/omennivore/among.hpp"
+#include "conceptrodon/omennivore/among.hpp"
 
 #include <utility>
 

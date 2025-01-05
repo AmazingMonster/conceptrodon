@@ -272,5 +272,5 @@ struct Skip: public LoadSkip<Operation> {};
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/skip/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/skip.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/skip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/skip.test.hpp)

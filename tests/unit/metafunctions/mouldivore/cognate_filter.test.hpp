@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/descend/mouldivore/cognate_filter.hpp"
+#include "conceptrodon/mouldivore/cognate_filter.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

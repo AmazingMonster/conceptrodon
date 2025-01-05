@@ -21,11 +21,8 @@ namespace Stockivore {
 namespace UnitTests {
 namespace TestPaste {
 
-// In this test, we will paste
-//  FirstPackedVessel<>,
-//  Carrier<Dummy<0>::Page>,
-//  Carrier<Dummy<239>::Page>
-// together.
+
+
 
 /******************************************************************************************************/
 template<template<auto...> class...Sequences>

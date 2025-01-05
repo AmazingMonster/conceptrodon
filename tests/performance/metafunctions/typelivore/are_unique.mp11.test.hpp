@@ -7,7 +7,7 @@
 #include <concepts>
 #include <type_traits>
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/descend/typelivore/are_unique.hpp"
+#include "conceptrodon/typelivore/are_unique.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

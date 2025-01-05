@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/pagelivore/right_review.hpp"
+#include "conceptrodon/pagelivore/right_review.hpp"
 #include "conceptrodon/pagelivore/negation.hpp"
 #include "conceptrodon/varybivore/is_same.hpp"
 

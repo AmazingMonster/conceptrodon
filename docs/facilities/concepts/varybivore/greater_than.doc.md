@@ -29,5 +29,5 @@ concept GreaterThan = LessThan<RightSide, LeftSide>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/greater_than.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/greater_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/greater_than.test.hpp)

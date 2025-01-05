@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_REITERATE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_REITERATE_H
 
-#include "conceptrodon/descend/varybivore/reiterate.hpp"
+#include "conceptrodon/varybivore/reiterate.hpp"
 
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"

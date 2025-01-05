@@ -125,5 +125,5 @@ struct Amid
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/amid/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/amid.hpp)
+- [Source code](../../../../conceptrodon/varybivore/amid.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/amid.test.hpp)

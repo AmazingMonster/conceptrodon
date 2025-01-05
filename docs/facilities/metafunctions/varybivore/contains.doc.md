@@ -80,5 +80,5 @@ struct Contains
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/contains/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/contains.hpp)
+- [Source code](../../../../conceptrodon/varybivore/contains.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/contains.test.hpp)

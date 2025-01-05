@@ -21,11 +21,8 @@ namespace Warehivore {
 namespace UnitTests {
 namespace TestPaste {
 
-// In this test, we will paste
-//  FirstPackedVessel<>,
-//  Vehicle<Dummy<0>::Mold>,
-//  Vehicle<Dummy<239>::Mold>
-// together.
+
+
 
 /******************************************************************************************************/
 template<template<typename...> class...Containers>

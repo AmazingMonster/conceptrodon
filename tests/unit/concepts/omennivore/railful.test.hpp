@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_RAILFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_RAILFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/railful.hpp"
+#include "conceptrodon/omennivore/concepts/railful.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

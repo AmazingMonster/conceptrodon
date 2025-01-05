@@ -55,7 +55,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-We will traverse the element list and only collect each element's last appearance. We do this by only collecting an element into a capsule if it will not appear again. Then, we will concatenate all the capsules.
+We will traverse the element list and only collect each element's first appearance. We do this by only collecting an element into a capsule if it has not already appeared. Then, we will concatenate all the capsules.
 
 We will expand the constraint `Prefix<***>` alongside the arguments to skip the examined items.
 
@@ -64,25 +64,25 @@ template<typename, auto>
 concept Prefix = true;
 ```
 
-We check if the element we are inspecting will appear again using the following static member function.
+We check if the element we are inspecting has already appeared using the following static member function.
 
 ```C++
-template<typename Inspecting, typename...BackArgs>
+template<typename Inspecting>
 static consteval auto idyl
 (
-    Prefix<I> auto...,
+    Prefix<I> auto...front_args,
     Inspecting,
-    BackArgs...
+    ...
 )
 -> std::conditional_t
 <
-    (...||std::is_same_v<Inspecting, BackArgs>),
+    (...||std::is_same_v<Inspecting, decltype(front_args)>),
     Capsule<>,
     Capsule<typename Inspecting::type>
 >;
 ```
 
-In `std::conditional_t,` we check if `Inspecting` will appear in `BackArgs...`.
+In `std::conditional_t,` we check if `Inspecting` has appeared in `decltype(front_args)...`.
 If so, an empty `Capsule` is returned.
 Otherwise, `idyl` returns a `Capsule` containing `Inspecting`.
 
@@ -100,16 +100,16 @@ struct TypicalConjureSet
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
     {
-        template<typename Inspecting, typename...BackArgs>
+        template<typename Inspecting>
         static consteval auto idyl
         (
-            Prefix<I> auto...,
+            Prefix<I> auto...front_args,
             Inspecting,
-            BackArgs...
+            ...
         )
         -> std::conditional_t
         <
-            (...||std::is_same_v<Inspecting, BackArgs>),
+            (...||std::is_same_v<Inspecting, decltype(front_args)>),
             Capsule<>,
             Capsule<typename Inspecting::type>
         >;
@@ -135,10 +135,10 @@ struct TypicalConjureSet
 };
 ```
 
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGEgJykrgAyeAyYAHI%2BAEaYxCD%2BGqQADqgKhE4MHt6%2BASlpGQKh4VEssfGJtpj2jgJCBEzEBNk%2BflyBdpgOmfWNBMWRMXEJSQoNTS257bbj/WGDZcOJAJS2qF7EyOwcAPQAVAeHR8cnezsmGgCC%2B4cA1AAimMmujMh4mAq3R%2BdXN6f/xx%2BlwuwLMAGYwshvFhbiYwW4vI5aIQAJ5w7Ag8wQhhQrwwuFuZBjdBYKjozG/I63ZTETA0VRfQ5AgiYFjJAwsgkEFHPZhsUi3JiI1Dkq5oHFPAjU2n02Fg%2B63AjELyYOFWK4gv57W5uJjJBReeiMg7M1nspic%2BHc3msTAAOgdosuY2VDh1eoN9DVFOuVI8DQYeAAbiR2CAACo8vCiWjKJhjTDGs4gvkfZJMLY61AB4Oh2EAdnVwKuLLZHNVVp5jFtDrtTpdXjdkeS0bEcYTBas%2Bfu3o1vx2tws8cTuqUIB9pfNlrc1urbGpGYA1ph3LImPNiPWlY2pc3W7H49O48hl6vBOvwpuwRiNYWQbcH7cvOkjIqq3KFcfTx5zxve8Du3/TUBwAJS6DZ0iDEdh3HPtLknctMXhe9HwQi0KxnKtU1rdFbiheNPh/BoN0uUgUIfNDp1nbDHWvPCDAUQi1w3GxyLfG02FrbB6DYQRnQFNjqJrB1uNZRgCAsBQyKuR92Lne0HQAeQIBA4gUJCb2dbcmyjGN22nIiLziYF4VE3iCGdHDrwFQyWIJMzxMkqzsAFZTVOIBRnMxO8ZMfZ8wmAOSP1uPc9MPVVfIfAk2Nk2zLxMtwHL4zyHQFJKJJSutrJix83LUnDIrlbAQBAWcgMAsEi28ns4K1AF6uTSk7gASTLMTz1qBgkyBOqGv%2BIEQUojChM4kSePE9TrxBBsdJbGMf20DZMCETACG8otZKGrksNtJ1ZJmqVHmI2hOxMCqqsKrb4XSAAvTAAH0CFrZq9sfA6HlW9daAJYkSrCLBVHupQAEcVQlAlmq8qbCrOjbZNQs1EMrDjE2ahgFGebojAFEaFLtIcT0uYhgEmzT4behpHGQPCBATIMxEFYVbjwdAUW%2BwrZIgHLyZpOk8FUCHcKFIha2ky5yfJtGMa6Rxse5%2BGCcXImSYK8WJeWeWAFpcN%2BlABHwTqxEe%2BXoo5iWIBw/M3DOtxdbwBQgdte6gwh9HMdl4ABUV5XSdWeXYo9Q0MPRMWJfh3V9SD7aUduKX3YCkqyuhtXyfJSq2LOnt07gzbEfQ6P5Neh93oACRZrAuthzOgMuvPp1uh6nodF7k/27SpTLklGB%2Bgh0D%2BhgAaBzBQdeDDIdojFW8fKuzYffzX1nYL/UMXNaRK0K23Ck3kNn%2BGsChMrd85/2JaOr6e77kAWCYZd7v%2BzBAZBsGtkFqap7D8m/tZ2gIF12c74ro4bk9lxqCFJlXbstYNZH0fMsVWYd0SJyrP%2BWS1ds7FhTk%2BF8gVF5wgVJ3CuF8SrX1vvfR%2Bw9n4YQbqgKgtYIDpQUBrN%2BxVSrIPQWgi6vo%2BrfE1FSbAqhWDskTDwpq3CTQ%2BixJCaEiYCTii2MkAg4Dap%2BkDkaER8E67DR2qNLKml3oR09BWThWpbhCC8MkVISh0BgU9FKdR89ApmIsWkFcNjDRSjwe6SOXp4RhAIAKPxewAmCAOGnYxVI3G0DsUyEEDjbiRI8fKEKukxALSWitNavjBDBIIEE5mIS8mBL2Ig1hzwa5cIOCFD40TxFXDGBaaM90CJxAIL/XuJUFBO3jASBJAonGWNcR8dx6ImEWA4KsWgnAACsvA/AcC0KQVAnBraWGsLcBQ6xNgyPBDwUgBBNDjNWIuEAUzJB2g0AADjMGYfw/guBTMuRcrg%2BZ8zSEmRwSQvAWASA0EkOZCylkcF4AoEASR9nzPGaQOAsAYCIBAOsAgyRETkEoGgNkdA4gRFtJwVQFyABsms8WSFuMAZA1MpB2jMLwFchASAsz0PwQQIgxDsCkDIQQigVDqAhaQXQXBSAAHdiB6k4DwCZ0zZkHMWZwRSiIkVShobcXFBKiUkrJbcClZhbgQA8Oi%2BgxBYQ7OWLwcFWhVgQCQGils%2BqUUQCtRi%2BIwApBmD4HQFkHlKDRCldEMIjQUSit4D65gxAUSKWiNoGWAbSBovMopBgtB/U8qwNELwwBdS0FoCC7gvAsDXyMOIJNeBaTdCglmhZD9wIsijX46oUrkTRGFSGjwWApVKjwN87NpAoLEGiC4x4ebgDIiMAc1YVADAkwAGrvAFYpXkUbGXCBjKy6QC7OVqClXy/QhhjDWGsPoPA0QQWQFWKgBRmQs2a2JHg0wqzLBmABd24gLMPjwFWJ0bozgICuEmG0IIA8BilHKHoSxhQsieFaMBgonUANDHiPy99nVegTHA1MKoNQeizBg4sODMw%2Bg/r0PUpoWGgNcDfZsrYEhxUcBmaQf5vBAVKvxYS4lpLyVnK1fQg2JBDVglIyakdqxVJMCwPECARyQCSDBHafwYJXkaEkGYSQeLflTLxYEd5nzSDfN43aPFXA8UXP8E8vFpz7kybxbRqVgLgWgr2SOqFsKLXwrlciigdrUB6sxdijgjQWBBnzJrJg9Ft0av8HaLg5zqVcafX3flC7mXiDZaupQ66eW6BdUKkV2aqM0bo9KjgsrEWIluIq5VzHguvnaOF852rdXWriDxswxq7MQvNZajz9WyBuftfqlABgjDtC4EkGgUS1Keu9b6kNUag1%2BrDRGhwUaY3iTjQmqVybU3pszVG3N26C0LPwMWxwpapUVuQIibYuya3vIWfWxtKJm3bAWW2jtuzu29qUP23bCdWt8HHQoKdmAZ1zs7fFpdEgV2yDXdyhZ6Wt3DpvVYSw%2B7D2vsWWe2mnBL292vbuu9D64gxZfcetDMtMguAHvh/lIR5iAeGPykDnVKf5HSNBmnsGCPVFJ3UWYTOEMYb6MRunuHkM5F/YRuYJR2ekbWBsCj0v3m5as5wRjKriX4Uq2FiLGhtW4FpQarEfGWtmsE5gYTwwxP6E4Jp7TYX5P5imf4F5YIFNKckPyvL1nbC2dNZC6FcKEXyttT1rzbBOC%2BdVSwBQQZqZBiq%2BWMYUW9f0ri7IBLy72XyBS9DnQIAwSCuFckANOXJU8sBYV%2BVJWqBKoj1HmPcf0JjFqx1h1PGwTNZ921vWnmuuoub716PFjnbtHuvHgg91VBEtdaNj1EAvU8pm1NztC/Q3hsjZ2pbggVuJv25gFNaaxBbc7Tt/Nj2c1FtJ8dnlp3zvVsELWnlt2/UPdbU%2Bl7vA3t9tZF94dP2x1MEndOrOowPOqnmDklpDlnhurnnDjurejYPWkehbqep1FmjsL9AjtYPevRo%2Bs%2BogW%2Bpzh%2Bn4F%2BhTihr%2BtTpLthpBizpkEzgzpkILjhnztznhqQRzuhswURmzpQfBjzqwTwQLlwSRmRrLqysXpZqXsrhPsSpHtHrcLHmFqPjrtFjxobh3ibmbqJlRtbiADcnaGCGCFMg8m7r8vofmAZuIQCpwDZmCgJqQMcpIFMtJs8vmL8hcpIHclwFcmYBZu8mCCXpYUCkbocpbhwFShYfRlYUEcsKsN2ukM4JIEAA%3D%3D)
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAKwAzKSuADJ4DJgAcj4ARpjEElz%2BpAAOqAqETgwe3r4BwemZjgLhkTEs8YlcybaY9iUMQgRMxAS5Pn5BdQ3Zza0EZdFxCUkpCi1tHfndEwNDFVVjAJS2qF7EyOwcAPQAVAeHR8cnezsmGgCC%2B4cA1AAimKmujMh4mAq3R%2BdXN6f/xx%2BlwuwLMgQiyG8WFuJkCbi8jlohAAnrDsCDzOCGJCvNDYW5kBN0FgqGiMb8jrdlMRMDRVF9DkCCJgWKkDMz8QRkc9mGxSLcmAjUGSrmhsU8CFSaXSYYF7rcCMQvJhYVYriC/ntbm4mKkFF56AyDkyWWymBy4VyeaxMAA6e0iy4TJUObW6/X0VXk66UjwtBh4ABuJHYIAAKty8KJaMomBNMEaziDeR9UkwttrUP6gyGYQB2NXAq7M1nslWW7mMG3222O51eV0R1JRsSx%2BP5qx5%2B5e9W/Ha3CxxhM6pQgb0ls0WtxWqtsKnpgDWmHcsiYEQSdcVDclTZbMbjU9jyCXK8Ea8ixEdJgLINud9uXkyRgVldl8qPJ48Z/Xl8Chev3Z/t6Oz9gASpgyAbJkgbDkOY69pcE5lhicK3veSHmuW06VimNZorckJxp8X4tD%2BlykGhd4YVOM64Q6gTYARBgKMRq4/jYlEvtabA1tg9BsIITr8pxtHVvafEsowBAWAoFFXPeXGzna9oAPIEAgCQKCh6JXPWjaRtGbZTiR54JMCcISQJBBOnhDH8iZ7H4pZUkybZ2D8mpGnEAobkYje8n3o%2BETAIpb63LuhkHiqAV3vinEKQ5F7mW4zmCT59r8ql0npbWdnxfenmaXhMWytgIAgDOPbAl2VV%2Bd2CGagCTVJhSdwAJKlpJZ6NImQKNc1/xAiC1FYaJPHifxUlaQxIJ6TuBliF%2B2gbJgQiYAQfmFgpI2cjhNqOgpc0POta60B2AG1SVO1wpkABemAAPoEDWbUHfeR2PKRtD4kS5URFgqgPUoACOyrivibW%2BTNJXXltCnoaayEVtxCZtQwCjPA4wVvfDtxzI4yAEQI8aBmIApCrceDoMi30lQpED5bj1K0ngqgQ/hgpEDWVDELID2tMAsmM/DaMYxBjhGHJly47jxXSzLyzCwAtPhv0oAI%2BCNGIT3C3FdMyxAeF5m415uGreAKEDNoPYGEPo5jEvAPyWCQjO1C84I/PEILisMaswsJe6BpYWiUsy/DOp6sHu0o7cosO8F5WVdD8u42SQEwzVGdFqnCqI5hMdKTjeNbq6AASVNYAw51Z/%2BV351Od2Pc99qvSnh2l5KFfEowP0EOgf0MADQOYKDrxYZD9Hou396w8LQXPjOYV%2BoYOY0uVEWtlFuuofruMu7QlV7/DDPH%2BHn2nX3A8gCwTBLg9/2YIDINg1s7MzTP4e4391O0BAaszgflXRwXInKTUENNdEN4uw1kVmfe8yw5bhzREnSsVUFIXWzpxBeIUl6wnlN3KuV9yq33vo/Z%2Bo9X5YSbqgKgNYIBZQUL7aeZUKpoKwbXYCA1AQakpNgVQrA2QJm%2BLw7hjJvSYghFCBM%2BIxRbFSAQSBXC7iRw9MI8RxYG6jT2uNXKOknSdzdFHT0WDWoHFuEILwqQijLnAh6SUIirg4IsVYmx6A7EGklPgoxaj8QRAIPyfxexAmCAOOnOuPo7geMPr1EEzjoleLlOFBatAlorTWhtOE/iQkEGCZTUJeSgl7BQWw54l1InmLDB8BxGiDHmijPzFiCQCD/37uVBQ1s4z4gSfySx1iMi2I%2BJ4tEvsLAcFWLQTg/heB%2BA4FoUgqBOAm0sNYPG6xNgyLBDwUgBBNDjNWAuAIkhbQaAABxmDMAATkuckM5pyuB5jzNISZHBJC8BYBIDQGhSCzPmYsjgvAFAgG%2BbsuZ4zSBwFgDARAIB1gEFSAicglA0CsjoAkKINpOCqFOQANiVjiyQtxgDIEJlIW0ZheDLkICQKmeh%2BCCBEGIdgUgZCCEUCodQYLSC6C4KQAA7sQXUnAeATKmTMvZCzOAqQRAiyUtDbjYrxQSolJLbhkrMLcCAHhUX0GIDCLZyxeCgq0KsCASAUXNl1UiiAFq0WJGAFIMwfA6DMm8pQWIErYgRFaMiYVvAvXMGIMiFSsRtDiz9aQFFVkVIMFoL6rlWBYheGADqWgtAgXcF4FgW%2BRhxAJrwDSLGMEM3zKfhBBE2xtn%2BPqBKpEsRBVBo8FgCVio8AfMzaQGCxBYgDMeDm4ASIjB7NWFQAwgsABq7w%2BUqR5BG%2BlwhozMukPO9lagJU8v0IYYw1hrD6DwLEIFkBVioAUdkDNSsiT4NMCsywZg/lduIFTD48BVh2HFtkFwQ9ph%2BF5WEdcixRi8qKFkAQ369DAcaAsEY1QejvoEP0KYnhOh6DfVjeDkxBj/ugyhjDYHeVzDaFByogHX3rK2BIUVHBpk/Ilf8hVuL8WEuJaS45GqGGaxIPqwIXBDU7OHasDSTAsCJAgAckAkhAi2kuYEJ5GhJBmEkDir5/gcWXP0JwN5pAPncdtDirgOLTmXPuTi/wkhkjSZxTRrl/zAXAr42C010KzWwplYiigNrUA6vRZijgrQWCBjzErJgTEt1qsubaLgJzKUccfQPXl87GXiBZSupQa6uW6CdQKoVmbKPUd%2Bbwf50r4UIluPKxVjGQvPi4OFyLGhNXastQkLjZhePGvBc521Vr3OddGIRIw1WuDfJoIfTS7rPXeqDRGgNPqQ1hocBGqNUkY1xolYm5Nqb00RuzVuvN8z8CFscMWiVZbILMgjdWl58y60NuRE27Y8zW3tu2V2ntSg%2B07cTg5vgY6FCTswNO2dHaEuLokMu2Qq7OXzIy5uod16rCWD3Qel9CzT3E04Be/uV6d23vvQkWLz6j2wbQ34CArg8MhCHkRpYQGMggZyEh/INPijZCp4BonjQEPtAZz%2B9nfQMOs5gwRrneQedC4FxRtYGxyM8fU1R8V1nOD0aVYSvrIVqsRZOZq3A1K9WYh40a/jpBBPCcoJRzT2nwtybzP4S5jzAjycU2ZqzfzOC2ZBcOiFTmkBwtldanrxAMVsE4H55VLAFCBkJoGdXZYJjRZ17S%2BLshEtLtZfIVLkOdAgGCFl1Ifrcvy5dxwIrsrStUAVaH8Pkfo%2BYQmPVzzjXddgkCK1j3HX692r9%2B33VIAI/WJttVh6MeCAPVUAS51I23UQA9Vy6bk2O2z%2BDaG8NHbFuCGW/GvbmAk0prEJtjt23c33azQW99R2uUnYredwQNauXXZ9Xdltj6nu8Be72lkH2h1fdHUwCdU6Z2MDnSTxB2S3B3T3XSzxh23RvRsDrUPVExR0aAzR2F%2Bjh2sDvQKwfSfTgNfXqDgxJzJ25z0D/XKGwyZzp3JwgxZyw2I0F1wOJ053J1Qw5352oOp1sFw0IPwxYJIJoIlwUDI2ZXz2dwK0V1H0JTDwj1uCj3CyHy1xiy4313sxNQE0wCE1GHgJeXNxACuVtECECH8H8Dk0Gw0D0LzAM2EMlQBVsDsza2WDE0kH8CkweTzC%2BVOUkBuS4HOTMEsxeUCALxEKsNsMowpQsJsyUP2U7U0g/UkCAA%3D%3D)
 
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/typical_conjure_set/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/typelivore/conjure_set.hpp)
+- [Source code](../../../../conceptrodon/typelivore/conjure_set.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/typical_conjure_set.test.hpp)

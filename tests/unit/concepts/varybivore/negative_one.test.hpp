@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NEGATIVE_ONE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NEGATIVE_ONE_H
 
-#include "conceptrodon/varybivore/concepts/descend/negative_one.hpp"
-#include "conceptrodon/varybivore/concepts/descend/no_less_than.hpp"
-#include "conceptrodon/varybivore/concepts/descend/no_greater_than.hpp"
+#include "conceptrodon/varybivore/concepts/negative_one.hpp"
+#include "conceptrodon/varybivore/concepts/no_less_than.hpp"
+#include "conceptrodon/varybivore/concepts/no_greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

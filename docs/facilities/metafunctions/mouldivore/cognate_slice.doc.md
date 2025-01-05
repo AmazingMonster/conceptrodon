@@ -217,5 +217,5 @@ struct CognateSlice
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_slice/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_slice.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_slice.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_slice.test.hpp)

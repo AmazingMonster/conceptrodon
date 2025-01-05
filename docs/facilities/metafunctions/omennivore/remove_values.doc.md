@@ -235,5 +235,5 @@ struct RemoveValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/remove_values/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/omennivore/remove_values.hpp)
+- [Source code](../../../../conceptrodon/omennivore/remove_values.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/remove_values.test.hpp)

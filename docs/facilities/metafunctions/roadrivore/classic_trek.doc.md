@@ -469,5 +469,5 @@ struct ClassicTrek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/roadrivore/classic_trek/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/roadrivore/classic_trek.hpp)
+- [Source code](../../../../conceptrodon/roadrivore/classic_trek.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/roadrivore/classic_trek.test.hpp)

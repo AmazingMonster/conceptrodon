@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_ZERO_H
 
-#include "conceptrodon/descend/typelivore/concepts/all_zero.hpp"
+#include "conceptrodon/typelivore/concepts/all_zero.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

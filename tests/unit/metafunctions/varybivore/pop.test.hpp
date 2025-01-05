@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/varybivore/pop.hpp"
+#include "conceptrodon/varybivore/pop.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

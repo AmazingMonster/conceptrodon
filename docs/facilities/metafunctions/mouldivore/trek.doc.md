@@ -479,5 +479,5 @@ struct Trek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/trek/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/trek.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/trek.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/trek.test.hpp)

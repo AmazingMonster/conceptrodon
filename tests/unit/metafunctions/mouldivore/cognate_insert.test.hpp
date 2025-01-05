@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/descend/mouldivore/cognate_insert.hpp"
+#include "conceptrodon/mouldivore/cognate_insert.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

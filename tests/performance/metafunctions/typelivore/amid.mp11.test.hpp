@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/typelivore/amid.hpp"
+#include "conceptrodon/typelivore/amid.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

@@ -41,5 +41,5 @@ concept Unmoldful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/unmoldful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unmoldful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unmoldful.test.hpp)

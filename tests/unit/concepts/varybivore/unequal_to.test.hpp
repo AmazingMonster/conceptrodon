@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UNEQUAL_TO_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UNEQUAL_TO_H
 
-#include "conceptrodon/varybivore/concepts/descend/unequal_to.hpp"
-#include "conceptrodon/varybivore/concepts/descend/greater_than.hpp"
+#include "conceptrodon/varybivore/concepts/unequal_to.hpp"
+#include "conceptrodon/varybivore/concepts/greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_WILLFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_WILLFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/willful.hpp"
+#include "conceptrodon/omennivore/concepts/willful.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

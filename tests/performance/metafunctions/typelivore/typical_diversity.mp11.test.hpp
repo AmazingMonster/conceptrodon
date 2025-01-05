@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_DIVERSITY_H
 
 #include <concepts>
-#include "conceptrodon/descend/typelivore/diversity.hpp"
+#include "conceptrodon/typelivore/diversity.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/same_type.hpp"

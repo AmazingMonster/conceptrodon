@@ -181,5 +181,5 @@ struct RightReview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/right_review/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/right_review.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/right_review.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/right_review.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_VALUE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_VALUE_H
 
-#include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
+#include "conceptrodon/omennivore/easy_paste.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

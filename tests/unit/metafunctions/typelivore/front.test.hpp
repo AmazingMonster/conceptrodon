@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FRONT_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_FRONT_H
 
-#include "conceptrodon/descend/typelivore/front.hpp"
+#include "conceptrodon/typelivore/front.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

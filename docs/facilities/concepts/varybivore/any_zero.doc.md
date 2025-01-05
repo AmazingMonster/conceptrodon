@@ -34,5 +34,5 @@ concept AnyZero
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/any_zero.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/any_zero.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/any_zero.test.hpp)

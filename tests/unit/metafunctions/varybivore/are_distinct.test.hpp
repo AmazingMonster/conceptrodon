@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_DISTINCT_H
 
-#include "conceptrodon/descend/varybivore/are_distinct.hpp"
+#include "conceptrodon/varybivore/are_distinct.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

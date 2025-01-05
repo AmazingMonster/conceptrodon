@@ -61,16 +61,16 @@ struct TypicalConjureSet
     template<size_t...I>
     struct Detail<std::index_sequence<I...>>
     {
-        template<typename Inspecting, typename...BackArgs>
+        template<typename Inspecting>
         static consteval auto idyl
         (
-            Prefix<I> auto...,
+            Prefix<I> auto...front_args,
             Inspecting,
-            BackArgs...
+            ...
         )
         -> std::conditional_t
         <
-            (...||std::is_same_v<Inspecting, BackArgs>),
+            (...||std::is_same_v<Inspecting, decltype(front_args)>),
             Capsule<>,
             Capsule<typename Inspecting::type>
         >;

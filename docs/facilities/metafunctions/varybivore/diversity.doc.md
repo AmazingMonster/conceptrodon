@@ -83,5 +83,5 @@ struct Diversity
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/diversity/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/diversity.hpp)
+- [Source code](../../../../conceptrodon/varybivore/diversity.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/diversity.test.hpp)

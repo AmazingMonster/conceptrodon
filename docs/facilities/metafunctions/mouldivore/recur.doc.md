@@ -221,5 +221,5 @@ struct Recur
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/recur/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/recur.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/recur.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/recur.test.hpp)

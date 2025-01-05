@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FILTER_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FILTER_H
 
-#include "conceptrodon/descend/descend/pagelivore/cognate_filter.hpp"
+#include "conceptrodon/pagelivore/cognate_filter.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

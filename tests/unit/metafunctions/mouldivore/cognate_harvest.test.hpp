@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/mouldivore/cognate_harvest.hpp"
+#include "conceptrodon/mouldivore/cognate_harvest.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

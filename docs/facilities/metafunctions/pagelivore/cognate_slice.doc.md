@@ -223,5 +223,5 @@ struct CognateSlice
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_slice/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/pagelivore/cognate_slice.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/cognate_slice.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_slice.test.hpp)

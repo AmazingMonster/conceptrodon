@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SLICE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SLICE_H
 
-#include "conceptrodon/descend/varybivore/slice.hpp"
+#include "conceptrodon/varybivore/slice.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UPEND_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UPEND_H
 
-#include "conceptrodon/descend/varybivore/upend.hpp"
+#include "conceptrodon/varybivore/upend.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

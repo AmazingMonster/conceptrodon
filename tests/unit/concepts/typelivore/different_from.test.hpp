@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DIFFERENT_FROM_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_DIFFERENT_FROM_H
 
-#include "conceptrodon/descend/typelivore/concepts/different_from.hpp"
+#include "conceptrodon/typelivore/concepts/different_from.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

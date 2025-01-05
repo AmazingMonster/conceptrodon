@@ -129,5 +129,5 @@ struct Sieve
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/sieve/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/pagelivore/sieve.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/sieve.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/sieve.test.hpp)

@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_HAS_H
 
 #include <concepts>
-#include "conceptrodon/descend/descend/typelivore/has.hpp"
+#include "conceptrodon/typelivore/has.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

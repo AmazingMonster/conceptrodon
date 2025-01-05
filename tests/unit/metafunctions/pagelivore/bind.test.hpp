@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/descend/pagelivore/bind.hpp"
+#include "conceptrodon/pagelivore/bind.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/peg.hpp"
 

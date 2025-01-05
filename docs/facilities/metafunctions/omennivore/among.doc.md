@@ -432,5 +432,5 @@ struct Among<Container<Elements...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/among/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/omennivore/among.hpp)
+- [Source code](../../../../conceptrodon/omennivore/among.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/among.type.test.hpp)

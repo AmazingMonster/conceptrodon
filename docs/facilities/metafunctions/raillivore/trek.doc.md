@@ -454,5 +454,5 @@ struct Trek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/raillivore/trek/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/raillivore/trek.hpp)
+- [Source code](../../../../conceptrodon/raillivore/trek.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/raillivore/trek.test.hpp)

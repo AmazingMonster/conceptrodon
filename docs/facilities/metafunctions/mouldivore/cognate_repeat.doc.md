@@ -192,5 +192,5 @@ struct CognateRepeat
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_repeat/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_repeat.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_repeat.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_repeat.test.hpp)

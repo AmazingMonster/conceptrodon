@@ -31,5 +31,5 @@ concept BoundedByLeftOpenRightClosedInterval
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/descend/descend/bounded_by_left_open_right_closed_interval.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/bounded_by_left_open_right_closed_interval.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/bounded_by_left_open_right_closed_interval.test.hpp)

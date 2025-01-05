@@ -150,5 +150,5 @@ struct Repack
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/pagelivore/repack.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/repack.test.hpp)

@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/omennivore/bi_harvest.hpp"
+#include "conceptrodon/omennivore/bi_harvest.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

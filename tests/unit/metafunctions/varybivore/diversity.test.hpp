@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DIVERSITY_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DIVERSITY_H
 
-#include "conceptrodon/descend/varybivore/diversity.hpp"
+#include "conceptrodon/varybivore/diversity.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

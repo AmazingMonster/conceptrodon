@@ -202,5 +202,5 @@ struct CognateModify
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_modify/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/descend/mouldivore/cognate_modify.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_modify.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_modify.test.hpp)

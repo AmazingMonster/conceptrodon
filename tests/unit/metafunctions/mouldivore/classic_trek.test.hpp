@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/mouldivore/classic_trek.hpp"
+#include "conceptrodon/mouldivore/classic_trek.hpp"
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

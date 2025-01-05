@@ -113,5 +113,5 @@ struct Repack
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/repack.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/repack.test.hpp)

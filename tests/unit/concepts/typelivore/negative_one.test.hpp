@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NEGATIVE_ONE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NEGATIVE_ONE_H
 
-#include "conceptrodon/descend/typelivore/concepts/negative_one.hpp"
-#include "conceptrodon/descend/typelivore/concepts/no_less_than.hpp"
-#include "conceptrodon/descend/typelivore/concepts/no_greater_than.hpp"
+#include "conceptrodon/typelivore/concepts/negative_one.hpp"
+#include "conceptrodon/typelivore/concepts/no_less_than.hpp"
+#include "conceptrodon/typelivore/concepts/no_greater_than.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

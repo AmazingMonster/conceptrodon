@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/typelivore/are_overlapping.hpp"
+#include "conceptrodon/typelivore/are_overlapping.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 

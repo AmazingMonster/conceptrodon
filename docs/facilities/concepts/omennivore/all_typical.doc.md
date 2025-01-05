@@ -29,5 +29,5 @@ concept AllTypical = (... && Typical<Structures>);
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/descend/all_typical.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/all_typical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_typical.test.hpp)

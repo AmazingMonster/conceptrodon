@@ -672,5 +672,5 @@ struct Zip<PackedVessels...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/zip/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/descend/omennivore/zip.hpp)
+- [Source code](../../../../conceptrodon/omennivore/zip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/zip.mold.test.hpp)

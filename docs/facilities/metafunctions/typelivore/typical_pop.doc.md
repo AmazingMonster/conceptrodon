@@ -107,5 +107,5 @@ struct TypicalPop<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/typical_pop/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/typelivore/pop.hpp)
+- [Source code](../../../../conceptrodon/typelivore/pop.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/typical_pop.test.hpp)

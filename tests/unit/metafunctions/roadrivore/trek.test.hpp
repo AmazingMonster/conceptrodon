@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/roadrivore/trek.hpp"
+#include "conceptrodon/roadrivore/trek.hpp"
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/vehicle.hpp"

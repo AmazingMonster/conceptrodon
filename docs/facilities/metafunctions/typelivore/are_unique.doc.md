@@ -59,5 +59,5 @@ struct AreUnique
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/are_unique/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/descend/typelivore/are_unique.hpp)
+- [Source code](../../../../conceptrodon/typelivore/are_unique.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/are_unique.test.hpp)

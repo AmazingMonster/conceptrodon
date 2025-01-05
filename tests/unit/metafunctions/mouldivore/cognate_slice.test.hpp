@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_SLICE_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_SLICE_H
 
-#include "conceptrodon/descend/mouldivore/cognate_slice.hpp"
+#include "conceptrodon/mouldivore/cognate_slice.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

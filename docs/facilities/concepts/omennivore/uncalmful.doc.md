@@ -41,5 +41,5 @@ concept Uncalmful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/uncalmful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/uncalmful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/uncalmful.test.hpp)

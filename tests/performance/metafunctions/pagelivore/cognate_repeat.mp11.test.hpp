@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REPEAT_2ND_H
 
 #include <concepts>
-#include "conceptrodon/descend/pagelivore/cognate_repeat.hpp"
+#include "conceptrodon/pagelivore/cognate_repeat.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

@@ -20,12 +20,8 @@ namespace Sequnivore {
 namespace UnitTests {
 namespace TestTypicalPaste {
 
-// In this test, we will paste
-//  FirstPackedVessel<>,
-//  Shuttle<0>,
-//  ...,
-//  Shuttle<239>
-// together.
+
+
 
 /******************************************************************************************************/
 template<size_t...>

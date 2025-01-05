@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/warehivore/kindred_repack.hpp"
+#include "conceptrodon/warehivore/kindred_repack.hpp"
 #include "conceptrodon/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
@@ -21,11 +21,8 @@ namespace Warehivore {
 namespace UnitTests {
 namespace TestKindredRepack {
 
-// In this test, we will paste
-//  Vehicle<Dummy<0>::Mold>,
-//  ...,
-//  Vehicle<Dummy<239>::Mold>
-// together and place the result in Operation.
+
+
 
 /******************************************************************************************************/
 template<template<typename...> class...Warehouses>

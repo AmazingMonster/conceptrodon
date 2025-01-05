@@ -220,5 +220,5 @@ struct Slice
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/slice/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/slice.hpp)
+- [Source code](../../../../conceptrodon/varybivore/slice.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/slice.test.hpp)

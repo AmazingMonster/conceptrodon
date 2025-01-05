@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/mouldivore/skip.hpp"
+#include "conceptrodon/mouldivore/skip.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

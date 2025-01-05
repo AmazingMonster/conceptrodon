@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INSERT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INSERT_H
 
-#include "conceptrodon/descend/descend/pagelivore/cognate_insert.hpp"
+#include "conceptrodon/pagelivore/cognate_insert.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

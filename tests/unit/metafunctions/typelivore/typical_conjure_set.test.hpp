@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/typelivore/conjure_set.hpp"
+#include "conceptrodon/typelivore/conjure_set.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
@@ -40,7 +40,7 @@ using SupposedResult = Capsule<SHEEP_SPROUT(80)>;
     SupposedResult
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-SAME_TYPE(TypicalConjureSet<SHEEP_SPROUT(80), SHEEP_SPROUT(80)>::type);
+SAME_TYPE(TypicalConjureSet<SHEEP_SPROUT(80), SHEEP_SPROUT(39)>::type);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

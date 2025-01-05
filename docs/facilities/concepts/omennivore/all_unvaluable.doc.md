@@ -29,5 +29,5 @@ concept AllUnvaluable = (...&&Unvaluable<Structures>);
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/descend/all_unvaluable.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/all_unvaluable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_unvaluable.test.hpp)

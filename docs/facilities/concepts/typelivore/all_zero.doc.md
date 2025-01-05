@@ -34,5 +34,5 @@ concept AllZero
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/all_zero.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/all_zero.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/all_zero.test.hpp)

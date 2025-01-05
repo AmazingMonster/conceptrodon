@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/pagelivore/repack.hpp"
+#include "conceptrodon/pagelivore/repack.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

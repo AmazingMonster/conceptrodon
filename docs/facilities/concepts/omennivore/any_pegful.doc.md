@@ -28,5 +28,5 @@ concept AnyPegful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/any_pegful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/any_pegful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_pegful.test.hpp)

@@ -181,5 +181,5 @@ struct LeftReview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/left_review/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/left_review.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/left_review.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/left_review.test.hpp)

@@ -26,5 +26,5 @@ concept Gritful = Mouldivore::Confess<IsGritful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/gritful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/gritful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/gritful.test.hpp)

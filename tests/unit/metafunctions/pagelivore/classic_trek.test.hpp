@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/pagelivore/classic_trek.hpp"
+#include "conceptrodon/pagelivore/classic_trek.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 #include "conceptrodon/carrier.hpp"

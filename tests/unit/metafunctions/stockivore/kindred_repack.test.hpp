@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/stockivore/kindred_repack.hpp"
+#include "conceptrodon/stockivore/kindred_repack.hpp"
 #include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
@@ -21,11 +21,8 @@ namespace Stockivore {
 namespace UnitTests {
 namespace TestKindredRepack {
 
-// In this test, we will paste
-//  Carrier<Dummy<0>::Page>,
-//  ...,
-//  Carrier<Dummy<239>::Page>
-// together and place the result in Operation.
+
+
 
 /******************************************************************************************************/
 template<template<auto...> class...Sequences>

@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/descend/omennivore/easy_kindred_repack.hpp"
+#include "conceptrodon/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

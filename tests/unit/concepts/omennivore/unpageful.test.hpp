@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNPAGEFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNPAGEFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/unpageful.hpp"
+#include "conceptrodon/omennivore/concepts/unpageful.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

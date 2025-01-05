@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/descend/mouldivore/bind.hpp"
+#include "conceptrodon/mouldivore/bind.hpp"
 #include "conceptrodon/peg.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

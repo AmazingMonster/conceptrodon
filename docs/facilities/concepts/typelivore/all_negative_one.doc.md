@@ -34,5 +34,5 @@ concept AllNegativeOne
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/typelivore/concepts/all_negative_one.hpp)
+- [Source code](../../../../conceptrodon/typelivore/concepts/all_negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/all_negative_one.test.hpp)

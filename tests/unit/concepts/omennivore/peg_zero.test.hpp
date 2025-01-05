@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_PEG_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_PEG_ZERO_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/peg_zero.hpp"
-#include "conceptrodon/descend/typelivore/concepts/zero.hpp"
+#include "conceptrodon/omennivore/concepts/peg_zero.hpp"
+#include "conceptrodon/typelivore/concepts/zero.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

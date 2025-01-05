@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/typelivore/are_distinct.hpp"
+#include "conceptrodon/typelivore/are_distinct.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

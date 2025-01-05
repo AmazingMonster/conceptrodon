@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/descend/omennivore/easy_paste.hpp"
+#include "conceptrodon/omennivore/easy_paste.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

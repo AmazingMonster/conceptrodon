@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_ROADFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_ROADFUL_H
 
-#include "conceptrodon/descend/omennivore/concepts/all_roadful.hpp"
+#include "conceptrodon/omennivore/concepts/all_roadful.hpp"
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"

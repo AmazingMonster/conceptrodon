@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/pagelivore/cognate_segment.hpp"
+#include "conceptrodon/pagelivore/cognate_segment.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

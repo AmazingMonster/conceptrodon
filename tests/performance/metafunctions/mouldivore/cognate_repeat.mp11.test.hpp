@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_REPEAT_2ND_H
 
 #include <concepts>
-#include "conceptrodon/descend/mouldivore/cognate_repeat.hpp"
+#include "conceptrodon/mouldivore/cognate_repeat.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"

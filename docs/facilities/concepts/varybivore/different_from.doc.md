@@ -31,5 +31,5 @@ concept DifferentFrom
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/varybivore/concepts/different_from.hpp)
+- [Source code](../../../../conceptrodon/varybivore/concepts/different_from.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/different_from.test.hpp)

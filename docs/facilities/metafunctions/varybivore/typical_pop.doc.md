@@ -107,5 +107,5 @@ struct TypicalPop<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/typical_pop/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/pop.hpp)
+- [Source code](../../../../conceptrodon/varybivore/pop.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/typical_pop.test.hpp)

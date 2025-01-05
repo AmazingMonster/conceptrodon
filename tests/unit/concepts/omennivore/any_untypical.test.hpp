@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_UNTYPICAL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_UNTYPICAL_H
 
-#include "conceptrodon/omennivore/concepts/descend/descend/any_untypical.hpp"
+#include "conceptrodon/omennivore/concepts/any_untypical.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

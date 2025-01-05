@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/varybivore/amidst.hpp"
+#include "conceptrodon/varybivore/amidst.hpp"
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
 

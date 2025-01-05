@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEG_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEG_ZERO_H
 
-#include "conceptrodon/descend/omennivore/concepts/descend/any_peg_zero.hpp"
-#include "conceptrodon/descend/omennivore/concepts/all_pegful.hpp"
-#include "conceptrodon/descend/typelivore/concepts/any_zero.hpp"
+#include "conceptrodon/omennivore/concepts/any_peg_zero.hpp"
+#include "conceptrodon/omennivore/concepts/all_pegful.hpp"
+#include "conceptrodon/typelivore/concepts/any_zero.hpp"
 #include "conceptrodon/vay.hpp"
 
 namespace Conceptrodon {

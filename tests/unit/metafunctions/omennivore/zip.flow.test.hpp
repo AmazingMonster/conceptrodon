@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/capsule.hpp"
-#include "conceptrodon/descend/descend/omennivore/zip.hpp"
+#include "conceptrodon/omennivore/zip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

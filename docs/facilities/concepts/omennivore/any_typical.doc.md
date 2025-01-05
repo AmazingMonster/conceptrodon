@@ -34,5 +34,5 @@ concept AnyTypical
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/descend/descend/any_typical.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/any_typical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_typical.test.hpp)

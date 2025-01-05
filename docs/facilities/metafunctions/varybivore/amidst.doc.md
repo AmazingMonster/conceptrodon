@@ -181,5 +181,5 @@ The function is implemented using concept expansion in this library.
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/amidst/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/varybivore/amidst.hpp)
+- [Source code](../../../../conceptrodon/varybivore/amidst.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/amidst.test.hpp)

@@ -145,5 +145,5 @@ struct CognateRotate
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_rotate/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/mouldivore/cognate_rotate.hpp)
+- [Source code](../../../../conceptrodon/mouldivore/cognate_rotate.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_rotate.test.hpp)

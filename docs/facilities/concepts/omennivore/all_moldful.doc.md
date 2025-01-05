@@ -26,5 +26,5 @@ concept AllMoldful = Mouldivore::AllConfess<IsMoldful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/all_moldful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/all_moldful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_moldful.test.hpp)

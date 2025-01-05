@@ -41,5 +41,5 @@ concept Unhailful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/descend/omennivore/concepts/descend/unhailful.hpp)
+- [Source code](../../../../conceptrodon/omennivore/concepts/unhailful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unhailful.test.hpp)

@@ -157,5 +157,5 @@ The function is implemented using concept expansion in this library.
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/amidst/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/typelivore/amidst.hpp)
+- [Source code](../../../../conceptrodon/typelivore/amidst.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/amidst.test.hpp)

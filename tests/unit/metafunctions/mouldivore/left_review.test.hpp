@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/descend/mouldivore/left_review.hpp"
+#include "conceptrodon/mouldivore/left_review.hpp"
 #include "conceptrodon/mouldivore/negation.hpp"
 
 #include "macaron/fragmental/sheep.hpp"

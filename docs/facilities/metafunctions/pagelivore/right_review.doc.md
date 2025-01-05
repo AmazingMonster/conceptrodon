@@ -174,5 +174,5 @@ struct RightReview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/right_review/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/pagelivore/right_review.hpp)
+- [Source code](../../../../conceptrodon/pagelivore/right_review.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/right_review.test.hpp)

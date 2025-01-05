@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FRONT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_FRONT_H
 
-#include "conceptrodon/descend/pagelivore/cognate_front.hpp"
+#include "conceptrodon/pagelivore/cognate_front.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

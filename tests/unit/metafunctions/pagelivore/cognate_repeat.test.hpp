@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include <utility>
-#include "conceptrodon/descend/pagelivore/cognate_repeat.hpp"
+#include "conceptrodon/pagelivore/cognate_repeat.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

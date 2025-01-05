@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/descend/varybivore/amidst.hpp"
+#include "conceptrodon/varybivore/amidst.hpp"
 #include "conceptrodon/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

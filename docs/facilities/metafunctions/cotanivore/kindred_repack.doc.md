@@ -120,5 +120,5 @@ struct KindredRepack<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others.
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/cotanivore/kindred_repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/descend/cotanivore/kindred_repack.hpp)
+- [Source code](../../../../conceptrodon/cotanivore/kindred_repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/cotanivore/kindred_repack.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_KINDRED_REPACK_H
 #define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_KINDRED_REPACK_H
 
-#include "conceptrodon/descend/sequnivore/kindred_repack.hpp"
+#include "conceptrodon/sequnivore/kindred_repack.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
@@ -18,11 +18,8 @@ namespace Sequnivore {
 namespace UnitTests {
 namespace TestKindredRepack {
 
-// In this test, we will paste
-//  Shuttle<0>,
-//  ...,
-//  Shuttle<239>
-// together and place the result in Operation.
+
+
 
 /******************************************************************************************************/
 template<auto...Variables>
