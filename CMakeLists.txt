@@ -14,14 +14,14 @@ option(CONCEPTRODON_COMPARE_WITH_BOOST OFF)
 # cache variables for installation destinations
 include(GNUInstallDirs)
 
-add_library(ConceptrodonContents INTERFACE)
+add_library(ConceptrodonFacilities INTERFACE)
 
-set_target_properties(ConceptrodonContents PROPERTIES
-    OUTPUT_NAME ConceptrodonContents
-    EXPORT_NAME Contents
+set_target_properties(ConceptrodonFacilities PROPERTIES
+    OUTPUT_NAME ConceptrodonFacilities
+    EXPORT_NAME Facilities
 )
 
-target_include_directories(ConceptrodonContents INTERFACE
+target_include_directories(ConceptrodonFacilities INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
@@ -43,7 +43,7 @@ target_compile_options(TestConceptrodon
 )
 
 find_package(Macaron REQUIRED CONFIG)
-target_link_libraries(TestConceptrodon PRIVATE Macaron::Macros)
+target_link_libraries(TestConceptrodon PRIVATE Macaron::Facilities)
 
 if(CONCEPTRODON_COMPARE_WITH_BOOST)
 find_package(Boost REQUIRED CONFIG)
@@ -56,7 +56,7 @@ endif()
 
 
 install(
-    TARGETS ConceptrodonContents
+    TARGETS ConceptrodonFacilities
     EXPORT Conceptrodon
 )
 

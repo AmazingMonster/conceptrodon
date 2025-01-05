@@ -284,7 +284,7 @@ In the *CMakeList.txt* of your project, Add:
 
 ```CMake
 find_package(Conceptrodon REQUIRED CONFIG)
-target_link_libraries(YourProject PRIVATE Conceptrodon::Contents)
+target_link_libraries(YourProject PRIVATE Conceptrodon::Facilities)
 ```
 
 You are good to go.
