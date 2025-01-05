@@ -73,6 +73,96 @@ static_assert
 
 [*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxAEArKQADqgKhE4MHt6%2BASlpGQKh4VEssfH%2BSXaYDplCBEzEBNk%2BfoHVtQL1jQTFkTFxibYNTS257SO9Yf1lg5UAlLaoXsTI7BwA9ABUO1sA1B4M/MRs6ACymA1UXgydDHu7WxsmGgCCBJgsyQYfJv5uBAAnslGKxMAA6SF/bAvV4KAjELwOA4CY6nC5XG53WEmADsVjeeyJew%2BXx%2BmD%2BbiYXiIkPB0NhxL28MRyOUxFQRGUTGAFMJxLxBNeTKZpO%2BTF%2B/zF5MpQJBzDYdOhe2QBgUCiV/hh/JFzIRSIIe3ZnNQACVUEx0IzdXtBdabcTpRKKVLPuLJVSaahNdgVWqNVCtfaHXrWYbjURTUw6MGHYK9RK8MgVQJ4ZhVMliHtoqhPHsAG5iLyYW34/UU3EAET%2BFlL1f8QtjNqdHpbLs9tMDvtVTHVdKEmAAjsXbpgFAydSGvOkjHso3Rbf5K0aOZHo7RKQPh4w1gH6UGG02iXj643J6K3TLXWTnbLgaDFV2/b294cGtNiOOg%2BfidOwsA5wtdBF2XCMzSAyk32jcJPx9GtgxPeC3mDNtKWpTtwQANUaPAmGiegv21YVfxnADuV5ECVxNcj22w4hcPwsc4MPZCqyQ15YW2XY9gAFTHQ1HmeN54UTZAAH0XziAhYQgYNDjRTBzkuJhrluRwBEpaEQBAGjNK1bTzUtPTsAM9cEP%2BI8USOEh0WU1TsQs/SdJ5PliOPb83L2bTC28Vz5hrDhFloTgEl4PwOC0UhUE4NxrGsZlllWEtzH8HhSAITRAsWABrEAEkkcENAADjMMwAE4yq4BJiqKrhcVxaRgo4SReBYCQNA0Uhwsi6KOF4BQQE6jKIsC0g4FgGBEBAZYCGSGlyEoNAvjoOIIjBThVCKgA2ABaLbJD2YBkGTKRwTMXhFMIEg8HQPR%2BEEEQxHYKQZEERQVHUEbSF0LhSAAd2IJhkk4HggpCsLMqizgAHkaTmw1UCoPZNt2/bDuOvZTrMPYIA8Zb6CzFKuHmXhhq0RYICQJbkhWsgKAganaZAYApDMPg6A%2BT9KGiSHojCRpARB3g%2BeYYhAWh6JtBqYa0qWthBGhhhaEFr6sGiLxgCpWhaAG7heCwFhDGAcRVbwYhpbwfMx0h9MahpdY0rCD4msi2g8GiQGxY8LBIYRPA2r10greIHMlErT4jbdoxMsWKgDGABRMLwTA/uh%2BUhde4RRHEF77vkJQ1Ehn79CNlA4ssfR3YGyBFlQZJ1IYXWdvhK0l1MSxrDMHrg/orBq4gRYOgblwGHcTxWj0EJplKco9FSdIG7GPxfvnwoGD6GfBl%2Boe6kmJe9B3rpJg3gZ4m3vfx9yc%2BehP2Yz8HxK1gkMGOFCrrId65Htr2g6jpOgrsYQFwFdQmZhUok3SjHRYCBMCWkGAPUguVJD%2BHBGVfwDUNCSDMJILaHUEhbTKvoTgLVSBtVSuCLaXAtpFTKrVLa%2BUqpoK2u/L6vV%2BqDUgSNCmk1KbTThvNemjMCZrTYJwRoLB8y4h2kwZ8s4uBlXBFwQqF18BEF7ndWQj0c7SDzu9QuX1dBswBkDIWL837dV4L1WGs0aR7ERl/VGB0exyIUUojQOM8Y0wJraMBZgIFk1GrwoRcQFoM1QPjQYziWaVU6jQWgnMBoQB5l9EWAsM6pLFhLKWDgM5y0YAQRWytIZqw1lrHWGcDaR3WJFfA5tahW11pFW2yB7YZydpgF2vA3YewFt7appN6IBzSsHUOmBw6GyMFHUAXC%2BDx0TsnVO6dA55y0c9HRsg9GfUioYku0d25WArt0/utd66ZCbi3P4lZ9md27nEXu1sa62A6RbZwEBXD71%2BlPEop854FEXpfZe%2BQF6ZFvrPbezy7jdFGACg%2BEKG5QqmN8u%2BB8L45EBSJJooKt4PxWE/YmRDX4Q1YZwBxP9ZEAXkYowqONgFqJ8eA0mUDSAwLgfEBBTUSFkIUZg3ECQyr1X8FgnBkhfoWKhn1WwHCAncPgLwma8NQnBOICI9Y4i0YsAUPmZM%2BZKXknhCokBN0NEPWzmszOmyi55GMcDPWZiiU9RhvwhGSNVDqs1dq3Vzp4QePCV4uI9L/D%2BJjmNKmvraaKrDQTEAWrkjJDEjqsqYk9UEDEq6nRHM4iJOSZFDJKs0q5qydLXJ4T5YFKVirGpmB1aazEOUwOlTJn9NILUi2DSbaqDth8NpggOmQ26Z7QEfTfaDIziMtIYyI6TP/MGuOPJ5kpzTowDOKzTUSHWW9AuWydB5AMHs8uNgjnwBOQ3XWGwW5lw7pYLulie43QeQgw%2Bfg3mjw%2BUEUeWKz5ArXq%2B1eDcP2wvsPC1FE9wWAd3jfaePzr7QrRSiiDSKwU4qSs/Al5iP4krTXsDVWqCyeo%2BN6oBqiSD0uJoyrh0DYFYDZS/TlIByrgn8JUaqIqOqMdxNQlhDqJUDSGkypBCRUF1VxB1IqkhKpcBKmYZhTV/D2ssZwMj5MX7nU4/JiV0rFjB3SM4SQQA%3D)
 
+## Structure
+
+Metafunctions in this library are categorized by their template heads. Thus, the source file of every function is placed based on such categorization. For example, to include a metafunction `VeryFunny` of template head `template<typename...>`, the include path shall be `"conceptrodon/typelivore/very_funny.hpp"`. The following tables show the template heads of the metafunctions contained in each namespace/directory.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Primary Signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Typelivore</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Varybivore</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Mouldivore</code></td>
+      <td><code>template&lt;template&lt;typename...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Pagelivore</code></td>
+      <td><code>template&lt;template&lt;auto...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Roadrivore</code></td>
+      <td><code>template&lt;template&lt;template&lt;typename...&gt; class...&gt; class...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Raillivore</code></td>
+      <td><code>template&lt;template&lt;template&lt;auto...&gt; class...&gt; class...&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+In addition to these namespaces, a couple more are introduced to contain functions whose parameters are of the form `Vessel<Items...>`.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Primary Signature of <code>Vessel</code></th>
+      <th>Primary Signature of <code>Items</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Cotanivore</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+      <td><code>typename</code></td>
+    </tr>
+    <tr>
+      <td><code>Sequnivore</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+      <td><code>auto</code></td>
+    </tr>
+    <tr>
+      <td><code>Warehivore</code></td>
+      <td><code>template&lt;template&lt;typename...&gt; class...&gt;</code></td>
+      <td><code>template&lt;typename...&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>Stockivore</code></td>
+      <td><code>template&lt;template&lt;auto...&gt; class...&gt;</code></td>
+      <td><code>template&lt;auto...&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+Finally, general-purpose functions that do not fit any previously mentioned namespaces are kept in `Omennivore`.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Omennivore</code></td>
+      <td>General-purpose functions</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Example
 
 In the following example, we will make a metafunction called `MakeMap` that:

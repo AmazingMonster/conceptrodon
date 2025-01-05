@@ -437,7 +437,7 @@ SPDX-License-Identifier: Apache-2.0 -->
   
   <dt>
     <a href="./concepts/varybivore/negative_one.doc.md">NegativeOne</a>
-    <a id="varybivore-less-than"></a>
+    <a id="varybivore-negative-one"></a>
   </dt>
   <dd><code>true</code> if a variable equals <code>-1</code>.</dd>
   
