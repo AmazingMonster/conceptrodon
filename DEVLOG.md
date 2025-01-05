@@ -8,6 +8,24 @@
 
 ## Diary
 
+### 2025/01/05
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Complete the structure of the library.</td>
+        </tr>
+        <tr>
+          Every concept and metafunction provided by this library has documentation and a unit test.
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/01/01
 
 All thanks to [gracicot](https://www.reddit.com/user/gracicot/) for pointing out a bug in the library. Clang allows the following code while it shouldn't.

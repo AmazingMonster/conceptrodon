@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 - [*Implementation*](#implementation)
   - [*Failed Attempt*](#implementation-failed-attempt)
   - [*Adopted Method*](#implementation-adopted-method)
+- [*Composition*](#composition)
 - [*Convention*](#convention)
 
 ## Prologue <a id="prologue"></a>
@@ -525,6 +526,87 @@ struct Capsule
 ```
 
 This is the method used throughout the library.
+
+## Composition <a id="composition"></a>
+
+The inner structure of this library's metafunctions is transparent.
+For example, assuming a metafunction requires additional arguments of primary signature `template<auto...>`, then it must contain a member template named `Page`.
+Such uniformity allows composition to be performed by higher-order metafunctions.
+
+Check out the simplified `Raillivore::Trip`.
+
+```C++
+template<template<template<auto...> class...> class Radio>
+struct Trip
+{
+    template<template<template<auto...> class...> class Car>
+    struct ProtoSail
+    {
+        template<template<auto...> class...Signals>
+        using Rail = Car<Radio<Signals...>::template Page>;
+    };
+
+    template<template<template<auto...> class...> class...Agreements>
+    using Sail = ProtoSail<Agreements...>;
+};
+```
+
+The function accepts an operation `Radio`. Its direct member template, `Sail`, accepts another operation, `Car`, which will be redirected to `ProtoSail`. Then, we will compose `Radio` and `Car` within `Rail`.
+
+- First, we instantiate `Radio` with the argument pack, `Signals`.
+- The primary signature of `Car` is `template<template<auto...> class...>`, whose instantiation requires arguments of primary signature `template<auto...>`.
+Such primary signature corresponds to member templates named `Page`.
+Thus, we pull `Page` from the instantiated `Radio` to invoke `Car`.
+
+What if we want to continue the composition, for example, compose the previous result with a template of primary signature `template<auto...>`?
+
+First, since a template of primary signature `template<template<auto...> class...>`, which corresponds to the name `Rail`, is needed to accept arguments of primary signature `template<auto...>`, we need to place another `Rail` inside `ProtoSail`, resulting in name collision.
+Therefore, we surround the original `Rail` with a separator class called `Commit`.
+
+```C++
+template<template<template<auto...> class...> class Radio>
+struct Trip
+{
+    template<template<template<auto...> class...> class Car>
+    struct ProtoSail
+    {
+        struct Commit
+        {
+            template<template<auto...> class...Signals>
+            using Rail = Car<Radio<Signals...>::template Page>;
+        };
+
+        template<template<auto...> class...Agreements>
+        using Rail = Trip<Commit::template Rail>::template ProtoRail<Agreements...>;
+    };
+
+    template<template<template<auto...> class...> class...Agreements>
+    using Sail = ProtoSail<Agreements...>;
+    
+    template<template<auto...> class Car>
+    struct ProtoRail
+    {
+        struct Commit
+        {
+            template<template<auto...> class...Signals>
+            using Rail = Car<Radio<Signals...>::value>;
+        };
+    };
+
+    template<template<auto...> class...Agreements>
+    using Rail = ProtoRail<Agreements...>;
+};
+```
+
+Note that even though we are allowed to instantiate the new `Rail` syntax-wise with an argument pack, the instantiation will only succeed when the pack contains exactly one argument since `Trip` only accepts one argument.
+
+We also added the direct member template `Rail` to `Trip` to handle the composition with operations of primary signature `template<auto...>`.
+
+In the new `Rail`, we compose `Commit::Rail` and the newly provided operation. Such a process can continue indefinitely. The composed function is always returned by `Commit::Rail`.
+
+[*Run this complete example on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMykrgAyeAyYAHI%2BAEaYxCAAHIEADqgKhE4MHt6%2BAaSp6Y4CoeFRLLHxSbaY9kUMQgRMxATZPn6BdpgOmQ1NBCWRMXGJHY3NrbmjfQNlFSMAlLaoXsTI7BwA9ABUO7t7%2Bwe7GyYaAILbuwDUAJIsyfRsgkx1l3vHZxeHX4fvpyenBEwdwMgJM/jcgOBz0wYIhQPu0NhTC8RAAdOiwdhLsgDAoFOjUZjsbiFJcAEpMfCoTH/BQEYheByXAAqxDwyX%2BJgA7FYzpd%2BZdIQjQeChSCYaL4eKkSjUASiTimHj5f4sYq8Zc3E0aXyBXSGUzlMRUEQhEw6P8BZdubzTlarfrGQRNagWCxCJb7fybZ6vVaxYjJVCRVrZSq1SSCUI8MBmLQFDq7X6rV50kZyebaNb/AARTXa8EUqmw6OxsT4jGqkAgAOAy7KJjACXYMG25PcnOtzm6r21iVw4P95FoysRpUV1GnYDETBAxgEBOq3321NhYAZujZvOs9mwjxuwjVvsb2iYo9S6H141ECkW8FTmdzwQTmn%2BNsCjtds7Lvuw39B4UhzDUdiXHcNQOVdEH1nR4F0TFM03XM1NzBPMjRNVBkNPe9pxg%2BcXyXN9lx/C8Q3/UMR0JVUINJLViHgvV6SdK8MNvU8e2tHllwdJimX3d0CG4j8uI45NyPI4c5RA9UJ1LONFxbUS/VXdM2K3fN6MLSknBLGN5PDasADcxC8ZsvyTL1PyIjirNtEjBz/UigMohVIyg3CnzgpcOJU9c1NQlib0zWFoM8giW2sv4uU7SL/k%2Bb4Dl%2BeLLmwVRWHuTBSTeOKEq%2BX5OTMfwwhxLwsGzNw0AYNZki8xS/g%2BPZLhzHwWAAT1OYh12ys4JOAqi6sdJlmrddrOs4qxovMnKrgAeWSOIAH0NFeI5/nEpyZRc6iZPDWleOdObFuWn1JtinqNvBRNBoO%2BbiCW2FhrajrgETH0ON6yjnoU5cZwARy8PAZ1JCB5TMAA2cwwYgL6twCjR5nmZdfPrRtMHUwzUDwdAptOuyGtm26Fq4Fadl%2BdaHPBSTwJky5nsTP6AaBy46XQasFFYTAFqVELOthDRMVIS4Maxq79suQ67q4TkRIs5nGkcZBsQEOlMFUZJiEuMJnWM7w0ZtMxJFs6WYrx85GolhazBJrYyYuijUFp3nvI6zB/sBzLLmhsbUICg3EbOa7xcJsxpfffk6WePBFcqlW1Y1rWhZMvWeUkEPceNqb8Z2FlMudbrTgjhWubxOICAgZcdw5cELf552rWrLDYQtqW64Fas2Kb4OGP5at%2BI9Dj2%2BC8FHtGl6qxAHXTNh3NLlT/5EbfDhFloTgAFZeD8DgtFIVBODcaxrGZ5ZVj1wqeFIAhNCXxYAGsQFXyRUQ0SQuC5fwNFXjRwbBswEgSfROCSF4CwCQGgNCkE3tvXeHBeAKBAOAy%2BW8l6kDgLAGAiAQDLAIMkFE5BKBoDuHQOIEQOacFUAkMGABaMGkhLjAGQIrKQqIzC8EwPgIgbJWZcBkIIEQYh2BSB4fIJQagr6kF0NwgA7sQJgyROA8GXmvDeYjoEzRRDg50qAqCXHIVQmhdCGGXCYVbCA%2B5khEI1uYfwXB5i8EQVoRYEAkAEPMfQMgFAIAuIsSAYAUgzB8DoICYgcCIDRDEdEMITRWryN4BE5gxBWozWiNoLoiDz4ENgjNBgtBolINIFgaIXhgBaloPGGJ%2BSgSGGAOIPJ%2BAZzdEMplMRqsugonWOfLWNQxG0DwNEGRCSPBYDEfSPAIDuC8EacQaIaRMA5kqUYHpRgr6LCoAYYACgABqeBMCSMOpvc%2B/BeGiHEIIw5wiVDqDyRI/QVSUAH0sPoXpcDICLFQDVTIcCOCUJZqhUwlhrBmCgZMzhTSXnVFqJkFwDB3CeDaHoEIYRBjlGGNwgoGQBATD8KitI6KGAzCGPEbhnRugCF6OMWFuQiU1FST0MY/REWzBRbYOlmK9AR2aPi5FhLFgKGPmsCQiiODrwgSozgOiKHUNofQxhj8TG4EICQa0Z9bEX2WYsBAmBKTDAgLfEAkh/CogAJz%2BC5JIZ%2BBswZgNXmDQ1ACOBANICA6xqIwZcDBgkQ1CQ3UPy4KvY1YMRV5OgbA%2BBqqkGOPQU4zB6jcEeK8W4khbBOBNBYIZLklCmCgXTFwQ1qIuBP1YewkgWM9BnL4Sc6QZzFAXLEbofx0jZExMFcKyBvBVExs0do3Rkqs3rhzXmp%2BnszEWKVf4MwKr7HIKjfGuIeDPGulccMRURgc1cHATQWgQSQlhLyXEqJ5S90JKSSkhw5SMnziyTksRBSiklLKeMipLAqk1O3nUmljTPnbxacgNp5TOkrzyT0vpUTBnrG3iMsZ59JnTKUHMp9Cy1zLL4GszZ2zdnzX2bwMtxyBGVtkNW0RVyQD%2BIMEsv5VgHlAeeTqne7zlacG%2BQQbGuZyMAqBXEEF1GeXUpJX4CArhWXcIRaUAleg0V1EE/kHFdROVzCpRC0lLKKVYvBTSxT0wGWiaJUpnIKn2X0pE1ygVSwVj8psXaltoqODir0bQ5dfbc35uWhAeVHDR02LsWq0gGqtXxBowBh1Trc3Py5H6rkb9U6SBodw1tO9OAhoQUh1BGCsEaLnTO4gib1gpv0SwBQhlFaGX7eKOkhaFWcNLbIctuGhEEcudvXQgQG1yPGc25RQbOBqOwSiS4WidG5fy4V4r0I6RDoXSOqx/gJ1JeceNtx6W5vDAK8kZIC0iuGoWiVggC1VA0ICZuuI27wmRISQek7iTkmpLPa6TJ2TcmvswIU4pYh73nywPB6pYHeBvoaU0vJ37f0Pv/d03p/TWqgeGWySDEy4gwdmfM6piHw3IcbKhnZezynYf4RIPDgg6u1ryKR4w9ybBUfgK8ujDBPkbBZnc/5lhAVtuBVjUFNHiV1ChTC3T8LoWyaZeJzIkmBfFE00Z%2BTan6g6bheL3jZKDNIrk8yvokn9N8%2B5SZk%2BxmAOWY69Z3btC8sFaFsNwEo2XNFsscqzz4b1WaqwH5wVgXiO5v8P4Ven8X5gNd1yd1gaoHxdsKGydCNSB30kKvI1q8Ejg0NZIQ1b8TVcECAB/w7X/cwLDQ4wVLC/dtoD8HxYkz0jOEkEAA)
+
+[*Check out the documentation for `Raillivore::Trip`*](../facilities/metafunctions/raillivore/trip.doc.md)
 
 ## Convention <a id="convention"></a>
 

@@ -97,9 +97,149 @@ SPDX-License-Identifier: Apache-2.0 -->
 </dl>
 <!-- Conceptualizations -- End -->
 
-<!-- Arithmetic Examinations -- Start -->
-### Arithmetic Examinations <a id="varybivore-arithmetic-examinations"></a>
+<!-- Entity Examinations -- Start -->
+### Entity Examinations <a id="typelivore-entity-examinations"></a>
 
+<dl>
+  <dt>
+    <a href="./concepts/typelivore/different_from.doc.md">DifferentFrom</a>
+    <a id="typelivore-different-from"></a>
+  </dt>
+  <dd><code>true</code> if two elements are different.</dd>
+</dl>
+<!-- Entity Examinations -- End -->
+
+<!-- Arithmetic Examinations -- Start -->
+### Arithmetic Examinations <a id="typelivore-arithmetic-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/typelivore/all_negative_one.doc.md">AllNegativeOne</a>
+    <a id="typelivore-all-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if the value results of the classes equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/all_nonzero.doc.md">AllNonzero</a>
+    <a id="typelivore-all-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if none of the value results of the classes equals <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/all_not_negative_one.doc.md">AllNotNegativeOne</a>
+    <a id="typelivore-all-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if none of the value results of the classes equals <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/all_zero.doc.md">AllZero</a>
+    <a id="typelivore-all-zero"></a>
+  </dt>
+  <dd><code>true</code> if the value results of the classes equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/typelivore/any_negative_one.doc.md">AnyNegativeOne</a>
+    <a id="typelivore-any-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class whose value result equals <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/any_nonzero.doc.md">AnyNonzero</a>
+    <a id="typelivore-any-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class whose value result does not equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/any_not_negative_one.doc.md">AnyNotNegativeOne</a>
+    <a id="typelivore-any-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class whose value result does not equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/any_zero.doc.md">AnyZero</a>
+    <a id="typelivore-any-zero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class whose value result equals <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/bounded_by_closed_interval.doc.md">BoundedByClosedInterval</a>
+    <a id="typelivore-bounded-by-closed-interval"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is bounded by a closed interval.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/bounded_by_left_closed_right_open_interval.doc.md">BoundedByLeftClosedRightOpenInterval</a>
+    <a id="typelivore-bounded-by-left-closed-right-open-interval"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is bounded by a left closed right open interval.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/bounded_by_left_open_right_closed_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a id="typelivore-bounded-by-left-open-right-closed-interval"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is bounded by a left open right closed interval.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/bounded_by_open_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a id="typelivore-bounded-by-open-interval"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is bounded by an open interval.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/equal_to.doc.md">EqualTo</a>
+    <a id="typelivore-equal-to"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class equals another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/greater_than.doc.md">GreaterThan</a>
+    <a id="typelivore-greater-than"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is greater than another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/less_than.doc.md">LessThan</a>
+    <a id="typelivore-less-than"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is less than another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/negative_one.doc.md">NegativeOne</a>
+    <a id="typelivore-less-than"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class equals <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/no_greater_than.doc.md">NoGreaterThan</a>
+    <a id="typelivore-no-greater-than"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is less or equal to another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/no_less_than.doc.md">NoLessThan</a>
+    <a id="typelivore-no-less-than"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class is greater or equal to another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/no_less_than.doc.md">Nonzero</a>
+    <a id="typelivore-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class does not equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/not_negative_one.doc.md">NotNegativeOne</a>
+    <a id="typelivore-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class does not equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/zero.doc.md">Zero</a>
+    <a id="typelivore-zero"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class equals <code>0</code>.</dd>
+</dl>
+<!-- Arithmetic Examinations -- End -->
 <!-- Typelivore -- End -->
 
 <!-- Varybivore -- Start -->
@@ -182,6 +322,156 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd>Conceptualize the negation of a callable predicate.</dd>
 </dl>
 <!-- Conceptualizations -- End -->
+
+<!-- Entity Examinations -- Start -->
+### Entity Examinations <a id="varybivore-entity-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/varybivore/different_from.doc.md">DifferentFrom</a>
+    <a id="varybivore-different-from"></a>
+  </dt>
+  <dd><code>true</code> if two variables are different.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/same_as.doc.md">SameAs</a>
+    <a id="varybivore-same-as"></a>
+  </dt>
+  <dd><code>true</code> if two variables are the same.</dd>
+</dl>
+<!-- Entity Examinations -- End -->
+
+<!-- Arithmetic Examinations -- Start -->
+### Arithmetic Examinations <a id="varybivore-arithmetic-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/varybivore/all_negative_one.doc.md">AllNegativeOne</a>
+    <a id="varybivore-all-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if the variables equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/all_nonzero.doc.md">AllNonzero</a>
+    <a id="varybivore-all-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if none of the variables equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/all_not_negative_one.doc.md">AllNotNegativeOne</a>
+    <a id="varybivore-all-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if none of the variables equals <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/all_zero.doc.md">AllZero</a>
+    <a id="varybivore-all-zero"></a>
+  </dt>
+  <dd><code>true</code> if the variables equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/varybivore/any_negative_one.doc.md">AnyNegativeOne</a>
+    <a id="varybivore-any-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if there exists a variable equal to <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/any_nonzero.doc.md">AnyNonzero</a>
+    <a id="varybivore-any-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a variable that does not equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/any_not_negative_one.doc.md">AnyNotNegativeOne</a>
+    <a id="varybivore-any-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if there exists a variable that does not equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/any_zero.doc.md">AnyZero</a>
+    <a id="varybivore-any-zero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a variable equal to <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/bounded_by_closed_interval.doc.md">BoundedByClosedInterval</a>
+    <a id="varybivore-bounded-by-closed-interval"></a>
+  </dt>
+  <dd><code>true</code> if a variable is bounded by a closed interval.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/bounded_by_left_closed_right_open_interval.doc.md">BoundedByLeftClosedRightOpenInterval</a>
+    <a id="varybivore-bounded-by-left-closed-right-open-interval"></a>
+  </dt>
+  <dd><code>true</code> if a variable is bounded by a left closed right open interval.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/bounded_by_left_open_right_closed_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a id="varybivore-bounded-by-left-open-right-closed-interval"></a>
+  </dt>
+  <dd><code>true</code> if a variable is bounded by a left open right closed interval.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/bounded_by_open_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a id="varybivore-bounded-by-open-interval"></a>
+  </dt>
+  <dd><code>true</code> if a variable is bounded by an open interval.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/equal_to.doc.md">EqualTo</a>
+    <a id="varybivore-equal-to"></a>
+  </dt>
+  <dd><code>true</code> if a variable equals another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/greater_than.doc.md">GreaterThan</a>
+    <a id="varybivore-greater-than"></a>
+  </dt>
+  <dd><code>true</code> if a variable is greater than another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/less_than.doc.md">LessThan</a>
+    <a id="varybivore-less-than"></a>
+  </dt>
+  <dd><code>true</code> if a variable is less than another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/negative_one.doc.md">NegativeOne</a>
+    <a id="varybivore-less-than"></a>
+  </dt>
+  <dd><code>true</code> if a variable equals <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/no_greater_than.doc.md">NoGreaterThan</a>
+    <a id="varybivore-no-greater-than"></a>
+  </dt>
+  <dd><code>true</code> if a variable is less or equal to another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/no_less_than.doc.md">NoLessThan</a>
+    <a id="varybivore-no-less-than"></a>
+  </dt>
+  <dd><code>true</code> if a variable is greater or equal to another variable.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/no_less_than.doc.md">Nonzero</a>
+    <a id="varybivore-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if a variable does not equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/not_negative_one.doc.md">NotNegativeOne</a>
+    <a id="varybivore-not-negative-one"></a>
+  </dt>
+  <dd><code>true</code> if a variable does not equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/zero.doc.md">Zero</a>
+    <a id="varybivore-zero"></a>
+  </dt>
+  <dd><code>true</code> if a variable equals <code>0</code>.</dd>
+</dl>
+<!-- Arithmetic Examinations -- End -->
 <!-- Varybivore -- End -->
 
 <!-- Mouldivore -- Start -->
@@ -311,3 +601,427 @@ SPDX-License-Identifier: Apache-2.0 -->
 </dl>
 <!-- Conceptualizations -- End -->
 <!-- Pagelivore -- End -->
+
+<!-- Omennivore -- Start -->
+## Omennivore <a id="omennivore"></a>
+
+<!-- Entity Examinations -- Start -->
+### Entity Examinations <a id="omennivore-entity-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/omennivore/all_peg_nonzero.doc.md">AllPegNonzero</a>
+    <a id="omennivore-all-peg-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of the types are <code>Peg</code>s and the indicated values do not equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_peg_zero.doc.md">AllPegZero</a>
+    <a id="omennivore-all-peg-zero"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of the types are <code>Peg</code>s and the indicated values equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_pegful.doc.md">AllPegful</a>
+    <a id="omennivore-all-pegful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of the types are <code>Peg</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_unpegful.doc.md">AllUnpegful</a>
+    <a id="omennivore-all-unpegful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of the types are not <code>Peg</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_peg_nonzero.doc.md">AnyPegNonzero</a>
+    <a id="omennivore-any-peg-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a type whose underlying template is a <code>Peg</code> and the indicated value does not equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_peg_zero.doc.md">AnyPegZero</a>
+    <a id="omennivore-any-peg-zero"></a>
+  </dt>
+  <dd><code>true</code> if there exists a type whose underlying template is a <code>Peg</code> and the indicated value equals <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_pegful.doc.md">AnyPegful</a>
+    <a id="omennivore-any-pegful"></a>
+  </dt>
+  <dd><code>true</code> if there exists a type whose underlying template is a <code>Peg</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_unpegful.doc.md">AnyUnpegful</a>
+    <a id="omennivore-any-unpegful"></a>
+  </dt>
+  <dd><code>true</code> if there exists a type whose underlying template is not a <code>Peg</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/omennivore/peg_nonzero.doc.md">PegNonzero</a>
+    <a id="omennivore-peg-nonzero"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a type is a <code>Peg</code> and the indicated value does not equal <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/peg_zero.doc.md">PegZero</a>
+    <a id="omennivore-peg-zero"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a type is a <code>Peg</code> and the indicated value equals <code>0</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/pegful.doc.md">Pegful</a>
+    <a id="omennivore-pegful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a type is a <code>Peg</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unpegful.doc.md">Unpegful</a>
+    <a id="omennivore-unpegful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of the types is not a <code>Peg</code>.</dd>
+</dl>
+<!-- Entity Examinations -- End -->
+
+<!-- Member Examinations -- Start -->
+### Member Examinations <a id="omennivore-member-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/omennivore/all_typical.doc.md">AllTypical</a>
+    <a id="omennivore-all-typical"></a>
+  </dt>
+  <dd><code>true</code> if every class contains a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_untypical.doc.md">AllUntypical</a>
+    <a id="omennivore-all-untypical"></a>
+  </dt>
+  <dd><code>true</code> if none of the classes contain a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_unvaluable.doc.md">AllUnvaluable</a>
+    <a id="omennivore-all-unvaluable"></a>
+  </dt>
+  <dd><code>true</code> if none of the classes contain a static constexpr member <code>value</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_valuable.doc.md">AllValuable</a>
+    <a id="omennivore-all-valuable"></a>
+  </dt>
+  <dd><code>true</code> if every class contains a static constexpr member <code>value</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_typical.doc.md">AnyTypical</a>
+    <a id="omennivore-any-typical"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class containing a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_untypical.doc.md">AnyUntypical</a>
+    <a id="omennivore-any-untypical"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class that does not contain a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_unvaluable.doc.md">AnyUnvaluable</a>
+    <a id="omennivore-any-unvaluable"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class that does not contain a static constexpr member <code>value</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/any_valuable.doc.md">AnyValuable</a>
+    <a id="omennivore-any-valuable"></a>
+  </dt>
+  <dd><code>true</code> if there exists a class containing a static constexpr member <code>value</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/typical.doc.md">Typical</a>
+    <a id="omennivore-typical"></a>
+  </dt>
+  <dd><code>true</code> if a class contains a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/untypical.doc.md">Untypical</a>
+    <a id="omennivore-untypical"></a>
+  </dt>
+  <dd><code>true</code> if a class does not contain a type alias member <code>type</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unvaluable.doc.md">Unvaluable</a>
+    <a id="omennivore-unvaluable"></a>
+  </dt>
+  <dd><code>true</code> if a class does not contain a static constexpr member <code>value</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/valuable.doc.md">Valuable</a>
+    <a id="omennivore-valuable"></a>
+  </dt>
+  <dd><code>true</code> if a class contains a static constexpr member <code>value</code>.</dd>
+</dl>
+<!-- Member Examinations -- End -->
+
+<!-- Packed-Vessel Examinations -- Start -->
+### Packed-Vessel Examinations <a id="omennivore-packed-vessel-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/omennivore/moldful.doc.md">Moldful</a>
+    <a id="omennivore-moldful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Mold</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/pageful.doc.md">Pageful</a>
+    <a id="omennivore-pageful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Page</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/roadful.doc.md">Roadful</a>
+    <a id="omennivore-roadful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Road</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/railful.doc.md">Railful</a>
+    <a id="omennivore-railful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Rail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/flowful.doc.md">Flowful</a>
+    <a id="omennivore-flowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Flow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/sailful.doc.md">Sailful</a>
+    <a id="omennivore-sailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Sail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/snowful.doc.md">Snowful</a>
+    <a id="omennivore-snowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Snow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/hailful.doc.md">Hailful</a>
+    <a id="omennivore-hailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Hail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/coolful.doc.md">Coolful</a>
+    <a id="omennivore-coolful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Cool</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/calmful.doc.md">Calmful</a>
+    <a id="omennivore-calmful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Calm</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/gritful.doc.md">Gritful</a>
+    <a id="omennivore-gritful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Grit</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/willful.doc.md">Willful</a>
+    <a id="omennivore-willful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Will</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/glowful.doc.md">Glowful</a>
+    <a id="omennivore-glowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Glow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/dawnful.doc.md">Dawnful</a>
+    <a id="omennivore-dawnful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is a <code>Dawn</code>.</dd>
+</dl>
+
+#### Un*
+
+<dl>
+  <dt>
+    <a href="./concepts/omennivore/unmoldful.doc.md">Unmoldful</a>
+    <a id="omennivore-unmoldful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Mold</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unpageful.doc.md">Pageful</a>
+    <a id="omennivore-unpageful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Page</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unroadful.doc.md">Roadful</a>
+    <a id="omennivore-unroadful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Road</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unrailful.doc.md">Railful</a>
+    <a id="omennivore-unrailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Rail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unflowful.doc.md">Flowful</a>
+    <a id="omennivore-unflowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Flow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unsailful.doc.md">Sailful</a>
+    <a id="omennivore-unsailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Sail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unsnowful.doc.md">Snowful</a>
+    <a id="omennivore-unsnowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Snow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unhailful.doc.md">Hailful</a>
+    <a id="omennivore-unhailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Hail</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/uncoolful.doc.md">Coolful</a>
+    <a id="omennivore-uncoolful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Cool</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/uncalmful.doc.md">Calmful</a>
+    <a id="omennivore-uncalmful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Calm</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/ungritful.doc.md">Gritful</a>
+    <a id="omennivore-ungritful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Grit</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unwillful.doc.md">Willful</a>
+    <a id="omennivore-unwillful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Will</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/unglowful.doc.md">Glowful</a>
+    <a id="omennivore-unglowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Glow</code>.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/undawnful.doc.md">Dawnful</a>
+    <a id="omennivore-undawnful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying template of a packed vessel is not a <code>Dawn</code>.</dd>
+</dl>
+
+#### All*
+
+<dl>
+  <dt>
+    <a href="./concepts/omennivore/all_moldful.doc.md">AllMoldful</a>
+    <a id="omennivore-all-moldful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Mold</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_pageful.doc.md">AllPageful</a>
+    <a id="omennivore-all-pageful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Page</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_roadful.doc.md">AllRoadful</a>
+    <a id="omennivore-all-roadful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Road</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_railful.doc.md">AllRailful</a>
+    <a id="omennivore-all-railful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Rail</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_flowful.doc.md">AllFlowful</a>
+    <a id="omennivore-all-flowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Flow</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_sailful.doc.md">AllSailful</a>
+    <a id="omennivore-all-sailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Sail</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_snowful.doc.md">AllSnowful</a>
+    <a id="omennivore-all-snowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Snow</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_hailful.doc.md">AllHailful</a>
+    <a id="omennivore-all-hailful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Hail</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_coolful.doc.md">AllCoolful</a>
+    <a id="omennivore-all-coolful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Cool</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_calmful.doc.md">AllCalmful</a>
+    <a id="omennivore-all-calmful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Calm</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_gritful.doc.md">AllGritful</a>
+    <a id="omennivore-all-gritful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Grit</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_willful.doc.md">AllWillful</a>
+    <a id="omennivore-all-willful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Will</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_glowful.doc.md">AllGlowful</a>
+    <a id="omennivore-all-glowful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Glow</code>s.</dd>
+
+  <dt>
+    <a href="./concepts/omennivore/all_dawnful.doc.md">AllDawnful</a>
+    <a id="omennivore-all-dawnful"></a>
+  </dt>
+  <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Dawn</code>s.</dd>
+</dl>
