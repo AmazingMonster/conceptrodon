@@ -17,7 +17,7 @@ Regarding **boost::mp11** and **kvasir::mpl**, `F1, F2, …​, Fn` must be temp
 Therefore, many metafunctions in both libraries are not composable.
 
 Conceptrodon restricts the template heads of metafunctions to be 'conformed' so that mixed 'primary signatures' are not allowed in the metafunctions' parameter lists.
-In the following example, the template `UnconformedMetafunction` is not permitted since its parameter list contains different `primary signatures`:
+In the following example, the template `UnconformedMetafunction` is not permitted since its parameter list contains different 'primary signatures':
 `type`, `auto`, `template<typename...>`, and `template<auto...>`.
 
 ```C++
@@ -56,9 +56,9 @@ struct ConformedMetafunction
 
 [The reason for the complexity is explained here.](./docs/introduction/hello_world.md#implementation)
 
-Overall, this library utilizes member templates to take arguments of different characteristics in steps, allowing metafunctions to be composed naively.
+Overall, this library utilizes member templates to take arguments with different template heads in steps, allowing metafunctions to be composed naively.
 
-For example, since every member template with the template-head `template<typename...>` is named `Page` and every member template with the template-head `template<template<typename...> class...>` is named `Rail`, every `Page` can be accepted a `Rail` syntax-wise.
+For example, since every member template with the template-head `template<typename...>` is named `Page` and every member template with the template-head `template<template<typename...> class...>` is named `Rail`, every `Page` can be accepted by every `Rail` syntax-wise.
 
 ```C++
 static_assert
@@ -81,7 +81,7 @@ Metafunctions in this library are categorized by their template heads. Thus, the
   <thead>
     <tr>
       <th>Namespace</th>
-      <th>Primary Signature</th>
+      <th>Template Head</th>
     </tr>
   </thead>
   <tbody>
@@ -118,7 +118,7 @@ In addition to these namespaces, a couple more are introduced to contain functio
   <thead>
     <tr>
       <th>Namespace</th>
-      <th>Primary Signature of <code>Vessel</code></th>
+      <th>Template Head of <code>Vessel</code></th>
       <th>Primary Signature of <code>Items</code></th>
     </tr>
   </thead>
