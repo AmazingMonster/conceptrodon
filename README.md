@@ -146,7 +146,7 @@ In addition to these namespaces, a couple more are introduced to contain functio
   </tbody>
 </table>
 
-Finally, general-purpose functions that do not fit any previously mentioned namespaces are kept in `Omennivore`.
+General-purpose functions that do not fit any previously mentioned namespaces are kept in `Omennivore`.
 
 <table>
   <thead>
@@ -159,6 +159,24 @@ Finally, general-purpose functions that do not fit any previously mentioned name
     <tr>
       <td><code>Omennivore</code></td>
       <td>General-purpose functions</td>
+    </tr>
+  </tbody>
+</table>
+
+Finally, ordinary-function-related metafunctions are kept in the namespace `Functivore`.
+These metafunctions are created to inspect and simplify ordinary functions' signatures.
+
+<table>
+  <thead>
+    <tr>
+      <th>Namespace</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Functivore</code></td>
+      <td>ordinary-function-related metafunctions</td>
     </tr>
   </tbody>
 </table>
