@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2025/04/13
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add facilities in the <code>namespace Functivore</code>.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Provided source code and some tests.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/01/05
 
 <ul>
@@ -19,7 +38,8 @@
           <td>Complete the structure of the library.</td>
         </tr>
         <tr>
-          Every concept and metafunction provided by this library has documentation and a unit test.
+          <td>Progress</td>
+          <td>Every concept and metafunction provided by this library has documentation and a unit test.</td>
         </tr>
       </tbody>
     </table>
