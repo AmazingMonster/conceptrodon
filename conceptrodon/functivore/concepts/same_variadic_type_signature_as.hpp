@@ -11,7 +11,7 @@ namespace Conceptrodon {
 namespace Functivore {
 
 template<typename Arg, typename Given>
-concept SameTypeSignatureAs
+concept SameVariadicTypeSignatureAs
 = std::same_as<GetVariadicTypeSignature<Arg>, GetVariadicTypeSignature<Given>>;
 
 }}

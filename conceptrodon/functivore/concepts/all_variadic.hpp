@@ -10,9 +10,9 @@
 namespace Conceptrodon {
 namespace Functivore {
 
-template<typename F>
+template<typename...Args>
 concept AllVariadic
-= Mouldivore::AllConfess<IsVariadic, F>;
+= Mouldivore::AllConfess<IsVariadic, Args...>;
 
 }}
 

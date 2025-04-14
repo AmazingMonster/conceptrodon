@@ -11,7 +11,7 @@ namespace Conceptrodon {
 namespace Functivore {
 
 template<typename...Args>
-concept AllFunctionPointerProbe
+concept AllFunctionPointer
 = Mouldivore::AllConfess<IsFunctionPointer, Args...>;
 
 }}

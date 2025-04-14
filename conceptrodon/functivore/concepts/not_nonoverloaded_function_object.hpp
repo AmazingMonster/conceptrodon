@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Functivore {
 
 template<typename FO>
-concept NotNonOverloadedFunctionObject
+concept NotNonoverloadedFunctionObject
 = ! requires {&FO::operator();};
 
 }}

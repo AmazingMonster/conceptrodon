@@ -10,9 +10,9 @@
 namespace Conceptrodon {
 namespace Functivore {
 
-template<typename F>
+template<typename...Args>
 concept AllVolatileQualified
-= Mouldivore::AllConfess<IsVolatile, F>;
+= Mouldivore::AllConfess<IsVolatile, Args...>;
 
 }}
 

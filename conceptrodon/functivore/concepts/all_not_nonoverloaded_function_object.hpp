@@ -10,8 +10,8 @@ namespace Conceptrodon {
 namespace Functivore {
 
 template<typename...Args>
-concept AllNotNonOverloadedFunctionObject
-= (...&&NotNonOverloadedFunctionObject<Args>);
+concept AllNotNonoverloadedFunctionObject
+= (...&&NotNonoverloadedFunctionObject<Args>);
 
 }}
 
