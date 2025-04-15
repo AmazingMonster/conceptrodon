@@ -2062,3 +2062,150 @@ SPDX-License-Identifier: Apache-2.0 -->
 </dl>
 <!-- Packed-Vessel Examinations -- End -->
 <!-- Omennivore -- End -->
+
+<!-- Functivore -- Start -->
+## Functivore <a id="functivore"></a>
+
+<!-- Function Analyzations -- Start -->
+### Function Analyzations <a id="functivore-analyzations"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/analyzer.doc.md">Analyzer</a>
+    <a id="functivore-analyzer"></a>
+  </dt>
+  <dd>Analyze the information of a function-like type.</dd>
+</dl>
+<!-- Function Analyzations -- End -->
+
+<!-- Function Generations -- Start -->
+### Function Generationss <a id="functivore-function-generations"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/apply_return_type.doc.md">ApplyReturnType</a>
+    <a id="functivore-apply-return-type"></a>
+  </dt>
+  <dd>Create a function by applying a return type to a parameter list.</dd>
+</dl>
+<!-- Function Generations -- End -->
+
+<!-- Function Comparisons -- Start -->
+### Function Comparisons <a id="functivore-function-comparisons"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/are_same_type_signature_as.doc.md">AreSameTypeSignatureAs</a>
+    <a id="functivore-are-same-type-signature-as"></a>
+  </dt>
+  <dd>Check if a list of function-like types has the same type signature as the given one.</dd>
+
+  <dt>
+    <a href="./metafunctions/functivore/are_same_variadic_type_signature_as.doc.md">AreSameVariadicTypeSignatureAs</a>
+    <a id="functivore-are-same-variadic-type-signature-as"></a>
+  </dt>
+  <dd>Check if a list of function-like variadic types has the same type signature as the given one.</dd>
+</dl>
+<!-- Function Comparisons -- End -->
+
+<!-- Function Dissections -- Start -->
+### Function Dissections <a id="functivore-function-dissections"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/get_parameter_types.doc.md">GetParameterTypes</a>
+    <a id="functivore-get-parameter-types"></a>
+  </dt>
+  <dd>Obtain the parameter types of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/get_return_type.doc.md">GetReturnType</a>
+    <a id="functivore-get-return-type"></a>
+  </dt>
+  <dd>Obtain the return type of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/get_type_signature.doc.md">GetTypeSignature</a>
+    <a id="functivore-get-type-signature"></a>
+  </dt>
+  <dd>Obtain the type signature of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/get_variadic_type_signature.doc.md">GetVariadicTypeSignature</a>
+    <a id="functivore-get-variadic-type-signature"></a>
+  </dt>
+  <dd>Obtain the variadic type signature of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/typical_get_return_type.doc.md">TypicalGetReturnType</a>
+    <a id="functivore-typical-get-return-type"></a>
+  </dt>
+  <dd>Obtain the return type of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/typical_get_type_signature.doc.md">TypicalGetTypeSignature</a>
+    <a id="functivore-typical-get-type-signature"></a>
+  </dt>
+  <dd>Obtain the type signature of a function-like type.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/typical_get_variadic_type_signature.doc.md">TypicalGetVariadicTypeSignature</a>
+    <a id="functivore-typical-get-variadic-type-signature"></a>
+  </dt>
+  <dd>Obtain the variadic type signature of a function-like type.</dd>
+</dl>
+<!-- Function Dissections -- End -->
+
+<!-- Function Examinations -- Start -->
+### Function Examinations <a id="functivore-function-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/is_const.doc.md">IsConst</a>
+    <a id="functivore-is-const"></a>
+  </dt>
+  <dd>Check whether a function-like type is qualified by <code>const</code>.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_function_pointer.doc.md">IsFunctionPointer</a>
+    <a id="functivore-is-function-pointer"></a>
+  </dt>
+  <dd>Check whether a function-like type is a function pointer.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_lvalue_reference.doc.md">IsLvalueReference</a>
+    <a id="functivore-is-lvalue-reference"></a>
+  </dt>
+  <dd>Check whether a function-like type is lvalue reference qualified.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_noexcept.doc.md">IsNoexcept</a>
+    <a id="functivore-is-noexcept"></a>
+  </dt>
+  <dd>Check whether a function-like type is <code>noexcept</code> specified.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_nonoverloaded_function_object.doc.md">IsNonoverloadedFunctionObject</a>
+    <a id="functivore-is-nonoverloaded-function-object"></a>
+  </dt>
+  <dd>Check whether a function-like type is a nonoverloaded function object.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_rvalue_reference.doc.md">IsRvalueReference</a>
+    <a id="functivore-is-rvalue-reference"></a>
+  </dt>
+  <dd>Check whether a function-like type is rvalue reference qualified.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_variadic.doc.md">IsVariadic</a>
+    <a id="functivore-is-variadic"></a>
+  </dt>
+  <dd>Check whether a function-like type has a variadic parameter list.</dd>
+  
+  <dt>
+    <a href="./metafunctions/functivore/is_volatile.doc.md">IsVolatile</a>
+    <a id="functivore-is-volatile"></a>
+  </dt>
+  <dd>Check whether a function-like type is <code>volatile</code> qualified.</dd>
+</dl>
+<!-- Function Examinations -- End -->
