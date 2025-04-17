@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Description
 
-`Functivore::AllNonoverloadedFunctionObject` accepts a list of nonoverloadedfunction-like types.
+`Functivore::AllNonoverloadedFunctionObject` accepts a list of function-like types.
 It returns true if all of them are nonoverloaded function objects.
 
 ## Structure

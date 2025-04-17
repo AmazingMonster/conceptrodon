@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2025/04/17
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add documentations for the concepts in the <code>namespace Functivore</code>.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/04/16
 
 <ul>
