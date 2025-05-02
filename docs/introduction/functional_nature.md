@@ -239,7 +239,7 @@ When I said that the Haskell version of `charPlusPlus` is a function requiring t
 As we already saw, when supplied with an argument of type `Char`, `charPlusPlus` produced a new function.
 In C++, we don't treat functions as values. Returning a function is not supported by the language.
 However, for a pure functional programming language built on top of lambda calculus, values are represented as functions.
-We will briefly introduce lambda terms and translate `charPlusPlus` into such a term.
+We will briefly introduce lambda terms and translate `charPlusPlus` into such a form.
 
 Lambda calculus abstracts computation and provides a simple model to express complicated logics.
 Lambda terms are the building blocks for the computation representations.
@@ -269,7 +269,7 @@ What happens next?
 How does a function perform tasks utilizing the provided argument?
 In lambda calculus, when <code>&lambda;x.&lt;body&gt;</code> is applied to `<argument>`, we replace all free occurrences of `x` by `<argument>` inside the `<body>`.
 'Free' means the `x` must be in the scope of the corresponding <code>&lambda;x</code>.
-For example, <code>(&lambda;x.&lambda;.x.x y)</code> yields <code>&lambda;x.x</code> since the right-most `x` is in the scope of the second <code>&lambda;x</code> and thus hidden from the application.
+For example, <code>(&lambda;x.&lambda;x.x y)</code> yields <code>&lambda;x.x</code> since the right-most `x` is in the scope of the second <code>&lambda;x</code> and thus hidden from the application.
 
 Hence, the result of applying `charPlusPlus` to `'c'` is a new function.
 
