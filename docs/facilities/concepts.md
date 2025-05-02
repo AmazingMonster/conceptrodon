@@ -1025,3 +1025,306 @@ SPDX-License-Identifier: Apache-2.0 -->
   </dt>
   <dd><code>true</code> if the underlying templates of a list of packed vessels are <code>Dawn</code>s.</dd>
 </dl>
+
+<!-- Functivore -- Start -->
+## Functivore <a id="functivore"></a>
+
+<!-- Function Comparisons -- Start -->
+### Function Comparisons <a id="functivore-function-comparisons"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/same_type_signature_as.doc.md">SameTypeSignatureAs</a>
+    <a id="functivore-same-type-signature-as"></a>
+  </dt>
+  <dd><code>true</code> if the type signatures of two function-like types are the same.</dd>
+
+  <dt>
+    <a href="./concepts/functivore/same_variadic_type_signature_as.doc.md">SameVariadicTypeSignatureAs</a>
+    <a id="functivore-same-variadic-type-signature-as"></a>
+  </dt>
+  <dd><code>true</code> if the variadic type signatures of two function-like types are the same.</dd>
+</dl>
+
+#### All*
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_same_type_signature.doc.md">AllSameTypeSignature</a>
+    <a id="functivore-all-same-type-signature"></a>
+  </dt>
+  <dd><code>true</code> if the type signatures of all function-like types are the same.</dd>
+
+  <dt>
+    <a href="./concepts/functivore/all_same_variadic_type_signature.doc.md">AllSameVariadicTypeSignature</a>
+    <a id="functivore-all-same-variadic-type-signature"></a>
+  </dt>
+  <dd><code>true</code> if the variadic type signatures of all function-like types are the same.</dd>
+</dl>
+<!-- Function Comparisons -- End -->
+
+<!-- Function Examinations -- Start -->
+### Function Examinations <a id="functivore-function-examinations"></a>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/const_qualified.doc.md">ConstQualified</a>
+    <a id="functivore-const-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is <code>const</code> qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/function_pointer_probe.doc.md">FunctionPointerProbe</a>
+    <a id="functivore-function-pointer-probe"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is a function pointer.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/lvalue_reference_qualified.doc.md">LvalueReferenceQualified</a>
+    <a id="functivore-lvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/noexcept_specified.doc.md">NoexceptSpecified</a>
+    <a id="functivore-noexcept-specified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is <code>noexcept</code> specified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/nonoverloaded_function_object_probe.doc.md">NonoverloadedFunctionObjectProbe</a>
+    <a id="functivore-nonoverloaded-function-object-probe"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is a nonoverloaded function object.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/rvalue_reference_qualified.doc.md">RvalueReferenceQualified</a>
+    <a id="functivore-rvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is rvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/variadic.doc.md">Variadic</a>
+    <a id="functivore-variadic"></a>
+  </dt>
+  <dd><code>true</code> if the parameter list of the function-like type is variadic.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/volatile_qualified.doc.md">VolatileQualified</a>
+    <a id="functivore-volatile-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is <code>volatile</code> qualified.</dd>
+</dl>
+
+#### Not*
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_const_qualified.doc.md">NotConstQualified</a>
+    <a id="functivore-not-const-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not <code>const</code> qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_function_pointer.doc.md">NotFunctionPointer</a>
+    <a id="functivore-not-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not a function pointer.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_lvalue_reference_qualified.doc.md">NotLvalueReferenceQualified</a>
+    <a id="functivore-not-lvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_noexcept_specified.doc.md">NotNoexceptSpecified</a>
+    <a id="functivore-not-noexcept-specified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not <code>noexcept</code> specified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_nonoverloaded_function_object.doc.md">NotNonoverloadedFunctionObject</a>
+    <a id="functivore-not-nonoverloaded-function-object"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not a nonoverloaded function object.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_rvalue_reference_qualified.doc.md">NotRvalueReferenceQualified</a>
+    <a id="functivore-not-rvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not rvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not-variadic.doc.md">NotVariadic</a>
+    <a id="functivore-not-variadic"></a>
+  </dt>
+  <dd><code>true</code> if the parameter list of the function-like type is not variadic.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_volatile_qualified.doc.md">NotVolatileQualified</a>
+    <a id="functivore-not-volatile-qualified"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not <code>volatile</code> qualified.</dd>
+</dl>
+
+#### All*
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_const_qualified.doc.md">AllConstQualified</a>
+    <a id="functivore-all-const-qualified"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are <code>const</code> qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_function_pointer.doc.md">AllFunctionPointer</a>
+    <a id="functivore-all-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are function pointers.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_lvalue_reference_qualified.doc.md">AllLvalueReferenceQualified</a>
+    <a id="functivore-all-lvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_noexcept_specified.doc.md">AllNoexceptSpecified</a>
+    <a id="functivore-all-noexcept-specified"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are <code>noexcept</code> specified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_nonoverloaded_function_object.doc.md">AllNonoverloadedFunctionObject</a>
+    <a id="functivore-all-nonoverloaded-function-object"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are nonoverloaded function objects.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_rvalue_reference_qualified.doc.md">AllRvalueReferenceQualified</a>
+    <a id="functivore-all-rvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are rvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_variadic.doc.md">AllVariadic</a>
+    <a id="functivore-all-variadic"></a>
+  </dt>
+  <dd><code>true</code> if the parameter lists of all function-like types are variadic.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_volatile_qualified.doc.md">AllVolatileQualified</a>
+    <a id="functivore-all-volatile-qualified"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are <code>volatile</code> qualified.</dd>
+</dl>
+
+#### AllNot*
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_const_qualified.doc.md">AllNotConstQualified</a>
+    <a id="functivore-all-not-const-qualified"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are <code>const</code> qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_function_pointer.doc.md">AllNotFunctionPointer</a>
+    <a id="functivore-all-not-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are function pointers.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_lvalue_reference_qualified.doc.md">AllNotLvalueReferenceQualified</a>
+    <a id="functivore-all-not-lvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_noexcept_specified.doc.md">AllNotNoexceptSpecified</a>
+    <a id="functivore-all-not-noexcept-specified"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are <code>noexcept</code> specified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_nonoverloaded_function_object.doc.md">AllNotNonoverloadedFunctionObject</a>
+    <a id="functivore-all-not-nonoverloaded-function-object"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are nonoverloaded function objects.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_rvalue_reference_qualified.doc.md">AllNotRvalueReferenceQualified</a>
+    <a id="functivore-all-not-rvalue-reference-qualified"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are rvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_variadic.doc.md">AllNotVariadic</a>
+    <a id="functivore-all-not-variadic"></a>
+  </dt>
+  <dd><code>true</code> if the parameter lists of all function-like types are not variadic.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_volatile_qualified.doc.md">AllNotVolatileQualified</a>
+    <a id="functivore-all-not-volatile-qualified"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are <code>volatile</code> qualified.</dd>
+</dl>
+<!-- Function Examinations -- End -->
