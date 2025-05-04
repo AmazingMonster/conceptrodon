@@ -15,7 +15,7 @@ When invoked by a function-like type, the metafunction returns its parameters co
 ```Haskell
 GetParameterTypes
  :: template<template<typename...> class...>
- -> typename 
+ -> template<typename...> 
 ```
 
 ## Structure
