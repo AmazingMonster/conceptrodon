@@ -179,6 +179,14 @@ static_assert(InvokeResultIn<decltype(Lambda_4), SupposedType, int, double&>);
 
 
 
+// `std::invoke_result` does not work with volatile lvalue reference qualified member functions.
+/******************************************************************************************************/
+// static_assert(std::same_as<std::invoke_result_t<FO_10, int, double&>, SupposedType>);
+/******************************************************************************************************/
+
+
+
+
 }}}}
 
 #endif

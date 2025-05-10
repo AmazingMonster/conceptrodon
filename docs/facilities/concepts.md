@@ -1084,6 +1084,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./concepts/functivore/invoke_result_in.doc.md">InvokeResultIn</a>
+    <a id="functivore-invoke-result-in"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type invoked by the given arguments returns the given type.</dd>
+</dl>
+
+<dl>
+  <dt>
     <a href="./concepts/functivore/lvalue_reference_qualified.doc.md">LvalueReferenceQualified</a>
     <a id="functivore-lvalue-reference-qualified"></a>
   </dt>
@@ -1104,6 +1112,14 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="functivore-nonoverloaded-function-object-probe"></a>
   </dt>
   <dd><code>true</code> if the function-like type is a nonoverloaded function object.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/result_in.doc.md">ResultIn</a>
+    <a id="functivore-result-in"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type returns the given type.</dd>
 </dl>
 
 <dl>
@@ -1154,6 +1170,14 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="functivore-not-lvalue-reference-qualified"></a>
   </dt>
   <dd><code>true</code> if the function-like type is not lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/not_member_function_pointer.doc.md">NotMemberFunctionPointer</a>
+    <a id="functivore-not-member-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is not a member function pointer.</dd>
 </dl>
 
 <dl>
@@ -1224,6 +1248,14 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./concepts/functivore/all_member_function_pointer.doc.md">AllMemberFunctionPointer</a>
+    <a id="functivore-all-member-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if all function-like types are member function pointers.</dd>
+</dl>
+
+<dl>
+  <dt>
     <a href="./concepts/functivore/all_noexcept_specified.doc.md">AllNoexceptSpecified</a>
     <a id="functivore-all-noexcept-specified"></a>
   </dt>
@@ -1286,6 +1318,14 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="functivore-all-not-lvalue-reference-qualified"></a>
   </dt>
   <dd><code>true</code> if none of the function-like types are lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/all_not_member_function_pointer.doc.md">AllNotMemberFunctionPointer</a>
+    <a id="functivore-all-not-member-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if none of the function-like types are member function pointers.</dd>
 </dl>
 
 <dl>

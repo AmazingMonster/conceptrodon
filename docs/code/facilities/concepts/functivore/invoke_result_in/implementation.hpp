@@ -2,6 +2,7 @@
 /**** Dependencies ****/
 /**********************/
 
+#include <concepts>
 #include <type_traits>
 
 /**** Analyzer ****/
@@ -57,10 +58,7 @@ struct TypicalGetVariadicTypeSignature
 template<typename...Args>
 using GetVariadicTypeSignature = TypicalGetVariadicTypeSignature<Args...>::type;
 
-/************************/
-/**** Implementation ****/
-/************************/
-
+/**** GetInvokeReturnType ****/
 template<typename Fn>
 struct GetInvokeReturnType
 {
@@ -76,47 +74,25 @@ struct GetInvokeReturnType<Fn>
     using Mold = std::invoke_result_t<Fn, Args...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/************************/
+/**** Implementation ****/
+/************************/
 
-#include <concepts>
+template<typename Fun, typename Result, typename...Args>
+concept InvokeResultIn
+= std::same_as<typename GetInvokeReturnType<Fun>::template Mold<Args...>, Result>;
 
-/**** functions ****/
-inline int fun(int, int*){ return 0; }
+/***************/
+/**** Tests ****/
+/***************/
 
-/**** abominable functions ****/
-using AbominableFun = int(int, int*) const;
-
-/**** function pointers ****/
-inline auto FunAddr { &fun };
-
-/**** pointer to member functions ****/
-struct Tester
-{
-    inline int fun(int, int*) const { return 0; }
-};
-
-/**** function objects ****/
 struct FO
 {
-    int operator()(int, int*) const { return 0; }
-    double operator()(int, int*, int**) const { return 0; }
+    void operator()() volatile & {};
 };
-
-/**** SupposedReturnType ****/
-using SupposedReturnType = int;
-
-/**** Tests ****/
-static_assert(std::same_as<GetInvokeReturnType<decltype(fun)>::Mold<int, int*>, SupposedReturnType>);
-static_assert(std::same_as<GetInvokeReturnType<AbominableFun>::Mold<int, int*>, SupposedReturnType>);
-static_assert(std::same_as<GetInvokeReturnType<decltype(FunAddr)>::Mold<int, int*>, SupposedReturnType>);
-static_assert(std::same_as<GetInvokeReturnType<decltype(&Tester::fun)>::Mold<int, int*>, SupposedReturnType>);
-static_assert(std::same_as<GetInvokeReturnType<FO>::Mold<int, int*>, SupposedReturnType>);
-static_assert(std::same_as<GetInvokeReturnType<FO>::Mold<int, int*, int**>, double>);
 
 // This will fail.
 static_assert(std::same_as<std::invoke_result_t<FO, int, int*, int**, int***>, void>);
 
-// This will fail, too.
+// This will also fail.
 static_assert(std::same_as<GetInvokeReturnType<FO>::Mold<int, int*, int**, int***>, void>);

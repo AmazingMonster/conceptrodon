@@ -100,6 +100,12 @@ struct FO_9
     double operator()(int const, double&, double...) const volatile && noexcept { return 0; }
 };
 
+struct FO_10
+{
+    int operator()(int const, double&...) volatile & { return 0; }
+    double operator()(int const, double&, double...) const volatile && noexcept { return 0; }
+};
+
 /**** lambda expressions ****/
 inline auto Lambda_0
 {
@@ -166,7 +172,7 @@ static_assert(std::same_as<GetInvokeReturnType<FO_3>::Mold<int, double&>, Suppos
 static_assert(std::same_as<GetInvokeReturnType<FO_4>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<FO_5>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<FO_6>::Mold<int, double&>, SupposedType>);
-// static_assert(std::same_as<std::invoke_result_t<FO_7, int, double&>, SupposedType>);
+// static_assert(std::same_as<GetInvokeReturnType<FO_7>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<FO_8>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<FO_9>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<FO_9>::Mold<int, double&, double>, double>);
@@ -175,6 +181,13 @@ static_assert(std::same_as<GetInvokeReturnType<decltype(Lambda_1)>::Mold<int, do
 static_assert(std::same_as<GetInvokeReturnType<decltype(Lambda_2)>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<decltype(Lambda_3)>::Mold<int, double&>, SupposedType>);
 static_assert(std::same_as<GetInvokeReturnType<decltype(Lambda_4)>::Mold<int, double&>, SupposedType>);
+/******************************************************************************************************/
+
+
+
+// `std::invoke_result` does not work with volatile lvalue reference qualified member functions.
+/******************************************************************************************************/
+// static_assert(std::same_as<std::invoke_result_t<FO_10, int, double&>, SupposedType>);
 /******************************************************************************************************/
 
 

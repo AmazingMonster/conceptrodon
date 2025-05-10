@@ -14,7 +14,7 @@ It returns true if none of them is a function pointer.
 
 ```C++
 template<typename...>
-concept AllNoFunctionPointer = REQUIREMENT;
+concept AllNotFunctionPointer = REQUIREMENT;
 ```
 
 ## Implementation

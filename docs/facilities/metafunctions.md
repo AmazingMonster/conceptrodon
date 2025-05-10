@@ -2113,6 +2113,13 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./metafunctions/functivore/get_invoke_return_type.doc.md">GetInvokeReturnType</a>
+    <a id="functivore-get-invoke-return-type"></a>
+  </dt>
+  <dd>Obtain the return type of a function-like type if invoked by the given arguments.</dd>
+
+<dl>
+  <dt>
     <a href="./metafunctions/functivore/get_parameter_types.doc.md">GetParameterTypes</a>
     <a id="functivore-get-parameter-types"></a>
   </dt>
