@@ -99,6 +99,11 @@ struct FO_9
     double operator()(int const, double&, double...) const volatile && noexcept { return 0; }
 };
 
+struct FO_10
+{
+    int operator()(int const, double&...) volatile & { return 0; }
+};
+
 /**** lambda expressions ****/
 inline auto Lambda_0
 {
@@ -149,15 +154,15 @@ static_assert(InvokeResultIn<decltype(FunAddr_0), SupposedType, int, double>);
 static_assert(InvokeResultIn<decltype(FunAddr_1), SupposedType, int, double>);
 static_assert(InvokeResultIn<decltype(FunAddr_2), SupposedType, int, double>);
 static_assert(InvokeResultIn<decltype(FunAddr_3), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::fun_0), SupposedType, int, double>);
-static_assert(InvokeResultIn<decltype(&Tester::fun_1), SupposedType, int, double>);
-static_assert(InvokeResultIn<decltype(&Tester::fun_2), SupposedType, int, double>);
-static_assert(InvokeResultIn<decltype(&Tester::fun_3), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::gun_0), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::gun_1), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::gun_2), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::gun_3), SupposedType, int, double&>);
-static_assert(InvokeResultIn<decltype(&Tester::gun_4), SupposedType, int, double&>);
+static_assert(InvokeResultIn<decltype(&Tester::fun_0), SupposedType, Tester, int, double>);
+static_assert(InvokeResultIn<decltype(&Tester::fun_1), SupposedType, Tester, int, double>);
+static_assert(InvokeResultIn<decltype(&Tester::fun_2), SupposedType, Tester, int, double>);
+static_assert(InvokeResultIn<decltype(&Tester::fun_3), SupposedType, Tester, int, double&>);
+static_assert(InvokeResultIn<decltype(&Tester::gun_0), SupposedType, Tester, int, double&>);
+static_assert(InvokeResultIn<decltype(&Tester::gun_1), SupposedType, Tester, int, double&>);
+static_assert(InvokeResultIn<decltype(&Tester::gun_2), SupposedType, Tester, int, double&>);
+// static_assert(InvokeResultIn<decltype(&Tester::gun_3), SupposedType, Tester, int, double&>);
+static_assert(InvokeResultIn<decltype(&Tester::gun_4), SupposedType, Tester, int, double&>);
 static_assert(InvokeResultIn<FO_0, SupposedType, int, double>);
 static_assert(InvokeResultIn<FO_1, SupposedType, int, double>);
 static_assert(InvokeResultIn<FO_2, SupposedType, int, double>);
@@ -179,9 +184,9 @@ static_assert(InvokeResultIn<decltype(Lambda_4), SupposedType, int, double&>);
 
 
 
-// `std::invoke_result` does not work with volatile lvalue reference qualified member functions.
+// `std::is_invocable_r` does not work with volatile lvalue reference qualified member functions.
 /******************************************************************************************************/
-// static_assert(std::same_as<std::invoke_result_t<FO_10, int, double&>, SupposedType>);
+// static_assert(std::is_invocable_r_v<int, FO_10, int, double&>);
 /******************************************************************************************************/
 
 

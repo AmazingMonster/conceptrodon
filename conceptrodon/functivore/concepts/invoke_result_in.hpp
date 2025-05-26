@@ -4,15 +4,15 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_INVOKE_RESULT_IN_H
 #define CONCEPTRODON_FUNCTIVORE_INVOKE_RESULT_IN_H
 
-#include "conceptrodon/functivore/get_invoke_return_type.hpp"
-#include <concepts>
+#include "conceptrodon/mouldivore/concepts/confess.hpp"
+#include <type_traits>
 
 namespace Conceptrodon {
 namespace Functivore {
 
 template<typename Fun, typename Result, typename...Args>
 concept InvokeResultIn
-= std::same_as<typename GetInvokeReturnType<Fun>::template Mold<Args...>, Result>;
+= Mouldivore::Confess<std::is_invocable_r, Result, Fun, Args...>;
 
 }}
 
