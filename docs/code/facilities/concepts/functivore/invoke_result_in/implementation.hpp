@@ -23,3 +23,5 @@ struct FO;
 
 // This will fail.
 static_assert(std::is_invocable_r_v<void, void(FO::*) () volatile &, FO>);
+// This will fail as well.
+static_assert(InvokeResultIn<void(FO::*) () volatile &, void, FO>);

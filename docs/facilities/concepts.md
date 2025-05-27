@@ -1087,6 +1087,14 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a href="./concepts/functivore/invoke_result_in.doc.md">InvokeResultIn</a>
     <a id="functivore-invoke-result-in"></a>
   </dt>
+  <dd><code>true</code> if the function-like type invoked by the given arguments returns the given type(the corresponding object type of a member function pointer is treated as the first argument of the pointer).</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/invoke_return_as.doc.md">InvokeReturnAs</a>
+    <a id="functivore-invoke-return-as"></a>
+  </dt>
   <dd><code>true</code> if the function-like type invoked by the given arguments returns the given type.</dd>
 </dl>
 

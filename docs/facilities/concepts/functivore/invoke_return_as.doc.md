@@ -1,0 +1,50 @@
+<!-- Copyright 2024 Feng Mofan
+SPDX-License-Identifier: Apache-2.0 -->
+
+# `Functivore::InvokeReturnAs`
+
+<p style='text-align: right;'><a href="../../concepts.md#functivore-invoke-return-as">To Index</a></p>
+
+## Description
+
+`Functivore::InvokeReturnAs` accepts a function-like type, a possible return type, and a list of argument type.
+It returns true if the function-like type invoked by the argument types returns the possible return type.
+
+## Structure
+
+```C++
+template<typename>
+concept InvokeReturnAs = REQUIREMENT;
+```
+
+## Implementation
+
+```C++
+template<typename Fun, typename Result, typename...Args>
+concept InvokeReturnAs
+= std::same_as<typename GetInvokeReturnType<Fun>::template Mold<Args...>, Result>;
+```
+
+Note that since `std::is_invocable_r` does not work with volatile lvalue reference qualified(`volatile &`) member functions.
+
+```C++
+struct FO
+{ void operator()() volatile & {} };
+
+// This will fail.
+ static_assert(std::same_as<std::invoke_result_t<void() volatile &>, void>);
+```
+
+The following code will not compile:
+
+```C++
+// This will fail as well.
+static_assert(InvokeResultIn<FO, void>);
+```
+
+[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIMwDspK4AMngMmAByPgBGmMQgAGzSAA6oCoRODB7evv5BaRmOAmER0SxxCcm2mPbFDEIETMQEOT5%2BgTV1WY3NBKVRsfFJ0gpNLW15nWN9A%2BWVIwCUtqhexMjsHAD0AFR7OwDUACKYKa6MyHiYCgf7O1smGgCCu3dv7%2B8Pz49P5gDM4WQ3iwBxMfzcaAYGxSBAUYOwP3%2BgOBmFB4IIAE8zgB9AjEJiEOF/BHfZ6vPYHJ7MWgYgBe8Vu%2By%2BTwImBYKQMrLRbkxZ2YbHhPzGxC8Dkp1Lp8WUxFQRF5qJMASsASOYKspJZbI5TC5YJ5WMYrFRACVMARSAd5fzMAA6O1PYjAIkkp7C0UEcViSXEaWy2UGvWmggQB1Ou02xaC75Kn4HOMHLwZIwHABuzTwTHwyFxBuxGWAzAIawVfyOByDIcdCnDkb%2B6t%2BKrViOerPZnJL%2Br5RvLZotVqN4dDzqFePdnpp9J9MrlAfBFaHNdTnh1dAVZkSUYb9fjCaTwFT6czeGz8rzeALOuLaLL86rNab0dVdebmrbOswev7bAOADEGJu3TFKkvUnEADhSLwYloY9x29X0ZzOPU/3hUEY0bZ8NVbbVWU/A1rV/f9iRHEUgIlSckIYHZNzAiCoJg4CJylad/UQ8FkOJVDlSfesfiw9tcK7b8AFk2T/Ps8O7RoSKLYgPyI55AI9BjvT1ESWD/A4pPdYsQBAKj5KeGjIOg5BYMneCWLktw1PY7BOMVbiXz498BMNb8fwAeU3WSAEcvDwWSbl8/zAvs9dPN01AznxIhiAgWsuOIsdlPItivIMoy6NMlL4j1LAgXlCBzESCKQCi%2BIdRIeLazsxVEow34yTuA4ABUsWPMQAHEzQANUPLM2rOIRz0LK87mZZycPRCT3MIl1FNa9rRFobqCD64gMwGg1hovGSP2jCxd3Cfd5WvMzcrYubdLTDajxPXN81G2Sm3Qnimv2A5VvWzbj0GzAdqe1Fxt4rV%2BOmwTbXtKtN0TY7Pt6/rfu2kbL1ks7Bo6laEdurahpRva9QXO14V0%2BUH0al5mtWgBJBgU1QABrTAgzWBg/sZPYJtBlzwbc1FbKSsUabpxnmbNVm/sRGNnh3SarK/SGbSHTcd1h5MhM8dAzrGdBdPCemmexQKvFoAhcT1L7EeQP6AdRqzbItImbUFBqHPJkG3ymzs%2BYI7zMD8gLrgOHW9YUbEgSYBQw5TCiANHIWzVpg2xZktnZzcAWDtjeM5dc61B2hgzVb3A4NdoLWwTLEOQH10WjeuE2zYICjHbvYmiNd16X3JD5e8%2BH4e4Oam2zZRgmnqDn7gHvuZ7eZkPew%2BWZv5rwGHEiGewURv175gunU3SFoQ9JPRdNLfTdpxFS2DghdZABQjWxSO8%2B7YXk5Z4g09YjPV5JkA5dLprQmbdnbEgtGfRuLs3qU1nkyaeH0WrXFhJPZkPdZ7zwUvHD0nkpaHXpngLW5UYpVUWPFJcnJVygnXPZFUqFHIai2FsVqCA8A3AAO50FoAcKgBJaDOxljMRw2ZI5KBaBAauD82BPyJG4autdDbG1NubcE%2BD0BkPphQ%2BgVCNxgKXAQ%2BECUB5MJaiw9hnDuG8IOJHA4bDah8JHCuYRUd4jBhPkzCBF9CIZw8haVRBi1QcGWLQTgABWXgfgOBaFIKgTgbhrDWGDqsdYa4/g8FIAQTQgTlgMxAJIAAHDaP4ABOIpAQ/h5LKWYPJITJB/GkMEjgkheAsAkBoDQpAIlRJiRwXgCgQDtIyZEwJpA4CwBgIgMqXgCAQXNBQCAaB2SrmIJEI0nBVB5MSAAWmSAcYAyBTJSBtGYXgmB8CxQIXofgggRBiHYFIGQghFAqHUEM0guguCkDYfiFInAeBBNCeEzJ0TOAeSmTMg4qAqAHHWVsnZeyDmSCOQcCAHhFn0GIFQ1JixeCDK0MsCASAFkpCWeQSgRKlkgGAFIMwfA6CsmIH0iAMQgUxHCM0DEvzeCsuYMQDEHkYjaEwA4TlpAFlsEEB5BgNIgVYBiF4YAbgxC0D6dwXgWAWCGGAOIV5%2BBZIODwCma4QLMCqCFVMzYaTwisgaVE6CMR8S8o8FgIFeI8AtNVaQQ1xAYjpEwCcDVRhoJGEycsKgBgnQ9SuGwjyfIRVXOEMtO50h41PLUEC95%2BhNUoHiZYfQeAYh9MgMsKK9QVWbJ1pXUwlhrBmC6V6jaWBC3xS6EK%2BoLgGDuE8O0PQoRwiDAqMMD5hRMgCEmH4Id6QR0MDmEMBIHy7Ctp6OMVoXa8jztqIugQvQWgzoHXO2wy6x16BmDuvt8xB3LAUEkjYEh/kcDCR0oF3ToUbO2ZIXZ%2ByDiHLMMi3AhASCYq4Ni9JIblgIEwJmYYzacm1JtEUv4ARJAaEkGYSQiQ2khMSEU/QnAmmkBaakm0iQuCJDyUUvJJGalcBCfBxIj7XndN6f0kDQz8XjIJZM6ZUzSXzNQGi%2BIKy2CcGaCwFMARNlMAOBHZMXAik2i4DaKJpz/0NsubIG54h7kpqUGm15ugaVfKYD81Vd6H2dN4N00FXGPSQpfbC990n9yyfk4p5FqLiXosxWYYDuLhkcfJeinjAXhiOdk1wdpNBTbxEZcy153L2Uivi7y/lgrhUerFWPSV0qdWYDlQqpVKq0nqs1dqqJurF2GpVUp01yBzUiqtbUIFdqHUYidZsKJrr3VpK9T6pQ/qSvHRDXwcNChI2YGjbGj18aNNJoefIHTLyon6czcGqtVhc12qbcWmEWQy0VtLGtmtdb4gNqNUWlt%2BrnAQFcEej5vayizr0MO%2Bot3SDPayLuhY67uhbsPau8dF36jbv6Gex786/u5AByekHD2923pWGsG9QGcP3sBQxzgdm31SYMDJuTCmNC/rOQB/4QGcWgdIOByDCRm0NLwwRuTyGAg0YCGUlDaHJAfPM8CnpthmO%2BbY/ADjqxrNBb4x5gTqyOAiZ2SwBQKZTIpmc%2B2MYJyieqY%2BdNxNEhk2yFTYtnQIA/ifO%2BZy0zaOukgrBVMiFULVAy7lwrpX74xhubF0szFfwfNDf827wLczgsJHlykFI2JFdFOxMrs2dvk10ui5QWLUSksco9UnlLraRUZYlVK5PZXcvysVbQZVIriuBva2qwO%2BrKvGpq3Vj1DWbW8Ga%2BytrLqNpdd4D131/XA2DdY8NpgEao0xsYHG9TWutO64W%2Bmw3K3jA5psJt%2BA23S2cC2CHQ7lha0WfrQQs7zaF2Xb8Ndjtr37v9q%2B29ydL3/tPavx90HcPvuboaBD7tT/D/A8%2B4Og9fRXvQ6/3OpetencmbvRhbhwNCvbvLqmE7qyC7hAH%2BrFIBl7qxmBhBlgNTnenTv4HJn8H8CEiEshuFhoHgQEKRmARZpwExgMuTjkiEgpuhhoOuFwOuAEFIJhgQSjn8ObpQTzvzneschQdzmTqgZ6tFlkLkkAA)
+
+## Links
+
+- [Source code](../../../../conceptrodon/functivore/concepts/invoke_return_as.hpp)
+- [Unit test](../../../../tests/unit/concepts/functivore/invoke_return_as.test.hpp)
