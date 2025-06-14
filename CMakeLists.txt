@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.28)
 
-# Generate compile_commands.json for clangd
-# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Generate compile_commands.json for clangd
+# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(
     Conceptrodon
