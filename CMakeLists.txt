@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # Generate compile_commands.json for clangd
 # set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -31,6 +28,9 @@ target_include_directories(ConceptrodonFacilities INTERFACE
 
 
 if(CMAKE_SOURCE_DIR STREQUAL Conceptrodon_SOURCE_DIR OR TEST_CONCEPTRODON)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(TestConceptrodon
     ${CMAKE_CURRENT_LIST_DIR}/tests/tests.cpp
