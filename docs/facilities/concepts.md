@@ -516,6 +516,18 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="mouldivore-deceive"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
+  
+  <dt>
+    <a href="./concepts/mouldivore/fake.doc.md">Fake</a>
+    <a id="mouldivore-fake"></a>
+  </dt>
+  <dd>Conceptualize the negation of a class template predicate.</dd>
+  
+  <dt>
+    <a href="./concepts/mouldivore/real.doc.md">Real</a>
+    <a id="mouldivore-real"></a>
+  </dt>
+  <dd>Conceptualize a class template predicate.</dd>
 </dl>
 <!-- Conceptualizations -- End -->
 <!-- Mouldivore -- End -->
