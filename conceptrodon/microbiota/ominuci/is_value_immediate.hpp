@@ -8,11 +8,11 @@ namespace Conceptrodon {
 namespace Ominuci {
 
 template<typename Type>
-constexpr bool isValueImmediate(Type value)
+constexpr bool is_value_immediate(Type value)
 { return true; }
 
 template<auto I>
-concept ImmediateValue = isValueImmediate(I);
+concept ImmediateValue = is_value_immediate(I);
 
 }}
 
