@@ -8,7 +8,7 @@
 namespace Conceptrodon {
 namespace Cytoplasm {
 
-consteval size_t selectScale(size_t count) 
+consteval size_t select_scale(size_t count) 
 { 
     size_t depth {8}; 
 

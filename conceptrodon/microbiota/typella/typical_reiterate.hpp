@@ -131,7 +131,7 @@
 #endif
 
 #define CONCEPTRODON_TYPELLA_TYPICAL_REITERATE_SELECT_SCALE_FUNCTION   \
-    Cytoplasm::selectScale
+    Cytoplasm::select_scale
 /******************************************************************************************************/
 
 

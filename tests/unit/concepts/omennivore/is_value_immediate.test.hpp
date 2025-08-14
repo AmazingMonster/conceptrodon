@@ -17,7 +17,7 @@ namespace {
 
 /******************************************************************************************************/
 constexpr bool value_0 {true};
-static_assert(Ominuci::isValueImmediate(value_0));
+static_assert(Ominuci::is_value_immediate(value_0));
 /******************************************************************************************************/
 
 
@@ -25,7 +25,7 @@ static_assert(Ominuci::isValueImmediate(value_0));
 
 /******************************************************************************************************/
 bool value_1 {true};
-// static_assert(Ominuci::isValueImmediate(value_1));
+// static_assert(Ominuci::is_value_immediate(value_1));
 /******************************************************************************************************/
 
 
@@ -33,7 +33,7 @@ bool value_1 {true};
 
 /******************************************************************************************************/
 void func() {};
-static_assert(Ominuci::isValueImmediate(func));
+static_assert(Ominuci::is_value_immediate(func));
 /******************************************************************************************************/
 
 
@@ -54,7 +54,7 @@ struct Tester
     static constexpr bool value = true;
 };
 
-static_assert(Ominuci::isValueImmediate(Tester::value));
+static_assert(Ominuci::is_value_immediate(Tester::value));
 /******************************************************************************************************/
 
 
@@ -66,7 +66,7 @@ struct Tester_1
     static bool value;
 };
 
-// static_assert(Ominuci::isValueImmediate(Tester_1::value));
+// static_assert(Ominuci::is_value_immediate(Tester_1::value));
 /******************************************************************************************************/
 
 
@@ -78,7 +78,7 @@ struct Tester_2
     static const bool value {true};
 };
 
-static_assert(Ominuci::isValueImmediate(Tester_2::value));
+static_assert(Ominuci::is_value_immediate(Tester_2::value));
 /******************************************************************************************************/
 
 
@@ -91,7 +91,7 @@ struct Tester_3
 };
 
 static_assert(Truth<Tester_3::func>);
-static_assert(Ominuci::isValueImmediate(Tester_3::func));
+static_assert(Ominuci::is_value_immediate(Tester_3::func));
 /******************************************************************************************************/
 
 
@@ -105,7 +105,7 @@ struct Tester_4
 
 const float Tester_4::value = 1.11;
 
-// static_assert(Ominuci::isValueImmediate(Tester_4::value));
+// static_assert(Ominuci::is_value_immediate(Tester_4::value));
 /******************************************************************************************************/
 
 }}}}}
