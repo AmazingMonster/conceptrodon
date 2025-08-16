@@ -16,7 +16,7 @@ namespace TestAllFalsify {
 
 /******************************************************************************************************/
 template<auto Arg>
-constexpr bool areNoGreaterThan(int para)
+constexpr bool are_no_greater_than(int para)
 { return para <= Arg; }
 /******************************************************************************************************/
 
@@ -24,8 +24,8 @@ constexpr bool areNoGreaterThan(int para)
 
 
 /******************************************************************************************************/
-static_assert(AllFalsify<areNoGreaterThan<0>, 1, 2, 3>);
-static_assert(! AllFalsify<areNoGreaterThan<0>, 0, 2, 3>);
+static_assert(AllFalsify<are_no_greater_than<0>, 1, 2, 3>);
+static_assert(! AllFalsify<are_no_greater_than<0>, 0, 2, 3>);
 /******************************************************************************************************/
 
 
@@ -36,22 +36,22 @@ template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires AllFalsify<areNoGreaterThan<0>, Args...>
+requires AllFalsify<are_no_greater_than<0>, Args...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires AllFalsify<areNoGreaterThan<1>, Args...>
+requires AllFalsify<are_no_greater_than<1>, Args...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires AllFalsify<areNoGreaterThan<0>, Args...>
-&& AllFalsify<areNoGreaterThan<1>, Args...>
+requires AllFalsify<are_no_greater_than<0>, Args...>
+&& AllFalsify<are_no_greater_than<1>, Args...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -72,11 +72,11 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= AllFalsify<areNoGreaterThan<1>, Args...>;
+= AllFalsify<are_no_greater_than<1>, Args...>;
 
 template<auto...Args>
-requires AllFalsify<areNoGreaterThan<0>, Args...>
-&& AllFalsify<areNoGreaterThan<1>, Args...>
+requires AllFalsify<are_no_greater_than<0>, Args...>
+&& AllFalsify<are_no_greater_than<1>, Args...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -99,11 +99,11 @@ static_assert(Tester<2, 3, 4>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneB
-= (...&&(not areNoGreaterThan<1>(Args)));
+= (...&&(not are_no_greater_than<1>(Args)));
 
 template<auto...Args>
-requires AllFalsify<areNoGreaterThan<0>, Args...>
-&& AllFalsify<areNoGreaterThan<1>, Args...>
+requires AllFalsify<are_no_greater_than<0>, Args...>
+&& AllFalsify<are_no_greater_than<1>, Args...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -126,11 +126,11 @@ static_assert(Tester<3, 4, 5>::value == 1.2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoA
-= (...&&(not areNoGreaterThan<2>(Args)));
+= (...&&(not are_no_greater_than<2>(Args)));
 
 template<auto...Args>
 concept GreaterThanTwoB
-= (...&&(not areNoGreaterThan<2>(Args)));
+= (...&&(not are_no_greater_than<2>(Args)));
 
 template<auto...>
 struct TesterB;
@@ -159,11 +159,11 @@ static_assert(TesterB<3, 4, 5>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= AllFalsify<areNoGreaterThan<2>, Args...>;
+= AllFalsify<are_no_greater_than<2>, Args...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= AllFalsify<areNoGreaterThan<2>, Args...>;
+= AllFalsify<are_no_greater_than<2>, Args...>;
 
 template<auto...>
 struct TesterC;

@@ -17,29 +17,29 @@ namespace TestDeceive {
 
 /******************************************************************************************************/
 template<auto Arg>
-constexpr bool areNoGreaterThan(auto...para)
+constexpr bool are_no_greater_than(auto...para)
 { return (...&&(para <= Arg)); }
 
 template<auto...>
 struct Tester {};
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
+requires Deceive<are_no_greater_than<0, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {0};
 };
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
+requires Deceive<are_no_greater_than<1, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {-1};
 };
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
+requires Deceive<are_no_greater_than<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<are_no_greater_than<1, decltype(Args)...>, Vay<Args>...>
 struct Tester<Args...>
 {
     static constexpr int value {1};
@@ -60,12 +60,12 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneA
-= Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>;
+= Deceive<are_no_greater_than<1, decltype(Args)...>, Vay<Args>...>;
 
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
+requires Deceive<are_no_greater_than<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<are_no_greater_than<1, decltype(Args)...>, Vay<Args>...>
 && GreaterThanOneA<Args...>
 struct Tester<Args...>
 {
@@ -88,11 +88,11 @@ static_assert(Tester<2>::value == 1);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanOneB
-= not areNoGreaterThan<1>(Args...);
+= not are_no_greater_than<1>(Args...);
 
 template<auto...Args>
-requires Deceive<areNoGreaterThan<0, decltype(Args)...>, Vay<Args>...>
-&& Deceive<areNoGreaterThan<1, decltype(Args)...>, Vay<Args>...>
+requires Deceive<are_no_greater_than<0, decltype(Args)...>, Vay<Args>...>
+&& Deceive<are_no_greater_than<1, decltype(Args)...>, Vay<Args>...>
 && GreaterThanOneB<Args...>
 struct Tester<Args...>
 {
@@ -115,11 +115,11 @@ static_assert(Tester<3>::value == 1.2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoA
-= not areNoGreaterThan<2>(Args...);
+= not are_no_greater_than<2>(Args...);
 
 template<auto...Args>
 concept GreaterThanTwoB
-= not areNoGreaterThan<2>(Args...);
+= not are_no_greater_than<2>(Args...);
 
 template<auto...>
 struct TesterB;
@@ -148,11 +148,11 @@ static_assert(TesterB<3>::value == 2);
 /******************************************************************************************************/
 template<auto...Args>
 concept GreaterThanTwoC
-= Deceive<areNoGreaterThan<2, decltype(Args)...>, Vay<Args>...>;
+= Deceive<are_no_greater_than<2, decltype(Args)...>, Vay<Args>...>;
 
 template<auto...Args>
 concept GreaterThanTwoD
-= Deceive<areNoGreaterThan<2, decltype(Args)...>, Vay<Args>...>;
+= Deceive<are_no_greater_than<2, decltype(Args)...>, Vay<Args>...>;
 
 template<auto...>
 struct TesterC;
