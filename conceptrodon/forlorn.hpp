@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_FORLORN_H
 #define CONCEPTRODON_FORLORN_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<typename...> class...> class...> class...Nothingness>

@@ -38,7 +38,7 @@ using PackedCapsule = Capsule<int, int*, int**, int**>;
 using SupposedResult = NewPacker<int, int*, int**, int**>;
 
 /**** Result ****/
-using Result = PackedCapsule::Road<Operation>;
+using Result = PackedCapsule::Road<NewPacker>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_CYTOPLASM_SELECT_SCALE_H
 #define CONCEPTRODON_CYTOPLASM_SELECT_SCALE_H
 
+#include <cstddef>
 
 namespace Conceptrodon {
 namespace Cytoplasm {

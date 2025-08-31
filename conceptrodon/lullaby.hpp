@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_LULLABY_H
 #define CONCEPTRODON_LULLABY_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<typename...> class...> class...> class...> class...Dreams>

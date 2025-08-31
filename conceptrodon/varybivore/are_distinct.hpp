@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_VARYBIVORE_ARE_DISTINCT_H
 
+#include <cstddef>
 #include <utility>
 #include "conceptrodon/label.hpp"
 #include "conceptrodon/vay.hpp"

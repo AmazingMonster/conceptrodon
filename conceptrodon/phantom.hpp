@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_PHANTOM_H
 #define CONCEPTRODON_PHANTOM_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<auto...> class...> class...Things>

@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_PREFIX_H
 #define CONCEPTRODON_PREFIX_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
 
 template<typename, size_t>

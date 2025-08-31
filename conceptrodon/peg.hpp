@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_PEG_H
 #define CONCEPTRODON_PEG_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
 
 template <size_t I>

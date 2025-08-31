@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_PURSUIT_H
 #define CONCEPTRODON_PURSUIT_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...Consistency>

@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_DUPLICATE_H
 #define CONCEPTRODON_VARYBIVORE_DUPLICATE_H
 
+#include <cstddef>
 #include <utility>
 
 namespace Conceptrodon {

@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_PERSIST_H
 #define CONCEPTRODON_PERSIST_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...Perseverance>

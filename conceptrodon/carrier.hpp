@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_CARRIER_H
 #define CONCEPTRODON_CARRIER_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<auto...> class...Sequences>

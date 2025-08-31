@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_HALCYON_H
 #define CONCEPTRODON_HALCYON_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<auto...> class...> class...> class...> class...Dreams>

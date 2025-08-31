@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_VEHICLE_H
 #define CONCEPTRODON_VEHICLE_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<typename...> class...Containers>

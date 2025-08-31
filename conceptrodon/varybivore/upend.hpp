@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_UPEND_H
 #define CONCEPTRODON_VARYBIVORE_UPEND_H
 
+#include <cstddef>
 #include <utility>
 #include "conceptrodon/vay.hpp"
 #include "conceptrodon/label.hpp"

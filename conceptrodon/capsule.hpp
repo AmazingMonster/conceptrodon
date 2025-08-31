@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_CAPSULE_H
 #define CONCEPTRODON_CAPSULE_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<typename...Elements>

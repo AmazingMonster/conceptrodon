@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_UPEND_H
 #define CONCEPTRODON_TYPELIVORE_UPEND_H
 
+#include <cstddef>
 #include "conceptrodon/label.hpp"
 #include <utility>
 

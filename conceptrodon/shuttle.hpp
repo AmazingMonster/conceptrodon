@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_SHUTTLE_H
 #define CONCEPTRODON_SHUTTLE_H
 
+#include <cstddef>
 #include <utility>
 
 namespace Conceptrodon {

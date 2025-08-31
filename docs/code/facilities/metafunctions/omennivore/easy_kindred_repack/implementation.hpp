@@ -78,7 +78,7 @@ struct KindredRepack<Sequence<Variables...>>
     };
 
     template<template<auto...> class...Agreements>
-    using Road = Detail<Agreements...>::type;
+    using Rail = Detail<Agreements...>::type;
 };
 
 template<template<typename, auto...> class Sequence, typename Type, auto...Variables>
@@ -92,7 +92,7 @@ struct KindredRepack<Sequence<Type, Variables...>>
     };
 
     template<template<auto...> class...Agreements>
-    using Road = Detail<Agreements...>::type;
+    using Rail = Detail<Agreements...>::type;
 };
 
 // Recursive Case:
@@ -114,11 +114,11 @@ struct KindredRepack<SequenceA<VariableAs...>, SequenceB<VariableBs...>, Others.
         <
             Shuttle<VariableAs..., VariableBs...>,
             Others...
-        >::template Road<Operation>;
+        >::template Rail<Operation>;
     };
 
     template<template<auto...> class...Agreements>
-    using Road = Detail<Agreements...>::type;
+    using Rail = Detail<Agreements...>::type;
 };
 
 template
@@ -145,11 +145,11 @@ struct KindredRepack<SequenceA<TA, VariableAs...>, SequenceB<TB, VariableBs...>,
                 static_cast<std::make_signed_t<std::size_t>>(VariableBs)...
             >,
             Others...
-        >::template Road<Operation>;
+        >::template Rail<Operation>;
     };
 
     template<template<auto...> class...Agreements>
-    using Road = Detail<Agreements...>::type;
+    using Rail = Detail<Agreements...>::type;
 };
 
 }
@@ -376,7 +376,7 @@ using Result_1 = EasyKindredRepack
     std::integer_sequence<int, 0>, 
     std::index_sequence<1, 2>,
     std::index_sequence<3>
->::Road<NewSequence>;
+>::Rail<NewSequence>;
 
 /**** Test ****/
 static_assert(std::same_as<Result_1, SupposedResult_1>);

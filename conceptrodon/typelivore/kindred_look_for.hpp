@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_KINDRED_LOOK_FOR_H
 #define CONCEPTRODON_TYPELIVORE_KINDRED_LOOK_FOR_H
 
+#include <cstddef>
 #include <type_traits>
 
 namespace Conceptrodon {

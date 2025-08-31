@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_REVERIE_H
 #define CONCEPTRODON_REVERIE_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<typename...> class...> class...Things>

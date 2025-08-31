@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_TRAVAIL_H
 #define CONCEPTRODON_TRAVAIL_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<auto...> class...> class...> class...Nothingness>

@@ -4,8 +4,9 @@
 #ifndef CONCEPTRODON_TYPELIVORE_ARE_DISTINCT_H
 #define CONCEPTRODON_TYPELIVORE_ARE_DISTINCT_H
 
-#include "conceptrodon/label.hpp"
+#include <cstddef>
 #include <utility>
+#include "conceptrodon/label.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

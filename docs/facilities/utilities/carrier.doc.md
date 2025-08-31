@@ -45,46 +45,33 @@ struct Carrier
 Then, we will transport the sequences to `Operation`.
 
 ```C++
-/**** Items ****/
-template<auto...>
-struct Sequence_0;
+/***********************/
+/**** First Example ****/
+/***********************/
 
-template<auto...>
-struct Sequence_1;
-
-template<auto...>
-struct Sequence_2;
-
-template<auto...>
-struct Sequence_3;
+#include <concepts>
 
 /**** Operation ****/
-template<template<auto...> class...>
-struct Operation;
+template<typename...>
+struct NewPacker;
 
-/**** Packed Vessel ****/
-using PackedCarrier = Carrier
-<
-    Sequence_0, 
-    Sequence_1, 
-    Sequence_2, 
-    Sequence_3
->;
+/**** PackedVessel ****/
+using PackedCapsule = Capsule<int, int*, int**, int**>;
 
-/**** SuppsedResult ****/
-using SupposedResult = Operation
-<
-    Sequence_0, 
-    Sequence_1, 
-    Sequence_2, 
-    Sequence_3
->;
+/**** SupposedResult ****/
+using SupposedResult = NewPacker<int, int*, int**, int**>;
 
 /**** Result ****/
-using Result = PackedCarrier::Sail<Operation>;
+using Result = PackedCapsule::Road<NewPacker>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+static_assert(PackedCapsule::size() == 4);
 ```
 
 - We can check the size of a packed `Carrier`.

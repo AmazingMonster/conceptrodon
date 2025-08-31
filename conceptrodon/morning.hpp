@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_MORNING_H
 #define CONCEPTRODON_MORNING_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<template<template<auto...> class...> class...> class...> class...> class...> class...Sunshines>

@@ -47,7 +47,7 @@ struct TypicalConjureSet
             decltype
             (
                 Detail<std::make_index_sequence<I>>
-                ::template idyl(std::type_identity<Elements>{}...)
+                ::idyl(std::type_identity<Elements>{}...)
             )...
         >::type;
     };

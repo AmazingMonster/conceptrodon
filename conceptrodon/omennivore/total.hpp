@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_OMENNIVORE_TOTAL_H
 #define CONCEPTRODON_OMENNIVORE_TOTAL_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
 namespace Omennivore {
     

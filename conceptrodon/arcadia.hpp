@@ -4,6 +4,8 @@
 #ifndef CONCEPTRODON_ARCADIA_H
 #define CONCEPTRODON_ARCADIA_H
 
+#include <cstddef>
+
 namespace Conceptrodon {
     
 template<template<template<template<template<template<template<template<typename...> class...> class...> class...> class...> class...> class...> class...Sunlights>
