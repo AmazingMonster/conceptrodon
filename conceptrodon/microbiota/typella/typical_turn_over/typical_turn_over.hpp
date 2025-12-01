@@ -34,7 +34,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     1
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -44,7 +44,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     2
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -54,7 +54,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     3
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -64,7 +64,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     4
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -74,7 +74,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     5
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -84,7 +84,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     6
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -94,7 +94,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     7
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -104,7 +104,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     8
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -114,7 +114,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     9
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -124,7 +124,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     10
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -134,7 +134,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     11
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -144,7 +144,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     12
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -154,7 +154,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     13
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -164,7 +164,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     14
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -174,7 +174,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     15
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -184,8 +184,8 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     16
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/recursive_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/recursive_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -195,8 +195,8 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     32
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/recursive_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/recursive_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -206,8 +206,8 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     64
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/recursive_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/recursive_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -217,8 +217,8 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     128
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/recursive_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/recursive_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/
 
@@ -228,7 +228,7 @@ struct CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_FUNCTION_NAME {};
 /******************************************************************************************************/
 #define CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH    \
     256
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/base_step.hpp"
-#include "conceptrodon/microbiota/typella/TYPICAL_TURN_OVER/ascend/recursive_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/base_step.hpp"
+#include "conceptrodon/microbiota/typella/typical_turn_over/ascend/recursive_step.hpp"
 #undef CONCEPTRODON_TYPELLA_TYPICAL_TURN_OVER_LENGTH
 /******************************************************************************************************/

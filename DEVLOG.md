@@ -8,6 +8,40 @@
 
 ## Diary
 
+### 2025/12/01
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Go through every unit test to look for bugs.</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Mostly done. Clang 12.1.0 won't allow to deduce the type and the integers from <code>std::integer_sequence<...></code> for some reason. Related tests won't pass.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove godbolt links from the documentation</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress. Godbolt links take too much effort to maintain. I have to give it up.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/08/17
 
 <ul>
@@ -16,7 +50,7 @@
       <tbody>
         <tr>
           <td>Plan</td>
-          <td>Change camel case function names to snake case</code>.</td>
+          <td>Change camel case function names to snake case.</td>
         </tr>
         <tr>
           <td>Progress</td>

@@ -1,12 +1,12 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_TYPE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_TYPE_H
-
-#include <utility>
+#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_PAGE_H
+#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_PAGE_H
 
 #include "conceptrodon/omennivore/typical_among.hpp"
+
+#include <utility>
 
 #include "conceptrodon/capsule.hpp"
 #include "conceptrodon/shuttle.hpp"
@@ -32,25 +32,39 @@
 namespace Conceptrodon {
 namespace Omennivore {
 namespace UnitTests {
-namespace TestTypicalAmongType {
+namespace TestAmongPage {
 
 
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-using SupposedResult = Capsule<SHEEP_SPROUT(240)>;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+template<size_t>
+struct Tester
+{
+    template<auto...>
+    struct ProtoPage {};
+
+    template<auto...Agreements>
+    using Page = ProtoPage<Agreements...>;
+};
 /******************************************************************************************************/
 
 
 
 
 /******************************************************************************************************/
-#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
-template<size_t I>
-using At = TypicalAmong<SupposedResult>::Page<I>::type;
-#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+#define SHEEP_PREFIX    \
+    Tester<
+#define SHEEP_SUFFIX    \
+    >::Page<0>
+#define SHEEP_SEPARATOR \
+    ,
+
+using SupposedResult = Capsule<SHEEP_SPROUT(80)>;
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
 /******************************************************************************************************/
 
 
@@ -59,20 +73,43 @@ using At = TypicalAmong<SupposedResult>::Page<I>::type;
 /******************************************************************************************************/
 #define SUPPOSED_TYPE \
     SupposedResult
+/******************************************************************************************************/
 
+
+
+/******************************************************************************************************/
 #define SHEEP_PREFIX    \
-    At<
+    Tester<
 #define SHEEP_SUFFIX    \
-    >
+    >::Page
 #define SHEEP_SEPARATOR \
     ,
 
-SAME_TYPE(Capsule<SHEEP_SPROUT(240)>);
+using Amongus = TypicalAmong<Carrier<SHEEP_SPROUT(80)>>;
 
 #undef SHEEP_PREFIX
 #undef SHEEP_SUFFIX
 #undef SHEEP_SEPARATOR
 
+
+#define SHEEP_PREFIX    \
+    Amongus::Page<
+#define SHEEP_SUFFIX    \
+    >::Page<0>
+#define SHEEP_SEPARATOR \
+    ,
+
+SAME_TYPE(Capsule<SHEEP_SPROUT(80)>);
+
+#undef SHEEP_PREFIX
+#undef SHEEP_SUFFIX
+#undef SHEEP_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
 

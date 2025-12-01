@@ -75,8 +75,7 @@
 
 
 /******************************************************************************************************/
-#define CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS    \
-    typename
+#define CONCEPTRODON_CYTOPLASM_ALKANE_PREFIX_SYMBOLS
 #define CONCEPTRODON_CYTOPLASM_ALKANE_CARBON_SYMBOLS    \
     CONCEPTRODON_TYPELLA_KINDRED_FOLD_LEFT_OPERATION_IDENTIFIER
 #define CONCEPTRODON_CYTOPLASM_ALKANE_SUFFIX_SYMBOLS    \

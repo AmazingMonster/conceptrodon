@@ -44,6 +44,7 @@ struct KindredRepack<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others.
     {
         using type = KindredRepack
         <
+            // Put ElementAs... and ElementBs into the `Capsule`
             Capsule<ElementAs..., ElementBs...>,
             Others...
         >::template Road<Operation>;

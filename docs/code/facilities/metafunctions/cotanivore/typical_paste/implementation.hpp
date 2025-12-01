@@ -27,6 +27,7 @@ struct TypicalPaste<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others..
 {
     using type = TypicalPaste
     <
+        // Put ElementAs... and ElementBs into the first container `ContainerA`
         ContainerA<ElementAs..., ElementBs...>,
         Others...
     >::type;
