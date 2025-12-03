@@ -83,7 +83,7 @@ struct IsConst
 
 template <typename F>
 constexpr bool IsConst_v
-{ static_cast<bool>((1 << 6) & Analyzer<F>::value) };
+{ IsConst<F>::value};
 
 /*****************/
 /**** Example ****/

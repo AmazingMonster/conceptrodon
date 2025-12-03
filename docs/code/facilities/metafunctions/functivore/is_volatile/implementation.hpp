@@ -83,7 +83,7 @@ struct IsVolatile
 
 template <typename F>
 constexpr bool IsVolatile_v
-{ static_cast<bool>((1 << 7) & Analyzer<F>::value) };
+{ IsVolatile<F>::value };
 
 /*****************/
 /**** Example ****/
@@ -116,3 +116,4 @@ static_assert(IsVolatile<AbominableFun>::value);
 static_assert(! IsVolatile<decltype(FunAddr)>::value);
 static_assert(IsVolatile<decltype(&Tester::fun)>::value);
 static_assert(IsVolatile<FO>::value);
+static_assert(IsVolatile_v<FO>);

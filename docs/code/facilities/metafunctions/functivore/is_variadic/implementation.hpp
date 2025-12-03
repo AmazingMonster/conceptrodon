@@ -83,7 +83,7 @@ struct IsVariadic
 
 template <typename F>
 constexpr bool IsVariadic_v
-{ static_cast<bool>((1 << 4) & Analyzer<F>::value) };
+{ IsVariadic<F>::value };
 
 /*****************/
 /**** Example ****/
@@ -116,3 +116,4 @@ static_assert(IsVariadic<AbominableFun>::value);
 static_assert(! IsVariadic<decltype(FunAddr)>::value);
 static_assert(IsVariadic<decltype(&Tester::fun)>::value);
 static_assert(IsVariadic<FO>::value);
+static_assert(IsVariadic_v<FO>);

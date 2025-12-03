@@ -83,7 +83,7 @@ struct IsLvalueReference
 
 template <typename F>
 constexpr bool IsLvalueReference_v
-{ static_cast<bool>((1 << 8) & Analyzer<F>::value) };
+{ IsLvalueReference<F>::value };
 
 /*****************/
 /**** Example ****/

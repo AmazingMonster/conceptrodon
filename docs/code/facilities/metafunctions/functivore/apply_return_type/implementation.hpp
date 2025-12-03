@@ -15,6 +15,10 @@ struct ApplyReturnType
 
 #include <concepts>
 
+/**** SupposedResult ****/
+using SupposedResult = int(int, int*, int**);
+
+/**** Tests ****/
 static_assert
 (
     std::same_as

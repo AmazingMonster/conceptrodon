@@ -49,7 +49,11 @@ struct AreSameTypeSignatureAs
         static constexpr bool value
         {
             (...&&(
-                std::is_same_v<typename Analyzer<Unknowns>::type_signature, typename Analyzer<Unknowns>::type_signature>
+                std::is_same_v
+                <
+                    typename Analyzer<Unknowns>::type_signature,
+                    typename Analyzer<Known>::type_signature
+                >
             ))
         };
     };
@@ -58,12 +62,7 @@ struct AreSameTypeSignatureAs
     using Mold = ProtoMold<Args...>;
 
     template<typename...Unknowns>
-    static constexpr bool Mold_v
-    {
-        (...&&(
-            std::is_same_v<typename Analyzer<Unknowns>::type_signature, typename Analyzer<Unknowns>::type_signature>
-        ))
-    };
+    static constexpr bool Mold_v = Mold<Unknowns...>::value;
 };
 
 /*****************/
@@ -72,6 +71,7 @@ struct AreSameTypeSignatureAs
 
 /**** functions ****/
 inline int fun(int, int*){ return 0; }
+inline int different_fun(int, int*, int**){ return 0; }
 
 /**** abominable functions ****/
 using AbominableFun = int(int, int*) const;
@@ -100,3 +100,22 @@ static_assert(Metafunction::Mold_v<decltype(FunAddr)>);
 static_assert(Metafunction::Mold_v<AbominableFun>);
 static_assert(Metafunction::Mold_v<decltype(&Tester::fun)>);
 static_assert(Metafunction::Mold_v<FO>);
+static_assert
+(
+    Metafunction::Mold_v
+    <
+        decltype(fun),
+        decltype(FunAddr),
+        FO
+    >
+);
+static_assert
+(
+    ! Metafunction::Mold_v
+    <
+        decltype(different_fun),
+        decltype(fun),
+        decltype(FunAddr),
+        FO
+    >
+);

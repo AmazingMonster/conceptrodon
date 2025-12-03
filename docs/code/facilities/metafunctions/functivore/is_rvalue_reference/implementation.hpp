@@ -83,7 +83,7 @@ struct IsRvalueReference
 
 template <typename F>
 constexpr bool IsRvalueReference_v
-{ static_cast<bool>((1 << 9) & Analyzer<F>::value) };
+{ IsRvalueReference<F>::value };
 
 /*****************/
 /**** Example ****/
@@ -116,3 +116,4 @@ static_assert(IsRvalueReference<AbominableFun>::value);
 static_assert(! IsRvalueReference<decltype(FunAddr)>::value);
 static_assert(IsRvalueReference<decltype(&Tester::fun)>::value);
 static_assert(IsRvalueReference<FO>::value);
+static_assert(IsRvalueReference_v<FO>);

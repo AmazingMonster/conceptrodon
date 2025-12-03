@@ -74,16 +74,7 @@ struct AreSameVariadicTypeSignatureAs
     using Mold = ProtoMold<Args...>;
 
     template<typename...Unknowns>
-    static constexpr bool Mold_v
-    {
-        (...&&(
-            std::is_same_v
-            <
-                typename Analyzer<Unknowns>::variadic_type_signature,
-                typename Analyzer<Known>::variadic_type_signature
-            >
-        ))
-    };
+    static constexpr bool Mold_v = Mold<Unknowns...>::value;
 };
 
 /*****************/
@@ -131,6 +122,27 @@ static_assert(Metafunction_0::Mold_v<AbominableFun>);
 static_assert(Metafunction_0::Mold_v<decltype(&Tester::fun)>);
 static_assert(Metafunction_0::Mold_v<FO>);
 static_assert(! Metafunction_0::Mold_v<VariadicFO>);
+static_assert
+(
+    Metafunction_0::Mold_v
+    <
+        decltype(fun),
+        decltype(FunAddr),
+        AbominableFun,
+        decltype(&Tester::fun)
+    >
+);
+static_assert
+(
+    ! Metafunction_0::Mold_v
+    <
+        decltype(variadic_fun),
+        decltype(fun),
+        decltype(FunAddr),
+        AbominableFun,
+        decltype(&Tester::fun)
+    >
+);
 
 static_assert(Metafunction_1::Mold_v<decltype(variadic_fun)>);
 static_assert(Metafunction_1::Mold_v<decltype(VariadicFunAddr)>);
