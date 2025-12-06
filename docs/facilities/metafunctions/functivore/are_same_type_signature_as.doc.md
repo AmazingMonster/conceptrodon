@@ -11,10 +11,6 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 When invoked by a list of function-like types, the metafunction returns true if their type signatures are the same as that of the previously provided function-like type and returns false if otherwise.
 
-<pre><code>   F
--> Args...
--> ...&&(Args `same type signature as` F)</code></pre>
-
 ## Type Signature
 
 ```Haskell

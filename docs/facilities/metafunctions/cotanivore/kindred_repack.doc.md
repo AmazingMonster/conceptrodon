@@ -8,11 +8,12 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Cotanivore::KindredRepack` accepts a list of packed containers and returns a function.
+
 When invoked by an operation, the function concatenates the packed containers and instantiates the operation with the result.
 
 <pre><code>   Con<sub><i>0</i></sub>&lt;Es<sub><i>0</i></sub>...&gt;, Con<sub><i>1</i></sub>&lt;Es<sub><i>1</i></sub>...&gt;, ..., Con<sub><i>n</i></sub>&lt;Es<sub><i>n</i></sub>...&gt;
--> Op
--> Op&lt;Es<sub><i>0</i></sub>..., Es<sub><i>1</i></sub>..., ..., Es<sub><i>n</i></sub>...></code></pre>
+-> Oper
+-> Oper&lt;Es<sub><i>0</i></sub>..., Es<sub><i>1</i></sub>..., ..., Es<sub><i>n</i></sub>...></code></pre>
 
 ## Type Signature
 
@@ -60,15 +61,18 @@ static_assert(std::same_as<Result, SupposedResult>);
 
 ## Implementation
 
-`Cotanivore::KindredRepack` is implemented similarly to [`Cotanivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in [`Capsule`](../../utilities/capsule.doc.md). After all elements are collected, the `Operation` will be invoked.
+`Cotanivore::KindredRepack` is implemented similarly to [`Cotanivore::TypicalPaste`](./typical_paste.doc.md). Intermediate results are kept in [`Capsule`](../../utilities/capsule.doc.md).
+
+```C++
+template<typename...>
+struct Capsule;
+```
+
+After all elements are collected, the `Operation` will be invoked.
 
 A simplified version will be as follows:
 
 ```C++
-/**** Capsule ****/
-template<typename...>
-struct Capsule;
-
 /**** KindredRepack ****/
 template<typename...>
 struct KindredRepack {};

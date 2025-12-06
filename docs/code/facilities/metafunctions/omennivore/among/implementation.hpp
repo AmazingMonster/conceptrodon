@@ -180,16 +180,18 @@ static_assert(std::same_as<Flow_2<War_0, War_1>, Metafunction<War_0, War_1>>);
 template<template<template<template<typename...> class...> class...> class...>
 struct Forlorn;
 
-/**** Tests ****/
-// GCC compiles.
-// Clang and MSVC fail.
+/**** First Test ****/
+// If the following assertion passes
+// , then `Metafunction` and `Flow_2` are considered the same.
 static_assert(std::same_as<
     Forlorn<Metafunction>,
     Forlorn<Flow_2>
 >);
 
-// Clang and MSVC compile.
-// GCC fails.
+/**** Second Test ****/
+// If the following assertion passes
+// , then `Metafunction` and `Flow_2` are considered different.
+// Some compilers might fail on both assertions.
 static_assert(not std::same_as<
     Forlorn<Metafunction>,
     Forlorn<Flow_2>

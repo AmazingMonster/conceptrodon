@@ -13,13 +13,13 @@ struct LaboriousPress
     template
     <
         template<typename...> class Container,
-// There is only one parameter pack left.
+        // There is only one parameter pack left.
         typename...Contents
     >
     struct Detail<Container<Contents...>>
     {
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
+        // We invoke the corresponding template member of the operation
+        // with the extracted pack.
         using type = Operation::template Mold<Contents...>; 
     };
 
@@ -36,7 +36,7 @@ struct LaboriousPress
     template
     <
         template<typename...> class Container,
-// We separate the first parameter pack from the others.
+        // We separate the first parameter pack from the others.
         typename...Contents,
         typename...Others
     >
@@ -44,12 +44,12 @@ struct LaboriousPress
     {
         using type = LaboriousPress
         <
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
-// Then, we pass the result back to LaboriousPress for further invocations.
+            // We invoke the corresponding template member of the operation
+            // with the extracted pack.
+            // Then, we pass the result back to LaboriousPress for further invocations.
             typename Operation::template Mold<Contents...>
         >
-// Unused packs are recycled for further invocations.
+        // Unused packs are recycled for further invocations.
         ::template Detail<Others...>::type;
     };
 

@@ -21,7 +21,7 @@ struct LookFor
             {
                 std::make_signed_t<size_t> counter {-1};
                 return
-                (...||( (++counter, Predicate<Elements>::value) ? true : false)) ? 
+                (...||(++counter, static_cast<bool>(Predicate<Elements>::value))) ? 
                 counter : -1;
             }()
         };

@@ -71,7 +71,7 @@ struct IndependentFind
 /**** Example ****/
 /*****************/
 
-/**** IsIntDoubleStar */
+/**** IsIntDoubleStar ****/
 template<typename Element>
 struct IsIntDoubleStar
 : public std::is_same<Element, int**> {};

@@ -56,7 +56,7 @@ struct Operation;
 
 
 
-/**** First Test ****//**** Start ****/
+/**** First Test ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 using SupposedResult = Operation<SHEEP_SPROUT(240, *2)>;
@@ -86,11 +86,11 @@ SAME_TYPE(BiCognatePlume<Operation>::Road<SHEEP_SPROUT(240)>::Mold<LLAMA_SPROUT(
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** First Test ****//**** End ****/
 
 
 
-/**** Second Test ****//**** Start ****/
+
+/**** Second Test ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 using SupposedResult_1 = Operation<SHEEP_SPROUT(240, +1)>;
@@ -105,11 +105,11 @@ SAME_TYPE(BiCognatePlume<Operation>::Road<Dummy<1>::Mold>::Mold<LLAMA_SPROUT(240
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** Second Test ****//**** End ****/
 
 
 
-/**** Third Test ****//**** Start ****/
+
+/**** Third Test ****/
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 using SupposedResult_2 = Operation<SHEEP_SPROUT(240, +1)>;
@@ -133,11 +133,11 @@ SAME_TYPE(BiCognatePlume<Operation>::Road<SHEEP_SPROUT(240)>::Mold<std::integral
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** Third Test ****//**** End ****/
 
 
 
-/**** Fourth Test ****//**** Start ****/
+
+/**** Fourth Test ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult
@@ -159,12 +159,12 @@ SAME_TYPE(BiCognatePlume<Operation>::Rail<SHEEP_SPROUT(240)>::Page<LLAMA_SPROUT(
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** Fourth Test ****//**** End ****/
 
 
 
 
-/**** Fifth Test ****//**** Start ****/
+
+/**** Fifth Test ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_1
@@ -175,12 +175,12 @@ SAME_TYPE(BiCognatePlume<Operation>::Rail<Dummy<1>::Page>::Page<LLAMA_SPROUT(240
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** Fifth Test ****//**** End ****/
 
 
 
 
-/**** Sixth Test ****//**** Start ****/
+
+/**** Sixth Test ****/
 /******************************************************************************************************/
 #define SUPPOSED_TYPE   \
     SupposedResult_2
@@ -200,7 +200,6 @@ SAME_TYPE(BiCognatePlume<Operation>::Rail<SHEEP_SPROUT(240)>::Page<1>);
 
 #undef SUPPOSED_TYPE
 /******************************************************************************************************/
-/**** Sixth Test ****//**** End ****/
 
 }}}}
 

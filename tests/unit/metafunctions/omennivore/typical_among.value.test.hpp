@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_VALUE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_TYPICAL_AMONG_VALUE_H
 
-#include "conceptrodon/omennivore/typical_among.hpp"
+#include "conceptrodon/omennivore/among.hpp"
 
 #include <utility>
 

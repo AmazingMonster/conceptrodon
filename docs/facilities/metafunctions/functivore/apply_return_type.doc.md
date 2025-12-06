@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Functivore::ApplyReturnType` accepts a type and returns a metafunction.
+
 When invoked, the metafunction yields a function type with the previously provided type as the return type and its arguments as parameter types.
 
 <pre><code>   Ret

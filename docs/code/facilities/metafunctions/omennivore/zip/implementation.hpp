@@ -186,10 +186,12 @@ struct Zip<PackedVessels...>
 
             template<size_t...I>
             struct Secret<std::index_sequence<I...>>
+            // We collect all cross-sections and place them into `OutContainer`.
             { using type = OuterOperation<typename Detail<I>::type...>; };
 
             using type = Secret
             <
+                // We create a `std::index_sequence` for the minimum length.
                 std::make_index_sequence
                 <Minimum<Total<PackedVessels>::value...>::value>
             >
@@ -230,10 +232,12 @@ struct Zip<PackedVessels...>
 
             template<size_t...I>
             struct Secret<std::index_sequence<I...>>
+            // We collect all cross-sections and place them into `OutContainer`.
             { using type = OuterOperation<typename Detail<I>::type...>; };
 
             using type = Secret
             <
+                // We create a `std::index_sequence` for the minimum length.
                 std::make_index_sequence
                 <Minimum<Total<PackedVessels>::value...>::value>
             >

@@ -11,6 +11,7 @@
 template<template<typename...> class...Containers>
 struct Among {};
 
+/**** Base Step ****/
 template<template<typename...> class First>
 struct Among<First>
 {
@@ -29,6 +30,7 @@ struct Among<First>
     using Page = ProtoPage<Agreements...>;
 };
 
+/**** Recursive Step ****/
 template
 <
     template<typename...> class First,
@@ -109,16 +111,17 @@ template<template<typename...> class...>
 struct Vehicle;
 
 /**** First Test ****/
-// GCC compiles.
-// Clang and MSVC fail.
+// If the following assertion passes
+// , then `Metafunction<3>::Mold` and `Con_3` are considered the same.
 static_assert(std::same_as<
     Vehicle<Metafunction<3>::Mold>,
     Vehicle<Con_3>
 >);
 
 /**** Second Test ****/
-// Clang and MSVC compile.
-// GCC fails.
+// If the following assertion passes
+// , then `Metafunction<3>::Mold` and `Con_3` are considered different.
+// Some compilers might fail on both assertions.
 static_assert(not std::same_as<
     Vehicle<Metafunction<3>::Mold>,
     Vehicle<Con_3>

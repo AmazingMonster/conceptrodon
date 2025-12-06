@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Functivore::GetParameterTypes` accepts a container such as the `std::tuple` and returns a metafunction.
+
 When invoked by a function-like type, the metafunction returns its parameters collected by the previously provided container.
 
 ## Type Signature

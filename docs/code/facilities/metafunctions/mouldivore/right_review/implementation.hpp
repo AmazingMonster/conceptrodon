@@ -52,6 +52,7 @@ struct RightReview
     {
         static constexpr bool value
         {
+            // Immediately invoked lambda.
             []<size_t...I>(std::index_sequence<I...>)
             {
                 return

@@ -8,6 +8,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Functivore::GetInvokeReturnType` accepts a function-like type and returns a metafunction.
+
 When invoked by a list of argument types, the function returns the return type of the function-like type called by objects of these argument types.
 
 ## Type Signature

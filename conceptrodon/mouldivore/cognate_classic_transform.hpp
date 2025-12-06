@@ -10,25 +10,49 @@ namespace Mouldivore {
 template<template<typename...> class Operation>
 struct CognateClassicTransform
 {
-    template<template<typename...> class Puberty>
+    template<template<typename...> class...Puberty>
     struct ProtoRoad
     {
         struct Slash
         {
-            template<template<typename...> class Hormone>
+            template<template<typename...> class...Hormones>
             struct ProtoRoad
             {
-                template<typename Element>
-                struct Hidden 
+                template<template<typename...> class Hormone, typename Element>
+                struct Detail
                 { using type = Element; };
 
-                template<typename Element>
-                requires Puberty<Element>::value
-                struct Hidden<Element>
+                template<template<typename...> class Hormone, typename Element>
+                requires (...&&Puberty<Element>::value)
+                struct Detail<Hormone, Element>
                 { using type = Hormone<Element>::type; };
 
                 template<typename...Elements>
-                using Mold = Operation<typename Hidden<Elements>::type...>;
+                struct Hidden 
+                { using type = Operation<typename Detail<Hormones, Elements>::type...>; };
+
+                template<typename Element>
+                struct Hidden<Element>
+                { using type = Operation<typename Detail<Hormones, Element>::type...>; };
+
+                template<typename...Elements>
+                using Mold = Hidden<Elements...>::type;
+            };
+
+            template<template<typename...> class Hormone>
+            struct ProtoRoad<Hormone>
+            {
+                template<typename Element>
+                struct Detail
+                { using type = Element; };
+
+                template<typename Element>
+                requires (...&&Puberty<Element>::value)
+                struct Detail<Element>
+                { using type = Hormone<Element>::type; };
+
+                template<typename...Elements>
+                using Mold = Operation<typename Detail<Elements>::type...>;
             };
         };
 

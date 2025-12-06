@@ -255,13 +255,7 @@ Nothing intrinsic prevents Conceptrodon from utilizing a fast algorithm.
 While this library requires metafunctions to follow the same pattern, it is uninterested in what is happening within them.
 Many functions were tested against **boost::mp11**.
 If a function was slower than its counterpart, the implementation from **boost::mp11** was used.
-Therefore, This library is generally faster than **boost::mp11**.
-
-## Limitation
-
-This library heavily relies on 'concept expansion', which is only possible on Clang. Kris Jusiak explained the technique in [this talk](https://youtu.be/LfOh0DwTP00?list=PLPqbaGB3rnNmIaWPvuu4U6LWt1XooNi-L&t=1500).
-
-In the documentation of each metafunction, run the snippet in the implementation section on Godbolt to see if the metafunction works on GCC or MSVC.
+Therefore, This library is generally faster than **boost::mp11**
 
 ## Install
 

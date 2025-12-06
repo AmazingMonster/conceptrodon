@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2025/12/07
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove godbolt links and fix errors in the documentation</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress. Finished <code>Cotanivore</code>, <code>Functivore</code>, <code>Mouldivore</code>, and <code>Omennivore</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/12/03
 
 <ul>

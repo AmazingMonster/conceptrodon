@@ -19,6 +19,9 @@ struct CognateClassicTransform
                     using type = Element;
                 };
 
+                // `Puberty...` are the predicates.
+                // This partial specialization will be selected
+                // if `(...&&Puberty<Element>::value) == true`.
                 template<typename Element>
                 requires (...&&Puberty<Element>::value)
                 struct Hidden<Element>
