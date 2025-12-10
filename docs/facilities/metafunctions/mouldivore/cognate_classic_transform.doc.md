@@ -11,7 +11,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 Its first layer accepts a list of predicates.
 Its second layer accepts a list of transformations and returns a function.
 
-When invoked, the function transforms its arguments that satisfy all the predicates with the transformations via a process similar to pack expansion. Then it instantiates the first operation with the result.
+When invoked, the function transforms its arguments that satisfy all the predicates with the transformations via a process similar to pack expansion. Then it instantiates the operation with the result.
 
 <pre><code>   Oper
 -> Preds...

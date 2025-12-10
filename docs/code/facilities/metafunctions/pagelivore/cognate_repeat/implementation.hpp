@@ -9,7 +9,6 @@ template<auto...>
 struct Shuttle;
 
 /**** ExtendBack ****/
-// We will use this function to concatenate two parts.
 template<typename...>
 struct ExtendBack {};
 

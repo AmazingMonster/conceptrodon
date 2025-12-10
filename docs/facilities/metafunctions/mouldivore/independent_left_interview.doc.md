@@ -53,9 +53,14 @@ struct IndependentLeftInterview
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int, int*, int**, int**`.
+- We will find the indices of `Vay<2>` and `Vay<-1>` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
 
 ```C++
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable} };
+
 /**** Metafunction ****/
 template<typename...Args>
 using Metafunction = IndependentLeftInterview<std::is_same>
@@ -63,9 +68,30 @@ using Metafunction = IndependentLeftInterview<std::is_same>
 
 /*** Tests ****/
 static_assert
-(Metafunction<int**>::Mold<int, int*, int**, int**>::value == 2);
+(Metafunction<Vay<2>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
 static_assert
-(Metafunction<void>::Mold<int, int*, int**, int**>::value == -1);
+(Metafunction<Vay<-1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == -1);
+```
+
+- We will find the first index of the type whose member `value` is greater than `1` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
+
+```C++
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Metafunction ****/
+template<typename...Args>
+using Metafunction_2 = IndependentLeftInterview<Less>
+::Mold<Args...>;
+
+/**** Tests ****/
+static_assert
+(Metafunction_2<Vay<1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
 ```
 
 ## Implementation

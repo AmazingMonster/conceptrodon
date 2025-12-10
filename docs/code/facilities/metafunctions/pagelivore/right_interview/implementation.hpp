@@ -128,9 +128,9 @@ struct RightInterview
     using Page = ProtoPage<Variables...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Equal ****/
 template<auto I, auto J>
@@ -147,6 +147,27 @@ using Metafunction = RightInterview<Equal>
 
 /**** Tests ****/
 static_assert
-(Metafunction<2>::Page<0, 1, 2, 2>::value == 2);
+(Metafunction<2>::Page<0, 0, 1, 2, 2>::value == 3);
 static_assert
-(Metafunction<-1>::Page<0, 1, 2, 2>::value == -1);
+(Metafunction<-1>::Page<0, 0, 1, 2, 2>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<auto I, auto J>
+struct Less
+{
+    static constexpr bool value
+    {I < J};
+};
+
+/**** Metafunction ****/
+template<auto...Args>
+using Metafunction_2 = RightInterview<Less>
+::Page<Args...>;
+
+/**** Tests ****/
+static_assert
+(Metafunction_2<1>::Page<0, 0, 1, 2, 2>::value == 0);

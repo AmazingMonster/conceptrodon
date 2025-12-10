@@ -15,8 +15,38 @@ struct CognateTransform
     {
         struct Slash
         {
-            template<template<auto...> class Hormone>
+            template<template<auto...> class...Hormones>
             struct ProtoRail
+            {
+                template<template<auto...> class Hormone, auto Variable>
+                struct Detail
+                {
+                    static constexpr auto value
+                    {Variable};
+                };
+
+                template<template<auto...> class Hormone, auto Variable>
+                requires (...&&Puberty<Variable>::value)
+                struct Detail<Hormone, Variable>
+                {
+                    static constexpr auto value
+                    {Hormone<Variable>::value};
+                };
+
+                template<auto...Variables>
+                struct Hidden 
+                { using type = Operation<Detail<Hormones, Variables>::value...>; };
+
+                template<auto Variable>
+                struct Hidden<Variable>
+                { using type = Operation<Detail<Hormones, Variable>::value...>; };
+
+                template<auto...Variables>
+                using Page = Hidden<Variables...>::type;
+            };
+
+            template<template<auto...> class Hormone>
+            struct ProtoRail<Hormone>
             {
                 template<auto Variable>
                 struct Hidden 

@@ -16,13 +16,13 @@ struct Press
     template
     <
         template<typename...> class Container,
-// There is only one parameter pack left.
+        // There is only one parameter pack left.
         typename...Contents
     >
     struct Detail<Container<Contents...>>
     {
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
+        // We invoke the corresponding template member of the operation
+        // with the extracted pack.
         using type = Operation::template Mold<Contents...>; 
     };
 
@@ -39,7 +39,7 @@ struct Press
     template
     <
         template<typename...> class Container,
-// We separate the first parameter pack from the others.
+        // We separate the first parameter pack from the others.
         typename...Contents,
         typename...Others
     >
@@ -47,12 +47,12 @@ struct Press
     {
         using type = Press
         <
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
-// Then, we pass the result back to Press for further invocations.
+            // We invoke the corresponding template member of the operation
+            // with the extracted pack.
+            // Then, we pass the result back to Press for further invocations.
             typename Operation::template Mold<Contents...>
         >
-// Unused packs are recycled for further invocations.
+        // Unused packs are recycled for further invocations.
         ::template Detail<Others...>::type;
     };
 
@@ -91,26 +91,26 @@ struct Shuttle;
 template<template<auto...> class Operation, typename...Items>
 struct LoadSkip
 {
-// If `Mold` is selected, user inputs will be kept
-// in a `Capsule` and placed at the end of `Items.`
-// Then, we pass the extended `Items` back to `LoadSkip`,
-// waiting for more inputs.
+    // If `Mold` is selected, user inputs will be kept
+    // in a `Capsule` and placed at the end of `Items.`
+    // Then, we pass the extended `Items` back to `LoadSkip`,
+    // waiting for more inputs.
     template<typename...Elements>
     using Mold = LoadSkip<Operation, Items..., Capsule<Elements...>>;
 
-// If `Page` is selected, user inputs will be kept
-// in a `Shuttle` and placed at the end of `Items.`
-// Then, we pass the extended `Items` back to `LoadSkip`,
-// waiting for more inputs.
+    // If `Page` is selected, user inputs will be kept
+    // in a `Shuttle` and placed at the end of `Items.`
+    // Then, we pass the extended `Items` back to `LoadSkip`,
+    // waiting for more inputs.
     template<auto...Variables>
     using Page = LoadSkip<Operation, Items..., Shuttle<Variables...>>;
 
     struct Commit
     {
         template<auto...Variables>
-// When finally initiating the operation, we invoke the skipped layer.
-// Then, we pass the instantiated operation and user inputs
-// to Omennivore::Press for further invocations.
+        // When finally initiating the operation, we invoke the skipped layer.
+        // Then, we pass the instantiated operation and user inputs
+        // to Omennivore::Press for further invocations.
         using Page = Omennivore::Press<Operation<Variables...>>
         ::template Mold<Items...>;
     };

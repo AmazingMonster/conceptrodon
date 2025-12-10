@@ -78,9 +78,9 @@ struct TerseIndependentLeftInterview
     using Page = ProtoPage<Agreements...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Equal ****/
 template<auto I, auto J>
@@ -97,6 +97,27 @@ using Metafunction = TerseIndependentLeftInterview<Equal>
 
 /**** Tests ****/
 static_assert
-(Metafunction<2>::Page<0, 1, 2, 2>::value == 2);
+(Metafunction<2>::Page<0, 0, 1, 2, 2>::value == 3);
 static_assert
-(Metafunction<-1>::Page<0, 1, 2, 2>::value == -1);
+(Metafunction<-1>::Page<0, 0, 1, 2, 2>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<auto I, auto J>
+struct Less
+{
+    static constexpr bool value
+    {I < J};
+};
+
+/**** Metafunction ****/
+template<auto...Args>
+using Metafunction_2 = TerseIndependentLeftInterview<Less>
+::Page<Args...>;
+
+/**** Tests ****/
+static_assert
+(Metafunction_2<1>::Page<0, 0, 1, 2, 2>::value == 3);

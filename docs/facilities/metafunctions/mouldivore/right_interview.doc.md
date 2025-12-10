@@ -53,19 +53,45 @@ struct RightInterview
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int, int*, int**, int**`.
+- We will find the indices of `Vay<2>` and `Vay<-1>` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
 
 ```C++
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable}; };
+
 /**** Metafunction ****/
 template<typename...Args>
 using Metafunction = RightInterview<std::is_same>
 ::Mold<Args...>;
 
+/*** Tests ****/
+static_assert
+(Metafunction<Vay<2>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
+static_assert
+(Metafunction<Vay<-1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == -1);
+```
+
+- We will find the first index of the type whose member `value` is less than `1` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
+
+```C++
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Metafunction ****/
+template<typename...Args>
+using Metafunction_2 = RightInterview<Less>
+::Mold<Args...>;
+
 /**** Tests ****/
 static_assert
-(Metafunction<int**>::Mold<int, int*, int**, int**>::value == 2);
-static_assert
-(Metafunction<void>::Mold<int, int*, int**, int**>::value == -1);
+(Metafunction_2<Vay<1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 0);
 ```
 
 ## Implementation

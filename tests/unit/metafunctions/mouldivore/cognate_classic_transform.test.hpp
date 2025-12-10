@@ -186,11 +186,6 @@ SAME_TYPE
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 using SupposedResult_2 = Operation<SHEEP_SPROUT(240, + 2)>;
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
-
-#undef DOUBLE_SHEEP_PREFIX
-#undef DOUBLE_SHEEP_MIDDLE
-#undef DOUBLE_SHEEP_SUFFIX
-#undef DOUBLE_SHEEP_SEPARATOR
 /******************************************************************************************************/
 
 

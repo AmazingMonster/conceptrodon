@@ -83,7 +83,7 @@ struct CognateSegment
     using Page = Send<typename TypicalPop<Agreements...>::type>
     ::template Rail<Detail<Agreements...>::template Hidden_t>;
 
-// Indices can also be passed using `std::index_sequence`.
+    // Indices can also be passed using `std::index_sequence`.
     template<typename>
     struct Hidden {};
 

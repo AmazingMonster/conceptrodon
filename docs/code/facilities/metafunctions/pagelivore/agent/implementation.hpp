@@ -72,5 +72,5 @@ using SupposedResult_1 = Operation
 using Result_1 = Metafunction<std::index_sequence<0, 1, 2>>;
 
 /**** Test ****/
-//static_assert(std::same_as<Result_1, SupposedResult_1>);
+static_assert(std::same_as<Result_1, SupposedResult_1>);
 

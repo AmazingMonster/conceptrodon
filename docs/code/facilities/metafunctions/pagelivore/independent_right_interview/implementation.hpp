@@ -10,7 +10,7 @@
 /************************/
 
 template<template<auto...> class...Predicates>
-struct TerseIndependentRightInterview
+struct IndependentRightInterview
 {
     template<auto...RightSides>
     struct ProtoPage
@@ -74,8 +74,8 @@ struct TerseIndependentRightInterview
         using Page = Slash::template ProtoPage<Agreements...>;
     };
 
-    template<auto...Args>
-    using Page = ProtoPage<Args...>;
+    template<auto...Agreements>
+    using Page = ProtoPage<Agreements...>;
 };
 
 /***********************/
@@ -92,7 +92,7 @@ struct Equal
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction = TerseIndependentRightInterview<Equal>
+using Metafunction = IndependentRightInterview<Equal>
 ::Page<Args...>;
 
 /**** Tests ****/
@@ -115,7 +115,7 @@ struct Less
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction_2 = TerseIndependentRightInterview<Less>
+using Metafunction_2 = IndependentRightInterview<Less>
 ::Page<Args...>;
 
 /**** Tests ****/

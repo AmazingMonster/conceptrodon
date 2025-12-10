@@ -226,7 +226,8 @@ template<template<auto...> class Operation>
 struct CognateRemove
 {
     template<size_t I, size_t...J>
-    using Detail_t = Capsule<std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
+    using Detail_t = Capsule
+    <std::make_index_sequence<I>, std::make_index_sequence<J-1>...>;
 
     template<size_t...I>
     struct ProtoPage

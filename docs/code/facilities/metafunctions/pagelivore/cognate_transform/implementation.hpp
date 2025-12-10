@@ -20,10 +20,14 @@ struct CognateTransform
                     {Variable};
                 };
 
+                // `Puberty...` are the predicates.
+                // This partial specialization will be selected
+                // if `(...&&Puberty<Variable>::value) == true`.
                 template<auto Variable>
                 requires (...&&Puberty<Variable>::value)
                 struct Hidden<Variable>
                 {
+                    // `Hormone` is the transformation.
                     static constexpr auto value
                     {Hormone<Variable>::value};
                 };

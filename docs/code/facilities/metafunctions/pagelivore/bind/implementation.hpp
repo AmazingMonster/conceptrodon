@@ -90,12 +90,14 @@ struct Bind
         {
             template<auto Variable>
             static constexpr auto Hidden_v {Variable};
-            
+
+            // This specialization will be used
+            // if `Pegful<decltype(Variable)> && Nonzero<decltype(Variable)> == true`.
             template<auto Variable>
-            requires Pegful<decltype(Variable)>
-            && Nonzero<decltype(Variable)>
+            requires Pegful<decltype(Variable)> && Nonzero<decltype(Variable)>
             static constexpr auto Hidden_v<Variable> 
             {
+                // `Replacements...` are the arguments of the finally-returned function
                 Among<Replacements...>
                 ::template Page<Variable.value - 1>
                 ::value

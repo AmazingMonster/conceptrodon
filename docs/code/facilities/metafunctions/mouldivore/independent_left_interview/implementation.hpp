@@ -78,9 +78,14 @@ struct IndependentLeftInterview
     using Mold = ProtoMold<Agreements...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
+
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable}; };
 
 /**** Metafunction ****/
 template<typename...Args>
@@ -89,6 +94,27 @@ using Metafunction = IndependentLeftInterview<std::is_same>
 
 /*** Tests ****/
 static_assert
-(Metafunction<int**>::Mold<int, int*, int**, int**>::value == 2);
+(Metafunction<Vay<2>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
 static_assert
-(Metafunction<void>::Mold<int, int*, int**, int**>::value == -1);
+(Metafunction<Vay<-1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Metafunction ****/
+template<typename...Args>
+using Metafunction_2 = IndependentLeftInterview<Less>
+::Mold<Args...>;
+
+/**** Tests ****/
+static_assert
+(Metafunction_2<Vay<1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
