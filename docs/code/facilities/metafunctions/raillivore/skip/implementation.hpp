@@ -2,6 +2,14 @@
 /**** Dependencies ****/
 /**********************/
 
+/**** Capsule ****/
+template<typename...>
+struct Capsule;
+
+/**** Shuttle ****/
+template<auto...>
+struct Shuttle;
+
 /**** Omennivore::Press ****/
 namespace Omennivore {
 
@@ -16,13 +24,13 @@ struct Press
     template
     <
         template<typename...> class Container,
-// There is only one parameter pack left.
+        // There is only one parameter pack left.
         typename...Contents
     >
     struct Detail<Container<Contents...>>
     {
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
+        // We invoke the corresponding template member of the operation
+        // with the extracted pack.
         using type = Operation::template Mold<Contents...>; 
     };
 
@@ -39,7 +47,7 @@ struct Press
     template
     <
         template<typename...> class Container,
-// We separate the first parameter pack from the others.
+        // We separate the first parameter pack from the others.
         typename...Contents,
         typename...Others
     >
@@ -47,12 +55,12 @@ struct Press
     {
         using type = Press
         <
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
-// Then, we pass the result back to Press for further invocations.
+            // We invoke the corresponding template member of the operation
+            // with the extracted pack.
+            // Then, we pass the result back to Press for further invocations.
             typename Operation::template Mold<Contents...>
         >
-// Unused packs are recycled for further invocations.
+        // Unused packs are recycled for further invocations.
         ::template Detail<Others...>::type;
     };
 
@@ -74,21 +82,12 @@ struct Press
 
 }
 
-/**** Capsule ****/
-template<typename...>
-struct Capsule;
-
-/**** Shuttle ****/
-template<auto...>
-struct Shuttle;
-
 /************************/
 /**** Implementation ****/
 /************************/
 
-/**** LoadSkip ****/
 // We will use `Items` to keep track of user inputs.
-template<template<template<typename...> class...> class Operation, typename...Items>
+template<template<template<auto...> class...> class Operation, typename...Items>
 struct LoadSkip
 {
     // If `Mold` is selected, user inputs will be kept
@@ -107,28 +106,28 @@ struct LoadSkip
 
     struct Commit
     {
-        template<template<typename...> class...Containers>
+        template<template<auto...> class...Sequences>
         // When finally initiating the operation, we invoke the skipped layer.
         // Then, we pass the instantiated operation and user inputs
         // to Omennivore::Press for further invocations.
-        using Road = Omennivore::Press<Operation<Containers...>>
+        using Rail = Omennivore::Press<Operation<Sequences...>>
         ::template Mold<Items...>;
     };
 
 };
 
-/**** Skip ****/
-template<template<template<typename...> class...> class Operation>
+template<template<template<auto...> class...> class Operation>
 struct Skip: public LoadSkip<Operation> {};
 
 /*****************/
 /**** Example ****/
 /*****************/
 
-#include <tuple>
+#include <concepts>
+#include <utility>
 
 /**** Operation ****/
-template<template<typename...> class...>
+template<template<auto...> class...>
 struct Operation
 { 
     template<typename...>
@@ -146,7 +145,7 @@ struct Operation
 };
 
 /**** SupposedResult ****/
-using SupposedResult = Operation<std::tuple>
+using SupposedResult = Operation<std::index_sequence>
 ::Mold<void>
 ::Page<0>;
 
@@ -155,7 +154,7 @@ template<typename...Args>
 using Metafunction = Skip<Operation>::Mold<Args...>;
 
 /**** Result ****/
-using Result = Metafunction<void>::Page<0>::Commit::Road<std::tuple>;
+using Result = Metafunction<void>::Page<0>::Commit::Rail<std::index_sequence>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);

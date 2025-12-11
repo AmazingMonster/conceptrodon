@@ -1,160 +1,52 @@
-/**********************/
-/**** Dependencies ****/
-/**********************/
-
-/**** Capsule ****/
-template<typename...>
-struct Capsule;
-
-/**** Shuttle ****/
-template<auto...>
-struct Shuttle;
-
-/**** Omennivore::Press ****/
-namespace Omennivore {
-
-template<typename Operation>
-struct Press
-{
-    template<typename...>
-    struct Detail {};
-
-// Base case:
-
-    template
-    <
-        template<typename...> class Container,
-// There is only one parameter pack left.
-        typename...Contents
-    >
-    struct Detail<Container<Contents...>>
-    {
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
-        using type = Operation::template Mold<Contents...>; 
-    };
-
-    template
-    <
-        template<auto...> class Sequence,
-        auto...Contents
-    >
-    struct Detail<Sequence<Contents...>>
-    { using type = Operation::template Page<Contents...>; };
-
-// Recursive case:
-
-    template
-    <
-        template<typename...> class Container,
-// We separate the first parameter pack from the others.
-        typename...Contents,
-        typename...Others
-    >
-    struct Detail<Container<Contents...>, Others...>
-    {
-        using type = Press
-        <
-// We invoke the corresponding template member of the operation
-// with the extracted pack.
-// Then, we pass the result back to Press for further invocations.
-            typename Operation::template Mold<Contents...>
-        >
-// Unused packs are recycled for further invocations.
-        ::template Detail<Others...>::type;
-    };
-
-    template
-    <
-        template<auto...> class Sequence,
-        auto...Contents,
-        typename...Others
-    >
-    struct Detail<Sequence<Contents...>, Others...>
-    {
-        using type = Press<typename Operation::template Page<Contents...>>
-        ::template Detail<Others...>::type;
-    };
-    
-    template<typename...Agreements>
-    using Mold = Detail<Agreements...>::type;
-};
-
-}
-
 /************************/
 /**** Implementation ****/
 /************************/
 
-// We will use `Items` to keep track of user inputs.
-template<template<template<auto...> class...> class Operation, typename...Items>
-struct LoadSkip
-{
-// If `Mold` is selected, user inputs will be kept
-// in a `Capsule` and placed at the end of `Items.`
-// Then, we pass the extended `Items` back to `LoadSkip`,
-// waiting for more inputs.
-    template<typename...Elements>
-    using Mold = LoadSkip<Operation, Items..., Capsule<Elements...>>;
-
-// If `Page` is selected, user inputs will be kept
-// in a `Shuttle` and placed at the end of `Items.`
-// Then, we pass the extended `Items` back to `LoadSkip`,
-// waiting for more inputs.
-    template<auto...Variables>
-    using Page = LoadSkip<Operation, Items..., Shuttle<Variables...>>;
-
-    struct Commit
-    {
-        template<template<auto...> class...Sequences>
-// When finally initiating the operation, we invoke the skipped layer.
-// Then, we pass the instantiated operation and user inputs
-// to Omennivore::Press for further invocations.
-        using Rail = Omennivore::Press<Operation<Sequences...>>
-        ::template Mold<Items...>;
-    };
-
-};
-
 template<template<template<auto...> class...> class Operation>
-struct Skip: public LoadSkip<Operation> {};
+struct Reveal
+{
+    template<template<auto...> class...Sequences>
+    using Rail = Operation<Sequences...>::type;
+};
 
 /*****************/
 /**** Example ****/
 /*****************/
 
 #include <concepts>
-#include <utility>
+
+/**** Dummy Arguments ****/
+template<auto...>
+struct Seq_0;
+
+template<auto...>
+struct Seq_1;
+
+template<auto...>
+struct Seq_2;
+
+template<auto...>
+struct Seq_3;
+
+/**** Carrier ****/
+template<template<auto...> class...>
+struct Carrier;
 
 /**** Operation ****/
-template<template<auto...> class...>
+template<template<auto...> class...Args>
 struct Operation
-{ 
-    template<typename...>
-    struct ProtoMold
-    {
-        template<auto...>
-        struct ProtoPage {};
-
-        template<auto...Agreements>
-        using Page = ProtoPage<Agreements...>;
-    };
-
-    template<typename...Agreements>
-    using Mold = ProtoMold<Agreements...>;
-};
+{ using type = Carrier<Args...>; };
 
 /**** SupposedResult ****/
-using SupposedResult = Operation<std::index_sequence>
-::Mold<void>
-::Page<0>;
+using SupposedResult = Carrier<Seq_2, Seq_3, Seq_0, Seq_1>;
 
 /**** Metafunction ****/
-template<typename...Args>
-using Metafunction = Skip<Operation>::Mold<Args...>;
+template<template<auto...> class...Args>
+using Metafunction = Reveal<Operation>
+::Rail<Args...>;
 
 /**** Result ****/
-using Result = Metafunction<void>::Page<0>::Commit::Rail<std::index_sequence>;
+using Result = Metafunction<Seq_2, Seq_3, Seq_0, Seq_1>;
 
 /**** Test ****/
 static_assert(std::same_as<Result, SupposedResult>);
