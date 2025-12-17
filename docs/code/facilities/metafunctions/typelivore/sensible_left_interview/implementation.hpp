@@ -107,17 +107,43 @@ struct SensibleLeftInterview<First, Second, Others...>
     using Road = ProtoRoad<Agreements...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
+
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable}; };
 
 /**** Metafunction ****/
 template<typename...Args>
-using Metafunction = SensibleLeftInterview<int, int*, int**, int**>
+using Metafunction = SensibleLeftInterview<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>
 ::Road<std::is_same>::Mold<Args...>;
+
+/*** Tests ****/
+static_assert
+(Metafunction<Vay<2>>::value == 3);
+static_assert
+(Metafunction<Vay<-1>>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Metafunction_1 ****/
+template<typename...Args>
+using Metafunction_1 = SensibleLeftInterview<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>
+::Road<Less>::Mold<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction<int**>::value == 2);
-static_assert
-(Metafunction<void>::value == -1);
+(Metafunction_1<Vay<1>>::value == 3);

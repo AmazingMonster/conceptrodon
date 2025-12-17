@@ -68,9 +68,9 @@ struct AreUnique
     };
 };
 
-/**************/
-/**** Test ****/
-/**************/
+/*****************/
+/**** Example ****/
+/*****************/
 
 static_assert(AreUnique<int, int*, int**, void>::value);
 static_assert(! AreUnique<int, int*, int**, void, int*>::value);

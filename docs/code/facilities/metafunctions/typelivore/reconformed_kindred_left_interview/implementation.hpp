@@ -105,17 +105,38 @@ struct ReconformedKindredLeftInterview
     using Mold = ProtoMold<Agreements...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
-/**** Metafuntion ****/
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable}; };
+
+/**** Metafunction ****/
 template<typename...Args>
-using Metafunction = ReconformedKindredLeftInterview<int, int*, int**, int**>
+using Metafunction = ReconformedKindredLeftInterview<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>
 ::Mold<Args...>;
 
-/**** Test ****/
+/*** Tests ****/
 static_assert
-(Metafunction<int**>::Road<std::is_same>::value == 2);
+(Metafunction<Vay<2>>::Road<std::is_same>::value == 3);
 static_assert
-(Metafunction<void>::Road<std::is_same>::value == -1);
+(Metafunction<Vay<-1>>::Road<std::is_same>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Tests ****/
+static_assert
+(Metafunction<Vay<1>>::Road<Less>::value == 3);

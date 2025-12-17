@@ -9,6 +9,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 `Typelivore::SensibleRightInterview` accepts a list of elements.
 Its first layer accepts a list of predicates and returns a function.
+
 When invoked, the function first binds the arguments to the end of every predicate;
 then, it returns the index of the first element that satisfies all newly formed predicates, or `-1` if it cannot find the element.
 
@@ -52,19 +53,45 @@ struct SensibleRightInterview
 
 ## Examples
 
-We will find the indices of `int**` and `void` in list `int, int*, int**, int**`.
+- We will find the indices of `Vay<2>` and `Vay<-1>` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
 
 ```C++
-/**** Metafuntion ****/
+/**** Vay ****/
+template<auto Variable>
+struct Vay
+{ static constexpr auto value{Variable}; };
+
+/**** Metafunction ****/
 template<typename...Args>
-using Metafunction = SensibleRightInterview<int, int*, int**, int**>
+using Metafunction = SensibleRightInterview<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>
 ::Road<std::is_same>::Mold<Args...>;
+
+/*** Tests ****/
+static_assert
+(Metafunction<Vay<2>>::value == 3);
+static_assert
+(Metafunction<Vay<-1>>::value == -1);
+```
+
+- We will find the first index of the type whose member `value` is less than `1` in the list `Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>`.
+
+```C++
+/**** Less ****/
+template<typename I, typename J>
+struct Less
+{
+    static constexpr bool value
+    {I::value < J::value};
+};
+
+/**** Metafunction_1 ****/
+template<typename...Args>
+using Metafunction_1 = SensibleRightInterview<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>
+::Road<Less>::Mold<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction<int**>::value == 2);
-static_assert
-(Metafunction<void>::value == -1);
+(Metafunction_1<Vay<1>>::value == 0);
 ```
 
 ## Implementation
@@ -177,8 +204,6 @@ struct SensibleRightInterview<First, Second, Others...>
     using Road = ProtoRoad<Agreements...>;
 };
 ```
-
-[*Run this snippet on Godbolt.*](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAMzwBtMA7AQwFtMQByARg9KtQYEAysib0QXACx8BBAKoBnTAAUAHpwAMvAFYTStJg1DIApACYAQuYukl9ZATwDKjdAGFUtAK4sGIAMwArKSuADJ4DJgAcj4ARpjEEmb%2BpAAOqAqETgwe3r4BwemZjgLhkTEs8YlcybaY9iUMQgRMxAS5Pn5BdQ3Zza0EZdFxCUkpCi1tHfndEwNDFVVjAJS2qF7EyOwcAPQAVAeHR8cnezsmGgCC%2B4cA1AAimKmujMh4mAq3R%2BdXN6f/xx%2BlwuwOSEWQ3iwtxM/jcBAAns8APoEYhMQgKGHYEHmfzgyGYaGw5ATdBYKhYnG/AE0wEgv57W4ASRYqXobEETEaX0OQIZtIBQJBBEwrIMIphcMRjFYmAAdArKVcJsQvA5bkJGJlYvQAEp4YAIAhMwQJABu7wA7jiAOxWK63R23EVirmYSUutluj3S5hsBVyrG3CFMBQKAPKYiYfCiEWY/zYh1OlVqgi3SOoIi61BMdAgp3Qu35gtOz3i92whHPP3yxUJ4sl24p9UZogAWU8eaTjZMdqbLUcyGDAgmmFUqWItyYXiItzNYi8hN7FgAtFxe/cYRZC5v/Pbgd2S2XvZXfbKA5dgFHRYwCPHE5dG46vJkjLcO7R0ET7uniJnUB%2Beawpe14cneAaUnuDY7luVKPqWopehKlaIeWPrVuedbYMGBhhhGUYxm697QS%2BETALc2a5t%2Bv7/pRQFuJG0Z4LGHwQfWUFXBusGcVcx7IVKGFsLcABieDEBMSqXM2aaagw2p6gaRomiKxAWpg1qwqJ4kEJJy7QXxFZwqhJ4CTK/pYThobhgqjGEXGkkFtJNFZjmXbwY6emHgWBnoWZtZyvqhrCHgWDEV5yaoqmzkAZ20EFsuTpxU%2BcyDsOckiuOk7TrO87eEu4U9kWBVPh5gRWIE9wQMstwrkGpIgCALBMAA1pgSKZMAkToCikqZAAXm1On1sVJWee5JUTXgVBpaOmXQiNE2OlAEFmAAbOYq22cxRGSlpEykBRinBaFbHYA1uWLssyxJYt8V9lGBAbAwtwaFuME8eNt0lvUSg3V9hbbg9T01eue7vZ9t0blVf13bu%2B6jTacNwSVPmnoJ/kgZgN6CGFEPPq%2B5GAdRrYxZ%2BkqY9j4FYdx41cRxB7jajRmuvxVZ%2Badll4QqFNgbjBakW%2BdHE3%2BLm5uTV5Y7zp003T%2B7CsZrNnkJe0EAdbM1hqmBoAw6Bq0r/kAPIEAgCS405snyZggVKaaqlWrtYn7Zr2u67cRsm%2BJ0ucUVjMK4ZTPq5hgYJpz1lyltLF8xFqotiLqB0dBY0o37vk1gG1vHR8DnJZFsf/oBf0JR5C2OilzEzRlE5TjOqBzgu%2BV4yWSf/aV5WVdVtUh/VjUtW1HVdT1sL9YN2ct83LcFlNFdjlXMO3ctiprRtEc7Zpjuq4dQVCCFrFYed9dXXPi0JUDxDPa9YNcR9E/fbQSi3FP2uzbPJcTQvgZL2tK/2bCmouwdGdt4nT3iAC6mBD6vwRoDTAj0z63FBtuK%2BDMb4Fh%2BoSR%2BI5K7ECPm/HBX0LZ4B1FbI6ylzT21hO7U2XtG43wagZCirlJTf13sHB8KCnx0L9u%2BWKsJAE7zDqPdhTp955VuGAMAMIfxrjwU%2Ba6kCnwJRkYtU%2Bz0zDQksJrOShCFJBVIXbdSkpKGe2pvIxanCWaEgTrCZhAjho0InuYpChIC68KOkAlhgihG3BEYuN6Sim6I2RkItB/i7rQNgc9aRl9AmmJ3NDV%2BstC6BPpn9AO%2BsLwS0plHRsAtCadmFvnHhbgea3lsdiemsMZaHgDinNG7MLIhi5nKEpONBG5IYVRSR0UrHFMyVLamKTkly2pAKb49Iji3GwKoVgbJCRjJGaMg4QoFmMjbDApgVAvCCGyDyJZ8sLGpyDpcYgwBcbtLWS0TZDAHA7K6QQohGc9FqQ0m4CIG83l7AOh8z5D9BAHEkg1Hp3c8AKHarKLEDUXHFJOWUqp1wJkABUPh3l2WcEEZdkBIisgkHSVwIAXI2Vsm5AhJTfIhaA%2Bu34ulmGuvTDFWKww4pBPi9ZVziUMElGaVAIVyVgKpf4KRXBaUWA4KsWgnBAi8D8BwLQpBUCcDcNYawTZ1ibCXMkHgpACCaFFasZqIBAiSDlBoAAHGYMwABOC1XBAimpNVwG0NppDio4JIXgLAJAaA0KQaVsr5UcF4AoEA3rtUytFaQOAsAYCIBAOsAgqQZzkEoGgVkdAEhRFlJwVQJrVorlWpIW4wBkBDikHKMwvAmJEGICFPQ/BBAiDEOwKQMhBCKBUOoMNpBdBcFIJaNEqROA8DFRKqVOq5WcANjOBNaZUDTWzbm/Nhbi3wKNWoiAHhU30EnLiIVvBQ1aFWBAJAKbUhprIBQCAJ6z0gGAFIMwfA6AqSDRAWIY7YgRFaPCQdvB33MGIPCA2sRtBa1DZqlNYEDYMFoF%2BztWBYheGAG4MQd9v2kCwE1Iw4hYNiRA3gM0Hwx1ji1jObYmq3n1DHbQQhaJ/0eCwGO1EeAPXcF4Ph4gsQMiYEeBh4AVGjA6tWFQAwpyABqVoDbVlQ3W4QohxDNuk22tQY7u36EMMYJVlh9CEKDZAVYqBUiNCDRwFcpJJGmEsNYMwfq2PVtCvAVYdhcPOAgK4aYfge1hAiMMSoowe1FCyAINzeh/ONAWCMaoPQnNNEmO0TwnQ9COfZf0NoYWfMRbmFMOL%2BQe0ZcGF5xYvmHOqq2BIYdHBJU%2BrHf6248680FqLSW1dtwIC4EICQdR/hd1aoE6sE2uZRhVVIPqyQ/g5QWv8E6jQkgzCSFWl6wIq0LX6E4G60gHrOtylWlwVaJqLX2tWoam143VqVc7f6wNwbuthsPdGo9sap2JovVerdGa2CcFaCwM0NoVxMEsm%2BLgFq5RcGNRW/AVaa09ukw2uT0gFNKCU523Q96%2B1MAHSxsrFXfW8H9ZO%2BNM5bizpqzmurf3yIA6B8a5rG7T1bo6zSvdAmI3HtQJuhISbL0s5p6MEMRgAdcG9TQWgT7KCvs7b%2Bz9qHxf/sA8BhwqHwO3kg9BsdcGENIdoChljaHRRqaw7K/AUYbn4aM7KojyASOofIy62VVHYg0fhHR7YsrGPMc1WxjjShuO67IozoTTBRPick1rqHsmm2w9kIpjtsqkeqf4%2BZqwmnbc6cG/pwznATMECAvcePlnrMJFswR3TkX2UuB1kFjzOtUtLD8xkALOQsvubSLX0L%2BXwsJfqFF5LsW8iN8S40LvVffO2Bi%2BX4f8xW9pdK2sDYJWhXLfK6Os7nAicLoLTzsngPgcaGa61qtHWuv7t1aQPrWBEiDZdat9bgOps2kCBax1/hpuzckD2rH46A22Eu4fm78A7txunezs9umpmhwB9ouiwAoGaEOGaOTuWBMKDm1rZrWrINDmHi2vIPDlHjoAEL2v2t%2Bhjovn6hOg9jOnOuAZAdAbAURGmOupzmeh1v4MsAztdkzigHQVuoAewaMFAakKkEiDARakiHAQQEiKoPmg%2BkLqbCLm%2Bh%2Bv%2BpLrIQBkBiBvLizhBlBjBvrpgPBohshkZpquhrrk7rwAbrhsboRqoMRiKJbqaNbrwLbvbo7gxtWq7qxgkB7lxjrphj7iwX7gHupBJowFJigaHhIOHq2pgcpjgQYHHhpjYEnvZnKgZtkEZjsPVDnpYFZtjjZvwgkX3tkKXu4A3noJ5uUG3jXsUNkKPiFtkIPulh3kliPkUTlvUf3jFrUQlo0T3h0ePqUZPnPgoMVk2gQadkQRwDVuQVAXOFQXGDQbvu1jukwVdger1pgP1mfmVpfiAJanKP4EELai/l6rsTaDtiMdjpwBdiGj1kNiAJIIEGNg6jaF6iapINalwGamtPPv4IQWcR/t/mVuWqce/swcsaQGxpkM4JIEAA%3D%3D%3D)
 
 ## Links
 

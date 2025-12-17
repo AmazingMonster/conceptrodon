@@ -8,6 +8,27 @@
 
 ## Diary
 
+## Diary
+
+### 2025/12/17
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove godbolt links and fix errors in the documentation</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In progress. Finished <code>Typelivore</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/12/12
 
 <ul>
