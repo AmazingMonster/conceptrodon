@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/cotanivore/paste.hpp"
+#include "conceptrodon/cotanivore/typical_paste.hpp"
 #include "conceptrodon/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

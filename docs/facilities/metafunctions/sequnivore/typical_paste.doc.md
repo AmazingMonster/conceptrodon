@@ -121,5 +121,5 @@ struct TypicalPaste<SequenceA<TA, VariableAs...>, SequenceB<TB, VariableBs...>, 
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/sequnivore/typical_paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/sequnivore/paste.hpp)
+- [Source code](../../../../conceptrodon/sequnivore/typical_paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/sequnivore/typical_paste.test.hpp)

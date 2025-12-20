@@ -8,9 +8,7 @@
 /**** Vay ****/
 template<auto Variable>
 struct Vay
-{
-    static constexpr auto value {Variable};
-};
+{ static constexpr auto value {Variable}; };
 
 /************************/
 /**** Implementation ****/

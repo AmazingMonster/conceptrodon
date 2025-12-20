@@ -11,6 +11,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 - Suppose its first layer is instantiated by an index.
 In that case, it returns a function.
+
 When invoked, the function removes the argument at the index from its argument list and instantiates the operation with the result.
 
 <pre><code>   Oper
@@ -20,6 +21,7 @@ When invoked, the function removes the argument at the index from its argument l
 
 - Suppose its first layer is instantiated by two indices, which indicate a left-closed-right-open interval.
 In that case, it returns a function.
+
 When invoked, the function removes the arguments of indices within the interval from its argument list and invokes the operation with the result.
 
 <pre><code>   Oper

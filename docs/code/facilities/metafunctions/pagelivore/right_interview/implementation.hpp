@@ -165,9 +165,9 @@ struct Less
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction_2 = RightInterview<Less>
+using Metafunction_1 = RightInterview<Less>
 ::Page<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction_2<1>::Page<0, 0, 1, 2, 2>::value == 0);
+(Metafunction_1<1>::Page<0, 0, 1, 2, 2>::value == 0);

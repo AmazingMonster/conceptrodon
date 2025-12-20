@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_TYPICAL_GET_TYPE_SIGNATURE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_TYPICAL_GET_TYPE_SIGNATURE_H
 
-#include "conceptrodon/functivore/get_type_signature.hpp"
+#include "conceptrodon/functivore/typical_get_type_signature.hpp"
 #include <concepts>
 
 namespace Conceptrodon {

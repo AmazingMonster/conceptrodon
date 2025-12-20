@@ -107,9 +107,9 @@ struct KindredLeftInterview<First, Second, Others...>
     using Page = ProtoPage<Args...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Equal ****/
 template<auto I, auto J>
@@ -121,11 +121,27 @@ struct Equal
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction = KindredLeftInterview<0, 1, 2, 2>
+using Metafunction = KindredLeftInterview<0, 0, 1, 2, 2>
 ::Page<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction<2>::Rail<Equal>::value == 2);
+(Metafunction<2>::Rail<Equal>::value == 3);
 static_assert
 (Metafunction<-1>::Rail<Equal>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<auto I, auto J>
+struct Less
+{
+    static constexpr bool value
+    {I < J};
+};
+
+/**** Tests ****/
+static_assert
+(Metafunction<1>::Rail<Less>::value == 3);

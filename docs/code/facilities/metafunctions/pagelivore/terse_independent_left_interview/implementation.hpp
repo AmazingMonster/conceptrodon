@@ -115,9 +115,9 @@ struct Less
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction_2 = TerseIndependentLeftInterview<Less>
+using Metafunction_1 = TerseIndependentLeftInterview<Less>
 ::Page<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction_2<1>::Page<0, 0, 1, 2, 2>::value == 3);
+(Metafunction_1<1>::Page<0, 0, 1, 2, 2>::value == 3);

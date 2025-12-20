@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/stockivore/paste.hpp"
+#include "conceptrodon/stockivore/typical_paste.hpp"
 #include "conceptrodon/carrier.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

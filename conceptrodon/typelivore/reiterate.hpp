@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_REITERATE_H
 #define CONCEPTRODON_TYPELIVORE_REITERATE_H
 
-#include "conceptrodon/microbiota/typella/typical_reiterate.hpp"
+#include "conceptrodon/typelivore/typical_reiterate.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

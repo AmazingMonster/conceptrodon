@@ -4,15 +4,13 @@
 #ifndef CONCEPTRODON_COTANIVORE_PASTE_H
 #define CONCEPTRODON_COTANIVORE_PASTE_H
 
-#include "conceptrodon/microbiota/cotanis/typical_paste.hpp"
+#include "conceptrodon/cotanivore/typical_paste.hpp"
 
 namespace Conceptrodon {
 namespace Cotanivore {
 
-using Cotanis::TypicalPaste;
-
 template<typename...PackedContainers>
-using Paste = Cotanis::TypicalPaste<PackedContainers...>::type;
+using Paste = TypicalPaste<PackedContainers...>::type;
 
 }}
 

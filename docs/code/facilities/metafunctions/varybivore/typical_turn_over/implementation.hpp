@@ -7,8 +7,6 @@ template<auto...>
 struct Shuttle;
 
 /**** ExtendBack ****/
-// We will use this function to
-// concatenate the preserved and recursed parts.
 template<typename...>
 struct ExtendBack {};
 

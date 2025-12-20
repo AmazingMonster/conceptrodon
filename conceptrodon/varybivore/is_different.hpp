@@ -4,20 +4,10 @@
 #ifndef CONCEPTRODON_VARYBIVORE_IS_DIFFERENT_H
 #define CONCEPTRODON_VARYBIVORE_IS_DIFFERENT_H
 
+#include "conceptrodon/varybivore/solitary_is_different.hpp"
+
 namespace Conceptrodon {
 namespace Varybivore {
-
-template<auto, auto>
-struct SolitaryIsDifferent
-{ static constexpr bool value {true}; };
-
-template<auto Variable>
-struct SolitaryIsDifferent<Variable, Variable>
-{ static constexpr bool value {false}; };
-
-template<auto LeftSide, auto RightSide>
-constexpr bool SolitaryIsDifferent_v 
-{SolitaryIsDifferent<LeftSide, RightSide>::value};
 
 template<auto Target, auto...Variables>
 struct IsDifferent

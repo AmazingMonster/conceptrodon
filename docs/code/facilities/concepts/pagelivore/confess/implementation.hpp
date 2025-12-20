@@ -5,9 +5,9 @@
 template<template<auto...> class Predicate, typename...Elements>
 concept Confess = Predicate<Elements::value...>::value;
 
-/***************/
-/**** Tests ****/
-/***************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Pred_0 ****/
 template<auto...>
@@ -32,12 +32,29 @@ struct Vay
 
 /**** fun ****/
 template<typename...Args>
-requires Confess<Pred_0, Args...>
+requires Pred_0<Args::value...>::value
 constexpr bool fun(){return false;}
 
 template<typename...Args>
-requires Confess<Pred_0, Args...> && Confess<Pred_1, Args...>
+requires Pred_0<Args::value...>::value && Pred_1<Args::value...>::value
 constexpr bool fun(){return true;}
 
 /**** Test ****/
+// Error
 static_assert(fun<Vay<1>>());
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** pun ****/
+template<typename...Args>
+requires Confess<Pred_0, Args...>
+constexpr bool pun(){return false;}
+
+template<typename...Args>
+requires Confess<Pred_0, Args...> && Confess<Pred_1, Args...>
+constexpr bool pun(){return true;}
+
+/**** Test ****/
+static_assert(pun<Vay<1>>());

@@ -34,12 +34,9 @@ struct Peg
 ## Implementation
 
 ```C++
-template<size_t Index>
+template <size_t I>
 struct Peg
-{
-    static constexpr size_t value
-    {Index};
-};
+{ static constexpr size_t value {I}; };
 ```
 
 ## Links

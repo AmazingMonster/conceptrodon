@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/warehivore/paste.hpp"
+#include "conceptrodon/warehivore/typical_paste.hpp"
 #include "conceptrodon/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

@@ -8,16 +8,12 @@
 /**** Label ****/
 template<typename Treasure, typename Key>
 struct Label
-{ 
-    static constexpr auto idyl(Key) -> Treasure;
-};
+{ static constexpr auto idyl(Key) -> Treasure; };
 
 /**** Vay ****/
 template<auto Variable>
 struct Vay
-{
-    static constexpr auto value {Variable};
-};
+{ static constexpr auto value {Variable}; };
 
 /************************/
 /**** Implementation ****/

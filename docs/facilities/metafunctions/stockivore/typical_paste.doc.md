@@ -120,5 +120,5 @@ struct TypicalPaste<StockroomA<SequenceAs...>, StockroomB<SequenceBs...>, Others
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/stockivore/typical_paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/stockivore/paste.hpp)
+- [Source code](../../../../conceptrodon/stockivore/typical_paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/stockivore/typical_paste.test.hpp)

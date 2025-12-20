@@ -107,9 +107,9 @@ struct SensibleRightInterview<First, Second, Others...>
     using Rail = ProtoRail<Agreements...>;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Equal ****/
 template<auto I, auto J>
@@ -121,11 +121,32 @@ struct Equal
 
 /**** Metafunction ****/
 template<auto...Args>
-using Metafunction = SensibleRightInterview<0, 1, 2, 2>
+using Metafunction = SensibleRightInterview<0, 0, 1, 2, 2>
 ::Rail<Equal>::Page<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction<2>::value == 2);
+(Metafunction<2>::value == 3);
 static_assert
 (Metafunction<-1>::value == -1);
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** Less ****/
+template<auto I, auto J>
+struct Less
+{
+    static constexpr bool value
+    {I < J};
+};
+
+/**** Metafunction ****/
+template<auto...Args>
+using Metafunction_1 = SensibleRightInterview<0, 0, 1, 2, 2>
+::Rail<Less>::Page<Args...>;
+
+/**** Tests ****/
+static_assert
+(Metafunction_1<1>::value == 0);

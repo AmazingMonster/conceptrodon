@@ -4,12 +4,10 @@
 #ifndef CONCEPTRODON_VARYBIVORE_POP_H
 #define CONCEPTRODON_VARYBIVORE_POP_H
 
-#include "conceptrodon/microbiota/varbola/typical_pop.hpp"
+#include "conceptrodon/varybivore/typical_pop.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
-
-using Varbola::TypicalPop;
 
 template<auto...Args>
 using Pop = TypicalPop<Args...>::type;

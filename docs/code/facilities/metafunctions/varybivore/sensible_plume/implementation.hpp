@@ -61,10 +61,10 @@ using TwoStars = std::integral_constant<int, I>**;
 
 /**** Operation ****/
 template<typename...>
-struct NewPacker;
+struct Operation;
 
 /**** SupposedResult ****/
-using SupposedResult = NewPacker
+using SupposedResult = Operation
 <
     std::integral_constant<int, 0>,
     std::integral_constant<int, 0>*,
@@ -84,7 +84,7 @@ static_assert(std::same_as<Result, SupposedResult>);
 /************************/
 
 /**** SupposedResult ****/
-using SupposedResult_1 = NewPacker
+using SupposedResult_1 = Operation
 <
     std::integral_constant<int, 0>*,
     std::integral_constant<int, 1>*,
@@ -104,7 +104,7 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 /***********************/
 
 /**** SupposedResult ****/
-using SupposedResult_2 = NewPacker
+using SupposedResult_2 = Operation
 <
     std::integral_constant<int, 0>,
     std::integral_constant<int, 1>*,

@@ -4,12 +4,10 @@
 #ifndef CONCEPTRODON_TYPELIVORE_AMONG_H
 #define CONCEPTRODON_TYPELIVORE_AMONG_H
 
-#include "conceptrodon/microbiota/typella/typical_among.hpp"
+#include "conceptrodon/typelivore/typical_among.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
-
-using Typella::TypicalAmong;
 
 template<typename...Elements>
 struct Among

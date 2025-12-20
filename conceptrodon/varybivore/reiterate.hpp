@@ -4,12 +4,9 @@
 #ifndef CONCEPTRODON_VARYBIVORE_REITERATE_H
 #define CONCEPTRODON_VARYBIVORE_REITERATE_H
 
-#include "conceptrodon/microbiota/varbola/typical_reiterate.hpp"
-
+#include "conceptrodon/varybivore/typical_reiterate.hpp"
 namespace Conceptrodon {
 namespace Varybivore {
-
-using Varbola::TypicalReiterate;
 
 template<auto...Variables>
 struct Reiterate

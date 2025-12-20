@@ -5,9 +5,9 @@
 template<auto Predicate, typename...Elements>
 concept AnyDeceive = (...||(not Predicate(Elements::value)));
 
-/***************/
-/**** Tests ****/
-/***************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 /**** Pred_0 ****/
 constexpr auto Pred_0 = [](auto...){return false;};
@@ -24,12 +24,29 @@ struct Vay
 
 /**** fun ****/
 template<typename...Args>
-requires AnyDeceive<Pred_0, Args...>
+requires (...||(not Pred_0(Args::value)))
 constexpr bool fun(){return false;}
 
 template<typename...Args>
-requires AnyDeceive<Pred_0, Args...> && AnyDeceive<Pred_1, Args...>
+requires(...||(not Pred_0(Args::value))) && (...||(not Pred_1(Args::value)))
 constexpr bool fun(){return true;}
 
 /**** Test ****/
+// Error
 static_assert(fun<Vay<1>>());
+
+/************************/
+/**** Second Example ****/
+/************************/
+
+/**** pun ****/
+template<typename...Args>
+requires AnyDeceive<Pred_0, Args...>
+constexpr bool pun(){return false;}
+
+template<typename...Args>
+requires AnyDeceive<Pred_0, Args...> && AnyDeceive<Pred_1, Args...>
+constexpr bool pun(){return true;}
+
+/**** Test ****/
+static_assert(pun<Vay<1>>());

@@ -86,12 +86,12 @@ struct Less
 
 /**** Metafunction ****/
 template<typename...Args>
-using Metafunction_2 = IndependentLeftInterview<Less>
+using Metafunction_1 = IndependentLeftInterview<Less>
 ::Mold<Args...>;
 
 /**** Tests ****/
 static_assert
-(Metafunction_2<Vay<1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
+(Metafunction_1<Vay<1>>::Mold<Vay<0>, Vay<0>, Vay<1>, Vay<2>, Vay<2>>::value == 3);
 ```
 
 ## Implementation

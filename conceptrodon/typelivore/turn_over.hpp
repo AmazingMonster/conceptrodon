@@ -4,15 +4,13 @@
 #ifndef CONCEPTRODON_TYPELIVORE_TURNOVER_H
 #define CONCEPTRODON_TYPELIVORE_TURNOVER_H
 
-#include "conceptrodon/microbiota/typella/typical_turn_over.hpp"
+#include "conceptrodon/typelivore/typical_turn_over.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {
 
-using Typella::TypicalTurnOver;
-
 template<typename...Elements>
-using TurnOver = Typella::TypicalTurnOver<Elements...>::type;
+using TurnOver = TypicalTurnOver<Elements...>::type;
 
 }}
 
