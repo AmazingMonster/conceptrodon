@@ -159,5 +159,5 @@ using EasyPaste = EasyTypicalPaste<Args...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/easy_paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/easy_paste.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/easy_paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/easy_paste.type.test.hpp)

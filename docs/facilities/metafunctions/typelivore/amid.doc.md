@@ -110,5 +110,5 @@ struct Amid
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/amid/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/amid.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/amid.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/amid.test.hpp)

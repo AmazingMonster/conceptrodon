@@ -1,0 +1,20 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
+#ifndef CONCEPTRODON_OMENNIVORE_PEGFUL_H
+#define CONCEPTRODON_OMENNIVORE_PEGFUL_H
+
+#include "conceptrodon/metafunctions/mouldivore/concepts/confess.hpp"
+#include "conceptrodon/metafunctions/pagelivore/is_specialization_of.hpp"
+#include "conceptrodon/utilities/peg.hpp"
+
+namespace Conceptrodon {
+namespace Omennivore {
+
+template<typename Arg>
+concept Pegful
+= Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
+
+}}
+
+#endif

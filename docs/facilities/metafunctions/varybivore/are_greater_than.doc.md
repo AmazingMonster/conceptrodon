@@ -91,5 +91,5 @@ struct AreGreaterThan
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/are_greater_than/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/are_greater_than.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/are_greater_than.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/are_greater_than.test.hpp)

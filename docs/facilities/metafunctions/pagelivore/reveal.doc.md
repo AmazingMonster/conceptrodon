@@ -79,5 +79,5 @@ struct Reveal
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/reveal/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/reveal.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/reveal.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/reveal.test.hpp)

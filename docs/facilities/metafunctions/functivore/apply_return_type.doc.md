@@ -67,5 +67,5 @@ struct ApplyReturnType
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/apply_return_type/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/apply_return_type.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/apply_return_type.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/apply_return_type.test.hpp)

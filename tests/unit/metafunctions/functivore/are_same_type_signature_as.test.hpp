@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ARE_SAME_TYPE_SIGNATURE_AS_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ARE_SAME_TYPE_SIGNATURE_AS_H
 
-#include "conceptrodon/functivore/are_same_type_signature_as.hpp"
+#include "conceptrodon/metafunctions/functivore/are_same_type_signature_as.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

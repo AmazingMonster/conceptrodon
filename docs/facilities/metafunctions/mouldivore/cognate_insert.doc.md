@@ -204,5 +204,5 @@ struct CognateInsert
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_insert/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/cognate_insert.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/cognate_insert.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_insert.test.hpp)

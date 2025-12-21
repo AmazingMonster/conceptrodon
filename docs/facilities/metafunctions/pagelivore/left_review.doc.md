@@ -172,5 +172,5 @@ struct LeftReview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/left_review/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/left_review.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/left_review.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/left_review.test.hpp)

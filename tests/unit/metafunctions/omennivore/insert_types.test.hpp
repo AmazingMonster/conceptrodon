@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/omennivore/insert_types.hpp"
+#include "conceptrodon/metafunctions/omennivore/insert_types.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

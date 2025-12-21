@@ -79,5 +79,5 @@ constexpr bool IsLvalueReference_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_lvalue_reference/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_lvalue_reference.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_lvalue_reference.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_lvalue_reference.test.hpp)

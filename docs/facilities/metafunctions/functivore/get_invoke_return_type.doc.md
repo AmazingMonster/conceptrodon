@@ -101,5 +101,5 @@ struct GetInvokeReturnType<Fn>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/get_invoke_return_type/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/get_invoke_return_type.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/get_invoke_return_type.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/get_invoke_return_type.test.hpp)

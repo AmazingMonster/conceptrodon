@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/warehivore/kindred_repack.hpp"
+#include "conceptrodon/metafunctions/warehivore/kindred_repack.hpp"
 #include "conceptrodon/utilities/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

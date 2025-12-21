@@ -6,9 +6,9 @@
 
 #include <concepts>
 
-#include "conceptrodon/pagelivore/left_review.hpp"
-#include "conceptrodon/pagelivore/negation.hpp"
-#include "conceptrodon/varybivore/is_same.hpp"
+#include "conceptrodon/metafunctions/pagelivore/left_review.hpp"
+#include "conceptrodon/metafunctions/pagelivore/negation.hpp"
+#include "conceptrodon/metafunctions/varybivore/is_same.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

@@ -6,10 +6,10 @@
 
 #include <utility>
 
-#include "conceptrodon/pagelivore/independent_find.hpp"
+#include "conceptrodon/metafunctions/pagelivore/independent_find.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/varybivore/are_no_greater_than.hpp"
-#include "conceptrodon/varybivore/are_no_less_than.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_no_greater_than.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_no_less_than.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

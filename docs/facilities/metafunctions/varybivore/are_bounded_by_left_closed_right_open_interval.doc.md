@@ -93,5 +93,5 @@ struct AreBoundedByLeftClosedRightOpenInterval
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/are_bounded_by_left_closed_right_open_interval/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/are_bounded_by_left_closed_right_open_interval.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/are_bounded_by_left_closed_right_open_interval.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/are_bounded_by_left_closed_right_open_interval.test.hpp)

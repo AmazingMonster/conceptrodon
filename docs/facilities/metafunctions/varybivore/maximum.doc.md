@@ -67,5 +67,5 @@ struct Maximum
 
 - [Example](../../../code/facilities/metafunctions/varybivore/maximum/implementation.ctad.hpp)
 - [Example](../../../code/facilities/metafunctions/varybivore/maximum/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/maximum.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/maximum.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/maximum.test.hpp)

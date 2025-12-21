@@ -173,5 +173,5 @@ struct BiHarvest
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/bi_harvest/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/bi_harvest.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/bi_harvest.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/bi_harvest.test.hpp)

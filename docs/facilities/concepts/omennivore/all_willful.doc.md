@@ -26,5 +26,5 @@ concept AllWillful = Mouldivore::AllConfess<IsWillful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_willful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_willful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_willful.test.hpp)

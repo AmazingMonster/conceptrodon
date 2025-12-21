@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CLARIFY_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CLARIFY_H
 
-#include "conceptrodon/varybivore/concepts/clarify.hpp"
+#include "conceptrodon/metafunctions/varybivore/concepts/clarify.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

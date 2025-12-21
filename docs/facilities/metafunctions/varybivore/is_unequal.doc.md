@@ -70,5 +70,5 @@ constexpr bool IsUnequal_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/is_unequal/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/is_unequal.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/is_unequal.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/is_unequal.test.hpp)

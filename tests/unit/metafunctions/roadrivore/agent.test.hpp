@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/roadrivore/agent.hpp"
+#include "conceptrodon/metafunctions/roadrivore/agent.hpp"
 #include "conceptrodon/utilities/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

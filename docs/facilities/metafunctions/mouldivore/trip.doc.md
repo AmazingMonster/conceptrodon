@@ -436,5 +436,5 @@ struct Trip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/trip.test.hpp)

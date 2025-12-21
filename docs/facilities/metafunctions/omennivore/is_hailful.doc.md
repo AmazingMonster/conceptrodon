@@ -72,5 +72,5 @@ struct IsHailful<Tranquil<Melancholy...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/is_hailful/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/is_hailful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/is_hailful.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/is_hailful.test.hpp)

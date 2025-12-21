@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/are_unique.hpp"
+#include "conceptrodon/metafunctions/typelivore/are_unique.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

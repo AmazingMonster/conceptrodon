@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/utilities/capsule.hpp"
-#include "conceptrodon/typelivore/are_distinct.hpp"
+#include "conceptrodon/metafunctions/typelivore/are_distinct.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp" 
 #include "macaron/judgmental/invalid.hpp"

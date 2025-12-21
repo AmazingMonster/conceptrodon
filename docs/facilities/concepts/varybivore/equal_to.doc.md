@@ -36,5 +36,5 @@ concept EqualTo
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/equal_to.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/equal_to.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/equal_to.test.hpp)

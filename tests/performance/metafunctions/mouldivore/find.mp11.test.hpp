@@ -6,9 +6,9 @@
 
 #include <concepts>
 #include "conceptrodon/utilities/capsule.hpp"
-#include "conceptrodon/mouldivore/find.hpp"
+#include "conceptrodon/metafunctions/mouldivore/find.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/typelivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CONFESS_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CONFESS_H
 
-#include "conceptrodon/pagelivore/concepts/confess.hpp"
-#include "conceptrodon/varybivore/are_greater_than.hpp"
+#include "conceptrodon/metafunctions/pagelivore/concepts/confess.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_greater_than.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

@@ -383,5 +383,5 @@ struct BiCognateClassicPlume
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/bi_cognate_classic_plume/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/bi_cognate_classic_plume.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/bi_cognate_classic_plume.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/bi_cognate_classic_plume.test.hpp)

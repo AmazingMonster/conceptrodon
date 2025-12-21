@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_NO_LESS_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_NO_LESS_H
 
-#include "conceptrodon/varybivore/is_no_less.hpp"
+#include "conceptrodon/metafunctions/varybivore/is_no_less.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

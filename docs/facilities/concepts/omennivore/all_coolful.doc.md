@@ -26,5 +26,5 @@ concept AllCoolful = Mouldivore::AllConfess<IsCoolful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_coolful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_coolful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_coolful.test.hpp)

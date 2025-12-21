@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/mouldivore/flip.hpp"
+#include "conceptrodon/metafunctions/mouldivore/flip.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

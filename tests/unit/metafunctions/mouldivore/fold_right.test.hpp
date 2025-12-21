@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/mouldivore/fold_right.hpp"
+#include "conceptrodon/metafunctions/mouldivore/fold_right.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -104,5 +104,5 @@ struct Situational
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/situational/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/situational.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/situational.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/situational.test.hpp)

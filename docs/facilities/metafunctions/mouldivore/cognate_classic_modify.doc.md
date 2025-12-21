@@ -211,5 +211,5 @@ struct CognateClassicModify
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_classic_modify/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/cognate_classic_modify.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/cognate_classic_modify.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_classic_modify.test.hpp)

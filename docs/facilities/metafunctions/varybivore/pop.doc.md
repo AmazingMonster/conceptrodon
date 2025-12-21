@@ -57,5 +57,5 @@ using Pop = TypicalPop<Variables...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/pop/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/pop.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/pop.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/pop.test.hpp)

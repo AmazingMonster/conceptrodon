@@ -67,5 +67,5 @@ struct Minimum
 
 - [Example](../../../code/facilities/metafunctions/varybivore/minimum/implementation.ctad.hpp)
 - [Example](../../../code/facilities/metafunctions/varybivore/minimum/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/minimum.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/minimum.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/minimum.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_OBSERVE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_OBSERVE_H
 
-#include "conceptrodon/varybivore/observe.hpp"
+#include "conceptrodon/metafunctions/varybivore/observe.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

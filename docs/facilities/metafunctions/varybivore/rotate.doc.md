@@ -145,5 +145,5 @@ struct Rotate
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/rotate/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/rotate.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/rotate.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/rotate.test.hpp)

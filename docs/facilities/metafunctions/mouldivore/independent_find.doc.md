@@ -140,5 +140,5 @@ struct IndependentFind
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/independent_find/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/independent_find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/independent_find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/independent_find.test.hpp)

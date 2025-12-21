@@ -41,5 +41,5 @@ concept Ungritful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/ungritful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/ungritful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/ungritful.test.hpp)

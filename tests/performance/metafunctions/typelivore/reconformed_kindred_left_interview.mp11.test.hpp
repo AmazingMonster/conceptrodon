@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_KINDRED_LEFT_INTERVIEW_2ND_H
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/typelivore/reconformed_kindred_left_interview.hpp"
+#include "conceptrodon/metafunctions/typelivore/reconformed_kindred_left_interview.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -6,7 +6,7 @@
 
 #include <type_traits>
 
-#include "conceptrodon/typelivore/slice.hpp"
+#include "conceptrodon/metafunctions/typelivore/slice.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -26,5 +26,5 @@ concept NotNonoverloadedFunctionObject = ! requires {&FO::operator();};
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/not_nonoverloaded_function_object.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/not_nonoverloaded_function_object.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/not_nonoverloaded_function_object.test.hpp)

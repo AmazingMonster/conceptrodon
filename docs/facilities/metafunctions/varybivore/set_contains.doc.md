@@ -102,5 +102,5 @@ struct SetContains
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/set_contains/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/set_contains.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/set_contains.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/set_contains.test.hpp)

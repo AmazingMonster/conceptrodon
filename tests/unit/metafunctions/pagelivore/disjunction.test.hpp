@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_DISJUNCTION_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_DISJUNCTION_H
 
-#include "conceptrodon/pagelivore/disjunction.hpp"
+#include "conceptrodon/metafunctions/pagelivore/disjunction.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

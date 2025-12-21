@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/omennivore/easy_kindred_repack.hpp"
+#include "conceptrodon/metafunctions/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/utilities/carrier.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

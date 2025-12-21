@@ -139,5 +139,5 @@ struct CognateFilter
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_filter/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/cognate_filter.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/cognate_filter.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_filter.test.hpp)

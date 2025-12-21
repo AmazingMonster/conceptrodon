@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_BIND_2ND_H
 
 #include <concepts>
-#include "conceptrodon/mouldivore/bind.hpp"
+#include "conceptrodon/metafunctions/mouldivore/bind.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/peg.hpp"
 #include "macaron/judgmental/same_type.hpp"

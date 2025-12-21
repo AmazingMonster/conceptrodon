@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_RVALUE_REFERENCE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_RVALUE_REFERENCE_H
 
-#include "conceptrodon/functivore/is_rvalue_reference.hpp"
+#include "conceptrodon/metafunctions/functivore/is_rvalue_reference.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

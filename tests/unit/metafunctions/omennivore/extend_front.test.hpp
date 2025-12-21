@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/capsule.hpp"
-#include "conceptrodon/omennivore/extend_front.hpp"
+#include "conceptrodon/metafunctions/omennivore/extend_front.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

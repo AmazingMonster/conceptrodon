@@ -147,5 +147,5 @@ struct ClassicFoldLeftFirst
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_fold_left_first/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_fold_left_first.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_fold_left_first.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_fold_left_first.test.hpp)

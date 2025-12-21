@@ -26,5 +26,5 @@ concept AllVolatileQualified = Mouldivore::AllConfess<IsVolatile, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/all_volatile_qualified.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_volatile_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_volatile_qualified.test.hpp)

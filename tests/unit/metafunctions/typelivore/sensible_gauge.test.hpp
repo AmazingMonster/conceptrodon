@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/typelivore/sensible_gauge.hpp"
+#include "conceptrodon/metafunctions/typelivore/sensible_gauge.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

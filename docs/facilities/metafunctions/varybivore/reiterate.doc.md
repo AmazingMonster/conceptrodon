@@ -77,5 +77,5 @@ struct Reiterate
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/reiterate/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/reiterate.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/reiterate.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/reiterate.test.hpp)

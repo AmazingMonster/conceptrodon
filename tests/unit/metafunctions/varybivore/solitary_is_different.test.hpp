@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_DIFFERENT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SOLITARY_IS_DIFFERENT_H
 
-#include "conceptrodon/varybivore/solitary_is_different.hpp"
+#include "conceptrodon/metafunctions/varybivore/solitary_is_different.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

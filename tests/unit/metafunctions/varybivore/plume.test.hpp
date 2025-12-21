@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/varybivore/plume.hpp"
+#include "conceptrodon/metafunctions/varybivore/plume.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

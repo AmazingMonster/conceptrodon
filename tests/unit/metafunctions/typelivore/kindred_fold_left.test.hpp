@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/typelivore/kindred_fold_left.hpp"
+#include "conceptrodon/metafunctions/typelivore/kindred_fold_left.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

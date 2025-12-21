@@ -6,9 +6,9 @@
 
 #include <utility>
 
-#include "conceptrodon/pagelivore/look_for.hpp"
+#include "conceptrodon/metafunctions/pagelivore/look_for.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/varybivore/is_same_as.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

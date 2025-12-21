@@ -141,5 +141,5 @@ struct IndependentFind
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/independent_find/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/independent_find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/independent_find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/independent_find.test.hpp)

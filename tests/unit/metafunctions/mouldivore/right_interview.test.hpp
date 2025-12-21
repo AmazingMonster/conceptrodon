@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/mouldivore/right_interview.hpp"
+#include "conceptrodon/metafunctions/mouldivore/right_interview.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"

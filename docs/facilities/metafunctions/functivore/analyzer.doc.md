@@ -168,5 +168,5 @@ struct Analyzer<FO>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/analyzer/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/analyzer.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/analyzer.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/analyzer.test.hpp)

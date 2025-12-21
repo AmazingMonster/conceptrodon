@@ -79,5 +79,5 @@ constexpr bool IsConst_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_const/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_const.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_const.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_const.test.hpp)

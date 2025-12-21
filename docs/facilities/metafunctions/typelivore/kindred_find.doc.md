@@ -158,5 +158,5 @@ struct KindredFind<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/kindred_find/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/kindred_find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/kindred_find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/kindred_find.test.hpp)

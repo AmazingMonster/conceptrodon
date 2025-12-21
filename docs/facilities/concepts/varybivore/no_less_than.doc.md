@@ -31,5 +31,5 @@ concept NoLessThan
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/no_less_than.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/no_less_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/no_less_than.test.hpp)

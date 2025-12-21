@@ -75,7 +75,7 @@ static_assert
 
 ## Structure
 
-Metafunctions in this library are categorized by their template heads. Thus, the source file of every function is placed based on such categorization. For example, to include a metafunction `VeryFunny` of template head `template<typename...>`, the include path shall be `"conceptrodon/typelivore/very_funny.hpp"`. The following tables show the template heads of the metafunctions contained in each namespace/directory.
+Metafunctions in this library are categorized by their template heads. Thus, the source file of every function is placed based on such categorization. For example, to include a metafunction `VeryFunny` of template head `template<typename...>`, the include path shall be `"conceptrodon/metafunctions/typelivore/very_funny.hpp"`. The following tables show the template heads of the metafunctions contained in each namespace/directory.
 
 <table>
   <thead>

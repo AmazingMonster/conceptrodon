@@ -29,5 +29,5 @@ concept NotNegativeOne = UnequalTo<Arg, -1>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/not_negative_one.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/not_negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/not_negative_one.test.hpp)

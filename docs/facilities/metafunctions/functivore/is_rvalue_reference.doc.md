@@ -80,5 +80,5 @@ constexpr bool IsRvalueReference_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_rvalue_reference/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_rvalue_reference.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_rvalue_reference.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_rvalue_reference.test.hpp)

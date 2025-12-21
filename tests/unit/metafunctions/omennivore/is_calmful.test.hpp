@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_CALMFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_CALMFUL_H
 
-#include "conceptrodon/omennivore/is_calmful.hpp"
+#include "conceptrodon/metafunctions/omennivore/is_calmful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

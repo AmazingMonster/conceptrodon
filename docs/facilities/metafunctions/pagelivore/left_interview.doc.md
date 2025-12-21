@@ -122,5 +122,5 @@ struct LeftInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/left_interview.test.hpp)

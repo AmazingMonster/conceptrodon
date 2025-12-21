@@ -8,7 +8,7 @@
 
 #include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/pagelivore/classic_trip.hpp"
+#include "conceptrodon/metafunctions/pagelivore/classic_trip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"

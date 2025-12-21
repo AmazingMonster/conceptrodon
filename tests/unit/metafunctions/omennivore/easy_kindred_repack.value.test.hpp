@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_VALUE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_KINDRED_REPACK_VALUE_H
 
-#include "conceptrodon/omennivore/easy_kindred_repack.hpp"
+#include "conceptrodon/metafunctions/omennivore/easy_kindred_repack.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

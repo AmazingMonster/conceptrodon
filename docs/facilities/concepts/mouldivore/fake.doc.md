@@ -55,5 +55,5 @@ concept Fake = not Predicate<Element>::value;
 ## Links
 
 - [Example](../../../code/facilities/concepts/mouldivore/fake/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/concepts/fake.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/concepts/fake.hpp)
 - [Unit test](../../../../tests/unit/concepts/mouldivore/fake.test.hpp)

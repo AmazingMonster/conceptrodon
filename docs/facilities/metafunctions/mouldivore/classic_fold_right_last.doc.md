@@ -146,5 +146,5 @@ struct ClassicFoldRightLast
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_fold_right_last/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_fold_right_last.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_fold_right_last.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_fold_right_last.test.hpp)

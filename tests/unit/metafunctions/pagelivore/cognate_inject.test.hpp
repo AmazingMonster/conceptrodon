@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INJECT_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_INJECT_H
 
-#include "conceptrodon/pagelivore/cognate_inject.hpp"
+#include "conceptrodon/metafunctions/pagelivore/cognate_inject.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

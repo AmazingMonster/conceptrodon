@@ -91,5 +91,5 @@ struct AreEqualTo
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/are_equal_to/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/are_equal_to.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/are_equal_to.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/are_equal_to.test.hpp)

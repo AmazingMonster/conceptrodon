@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GREATER_THAN_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_GREATER_THAN_H
 
-#include "conceptrodon/typelivore/concepts/greater_than.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/greater_than.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

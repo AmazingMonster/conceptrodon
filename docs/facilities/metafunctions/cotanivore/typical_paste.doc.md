@@ -103,5 +103,5 @@ struct TypicalPaste<ContainerA<ElementAs...>, ContainerB<ElementBs...>, Others..
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/cotanivore/typical_paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/cotanivore/typical_paste.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/cotanivore/typical_paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/cotanivore/typical_paste.test.hpp)

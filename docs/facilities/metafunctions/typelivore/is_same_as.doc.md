@@ -85,5 +85,5 @@ struct IsSameAs
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/is_same_as/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/is_same_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/is_same_as.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/is_same_as.test.hpp)

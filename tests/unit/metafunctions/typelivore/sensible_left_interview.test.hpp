@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/typelivore/sensible_left_interview.hpp"
+#include "conceptrodon/metafunctions/typelivore/sensible_left_interview.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"

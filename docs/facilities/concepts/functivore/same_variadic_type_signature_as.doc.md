@@ -27,5 +27,5 @@ concept SameVariadicTypeSignatureAs
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/same_variadic_type_signature_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/same_variadic_type_signature_as.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/same_variadic_type_signature_as.test.hpp)

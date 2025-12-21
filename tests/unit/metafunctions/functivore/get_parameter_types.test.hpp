@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_PARAMETER_TYPES_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_PARAMETER_TYPES_H
 
-#include "conceptrodon/functivore/get_parameter_types.hpp"
+#include "conceptrodon/metafunctions/functivore/get_parameter_types.hpp"
 #include <concepts>
 
 namespace Conceptrodon {

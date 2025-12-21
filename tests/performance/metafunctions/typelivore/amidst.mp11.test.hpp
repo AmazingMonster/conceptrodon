@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMIDST_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMIDST_H
 
-#include "conceptrodon/typelivore/amidst.hpp"
+#include "conceptrodon/metafunctions/typelivore/amidst.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

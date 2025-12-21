@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/raillivore/agent.hpp"
+#include "conceptrodon/metafunctions/raillivore/agent.hpp"
 #include "conceptrodon/utilities/carrier.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

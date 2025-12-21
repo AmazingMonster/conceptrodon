@@ -63,5 +63,5 @@ struct SolitaryIsSame<Variable, Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/solitary_is_same/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/solitary_is_same.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/solitary_is_same.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/solitary_is_same.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_HAILFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_HAILFUL_H
 
-#include "conceptrodon/omennivore/concepts/all_hailful.hpp"
+#include "conceptrodon/metafunctions/omennivore/concepts/all_hailful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

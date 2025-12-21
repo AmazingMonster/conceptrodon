@@ -183,5 +183,5 @@ struct IndependentLeftInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/independent_left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/independent_left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/independent_left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/independent_left_interview.test.hpp)

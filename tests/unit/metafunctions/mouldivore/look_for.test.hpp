@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_LOOK_FOR_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_LOOK_FOR_H
 
-#include "conceptrodon/mouldivore/look_for.hpp"
+#include "conceptrodon/metafunctions/mouldivore/look_for.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/typelivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/typelivore/is_same_as.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

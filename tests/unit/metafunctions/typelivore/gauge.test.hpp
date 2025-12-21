@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/gauge.hpp"
+#include "conceptrodon/metafunctions/typelivore/gauge.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

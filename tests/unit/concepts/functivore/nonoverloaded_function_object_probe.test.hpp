@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NONOVERLOADED_FUNCTION_OBJECT_PROBE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NONOVERLOADED_FUNCTION_OBJECT_PROBE_H
 
-#include "conceptrodon/functivore/concepts/nonoverloaded_function_object_probe.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/nonoverloaded_function_object_probe.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

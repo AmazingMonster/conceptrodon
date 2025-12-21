@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/varybivore/kindred_fold_left.hpp"
+#include "conceptrodon/metafunctions/varybivore/kindred_fold_left.hpp"
 #include "macaron/judgmental/equal_value.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

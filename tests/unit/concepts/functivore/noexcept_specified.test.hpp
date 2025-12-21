@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOEXCEPT_SPECIFIED_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOEXCEPT_SPECIFIED_H
 
-#include "conceptrodon/functivore/concepts/noexcept_specified.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/noexcept_specified.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

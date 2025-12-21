@@ -68,5 +68,5 @@ struct Subtract
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/subtract/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/subtract.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/subtract.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/subtract.test.hpp)

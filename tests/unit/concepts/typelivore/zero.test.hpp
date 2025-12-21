@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ZERO_H
 
-#include "conceptrodon/typelivore/concepts/zero.hpp"
-#include "conceptrodon/typelivore/concepts/no_less_than.hpp"
-#include "conceptrodon/typelivore/concepts/no_greater_than.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/zero.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/no_less_than.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/no_greater_than.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

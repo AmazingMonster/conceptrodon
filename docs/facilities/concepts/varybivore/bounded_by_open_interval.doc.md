@@ -31,5 +31,5 @@ concept BoundedByOpenInterval
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/bounded_by_open_interval.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/bounded_by_open_interval.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/bounded_by_open_interval.test.hpp)

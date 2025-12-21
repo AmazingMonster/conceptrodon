@@ -257,5 +257,5 @@ struct InsertValues<std::index_sequence<I...>, std::index_sequence<J...>, OtherS
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/insert_values/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/insert_values.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/insert_values.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/insert_values.test.hpp)

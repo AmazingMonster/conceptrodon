@@ -89,5 +89,5 @@ struct AreNoLessThan
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/are_no_less_than/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/are_no_less_than.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/are_no_less_than.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/are_no_less_than.test.hpp)

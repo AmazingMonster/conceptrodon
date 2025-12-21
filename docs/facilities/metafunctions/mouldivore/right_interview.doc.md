@@ -119,5 +119,5 @@ struct RightInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/right_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/right_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/right_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/right_interview.test.hpp)

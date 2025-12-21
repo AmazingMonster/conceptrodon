@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_SNOWFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_SNOWFUL_H
 
-#include "conceptrodon/omennivore/concepts/snowful.hpp"
+#include "conceptrodon/metafunctions/omennivore/concepts/snowful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

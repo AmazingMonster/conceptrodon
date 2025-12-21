@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/sequnivore/paste.hpp"
+#include "conceptrodon/metafunctions/sequnivore/paste.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

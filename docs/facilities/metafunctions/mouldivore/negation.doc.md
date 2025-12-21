@@ -87,5 +87,5 @@ struct Negation
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/negation/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/negation.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/negation.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/negation.test.hpp)

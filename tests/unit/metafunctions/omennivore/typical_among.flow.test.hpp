@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/omennivore/among.hpp"
+#include "conceptrodon/metafunctions/omennivore/among.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

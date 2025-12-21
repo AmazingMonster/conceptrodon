@@ -125,5 +125,5 @@ struct AreSameTypeSignatureAs
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/are_same_type_signature_as/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/are_same_type_signature_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/are_same_type_signature_as.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/are_same_type_signature_as.test.hpp)

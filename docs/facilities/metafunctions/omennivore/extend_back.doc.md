@@ -245,5 +245,5 @@ struct ExtendBack<Container<PreexistingElements...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/extend_back/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/extend_back.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/extend_back.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/extend_back.test.hpp)

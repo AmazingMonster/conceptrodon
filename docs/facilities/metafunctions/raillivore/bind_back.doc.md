@@ -104,5 +104,5 @@ struct BindBack
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/raillivore/bind_back/implementation.hpp)
-- [Source code](../../../../conceptrodon/raillivore/bind_back.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/raillivore/bind_back.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/raillivore/bind_back.test.hpp)

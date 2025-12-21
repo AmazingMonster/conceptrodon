@@ -6,7 +6,7 @@
 
 #include <type_traits>
 
-#include "conceptrodon/pagelivore/situational.hpp"
+#include "conceptrodon/metafunctions/pagelivore/situational.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 

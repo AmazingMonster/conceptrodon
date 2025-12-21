@@ -263,5 +263,5 @@ struct Flip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/flip/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/flip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/flip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/flip.test.hpp)

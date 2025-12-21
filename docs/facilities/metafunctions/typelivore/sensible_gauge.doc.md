@@ -235,5 +235,5 @@ struct SensibleGauge<Element>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/sensible_gauge/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/sensible_gauge.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/sensible_gauge.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/sensible_gauge.test.hpp)

@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/diversity.hpp"
+#include "conceptrodon/metafunctions/typelivore/diversity.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

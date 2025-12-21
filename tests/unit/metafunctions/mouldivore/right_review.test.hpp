@@ -6,8 +6,8 @@
 
 #include <utility>
 
-#include "conceptrodon/mouldivore/right_review.hpp"
-#include "conceptrodon/mouldivore/negation.hpp"
+#include "conceptrodon/metafunctions/mouldivore/right_review.hpp"
+#include "conceptrodon/metafunctions/mouldivore/negation.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

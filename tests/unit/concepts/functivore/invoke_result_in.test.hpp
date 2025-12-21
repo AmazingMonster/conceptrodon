@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_INVOKE_RESULT_IN_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_INVOKE_RESULT_IN_H
 
-#include "conceptrodon/functivore/concepts/invoke_result_in.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/invoke_result_in.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

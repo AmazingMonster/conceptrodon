@@ -118,5 +118,5 @@ struct TypicalPaste<WarehouseA<ContainerAs...>, WarehouseB<ContainerBs...>, Othe
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/warehivore/typical_paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/warehivore/typical_paste.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/warehivore/typical_paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/warehivore/typical_paste.test.hpp)

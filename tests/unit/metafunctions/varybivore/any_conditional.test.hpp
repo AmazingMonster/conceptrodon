@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/varybivore/any_conditional.hpp"
+#include "conceptrodon/metafunctions/varybivore/any_conditional.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

@@ -70,5 +70,5 @@ constexpr bool IsNoGreater_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/is_no_greater/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/is_no_greater.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/is_no_greater.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/is_no_greater.test.hpp)

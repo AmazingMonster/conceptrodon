@@ -26,5 +26,5 @@ concept Moldful = Mouldivore::Confess<IsMoldful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/moldful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/moldful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/moldful.test.hpp)

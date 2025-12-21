@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/mouldivore/situational.hpp"
+#include "conceptrodon/metafunctions/mouldivore/situational.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 

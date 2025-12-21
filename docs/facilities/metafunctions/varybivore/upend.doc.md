@@ -121,5 +121,5 @@ struct Upend
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/upend/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/upend.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/upend.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/upend.test.hpp)

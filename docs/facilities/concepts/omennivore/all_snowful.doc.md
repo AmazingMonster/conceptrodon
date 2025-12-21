@@ -26,5 +26,5 @@ concept AllSnowful = Mouldivore::AllConfess<IsSnowful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_snowful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_snowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_snowful.test.hpp)

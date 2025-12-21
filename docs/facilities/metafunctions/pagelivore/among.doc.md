@@ -177,5 +177,5 @@ struct Among<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/among/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/among.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/among.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/among.test.hpp)

@@ -27,5 +27,5 @@ concept MemberFunctionPointerProbe
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/member_function_pointer_probe.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/member_function_pointer_probe.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/member_function_pointer_probe.test.hpp)

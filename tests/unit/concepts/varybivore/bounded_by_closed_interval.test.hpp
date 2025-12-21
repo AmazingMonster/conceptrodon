@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_CLOSED_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_CLOSED_INTERVAL_H
 
-#include "conceptrodon/varybivore/concepts/bounded_by_closed_interval.hpp"
-#include "conceptrodon/varybivore/concepts/no_less_than.hpp"
+#include "conceptrodon/metafunctions/varybivore/concepts/bounded_by_closed_interval.hpp"
+#include "conceptrodon/metafunctions/varybivore/concepts/no_less_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

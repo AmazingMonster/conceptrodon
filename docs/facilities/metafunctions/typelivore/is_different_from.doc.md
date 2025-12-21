@@ -85,5 +85,5 @@ struct IsDifferentFrom
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/is_different_from/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/is_different_from.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/is_different_from.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/is_different_from.test.hpp)

@@ -111,5 +111,5 @@ struct AreDistinct
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/are_distinct/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/are_distinct.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/are_distinct.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/are_distinct.test.hpp)

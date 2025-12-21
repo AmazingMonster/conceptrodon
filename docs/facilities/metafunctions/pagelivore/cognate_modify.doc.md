@@ -210,5 +210,5 @@ struct CognateModify
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_modify/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/cognate_modify.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/cognate_modify.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_modify.test.hpp)

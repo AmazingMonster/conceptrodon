@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ROTATE_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ROTATE_H
 
-#include "conceptrodon/typelivore/rotate.hpp"
+#include "conceptrodon/metafunctions/typelivore/rotate.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

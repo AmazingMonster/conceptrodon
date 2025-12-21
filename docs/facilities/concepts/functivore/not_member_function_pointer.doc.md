@@ -27,5 +27,5 @@ concept NotMemberFunctionPointer
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/not_member_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/not_member_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/not_member_function_pointer.test.hpp)

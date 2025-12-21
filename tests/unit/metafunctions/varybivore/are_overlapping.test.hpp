@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_OVERLAPPING_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_OVERLAPPING_H
 
-#include "conceptrodon/varybivore/are_overlapping.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_overlapping.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

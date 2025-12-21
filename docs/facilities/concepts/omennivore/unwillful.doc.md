@@ -41,5 +41,5 @@ concept Unwillful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/unwillful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/unwillful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unwillful.test.hpp)

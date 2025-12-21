@@ -257,5 +257,5 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/insert_types/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/insert_types.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/insert_types.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/insert_types.test.hpp)

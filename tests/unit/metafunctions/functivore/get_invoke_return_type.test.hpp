@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_INVOKE_RETURN_TYPE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_INVOKE_RETURN_TYPE_H
 
-#include "conceptrodon/functivore/get_invoke_return_type.hpp"
+#include "conceptrodon/metafunctions/functivore/get_invoke_return_type.hpp"
 #include <concepts>
 
 namespace Conceptrodon {

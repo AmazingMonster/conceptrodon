@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/typelivore/typical_pop.hpp"
+#include "conceptrodon/metafunctions/typelivore/typical_pop.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

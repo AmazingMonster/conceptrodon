@@ -171,5 +171,5 @@ struct FoldLeft
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/fold_left/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/fold_left.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/fold_left.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/fold_left.test.hpp)

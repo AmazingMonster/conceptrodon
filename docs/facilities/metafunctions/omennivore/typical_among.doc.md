@@ -475,5 +475,5 @@ struct TypicalAmong<Vessel<Flows...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/typical_among/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/typical_among.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/typical_among.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/typical_among.type.test.hpp)

@@ -102,5 +102,5 @@ struct IsSpecializationOf
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/is_specialization_of/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/is_specialization_of.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/is_specialization_of.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/is_specialization_of.test.hpp)

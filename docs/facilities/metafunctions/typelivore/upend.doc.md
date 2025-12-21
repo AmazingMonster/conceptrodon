@@ -112,5 +112,5 @@ struct Upend
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/upend/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/upend.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/upend.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/upend.test.hpp)

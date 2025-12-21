@@ -7,7 +7,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "conceptrodon/mouldivore/cognate_classic_transform.hpp"
+#include "conceptrodon/metafunctions/mouldivore/cognate_classic_transform.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

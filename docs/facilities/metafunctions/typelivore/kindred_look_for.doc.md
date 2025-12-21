@@ -127,5 +127,5 @@ struct KindredLookFor
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/kindred_look_for/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/kindred_look_for.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/kindred_look_for.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/kindred_look_for.test.hpp)

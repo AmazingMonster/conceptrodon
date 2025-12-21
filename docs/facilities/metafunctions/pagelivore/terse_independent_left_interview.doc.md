@@ -184,5 +184,5 @@ struct TerseIndependentLeftInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/terse_independent_left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/terse_independent_left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/terse_independent_left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/terse_independent_left_interview.test.hpp)

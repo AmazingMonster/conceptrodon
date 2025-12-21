@@ -72,5 +72,5 @@ using GetTypeSignature = TypicalGetTypeSignature<Args...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/get_type_signature/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/get_type_signature.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/get_type_signature.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/get_type_signature.test.hpp)

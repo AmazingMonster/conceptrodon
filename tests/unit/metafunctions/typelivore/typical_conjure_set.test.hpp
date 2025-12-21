@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/typical_conjure_set.hpp"
+#include "conceptrodon/metafunctions/typelivore/typical_conjure_set.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

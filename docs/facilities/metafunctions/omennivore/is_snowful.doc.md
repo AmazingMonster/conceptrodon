@@ -72,5 +72,5 @@ struct IsSnowful<Silence<Sorrow...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/is_snowful/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/is_snowful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/is_snowful.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/is_snowful.test.hpp)

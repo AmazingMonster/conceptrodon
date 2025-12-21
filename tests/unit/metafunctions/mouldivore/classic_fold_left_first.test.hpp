@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/mouldivore/classic_fold_left_first.hpp"
+#include "conceptrodon/metafunctions/mouldivore/classic_fold_left_first.hpp"
 
 #include "conceptrodon/utilities/vay.hpp"
 

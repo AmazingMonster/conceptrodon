@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include <type_traits>
-#include "conceptrodon/typelivore/conditional.hpp"
+#include "conceptrodon/metafunctions/typelivore/conditional.hpp"
 #include "macaron/judgmental/same_type.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"

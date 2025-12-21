@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_FALSIFY_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_FALSIFY_H
 
-#include "conceptrodon/pagelivore/concepts/all_falsify.hpp"
-#include "conceptrodon/varybivore/are_no_greater_than.hpp"
+#include "conceptrodon/metafunctions/pagelivore/concepts/all_falsify.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_no_greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {

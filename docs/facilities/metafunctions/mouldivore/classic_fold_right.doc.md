@@ -158,5 +158,5 @@ struct ClassicFoldRight
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_fold_right/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_fold_right.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_fold_right.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_fold_right.test.hpp)

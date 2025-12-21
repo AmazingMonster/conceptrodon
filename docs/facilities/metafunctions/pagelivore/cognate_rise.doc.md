@@ -102,5 +102,5 @@ struct CognateRise
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_rise/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/cognate_rise.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/cognate_rise.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_rise.test.hpp)

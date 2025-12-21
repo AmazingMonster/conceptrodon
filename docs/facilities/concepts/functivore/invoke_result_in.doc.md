@@ -44,5 +44,5 @@ static_assert(InvokeResultIn<void(FO::*) () volatile &, void, FO>);
 ## Links
 
 - [Example code](../../../code/facilities/concepts/functivore/invoke_result_in/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/concepts/invoke_result_in.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/invoke_result_in.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/invoke_result_in.test.hpp)

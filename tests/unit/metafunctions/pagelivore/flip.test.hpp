@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_FLIP_H
 
-#include "conceptrodon/pagelivore/flip.hpp"
+#include "conceptrodon/metafunctions/pagelivore/flip.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

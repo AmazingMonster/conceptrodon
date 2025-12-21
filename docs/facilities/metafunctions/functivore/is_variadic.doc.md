@@ -80,5 +80,5 @@ constexpr bool IsVariadic_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_variadic/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_variadic.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_variadic.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_variadic.test.hpp)

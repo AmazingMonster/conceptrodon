@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/upend.hpp"
+#include "conceptrodon/metafunctions/typelivore/upend.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

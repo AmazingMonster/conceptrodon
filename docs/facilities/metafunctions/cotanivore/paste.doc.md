@@ -64,5 +64,5 @@ using Paste = TypicalPaste<Args...>::type;
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/cotanivore/paste/implementation.hpp)
-- [Source code](../../../../conceptrodon/cotanivore/paste.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/cotanivore/paste.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/cotanivore/paste.test.hpp)

@@ -26,5 +26,5 @@ concept Coolful = Mouldivore::Confess<IsCoolful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/coolful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/coolful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/coolful.test.hpp)

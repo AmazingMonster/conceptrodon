@@ -162,5 +162,5 @@ struct CognateInject
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_inject/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/cognate_inject.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/cognate_inject.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_inject.test.hpp)

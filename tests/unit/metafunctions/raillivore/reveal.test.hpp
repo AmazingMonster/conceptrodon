@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/raillivore/reveal.hpp"
+#include "conceptrodon/metafunctions/raillivore/reveal.hpp"
 #include "conceptrodon/utilities/carrier.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

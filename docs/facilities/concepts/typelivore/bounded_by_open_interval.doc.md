@@ -36,5 +36,5 @@ concept BoundedByOpenInterval
 
 ## Links
 
-- [Source code](../../../../conceptrodon/typelivore/concepts/bounded_by_open_interval.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/bounded_by_open_interval.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/bounded_by_open_interval.test.hpp)

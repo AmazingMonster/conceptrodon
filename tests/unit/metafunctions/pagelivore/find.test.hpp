@@ -7,9 +7,9 @@
 #include <utility>
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/pagelivore/find.hpp"
-#include "conceptrodon/varybivore/are_no_greater_than.hpp"
-#include "conceptrodon/varybivore/are_no_less_than.hpp"
+#include "conceptrodon/metafunctions/pagelivore/find.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_no_greater_than.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_no_less_than.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

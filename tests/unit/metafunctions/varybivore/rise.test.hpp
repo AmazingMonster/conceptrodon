@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_RISE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_RISE_H
 
-#include "conceptrodon/varybivore/rise.hpp"
+#include "conceptrodon/metafunctions/varybivore/rise.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

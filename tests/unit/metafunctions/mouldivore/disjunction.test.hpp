@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/mouldivore/disjunction.hpp"
+#include "conceptrodon/metafunctions/mouldivore/disjunction.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

@@ -72,5 +72,5 @@ struct IsGritful<Sunshine<Consistency...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/is_gritful/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/is_gritful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/is_gritful.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/is_gritful.test.hpp)

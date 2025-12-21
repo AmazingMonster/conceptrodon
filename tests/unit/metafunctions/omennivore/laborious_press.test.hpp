@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_LABORIOUS_PRESS_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_LABORIOUS_PRESS_H
 
-#include "conceptrodon/omennivore/laborious_press.hpp"
+#include "conceptrodon/metafunctions/omennivore/laborious_press.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

@@ -178,5 +178,5 @@ The function is implemented using concept expansion in this library.
 
 - [Example](../../../code/facilities/metafunctions/varybivore/amidst/implementation.hpp)
 - [Example](../../../code/facilities/metafunctions/varybivore/amidst/implementation.point_to_void.hpp)
-- [Source code](../../../../conceptrodon/varybivore/amidst.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/amidst.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/amidst.test.hpp)

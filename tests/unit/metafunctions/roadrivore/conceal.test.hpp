@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/roadrivore/conceal.hpp"
+#include "conceptrodon/metafunctions/roadrivore/conceal.hpp"
 #include "macaron/judgmental/same_type.hpp"
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"

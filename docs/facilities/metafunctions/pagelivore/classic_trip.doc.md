@@ -428,5 +428,5 @@ struct ClassicTrip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/classic_trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/classic_trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/classic_trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/classic_trip.test.hpp)

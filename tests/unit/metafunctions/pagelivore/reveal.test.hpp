@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/pagelivore/reveal.hpp"
+#include "conceptrodon/metafunctions/pagelivore/reveal.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

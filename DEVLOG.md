@@ -27,6 +27,23 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Move metafunctions into 'metafunctions' directory. This is to maintain the same file structure for unit testing, documentation, and the production code</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 
 ### 2025/12/20
 

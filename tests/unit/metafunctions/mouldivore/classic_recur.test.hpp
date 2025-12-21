@@ -6,9 +6,9 @@
 
 #include <utility>
 
-#include "conceptrodon/typelivore/pop.hpp"
-#include "conceptrodon/mouldivore/classic_recur.hpp"
-#include "conceptrodon/mouldivore/agent.hpp"
+#include "conceptrodon/metafunctions/typelivore/pop.hpp"
+#include "conceptrodon/metafunctions/mouldivore/classic_recur.hpp"
+#include "conceptrodon/metafunctions/mouldivore/agent.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

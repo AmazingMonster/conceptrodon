@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CLASSIC_PLUME_H
 
 #include <utility>
-#include "conceptrodon/varybivore/classic_plume.hpp"
+#include "conceptrodon/metafunctions/varybivore/classic_plume.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

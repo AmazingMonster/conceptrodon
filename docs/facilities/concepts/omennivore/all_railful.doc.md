@@ -26,5 +26,5 @@ concept AllRailful = Mouldivore::AllConfess<IsRailful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_railful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_railful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_railful.test.hpp)

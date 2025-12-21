@@ -89,5 +89,5 @@ struct IsSameAs
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/is_same_as/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/is_same_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/is_same_as.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/is_same_as.test.hpp)

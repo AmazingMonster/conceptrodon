@@ -84,5 +84,5 @@ struct Find
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/find/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/find.test.hpp)

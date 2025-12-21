@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_NOT_RVALUE_REFERENCE_QUALIFIED_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_NOT_RVALUE_REFERENCE_QUALIFIED_H
 
-#include "conceptrodon/functivore/concepts/all_not_rvalue_reference_qualified.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/all_not_rvalue_reference_qualified.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

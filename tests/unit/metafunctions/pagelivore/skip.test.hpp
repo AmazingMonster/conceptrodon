@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/pagelivore/skip.hpp"
+#include "conceptrodon/metafunctions/pagelivore/skip.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

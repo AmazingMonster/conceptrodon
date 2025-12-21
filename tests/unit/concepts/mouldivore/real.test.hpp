@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REAL_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REAL_H
 
-#include "conceptrodon/mouldivore/concepts/real.hpp"
+#include "conceptrodon/metafunctions/mouldivore/concepts/real.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 #include <type_traits>
 

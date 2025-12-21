@@ -121,5 +121,5 @@ struct Duplicate
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/duplicate/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/duplicate.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/duplicate.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/duplicate.test.hpp)

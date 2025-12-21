@@ -510,5 +510,5 @@ struct ClassicTrek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_trek/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_trek.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_trek.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_trek.test.hpp)

@@ -425,5 +425,5 @@ struct ClassicTrip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/roadrivore/classic_trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/roadrivore/classic_trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/roadrivore/classic_trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/roadrivore/classic_trip.test.hpp)

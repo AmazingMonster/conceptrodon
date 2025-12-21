@@ -26,5 +26,5 @@ concept Variadic = Mouldivore::Confess<IsVariadic, F>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/variadic.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/variadic.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/variadic.test.hpp)

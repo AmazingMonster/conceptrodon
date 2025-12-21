@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_CLOSED_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_BOUNDED_BY_CLOSED_INTERVAL_H
 
-#include "conceptrodon/varybivore/are_bounded_by_closed_interval.hpp"
+#include "conceptrodon/metafunctions/varybivore/are_bounded_by_closed_interval.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

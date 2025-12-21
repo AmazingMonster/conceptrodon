@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AMONG_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AMONG_H
 
-#include "conceptrodon/pagelivore/among.hpp"
+#include "conceptrodon/metafunctions/pagelivore/among.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 #include "macaron/judgmental/same_type.hpp"

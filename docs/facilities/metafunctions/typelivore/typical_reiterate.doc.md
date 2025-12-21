@@ -143,5 +143,5 @@ struct TypicalReiterate
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/typical_reiterate/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/typical_reiterate.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/typical_reiterate.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/typical_reiterate.test.hpp)

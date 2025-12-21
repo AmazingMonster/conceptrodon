@@ -143,5 +143,5 @@ struct TerseIndependentFind
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/terse_independent_find/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/terse_independent_find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/terse_independent_find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/terse_independent_find.test.hpp)

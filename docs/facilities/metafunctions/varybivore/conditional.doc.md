@@ -283,5 +283,5 @@ struct Conditional
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/conditional/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/conditional.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/conditional.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/conditional.test.hpp)

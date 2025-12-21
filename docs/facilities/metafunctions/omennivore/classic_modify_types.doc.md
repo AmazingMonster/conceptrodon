@@ -289,5 +289,5 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/classic_modify_types/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/classic_modify_types.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/classic_modify_types.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/classic_modify_types.test.hpp)

@@ -198,5 +198,5 @@ struct ReconformedKindredLeftInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/reconformed_kindred_left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/reconformed_kindred_left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/reconformed_kindred_left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/reconformed_kindred_left_interview.test.hpp)

@@ -203,5 +203,5 @@ struct KindredLeftInterview<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/kindred_left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/kindred_left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/kindred_left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/kindred_left_interview.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
 
-#include "conceptrodon/varybivore/minimum.hpp"
+#include "conceptrodon/metafunctions/varybivore/minimum.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 

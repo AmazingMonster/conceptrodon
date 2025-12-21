@@ -416,5 +416,5 @@ struct ClassicTrip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/raillivore/classic_trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/raillivore/classic_trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/raillivore/classic_trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/raillivore/classic_trip.test.hpp)

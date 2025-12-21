@@ -26,5 +26,5 @@ concept AllConstQualified = Mouldivore::AllConfess<IsConst, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/all_const_qualified.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_const_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_const_qualified.test.hpp)

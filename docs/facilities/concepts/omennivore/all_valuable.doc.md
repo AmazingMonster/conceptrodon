@@ -33,5 +33,5 @@ concept AllValuable
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_valuable.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_valuable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_valuable.test.hpp)

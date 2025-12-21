@@ -34,5 +34,5 @@ concept LessThan
 
 ## Links
 
-- [Source code](../../../../conceptrodon/typelivore/concepts/less_than.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/less_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/less_than.test.hpp)

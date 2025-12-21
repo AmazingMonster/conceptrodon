@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/varybivore/kindred_left_interview.hpp"
+#include "conceptrodon/metafunctions/varybivore/kindred_left_interview.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/alkane.hpp"

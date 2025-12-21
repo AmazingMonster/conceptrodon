@@ -8,7 +8,7 @@
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/roadrivore/trip.hpp"
+#include "conceptrodon/metafunctions/roadrivore/trip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"

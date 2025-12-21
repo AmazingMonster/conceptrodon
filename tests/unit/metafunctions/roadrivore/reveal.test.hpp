@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/roadrivore/reveal.hpp"
+#include "conceptrodon/metafunctions/roadrivore/reveal.hpp"
 #include "conceptrodon/utilities/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

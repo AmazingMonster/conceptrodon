@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/pagelivore/conceal.hpp"
+#include "conceptrodon/metafunctions/pagelivore/conceal.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 

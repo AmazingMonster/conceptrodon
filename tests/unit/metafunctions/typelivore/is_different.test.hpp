@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_DIFFERENT_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_DIFFERENT_H
 
-#include "conceptrodon/typelivore/is_different.hpp"
+#include "conceptrodon/metafunctions/typelivore/is_different.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

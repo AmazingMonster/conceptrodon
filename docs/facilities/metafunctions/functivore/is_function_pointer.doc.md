@@ -60,5 +60,5 @@ constexpr bool IsFunctionPointer_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_function_pointer/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_function_pointer.test.hpp)

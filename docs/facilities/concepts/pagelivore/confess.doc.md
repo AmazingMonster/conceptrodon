@@ -90,5 +90,5 @@ concept Confess = Predicate<Elements::value...>::value;
 ## Links
 
 - [Example](../../../code/facilities/concepts/pagelivore/confess/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/concepts/confess.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/concepts/confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/confess.test.hpp)

@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_H
 
 #include <concepts>
-#include "conceptrodon/varybivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/varybivore/is_same_as.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"
 

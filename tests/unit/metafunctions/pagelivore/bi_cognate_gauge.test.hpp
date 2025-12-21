@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/pagelivore/bi_cognate_gauge.hpp"
+#include "conceptrodon/metafunctions/pagelivore/bi_cognate_gauge.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

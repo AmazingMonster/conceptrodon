@@ -211,5 +211,5 @@ struct SensibleRightInterview<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/sensible_right_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/sensible_right_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/sensible_right_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/sensible_right_interview.test.hpp)

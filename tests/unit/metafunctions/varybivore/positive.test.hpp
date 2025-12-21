@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_POSITIVE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_POSITIVE_H
 
-#include "conceptrodon/varybivore/positive.hpp"
+#include "conceptrodon/metafunctions/varybivore/positive.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 

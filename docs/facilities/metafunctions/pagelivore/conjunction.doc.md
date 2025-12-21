@@ -137,5 +137,5 @@ struct Conjunction
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/conjunction/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/conjunction.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/conjunction.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/conjunction.test.hpp)

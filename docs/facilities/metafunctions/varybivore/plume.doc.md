@@ -239,5 +239,5 @@ struct Plume<Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/plume/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/plume.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/plume.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/plume.test.hpp)

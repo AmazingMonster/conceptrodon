@@ -224,5 +224,5 @@ struct ClassicPlume<Element>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/classic_plume/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/classic_plume.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/classic_plume.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/classic_plume.test.hpp)

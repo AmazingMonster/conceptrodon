@@ -206,5 +206,5 @@ struct KindredRightInterview<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/kindred_right_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/kindred_right_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/kindred_right_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/kindred_right_interview.test.hpp)

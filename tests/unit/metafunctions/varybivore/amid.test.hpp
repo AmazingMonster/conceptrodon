@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/varybivore/amid.hpp"
+#include "conceptrodon/metafunctions/varybivore/amid.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

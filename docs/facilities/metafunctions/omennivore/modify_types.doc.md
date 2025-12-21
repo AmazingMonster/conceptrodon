@@ -291,5 +291,5 @@ struct ModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/modify_types/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/modify_types.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/modify_types.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/modify_types.test.hpp)

@@ -31,5 +31,5 @@ concept SameAs
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/same_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/same_as.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/same_as.test.hpp)

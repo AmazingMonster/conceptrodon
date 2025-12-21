@@ -72,5 +72,5 @@ struct IsGlowful<Sunlight<Sunshines...>>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/is_glowful/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/is_glowful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/is_glowful.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/is_glowful.test.hpp)

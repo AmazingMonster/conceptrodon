@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_CONTAINS_H
 
 #include <concepts>
-#include "conceptrodon/varybivore/contains.hpp"
+#include "conceptrodon/metafunctions/varybivore/contains.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

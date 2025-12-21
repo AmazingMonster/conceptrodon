@@ -107,5 +107,5 @@ struct Agent
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/agent/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/agent.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/agent.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/agent.test.hpp)

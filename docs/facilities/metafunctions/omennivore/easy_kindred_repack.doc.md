@@ -283,5 +283,5 @@ struct EasyKindredRepack<Packages...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/omennivore/easy_kindred_repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/omennivore/easy_kindred_repack.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/easy_kindred_repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/omennivore/easy_kindred_repack.type.test.hpp)

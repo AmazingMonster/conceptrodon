@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REMOVE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REMOVE_H
 
-#include "conceptrodon/pagelivore/cognate_remove.hpp"
+#include "conceptrodon/metafunctions/pagelivore/cognate_remove.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

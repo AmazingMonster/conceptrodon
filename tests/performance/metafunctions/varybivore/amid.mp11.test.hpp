@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_AMID_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_AMID_H
 
-#include "conceptrodon/varybivore/amid.hpp"
+#include "conceptrodon/metafunctions/varybivore/amid.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
 #include "macaron/judgmental/same_type.hpp"

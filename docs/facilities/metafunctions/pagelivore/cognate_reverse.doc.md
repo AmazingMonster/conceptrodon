@@ -161,5 +161,5 @@ struct CognateReverse
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_reverse/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/cognate_reverse.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/cognate_reverse.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_reverse.test.hpp)

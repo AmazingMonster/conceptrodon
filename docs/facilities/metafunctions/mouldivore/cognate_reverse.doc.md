@@ -157,5 +157,5 @@ struct CognateReverse
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/cognate_reverse/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/cognate_reverse.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/cognate_reverse.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/cognate_reverse.test.hpp)

@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/mouldivore/cognate_classic_modify.hpp"
+#include "conceptrodon/metafunctions/mouldivore/cognate_classic_modify.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

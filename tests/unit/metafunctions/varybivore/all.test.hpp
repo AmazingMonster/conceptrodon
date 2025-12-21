@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ALL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ALL_H
 
-#include "conceptrodon/varybivore/all.hpp"
+#include "conceptrodon/metafunctions/varybivore/all.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

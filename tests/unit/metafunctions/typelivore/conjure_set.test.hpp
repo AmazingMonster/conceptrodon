@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
 
-#include "conceptrodon/typelivore/conjure_set.hpp"
+#include "conceptrodon/metafunctions/typelivore/conjure_set.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

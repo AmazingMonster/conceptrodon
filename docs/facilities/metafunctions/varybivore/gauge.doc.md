@@ -237,5 +237,5 @@ struct Gauge<Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/gauge/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/gauge.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/gauge.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/gauge.test.hpp)

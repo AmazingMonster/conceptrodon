@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_CLARIFY_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_CLARIFY_H
 
-#include "conceptrodon/typelivore/concepts/all_clarify.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/all_clarify.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

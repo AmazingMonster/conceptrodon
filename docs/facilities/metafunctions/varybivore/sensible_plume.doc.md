@@ -220,5 +220,5 @@ struct SensiblePlume<Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/sensible_plume/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/sensible_plume.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/sensible_plume.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/sensible_plume.test.hpp)

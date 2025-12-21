@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MAXIMUM_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MAXIMUM_H
 
-#include "conceptrodon/varybivore/maximum.hpp"
+#include "conceptrodon/metafunctions/varybivore/maximum.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 

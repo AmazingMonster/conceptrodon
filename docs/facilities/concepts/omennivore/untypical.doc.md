@@ -30,5 +30,5 @@ concept Untypical = not requires
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/untypical.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/untypical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/untypical.test.hpp)

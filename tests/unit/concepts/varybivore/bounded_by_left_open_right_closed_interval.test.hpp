@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_LEFT_OPEN_RIGHT_CLOSED_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_LEFT_OPEN_RIGHT_CLOSED_INTERVAL_H
 
-#include "conceptrodon/varybivore/concepts/bounded_by_left_open_right_closed_interval.hpp"
-#include "conceptrodon/varybivore/concepts/greater_than.hpp"
+#include "conceptrodon/metafunctions/varybivore/concepts/bounded_by_left_open_right_closed_interval.hpp"
+#include "conceptrodon/metafunctions/varybivore/concepts/greater_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

@@ -63,5 +63,5 @@ struct SolitaryIsDifferent<Variable, Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/solitary_is_different/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/solitary_is_different.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/solitary_is_different.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/solitary_is_different.test.hpp)

@@ -27,5 +27,5 @@ concept AllSameTypeSignature
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/all_same_type_signature.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_same_type_signature.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_same_type_signature.test.hpp)

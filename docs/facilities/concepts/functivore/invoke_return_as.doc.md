@@ -45,5 +45,5 @@ static_assert(InvokeResultIn<FO, void>);
 ## Links
 
 - [Example code](../../../code/facilities/concepts/functivore/invoke_return_as/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/concepts/invoke_return_as.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/invoke_return_as.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/invoke_return_as.test.hpp)

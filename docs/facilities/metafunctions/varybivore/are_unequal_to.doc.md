@@ -91,5 +91,5 @@ struct AreUnequalTo
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/are_unequal_to/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/are_unequal_to.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/are_unequal_to.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/are_unequal_to.test.hpp)

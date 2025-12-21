@@ -122,5 +122,5 @@ struct RightInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/right_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/right_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/right_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/right_interview.test.hpp)

@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ANALYZER_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ANALYZER_H
 
-#include "conceptrodon/functivore/analyzer.hpp"
-#include "conceptrodon/microbiota/functilis/analyzer_prototype.hpp"
+#include "conceptrodon/metafunctions/functivore/analyzer.hpp"
+#include "conceptrodon/metafunctions/microbiota/functilis/analyzer_prototype.hpp"
 #include <concepts>
 
 
@@ -16,7 +16,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_RVALUE_REFERENCE_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/rvalue_reference.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/rvalue_reference.hpp"
 /******************************************************************************************************/
 
 
@@ -27,7 +27,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_LVALUE_REFERENCE_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/lvalue_reference.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/lvalue_reference.hpp"
 /******************************************************************************************************/
 
 
@@ -38,7 +38,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_VOLATILE_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/volatile.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/volatile.hpp"
 /******************************************************************************************************/
 
 
@@ -49,7 +49,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_CONST_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/const.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/const.hpp"
 /******************************************************************************************************/
 
 
@@ -60,7 +60,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_NOEXCEPT_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/noexcept.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/noexcept.hpp"
 /******************************************************************************************************/
 
 
@@ -71,7 +71,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_VARIADIC_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/variadic.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/variadic.hpp"
 /******************************************************************************************************/
 
 
@@ -82,7 +82,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_FUNCTION_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/function.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/function.hpp"
 /******************************************************************************************************/
 
 
@@ -93,7 +93,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_FUNCTION_POINTER_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/function_pointer.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/function_pointer.hpp"
 /******************************************************************************************************/
 
 
@@ -104,7 +104,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_POINTER_TO_MEMBER_FUNCTION_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/pointer_to_member_function.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/pointer_to_member_function.hpp"
 /******************************************************************************************************/
 
 
@@ -115,7 +115,7 @@
 #error "CONCEPTRODON_NUCLEOLUS_FUNCTION_OBJECT_FLAG has already been defined"
 #endif
 
-#include "conceptrodon/microbiota/nucleolus/define_flags/function_object.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/define_flags/function_object.hpp"
 /******************************************************************************************************/
 
 
@@ -1961,16 +1961,16 @@ static_assert
 
 
 /******************************************************************************************************/
-#include "conceptrodon/microbiota/nucleolus/undef_flags/rvalue_reference.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/lvalue_reference.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/volatile.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/const.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/noexcept.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/variadic.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/function.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/function_pointer.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/pointer_to_member_function.hpp"
-#include "conceptrodon/microbiota/nucleolus/undef_flags/function_object.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/rvalue_reference.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/lvalue_reference.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/volatile.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/const.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/noexcept.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/variadic.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/function.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/function_pointer.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/pointer_to_member_function.hpp"
+#include "conceptrodon/metafunctions/microbiota/nucleolus/undef_flags/function_object.hpp"
 /******************************************************************************************************/
 
 #endif

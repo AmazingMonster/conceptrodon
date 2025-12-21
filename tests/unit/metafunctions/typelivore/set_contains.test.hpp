@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SET_CONTAINS_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_SET_CONTAINS_H
 
-#include "conceptrodon/typelivore/set_contains.hpp"
+#include "conceptrodon/metafunctions/typelivore/set_contains.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

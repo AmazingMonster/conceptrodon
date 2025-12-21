@@ -81,5 +81,5 @@ constexpr bool IsNonoverloadedFunctionObject_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_nonoverloaded_function_object/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_nonoverloaded_function_object.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_nonoverloaded_function_object.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_nonoverloaded_function_object.test.hpp)

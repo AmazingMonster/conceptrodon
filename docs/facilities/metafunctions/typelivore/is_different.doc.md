@@ -64,5 +64,5 @@ constexpr bool IsDifferent_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/is_different/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/is_different.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/is_different.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/is_different.test.hpp)

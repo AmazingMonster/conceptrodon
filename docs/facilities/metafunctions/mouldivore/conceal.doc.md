@@ -84,5 +84,5 @@ struct Conceal
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/conceal/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/conceal.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/conceal.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/conceal.test.hpp)

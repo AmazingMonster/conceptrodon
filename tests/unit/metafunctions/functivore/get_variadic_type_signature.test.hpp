@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_VARIADIC_TYPE_SIGNATURE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_VARIADIC_TYPE_SIGNATURE_H
 
-#include "conceptrodon/functivore/get_variadic_type_signature.hpp"
+#include "conceptrodon/metafunctions/functivore/get_variadic_type_signature.hpp"
 #include <concepts>
 
 namespace Conceptrodon {

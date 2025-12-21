@@ -190,5 +190,5 @@ struct CognateRepeat
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_repeat/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/cognate_repeat.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/cognate_repeat.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_repeat.test.hpp)

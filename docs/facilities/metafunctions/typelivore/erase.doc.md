@@ -228,5 +228,5 @@ struct Erase
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/erase/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/erase.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/erase.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/erase.test.hpp)

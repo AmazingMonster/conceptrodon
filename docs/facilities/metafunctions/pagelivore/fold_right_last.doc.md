@@ -151,5 +151,5 @@ struct FoldRightLast
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/fold_right_last/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/fold_right_last.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/fold_right_last.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/fold_right_last.test.hpp)

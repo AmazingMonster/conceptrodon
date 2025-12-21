@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_FLOWFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_FLOWFUL_H
 
-#include "conceptrodon/omennivore/is_flowful.hpp"
+#include "conceptrodon/metafunctions/omennivore/is_flowful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

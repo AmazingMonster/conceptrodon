@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_VARIADIC_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_VARIADIC_H
 
-#include "conceptrodon/functivore/concepts/variadic.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/variadic.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

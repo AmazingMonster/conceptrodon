@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_APPLY_RETURN_TYPE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_APPLY_RETURN_TYPE_H
 
-#include "conceptrodon/functivore/apply_return_type.hpp"
+#include "conceptrodon/metafunctions/functivore/apply_return_type.hpp"
 #include <concepts>
 
 namespace Conceptrodon {

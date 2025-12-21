@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SUBTRACT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SUBTRACT_H
 
-#include "conceptrodon/varybivore/subtract.hpp"
+#include "conceptrodon/metafunctions/varybivore/subtract.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 

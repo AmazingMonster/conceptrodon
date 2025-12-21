@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_ZERO_H
 
-#include "conceptrodon/typelivore/concepts/all_zero.hpp"
-#include "conceptrodon/typelivore/concepts/any_zero.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/all_zero.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/any_zero.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

@@ -70,5 +70,5 @@ constexpr bool IsEqual_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/is_equal/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/is_equal.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/is_equal.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/is_equal.test.hpp)

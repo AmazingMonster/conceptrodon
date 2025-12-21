@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_TURN_OVER_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_TURN_OVER_H
 
-#include "conceptrodon/varybivore/typical_turn_over.hpp"
+#include "conceptrodon/metafunctions/varybivore/typical_turn_over.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

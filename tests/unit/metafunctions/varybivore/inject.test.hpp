@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_INJECT_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_INJECT_H
 
-#include "conceptrodon/varybivore/inject.hpp"
+#include "conceptrodon/metafunctions/varybivore/inject.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

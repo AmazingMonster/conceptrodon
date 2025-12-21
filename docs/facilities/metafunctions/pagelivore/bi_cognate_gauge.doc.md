@@ -383,5 +383,5 @@ struct BiCognateGauge
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/bi_cognate_gauge/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/bi_cognate_gauge.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/bi_cognate_gauge.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/bi_cognate_gauge.test.hpp)

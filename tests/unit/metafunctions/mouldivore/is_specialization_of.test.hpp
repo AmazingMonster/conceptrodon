@@ -8,7 +8,7 @@
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/mouldivore/is_specialization_of.hpp"
+#include "conceptrodon/metafunctions/mouldivore/is_specialization_of.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

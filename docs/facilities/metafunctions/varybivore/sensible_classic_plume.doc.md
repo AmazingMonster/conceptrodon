@@ -233,5 +233,5 @@ struct SensibleClassicPlume<Variable>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/sensible_classic_plume/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/sensible_classic_plume.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/sensible_classic_plume.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/sensible_classic_plume.test.hpp)

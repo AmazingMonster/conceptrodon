@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/raillivore/classic_trip.hpp"
+#include "conceptrodon/metafunctions/raillivore/classic_trip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"

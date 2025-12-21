@@ -120,5 +120,5 @@ struct LookFor
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/look_for/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/look_for.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/look_for.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/look_for.test.hpp)

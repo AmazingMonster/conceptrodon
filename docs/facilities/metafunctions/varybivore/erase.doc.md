@@ -232,5 +232,5 @@ struct Erase
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/erase/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/erase.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/erase.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/erase.test.hpp)

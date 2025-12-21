@@ -440,5 +440,5 @@ struct ClassicTrip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_trip.test.hpp)

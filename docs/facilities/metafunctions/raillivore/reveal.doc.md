@@ -92,5 +92,5 @@ struct Reveal
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/raillivore/reveal/implementation.hpp)
-- [Source code](../../../../conceptrodon/raillivore/reveal.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/raillivore/reveal.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/raillivore/reveal.test.hpp)

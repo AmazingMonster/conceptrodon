@@ -104,5 +104,5 @@ struct BindBack
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/roadrivore/bind_back/implementation.hpp)
-- [Source code](../../../../conceptrodon/roadrivore/bind_back.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/roadrivore/bind_back.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/roadrivore/bind_back.test.hpp)

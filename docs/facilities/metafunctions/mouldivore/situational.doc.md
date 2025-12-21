@@ -107,5 +107,5 @@ struct Situational
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/situational/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/situational.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/situational.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/situational.test.hpp)

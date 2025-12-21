@@ -29,5 +29,5 @@ concept AllNonzero = (...&&(Args != 0));
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/all_nonzero.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/all_nonzero.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/all_nonzero.test.hpp)

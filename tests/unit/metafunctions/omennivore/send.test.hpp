@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/omennivore/send.hpp"
+#include "conceptrodon/metafunctions/omennivore/send.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

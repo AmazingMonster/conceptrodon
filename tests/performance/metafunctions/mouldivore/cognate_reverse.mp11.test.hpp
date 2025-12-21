@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_REVERSE_2ND_H
 
 #include "concepts"
-#include "conceptrodon/mouldivore/cognate_reverse.hpp"
+#include "conceptrodon/metafunctions/mouldivore/cognate_reverse.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/sheep_reversed.hpp"

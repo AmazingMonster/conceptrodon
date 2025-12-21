@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/pagelivore/cognate_harvest.hpp"
+#include "conceptrodon/metafunctions/pagelivore/cognate_harvest.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

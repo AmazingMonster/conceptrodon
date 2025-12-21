@@ -97,5 +97,5 @@ struct Rise
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/rise/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/rise.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/rise.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/rise.test.hpp)

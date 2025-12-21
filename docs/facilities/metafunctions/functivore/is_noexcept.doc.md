@@ -79,5 +79,5 @@ constexpr bool IsNoexcept_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_noexcept/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_noexcept.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_noexcept.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_noexcept.test.hpp)

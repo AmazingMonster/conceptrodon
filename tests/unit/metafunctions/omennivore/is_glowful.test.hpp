@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_GLOWFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_GLOWFUL_H
 
-#include "conceptrodon/omennivore/is_glowful.hpp"
+#include "conceptrodon/metafunctions/omennivore/is_glowful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

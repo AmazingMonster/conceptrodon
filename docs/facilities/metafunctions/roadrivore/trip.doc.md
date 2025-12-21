@@ -425,5 +425,5 @@ struct Trip
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/roadrivore/trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/roadrivore/trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/roadrivore/trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/roadrivore/trip.test.hpp)

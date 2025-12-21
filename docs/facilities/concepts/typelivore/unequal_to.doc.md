@@ -36,5 +36,5 @@ concept UnequalTo
 
 ## Links
 
-- [Source code](../../../../conceptrodon/typelivore/concepts/unequal_to.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/unequal_to.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/unequal_to.test.hpp)

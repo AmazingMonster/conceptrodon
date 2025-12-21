@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REVERSE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_REVERSE_H
 
-#include "conceptrodon/pagelivore/cognate_reverse.hpp"
+#include "conceptrodon/metafunctions/pagelivore/cognate_reverse.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

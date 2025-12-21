@@ -469,5 +469,5 @@ struct ClassicTrek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/classic_trek/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/classic_trek.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/classic_trek.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/classic_trek.test.hpp)

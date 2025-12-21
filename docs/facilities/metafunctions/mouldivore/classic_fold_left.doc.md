@@ -163,5 +163,5 @@ struct ClassicFoldLeft
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/classic_fold_left/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/classic_fold_left.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/classic_fold_left.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/classic_fold_left.test.hpp)

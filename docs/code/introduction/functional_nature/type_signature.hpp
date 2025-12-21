@@ -111,8 +111,8 @@ using FunGunPun = Roadrivore::Trip<Pun>
 
 #else
 
-#include "conceptrodon/roadrivore/trip.hpp"
-#include "conceptrodon/mouldivore/classic_trip.hpp"
+#include "conceptrodon/metafunctions/roadrivore/trip.hpp"
+#include "conceptrodon/metafunctions/mouldivore/classic_trip.hpp"
 
 /**** FunGun ****/
 template<typename...Args>

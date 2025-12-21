@@ -26,5 +26,5 @@ concept AllFunctionPointer = Mouldivore::AllConfess<IsFunctionPointer, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/functivore/concepts/all_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_function_pointer.test.hpp)

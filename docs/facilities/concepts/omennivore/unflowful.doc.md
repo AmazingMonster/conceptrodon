@@ -41,5 +41,5 @@ concept Unflowful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/unflowful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/unflowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unflowful.test.hpp)

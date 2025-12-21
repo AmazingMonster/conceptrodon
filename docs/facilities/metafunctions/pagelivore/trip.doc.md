@@ -434,5 +434,5 @@ struct Trek
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/trip/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/trip.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/trip.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/trip.test.hpp)

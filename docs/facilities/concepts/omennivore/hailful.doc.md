@@ -26,5 +26,5 @@ concept Hailful = Mouldivore::Confess<IsHailful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/hailful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/hailful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/hailful.test.hpp)

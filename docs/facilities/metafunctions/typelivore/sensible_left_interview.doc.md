@@ -208,5 +208,5 @@ struct SensibleLeftInterview<First, Second, Others...>
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/sensible_left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/sensible_left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/sensible_left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/sensible_left_interview.test.hpp)

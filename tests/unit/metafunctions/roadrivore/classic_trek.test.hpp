@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/roadrivore/classic_trek.hpp"
+#include "conceptrodon/metafunctions/roadrivore/classic_trek.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

@@ -257,5 +257,5 @@ struct Conditional
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/conditional/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/conditional.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/conditional.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/conditional.test.hpp)

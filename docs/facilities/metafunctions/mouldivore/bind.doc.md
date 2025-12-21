@@ -178,5 +178,5 @@ struct Bind
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/bind/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/bind.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/bind.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/bind.test.hpp)

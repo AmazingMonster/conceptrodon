@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_EQUAL_TO_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_EQUAL_TO_H
 
-#include "conceptrodon/typelivore/concepts/equal_to.hpp"
+#include "conceptrodon/metafunctions/typelivore/concepts/equal_to.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

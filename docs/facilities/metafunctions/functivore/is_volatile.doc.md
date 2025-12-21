@@ -80,5 +80,5 @@ constexpr bool IsVolatile_v
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/is_volatile/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/is_volatile.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/is_volatile.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/is_volatile.test.hpp)

@@ -100,5 +100,5 @@ struct IsSpecializationOf
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/is_specialization_of/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/is_specialization_of.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/is_specialization_of.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/is_specialization_of.test.hpp)

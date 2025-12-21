@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_FUNCTION_POINTER_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_FUNCTION_POINTER_H
 
-#include "conceptrodon/functivore/concepts/all_function_pointer.hpp"
+#include "conceptrodon/metafunctions/functivore/concepts/all_function_pointer.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

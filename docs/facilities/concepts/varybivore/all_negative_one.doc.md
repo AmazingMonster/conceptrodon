@@ -29,5 +29,5 @@ concept AllNegativeOne = (...&&(Args == -1));
 
 ## Links
 
-- [Source code](../../../../conceptrodon/varybivore/concepts/all_negative_one.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/all_negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/all_negative_one.test.hpp)

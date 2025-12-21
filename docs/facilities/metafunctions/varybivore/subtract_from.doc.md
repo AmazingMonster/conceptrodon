@@ -91,5 +91,5 @@ struct SubtractFrom
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/varybivore/subtract_from/implementation.hpp)
-- [Source code](../../../../conceptrodon/varybivore/subtract_from.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/varybivore/subtract_from.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/varybivore/subtract_from.test.hpp)

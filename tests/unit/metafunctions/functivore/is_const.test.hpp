@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_CONST_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_CONST_H
 
-#include "conceptrodon/functivore/is_const.hpp"
+#include "conceptrodon/metafunctions/functivore/is_const.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

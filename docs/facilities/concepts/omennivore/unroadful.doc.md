@@ -41,5 +41,5 @@ concept Unroadful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/unroadful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/unroadful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unroadful.test.hpp)

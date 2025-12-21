@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/typelivore/reiterate.hpp"
+#include "conceptrodon/metafunctions/typelivore/reiterate.hpp"
 
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"

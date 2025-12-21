@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/raillivore/classic_trek.hpp"
+#include "conceptrodon/metafunctions/raillivore/classic_trek.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

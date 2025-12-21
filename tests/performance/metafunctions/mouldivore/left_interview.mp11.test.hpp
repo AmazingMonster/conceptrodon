@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_LEFT_INTERVIEW_2ND_H
 
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/mouldivore/left_interview.hpp"
+#include "conceptrodon/metafunctions/mouldivore/left_interview.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

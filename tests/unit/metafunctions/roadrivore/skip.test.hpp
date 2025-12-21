@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_SKIP_H
 #define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_SKIP_H
 
-#include "conceptrodon/roadrivore/skip.hpp"
+#include "conceptrodon/metafunctions/roadrivore/skip.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

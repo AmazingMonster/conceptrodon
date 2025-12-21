@@ -29,5 +29,5 @@ concept AllUntypical = (... && Untypical<Structures>);
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_untypical.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_untypical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_untypical.test.hpp)

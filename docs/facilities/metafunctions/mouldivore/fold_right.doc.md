@@ -161,5 +161,5 @@ struct FoldRight
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/fold_right/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/fold_right.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/fold_right.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/fold_right.test.hpp)

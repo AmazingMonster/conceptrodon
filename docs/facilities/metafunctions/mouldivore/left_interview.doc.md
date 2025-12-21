@@ -119,5 +119,5 @@ struct LeftInterview
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/mouldivore/left_interview/implementation.hpp)
-- [Source code](../../../../conceptrodon/mouldivore/left_interview.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/mouldivore/left_interview.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/mouldivore/left_interview.test.hpp)

@@ -6,7 +6,7 @@
 
 #include <concepts>
 
-#include "conceptrodon/raillivore/bind_front.hpp"
+#include "conceptrodon/metafunctions/raillivore/bind_front.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

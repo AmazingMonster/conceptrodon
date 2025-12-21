@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_VOLATILE_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_VOLATILE_H
 
-#include "conceptrodon/functivore/is_volatile.hpp"
+#include "conceptrodon/metafunctions/functivore/is_volatile.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

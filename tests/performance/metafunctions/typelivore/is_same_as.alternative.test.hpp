@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_AS_2ND_H
 
 #include <type_traits>
-#include "conceptrodon/typelivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/typelivore/is_same_as.hpp"
 
 #include "macaron/judgmental/valid.hpp"
 #include "macaron/judgmental/invalid.hpp"

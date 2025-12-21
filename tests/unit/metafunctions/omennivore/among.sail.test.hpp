@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SAIL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SAIL_H
 
-#include "conceptrodon/omennivore/among.hpp"
+#include "conceptrodon/metafunctions/omennivore/among.hpp"
 
 #include <utility>
 

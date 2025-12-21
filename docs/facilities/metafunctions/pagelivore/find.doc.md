@@ -84,5 +84,5 @@ struct Find
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/find/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/find.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/find.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/find.test.hpp)

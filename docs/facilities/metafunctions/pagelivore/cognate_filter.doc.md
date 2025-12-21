@@ -137,5 +137,5 @@ struct CognateFilter
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/pagelivore/cognate_filter/implementation.hpp)
-- [Source code](../../../../conceptrodon/pagelivore/cognate_filter.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/pagelivore/cognate_filter.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/pagelivore/cognate_filter.test.hpp)

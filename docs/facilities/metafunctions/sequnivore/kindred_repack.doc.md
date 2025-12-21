@@ -170,5 +170,5 @@ struct KindredRepack<SequenceA<TA, VariableAs...>, SequenceB<TB, VariableBs...>,
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/sequnivore/kindred_repack/implementation.hpp)
-- [Source code](../../../../conceptrodon/sequnivore/kindred_repack.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/sequnivore/kindred_repack.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/sequnivore/kindred_repack.test.hpp)

@@ -6,9 +6,9 @@
 
 #include <utility>
 
-#include "conceptrodon/varybivore/kindred_find.hpp"
+#include "conceptrodon/metafunctions/varybivore/kindred_find.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
-#include "conceptrodon/varybivore/is_same_as.hpp"
+#include "conceptrodon/metafunctions/varybivore/is_same_as.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/alkane.hpp"

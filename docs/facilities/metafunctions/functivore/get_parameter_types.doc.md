@@ -88,5 +88,5 @@ struct GetParameterTypes
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/functivore/get_parameter_types/implementation.hpp)
-- [Source code](../../../../conceptrodon/functivore/get_parameter_types.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/functivore/get_parameter_types.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/functivore/get_parameter_types.test.hpp)

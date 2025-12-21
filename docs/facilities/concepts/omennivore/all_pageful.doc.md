@@ -26,5 +26,5 @@ concept AllPageful = Mouldivore::AllConfess<IsPageful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/omennivore/concepts/all_pageful.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_pageful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_pageful.test.hpp)

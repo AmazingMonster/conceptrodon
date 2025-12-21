@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_VALUE_IMMEDIATE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_IS_VALUE_IMMEDIATE_H
 
-#include "conceptrodon/omennivore/concepts/valuable.hpp"
+#include "conceptrodon/metafunctions/omennivore/concepts/valuable.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

@@ -125,5 +125,5 @@ struct Front
 ## Links
 
 - [Example](../../../code/facilities/metafunctions/typelivore/front/implementation.hpp)
-- [Source code](../../../../conceptrodon/typelivore/front.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/typelivore/front.hpp)
 - [Unit test](../../../../tests/unit/metafunctions/typelivore/front.test.hpp)
