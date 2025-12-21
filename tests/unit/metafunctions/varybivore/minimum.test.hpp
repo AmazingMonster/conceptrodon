@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_MINIMUM_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_MINIMUM_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_MINIMUM_H
 
 #include "conceptrodon/metafunctions/varybivore/minimum.hpp"
 

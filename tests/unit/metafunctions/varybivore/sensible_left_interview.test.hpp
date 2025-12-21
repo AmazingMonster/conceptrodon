@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_LEFT_INTERVIEW_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_LEFT_INTERVIEW_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_SENSIBLE_LEFT_INTERVIEW_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_SENSIBLE_LEFT_INTERVIEW_H
 
 #include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/metafunctions/varybivore/sensible_left_interview.hpp"

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONJURE_SET_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_CONJURE_SET_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_CONJURE_SET_H
 
 #include "conceptrodon/metafunctions/typelivore/conjure_set.hpp"
 

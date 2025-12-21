@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LOOK_FOR_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LOOK_FOR_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_KINDRED_LOOK_FOR_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_KINDRED_LOOK_FOR_H
 
 #include "conceptrodon/metafunctions/typelivore/kindred_look_for.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

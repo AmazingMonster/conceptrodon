@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_NOEXCEPT_H
-#define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_NOEXCEPT_H
+#ifndef CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_IS_NOEXCEPT_H
+#define CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_IS_NOEXCEPT_H
 
 #include "conceptrodon/metafunctions/functivore/is_noexcept.hpp"
 

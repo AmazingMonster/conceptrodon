@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_TYPICAL_PASTE_H
-#define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_TYPICAL_PASTE_H
+#ifndef CONCEPTRODON_SEQUNIVORE_UNIT_TESTS_TEST_TYPICAL_PASTE_H
+#define CONCEPTRODON_SEQUNIVORE_UNIT_TESTS_TEST_TYPICAL_PASTE_H
 
 #include "conceptrodon/metafunctions/sequnivore/typical_paste.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

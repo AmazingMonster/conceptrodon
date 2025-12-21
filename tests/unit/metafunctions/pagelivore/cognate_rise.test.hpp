@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_RISE_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_RISE_H
+#ifndef CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_COGNATE_RISE_H
+#define CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_COGNATE_RISE_H
 
 #include "conceptrodon/metafunctions/pagelivore/cognate_rise.hpp"
 

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_BOUNDED_BY_OPEN_INTERVAL_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_BOUNDED_BY_OPEN_INTERVAL_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_BOUNDED_BY_OPEN_INTERVAL_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_BOUNDED_BY_OPEN_INTERVAL_H
 
 #include "conceptrodon/concepts/typelivore/bounded_by_open_interval.hpp"
 #include "conceptrodon/concepts/typelivore/greater_than.hpp"

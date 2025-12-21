@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LOOK_FOR_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LOOK_FOR_2ND_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_KINDRED_LOOK_FOR_2ND_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_KINDRED_LOOK_FOR_2ND_H
 
 #include <concepts>
 #include "conceptrodon/utilities/capsule.hpp"
@@ -21,7 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestKindredLookFor2nd {
 
 

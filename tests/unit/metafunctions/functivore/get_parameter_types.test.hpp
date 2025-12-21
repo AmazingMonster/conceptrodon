@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_PARAMETER_TYPES_H
-#define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_GET_PARAMETER_TYPES_H
+#ifndef CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_GET_PARAMETER_TYPES_H
+#define CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_GET_PARAMETER_TYPES_H
 
 #include "conceptrodon/metafunctions/functivore/get_parameter_types.hpp"
 #include <concepts>

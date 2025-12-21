@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNDAWNFUL_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNDAWNFUL_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_UNDAWNFUL_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_UNDAWNFUL_H
 
 #include "conceptrodon/concepts/omennivore/undawnful.hpp"
 

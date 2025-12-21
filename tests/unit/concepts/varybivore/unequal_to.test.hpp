@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UNEQUAL_TO_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_UNEQUAL_TO_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_UNEQUAL_TO_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_UNEQUAL_TO_H
 
 #include "conceptrodon/concepts/varybivore/unequal_to.hpp"
 #include "conceptrodon/concepts/varybivore/greater_than.hpp"

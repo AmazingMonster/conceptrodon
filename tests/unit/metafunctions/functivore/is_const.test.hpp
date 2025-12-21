@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_CONST_H
-#define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_IS_CONST_H
+#ifndef CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_IS_CONST_H
+#define CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_IS_CONST_H
 
 #include "conceptrodon/metafunctions/functivore/is_const.hpp"
 

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_6TH_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_SAME_AS_6TH_H
+#ifndef CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_IS_SAME_AS_6TH_H
+#define CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_IS_SAME_AS_6TH_H
 
 #include <concepts>
 #include "conceptrodon/metafunctions/varybivore/is_same_as.hpp"
@@ -17,7 +17,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestIsSameAs6th {
 
 #ifdef CONCEPTRODON_TEST_ALTERNATIVE_SWITCH

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_PAGEFUL_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_PAGEFUL_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_PAGEFUL_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_PAGEFUL_H
 
 #include "conceptrodon/concepts/omennivore/pageful.hpp"
 

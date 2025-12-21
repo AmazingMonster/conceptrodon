@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_KINDRED_LEFT_INTERVIEW_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_RECONFORMED_KINDRED_LEFT_INTERVIEW_2ND_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_RECONFORMED_KINDRED_LEFT_INTERVIEW_2ND_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_RECONFORMED_KINDRED_LEFT_INTERVIEW_2ND_H
 
 #include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/metafunctions/typelivore/reconformed_kindred_left_interview.hpp"
@@ -21,7 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestReconformedKindredLeftInterview2nd {
 
 

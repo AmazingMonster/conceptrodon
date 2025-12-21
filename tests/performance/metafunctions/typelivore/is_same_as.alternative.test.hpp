@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_AS_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_SAME_AS_2ND_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_IS_SAME_AS_2ND_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_IS_SAME_AS_2ND_H
 
 #include <type_traits>
 #include "conceptrodon/metafunctions/typelivore/is_same_as.hpp"
@@ -17,7 +17,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestIsSameAs2nd {
 
 

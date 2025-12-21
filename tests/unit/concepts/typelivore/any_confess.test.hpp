@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONFESS_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ANY_CONFESS_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_ANY_CONFESS_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_ANY_CONFESS_H
 
 #include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/concepts/typelivore/any_confess.hpp"

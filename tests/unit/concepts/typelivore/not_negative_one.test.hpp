@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NOT_NEGATIVE_ONE_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_NOT_NEGATIVE_ONE_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_NOT_NEGATIVE_ONE_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_NOT_NEGATIVE_ONE_H
 
 #include "conceptrodon/concepts/typelivore/less_than.hpp"
 #include "conceptrodon/concepts/typelivore/not_negative_one.hpp"

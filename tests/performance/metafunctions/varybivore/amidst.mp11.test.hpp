@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_AMIDST_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_AMIDST_H
+#ifndef CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_AMIDST_H
+#define CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_AMIDST_H
 
 #include <utility>
 
@@ -31,7 +31,7 @@ template<auto A> using mp_value = std::integral_constant<decltype(A), A>;
 
 namespace Conceptrodon {
 namespace Varybivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestAmidst {
 
 

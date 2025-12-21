@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AMONG_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_AMONG_H
+#ifndef CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_AMONG_H
+#define CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_AMONG_H
 
 #include "conceptrodon/metafunctions/pagelivore/among.hpp"
 #include "conceptrodon/utilities/capsule.hpp"

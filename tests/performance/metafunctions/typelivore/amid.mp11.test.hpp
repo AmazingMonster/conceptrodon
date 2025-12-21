@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMID_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_AMID_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_AMID_H
 
 #include <utility>
 
@@ -21,7 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestAmid {
 
 // In this test,

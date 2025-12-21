@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMIDST_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_AMIDST_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_AMIDST_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_AMIDST_H
 
 #include "conceptrodon/metafunctions/typelivore/amidst.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
@@ -19,7 +19,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestAmidst {
 
 // In this test,

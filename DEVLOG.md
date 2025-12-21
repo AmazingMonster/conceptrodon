@@ -61,6 +61,23 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Update the header guards in 'tests'. All header guards in the library are articulated to match the corresponding namespace structure</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 
 ### 2025/12/20
 

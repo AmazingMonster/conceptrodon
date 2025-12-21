@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SAIL_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_AMONG_SAIL_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_AMONG_SAIL_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_AMONG_SAIL_H
 
 #include "conceptrodon/metafunctions/omennivore/among.hpp"
 

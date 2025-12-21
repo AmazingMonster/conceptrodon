@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_RISE_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_COGNATE_RISE_2ND_H
+#ifndef CONCEPTRODON_PAGELIVORE_PERFORMANCE_TESTS_TEST_COGNATE_RISE_2ND_H
+#define CONCEPTRODON_PAGELIVORE_PERFORMANCE_TESTS_TEST_COGNATE_RISE_2ND_H
 
 #include "conceptrodon/metafunctions/pagelivore/cognate_rise.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
@@ -20,7 +20,7 @@
 
 namespace Conceptrodon {
 namespace Pagelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestCognateRise2nd {
 
 

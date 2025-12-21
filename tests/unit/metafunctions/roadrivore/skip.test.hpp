@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_ROADRIVORE_SKIP_H
-#define CONCEPTRODON_TESTS_UNIT_ROADRIVORE_SKIP_H
+#ifndef CONCEPTRODON_ROADRIVORE_UNIT_TESTS_TEST_SKIP_H
+#define CONCEPTRODON_ROADRIVORE_UNIT_TESTS_TEST_SKIP_H
 
 #include "conceptrodon/metafunctions/roadrivore/skip.hpp"
 

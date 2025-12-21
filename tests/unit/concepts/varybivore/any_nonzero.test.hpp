@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_NONZERO_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_NONZERO_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_ANY_NONZERO_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_ANY_NONZERO_H
 
 #include "conceptrodon/concepts/varybivore/any_nonzero.hpp"
 

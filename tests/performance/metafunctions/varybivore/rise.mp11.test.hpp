@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_RISE_2ND_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_RISE_2ND_H
+#ifndef CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_RISE_2ND_H
+#define CONCEPTRODON_VARYBIVORE_PERFORMANCE_TESTS_TEST_RISE_2ND_H
 
 #include "conceptrodon/metafunctions/varybivore/rise.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"
@@ -20,7 +20,7 @@
 
 namespace Conceptrodon {
 namespace Varybivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestRise2nd {
 
 

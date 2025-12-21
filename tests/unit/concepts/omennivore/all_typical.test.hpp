@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_TYPICAL_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_TYPICAL_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_ALL_TYPICAL_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_ALL_TYPICAL_H
 
 #include "conceptrodon/concepts/omennivore/all_typical.hpp"
 

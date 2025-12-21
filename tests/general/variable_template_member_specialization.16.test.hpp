@@ -1,11 +1,11 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_GENERAL_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_16_H
-#define CONCEPTRODON_TESTS_GENERAL_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_16_H
+#ifndef CONCEPTRODON_GENERAL_TESTS_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_16_H
+#define CONCEPTRODON_GENERAL_TESTS_VARIABLE_TEMPLATE_MEMBER_SPECIALIZATION_16_H
 
+#include <cstddef>
 #include "macaron/fragmental/sheep.hpp"
-
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
 namespace Conceptrodon {

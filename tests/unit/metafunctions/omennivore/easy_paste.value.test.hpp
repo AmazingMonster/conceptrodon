@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_VALUE_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_EASY_PASTE_VALUE_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_EASY_PASTE_VALUE_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_EASY_PASTE_VALUE_H
 
 #include "conceptrodon/metafunctions/omennivore/easy_paste.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

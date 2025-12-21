@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_MODIFY_H
-#define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_COGNATE_MODIFY_H
+#ifndef CONCEPTRODON_MOULDVORE_UNIT_TESTS_TEST_COGNATE_MODIFY_H
+#define CONCEPTRODON_MOULDVORE_UNIT_TESTS_TEST_COGNATE_MODIFY_H
 
 #include "conceptrodon/metafunctions/mouldivore/cognate_modify.hpp"
 

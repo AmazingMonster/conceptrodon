@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_UNEQUAL_TO_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_UNEQUAL_TO_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_UNEQUAL_TO_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_UNEQUAL_TO_H
 
 #include "conceptrodon/concepts/typelivore/less_than.hpp"
 #include "conceptrodon/concepts/typelivore/unequal_to.hpp"

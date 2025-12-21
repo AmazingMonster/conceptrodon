@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_GREATER_THAN_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ARE_GREATER_THAN_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_ARE_GREATER_THAN_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_ARE_GREATER_THAN_H
 
 #include "conceptrodon/metafunctions/varybivore/are_greater_than.hpp"
 

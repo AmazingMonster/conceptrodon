@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CONJUNCTION_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_CONJUNCTION_H
+#ifndef CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_CONJUNCTION_H
+#define CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_CONJUNCTION_H
 
 #include "conceptrodon/metafunctions/pagelivore/conjunction.hpp"
 

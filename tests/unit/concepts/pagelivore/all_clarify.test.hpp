@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_CLARIFY_H
-#define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_CLARIFY_H
+#ifndef CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_ALL_CLARIFY_H
+#define CONCEPTRODON_PAGELIVORE_UNIT_TESTS_TEST_ALL_CLARIFY_H
 
 #include "conceptrodon/concepts/pagelivore/all_clarify.hpp"
 #include "conceptrodon/metafunctions/varybivore/are_greater_than.hpp"

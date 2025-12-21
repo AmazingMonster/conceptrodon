@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_POP_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_TYPICAL_POP_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_TYPICAL_POP_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_TYPICAL_POP_H
 
 #include "conceptrodon/metafunctions/varybivore/typical_pop.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

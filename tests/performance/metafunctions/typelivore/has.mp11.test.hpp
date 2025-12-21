@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_HAS_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_HAS_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_HAS_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_HAS_H
 
 #include <concepts>
 #include "conceptrodon/metafunctions/typelivore/has.hpp"
@@ -21,7 +21,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestHas {
     
     

@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_CONJURE_SET_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_TYPICAL_CONJURE_SET_H
+#ifndef CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_TYPICAL_CONJURE_SET_H
+#define CONCEPTRODON_TYPELIVORE_PERFORMANCE_TESTS_TEST_TYPICAL_CONJURE_SET_H
 
 #include <concepts>
 #include "conceptrodon/metafunctions/typelivore/conjure_set.hpp"
@@ -22,7 +22,7 @@
 
 namespace Conceptrodon {
 namespace Typelivore {
-namespace UnitTests {
+namespace PerformanceTests {
 namespace TestTypicalConjureSet {
 
 

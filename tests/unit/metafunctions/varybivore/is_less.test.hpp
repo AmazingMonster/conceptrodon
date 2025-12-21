@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_LESS_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_IS_LESS_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_IS_LESS_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_IS_LESS_H
 
 #include "conceptrodon/metafunctions/varybivore/is_less.hpp"
 

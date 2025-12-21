@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_VARIADIC_H
-#define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_VARIADIC_H
+#ifndef CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_NOT_VARIADIC_H
+#define CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_NOT_VARIADIC_H
 
 #include "conceptrodon/concepts/functivore/not_variadic.hpp"
 

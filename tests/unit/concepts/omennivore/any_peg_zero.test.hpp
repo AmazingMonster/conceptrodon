@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEG_ZERO_H
-#define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ANY_PEG_ZERO_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_ANY_PEG_ZERO_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_ANY_PEG_ZERO_H
 
 #include "conceptrodon/concepts/omennivore/any_peg_zero.hpp"
 #include "conceptrodon/concepts/omennivore/all_pegful.hpp"

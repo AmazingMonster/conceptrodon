@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NOT_NEGATIVE_ONE_H
-#define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_NOT_NEGATIVE_ONE_H
+#ifndef CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_NOT_NEGATIVE_ONE_H
+#define CONCEPTRODON_VARYBIVORE_UNIT_TESTS_TEST_NOT_NEGATIVE_ONE_H
 
 #include "conceptrodon/concepts/varybivore/not_negative_one.hpp"
 #include "conceptrodon/concepts/varybivore/greater_than.hpp"

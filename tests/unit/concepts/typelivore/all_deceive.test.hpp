@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_DECEIVE_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_DECEIVE_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_ALL_DECEIVE_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_ALL_DECEIVE_H
 
 #include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/concepts/typelivore/all_deceive.hpp"

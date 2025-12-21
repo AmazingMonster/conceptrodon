@@ -1,8 +1,8 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_DIFFERENT_H
-#define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_IS_DIFFERENT_H
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_IS_DIFFERENT_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_IS_DIFFERENT_H
 
 #include "conceptrodon/metafunctions/typelivore/is_different.hpp"
 
