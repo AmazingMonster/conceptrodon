@@ -6,8 +6,8 @@
 
 #include <concepts>
 #include "conceptrodon/mouldivore/bind.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/peg.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/peg.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/fragmental/double_sheep.hpp"

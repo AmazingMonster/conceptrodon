@@ -114,4 +114,4 @@ struct Reverie
 ## Links
 
 - [Example](../../code/facilities/utilities/reverie/implementation.hpp)
-- [Source code](../../../conceptrodon/reverie.hpp)
+- [Source code](../../../conceptrodon/utilities/reverie.hpp)

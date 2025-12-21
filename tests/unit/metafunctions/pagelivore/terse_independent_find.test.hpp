@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/pagelivore/terse_independent_find.hpp"
 #include "conceptrodon/varybivore/are_no_greater_than.hpp"
 #include "conceptrodon/varybivore/are_no_less_than.hpp"

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONFESS_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONFESS_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/typelivore/concepts/confess.hpp"
 
 namespace Conceptrodon {

@@ -81,4 +81,4 @@ struct Hay
 ## Links
 
 - [Example](../../code/facilities/utilities/hay/implementation.hpp)
-- [Source code](../../../conceptrodon/hay.hpp)
+- [Source code](../../../conceptrodon/utilities/hay.hpp)

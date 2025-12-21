@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_ARE_OVERLAPPING_H
 #define CONCEPTRODON_TYPELIVORE_ARE_OVERLAPPING_H
 
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {

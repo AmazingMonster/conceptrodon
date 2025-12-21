@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_VARYBIVORE_AMIDST_H
 #define CONCEPTRODON_VARYBIVORE_AMIDST_H
 
-#include "conceptrodon/prefix.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include <utility>
 
 namespace Conceptrodon {

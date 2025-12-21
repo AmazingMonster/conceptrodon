@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_DECEIVE_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/pagelivore/concepts/any_deceive.hpp"
 #include "conceptrodon/varybivore/are_no_greater_than.hpp"
 

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOLDIAE_LEFT_INSPECT_H
 #define CONCEPTRODON_MOLDIAE_LEFT_INSPECT_H
 
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include <utility>
 
 namespace Conceptrodon {

@@ -81,4 +81,4 @@ struct Wiy
 ## Links
 
 - [Example](../../code/facilities/utilities/wiy/implementation.hpp)
-- [Source code](../../../conceptrodon/wiy.hpp)
+- [Source code](../../../conceptrodon/utilities/wiy.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ALL_DECEIVE_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ALL_DECEIVE_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/mouldivore/concepts/all_deceive.hpp"
 
 namespace Conceptrodon {

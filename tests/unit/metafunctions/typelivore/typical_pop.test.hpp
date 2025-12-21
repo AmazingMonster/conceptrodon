@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/typelivore/typical_pop.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

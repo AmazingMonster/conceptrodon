@@ -74,4 +74,4 @@ struct Sunrise
 ## Links
 
 - [Example](../../code/facilities/utilities/sunrise/implementation.hpp)
-- [Source code](../../../conceptrodon/sunrise.hpp)
+- [Source code](../../../conceptrodon/utilities/sunrise.hpp)

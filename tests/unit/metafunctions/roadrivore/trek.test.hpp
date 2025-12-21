@@ -7,9 +7,9 @@
 #include <utility>
 
 #include "conceptrodon/roadrivore/trek.hpp"
-#include "conceptrodon/vay.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/vehicle.hpp"
+#include "conceptrodon/utilities/vay.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/vehicle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/judgmental/equal_value.hpp"

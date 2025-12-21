@@ -7,7 +7,7 @@
 #include "conceptrodon/mouldivore/concepts/any_confess.hpp"
 #include "conceptrodon/pagelivore/is_specialization_of.hpp"
 #include "conceptrodon/omennivore/concepts/all_pegful.hpp"
-#include "conceptrodon/peg.hpp"
+#include "conceptrodon/utilities/peg.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

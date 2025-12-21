@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_SET_CONTAINS_H
 
 #include <type_traits>
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

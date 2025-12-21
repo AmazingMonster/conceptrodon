@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_SHUTTLE_H
 #define CONCEPTRODON_TESTS_UNIT_SHUTTLE_H
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include <concepts>
 #include <cstddef>
 

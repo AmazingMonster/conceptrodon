@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/mouldivore/independent_left_interview.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

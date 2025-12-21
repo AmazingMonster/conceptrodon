@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_ROTATE_H
 #define CONCEPTRODON_PAGELIVORE_ROTATE_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/microbiota/varbola/swivel.hpp"
 
 namespace Conceptrodon {

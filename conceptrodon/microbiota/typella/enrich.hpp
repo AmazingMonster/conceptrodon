@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELLA_ENRICH_H
 #define CONCEPTRODON_TYPELLA_ENRICH_H
 
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include <utility>
 
 namespace Conceptrodon {

@@ -6,13 +6,13 @@
 
 #include <utility>
 
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/reverie.hpp"
-#include "conceptrodon/travail.hpp"
-#include "conceptrodon/persist.hpp"
-#include "conceptrodon/lullaby.hpp"
-#include "conceptrodon/vehicle.hpp"
-#include "conceptrodon/pursuit.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/reverie.hpp"
+#include "conceptrodon/utilities/travail.hpp"
+#include "conceptrodon/utilities/persist.hpp"
+#include "conceptrodon/utilities/lullaby.hpp"
+#include "conceptrodon/utilities/vehicle.hpp"
+#include "conceptrodon/utilities/pursuit.hpp"
 
 #include "conceptrodon/omennivore/zip.hpp"
 

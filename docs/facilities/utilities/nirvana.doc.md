@@ -74,4 +74,4 @@ struct Nirvana
 ## Links
 
 - [Example](../../code/facilities/utilities/nirvana/implementation.hpp)
-- [Source code](../../../conceptrodon/nirvana.hpp)
+- [Source code](../../../conceptrodon/utilities/nirvana.hpp)

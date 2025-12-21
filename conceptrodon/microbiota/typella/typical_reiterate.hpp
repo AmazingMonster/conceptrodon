@@ -11,7 +11,7 @@
 
 /******************************************************************************************************/
 #include "conceptrodon/cotanivore/paste.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/microbiota/cytoplasm/select_scale.hpp"
 /******************************************************************************************************/
 

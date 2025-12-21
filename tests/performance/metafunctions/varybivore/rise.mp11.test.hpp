@@ -5,8 +5,8 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_RISE_2ND_H
 
 #include "conceptrodon/varybivore/rise.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include <type_traits>

@@ -114,4 +114,4 @@ struct Halcyon
 ## Links
 
 - [Example](../../code/facilities/utilities/halcyon/implementation.hpp)
-- [Source code](../../../conceptrodon/halcyon.hpp)
+- [Source code](../../../conceptrodon/utilities/halcyon.hpp)

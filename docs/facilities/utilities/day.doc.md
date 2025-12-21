@@ -81,4 +81,4 @@ struct Day
 ## Links
 
 - [Example](../../code/facilities/utilities/day/implementation.hpp)
-- [Source code](../../../conceptrodon/day.hpp)
+- [Source code](../../../conceptrodon/utilities/day.hpp)

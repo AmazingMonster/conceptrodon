@@ -7,7 +7,7 @@
 #include "conceptrodon/omennivore/concepts/any_peg_zero.hpp"
 #include "conceptrodon/omennivore/concepts/all_pegful.hpp"
 #include "conceptrodon/typelivore/concepts/any_zero.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

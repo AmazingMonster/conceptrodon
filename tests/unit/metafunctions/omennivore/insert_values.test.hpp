@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/omennivore/insert_values.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

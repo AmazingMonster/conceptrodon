@@ -9,7 +9,7 @@
 #include "conceptrodon/typelivore/pop.hpp"
 #include "conceptrodon/mouldivore/classic_recur.hpp"
 #include "conceptrodon/mouldivore/agent.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

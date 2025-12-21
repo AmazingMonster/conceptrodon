@@ -89,4 +89,4 @@ struct Capsule
 ## Links
 
 - [Example](../../code/facilities/utilities/capsule/implementation.hpp)
-- [Source code](../../../conceptrodon/capsule.hpp)
+- [Source code](../../../conceptrodon/utilities/capsule.hpp)

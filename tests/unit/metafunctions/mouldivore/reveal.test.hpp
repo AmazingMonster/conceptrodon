@@ -7,7 +7,7 @@
 #include <concepts>
 
 #include "conceptrodon/mouldivore/reveal.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 

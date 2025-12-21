@@ -236,5 +236,5 @@ struct Shuttle<Indices...>
 ## Links
 
 - [Example](../../code/facilities/utilities/shuttle/implementation.hpp)
-- [Source code](../../../conceptrodon/shuttle.hpp)
+- [Source code](../../../conceptrodon/utilities/shuttle.hpp)
 - [Unit test](../../../tests/unit/utilities/shuttle.test.hpp)

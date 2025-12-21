@@ -7,8 +7,8 @@
 #include <concepts>
 
 #include "conceptrodon/pagelivore/bind.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/peg.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
+#include "conceptrodon/utilities/peg.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

@@ -114,4 +114,4 @@ struct Lullaby
 ## Links
 
 - [Example](../../code/facilities/utilities/lullaby/implementation.hpp)
-- [Source code](../../../conceptrodon/lullaby.hpp)
+- [Source code](../../../conceptrodon/utilities/lullaby.hpp)

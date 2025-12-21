@@ -7,7 +7,7 @@
 #include "conceptrodon/typelivore/concepts/less_than.hpp"
 #include "conceptrodon/typelivore/concepts/unequal_to.hpp"
 #include "conceptrodon/typelivore/concepts/greater_than.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

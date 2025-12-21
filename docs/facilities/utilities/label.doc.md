@@ -93,4 +93,4 @@ struct Label
 ## Links
 
 - [Example](../../code/facilities/utilities/label/implementation.hpp)
-- [Source code](../../../conceptrodon/label.hpp)
+- [Source code](../../../conceptrodon/utilities/label.hpp)

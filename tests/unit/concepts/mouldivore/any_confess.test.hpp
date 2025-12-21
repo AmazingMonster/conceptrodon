@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ANY_CONFESS_H
 
 #include "conceptrodon/mouldivore/concepts/any_confess.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {

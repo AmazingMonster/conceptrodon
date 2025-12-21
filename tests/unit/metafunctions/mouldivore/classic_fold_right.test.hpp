@@ -8,7 +8,7 @@
 
 #include "conceptrodon/mouldivore/classic_fold_right.hpp"
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

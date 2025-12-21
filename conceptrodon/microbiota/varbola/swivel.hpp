@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARBOLA_SWIVEL_H
 
 #include "utility"
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 
 namespace Conceptrodon {
 namespace Varbola {

@@ -74,4 +74,4 @@ struct Vay
 ## Links
 
 - [Example](../../code/facilities/utilities/vay/implementation.hpp)
-- [Source code](../../../conceptrodon/vay.hpp)
+- [Source code](../../../conceptrodon/utilities/vay.hpp)

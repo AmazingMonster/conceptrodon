@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_SIEVE_H
 #define CONCEPTRODON_MOULDIVORE_SIEVE_H
 
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/cotanivore/paste.hpp"
 
 namespace Conceptrodon {

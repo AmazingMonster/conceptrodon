@@ -74,4 +74,4 @@ struct Arcadia
 ## Links
 
 - [Example](../../code/facilities/utilities/arcadia/implementation.hpp)
-- [Source code](../../../conceptrodon/arcadia.hpp)
+- [Source code](../../../conceptrodon/utilities/arcadia.hpp)

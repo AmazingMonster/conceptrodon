@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_FIND_H
 
 #include "conceptrodon/typelivore/kindred_find.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/typelivore/is_same_as.hpp"
 
 #include "macaron/fragmental/sheep.hpp"

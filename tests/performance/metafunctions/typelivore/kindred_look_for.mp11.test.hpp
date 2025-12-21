@@ -5,9 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LOOK_FOR_2ND_H
 
 #include <concepts>
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/typelivore/kindred_look_for.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/same_type.hpp"

@@ -7,10 +7,10 @@
 #include <utility>
 
 #include "conceptrodon/mouldivore/classic_trek.hpp"
-#include "conceptrodon/vay.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/carrier.hpp"
+#include "conceptrodon/utilities/vay.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
+#include "conceptrodon/utilities/carrier.hpp"
 
 #include "macaron/judgmental/equal_value.hpp"
 #include "macaron/judgmental/same_type.hpp"

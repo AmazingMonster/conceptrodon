@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIS_RIGHT_INSPECT_H
 #define CONCEPTRODON_PAGELIS_RIGHT_INSPECT_H
 
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include <utility>
 
 namespace Conceptrodon {

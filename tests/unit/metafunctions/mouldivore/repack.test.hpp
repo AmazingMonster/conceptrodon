@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "conceptrodon/mouldivore/repack.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

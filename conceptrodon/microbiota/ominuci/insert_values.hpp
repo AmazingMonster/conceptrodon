@@ -10,9 +10,9 @@
 
 
 /******************************************************************************************************/
-#include "conceptrodon/prefix.hpp"
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/omennivore/extend_front.hpp"
 #include <utility>
 /******************************************************************************************************/

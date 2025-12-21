@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LEFT_INTERVIEW_2ND_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_KINDRED_LEFT_INTERVIEW_2ND_H
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/typelivore/kindred_left_interview.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include <utility>

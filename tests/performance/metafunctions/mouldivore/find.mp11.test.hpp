@@ -5,9 +5,9 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_FIND_2ND_H
 
 #include <concepts>
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/mouldivore/find.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/typelivore/is_same_as.hpp"
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/same_type.hpp"

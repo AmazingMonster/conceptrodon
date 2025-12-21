@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_REAL_H
 
 #include "conceptrodon/mouldivore/concepts/real.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {

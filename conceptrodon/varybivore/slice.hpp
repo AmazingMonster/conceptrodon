@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_SLICE_H
 #define CONCEPTRODON_VARYBIVORE_SLICE_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/microbiota/varbola/incise.hpp"
 #include "conceptrodon/microbiota/varbola/shear.hpp"
 

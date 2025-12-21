@@ -41,4 +41,4 @@ struct Peg
 
 ## Links
 
-- [Source code](../../../conceptrodon/peg.hpp)
+- [Source code](../../../conceptrodon/utilities/peg.hpp)

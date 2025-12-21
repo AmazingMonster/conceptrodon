@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_FRONT_H
 #define CONCEPTRODON_VARYBIVORE_FRONT_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/microbiota/varbola/fore.hpp"
 
 namespace Conceptrodon {

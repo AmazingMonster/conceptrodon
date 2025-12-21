@@ -7,8 +7,8 @@
 #include <utility>
 
 #include "conceptrodon/varybivore/among.hpp"
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

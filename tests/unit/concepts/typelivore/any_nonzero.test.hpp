@@ -6,7 +6,7 @@
 
 #include "conceptrodon/typelivore/concepts/all_nonzero.hpp"
 #include "conceptrodon/typelivore/concepts/any_nonzero.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

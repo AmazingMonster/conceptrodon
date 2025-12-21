@@ -5,7 +5,7 @@
 #define CONCEPTRODON_PAGELIVORE_RIGHT_REVIEW_H
 
 #include "conceptrodon/microbiota/pagelis/right_inspect.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {

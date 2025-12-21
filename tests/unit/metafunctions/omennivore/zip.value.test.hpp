@@ -6,8 +6,8 @@
 
 #include <utility>
 
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/omennivore/zip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

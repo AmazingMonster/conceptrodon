@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARYBIVORE_ERASE_H
 #define CONCEPTRODON_VARYBIVORE_ERASE_H
 
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/microbiota/varbola/ditch.hpp"
 #include "conceptrodon/microbiota/varbola/expunge.hpp"
 

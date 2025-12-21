@@ -11,7 +11,7 @@
 
 /******************************************************************************************************/
 #include "conceptrodon/omennivore/extend_back.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 /******************************************************************************************************/
 
 

@@ -81,4 +81,4 @@ struct Sny
 ## Links
 
 - [Example](../../code/facilities/utilities/sny/implementation.hpp)
-- [Source code](../../../conceptrodon/sny.hpp)
+- [Source code](../../../conceptrodon/utilities/sny.hpp)

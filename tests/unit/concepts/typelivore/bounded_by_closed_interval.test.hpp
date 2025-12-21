@@ -7,7 +7,7 @@
 #include "conceptrodon/typelivore/concepts/bounded_by_closed_interval.hpp"
 #include "conceptrodon/typelivore/concepts/no_less_than.hpp"
 #include "conceptrodon/typelivore/concepts/no_greater_than.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

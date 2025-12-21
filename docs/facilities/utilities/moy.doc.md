@@ -81,4 +81,4 @@ struct Moy
 ## Links
 
 - [Example](../../code/facilities/utilities/moy/implementation.hpp)
-- [Source code](../../../conceptrodon/moy.hpp)
+- [Source code](../../../conceptrodon/utilities/moy.hpp)

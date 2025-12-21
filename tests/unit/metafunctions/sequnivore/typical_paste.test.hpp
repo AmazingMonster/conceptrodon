@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_SEQUNIVORE_TYPICAL_PASTE_H
 
 #include "conceptrodon/sequnivore/typical_paste.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"

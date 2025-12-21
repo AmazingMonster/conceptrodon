@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_COGNATE_MODIFY_H
 #define CONCEPTRODON_PAGELIVORE_COGNATE_MODIFY_H
 
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/omennivore/modify_values.hpp"
 #include "conceptrodon/omennivore/send.hpp"
 #include "conceptrodon/pagelivore/cognate_segment.hpp"

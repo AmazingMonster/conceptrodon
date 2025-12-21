@@ -6,7 +6,7 @@
 
 #include <concepts>
 #include "conceptrodon/mouldivore/cognate_repeat.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/fragmental/alkane.hpp"
 #include "macaron/judgmental/same_type.hpp"
 

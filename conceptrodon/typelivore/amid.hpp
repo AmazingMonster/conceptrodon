@@ -6,7 +6,7 @@
 
 #include <cstddef>
 #include <utility>
-#include "conceptrodon/label.hpp"
+#include "conceptrodon/utilities/label.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

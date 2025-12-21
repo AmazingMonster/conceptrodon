@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_LEFT_INTERVIEW_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_SENSIBLE_LEFT_INTERVIEW_H
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/varybivore/sensible_left_interview.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

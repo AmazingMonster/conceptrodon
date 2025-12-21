@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_VARBOLA_ENRICH_H
 #define CONCEPTRODON_VARBOLA_ENRICH_H
 
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include <utility>
 
 namespace Conceptrodon {

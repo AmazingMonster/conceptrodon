@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_TYPICAL_DIVERSITY_H
 #define CONCEPTRODON_TYPELIVORE_TYPICAL_DIVERSITY_H
 
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {

@@ -114,4 +114,4 @@ struct Travail
 ## Links
 
 - [Example](../../code/facilities/utilities/travail/implementation.hpp)
-- [Source code](../../../conceptrodon/travail.hpp)
+- [Source code](../../../conceptrodon/utilities/travail.hpp)

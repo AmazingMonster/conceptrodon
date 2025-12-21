@@ -114,4 +114,4 @@ struct Phantom
 ## Links
 
 - [Example](../../code/facilities/utilities/phantom/implementation.hpp)
-- [Source code](../../../conceptrodon/phantom.hpp)
+- [Source code](../../../conceptrodon/utilities/phantom.hpp)

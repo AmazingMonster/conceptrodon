@@ -10,8 +10,8 @@
 
 
 /******************************************************************************************************/
-#include "conceptrodon/prefix.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/omennivore/extend_front.hpp"
 #include <utility>
 /******************************************************************************************************/

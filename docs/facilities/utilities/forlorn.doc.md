@@ -114,4 +114,4 @@ struct Forlorn
 ## Links
 
 - [Example](../../code/facilities/utilities/forlorn/implementation.hpp)
-- [Source code](../../../conceptrodon/forlorn.hpp)
+- [Source code](../../../conceptrodon/utilities/forlorn.hpp)

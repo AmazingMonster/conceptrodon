@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_CONFESS_H
 
 #include "conceptrodon/pagelivore/concepts/any_confess.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/varybivore/are_greater_than.hpp"
 
 namespace Conceptrodon {

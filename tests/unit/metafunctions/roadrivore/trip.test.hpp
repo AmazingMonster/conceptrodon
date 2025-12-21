@@ -6,8 +6,8 @@
 
 #include <utility>
 
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/roadrivore/trip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

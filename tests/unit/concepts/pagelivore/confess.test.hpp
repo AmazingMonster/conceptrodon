@@ -6,7 +6,7 @@
 
 #include "conceptrodon/pagelivore/concepts/confess.hpp"
 #include "conceptrodon/varybivore/are_greater_than.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Pagelivore {

@@ -7,7 +7,7 @@
 #include <concepts>
 
 #include "conceptrodon/typelivore/set_contains.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 
 #include "macaron/fragmental/sheep.hpp"
 #include "macaron/judgmental/valid.hpp"

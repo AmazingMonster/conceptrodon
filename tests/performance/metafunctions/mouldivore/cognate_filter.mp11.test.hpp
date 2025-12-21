@@ -7,7 +7,7 @@
 #include <type_traits>
 #include <concepts>
 #include "conceptrodon/mouldivore/cognate_filter.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

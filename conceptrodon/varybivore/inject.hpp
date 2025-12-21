@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_INJECT_H
 
 #include "conceptrodon/microbiota/varbola/enrich.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

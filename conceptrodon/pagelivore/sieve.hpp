@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_PAGELIVORE_SIEVE_H
 #define CONCEPTRODON_PAGELIVORE_SIEVE_H
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/sequnivore/paste.hpp"
 
 namespace Conceptrodon {

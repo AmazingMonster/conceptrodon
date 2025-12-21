@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_AMIDST_H
 #define CONCEPTRODON_TYPELIVORE_AMIDST_H
 
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include <type_traits>
 #include <utility>
 

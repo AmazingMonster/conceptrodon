@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_VARYBIVORE_TYPICAL_DIVERSITY_H
 #define CONCEPTRODON_VARYBIVORE_TYPICAL_DIVERSITY_H
 
-#include "conceptrodon/shuttle.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {

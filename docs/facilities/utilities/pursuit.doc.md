@@ -114,4 +114,4 @@ struct Pursuit
 ## Links
 
 - [Example](../../code/facilities/utilities/pursuit/implementation.hpp)
-- [Source code](../../../conceptrodon/pursuit.hpp)
+- [Source code](../../../conceptrodon/utilities/pursuit.hpp)

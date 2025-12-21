@@ -81,4 +81,4 @@ struct Gly
 ## Links
 
 - [Example](../../code/facilities/utilities/gly/implementation.hpp)
-- [Source code](../../../conceptrodon/gly.hpp)
+- [Source code](../../../conceptrodon/utilities/gly.hpp)

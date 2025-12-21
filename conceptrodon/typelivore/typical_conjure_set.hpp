@@ -4,8 +4,8 @@
 #ifndef CONCEPTRODON_TYPELIVORE_TYPICAL_CONJURE_SET_H
 #define CONCEPTRODON_TYPELIVORE_TYPICAL_CONJURE_SET_H
 
-#include "conceptrodon/capsule.hpp"
-#include "conceptrodon/prefix.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/prefix.hpp"
 #include "conceptrodon/cotanivore/paste.hpp"
 #include <utility>
 

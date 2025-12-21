@@ -6,7 +6,7 @@
 
 #include <utility>
 
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 #include "conceptrodon/raillivore/classic_trip.hpp"
 
 #include "macaron/judgmental/same_type.hpp"

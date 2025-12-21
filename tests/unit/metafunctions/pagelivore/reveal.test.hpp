@@ -7,7 +7,7 @@
 #include <concepts>
 
 #include "conceptrodon/pagelivore/reveal.hpp"
-#include "conceptrodon/shuttle.hpp"
+#include "conceptrodon/utilities/shuttle.hpp"
 
 #include "macaron/judgmental/same_type.hpp"
 

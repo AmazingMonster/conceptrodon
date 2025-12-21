@@ -81,4 +81,4 @@ struct Roy
 ## Links
 
 - [Example](../../code/facilities/utilities/roy/implementation.hpp)
-- [Source code](../../../conceptrodon/roy.hpp)
+- [Source code](../../../conceptrodon/utilities/roy.hpp)

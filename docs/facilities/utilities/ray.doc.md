@@ -81,4 +81,4 @@ struct Ray
 ## Links
 
 - [Example](../../code/facilities/utilities/ray/implementation.hpp)
-- [Source code](../../../conceptrodon/ray.hpp)
+- [Source code](../../../conceptrodon/utilities/ray.hpp)

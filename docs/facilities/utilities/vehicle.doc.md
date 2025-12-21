@@ -114,4 +114,4 @@ struct Vehicle
 ## Links
 
 - [Example](../../code/facilities/utilities/vehicle/implementation.hpp)
-- [Source code](../../../conceptrodon/vehicle.hpp)
+- [Source code](../../../conceptrodon/utilities/vehicle.hpp)

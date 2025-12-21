@@ -5,7 +5,7 @@
 #define CONCEPTRODON_VARYBIVORE_ROTATE_H
 
 #include "conceptrodon/microbiota/varbola/swivel.hpp"
-#include "conceptrodon/vay.hpp"
+#include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

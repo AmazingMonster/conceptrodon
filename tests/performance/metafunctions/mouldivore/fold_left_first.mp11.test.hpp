@@ -7,7 +7,7 @@
 #include <concepts>
 #include <type_traits>
 #include "conceptrodon/mouldivore/fold_left_first.hpp"
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 

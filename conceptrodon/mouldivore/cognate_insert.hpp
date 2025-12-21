@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_COGNATE_INSERT_H
 #define CONCEPTRODON_MOULDIVORE_COGNATE_INSERT_H
 
-#include "conceptrodon/capsule.hpp"
+#include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/omennivore/insert_types.hpp"
 #include "conceptrodon/omennivore/send.hpp"
 #include "conceptrodon/pagelivore/cognate_segment.hpp"

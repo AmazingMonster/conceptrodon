@@ -81,4 +81,4 @@ struct Gry
 ## Links
 
 - [Example](../../code/facilities/utilities/gry/implementation.hpp)
-- [Source code](../../../conceptrodon/gry.hpp)
+- [Source code](../../../conceptrodon/utilities/gry.hpp)
