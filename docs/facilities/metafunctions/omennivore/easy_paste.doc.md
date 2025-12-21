@@ -160,4 +160,4 @@ using EasyPaste = EasyTypicalPaste<Args...>::type;
 
 - [Example](../../../code/facilities/metafunctions/omennivore/easy_paste/implementation.hpp)
 - [Source code](../../../../conceptrodon/metafunctions/omennivore/easy_paste.hpp)
-- [Unit test](../../../../tests/unit/metafunctions/omennivore/easy_paste.type.test.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/easy_paste.test.hpp)

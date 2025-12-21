@@ -78,6 +78,23 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Move unit tests for a single metafunction to a correspondingly named directory. This is to make sure the corresponding directories across the production code, documentation, and unit tests to have the same number of items</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 
 ### 2025/12/20
 
