@@ -82,3 +82,4 @@ struct Day
 
 - [Example](../../code/facilities/utilities/day/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/day.hpp)
+- [Unit test](../../../tests/unit/utilities/day.test.hpp)

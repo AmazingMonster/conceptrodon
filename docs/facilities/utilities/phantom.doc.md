@@ -115,3 +115,4 @@ struct Phantom
 
 - [Example](../../code/facilities/utilities/phantom/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/phantom.hpp)
+- [Unit test](../../../tests/unit/utilities/phantom.test.hpp)

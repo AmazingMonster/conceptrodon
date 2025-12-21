@@ -82,3 +82,4 @@ struct Cay
 
 - [Example](../../code/facilities/utilities/cay/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/cay.hpp)
+- [Unit test](../../../tests/unit/utilities/cay.test.hpp)

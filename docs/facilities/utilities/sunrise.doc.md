@@ -75,3 +75,4 @@ struct Sunrise
 
 - [Example](../../code/facilities/utilities/sunrise/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/sunrise.hpp)
+- [Unit test](../../../tests/unit/utilities/sunrise.test.hpp)

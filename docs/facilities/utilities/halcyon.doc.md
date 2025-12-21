@@ -115,3 +115,4 @@ struct Halcyon
 
 - [Example](../../code/facilities/utilities/halcyon/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/halcyon.hpp)
+- [Unit test](../../../tests/unit/utilities/halcyon.test.hpp)

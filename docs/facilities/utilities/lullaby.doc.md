@@ -115,3 +115,4 @@ struct Lullaby
 
 - [Example](../../code/facilities/utilities/lullaby/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/lullaby.hpp)
+- [Unit test](../../../tests/unit/utilities/lullaby.test.hpp)

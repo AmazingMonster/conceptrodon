@@ -115,3 +115,4 @@ struct Vehicle
 
 - [Example](../../code/facilities/utilities/vehicle/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/vehicle.hpp)
+- [Unit test](../../../tests/unit/utilities/vehicle.test.hpp)

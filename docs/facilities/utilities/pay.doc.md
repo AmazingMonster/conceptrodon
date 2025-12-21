@@ -82,3 +82,4 @@ struct Pay
 
 - [Example](../../code/facilities/utilities/pay/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/pay.hpp)
+- [Unit test](../../../tests/unit/utilities/pay.test.hpp)

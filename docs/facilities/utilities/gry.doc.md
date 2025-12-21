@@ -82,3 +82,4 @@ struct Gry
 
 - [Example](../../code/facilities/utilities/gry/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/gry.hpp)
+- [Unit test](../../../tests/unit/utilities/gry.test.hpp)

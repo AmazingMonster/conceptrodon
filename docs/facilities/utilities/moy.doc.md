@@ -82,3 +82,4 @@ struct Moy
 
 - [Example](../../code/facilities/utilities/moy/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/moy.hpp)
+- [Unit test](../../../tests/unit/utilities/moy.test.hpp)

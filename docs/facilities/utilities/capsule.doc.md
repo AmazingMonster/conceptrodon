@@ -90,3 +90,4 @@ struct Capsule
 
 - [Example](../../code/facilities/utilities/capsule/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/capsule.hpp)
+- [Unit test](../../../tests/unit/utilities/capsule.test.hpp)

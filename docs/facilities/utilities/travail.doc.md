@@ -115,3 +115,4 @@ struct Travail
 
 - [Example](../../code/facilities/utilities/travail/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/travail.hpp)
+- [Unit test](../../../tests/unit/utilities/travail.test.hpp)

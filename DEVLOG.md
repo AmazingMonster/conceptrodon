@@ -95,6 +95,23 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add unit tests for utilities. Now there is one unit test for every concept, metafunction, and utility</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 
 ### 2025/12/20
 

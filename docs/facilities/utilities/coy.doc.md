@@ -82,3 +82,4 @@ struct Coy
 
 - [Example](../../code/facilities/utilities/coy/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/coy.hpp)
+- [Unit test](../../../tests/unit/utilities/coy.test.hpp)

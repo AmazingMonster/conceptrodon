@@ -75,3 +75,4 @@ struct Vay
 
 - [Example](../../code/facilities/utilities/vay/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/vay.hpp)
+- [Unit test](../../../tests/unit/utilities/vay.test.hpp)

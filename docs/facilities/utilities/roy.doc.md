@@ -82,3 +82,4 @@ struct Roy
 
 - [Example](../../code/facilities/utilities/roy/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/roy.hpp)
+- [Unit test](../../../tests/unit/utilities/roy.test.hpp)

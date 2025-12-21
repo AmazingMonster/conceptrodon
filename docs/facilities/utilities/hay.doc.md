@@ -82,3 +82,4 @@ struct Hay
 
 - [Example](../../code/facilities/utilities/hay/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/hay.hpp)
+- [Unit test](../../../tests/unit/utilities/hay.test.hpp)

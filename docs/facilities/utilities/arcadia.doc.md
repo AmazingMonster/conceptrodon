@@ -75,3 +75,4 @@ struct Arcadia
 
 - [Example](../../code/facilities/utilities/arcadia/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/arcadia.hpp)
+- [Unit test](../../../tests/unit/utilities/arcadia.test.hpp)

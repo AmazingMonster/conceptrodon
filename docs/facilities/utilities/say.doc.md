@@ -82,3 +82,4 @@ struct Say
 
 - [Example](../../code/facilities/utilities/say/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/say.hpp)
+- [Unit test](../../../tests/unit/utilities/say.test.hpp)

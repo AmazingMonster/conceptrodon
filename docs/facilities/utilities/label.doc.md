@@ -94,3 +94,4 @@ struct Label
 
 - [Example](../../code/facilities/utilities/label/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/label.hpp)
+- [Unit test](../../../tests/unit/utilities/label.test.hpp)

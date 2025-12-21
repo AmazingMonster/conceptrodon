@@ -75,3 +75,4 @@ struct Nirvana
 
 - [Example](../../code/facilities/utilities/nirvana/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/nirvana.hpp)
+- [Unit test](../../../tests/unit/utilities/nirvana.test.hpp)

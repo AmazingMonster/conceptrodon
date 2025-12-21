@@ -115,3 +115,4 @@ struct Reverie
 
 - [Example](../../code/facilities/utilities/reverie/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/reverie.hpp)
+- [Unit test](../../../tests/unit/utilities/reverie.test.hpp)

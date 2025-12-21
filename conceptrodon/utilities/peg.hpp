@@ -5,12 +5,13 @@
 #define CONCEPTRODON_PEG_H
 
 #include <cstddef>
+#include <type_traits>
 
 namespace Conceptrodon {
 
-template <size_t I>
+template <std::make_signed_t<size_t> I>
 struct Peg
-{ static constexpr size_t value {I}; };
+{ static constexpr std::make_signed_t<size_t> value {I}; };
  
 }
 

@@ -115,3 +115,4 @@ struct Pursuit
 
 - [Example](../../code/facilities/utilities/pursuit/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/pursuit.hpp)
+- [Unit test](../../../tests/unit/utilities/pursuit.test.hpp)

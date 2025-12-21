@@ -115,3 +115,4 @@ struct Persist
 
 - [Example](../../code/facilities/utilities/persist/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/persist.hpp)
+- [Unit test](../../../tests/unit/utilities/persist.test.hpp)

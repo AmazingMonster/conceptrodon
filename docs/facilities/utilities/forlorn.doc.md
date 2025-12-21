@@ -115,3 +115,4 @@ struct Forlorn
 
 - [Example](../../code/facilities/utilities/forlorn/implementation.hpp)
 - [Source code](../../../conceptrodon/utilities/forlorn.hpp)
+- [Unit test](../../../tests/unit/utilities/forlorn.test.hpp)
