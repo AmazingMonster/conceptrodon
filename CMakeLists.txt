@@ -9,8 +9,6 @@ project(
     LANGUAGES CXX
 )
 
-option(CONCEPTRODON_COMPARE_WITH_BOOST OFF)
-
 # cache variables for installation destinations
 include(GNUInstallDirs)
 
