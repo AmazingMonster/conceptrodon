@@ -11,7 +11,7 @@
 #include "macaron/judgmental/same_type.hpp"
 #include "macaron/fragmental/sheep.hpp"
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 #include "boost/mp11.hpp"
 #endif
 
@@ -57,7 +57,7 @@ using CapsuleTester = Capsule<SHEEP_SPROUT(240)>;
 
 
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 
 
 

@@ -112,6 +112,23 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Turn switches <code>#ifdef</code> into <code>#if</code> in 'tests\performance\...'</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 
 ### 2025/12/20
 

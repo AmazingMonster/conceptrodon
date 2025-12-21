@@ -16,7 +16,7 @@
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 #include "boost/mp11.hpp"
 #endif
 
@@ -64,7 +64,7 @@ using SupposedMPResult = Capsule<SHEEP_SPROUT(240)>;
 
 
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 
 
 

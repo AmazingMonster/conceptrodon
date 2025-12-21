@@ -20,7 +20,7 @@ namespace Varybivore {
 namespace PerformanceTests {
 namespace TestIsSameAs6th {
 
-#ifdef CONCEPTRODON_TEST_ALTERNATIVE_SWITCH
+#if CONCEPTRODON_TEST_ALTERNATIVE_SWITCH
 
 /******************************************************************************************************/
 template<auto Target>

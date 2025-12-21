@@ -17,7 +17,7 @@
 #include "macaron/fragmental/amenity/define_sheep.hpp"
 #include "macaron/fragmental/amenity/define_sheep_reversed.hpp"
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 #include "boost/mp11.hpp"
 #endif
 
@@ -47,7 +47,7 @@ using SupposedResult = Capsule<SHEEP_REVERSED_SPROUT(240)>;
 
 
 
-#ifdef CONCEPTRODON_TEST_COMPARE_WITH_BOOST
+#if CONCEPTRODON_TEST_COMPARE_WITH_BOOST
 
 
 
