@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_VOLATILE_QUALIFIED_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_ALL_VOLATILE_QUALIFIED_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/all_volatile_qualified.hpp"
+#include "conceptrodon/concepts/functivore/all_volatile_qualified.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

@@ -31,5 +31,5 @@ concept NoGreaterThan
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/no_greater_than.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/no_greater_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/no_greater_than.test.hpp)

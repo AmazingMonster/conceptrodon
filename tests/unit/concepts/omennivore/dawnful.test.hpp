@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_DAWNFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_DAWNFUL_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/dawnful.hpp"
+#include "conceptrodon/concepts/omennivore/dawnful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

@@ -29,5 +29,5 @@ concept Nonzero = UnequalTo<Arg, 0>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/nonzero.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/nonzero.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/nonzero.test.hpp)

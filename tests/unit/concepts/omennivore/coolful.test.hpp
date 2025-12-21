@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_COOLFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_COOLFUL_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/coolful.hpp"
+#include "conceptrodon/concepts/omennivore/coolful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_LESS_THAN_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_LESS_THAN_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/less_than.hpp"
+#include "conceptrodon/concepts/varybivore/less_than.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

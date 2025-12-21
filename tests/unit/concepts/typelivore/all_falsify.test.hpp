@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_FALSIFY_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_ALL_FALSIFY_H
 
-#include "conceptrodon/metafunctions/typelivore/concepts/all_falsify.hpp"
+#include "conceptrodon/concepts/typelivore/all_falsify.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

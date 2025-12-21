@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_TYPICAL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_TYPICAL_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/all_typical.hpp"
+#include "conceptrodon/concepts/omennivore/all_typical.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

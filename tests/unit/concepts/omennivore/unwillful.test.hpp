@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNWILLFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNWILLFUL_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/unwillful.hpp"
+#include "conceptrodon/concepts/omennivore/unwillful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

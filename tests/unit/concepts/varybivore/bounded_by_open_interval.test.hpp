@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_OPEN_INTERVAL_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_BOUNDED_BY_OPEN_INTERVAL_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/bounded_by_open_interval.hpp"
+#include "conceptrodon/concepts/varybivore/bounded_by_open_interval.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

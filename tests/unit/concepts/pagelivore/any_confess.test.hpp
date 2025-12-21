@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_CONFESS_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_CONFESS_H
 
-#include "conceptrodon/metafunctions/pagelivore/concepts/any_confess.hpp"
+#include "conceptrodon/concepts/pagelivore/any_confess.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 #include "conceptrodon/metafunctions/varybivore/are_greater_than.hpp"
 

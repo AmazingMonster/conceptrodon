@@ -82,5 +82,5 @@ concept AllConfess = (...&&Predicate(Elements::value));
 ## Links
 
 - [Example](../../../code/facilities/concepts/varybivore/all_confess/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/all_confess.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/all_confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/all_confess.test.hpp)

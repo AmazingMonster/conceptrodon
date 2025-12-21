@@ -82,5 +82,5 @@ concept AnyConfess = (...||Predicate{}(Elements::value));
 ## Links
 
 - [Example](../../../code/facilities/concepts/typelivore/any_confess/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/any_confess.hpp)
+- [Source code](../../../../conceptrodon/concepts/typelivore/any_confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/any_confess.test.hpp)

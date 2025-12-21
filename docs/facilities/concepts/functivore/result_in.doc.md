@@ -27,5 +27,5 @@ concept ResultIn
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/result_in.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/result_in.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/result_in.test.hpp)

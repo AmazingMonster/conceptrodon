@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_EQUAL_TO_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_EQUAL_TO_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/equal_to.hpp"
+#include "conceptrodon/concepts/varybivore/equal_to.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

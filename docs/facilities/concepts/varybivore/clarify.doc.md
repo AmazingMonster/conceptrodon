@@ -75,5 +75,5 @@ concept Clarify = Predicate(Variables...);
 ## Links
 
 - [Example](../../../code/facilities/concepts/varybivore/clarify/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/clarify.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/clarify.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/clarify.test.hpp)

@@ -41,5 +41,5 @@ concept Uncoolful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/uncoolful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/uncoolful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/uncoolful.test.hpp)

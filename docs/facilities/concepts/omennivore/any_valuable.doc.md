@@ -35,5 +35,5 @@ concept AnyValuable
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/any_valuable.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/any_valuable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_valuable.test.hpp)

@@ -26,5 +26,5 @@ concept NoexceptSpecified = Mouldivore::Confess<IsNoexcept, F>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/noexcept_specified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/noexcept_specified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/noexcept_specified.test.hpp)

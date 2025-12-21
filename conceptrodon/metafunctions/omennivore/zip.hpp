@@ -4,17 +4,17 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ZIP_H
 #define CONCEPTRODON_OMENNIVORE_ZIP_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/all_moldful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_roadful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_railful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_flowful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_sailful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_snowful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_hailful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_coolful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_calmful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_gritful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_willful.hpp"
+#include "conceptrodon/concepts/omennivore/all_moldful.hpp"
+#include "conceptrodon/concepts/omennivore/all_roadful.hpp"
+#include "conceptrodon/concepts/omennivore/all_railful.hpp"
+#include "conceptrodon/concepts/omennivore/all_flowful.hpp"
+#include "conceptrodon/concepts/omennivore/all_sailful.hpp"
+#include "conceptrodon/concepts/omennivore/all_snowful.hpp"
+#include "conceptrodon/concepts/omennivore/all_hailful.hpp"
+#include "conceptrodon/concepts/omennivore/all_coolful.hpp"
+#include "conceptrodon/concepts/omennivore/all_calmful.hpp"
+#include "conceptrodon/concepts/omennivore/all_gritful.hpp"
+#include "conceptrodon/concepts/omennivore/all_willful.hpp"
 
 #include "conceptrodon/metafunctions/omennivore/among.hpp"
 #include "conceptrodon/metafunctions/omennivore/total.hpp"

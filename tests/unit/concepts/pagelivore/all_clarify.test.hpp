@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_CLARIFY_H
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ALL_CLARIFY_H
 
-#include "conceptrodon/metafunctions/pagelivore/concepts/all_clarify.hpp"
+#include "conceptrodon/concepts/pagelivore/all_clarify.hpp"
 #include "conceptrodon/metafunctions/varybivore/are_greater_than.hpp"
 
 namespace Conceptrodon {

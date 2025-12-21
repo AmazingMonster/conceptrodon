@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_CONST_QUALIFIED_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_CONST_QUALIFIED_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/const_qualified.hpp"
+#include "conceptrodon/concepts/functivore/const_qualified.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

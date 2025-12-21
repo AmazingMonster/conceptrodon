@@ -26,5 +26,5 @@ concept NonoverloadedFunctionObjectProbe = requires {&FO::operator();};
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/nonoverloaded_function_object_probe.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/nonoverloaded_function_object_probe.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/nonoverloaded_function_object_probe.test.hpp)

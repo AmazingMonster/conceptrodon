@@ -26,5 +26,5 @@ concept NotNoexceptSpecified = Mouldivore::Deceive<IsNoexcept, F>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/not_noexcept_specified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/not_noexcept_specified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/not_noexcept_specified.test.hpp)

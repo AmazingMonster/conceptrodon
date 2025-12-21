@@ -83,5 +83,5 @@ concept AllFalsify = (...&&(not Predicate<Variables>::value));
 ## Links
 
 - [Example](../../../code/facilities/concepts/pagelivore/all_falsify/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/pagelivore/concepts/all_falsify.hpp)
+- [Source code](../../../../conceptrodon/concepts/pagelivore/all_falsify.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/all_falsify.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_UNVALUABLE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_UNVALUABLE_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/all_unvaluable.hpp"
+#include "conceptrodon/concepts/omennivore/all_unvaluable.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

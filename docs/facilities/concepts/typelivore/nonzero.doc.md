@@ -34,5 +34,5 @@ concept Nonzero
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/nonzero.hpp)
+- [Source code](../../../../conceptrodon/concepts/typelivore/nonzero.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/nonzero.test.hpp)

@@ -26,5 +26,5 @@ concept AllSailful = Mouldivore::AllConfess<IsSailful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_sailful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/all_sailful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_sailful.test.hpp)

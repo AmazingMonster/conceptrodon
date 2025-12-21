@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_FALSIFY_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_FALSIFY_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/falsify.hpp"
+#include "conceptrodon/concepts/varybivore/falsify.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

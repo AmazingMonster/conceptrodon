@@ -29,5 +29,5 @@ concept LessThan = LeftSide < RightSide;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/less_than.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/less_than.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/less_than.test.hpp)

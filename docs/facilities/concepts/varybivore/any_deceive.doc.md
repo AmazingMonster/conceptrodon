@@ -82,5 +82,5 @@ concept AnyDeceive = (...||(not Predicate(Elements::value)));
 ## Links
 
 - [Example](../../../code/facilities/concepts/varybivore/any_deceive/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/any_deceive.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/any_deceive.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/any_deceive.test.hpp)

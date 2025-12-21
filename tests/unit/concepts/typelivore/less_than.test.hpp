@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_TYPELIVORE_LESS_THAN_H
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_LESS_THAN_H
 
-#include "conceptrodon/metafunctions/typelivore/concepts/less_than.hpp"
+#include "conceptrodon/concepts/typelivore/less_than.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

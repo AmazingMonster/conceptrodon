@@ -26,5 +26,5 @@ concept SameTypeSignatureAs = std::same_as<GetTypeSignature<Arg>, GetTypeSignatu
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/same_type_signature_as.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/same_type_signature_as.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/same_type_signature_as.test.hpp)

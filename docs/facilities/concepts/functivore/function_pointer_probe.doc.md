@@ -26,5 +26,5 @@ concept FunctionPointerProbe = Mouldivore::Confess<IsFunctionPointer, FP>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/function_pointer_probe.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/function_pointer_probe.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/function_pointer_probe.test.hpp)

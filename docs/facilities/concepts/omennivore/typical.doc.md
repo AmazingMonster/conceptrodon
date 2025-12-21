@@ -30,5 +30,5 @@ concept Typical = requires
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/typical.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/typical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/typical.test.hpp)

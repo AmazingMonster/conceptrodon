@@ -33,5 +33,5 @@ concept Unvaluable = not requires
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/unvaluable.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/unvaluable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unvaluable.test.hpp)

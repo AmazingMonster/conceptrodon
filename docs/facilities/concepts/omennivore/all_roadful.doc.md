@@ -26,5 +26,5 @@ concept AllRoadful = Mouldivore::AllConfess<IsRoadful, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/all_roadful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/all_roadful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/all_roadful.test.hpp)

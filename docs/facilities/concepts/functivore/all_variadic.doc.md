@@ -26,5 +26,5 @@ concept AllVariadic = Mouldivore::AllConfess<IsVariadic, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_variadic.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_variadic.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_variadic.test.hpp)

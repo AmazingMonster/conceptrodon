@@ -27,5 +27,5 @@ concept AllMemberFunctionPointer
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_member_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_member_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_member_function_pointer.test.hpp)

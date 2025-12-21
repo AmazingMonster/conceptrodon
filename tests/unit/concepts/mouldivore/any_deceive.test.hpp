@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ANY_DECEIVE_H
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/metafunctions/mouldivore/concepts/any_deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/any_deceive.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {

@@ -26,5 +26,5 @@ concept NotFunctionPointer = Mouldivore::Deceive<IsFunctionPointer, FP>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/not_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/not_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/not_function_pointer.test.hpp)

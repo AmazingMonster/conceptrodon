@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_CONFESS_H
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/metafunctions/varybivore/concepts/any_confess.hpp"
+#include "conceptrodon/concepts/varybivore/any_confess.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

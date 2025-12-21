@@ -26,5 +26,5 @@ concept Dawnful = Mouldivore::Confess<IsDawnful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/dawnful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/dawnful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/dawnful.test.hpp)

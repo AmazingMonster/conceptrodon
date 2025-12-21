@@ -34,5 +34,5 @@ concept NotNegativeOne
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/not_negative_one.hpp)
+- [Source code](../../../../conceptrodon/concepts/typelivore/not_negative_one.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/not_negative_one.test.hpp)

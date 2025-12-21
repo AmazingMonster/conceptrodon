@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_LVALUE_REFERENCE_QUALIFIED_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_LVALUE_REFERENCE_QUALIFIED_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/not_lvalue_reference_qualified.hpp"
+#include "conceptrodon/concepts/functivore/not_lvalue_reference_qualified.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

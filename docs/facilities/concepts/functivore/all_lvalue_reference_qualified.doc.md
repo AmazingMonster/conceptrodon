@@ -26,5 +26,5 @@ concept AllLvalueReferenceQualified = Mouldivore::AllConfess<IsLvalueReference, 
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_lvalue_reference_qualified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_lvalue_reference_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_lvalue_reference_qualified.test.hpp)

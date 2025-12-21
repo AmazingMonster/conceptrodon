@@ -26,5 +26,5 @@ concept Calmful = Mouldivore::Confess<IsCalmful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/calmful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/calmful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/calmful.test.hpp)

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_SAME_VARIADIC_TYPE_SIGNATURE_AS_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_SAME_VARIADIC_TYPE_SIGNATURE_AS_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/same_variadic_type_signature_as.hpp"
+#include "conceptrodon/concepts/functivore/same_variadic_type_signature_as.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

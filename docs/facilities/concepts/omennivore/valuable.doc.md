@@ -31,5 +31,5 @@ concept Valuable
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/valuable.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/valuable.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/valuable.test.hpp)

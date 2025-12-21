@@ -26,5 +26,5 @@ concept AllNotRvalueReferenceQualified = Mouldivore::AllDeceive<IsRvalueReferenc
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_not_rvalue_reference_qualified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_not_rvalue_reference_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_not_rvalue_reference_qualified.test.hpp)

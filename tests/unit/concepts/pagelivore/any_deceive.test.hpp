@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_PAGELIVORE_ANY_DECEIVE_H
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/metafunctions/pagelivore/concepts/any_deceive.hpp"
+#include "conceptrodon/concepts/pagelivore/any_deceive.hpp"
 #include "conceptrodon/metafunctions/varybivore/are_no_greater_than.hpp"
 
 namespace Conceptrodon {

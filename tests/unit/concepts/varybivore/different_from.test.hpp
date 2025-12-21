@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DIFFERENT_FROM_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_DIFFERENT_FROM_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/different_from.hpp"
+#include "conceptrodon/concepts/varybivore/different_from.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_INVOKE_RETURN_AS_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_INVOKE_RETURN_AS_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/invoke_return_as.hpp"
+#include "conceptrodon/concepts/functivore/invoke_return_as.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNGRITFUL_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_UNGRITFUL_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/ungritful.hpp"
+#include "conceptrodon/concepts/omennivore/ungritful.hpp"
 
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/shuttle.hpp"

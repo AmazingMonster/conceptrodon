@@ -82,5 +82,5 @@ concept Confess = Predicate(Elements::value...);
 ## Links
 
 - [Example](../../../code/facilities/concepts/varybivore/confess/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/confess.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/confess.test.hpp)

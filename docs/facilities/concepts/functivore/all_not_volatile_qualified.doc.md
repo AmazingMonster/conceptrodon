@@ -26,5 +26,5 @@ concept AllNotVolatileQualified = Mouldivore::AllDeceive<IsVolatile, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_not_volatile_qualified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_not_volatile_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_not_volatile_qualified.test.hpp)

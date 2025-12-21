@@ -31,5 +31,5 @@ concept BoundedByClosedInterval
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/bounded_by_closed_interval.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/bounded_by_closed_interval.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/bounded_by_closed_interval.test.hpp)

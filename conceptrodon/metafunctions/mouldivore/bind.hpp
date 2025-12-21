@@ -5,7 +5,7 @@
 #define CONCEPTRODON_MOULDIVORE_BIND_H
 
 #include "conceptrodon/metafunctions/typelivore/among.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/peg_nonzero.hpp"
+#include "conceptrodon/concepts/omennivore/peg_nonzero.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ALL_NOT_NEGATIVE_ONE_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ALL_NOT_NEGATIVE_ONE_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/all_not_negative_one.hpp"
+#include "conceptrodon/concepts/varybivore/all_not_negative_one.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

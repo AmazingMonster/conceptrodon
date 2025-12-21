@@ -34,5 +34,5 @@ concept AnyUntypical
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/any_untypical.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/any_untypical.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/any_untypical.test.hpp)

@@ -81,5 +81,5 @@ concept Deceive = not Predicate<Elements...>::value;
 ## Links
 
 - [Example](../../../code/facilities/concepts/mouldivore/deceive/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/mouldivore/concepts/deceive.hpp)
+- [Source code](../../../../conceptrodon/concepts/mouldivore/deceive.hpp)
 - [Unit test](../../../../tests/unit/concepts/mouldivore/deceive.test.hpp)

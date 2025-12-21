@@ -26,5 +26,5 @@ concept Flowful = Mouldivore::Confess<IsFlowful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/flowful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/flowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/flowful.test.hpp)

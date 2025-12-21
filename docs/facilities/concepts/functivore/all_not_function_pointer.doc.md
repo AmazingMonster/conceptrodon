@@ -26,5 +26,5 @@ concept AllNotFunctionPointer = Mouldivore::AllDeceive<IsFunctionPointer, Args..
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_not_function_pointer.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_not_function_pointer.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_not_function_pointer.test.hpp)

@@ -4,9 +4,9 @@
 #ifndef CONCEPTRODON_OMENNIVORE_EASY_TYPICAL_PASTE_H
 #define CONCEPTRODON_OMENNIVORE_EASY_TYPICAL_PASTE_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/all_moldful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_roadful.hpp"
-#include "conceptrodon/metafunctions/omennivore/concepts/all_railful.hpp"
+#include "conceptrodon/concepts/omennivore/all_moldful.hpp"
+#include "conceptrodon/concepts/omennivore/all_roadful.hpp"
+#include "conceptrodon/concepts/omennivore/all_railful.hpp"
 #include "conceptrodon/metafunctions/cotanivore/typical_paste.hpp"
 #include "conceptrodon/metafunctions/sequnivore/typical_paste.hpp"
 #include "conceptrodon/metafunctions/warehivore/typical_paste.hpp"

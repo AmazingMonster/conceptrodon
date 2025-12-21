@@ -90,5 +90,5 @@ concept AllDeceive = (...&&(not Predicate<Elements::value>::value));
 ## Links
 
 - [Example](../../../code/facilities/concepts/pagelivore/all_deceive/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/pagelivore/concepts/all_deceive.hpp)
+- [Source code](../../../../conceptrodon/concepts/pagelivore/all_deceive.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/all_deceive.test.hpp)

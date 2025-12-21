@@ -26,5 +26,5 @@ concept AllNotVariadic = Mouldivore::AllDeceive<IsVariadic, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_not_variadic.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_not_variadic.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_not_variadic.test.hpp)

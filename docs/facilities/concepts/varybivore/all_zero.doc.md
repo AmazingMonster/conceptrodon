@@ -29,5 +29,5 @@ concept AllZero = (...&&(Args == 0));
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/all_zero.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/all_zero.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/all_zero.test.hpp)

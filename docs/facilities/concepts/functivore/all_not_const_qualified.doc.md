@@ -26,5 +26,5 @@ concept AllNotConstQualified = Mouldivore::AllDeceive<IsConst, Args...>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/functivore/concepts/all_not_const_qualified.hpp)
+- [Source code](../../../../conceptrodon/concepts/functivore/all_not_const_qualified.hpp)
 - [Unit test](../../../../tests/unit/concepts/functivore/all_not_const_qualified.test.hpp)

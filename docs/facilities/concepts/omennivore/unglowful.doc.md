@@ -41,5 +41,5 @@ concept Unglowful
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/unglowful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/unglowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/unglowful.test.hpp)

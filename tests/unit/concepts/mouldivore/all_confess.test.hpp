@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ALL_CONFESS_H
 #define CONCEPTRODON_TESTS_UNIT_MOULDIVORE_ALL_CONFESS_H
 
-#include "conceptrodon/metafunctions/mouldivore/concepts/all_confess.hpp"
+#include "conceptrodon/concepts/mouldivore/all_confess.hpp"
 #include "conceptrodon/utilities/vay.hpp"
 
 namespace Conceptrodon {

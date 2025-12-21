@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_VALUABLE_H
 #define CONCEPTRODON_TESTS_UNIT_OMENNIVORE_ALL_VALUABLE_H
 
-#include "conceptrodon/metafunctions/omennivore/concepts/all_valuable.hpp"
+#include "conceptrodon/concepts/omennivore/all_valuable.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {

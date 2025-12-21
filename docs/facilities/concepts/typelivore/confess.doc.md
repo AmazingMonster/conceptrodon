@@ -82,5 +82,5 @@ concept Confess = Predicate{}(Elements::value...);
 ## Links
 
 - [Example](../../../code/facilities/concepts/typelivore/confess/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/typelivore/concepts/confess.hpp)
+- [Source code](../../../../conceptrodon/concepts/typelivore/confess.hpp)
 - [Unit test](../../../../tests/unit/concepts/typelivore/confess.test.hpp)

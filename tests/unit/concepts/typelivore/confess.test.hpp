@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_TYPELIVORE_CONFESS_H
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/metafunctions/typelivore/concepts/confess.hpp"
+#include "conceptrodon/concepts/typelivore/confess.hpp"
 
 namespace Conceptrodon {
 namespace Typelivore {

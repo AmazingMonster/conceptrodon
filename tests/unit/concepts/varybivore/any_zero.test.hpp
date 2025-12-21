@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_ZERO_H
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ANY_ZERO_H
 
-#include "conceptrodon/metafunctions/varybivore/concepts/any_zero.hpp"
+#include "conceptrodon/concepts/varybivore/any_zero.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {

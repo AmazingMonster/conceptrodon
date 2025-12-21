@@ -31,5 +31,5 @@ concept UnequalTo
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/varybivore/concepts/unequal_to.hpp)
+- [Source code](../../../../conceptrodon/concepts/varybivore/unequal_to.hpp)
 - [Unit test](../../../../tests/unit/concepts/varybivore/unequal_to.test.hpp)

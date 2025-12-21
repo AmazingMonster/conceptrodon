@@ -26,5 +26,5 @@ concept Glowful = Mouldivore::Confess<IsGlowful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/glowful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/glowful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/glowful.test.hpp)

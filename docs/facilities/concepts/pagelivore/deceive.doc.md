@@ -90,5 +90,5 @@ concept Deceive = not Predicate<Elements::value...>::value;
 ## Links
 
 - [Example](../../../code/facilities/concepts/pagelivore/deceive/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/pagelivore/concepts/deceive.hpp)
+- [Source code](../../../../conceptrodon/concepts/pagelivore/deceive.hpp)
 - [Unit test](../../../../tests/unit/concepts/pagelivore/deceive.test.hpp)

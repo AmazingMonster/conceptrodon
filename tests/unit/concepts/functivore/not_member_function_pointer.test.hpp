@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_MEMBER_FUNCTION_POINTER_H
 #define CONCEPTRODON_TESTS_UNIT_FUNCTIVORE_NOT_MEMBER_FUNCTION_POINTER_H
 
-#include "conceptrodon/metafunctions/functivore/concepts/not_member_function_pointer.hpp"
+#include "conceptrodon/concepts/functivore/not_member_function_pointer.hpp"
 
 namespace Conceptrodon {
 namespace Functivore {

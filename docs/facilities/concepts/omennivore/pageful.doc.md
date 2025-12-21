@@ -26,5 +26,5 @@ concept Pageful = Mouldivore::Confess<IsPageful, Arg>;
 
 ## Links
 
-- [Source code](../../../../conceptrodon/metafunctions/omennivore/concepts/pageful.hpp)
+- [Source code](../../../../conceptrodon/concepts/omennivore/pageful.hpp)
 - [Unit test](../../../../tests/unit/concepts/omennivore/pageful.test.hpp)

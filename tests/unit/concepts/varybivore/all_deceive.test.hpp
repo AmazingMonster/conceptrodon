@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TESTS_UNIT_VARYBIVORE_ALL_DECEIVE_H
 
 #include "conceptrodon/utilities/vay.hpp"
-#include "conceptrodon/metafunctions/varybivore/concepts/all_deceive.hpp"
+#include "conceptrodon/concepts/varybivore/all_deceive.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
