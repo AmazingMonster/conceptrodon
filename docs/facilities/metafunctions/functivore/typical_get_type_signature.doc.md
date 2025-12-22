@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::TypicalGetTypeSignature`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typical_get_type_signature">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-typical-get-type-signature">To Index</a></p>
 
 ## Description
 

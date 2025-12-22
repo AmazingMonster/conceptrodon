@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::IsFunctionPointer`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#is_function_pointer">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-is-function-pointer">To Index</a></p>
 
 ## Description
 

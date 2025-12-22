@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::AreSameVariadicTypeSignatureAs`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#are_same_variadic_type_signatrue_as">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-are-same-variadic-type-signatrue-as">To Index</a></p>
 
 ## Description
 

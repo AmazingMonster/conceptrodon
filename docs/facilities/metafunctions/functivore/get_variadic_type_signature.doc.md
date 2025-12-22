@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::GetVariadicTypeSignature`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#get_variadic_type_signature">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-get-variadic-type-signature">To Index</a></p>
 
 ## Description
 

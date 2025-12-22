@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::IsNonoverloadedFunctionObject`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#is_nonoverloaded_function_object">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-is-nonoverloaded-function-object">To Index</a></p>
 
 ## Description
 

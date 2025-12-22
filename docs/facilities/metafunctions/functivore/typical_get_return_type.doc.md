@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::TypicalGetReturnType`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#typical_get_return_type">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-typical-get-return-type">To Index</a></p>
 
 ## Description
 

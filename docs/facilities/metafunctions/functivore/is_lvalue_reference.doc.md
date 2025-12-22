@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::IsLvalueReference`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#is_lvalue_reference">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-is-lvalue-reference">To Index</a></p>
 
 ## Description
 

@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::IsConst`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#is_const">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-is-const">To Index</a></p>
 
 ## Description
 

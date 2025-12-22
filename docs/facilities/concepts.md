@@ -180,7 +180,7 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd><code>true</code> if the value result of a class is bounded by a left open right closed interval.</dd>
   
   <dt>
-    <a href="./concepts/typelivore/bounded_by_open_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a href="./concepts/typelivore/bounded_by_open_interval.doc.md">BoundedByOpenInterval</a>
     <a id="typelivore-bounded-by-open-interval"></a>
   </dt>
   <dd><code>true</code> if the value result of a class is bounded by an open interval.</dd>
@@ -232,6 +232,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="typelivore-not-negative-one"></a>
   </dt>
   <dd><code>true</code> if the value result of a class does not equal <code>-1</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/typelivore/unequal_to.doc.md">UnequalTo</a>
+    <a id="typelivore-unequal-to"></a>
+  </dt>
+  <dd><code>true</code> if the value result of a class does not equal another variable.</dd>
   
   <dt>
     <a href="./concepts/typelivore/zero.doc.md">Zero</a>
@@ -412,7 +418,7 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd><code>true</code> if a variable is bounded by a left open right closed interval.</dd>
   
   <dt>
-    <a href="./concepts/varybivore/bounded_by_open_interval.doc.md">BoundedByLeftOpenRightClosedInterval</a>
+    <a href="./concepts/varybivore/bounded_by_open_interval.doc.md">BoundedByOpenInterval</a>
     <a id="varybivore-bounded-by-open-interval"></a>
   </dt>
   <dd><code>true</code> if a variable is bounded by an open interval.</dd>
@@ -458,6 +464,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="varybivore-nonzero"></a>
   </dt>
   <dd><code>true</code> if a variable does not equal <code>0</code>.</dd>
+  
+  <dt>
+    <a href="./concepts/varybivore/unequal_to.doc.md">UnequalTo</a>
+    <a id="varybivore-unequal-to"></a>
+  </dt>
+  <dd><code>true</code> if a variable does not equal another variable.</dd>
   
   <dt>
     <a href="./concepts/varybivore/not_negative_one.doc.md">NotNegativeOne</a>
@@ -1116,6 +1128,14 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="functivore-lvalue-reference-qualified"></a>
   </dt>
   <dd><code>true</code> if the function-like type is lvalue reference qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/member_function_pointer.doc.md">MemberFunctionPointer</a>
+    <a id="functivore-member-function-pointer"></a>
+  </dt>
+  <dd><code>true</code> if the function-like type is a member function pointer.</dd>
 </dl>
 
 <dl>

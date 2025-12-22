@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 # `Functivore::GetParameterTypes`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#get_parameter_types">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-get-parameter-types">To Index</a></p>
 
 ## Description
 
