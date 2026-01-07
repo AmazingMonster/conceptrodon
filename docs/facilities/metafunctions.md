@@ -2216,3 +2216,15 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd>Check whether a function-like type is <code>volatile</code> qualified.</dd>
 </dl>
 <!-- Function Examinations -- End -->
+
+<!-- Function Argument Manipulation -- Start -->
+### Function Argument Manipulation <a id="functivore-function-argument-maniqulation"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/functivore/forward_if_rvalue.doc.md">forward_if_rvalue</a>
+    <a id="functivore-forward-if-rvalue"></a>
+  </dt>
+  <dd>Forward rvalues while copy lvalues.</dd>
+</dl>
+<!-- Function Argument Manipulation -- End -->

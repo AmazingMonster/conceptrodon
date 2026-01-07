@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2026/01/08
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add <code>Functivore::forward_if_rvalue</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2025/12/22
 
 <ul>
