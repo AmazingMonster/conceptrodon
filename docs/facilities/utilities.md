@@ -15,6 +15,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 
   - [Metafunctions](../facilities/concepts.md)
   - [Concepts](../facilities/concepts.md)
+  - [Regularities](../facilities/regularities.md)
 
 <!-- Instruments -- Start -->
 ## Instruments <a id="instruments"></a>

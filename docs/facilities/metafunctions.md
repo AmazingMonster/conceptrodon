@@ -14,6 +14,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 - **Facilities**
 
   - [Concepts](../facilities/concepts.md)
+  - [Regularities](../facilities/regularities.md)
   - [Utilities](../facilities/utilities.md)
 
 <!-- Typelivore -- Start -->
