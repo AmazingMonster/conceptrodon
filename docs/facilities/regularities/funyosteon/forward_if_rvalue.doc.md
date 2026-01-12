@@ -1,13 +1,13 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `Functivore::forward_if_rvalue`
+# `Funyosteon::forward_if_rvalue`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-forward-if-rvalue">To Index</a></p>
+<p style='text-align: right;'><a href="">To Index</a></p>
 
 ## Description
 
-`Functivore::forward_if_rvalue` is a regular function.
+`Funyosteon::forward_if_rvalue` is a regular function.
 
 When invoked by a lvalue, the function returns a copy of the argument. Otherwise, it forwards the argument similar to `std::forward`.
 
@@ -68,9 +68,9 @@ inline void test()
 
 ## Implementation
 
-The implementation of `Functivore::forward_if_rvalue` is similar to that of `std::forward`.
+The implementation of `Funyosteon::forward_if_rvalue` is similar to that of `std::forward`.
 
-The difference is that when provided by an lvalue, instead of forwarding it based on the target type, `Functivore::forward_if_rvalue` always returns a copy.
+The difference is that when provided by an lvalue, instead of forwarding it based on the target type, `Funyosteon::forward_if_rvalue` always returns a copy.
 
 ```C++
 template<typename Target>
@@ -88,6 +88,6 @@ constexpr Target&& forward_if_rvalue(std::remove_reference_t<Target>&& arg)
 
 ## Links
 
-- [Example](../../../code/facilities/metafunctions/functivore/forward_if_rvalue/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/functivore/forward_if_rvalue.hpp)
-- [Unit test](../../../../tests/unit/metafunctions/functivore/forward_if_rvalue.test.hpp)
+- [Example](../../../code/facilities/regularities/funyosteon/forward_if_rvalue/implementation.hpp)
+- [Source code](../../../../conceptrodon/regularities/funyosteon/forward_if_rvalue.hpp)
+- [Unit test](../../../../tests/unit/regularities/funyosteon/forward_if_rvalue.test.hpp)

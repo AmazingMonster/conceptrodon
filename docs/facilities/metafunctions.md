@@ -1828,6 +1828,18 @@ SPDX-License-Identifier: Apache-2.0 -->
 <!-- Omennivore -- Start -->
 ## Omennivore <a id="omennivore"></a>
 
+<!-- Type Generations -- Start -->
+### Type Generationss <a id="omennivore-type-generations"></a>
+
+<dl>
+  <dt>
+    <a href="./metafunctions/omennivore/apply_return_type.doc.md">ApplyReturnType</a>
+    <a id="omennivore-apply-return-type"></a>
+  </dt>
+  <dd>Create a function by applying a return type to a parameter list.</dd>
+</dl>
+<!-- Type Generations -- End -->
+
 <!-- List Modifications -- Start -->
 ### List Modifications <a id="omennivore-list-modifications"></a>
 
@@ -2078,18 +2090,6 @@ SPDX-License-Identifier: Apache-2.0 -->
 </dl>
 <!-- Function Analyzations -- End -->
 
-<!-- Function Generations -- Start -->
-### Function Generationss <a id="functivore-function-generations"></a>
-
-<dl>
-  <dt>
-    <a href="./metafunctions/functivore/apply_return_type.doc.md">ApplyReturnType</a>
-    <a id="functivore-apply-return-type"></a>
-  </dt>
-  <dd>Create a function by applying a return type to a parameter list.</dd>
-</dl>
-<!-- Function Generations -- End -->
-
 <!-- Function Comparisons -- Start -->
 ### Function Comparisons <a id="functivore-function-comparisons"></a>
 
@@ -2216,15 +2216,3 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd>Check whether a function-like type is <code>volatile</code> qualified.</dd>
 </dl>
 <!-- Function Examinations -- End -->
-
-<!-- Function Argument Manipulation -- Start -->
-### Function Argument Manipulation <a id="functivore-function-argument-maniqulation"></a>
-
-<dl>
-  <dt>
-    <a href="./metafunctions/functivore/forward_if_rvalue.doc.md">forward_if_rvalue</a>
-    <a id="functivore-forward-if-rvalue"></a>
-  </dt>
-  <dd>Forward rvalues while copy lvalues.</dd>
-</dl>
-<!-- Function Argument Manipulation -- End -->

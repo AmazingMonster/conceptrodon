@@ -8,6 +8,114 @@
 
 ## Diary
 
+### 2026/01/11
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add new facility <code>regularities</code> for regular functions and function objects</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Add more functions and structures to the namespace</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add unit tests for <code>regularities</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2026/01/11
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add new facility <code>regularities</code> for regular functions and function objects</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Moved <code>forward_if_rvalue</code> and <code>is_lvalue_confronting_prvalue</code> to <code>regularities</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Move <code>Functivore::ApplyReturnType</code> to <code>Omennivore</code> since it does not take a function-like type as argument</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2026/01/08
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add more facilities for regular function argument forwarding</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Added <code>Omenivore::RegularLeftRelate</code> and <code>Functivore::is_lvalue_to_prvalue</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Modify <code>Front</code> metafunctions so that it is capable of directly operating on the first argument of a list</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In Progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/08
 
 <ul>

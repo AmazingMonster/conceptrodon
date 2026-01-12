@@ -1,23 +1,23 @@
 // Copyright 2025 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_FUNCTIVORE_FORWARD_IF_RVALUE_H
-#define CONCEPTRODON_FUNCTIVORE_FORWARD_IF_RVALUE_H
+#ifndef CONCEPTRODON_FUNYOSTEON_MOVE_RVALUE_COPY_LVALUE_H
+#define CONCEPTRODON_FUNYOSTEON_MOVE_RVALUE_COPY_LVALUE_H
 
 #include <type_traits>
 
 /******************************************************************************************************/
 namespace Conceptrodon {
-namespace Functivore {
+namespace Funyosteon {
 
 template<typename Target>
-constexpr std::remove_cvref_t<Target> forward_if_rvalue(std::remove_cvref_t<Target> const & arg)
+constexpr std::remove_cvref_t<Target> move_rvalue_copy_lvalue(std::remove_cvref_t<Target> const & arg)
 {
     return static_cast<std::remove_cvref_t<Target>>(arg);
 }
 
 template<typename Target>
-constexpr Target&& forward_if_rvalue(std::remove_reference_t<Target>&& arg)
+constexpr Target&& move_rvalue_copy_lvalue(std::remove_reference_t<Target>&& arg)
 {
     return static_cast<Target&&>(arg);
 }

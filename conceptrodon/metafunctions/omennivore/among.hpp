@@ -12,9 +12,7 @@ namespace Omennivore {
 template<typename...PackedVessels>
 struct Among
 : public TypicalAmong<PackedVessels...>
-{
-
-};
+{};
 
 template<template<typename...> class Container, typename...Elements>
 struct Among<Container<Elements...>>

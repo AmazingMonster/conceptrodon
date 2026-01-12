@@ -1,14 +1,14 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_APPLY_RETURN_TYPE_H
-#define CONCEPTRODON_FUNCTIVORE_UNIT_TESTS_TEST_APPLY_RETURN_TYPE_H
+#ifndef CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_APPLY_RETURN_TYPE_H
+#define CONCEPTRODON_OMENNIVORE_UNIT_TESTS_TEST_APPLY_RETURN_TYPE_H
 
-#include "conceptrodon/metafunctions/functivore/apply_return_type.hpp"
+#include "conceptrodon/metafunctions/omennivore/apply_return_type.hpp"
 #include <concepts>
 
 namespace Conceptrodon {
-namespace Functivore {
+namespace Omennivore {
 namespace UnitTests {
 namespace TestApplyReturnType {
 

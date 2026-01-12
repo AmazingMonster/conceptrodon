@@ -1,13 +1,13 @@
 <!-- Copyright 2024 Feng Mofan
 SPDX-License-Identifier: Apache-2.0 -->
 
-# `Functivore::ApplyReturnType`
+# `Omennivore::ApplyReturnType`
 
-<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#functivore-apply-return-type">To Index</a></p>
+<p style='text-align: right;'><a href="../../../facilities/metafunctions.md#omennivore-apply-return-type">To Index</a></p>
 
 ## Description
 
-`Functivore::ApplyReturnType` accepts a type and returns a metafunction.
+`Omennivore::ApplyReturnType` accepts a type and returns a metafunction.
 
 When invoked, the metafunction yields a function type with the previously provided type as the return type and its arguments as parameter types.
 
@@ -66,6 +66,6 @@ struct ApplyReturnType
 
 ## Links
 
-- [Example](../../../code/facilities/metafunctions/functivore/apply_return_type/implementation.hpp)
-- [Source code](../../../../conceptrodon/metafunctions/functivore/apply_return_type.hpp)
-- [Unit test](../../../../tests/unit/metafunctions/functivore/apply_return_type.test.hpp)
+- [Example](../../../code/facilities/metafunctions/omennivore/apply_return_type/implementation.hpp)
+- [Source code](../../../../conceptrodon/metafunctions/omennivore/apply_return_type.hpp)
+- [Unit test](../../../../tests/unit/metafunctions/omennivore/apply_return_type.test.hpp)
