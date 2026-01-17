@@ -15,8 +15,10 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 ## Facilities
 
+### [Concepts](./docs/facilities/concepts.md) <a id="facilities-concepts"></a>
+
 ### [Metafunctions](./docs/facilities/metafunctions.md) <a id="facilities-metafunctions"></a>
 
-### [Concepts](./docs/facilities/concepts.md) <a id="facilities-concepts"></a>
+### [Regularities](./docs/facilities/regularities.md) <a id="facilities-regularities"></a>
 
 ### [Utilities](./docs/facilities/utilities.md) <a id="facilities-utilities"></a>

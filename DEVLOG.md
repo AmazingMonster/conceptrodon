@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2026/01/18
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove current facilities in <code>Clxyosteon</code> as they are useless</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/11
 
 <ul>

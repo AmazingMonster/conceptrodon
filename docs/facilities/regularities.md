@@ -13,8 +13,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 - **Facilities**
 
-  - [Metafunctions](../facilities/concepts.md)
   - [Concepts](../facilities/concepts.md)
+  - [Metafunctions](../facilities/concepts.md)
   - [Utilities](../facilities/utilities.md)
 
 <!-- Funyosteon -- Start -->
@@ -22,8 +22,8 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./regularities/funyosteon/move_rvalue_copy_lvalue.md">move_rvalue_copy_lvalue</a>
-    <a id="funyosteon-move_rvalue_copy_lvalue"></a>
+    <a href="./regularities/funyosteon/move_rvalue_copy_lvalue.doc.md">move_rvalue_copy_lvalue</a>
+    <a id="funyosteon-move-rvalue-copy-lvalue"></a>
   </dt>
   <dd>When invoked, move the argument if it is an rvalue and copy it if it is an lvalue.</dd>
 </dl>

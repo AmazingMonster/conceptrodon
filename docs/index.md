@@ -20,3 +20,5 @@ SPDX-License-Identifier: Apache-2.0 -->
 ### [Concepts](./facilities/concepts.md) <a id="facilities-concepts"></a>
 
 ### [Utilities](./facilities/utilities.md) <a id="facilities-utilities"></a>
+
+### [Regularities](./facilities/regularities.md) <a id="facilities-regularities"></a>
