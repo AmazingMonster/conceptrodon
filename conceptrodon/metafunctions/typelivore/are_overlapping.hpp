@@ -5,6 +5,7 @@
 #define CONCEPTRODON_TYPELIVORE_ARE_OVERLAPPING_H
 
 #include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/tyy.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
@@ -12,7 +13,7 @@ namespace Typelivore {
 
 template<typename...InspectedElements>
 struct AreOverlapping
-: public std::type_identity<InspectedElements>...
+: public Tyy<InspectedElements>...
 {
     struct Detail
     {
@@ -25,7 +26,7 @@ struct AreOverlapping
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>, AreOverlapping>::value, 
             Detail, 
             AreOverlapping<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
@@ -38,7 +39,7 @@ struct AreOverlapping
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>, AreOverlapping>::value, 
             void,
             Capsule<InspectedElements..., InspectingElement>
         >::type;

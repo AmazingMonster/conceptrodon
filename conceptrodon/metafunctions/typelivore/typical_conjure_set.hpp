@@ -7,6 +7,7 @@
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/utilities/prefix.hpp"
 #include "conceptrodon/metafunctions/cotanivore/paste.hpp"
+#include "conceptrodon/utilities/tyy.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -47,7 +48,7 @@ struct TypicalConjureSet
             decltype
             (
                 Detail<std::make_index_sequence<I>>
-                ::idyl(std::type_identity<Elements>{}...)
+                ::idyl(Tyy<Elements>{}...)
             )...
         >::type;
     };

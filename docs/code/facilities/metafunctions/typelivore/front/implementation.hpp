@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -31,7 +38,7 @@ struct Fore<std::index_sequence<I...>>
 };
 
 /**** Front ****/
-template<typename...Elements>
+template<typename First, typename...Elements>
 struct Front
 {
     template<size_t Amount>
@@ -41,29 +48,66 @@ struct Front
         using Road = decltype
         (
             Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<First>{}, Tyy<Elements>{}...)
         );
     };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
+
+    template<template<typename...> class Operation>
+    struct Detail
+    {
+        using type = Operation<First>;
+    };
+
+    template<template<typename...> class...Agreements>
+    using Road = Detail<Agreements...>::type;
+
+    using type = First;
 };
 
-/*****************/
-/**** Example ****/
-/*****************/
+/***********************/
+/**** First Example ****/
+/***********************/
 
 #include <concepts>
+
+/**** SupposedResult ****/
+using SupposedResult = int;
+
+/**** Result ****/
+using Result = Front<int, int*, int**, int**>::type;
+
+/**** Test ****/
+static_assert(std::same_as<SupposedResult, Result>);
+
+/************************/
+/**** Second Example ****/
+/************************/
 
 /**** Operation ****/
 template<typename...>
 struct Operation;
 
 /**** SupposedResult ****/
-using SupposedResult = Operation<int, int*, int**>;
+using SupposedResult_1 = Operation<int>;
 
 /**** Result ****/
-using Result = Front<int, int*, int**, int**>::Page<3>::Road<Operation>;
+using Result_1 = Front<int, int*, int**, int**>::Road<Operation>;
 
 /**** Test ****/
-static_assert(std::same_as<SupposedResult, Result>);
+static_assert(std::same_as<SupposedResult_1, Result_1>);
+
+/***********************/
+/**** Third Example ****/
+/***********************/
+
+/**** SupposedResult ****/
+using SupposedResult_2 = Operation<int, int*, int**>;
+
+/**** Result ****/
+using Result_2 = Front<int, int*, int**, int**>::Page<3>::Road<Operation>;
+
+/**** Test ****/
+static_assert(std::same_as<SupposedResult_2, Result_2>);

@@ -7,6 +7,13 @@
 #include <algorithm>
 #include <array>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
@@ -60,9 +67,9 @@ static consteval auto stare()
             // We collect its front part,
             // which contains all the indices of `true`.
             // Then, we instantiate `Operation`.
-            // We return `std::type_identity` to avoid constructing
+            // We return `Tyy` to avoid constructing
             // an object of type `Operation<*>`.
-            return std::type_identity<Operation<result.at(J)...>> {};
+            return Tyy<Operation<result.at(J)...>> {};
         }(std::make_index_sequence<(...+Phenomena)>{});
     }(std::make_index_sequence<sizeof...(Phenomena)>{});
 };

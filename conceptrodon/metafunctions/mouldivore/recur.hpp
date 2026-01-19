@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_RECUR_H
 #define CONCEPTRODON_MOULDIVORE_RECUR_H
 
-#include <type_traits>
+#include "conceptrodon/utilities/tyy.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -32,7 +32,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                         Sacrifices...
                 >>{};
             }
@@ -54,7 +54,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                         Sacrifices...
                     >
@@ -80,7 +80,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                         Sacrifices...
@@ -110,7 +110,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -144,7 +144,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -182,7 +182,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -224,7 +224,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -270,7 +270,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -320,7 +320,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -374,7 +374,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -432,7 +432,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -494,7 +494,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -560,7 +560,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -630,7 +630,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -704,7 +704,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -782,7 +782,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -864,7 +864,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -950,7 +950,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1040,7 +1040,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1134,7 +1134,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1232,7 +1232,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1334,7 +1334,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1440,7 +1440,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1550,7 +1550,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1664,7 +1664,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1782,7 +1782,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -1904,7 +1904,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -2030,7 +2030,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -2160,7 +2160,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -2294,7 +2294,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -2432,7 +2432,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<
@@ -2574,7 +2574,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                     History<
                     History<

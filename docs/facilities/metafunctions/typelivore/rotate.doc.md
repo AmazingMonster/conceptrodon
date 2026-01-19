@@ -114,7 +114,16 @@ struct Swivel<std::index_sequence<I...>>
 
 Finally, we will make an interface to accept arguments and generate the `std::index_sequence`.
 
-Note that we wrap the elements inside `std::type_identity`.
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
 This ensures we can create objects to invoke the ordinary function.
 
 ```C++
@@ -128,7 +137,7 @@ struct Rotate
         using Road = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

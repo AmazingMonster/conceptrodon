@@ -111,7 +111,7 @@ static consteval auto idyl()
         >::value)
     )
     {
-        return std::type_identity<History<
+        return Tyy<History<
                 Sacrifices...
         >>{};
     }
@@ -127,7 +127,7 @@ static consteval auto idyl()
         >::value)
     )
     {
-        return std::type_identity<History<
+        return Tyy<History<
             History<
                 Sacrifices...
             >
@@ -146,7 +146,16 @@ static consteval auto idyl()
 }
 ```
 
-Note that we wrap around each result inside a `std::type_identity`.
+Note that we wrap around each result inside a `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
 This is to avoid creating an object of an instantiation of the operation, as it might be impossible.
 
 Here is the entire implementation.
@@ -172,7 +181,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                         Sacrifices...
                 >>{};
             }
@@ -188,7 +197,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                         Sacrifices...
                     >

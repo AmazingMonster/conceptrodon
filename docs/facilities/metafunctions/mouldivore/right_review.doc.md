@@ -134,6 +134,18 @@ struct RightInspect<std::index_sequence<I...>>
 
 - Second, we perform the first step with every index and combine the results.
 
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+This ensures we can create objects to invoke ordinary functions.
+
 ```C++
 // Immediately invoked lambda.
 []<size_t...I>(std::index_sequence<I...>)
@@ -143,7 +155,7 @@ struct RightInspect<std::index_sequence<I...>>
         decltype
         (
             RightInspect<std::make_index_sequence<I>>
-            ::template idyl<Predicate>(std::type_identity<Elements>{}...)
+            ::template idyl<Predicate>(Tyy<Elements>{}...)
         )::value
     ));
 }(std::make_index_sequence<sizeof...(Elements) - 1>{})
@@ -168,7 +180,7 @@ struct RightReview
                     decltype
                     (
                         RightInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate>(std::type_identity<Elements>{}...)
+                        ::template idyl<Predicate>(Tyy<Elements>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Elements) - 1>{})

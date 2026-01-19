@@ -96,6 +96,45 @@ SAME_TYPE(Front<SHEEP_SPROUT(40)>::Page<0>::Rail<Operation_1>);
 
 
 
+/******************************************************************************************************/
+template<auto...Args>
+requires (sizeof...(Args) == 1)
+struct Operation_2 {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+using SupposedResult_2 = Operation_2<0>;
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_2
+
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+SAME_TYPE(Front<SHEEP_SPROUT(40)>::Rail<Operation_2>);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
+static_assert(Front<SHEEP_SPROUT(40)>::value == 0);
+#include "macaron/fragmental/amenity/instances/undef_integer_sheep.hpp"
+/******************************************************************************************************/
+
+
+
+
 }}}}
 
 #include "macaron/judgmental/amenity/undef_same_type.hpp"

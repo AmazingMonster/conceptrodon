@@ -5,20 +5,21 @@
 #define CONCEPTRODON_TYPELIVORE_TYPICAL_DIVERSITY_H
 
 #include "conceptrodon/utilities/capsule.hpp"
+#include "conceptrodon/utilities/tyy.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename...InspectedElements>
-struct TypicalDiversity: public std::type_identity<InspectedElements>...
+struct TypicalDiversity: public Tyy<InspectedElements>...
 {
     template<typename InspectingElement, typename...RestElements>
     struct ProtoMold
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, TypicalDiversity>::value, 
+            std::is_base_of<Tyy<InspectingElement>, TypicalDiversity>::value, 
             TypicalDiversity, 
             TypicalDiversity<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
@@ -29,7 +30,7 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, TypicalDiversity>::value, 
+            std::is_base_of<Tyy<InspectingElement>, TypicalDiversity>::value, 
             Capsule<InspectedElements...>, 
             Capsule<InspectedElements..., InspectingElement>
         >::type;

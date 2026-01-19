@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_SLICE_H
 #define CONCEPTRODON_TYPELIVORE_SLICE_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/incise.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/shear.hpp"
 
@@ -23,7 +24,7 @@ struct Slice
         using Road = decltype
         (
             Typella::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 
@@ -35,7 +36,7 @@ struct Slice
         using Road = decltype
         (
             Typella::Incise<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

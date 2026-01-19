@@ -194,7 +194,16 @@ struct Expunge<std::index_sequence<I...>, std::index_sequence<J...>>
 
 Finally, we will make an interface to accept arguments and generate the `std::index_sequence`.
 
-Note that we wrap the elements inside `std::type_identity`.
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
 This ensures we can create objects to invoke ordinary functions.
 
 ```C++
@@ -211,7 +220,7 @@ struct CognateErase
         using Mold = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 
@@ -227,7 +236,7 @@ struct CognateErase
                 std::make_index_sequence<Start>,
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

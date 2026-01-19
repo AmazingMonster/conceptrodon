@@ -65,6 +65,18 @@ static_assert(std::same_as<Result, SupposedResult>);
 The primary mechanism is implemented within the helper function `arise`.
 The talk [Understanding The constexpr 2-Step](https://youtu.be/_AefJX66io8?list=PLPqbaGB3rnNmIaWPvuu4U6LWt1XooNi-L) by Jason Turner provides a relatively detailed explanation of the usage of `std::array`. Here, we will only walk through general ideas.
 
+We will deliver the types using objects of `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+Here is the entire implementation.
+
 ```C++
 template<template<auto...> class Operation, auto...Variables>
 static consteval auto arise()
@@ -80,9 +92,9 @@ static consteval auto arise()
             std::ranges::sort(original);
             return original;
         }();
-        // We use `std::type_identity` to avoid construct
+        // We use `Tyy` to avoid construct
         // an object of type `Operation<*>`.
-        return std::type_identity<Operation<sorted.at(I)...>> {};
+        return Tyy<Operation<sorted.at(I)...>> {};
     }(std::make_index_sequence<sizeof...(Variables)>{});
 };
 ```

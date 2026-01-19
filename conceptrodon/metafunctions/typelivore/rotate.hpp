@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_ROTATE_H
 #define CONCEPTRODON_TYPELIVORE_ROTATE_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/swivel.hpp"
 
 namespace Conceptrodon {
@@ -19,7 +20,7 @@ struct Rotate
         using Road = decltype
         (
             Typella::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

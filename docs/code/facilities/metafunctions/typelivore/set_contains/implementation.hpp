@@ -4,13 +4,20 @@
 
 #include <type_traits>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
 
 template<typename...Elements>
 struct SetContains
-: public std::type_identity<Elements>...
+: public Tyy<Elements>...
 {
     template<typename Inspecting>
     struct ProtoMold
@@ -19,7 +26,7 @@ struct SetContains
         {
             std::is_base_of
             <
-                std::type_identity<Inspecting>,
+                Tyy<Inspecting>,
                 SetContains
             >::value
         };

@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_COGNATE_FRONT_H
 #define CONCEPTRODON_MOULDIVORE_COGNATE_FRONT_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/fore.hpp"
 
 namespace Conceptrodon {
@@ -19,7 +20,7 @@ struct CognateFront
         using Mold = decltype
         (
             Typella::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <array>
+#include "conceptrodon/utilities/tyy.hpp"
 
 namespace Conceptrodon {
 namespace Varbola {
@@ -33,7 +34,7 @@ static consteval auto stare()
 
                 return indices;
             }();
-            return std::type_identity<Operation<result.at(J)...>> {};
+            return Tyy<Operation<result.at(J)...>> {};
         }(std::make_index_sequence<(...+Phenomena)>{});
     }(std::make_index_sequence<sizeof...(Phenomena)>{});
 };

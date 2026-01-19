@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -58,7 +65,7 @@ struct RemoveTypes<std::index_sequence<I...>>
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+    using Mold = decltype(idyl(Tyy<Agreements>{}...));
 };
 
 template<auto...I, auto...J>
@@ -86,7 +93,7 @@ struct RemoveTypes<std::index_sequence<I...>, std::index_sequence<J...>>
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+    using Mold = decltype(idyl(Tyy<Agreements>{}...));
 };
 
 /**** Recursive Case ****/
@@ -122,7 +129,7 @@ struct RemoveTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
     >;
 
     template<typename...Agreements>
-    using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+    using Mold = decltype(idyl(Tyy<Agreements>{}...));
 };
 
 }

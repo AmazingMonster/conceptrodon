@@ -4,6 +4,13 @@
 
 #include <utility>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** ExtendFront ****/
 template<typename...>
 struct ExtendFront {};
@@ -59,7 +66,7 @@ struct ModifyTypes<std::index_sequence<I...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -101,7 +108,7 @@ struct ModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -152,7 +159,7 @@ struct ModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>

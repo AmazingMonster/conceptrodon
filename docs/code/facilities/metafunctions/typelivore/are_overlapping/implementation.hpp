@@ -8,13 +8,20 @@
 template<typename...>
 struct Capsule;
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
 
 template<typename...InspectedElements>
 struct AreOverlapping
-: public std::type_identity<InspectedElements>...
+: public Tyy<InspectedElements>...
 {
     struct Detail
     {
@@ -30,7 +37,7 @@ struct AreOverlapping
         // `Detail` will stop recursion, achieving short-circuit.
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>,AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>,AreOverlapping>::value, 
             Detail, 
             AreOverlapping<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
@@ -44,7 +51,7 @@ struct AreOverlapping
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>, AreOverlapping>::value, 
             void,
             Capsule<InspectedElements..., InspectingElement>
         >::type;

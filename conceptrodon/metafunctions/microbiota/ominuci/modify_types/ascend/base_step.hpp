@@ -207,7 +207,7 @@ struct CONCEPTRODON_OMINUCI_MODIFY_TYPES_FUNCTION_NAME
         = decltype
         (
             CONCEPTRODON_NUCLEOLUS_IDYL_FUNCTION
-            (std::type_identity<Elements>{}...)
+            (Tyy<Elements>{}...)
         );
     };
 

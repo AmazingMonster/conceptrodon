@@ -6,6 +6,13 @@
 #include <array>
 #include <algorithm>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** arise ****/
 template<template<auto...> class Operation, auto...Variables>
 static consteval auto arise()
@@ -21,9 +28,9 @@ static consteval auto arise()
             std::ranges::sort(original);
             return original;
         }();
-        // We use `std::type_identity` to avoid construct
+        // We use `Tyy` to avoid construct
         // an object of type `Operation<*>`.
-        return std::type_identity<Operation<sorted.at(I)...>> {};
+        return Tyy<Operation<sorted.at(I)...>> {};
     }(std::make_index_sequence<sizeof...(Variables)>{});
 };
 

@@ -129,7 +129,17 @@ struct Midst<std::index_sequence<I...>>
 
 Now, we make a template that generates the `std::index_sequence` and translates the result.
 
-Note that we wrap the elements inside `std::type_identity`. This ensures we can create objects to invoke the ordinary function.
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+This ensures we can create objects to invoke the ordinary function.
 
 ```C++
 template<typename...Elements>
@@ -141,7 +151,7 @@ struct Amidst
         using type = decltype
         (
             Midst<std::make_index_sequence<I>>
-            ::idyl(std::type_identity<Elements>{}...)
+            ::idyl(Tyy<Elements>{}...)
         );
     };
 

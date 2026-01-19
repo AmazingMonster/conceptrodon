@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_TYPELIVORE_ERASE_H
 #define CONCEPTRODON_TYPELIVORE_ERASE_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/expunge.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/ditch.hpp"
 
@@ -23,7 +24,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 
@@ -35,7 +36,7 @@ struct Erase
         using Road = decltype
         (
             Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

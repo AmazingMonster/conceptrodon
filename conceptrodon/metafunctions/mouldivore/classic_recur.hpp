@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_CLASSIC_RECUR_H
 #define CONCEPTRODON_MOULDIVORE_CLASSIC_RECUR_H
 
-#include <type_traits>
+#include "conceptrodon/utilities/tyy.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -32,7 +32,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                         Sacrifices...
                 >>{};
             }
@@ -54,7 +54,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                         Sacrifices...
                     >::type
@@ -80,7 +80,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                         Sacrifices...
@@ -110,7 +110,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -144,7 +144,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -182,7 +182,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -224,7 +224,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -270,7 +270,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -320,7 +320,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -374,7 +374,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -432,7 +432,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -494,7 +494,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -560,7 +560,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -630,7 +630,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -704,7 +704,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -782,7 +782,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -864,7 +864,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -950,7 +950,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1040,7 +1040,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1134,7 +1134,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1232,7 +1232,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1334,7 +1334,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1440,7 +1440,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1550,7 +1550,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1664,7 +1664,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1782,7 +1782,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -1904,7 +1904,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -2030,7 +2030,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -2160,7 +2160,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -2294,7 +2294,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -2432,7 +2432,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<
@@ -2574,7 +2574,7 @@ struct ClassicRecur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     typename History<
                     typename History<
                     typename History<

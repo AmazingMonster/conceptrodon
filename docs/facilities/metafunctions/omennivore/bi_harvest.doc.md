@@ -117,9 +117,16 @@ using Result_1 = Metafunction_1<Oper_1>;
 static_assert(std::same_as<Result_1, SupposedResult_1>);
 ```
 
-- Note that the `crops` are not required to have both member `type` and `value`. In the following example, we will collect the type results from `std::type_identity<int>, std::type_identity<int*>` to instantiate `Operation_2`
+- Note that the `crops` are not required to have both member `type` and `value`. In the following example, we will collect the type results from `Tyy<int>, Tyy<int*>` to instantiate `Operation_2`
 
 ```C++
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Operation ****/
 template<typename...>
 struct Oper_2;
@@ -128,8 +135,8 @@ struct Oper_2;
 template<template<typename...> class...Args>
 using Metafunction_2 = BiHarvest
 <
-    std::type_identity<int>,
-    std::type_identity<int*>
+    Tyy<int>,
+    Tyy<int*>
 >
 ::Road<Args...>;
 

@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -84,7 +91,7 @@ struct TypicalConjureSet
             decltype
             (
                 Detail<std::make_index_sequence<I>>
-                ::idyl(std::type_identity<Elements>{}...)
+                ::idyl(Tyy<Elements>{}...)
             )...
         >::type;
     };

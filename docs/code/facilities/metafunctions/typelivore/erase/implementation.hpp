@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -83,7 +90,7 @@ struct Erase
         using Road = decltype
         (
             Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 
@@ -100,7 +107,7 @@ struct Erase
                 // `End-Start` is the number of elements we will erase.
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

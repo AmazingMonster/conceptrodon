@@ -8,9 +8,21 @@ SPDX-License-Identifier: Apache-2.0 -->
 ## Description
 
 `Varybivore::Front` accepts a list of variables.
-Its first layer accepts an amount and returns a function.
 
-When invoked by an operation, the function collects variables of the amount from the front of the list and instantiates the operation with the collection.
+- The first variable of the list is returned by the member `value`.
+
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
+-> V<sub>0</sub></code></pre>
+
+- If the first layer is invoked by an operation, it instantiate the operation with the first variable of the list.
+
+<pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
+-> Oper
+-> Oper&lt;V<sub>0</sub>&gt;</code></pre>
+
+- If the first layer is invoked by an amount, it returns a function.
+
+  When invoked by an operation, the function collects variables of the amount from the front of the list and instantiates the operation with the collection.
 
 <pre><code>   V<sub>0</sub>, V<sub>1</sub>, ..., V<sub>I-1</sub>, V<sub>I</sub>, ..., V<sub>n</sub>
 -> I
@@ -22,11 +34,41 @@ When invoked by an operation, the function collects variables of the amount from
 ```Haskell
 Front
  :: auto...
+ -> auto
+```
+
+```Haskell
+Front
+ :: auto...
+ -> template<template<auto...> class...>
+```
+
+```Haskell
+Front
+ :: auto...
  -> auto...
  -> template<template<auto...> class...>
 ```
 
 ## Structure
+
+```C++
+template<auto...>
+alias Front
+{
+    static constexpr auto value
+    {RESULT};
+}；
+```
+
+```C++
+template<auto...>
+alias Front
+{
+    template<template<auto...> class>
+    alias Rail = RESULT;
+}；
+```
 
 ```C++
 template<auto...>
@@ -43,7 +85,20 @@ alias Front
 
 ## Examples
 
-We will invoke the `Operation` with the first three variables from `0, 1, 2, 2`.
+- We will check the first variable of `0, 1, 2, 2`.
+
+```C++
+/**** SupposedResult ****/
+constexpr auto SupposedResult = 0;
+
+/**** Result ****/
+constexpr auto Result = Front<0, 1, 2, 2>::value;
+
+/**** Test ****/
+static_assert(SupposedResult == Result);
+```
+
+- We will invoke the `Operation` with the first variable of `0, 1, 2, 2`.
 
 ```C++
 /**** Operation ****/
@@ -51,13 +106,26 @@ template<auto...>
 struct Operation;
 
 /**** SupposedResult ****/
-using SupposedResult = Operation<0, 1, 2>;
+using SupposedResult_1 = Operation<0>;
 
 /**** Result ****/
-using Result = Front<0, 1, 2, 2>::Page<3>::Rail<Operation>;
+using Result_1 = Front<0, 1, 2, 2>::Rail<Operation>;
 
 /**** Test ****/
-static_assert(std::same_as<SupposedResult, Result>);
+static_assert(std::same_as<SupposedResult_1, Result_1>);
+```
+
+- We will invoke the `Operation` with the first three variables of `0, 1, 2, 2`.
+
+```C++
+/**** SupposedResult ****/
+using SupposedResult_2 = Operation<0, 1, 2>;
+
+/**** Result ****/
+using Result_2 = Front<0, 1, 2, 2>::Page<3>::Rail<Operation>;
+
+/**** Test ****/
+static_assert(std::same_as<SupposedResult_2, Result_2>);
 ```
 
 ## Implementation
@@ -108,7 +176,7 @@ struct Fore<std::index_sequence<I...>>
 Finally, we will make an interface to accept arguments and generate the `std::index_sequence`:
 
 ```C++
-template<auto...Variables>
+template<auto First, auto...Variables>
 struct Front
 {
     template<size_t Amount>
@@ -118,12 +186,23 @@ struct Front
         using Rail = decltype
         (
             Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(Vay<Variables>{}...)
+            ::template idyl<Agreements...>(Vay<First>{}, Vay<Variables>{}...)
         );
     };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
+    
+    template<template<auto...> class Operation>
+    struct Detail
+    {
+        using type = Operation<First>;
+    };
+
+    template<template<auto...> class...Agreements>
+    using Rail = Detail<Agreements...>::type;
+
+    static constexpr auto value {First};
 };
 ```
 

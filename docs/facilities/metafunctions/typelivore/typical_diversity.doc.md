@@ -97,7 +97,15 @@ Namely, we will create a class that inherits every 'element' we would like to ch
 
 Since inheriting the same type multiple times is illegal in C++, elements in the first list must be nonrepetitive.
 
-To 'inherit' fundamental types, we wrap every element into `std::type_identity`.
+To 'inherit' fundamental types, we wrap every element into `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
 
 Here's the entire implementation:
 
@@ -108,7 +116,7 @@ struct Capsule;
 
 ```C++
 template<typename...InspectedElements>
-struct TypicalDiversity: public std::type_identity<InspectedElements>...
+struct TypicalDiversity: public Tyy<InspectedElements>...
 {
 
 // Recursive Case:
@@ -118,7 +126,7 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
         using type = std::conditional
         <
             std::is_base_of<
-                std::type_identity<InspectingElement>,
+                Tyy<InspectingElement>,
                 TypicalDiversity
             >::value, 
             TypicalDiversity, 
@@ -133,7 +141,7 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
         using type = std::conditional
         <
             std::is_base_of<
-                std::type_identity<InspectingElement>,
+                Tyy<InspectingElement>,
                 TypicalDiversity
             >::value, 
             Capsule<InspectedElements...>, 

@@ -2,7 +2,12 @@
 /**** Dependencies ****/
 /**********************/
 
-#include <type_traits>
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
 
 /************************/
 /**** Implementation ****/
@@ -28,7 +33,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                         Sacrifices...
                 >>{};
             }
@@ -44,7 +49,7 @@ struct Recur
                 >::value)
             )
             {
-                return std::type_identity<History<
+                return Tyy<History<
                     History<
                         Sacrifices...
                     >

@@ -11,6 +11,8 @@
 
 #include "macaron/judgmental/amenity/define_same_type.hpp"
 #include "macaron/fragmental/amenity/define_sheep.hpp"
+#include <type_traits>
+#include <utility>
 
 namespace Conceptrodon {
 namespace Typelivore {
@@ -88,6 +90,57 @@ using SupposedResult_1 = Operation_1<>;
 
 #include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
 SAME_TYPE(Front<SHEEP_SPROUT(40)>::Page<0>::Road<Operation_1>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+template<typename...Elements>
+requires (sizeof...(Elements) == 1)
+struct Operation_2 {};
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+using SupposedResult_2 = Operation_2<std::integral_constant<int, 0>>;
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_2
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Front<SHEEP_SPROUT(40)>::Road<Operation_2>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+using SupposedResult_3 = std::integral_constant<int, 0>;
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult_3
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Front<SHEEP_SPROUT(40)>::type);
 #include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
 
 #undef SUPPOSED_TYPE

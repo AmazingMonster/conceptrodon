@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -50,7 +57,7 @@ struct Rotate
         using Road = decltype
         (
             Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(std::type_identity<Elements>{}...)
+            ::template idyl<Agreements...>(Tyy<Elements>{}...)
         );
     };
 

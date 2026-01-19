@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -36,7 +43,7 @@ struct Amidst
         using type = decltype
         (
             Midst<std::make_index_sequence<I>>
-            ::idyl(std::type_identity<Elements>{}...)
+            ::idyl(Tyy<Elements>{}...)
         );
     };
 

@@ -5,6 +5,13 @@
 #include <utility>
 #include <cstddef>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Prefix ****/
 template<typename, auto>
 concept Prefix = true;
@@ -60,7 +67,7 @@ struct InsertTypes<std::index_sequence<I...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -93,7 +100,7 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<typename...Agreements>
@@ -135,7 +142,7 @@ struct InsertTypes<std::index_sequence<I...>, std::index_sequence<J...>, OtherSe
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<typename...Agreements>

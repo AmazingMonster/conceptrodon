@@ -4,12 +4,19 @@
 
 #include <type_traits>
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Capsule ****/
 template<typename...>
 struct Capsule;
 
 template<typename...InspectedElements>
-struct TypicalDiversity: public std::type_identity<InspectedElements>...
+struct TypicalDiversity: public Tyy<InspectedElements>...
 {
 
 // Recursive Case:
@@ -19,7 +26,7 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
         using type = std::conditional
         <
             std::is_base_of<
-                std::type_identity<InspectingElement>,
+                Tyy<InspectingElement>,
                 TypicalDiversity
             >::value, 
             TypicalDiversity, 
@@ -34,7 +41,7 @@ struct TypicalDiversity: public std::type_identity<InspectedElements>...
         using type = std::conditional
         <
             std::is_base_of<
-                std::type_identity<InspectingElement>,
+                Tyy<InspectingElement>,
                 TypicalDiversity
             >::value, 
             Capsule<InspectedElements...>, 

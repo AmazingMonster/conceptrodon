@@ -9,6 +9,13 @@
 template<typename, auto>
 concept Prefix = true;
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
@@ -60,7 +67,7 @@ struct LeftReview
                     decltype
                     (
                         LeftInspect<std::make_index_sequence<I>>
-                        ::template idyl<Predicate>(std::type_identity<Elements>{}...)
+                        ::template idyl<Predicate>(Tyy<Elements>{}...)
                     )::value
                 ));
             }(std::make_index_sequence<sizeof...(Elements) - 1>{})

@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_COGNATE_ROTATE_H
 #define CONCEPTRODON_MOULDIVORE_COGNATE_ROTATE_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/swivel.hpp"
 
 namespace Conceptrodon {
@@ -19,7 +20,7 @@ struct CognateRotate
         using Mold = decltype
         (
             Typella::Swivel<std::make_index_sequence<Amount>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

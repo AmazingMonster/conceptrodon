@@ -6,6 +6,7 @@
 
 #include "conceptrodon/metafunctions/microbiota/typella/ditch.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/expunge.hpp"
+#include "conceptrodon/utilities/tyy.hpp"
 
 namespace Conceptrodon {
 namespace Mouldivore {
@@ -24,7 +25,7 @@ struct CognateErase
         using Mold = decltype
         (
             Typella::Expunge<std::make_index_sequence<Start>, std::make_index_sequence<End-Start>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
     
@@ -35,7 +36,7 @@ struct CognateErase
         using Mold = decltype
         (
             Typella::Ditch<std::make_index_sequence<Index>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

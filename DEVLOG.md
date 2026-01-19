@@ -8,6 +8,42 @@
 
 ## Diary
 
+### 2026/01/20
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Modify <code>Front</code> metafunctions so that it is capable of directly operating on the first argument of a list</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Change <code>std::type_identity<code> to <code>Tyy<code> for consistency</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/18
 
 <ul>

@@ -11,6 +11,7 @@
 
 /******************************************************************************************************/
 #include "conceptrodon/utilities/prefix.hpp"
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/utilities/capsule.hpp"
 #include "conceptrodon/metafunctions/omennivore/extend_front.hpp"
 #include <utility>

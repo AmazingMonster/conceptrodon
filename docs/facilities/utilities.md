@@ -154,6 +154,11 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./utilities/tyy.doc.md">Tyy</a>
+    <a id="tyy"></a>
+  </dt>
+  <dd>Represent a <code>type</code>.</dd>
+  <dt>
     <a href="./utilities/vay.doc.md">Vay</a>
     <a id="vay"></a>
   </dt>

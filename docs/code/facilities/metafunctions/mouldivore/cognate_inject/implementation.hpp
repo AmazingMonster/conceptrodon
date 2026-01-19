@@ -9,6 +9,13 @@
 template<typename, auto>
 concept Prefix = true;
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
@@ -64,7 +71,7 @@ struct CognateInject
                 (
                     Enrich<std::make_index_sequence<Index>>
                     ::template ProtoMold<NewElements...>
-                    ::template idyl<Operation>(std::type_identity<Elements>{}...)
+                    ::template idyl<Operation>(Tyy<Elements>{}...)
                 );
             };
         };

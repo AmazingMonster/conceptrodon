@@ -5,7 +5,7 @@
 #define CONCEPTRODON_TYPELIVORE_AMIDST_H
 
 #include "conceptrodon/utilities/prefix.hpp"
-#include <type_traits>
+#include "conceptrodon/utilities/tyy.hpp"
 #include <utility>
 
 namespace Conceptrodon {
@@ -40,7 +40,7 @@ struct Amidst
         using type = decltype
         (
             Typella::Midst<std::make_index_sequence<I>>
-            ::idyl(std::type_identity<Elements>{}...)
+            ::idyl(Tyy<Elements>{}...)
         );
     };
 
@@ -51,7 +51,7 @@ struct Amidst
     using UniPage = decltype
     (
         Typella::Midst<std::make_index_sequence<I>>
-        ::idyl(std::type_identity<Elements>{}...)
+        ::idyl(Tyy<Elements>{}...)
     );
 };
 

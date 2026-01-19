@@ -68,12 +68,22 @@ Then, when provided with an argument, we inspect whether it is a base of our cla
 
 Since inheriting the same type multiple times is illegal in C++, the initial list of arguments for `SetContains` must be nonrepetitive (hence the word `Set` in the name).
 
-Since fundamental types are not inheritable, we pack every argument into a wrapper--in this case, `std::type_identity`--before the inheritance.
+Since fundamental types are not inheritable, we pack every argument into a wrapper--in this case, `Tyy`--before the inheritance.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+Here's the entire implementation:
 
 ```C++
 template<typename...Elements>
 struct SetContains
-: public std::type_identity<Elements>...
+: public Tyy<Elements>...
 {
     template<typename Inspecting>
     struct ProtoMold
@@ -82,7 +92,7 @@ struct SetContains
         {
             std::is_base_of
             <
-                std::type_identity<Inspecting>,
+                Tyy<Inspecting>,
                 SetContains
             >::value
         };

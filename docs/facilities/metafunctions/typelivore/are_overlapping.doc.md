@@ -98,7 +98,15 @@ The function returns true if the element is in the first list.
 Otherwise, we append the element to the first list and pass the result back to `AreOverlapping`.
 Then, we invoke the second layer by the popped second list.
 
-To 'inherit' fundamental types, we wrap every element into `std::type_identity`.
+To 'inherit' fundamental types, we wrap every element into `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
 
 Here's the entire implementation:
 
@@ -110,7 +118,7 @@ struct Capsule;
 ```C++
 template<typename...InspectedElements>
 struct AreOverlapping
-: public std::type_identity<InspectedElements>...
+: public Tyy<InspectedElements>...
 {
     struct Detail
     {
@@ -126,7 +134,7 @@ struct AreOverlapping
         // `Detail` will stop recursion, achieving short-circuit.
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>,AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>,AreOverlapping>::value, 
             Detail, 
             AreOverlapping<InspectedElements..., InspectingElement>
         >::type::template ProtoMold<RestElements...>::type;
@@ -140,7 +148,7 @@ struct AreOverlapping
     {
         using type = std::conditional
         <
-            std::is_base_of<std::type_identity<InspectingElement>, AreOverlapping>::value, 
+            std::is_base_of<Tyy<InspectingElement>, AreOverlapping>::value, 
             void,
             Capsule<InspectedElements..., InspectingElement>
         >::type;

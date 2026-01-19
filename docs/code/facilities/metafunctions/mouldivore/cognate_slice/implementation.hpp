@@ -9,6 +9,13 @@
 template<typename, auto>
 concept Prefix = true;
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /************************/
 /**** Implementation ****/
 /************************/
@@ -69,7 +76,7 @@ struct CognateSlice
         using Mold = decltype
         (
             Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 
@@ -85,7 +92,7 @@ struct CognateSlice
                 std::make_index_sequence<Start>,
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

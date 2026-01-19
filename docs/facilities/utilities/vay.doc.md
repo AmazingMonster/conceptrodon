@@ -10,7 +10,7 @@ SPDX-License-Identifier: Apache-2.0 -->
 `Vay` accepts a variable and returns the variable via member `value`.
 
 <pre><code>   V
--> struct { Vay = V; }</code></pre>
+-> struct { value = V; }</code></pre>
 
 ## Type Signature
 

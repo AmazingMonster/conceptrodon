@@ -95,6 +95,13 @@ static_assert(std::same_as<Result_1, SupposedResult_1>);
 /**** Third Example ****/
 /***********************/
 
+/**** Tyy ****/
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+
 /**** Operation ****/
 template<typename...>
 struct Oper_2;
@@ -103,8 +110,8 @@ struct Oper_2;
 template<template<typename...> class...Args>
 using Metafunction_2 = BiHarvest
 <
-    std::type_identity<int>,
-    std::type_identity<int*>
+    Tyy<int>,
+    Tyy<int*>
 >
 ::Road<Args...>;
 

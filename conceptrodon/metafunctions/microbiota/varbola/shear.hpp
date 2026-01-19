@@ -8,7 +8,6 @@
 #include <utility>
 
 namespace Conceptrodon {
-
 namespace Varbola {
 
 template<typename>

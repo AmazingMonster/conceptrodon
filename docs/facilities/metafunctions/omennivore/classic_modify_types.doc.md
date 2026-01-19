@@ -149,7 +149,16 @@ struct Capsule;
 
 Here is a simplified version of the implementation.
 
-Note that we wrap the elements inside `std::type_identity`.
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
 This ensures we can create objects to invoke the ordinary function.
 
 ```C++
@@ -185,7 +194,7 @@ struct ClassicModifyTypes<std::index_sequence<I...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -227,7 +236,7 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>>
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>
@@ -278,7 +287,7 @@ struct ClassicModifyTypes<std::index_sequence<I...>, std::index_sequence<J...>, 
         >;
 
         template<typename...Agreements>
-        using Mold = decltype(idyl(std::type_identity<Agreements>{}...));
+        using Mold = decltype(idyl(Tyy<Agreements>{}...));
     };
 
     template<template<typename...> class...Agreements>

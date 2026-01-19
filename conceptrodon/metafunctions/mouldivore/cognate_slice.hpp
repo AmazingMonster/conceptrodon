@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_COGNATE_SLICE_H
 #define CONCEPTRODON_MOULDIVORE_COGNATE_SLICE_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/incise.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/shear.hpp"
 
@@ -23,7 +24,7 @@ struct CognateSlice
         using Mold = decltype
         (
             Typella::Shear<std::make_index_sequence<Amount>>
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 
@@ -39,7 +40,7 @@ struct CognateSlice
                 std::make_index_sequence<Start>,
                 std::make_index_sequence<End-Start>
             >
-            ::template idyl<Operation>(std::type_identity<Elements>{}...)
+            ::template idyl<Operation>(Tyy<Elements>{}...)
         );
     };
 

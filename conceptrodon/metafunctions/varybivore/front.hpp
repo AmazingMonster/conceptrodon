@@ -10,7 +10,7 @@
 namespace Conceptrodon {
 namespace Varybivore {
 
-template<auto...Variables>
+template<auto First, auto...Variables>
 struct Front
 {
     template<size_t Amount>
@@ -20,12 +20,23 @@ struct Front
         using Rail = decltype
         (
             Varbola::Fore<std::make_index_sequence<Amount>>
-            ::template idyl<Agreements...>(Vay<Variables>{}...)
+            ::template idyl<Agreements...>(Vay<First>{}, Vay<Variables>{}...)
         );
     };
 
     template<auto...Agreements>
     using Page = ProtoPage<Agreements...>;
+    
+    template<template<auto...> class Operation>
+    struct Detail
+    {
+        using type = Operation<First>;
+    };
+
+    template<template<auto...> class...Agreements>
+    using Rail = Detail<Agreements...>::type;
+
+    static constexpr auto value {First};
 };
 
 }}

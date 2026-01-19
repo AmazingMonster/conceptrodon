@@ -4,6 +4,7 @@
 #ifndef CONCEPTRODON_MOULDIVORE_COGNATE_INJECT_H
 #define CONCEPTRODON_MOULDIVORE_COGNATE_INJECT_H
 
+#include "conceptrodon/utilities/tyy.hpp"
 #include "conceptrodon/metafunctions/microbiota/typella/enrich.hpp"
 
 namespace Conceptrodon {
@@ -23,7 +24,7 @@ struct CognateInject
             (
                 Typella::Enrich<std::make_index_sequence<Index>>
                 ::template ProtoMold<NewElements...>
-                ::template idyl<Operation>(std::type_identity<Elements>{}...)
+                ::template idyl<Operation>(Tyy<Elements>{}...)
             );
         };
 

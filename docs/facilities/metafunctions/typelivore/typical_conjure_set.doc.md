@@ -88,7 +88,17 @@ Otherwise, `idyl` returns a `Capsule` containing `Inspecting`.
 
 Here is the entire implementation.
 
-Note that we wrap the elements inside `std::type_identity`. This ensures we can create objects to invoke the ordinary function.
+Note that we wrap the elements inside `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+This ensures we can create objects to invoke the ordinary function.
 
 ```C++
 template<typename...Elements>
@@ -126,7 +136,7 @@ struct TypicalConjureSet
             decltype
             (
                 Detail<std::make_index_sequence<I>>
-                ::idyl(std::type_identity<Elements>{}...)
+                ::idyl(Tyy<Elements>{}...)
             )...
         >::type;
     };

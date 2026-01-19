@@ -5,9 +5,9 @@
 #define CONCEPTRODON_VARBOLA_RISE_H
 
 #include <algorithm>
-#include <type_traits>
 #include <utility>
 #include <array>
+#include "conceptrodon/utilities/tyy.hpp"
 
 namespace Conceptrodon {
 namespace Varbola {
@@ -23,7 +23,7 @@ static consteval auto arise()
             std::ranges::sort(original);
             return original;
         }();
-        return std::type_identity<Operation<sorted.at(I)...>> {};
+        return Tyy<Operation<sorted.at(I)...>> {};
     }(std::make_index_sequence<sizeof...(Variables)>{});
 };
 

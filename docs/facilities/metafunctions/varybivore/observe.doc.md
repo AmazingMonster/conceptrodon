@@ -71,6 +71,18 @@ static_assert(std::same_as<Result, SupposedResult>);
 The primary mechanism is implemented within the helper function `stare`.
 The talk [Understanding The constexpr 2-Step](https://youtu.be/_AefJX66io8?list=PLPqbaGB3rnNmIaWPvuu4U6LWt1XooNi-L) by Jason Turner provides a relatively detailed explanation of the usage of `std::array`. Here, we will only walk through general ideas.
 
+We will deliver the types using objects of `Tyy`.
+
+```C++
+template<typename Element>
+struct Tyy
+{
+    using type = Element;
+};
+```
+
+Here is the entire implementation.
+
 ```C++
 template<template<auto...> class Operation, bool...Phenomena>
 static consteval auto stare()
@@ -120,9 +132,9 @@ static consteval auto stare()
             // We collect its front part,
             // which contains all the indices of `true`.
             // Then, we instantiate `Operation`.
-            // We return `std::type_identity` to avoid constructing
+            // We return `Tyy` to avoid constructing
             // an object of type `Operation<*>`.
-            return std::type_identity<Operation<result.at(J)...>> {};
+            return Tyy<Operation<result.at(J)...>> {};
         }(std::make_index_sequence<(...+Phenomena)>{});
     }(std::make_index_sequence<sizeof...(Phenomena)>{});
 };
