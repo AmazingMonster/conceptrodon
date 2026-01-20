@@ -54,7 +54,7 @@ Front
 
 ```C++
 template<typename...>
-alias Front
+struct Front
 {
     using type = RESULT;
 }；
@@ -62,7 +62,7 @@ alias Front
 
 ```C++
 template<typename...>
-alias Front
+struct Front
 {
     template<template<typename...> class>
     alias Road = RESULT;
@@ -71,7 +71,7 @@ alias Front
 
 ```C++
 template<typename...>
-alias Front
+struct Front
 {
     template<auto>
     alias Page

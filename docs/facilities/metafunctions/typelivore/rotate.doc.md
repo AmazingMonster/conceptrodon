@@ -34,7 +34,7 @@ Rotate
 
 ```C++
 template<typename...>
-alias Rotate
+struct Rotate
 {
     template<auto>
     alias Page

@@ -33,7 +33,7 @@ Inject
 
 ```C++
 template<typename...>
-alias Inject
+struct Inject
 {
     template<auto>
     alias Page

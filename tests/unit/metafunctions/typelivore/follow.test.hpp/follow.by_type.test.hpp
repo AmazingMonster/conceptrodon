@@ -1,0 +1,78 @@
+// Copyright 2024 Feng Mofan
+// SPDX-License-Identifier: Apache-2.0
+
+#ifndef CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_FOLLOW_H
+#define CONCEPTRODON_TYPELIVORE_UNIT_TESTS_TEST_FOLLOW_H
+
+#include "conceptrodon/metafunctions/typelivore/follow.hpp"
+
+#include "macaron/judgmental/same_type.hpp"
+#include "macaron/fragmental/sheep.hpp"
+#include "macaron/fragmental/alkane.hpp"
+
+#include "macaron/judgmental/amenity/define_same_type.hpp"
+#include "macaron/fragmental/amenity/define_sheep.hpp"
+#include "macaron/fragmental/amenity/define_alkane.hpp"
+#include <utility>
+
+
+
+
+namespace Conceptrodon {
+namespace Typelivore {
+namespace UnitTests {
+namespace TestFollowByType {
+    
+    
+
+
+/******************************************************************************************************/
+template<typename...Args>
+struct Operation {};
+
+template<typename...Args>
+using Tester = Operation<typename Follow<Args>::template Mold<int>...>;
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define ALKANE_PREFIX
+#define ALKANE_CARBON   \
+    int
+#define ALKANE_SUFFIX
+#define ALKANE_SEPARATOR    \
+    ,
+
+using SupposedResult = Operation<ALKANE_SPROUT(40)>;
+
+#undef ALKANE_PREFIX
+#undef ALKANE_CARBON
+#undef ALKANE_SUFFIX
+#undef ALKANE_SEPARATOR
+/******************************************************************************************************/
+
+
+
+
+/******************************************************************************************************/
+#define SUPPOSED_TYPE   \
+    SupposedResult
+
+#include "macaron/fragmental/amenity/instances/define_integral_constant_sheep.hpp"
+SAME_TYPE(Tester<SHEEP_SPROUT(40)>);
+#include "macaron/fragmental/amenity/instances/undef_integral_constant_sheep.hpp"
+
+#undef SUPPOSED_TYPE
+/******************************************************************************************************/
+
+
+
+
+}}}}
+
+#include "macaron/judgmental/amenity/undef_same_type.hpp"
+#include "macaron/fragmental/amenity/undef_sheep.hpp"
+
+#endif

@@ -54,7 +54,7 @@ Front
 
 ```C++
 template<auto...>
-alias Front
+struct Front
 {
     static constexpr auto value
     {RESULT};
@@ -63,7 +63,7 @@ alias Front
 
 ```C++
 template<auto...>
-alias Front
+struct Front
 {
     template<template<auto...> class>
     alias Rail = RESULT;
@@ -72,7 +72,7 @@ alias Front
 
 ```C++
 template<auto...>
-alias Front
+struct Front
 {
     template<auto>
     alias Page

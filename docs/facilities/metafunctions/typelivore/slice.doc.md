@@ -40,7 +40,7 @@ Slice
 
 ```C++
 template<typename...>
-alias Slice
+struct Slice
 {
     template<auto>
     alias Page
@@ -53,7 +53,7 @@ alias Slice
 
 ```C++
 template<typename...>
-alias Slice
+struct Slice
 {
     template<auto, auto>
     alias Page

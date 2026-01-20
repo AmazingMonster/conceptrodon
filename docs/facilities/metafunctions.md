@@ -55,6 +55,12 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd>Remove elements within a given range and then invoke an operation.</dd>
 
   <dt>
+    <a href="./metafunctions/typelivore/follow.doc.md">Follow</a>
+    <a id="typelivore-follow"></a>
+  </dt>
+  <dd>Duplicate arguments alongside a pack expansion.</dd>
+
+  <dt>
     <a href="./metafunctions/typelivore/front.doc.md">Front</a>
     <a id="typelivore-front"></a>
   </dt>
@@ -381,6 +387,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="varybivore-erase"></a>
   </dt>
   <dd>Remove variables within a given range and then invoke an operation.</dd>
+
+  <dt>
+    <a href="./metafunctions/varybivore/follow.doc.md">Follow</a>
+    <a id="varybivore-follow"></a>
+  </dt>
+  <dd>Duplicate arguments alongside a pack expansion.</dd>
 
   <dt>
     <a href="./metafunctions/varybivore/front.doc.md">Front</a>

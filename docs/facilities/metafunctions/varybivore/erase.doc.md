@@ -42,7 +42,7 @@ Erase
 
 ```C++
 template<auto...>
-alias Erase
+struct Erase
 {
     template<auto>
     alias Page
@@ -55,7 +55,7 @@ alias Erase
 
 ```C++
 template<auto...>
-alias Erase
+struct Erase
 {
     template<auto, auto>
     alias Page
