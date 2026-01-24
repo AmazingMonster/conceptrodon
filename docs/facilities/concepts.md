@@ -95,6 +95,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="typelivore-falsify"></a>
   </dt>
   <dd>Conceptualize the negation of a callable type predicate.</dd>
+
+  <dt>
+    <a href="./concepts/typelivore/nice.doc.md">Nice</a>
+    <a id="typelivore-nice"></a>
+  </dt>
+  <dd>Conceptualize the validity check of expressions.</dd>
 </dl>
 <!-- Conceptualizations -- End -->
 
@@ -327,6 +333,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="varybivore-falsify"></a>
   </dt>
   <dd>Conceptualize the negation of a callable predicate.</dd>
+
+  <dt>
+    <a href="./concepts/varybivore/nice.doc.md">Nice</a>
+    <a id="varybivore-nice"></a>
+  </dt>
+  <dd>Conceptualize the validity check of expressions.</dd>
 </dl>
 <!-- Conceptualizations -- End -->
 

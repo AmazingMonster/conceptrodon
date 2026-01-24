@@ -281,6 +281,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="typelivore-typical-among"></a>
   </dt>
   <dd>Pick out the element at a given index.</dd>
+
+  <dt>
+    <a href="./metafunctions/typelivore/yes.doc.md">Yes</a>
+    <a id="typelivore-yes"></a>
+  </dt>
+  <dd>Always returns <code>true</code>.</dd>
 </dl>
 <!-- List Examinations -- End -->
 
@@ -615,6 +621,12 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="varybivore-set-contains"></a>
   </dt>
   <dd>Check if an variable exists in a set.</dd>
+
+  <dt>
+    <a href="./metafunctions/varybivore/yes.doc.md">Yes</a>
+    <a id="varybivore-yes"></a>
+  </dt>
+  <dd>Always returns <code>true</code>.</dd>
 </dl>
 <!-- List Examinations -- End -->
 

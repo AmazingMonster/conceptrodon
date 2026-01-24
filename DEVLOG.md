@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2026/01/25
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add concepts <code>Nice</code> to conceptualize the validity check of expressions</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/20
 
 <ul>
