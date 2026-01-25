@@ -1,16 +1,17 @@
 // Copyright 2024 Feng Mofan
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef CONCEPTRODON_FUNYOSTEON_UNIT_TESTS_TEST_MOVE_RVALUE_COPY_LVALUE_H
-#define CONCEPTRODON_FUNYOSTEON_UNIT_TESTS_TEST_MOVE_RVALUE_COPY_LVALUE_H
+#ifndef CONCEPTRODON_FUNYOSTEON_UNIT_TESTS_TEST_MOVE_RVALUE_WHILE_COPY_LVALUE_H
+#define CONCEPTRODON_FUNYOSTEON_UNIT_TESTS_TEST_MOVE_RVALUE_WHILE_COPY_LVALUE_H
 
-#include "conceptrodon/regularities/funyosteon/move_rvalue_copy_lvalue.hpp"
+#include "conceptrodon/regularities/funyosteon/move_rvalue_while_copy_lvalue.hpp"
 #include <iostream>
+#include <utility>
 
 namespace Conceptrodon {
 namespace Funyosteon {
 namespace UnitTests {
-namespace TestMoveRvalueCopyLvalue {
+namespace TestMoveRvalueWhileCopyLvalue {
 
 
 
@@ -43,22 +44,22 @@ inline void test()
     Argument arg{};
 
     {
-        std::cout << "/**** ::move_rvalue_copy_lvalue: Passing LValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(arg));
+        std::cout << "/**** ::move_rvalue_while_copy_lvalue: Passing LValue ****/" << std::endl;
+        check(move_rvalue_while_copy_lvalue(arg));
     }
 
     std::cout << std::endl;
 
     {
-        std::cout << "/**** ::move_rvalue_copy_lvalue: Passing XValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(std::move(arg)));
+        std::cout << "/**** ::move_rvalue_while_copy_lvalue: Passing XValue ****/" << std::endl;
+        check(move_rvalue_while_copy_lvalue(std::move(arg)));
     }
 
     std::cout << std::endl;
 
     {
-        std::cout << "/**** ::move_rvalue_copy_lvalue: Passing PRValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(Argument{}));
+        std::cout << "/**** ::move_rvalue_while_copy_lvalue: Passing PRValue ****/" << std::endl;
+        check(move_rvalue_while_copy_lvalue(Argument{}));
     }
 
     std::cout << std::endl;

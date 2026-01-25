@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2026/01/26
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add <code>copy_lvalue_to_prvalue_while_forward_others</code> to regularities</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/25
 
 <ul>

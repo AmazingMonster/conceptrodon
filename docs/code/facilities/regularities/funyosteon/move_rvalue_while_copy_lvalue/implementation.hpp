@@ -8,16 +8,17 @@
 /**** Implementation ****/
 /************************/
 
-template<typename Target>
-constexpr std::remove_cvref_t<Target> move_rvalue_copy_lvalue(std::remove_cvref_t<Target> const & arg)
+template<typename Arg>
+requires std::is_lvalue_reference_v<Arg>
+constexpr std::remove_cvref_t<Arg> move_rvalue_while_copy_lvalue(Arg&& arg)
 {
-    return static_cast<std::remove_cvref_t<Target>>(arg);
+    return static_cast<std::remove_cvref_t<Arg>>(arg);
 }
 
-template<typename Target>
-constexpr Target&& move_rvalue_copy_lvalue(std::remove_reference_t<Target>&& arg)
+template<typename Arg>
+constexpr Arg&& move_rvalue_while_copy_lvalue(Arg&& arg)
 {
-    return static_cast<Target&&>(arg);
+    return static_cast<Arg&&>(arg);
 }
 
 /***********************/
@@ -45,27 +46,27 @@ inline void check(Argument){}
 
 
 /**** Test ****/
-inline void test_move_rvalue_copy_lvalue()
+inline void test_move_rvalue_while_copy_lvalue()
 {
     Argument arg{};
 
     {
         std::cout << "/**** Passing LValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(arg));
+        check(move_rvalue_while_copy_lvalue(arg));
     }
 
     std::cout << std::endl;
 
     {
         std::cout << "/**** Passing XValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(std::move(arg)));
+        check(move_rvalue_while_copy_lvalue(std::move(arg)));
     }
 
     std::cout << std::endl;
 
     {
         std::cout << "/**** Passing PRValue ****/" << std::endl;
-        check(move_rvalue_copy_lvalue<Argument>(Argument{}));
+        check(move_rvalue_while_copy_lvalue(Argument{}));
     }
 }
 
@@ -74,7 +75,6 @@ inline void test_move_rvalue_copy_lvalue()
 /************************/
 
 /**** Test ****/
-
 inline void test_std_forword()
 {
     Argument arg{};
