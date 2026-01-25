@@ -22,7 +22,7 @@ concept Unpegful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Unpegful
-= Mouldivore::Deceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
+= Mouldivore::Failed<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
 ```
 
 ## Links

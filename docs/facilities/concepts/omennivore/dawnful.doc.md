@@ -21,7 +21,7 @@ concept Dawnful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Dawnful = Mouldivore::Confess<IsDawnful, Arg>;
+concept Dawnful = Mouldivore::Passed<IsDawnful, Arg>;
 ```
 
 ## Links

@@ -21,7 +21,7 @@ concept NotRvalueReferenceQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept NotRvalueReferenceQualified = Mouldivore::Deceive<IsRvalueReference, F>;
+concept NotRvalueReferenceQualified = Mouldivore::Failed<IsRvalueReference, F>;
 ```
 
 ## Links

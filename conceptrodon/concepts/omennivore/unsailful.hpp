@@ -18,14 +18,14 @@
 #include "conceptrodon/concepts/omennivore/willful.hpp"
 #include "conceptrodon/concepts/omennivore/glowful.hpp"
 #include "conceptrodon/concepts/omennivore/dawnful.hpp"
-#include "conceptrodon/concepts/mouldivore/deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/failed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
 
 template<typename Arg>
 concept Unsailful
-=   Mouldivore::Deceive<IsSailful, Arg>
+=   Mouldivore::Failed<IsSailful, Arg>
 ||  Moldful<Arg>
 ||  Pageful<Arg>
 ||  Roadful<Arg>

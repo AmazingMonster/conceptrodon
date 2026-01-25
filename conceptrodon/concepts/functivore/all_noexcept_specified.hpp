@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_ALL_NOEXCEPT_SPECIFIED_H
 #define CONCEPTRODON_FUNCTIVORE_ALL_NOEXCEPT_SPECIFIED_H
 
-#include "conceptrodon/concepts/mouldivore/all_confess.hpp"
+#include "conceptrodon/concepts/mouldivore/all_passed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_noexcept.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename...Args>
 concept AllNoexceptSpecified
-= Mouldivore::AllConfess<IsNoexcept, Args...>;
+= Mouldivore::AllPassed<IsNoexcept, Args...>;
 
 }}
 

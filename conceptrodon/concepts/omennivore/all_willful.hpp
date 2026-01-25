@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_ALL_WILLFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_willful.hpp"
-#include "conceptrodon/concepts/mouldivore/all_confess.hpp"
+#include "conceptrodon/concepts/mouldivore/all_passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename...Args>
-concept AllWillful = Mouldivore::AllConfess<IsWillful, Args...>;
+concept AllWillful = Mouldivore::AllPassed<IsWillful, Args...>;
 
 
 }}

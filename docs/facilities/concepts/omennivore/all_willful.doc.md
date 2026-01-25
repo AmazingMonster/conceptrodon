@@ -21,7 +21,7 @@ concept AllWillful = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllWillful = Mouldivore::AllConfess<IsWillful, Args...>;
+concept AllWillful = Mouldivore::AllPassed<IsWillful, Args...>;
 ```
 
 ## Links

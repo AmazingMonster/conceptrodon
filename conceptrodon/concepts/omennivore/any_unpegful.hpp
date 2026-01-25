@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_OMENNIVORE_ANY_UNPEGFUL_H
 #define CONCEPTRODON_OMENNIVORE_ANY_UNPEGFUL_H
 
-#include "conceptrodon/concepts/mouldivore/any_deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/any_failed.hpp"
 #include "conceptrodon/metafunctions/pagelivore/is_specialization_of.hpp"
 #include "conceptrodon/concepts/omennivore/all_unpegful.hpp"
 #include "conceptrodon/utilities/peg.hpp"
@@ -14,7 +14,7 @@ namespace Omennivore {
 
 template<typename...Args>
 concept AnyUnpegful
-=   Mouldivore::AnyDeceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Args...>
+=   Mouldivore::AnyFailed<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Args...>
 ||  AllUnpegful<Args...>;
 
 }}

@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_GLOWFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_glowful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Glowful = Mouldivore::Confess<IsGlowful, Arg>;
+concept Glowful = Mouldivore::Passed<IsGlowful, Arg>;
 
 }}
 

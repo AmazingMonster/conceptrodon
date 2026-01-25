@@ -21,7 +21,7 @@ concept AllSailful = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllSailful = Mouldivore::AllConfess<IsSailful, Args...>;
+concept AllSailful = Mouldivore::AllPassed<IsSailful, Args...>;
 ```
 
 ## Links

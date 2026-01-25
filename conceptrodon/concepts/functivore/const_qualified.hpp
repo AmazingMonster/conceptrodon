@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_CONST_QUALIFIED_H
 #define CONCEPTRODON_FUNCTIVORE_CONST_QUALIFIED_H
 
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_const.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename F>
 concept ConstQualified
-= Mouldivore::Confess<IsConst, F>;
+= Mouldivore::Passed<IsConst, F>;
 
 }}
 

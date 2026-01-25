@@ -22,7 +22,7 @@ concept MemberFunctionPointerProbe = REQUIREMENT;
 ```C++
 template<typename FP>
 concept MemberFunctionPointerProbe
-= Mouldivore::Confess<std::is_member_function_pointer, FP>;
+= Mouldivore::Passed<std::is_member_function_pointer, FP>;
 ```
 
 ## Links

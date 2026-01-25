@@ -21,7 +21,7 @@ concept NotVolatileQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept NotVolatileQualified = Mouldivore::Deceive<IsVolatile, F>;
+concept NotVolatileQualified = Mouldivore::Failed<IsVolatile, F>;
 ```
 
 ## Links

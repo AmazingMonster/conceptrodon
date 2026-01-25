@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_NOEXCEPT_SPECIFIED_H
 #define CONCEPTRODON_FUNCTIVORE_NOEXCEPT_SPECIFIED_H
 
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_noexcept.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename F>
 concept NoexceptSpecified
-= Mouldivore::Confess<IsNoexcept, F>;
+= Mouldivore::Passed<IsNoexcept, F>;
 
 }}
 

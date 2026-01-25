@@ -21,7 +21,7 @@ concept Moldful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Moldful = Mouldivore::Confess<IsMoldful, Arg>;
+concept Moldful = Mouldivore::Passed<IsMoldful, Arg>;
 ```
 
 ## Links

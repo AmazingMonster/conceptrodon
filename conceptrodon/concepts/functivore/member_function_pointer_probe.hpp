@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_MEMBER_FUNCTION_POINTER_PROBE_H
 #define CONCEPTRODON_FUNCTIVORE_MEMBER_FUNCTION_POINTER_PROBE_H
 
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename FP>
 concept MemberFunctionPointerProbe
-= Mouldivore::Confess<std::is_member_function_pointer, FP>;
+= Mouldivore::Passed<std::is_member_function_pointer, FP>;
 
 }}
 

@@ -21,7 +21,7 @@ concept AllFunctionPointer = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllFunctionPointer = Mouldivore::AllConfess<IsFunctionPointer, Args...>;
+concept AllFunctionPointer = Mouldivore::AllPassed<IsFunctionPointer, Args...>;
 ```
 
 ## Links

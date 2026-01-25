@@ -19,16 +19,8 @@ namespace Raillivore {
 namespace UnitTests {
 namespace TestBindBack {
 
-// In this test,
-// we will bind 
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<139>::Page
-// to the back of Operation.
-// Then, we will invoke the resulting metafunction by
-//  Dummy<0>::Page,
-//  ...,
-//  Dummy<99>::Page.
+
+    
 
 /******************************************************************************************************/
 template<template<auto...> class...Args>

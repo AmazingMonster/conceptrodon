@@ -21,7 +21,7 @@ concept AllGritful = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllGritful = Mouldivore::AllConfess<IsGritful, Args...>;
+concept AllGritful = Mouldivore::AllPassed<IsGritful, Args...>;
 ```
 
 ## Links

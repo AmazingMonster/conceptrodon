@@ -25,74 +25,38 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./concepts/typelivore/all_clarify.doc.md">AllClarify</a>
-    <a id="typelivore-all-clarify"></a>
+    <a href="./concepts/typelivore/all_passed.doc.md">AllPassed</a>
+    <a id="typelivore-all-passed"></a>
   </dt>
   <dd>Conceptualize a callable type predicate.</dd>
 
   <dt>
-    <a href="./concepts/typelivore/all_confess.doc.md">AllConfess</a>
-    <a id="typelivore-all-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/all_deceive.doc.md">AllDeceive</a>
-    <a id="typelivore-all-deceive"></a>
+    <a href="./concepts/typelivore/all_failed.doc.md">AllFailed</a>
+    <a id="typelivore-all-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable type predicate.</dd>
 
   <dt>
-    <a href="./concepts/typelivore/all_falsify.doc.md">AllFalsify</a>
-    <a id="typelivore-all-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/any_clarify.doc.md">AnyClarify</a>
-    <a id="typelivore-any-clarify"></a>
+    <a href="./concepts/typelivore/any_passed.doc.md">AnyPassed</a>
+    <a id="typelivore-any-passed"></a>
   </dt>
   <dd>Conceptualize a callable type predicate.</dd>
 
   <dt>
-    <a href="./concepts/typelivore/any_confess.doc.md">AnyConfess</a>
-    <a id="typelivore-any-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/any_deceive.doc.md">AnyDeceive</a>
-    <a id="typelivore-any-deceive"></a>
+    <a href="./concepts/typelivore/any_failed.doc.md">AnyFailed</a>
+    <a id="typelivore-any-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable type predicate.</dd>
 
   <dt>
-    <a href="./concepts/typelivore/any_falsify.doc.md">AnyFalsify</a>
-    <a id="typelivore-any-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/clarify.doc.md">Clarify</a>
-    <a id="typelivore-clarify"></a>
+    <a href="./concepts/typelivore/passed.doc.md">Passed</a>
+    <a id="typelivore-passed"></a>
   </dt>
   <dd>Conceptualize a callable type predicate.</dd>
 
   <dt>
-    <a href="./concepts/typelivore/confess.doc.md">Confess</a>
-    <a id="typelivore-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/deceive.doc.md">Deceive</a>
-    <a id="typelivore-deceive"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable type predicate.</dd>
-
-  <dt>
-    <a href="./concepts/typelivore/falsify.doc.md">Falsify</a>
-    <a id="typelivore-falsify"></a>
+    <a href="./concepts/typelivore/failed.doc.md">Failed</a>
+    <a id="typelivore-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable type predicate.</dd>
 
@@ -263,74 +227,38 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./concepts/varybivore/all_clarify.doc.md">AllClarify</a>
-    <a id="varybivore-all-clarify"></a>
+    <a href="./concepts/varybivore/all_passed.doc.md">AllPassed</a>
+    <a id="varybivore-all-passed"></a>
   </dt>
   <dd>Conceptualize a callable predicate.</dd>
 
   <dt>
-    <a href="./concepts/varybivore/all_confess.doc.md">AllConfess</a>
-    <a id="varybivore-all-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/all_deceive.doc.md">AllDeceive</a>
-    <a id="varybivore-all-deceive"></a>
+    <a href="./concepts/varybivore/all_failed.doc.md">AllFailed</a>
+    <a id="varybivore-all-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable predicate.</dd>
 
   <dt>
-    <a href="./concepts/varybivore/all_falsify.doc.md">AllFalsify</a>
-    <a id="varybivore-all-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/any_clarify.doc.md">AnyClarify</a>
-    <a id="varybivore-any-clarify"></a>
+    <a href="./concepts/varybivore/any_passed.doc.md">AnyPassed</a>
+    <a id="varybivore-any-passed"></a>
   </dt>
   <dd>Conceptualize a callable predicate.</dd>
 
   <dt>
-    <a href="./concepts/varybivore/any_confess.doc.md">AnyConfess</a>
-    <a id="varybivore-any-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/any_deceive.doc.md">AnyDeceive</a>
-    <a id="varybivore-any-deceive"></a>
+    <a href="./concepts/varybivore/any_failed.doc.md">AnyFailed</a>
+    <a id="varybivore-any-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable predicate.</dd>
 
   <dt>
-    <a href="./concepts/varybivore/any_falsify.doc.md">AnyFalsify</a>
-    <a id="varybivore-any-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/clarify.doc.md">Clarify</a>
-    <a id="varybivore-clarify"></a>
+    <a href="./concepts/varybivore/passed.doc.md">Passed</a>
+    <a id="varybivore-passed"></a>
   </dt>
   <dd>Conceptualize a callable predicate.</dd>
 
   <dt>
-    <a href="./concepts/varybivore/confess.doc.md">Confess</a>
-    <a id="varybivore-confess"></a>
-  </dt>
-  <dd>Conceptualize a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/deceive.doc.md">Deceive</a>
-    <a id="varybivore-deceive"></a>
-  </dt>
-  <dd>Conceptualize the negation of a callable predicate.</dd>
-
-  <dt>
-    <a href="./concepts/varybivore/falsify.doc.md">Falsify</a>
-    <a id="varybivore-falsify"></a>
+    <a href="./concepts/varybivore/failed.doc.md">Failed</a>
+    <a id="varybivore-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a callable predicate.</dd>
 
@@ -507,50 +435,50 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./concepts/mouldivore/all_confess.doc.md">AllConfess</a>
-    <a id="mouldivore-all-confess"></a>
+    <a href="./concepts/mouldivore/all_passed.doc.md">AllPassed</a>
+    <a id="mouldivore-all-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/all_deceive.doc.md">AllDeceive</a>
-    <a id="mouldivore-all-deceive"></a>
+    <a href="./concepts/mouldivore/all_failed.doc.md">AllFailed</a>
+    <a id="mouldivore-all-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/any_confess.doc.md">AnyConfess</a>
-    <a id="mouldivore-any-confess"></a>
+    <a href="./concepts/mouldivore/any_passed.doc.md">AnyPassed</a>
+    <a id="mouldivore-any-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/any_deceive.doc.md">AnyDeceive</a>
-    <a id="mouldivore-any-deceive"></a>
+    <a href="./concepts/mouldivore/any_failed.doc.md">AnyFailed</a>
+    <a id="mouldivore-any-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/confess.doc.md">Confess</a>
-    <a id="mouldivore-confess"></a>
+    <a href="./concepts/mouldivore/passed.doc.md">Passed</a>
+    <a id="mouldivore-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/deceive.doc.md">Deceive</a>
-    <a id="mouldivore-deceive"></a>
+    <a href="./concepts/mouldivore/failed.doc.md">Failed</a>
+    <a id="mouldivore-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/fake.doc.md">Fake</a>
-    <a id="mouldivore-fake"></a>
+    <a href="./concepts/mouldivore/failing.doc.md">Failing</a>
+    <a id="mouldivore-failing"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
   
   <dt>
-    <a href="./concepts/mouldivore/real.doc.md">Real</a>
-    <a id="mouldivore-real"></a>
+    <a href="./concepts/mouldivore/passing.doc.md">Passing</a>
+    <a id="mouldivore-passing"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
 </dl>
@@ -565,74 +493,38 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./concepts/pagelivore/all_clarify.doc.md">AllClarify</a>
-    <a id="pagelivore-all-clarify"></a>
+    <a href="./concepts/pagelivore/all_passed.doc.md">AllPassed</a>
+    <a id="pagelivore-all-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
 
   <dt>
-    <a href="./concepts/pagelivore/all_confess.doc.md">AllConfess</a>
-    <a id="pagelivore-all-confess"></a>
-  </dt>
-  <dd>Conceptualize a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/all_deceive.doc.md">AllDeceive</a>
-    <a id="pagelivore-all-deceive"></a>
+    <a href="./concepts/pagelivore/all_failed.doc.md">AllFailed</a>
+    <a id="pagelivore-all-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
 
   <dt>
-    <a href="./concepts/pagelivore/all_falsify.doc.md">AllFalsify</a>
-    <a id="pagelivore-all-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/any_clarify.doc.md">AnyClarify</a>
-    <a id="pagelivore-any-clarify"></a>
+    <a href="./concepts/pagelivore/any_passed.doc.md">AnyPassed</a>
+    <a id="pagelivore-any-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
 
   <dt>
-    <a href="./concepts/pagelivore/any_confess.doc.md">AnyConfess</a>
-    <a id="pagelivore-any-confess"></a>
-  </dt>
-  <dd>Conceptualize a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/any_deceive.doc.md">AnyDeceive</a>
-    <a id="pagelivore-any-deceive"></a>
+    <a href="./concepts/pagelivore/any_failed.doc.md">AnyFailed</a>
+    <a id="pagelivore-any-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
 
   <dt>
-    <a href="./concepts/pagelivore/any_falsify.doc.md">AnyFalsify</a>
-    <a id="pagelivore-any-falsify"></a>
-  </dt>
-  <dd>Conceptualize the negation of a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/clarify.doc.md">Clarify</a>
-    <a id="pagelivore-clarify"></a>
+    <a href="./concepts/pagelivore/passed.doc.md">Passed</a>
+    <a id="pagelivore-passed"></a>
   </dt>
   <dd>Conceptualize a class template predicate.</dd>
 
   <dt>
-    <a href="./concepts/pagelivore/confess.doc.md">Confess</a>
-    <a id="pagelivore-confess"></a>
-  </dt>
-  <dd>Conceptualize a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/deceive.doc.md">Deceive</a>
-    <a id="pagelivore-deceive"></a>
-  </dt>
-  <dd>Conceptualize the negation of a class template predicate.</dd>
-
-  <dt>
-    <a href="./concepts/pagelivore/falsify.doc.md">Falsify</a>
-    <a id="pagelivore-falsify"></a>
+    <a href="./concepts/pagelivore/failed.doc.md">Failed</a>
+    <a id="pagelivore-failed"></a>
   </dt>
   <dd>Conceptualize the negation of a class template predicate.</dd>
 </dl>

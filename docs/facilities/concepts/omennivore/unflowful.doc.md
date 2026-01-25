@@ -22,7 +22,7 @@ concept Unflowful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Unflowful
-=   Mouldivore::Deceive<IsFlowful, Arg>
+=   Mouldivore::Failed<IsFlowful, Arg>
 ||  Moldful<Arg>
 ||  Pageful<Arg>
 ||  Roadful<Arg>

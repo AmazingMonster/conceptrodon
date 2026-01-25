@@ -22,7 +22,7 @@ concept AllNotMemberFunctionPointer = REQUIREMENT;
 ```C++
 template<typename...Args>
 concept AllNotMemberFunctionPointer
-= Mouldivore::AllDeceive<std::is_member_function_pointer, Args...>;
+= Mouldivore::AllFailed<std::is_member_function_pointer, Args...>;
 ```
 
 ## Links

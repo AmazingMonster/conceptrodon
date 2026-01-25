@@ -25,8 +25,8 @@ concept DifferentFrom = REQUIREMENT;
 ```C++
 template<auto LeftSide, auto RightSide>
 concept DifferentFrom
-=   Pagelivore::Clarify<IsDifferent, LeftSide, RightSide>
-&&  Pagelivore::Clarify<IsDifferent, RightSide, LeftSide>;
+=   Pagelivore::Passed<IsDifferent, LeftSide, RightSide>
+&&  Pagelivore::Passed<IsDifferent, RightSide, LeftSide>;
 ```
 
 ## Links

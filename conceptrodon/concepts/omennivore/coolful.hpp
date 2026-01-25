@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_COOLFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_coolful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Coolful = Mouldivore::Confess<IsCoolful, Arg>;
+concept Coolful = Mouldivore::Passed<IsCoolful, Arg>;
 
 }}
 

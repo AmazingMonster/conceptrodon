@@ -21,7 +21,7 @@ concept AllCalmful = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllCalmful = Mouldivore::AllConfess<IsCalmful, Args...>;
+concept AllCalmful = Mouldivore::AllPassed<IsCalmful, Args...>;
 ```
 
 ## Links

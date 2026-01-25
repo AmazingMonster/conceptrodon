@@ -21,7 +21,7 @@ concept NotConstQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept NotConstQualified = Mouldivore::Deceive<IsConst, F>;
+concept NotConstQualified = Mouldivore::Failed<IsConst, F>;
 ```
 
 ## Links

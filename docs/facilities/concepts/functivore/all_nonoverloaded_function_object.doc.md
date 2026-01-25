@@ -21,7 +21,7 @@ concept AllNonoverloadedFunctionObject = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllNonoverloadedFunctionObject = Mouldivore::AllConfess<IsNonoverloadedFunctionObject, Args...>;
+concept AllNonoverloadedFunctionObject = Mouldivore::AllPassed<IsNonoverloadedFunctionObject, Args...>;
 ```
 
 ## Links

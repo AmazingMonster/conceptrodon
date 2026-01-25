@@ -21,7 +21,7 @@ concept FunctionPointerProbe = REQUIREMENT;
 
 ```C++
 template<typename FP>
-concept FunctionPointerProbe = Mouldivore::Confess<IsFunctionPointer, FP>;
+concept FunctionPointerProbe = Mouldivore::Passed<IsFunctionPointer, FP>;
 ```
 
 ## Links

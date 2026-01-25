@@ -21,7 +21,7 @@ concept NotFunctionPointer = REQUIREMENT;
 
 ```C++
 template<typename FP>
-concept NotFunctionPointer = Mouldivore::Deceive<IsFunctionPointer, FP>;
+concept NotFunctionPointer = Mouldivore::Failed<IsFunctionPointer, FP>;
 ```
 
 ## Links

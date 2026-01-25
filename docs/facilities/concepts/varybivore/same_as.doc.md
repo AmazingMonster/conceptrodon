@@ -25,8 +25,8 @@ concept SameAs = REQUIREMENT;
 ```C++
 template<auto LeftSide, auto RightSide>
 concept SameAs
-=   Pagelivore::Clarify<IsSame, LeftSide, RightSide>
-&&  Pagelivore::Clarify<IsSame, RightSide, LeftSide>;
+=   Pagelivore::Passed<IsSame, LeftSide, RightSide>
+&&  Pagelivore::Passed<IsSame, RightSide, LeftSide>;
 ```
 
 ## Links

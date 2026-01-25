@@ -21,7 +21,7 @@ concept ConstQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept ConstQualified = Mouldivore::Confess<IsConst, F>;
+concept ConstQualified = Mouldivore::Passed<IsConst, F>;
 ```
 
 ## Links

@@ -21,7 +21,7 @@ concept LvalueReferenceQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept LvalueReferenceQualified = Mouldivore::Confess<IsLvalueReference, F>;
+concept LvalueReferenceQualified = Mouldivore::Passed<IsLvalueReference, F>;
 ```
 
 ## Links

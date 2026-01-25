@@ -21,7 +21,7 @@ concept Willful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Willful = Mouldivore::Confess<IsWillful, Arg>;
+concept Willful = Mouldivore::Passed<IsWillful, Arg>;
 ```
 
 ## Links

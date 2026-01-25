@@ -21,7 +21,7 @@ concept NotVariadic = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept NotVariadic = Mouldivore::Deceive<IsVariadic, F>;
+concept NotVariadic = Mouldivore::Failed<IsVariadic, F>;
 ```
 
 ## Links

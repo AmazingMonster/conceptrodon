@@ -5,15 +5,15 @@
 #define CONCEPTRODON_VARYBIVORE_DIFFERENT_FROM_H
 
 #include "conceptrodon/metafunctions/varybivore/is_different.hpp"
-#include "conceptrodon/concepts/pagelivore/clarify.hpp"
+#include "conceptrodon/concepts/pagelivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto LeftSide, auto RightSide>
 concept DifferentFrom
-=   Pagelivore::Clarify<IsDifferent, LeftSide, RightSide>
-&&  Pagelivore::Clarify<IsDifferent, RightSide, LeftSide>;
+=   Pagelivore::Passed<IsDifferent, LeftSide, RightSide>
+&&  Pagelivore::Passed<IsDifferent, RightSide, LeftSide>;
 
 }}
 

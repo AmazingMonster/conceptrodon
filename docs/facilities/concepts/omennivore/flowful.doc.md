@@ -21,7 +21,7 @@ concept Flowful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Flowful = Mouldivore::Confess<IsFlowful, Arg>;
+concept Flowful = Mouldivore::Passed<IsFlowful, Arg>;
 ```
 
 ## Links

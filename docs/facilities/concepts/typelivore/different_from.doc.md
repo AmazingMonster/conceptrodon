@@ -25,8 +25,8 @@ concept DifferentFrom = REQUIREMENT;
 ```C++
 template<typename LeftSide, typename RightSide>
 concept DifferentFrom
-=   Mouldivore::Confess<IsDifferent, LeftSide, RightSide>
-&&  Mouldivore::Confess<IsDifferent, RightSide, LeftSide>;
+=   Mouldivore::Passed<IsDifferent, LeftSide, RightSide>
+&&  Mouldivore::Passed<IsDifferent, RightSide, LeftSide>;
 ```
 
 ## Links

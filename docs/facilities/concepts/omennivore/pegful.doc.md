@@ -22,7 +22,7 @@ concept Pegful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Pegful
-= Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
+= Mouldivore::Passed<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
 ```
 
 ## Links

@@ -21,7 +21,7 @@ concept AllNotConstQualified = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllNotConstQualified = Mouldivore::AllDeceive<IsConst, Args...>;
+concept AllNotConstQualified = Mouldivore::AllFailed<IsConst, Args...>;
 ```
 
 ## Links

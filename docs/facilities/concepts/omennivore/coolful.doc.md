@@ -21,7 +21,7 @@ concept Coolful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Coolful = Mouldivore::Confess<IsCoolful, Arg>;
+concept Coolful = Mouldivore::Passed<IsCoolful, Arg>;
 ```
 
 ## Links

@@ -22,7 +22,7 @@ concept Unhailful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Unhailful
-=   Mouldivore::Deceive<IsHailful, Arg>
+=   Mouldivore::Failed<IsHailful, Arg>
 ||  Moldful<Arg>
 ||  Pageful<Arg>
 ||  Roadful<Arg>

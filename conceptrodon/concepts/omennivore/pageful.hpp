@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_PAGEFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_pageful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Pageful = Mouldivore::Confess<IsPageful, Arg>;
+concept Pageful = Mouldivore::Passed<IsPageful, Arg>;
 
 }}
 

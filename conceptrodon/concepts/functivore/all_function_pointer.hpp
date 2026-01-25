@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_ALL_FUNCTION_POINTER_H
 #define CONCEPTRODON_FUNCTIVORE_ALL_FUNCTION_POINTER_H
 
-#include "conceptrodon/concepts/mouldivore/all_confess.hpp"
+#include "conceptrodon/concepts/mouldivore/all_passed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_function_pointer.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename...Args>
 concept AllFunctionPointer
-= Mouldivore::AllConfess<IsFunctionPointer, Args...>;
+= Mouldivore::AllPassed<IsFunctionPointer, Args...>;
 
 }}
 

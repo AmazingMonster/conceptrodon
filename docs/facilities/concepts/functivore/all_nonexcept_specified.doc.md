@@ -21,7 +21,7 @@ concept AllNoexceptSpecified = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllNoexceptSpecified = Mouldivore::AllConfess<IsNoexcept, Args...>;
+concept AllNoexceptSpecified = Mouldivore::AllPassed<IsNoexcept, Args...>;
 ```
 
 ## Links

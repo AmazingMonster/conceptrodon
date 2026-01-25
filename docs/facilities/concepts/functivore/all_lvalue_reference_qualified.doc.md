@@ -21,7 +21,7 @@ concept AllLvalueReferenceQualified = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllLvalueReferenceQualified = Mouldivore::AllConfess<IsLvalueReference, Args...>;
+concept AllLvalueReferenceQualified = Mouldivore::AllPassed<IsLvalueReference, Args...>;
 ```
 
 ## Links

@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_ALL_NOT_MEMBER_FUNCTION_POINTER_H
 #define CONCEPTRODON_FUNCTIVORE_ALL_NOT_MEMBER_FUNCTION_POINTER_H
 
-#include "conceptrodon/concepts/mouldivore/all_deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/all_failed.hpp"
 #include <type_traits>
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename...Args>
 concept AllNotMemberFunctionPointer
-= Mouldivore::AllDeceive<std::is_member_function_pointer, Args...>;
+= Mouldivore::AllFailed<std::is_member_function_pointer, Args...>;
 
 }}
 

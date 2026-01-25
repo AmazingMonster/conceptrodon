@@ -22,7 +22,7 @@ concept NotMemberFunctionPointer = REQUIREMENT;
 ```C++
 template<typename MFP>
 concept NotMemberFunctionPointer
-= Mouldivore::Deceive<std::is_member_function_pointer, MFP>;
+= Mouldivore::Failed<std::is_member_function_pointer, MFP>;
 ```
 
 ## Links

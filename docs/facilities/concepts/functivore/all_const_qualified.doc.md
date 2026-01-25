@@ -21,7 +21,7 @@ concept AllConstQualified = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllConstQualified = Mouldivore::AllConfess<IsConst, Args...>;
+concept AllConstQualified = Mouldivore::AllPassed<IsConst, Args...>;
 ```
 
 ## Links

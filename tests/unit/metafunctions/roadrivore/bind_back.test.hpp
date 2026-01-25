@@ -19,16 +19,8 @@ namespace Roadrivore {
 namespace UnitTests {
 namespace TestBindBack {
 
-// In this test,
-// we will bind 
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<139>::Mold
-// to the back of Operation.
-// Then, we will invoke the resulting metafunction by
-//  Dummy<0>::Mold,
-//  ...,
-//  Dummy<99>::Mold.
+
+    
 
 /******************************************************************************************************/
 template<template<typename...> class...Args>

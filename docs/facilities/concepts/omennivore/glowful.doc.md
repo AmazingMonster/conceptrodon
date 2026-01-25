@@ -21,7 +21,7 @@ concept Glowful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Glowful = Mouldivore::Confess<IsGlowful, Arg>;
+concept Glowful = Mouldivore::Passed<IsGlowful, Arg>;
 ```
 
 ## Links

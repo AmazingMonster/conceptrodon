@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_NOT_VOLATILE_QUALIFIED_H
 #define CONCEPTRODON_FUNCTIVORE_NOT_VOLATILE_QUALIFIED_H
 
-#include "conceptrodon/concepts/mouldivore/deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/failed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_volatile.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename F>
 concept NotVolatileQualified
-= Mouldivore::Deceive<IsVolatile, F>;
+= Mouldivore::Failed<IsVolatile, F>;
 
 }}
 

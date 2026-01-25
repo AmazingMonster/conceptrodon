@@ -60,12 +60,9 @@ SAME_TYPE(TypicalPaste<FirstPackedVessel<>, SHEEP_SPROUT(240)>::type);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-// In this test, we will paste
-//  std::integer_sequence<size_t>,
-//  std::integer_sequence<int, 0>,
-//  ...,
-//  std::integer_sequence<int, 239>
-// together.
+
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"
@@ -96,12 +93,8 @@ SAME_TYPE(TypicalPaste<std::integer_sequence<size_t>, SHEEP_SPROUT(240)>::type);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-// In this test, we will paste
-//  std::integer_sequence<int>,
-//  std::index_sequence<0>,
-//  ...,
-//  std::index_sequence<239>
-// together.
+
+
 
 /******************************************************************************************************/
 #include "macaron/fragmental/amenity/instances/define_integer_sheep.hpp"

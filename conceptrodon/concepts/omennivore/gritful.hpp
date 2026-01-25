@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_GRITFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_gritful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Gritful = Mouldivore::Confess<IsGritful, Arg>;
+concept Gritful = Mouldivore::Passed<IsGritful, Arg>;
 
 }}
 

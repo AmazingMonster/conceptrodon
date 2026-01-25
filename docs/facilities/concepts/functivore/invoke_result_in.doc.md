@@ -23,7 +23,7 @@ concept InvokeResultIn = REQUIREMENT;
 ```C++
 template<typename Fun, typename Result, typename...Args>
 concept InvokeResultIn
-= Mouldivore::Confess<std::is_invocable_r, Result, Fun, Args...>;
+= Mouldivore::Passed<std::is_invocable_r, Result, Fun, Args...>;
 ```
 
 Note that `std::is_invocable_r` does not work with volatile lvalue reference qualified(`volatile &`) member functions.

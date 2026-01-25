@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_SAILFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_sailful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Sailful = Mouldivore::Confess<IsSailful, Arg>;
+concept Sailful = Mouldivore::Passed<IsSailful, Arg>;
 
 }}
 

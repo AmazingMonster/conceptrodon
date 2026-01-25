@@ -21,7 +21,7 @@ concept AllRoadful = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllRoadful = Mouldivore::AllConfess<IsRoadful, Args...>;
+concept AllRoadful = Mouldivore::AllPassed<IsRoadful, Args...>;
 ```
 
 ## Links

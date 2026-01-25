@@ -59,11 +59,8 @@ SAME_TYPE(KindredRepack<SHEEP_SPROUT(240)>::Rail<Operation>);
 #undef SUPPOSED_TYPE
 /**************************************************************************************************/
 
-// In this test, we will paste
-//  Shuttle<0>,
-//  ...,
-//  Shuttle<239>
-// together and place the result in Operation.
+
+
 
 /******************************************************************************************************/
 #define SHEEP_PREFIX    \

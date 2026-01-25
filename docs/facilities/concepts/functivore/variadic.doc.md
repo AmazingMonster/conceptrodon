@@ -21,7 +21,7 @@ concept Variadic = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept Variadic = Mouldivore::Confess<IsVariadic, F>;
+concept Variadic = Mouldivore::Passed<IsVariadic, F>;
 ```
 
 ## Links

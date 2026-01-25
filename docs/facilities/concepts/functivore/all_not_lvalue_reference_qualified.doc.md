@@ -21,7 +21,7 @@ concept AllNotLvalueReferenceQualified = REQUIREMENT;
 
 ```C++
 template<typename...Args>
-concept AllNotLvalueReferenceQualified = Mouldivore::AllDeceive<IsLvalueReference, Args...>;
+concept AllNotLvalueReferenceQualified = Mouldivore::AllFailed<IsLvalueReference, Args...>;
 ```
 
 ## Links

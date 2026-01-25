@@ -21,7 +21,7 @@ concept VolatileQualified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept VolatileQualified = Mouldivore::Confess<IsVolatile, F>;
+concept VolatileQualified = Mouldivore::Passed<IsVolatile, F>;
 ```
 
 ## Links

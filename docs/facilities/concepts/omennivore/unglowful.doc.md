@@ -22,7 +22,7 @@ concept Unglowful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Unglowful
-=   Mouldivore::Deceive<IsGlowful, Arg>
+=   Mouldivore::Failed<IsGlowful, Arg>
 ||  Moldful<Arg>
 ||  Pageful<Arg>
 ||  Roadful<Arg>

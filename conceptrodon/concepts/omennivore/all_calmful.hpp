@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_ALL_CALMFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_calmful.hpp"
-#include "conceptrodon/concepts/mouldivore/all_confess.hpp"
+#include "conceptrodon/concepts/mouldivore/all_passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename...Args>
-concept AllCalmful = Mouldivore::AllConfess<IsCalmful, Args...>;
+concept AllCalmful = Mouldivore::AllPassed<IsCalmful, Args...>;
 
 }}
 

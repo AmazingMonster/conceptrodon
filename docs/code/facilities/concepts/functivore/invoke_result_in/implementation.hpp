@@ -5,7 +5,7 @@
 #include <type_traits>
 
 template<template<typename...> class Predicate, typename...Elements>
-concept Confess = Predicate<Elements...>::value;
+concept Passed = Predicate<Elements...>::value;
 
 /************************/
 /**** Implementation ****/
@@ -13,7 +13,7 @@ concept Confess = Predicate<Elements...>::value;
 
 template<typename Fun, typename Result, typename...Args>
 concept InvokeResultIn
-= Confess<std::is_invocable_r, Result, Fun, Args...>;
+= Passed<std::is_invocable_r, Result, Fun, Args...>;
 
 /***************/
 /**** Tests ****/

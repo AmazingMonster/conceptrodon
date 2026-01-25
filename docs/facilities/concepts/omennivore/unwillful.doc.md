@@ -22,7 +22,7 @@ concept Unwillful = REQUIREMENT;
 ```C++
 template<typename Arg>
 concept Unwillful
-=   Mouldivore::Deceive<IsWillful, Arg>
+=   Mouldivore::Failed<IsWillful, Arg>
 ||  Moldful<Arg>
 ||  Pageful<Arg>
 ||  Roadful<Arg>

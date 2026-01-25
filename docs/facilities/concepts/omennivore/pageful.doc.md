@@ -21,7 +21,7 @@ concept Pageful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Pageful = Mouldivore::Confess<IsPageful, Arg>;
+concept Pageful = Mouldivore::Passed<IsPageful, Arg>;
 ```
 
 ## Links

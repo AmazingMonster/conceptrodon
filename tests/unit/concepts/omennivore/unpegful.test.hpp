@@ -42,7 +42,7 @@ static_assert(Tester<Peg<10>>::value == 0);
 
 /******************************************************************************************************/
 template<typename Arg>
-requires Unpegful<Arg> && Mouldivore::Deceive<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>
+requires Unpegful<Arg> && Mouldivore::Failed<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>
 struct Tester<Arg>
 {
     static constexpr int value {2};

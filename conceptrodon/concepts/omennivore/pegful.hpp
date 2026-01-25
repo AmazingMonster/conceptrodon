@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_OMENNIVORE_PEGFUL_H
 #define CONCEPTRODON_OMENNIVORE_PEGFUL_H
 
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 #include "conceptrodon/metafunctions/pagelivore/is_specialization_of.hpp"
 #include "conceptrodon/utilities/peg.hpp"
 
@@ -13,7 +13,7 @@ namespace Omennivore {
 
 template<typename Arg>
 concept Pegful
-= Mouldivore::Confess<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
+= Mouldivore::Passed<Pagelivore::IsSpecializationOf<Peg>::ProtoMold, Arg>;
 
 }}
 

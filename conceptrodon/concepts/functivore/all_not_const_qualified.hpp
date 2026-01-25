@@ -4,7 +4,7 @@
 #ifndef CONCEPTRODON_FUNCTIVORE_ALL_NOT_CONST_QUALIFIED_H
 #define CONCEPTRODON_FUNCTIVORE_ALL_NOT_CONST_QUALIFIED_H
 
-#include "conceptrodon/concepts/mouldivore/all_deceive.hpp"
+#include "conceptrodon/concepts/mouldivore/all_failed.hpp"
 #include "conceptrodon/metafunctions/functivore/is_const.hpp"
 
 namespace Conceptrodon {
@@ -12,7 +12,7 @@ namespace Functivore {
 
 template<typename...Args>
 concept AllNotConstQualified
-= Mouldivore::AllDeceive<IsConst, Args...>;
+= Mouldivore::AllFailed<IsConst, Args...>;
 
 }}
 

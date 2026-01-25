@@ -27,6 +27,74 @@
   </li>
 </ul>
 
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Remove <code>Confess</code> and <code>Deceive</code> related concepts from <code>Pagelivore</code>, <code>Typelivore</code>, and <code>Varybivore</code> as they are not intuitive</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Rename <code>Confess</code> to <code>Passed</code> and <code>Deceive</code> to <code>Failed</code> in <code>Mouldivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Rename <code>Real</code> to <code>Passing</code> and <code>Fake</code> to <code>Failing</code> in <code>Mouldivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Rename <code>Clarify</code> to <code>Passed</code> and <code>Falsify</code> to <code>Failed</code> in <code>Pagelivore</code>, <code>Typelivore</code>, and <code>Varybivore</code></td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/20
 
 <ul>

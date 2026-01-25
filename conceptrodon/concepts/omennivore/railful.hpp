@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_RAILFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_railful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Railful = Mouldivore::Confess<IsRailful, Arg>;
+concept Railful = Mouldivore::Passed<IsRailful, Arg>;
 
 }}
 

@@ -21,7 +21,7 @@ concept Railful = REQUIREMENT;
 
 ```C++
 template<typename Arg>
-concept Railful = Mouldivore::Confess<IsRailful, Arg>;
+concept Railful = Mouldivore::Passed<IsRailful, Arg>;
 ```
 
 ## Links

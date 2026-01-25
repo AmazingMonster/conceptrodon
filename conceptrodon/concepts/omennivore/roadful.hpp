@@ -5,13 +5,13 @@
 #define CONCEPTRODON_OMENNIVORE_ROADFUL_H
 
 #include "conceptrodon/metafunctions/omennivore/is_roadful.hpp"
-#include "conceptrodon/concepts/mouldivore/confess.hpp"
+#include "conceptrodon/concepts/mouldivore/passed.hpp"
 
 namespace Conceptrodon {
 namespace Omennivore {
     
 template<typename Arg>
-concept Roadful = Mouldivore::Confess<IsRoadful, Arg>;
+concept Roadful = Mouldivore::Passed<IsRoadful, Arg>;
 
 }}
 

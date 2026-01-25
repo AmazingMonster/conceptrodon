@@ -21,7 +21,7 @@ concept NoexceptSpecified = REQUIREMENT;
 
 ```C++
 template<typename F>
-concept NoexceptSpecified = Mouldivore::Confess<IsNoexcept, F>;
+concept NoexceptSpecified = Mouldivore::Passed<IsNoexcept, F>;
 ```
 
 ## Links
