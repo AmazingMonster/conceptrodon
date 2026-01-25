@@ -77,6 +77,18 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="typelivore-different-from"></a>
   </dt>
   <dd><code>true</code> if two elements are different.</dd>
+
+  <dt>
+    <a href="./concepts/typelivore/false_probe.doc.md">FalseProbe</a>
+    <a id="typelivore-false-probe"></a>
+  </dt>
+  <dd><code>true</code> if the value result of the argument is false.</dd>
+
+  <dt>
+    <a href="./concepts/typelivore/true_probe.doc.md">TrueProbe</a>
+    <a id="typelivore-true-probe"></a>
+  </dt>
+  <dd><code>true</code> if the value result of the argument is true.</dd>
 </dl>
 <!-- Entity Examinations -- End -->
 
@@ -285,6 +297,18 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="varybivore-same-as"></a>
   </dt>
   <dd><code>true</code> if two variables are the same.</dd>
+
+  <dt>
+    <a href="./concepts/varybivore/false_probe.doc.md">FalseProbe</a>
+    <a id="varybivore-false-probe"></a>
+  </dt>
+  <dd><code>true</code> if the argument is false.</dd>
+
+  <dt>
+    <a href="./concepts/varybivore/true_probe.doc.md">TrueProbe</a>
+    <a id="varybivore-true-probe"></a>
+  </dt>
+  <dd><code>true</code> if the argument is true.</dd>
 </dl>
 <!-- Entity Examinations -- End -->
 
