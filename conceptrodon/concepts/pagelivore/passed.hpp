@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Pagelivore {
 
 template<template<auto...> class Predicate, auto...Variables>
-concept Passed = Predicate<Variables...>::value;
+concept Passed = static_cast<bool>(Predicate<Variables...>::value);
 
 }}
 

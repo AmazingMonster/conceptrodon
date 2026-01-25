@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Predicate, auto...Variables>
-concept AllFailed = (...&&(not Predicate(Variables)));
+concept AllFailed = (...&& not static_cast<bool>(Predicate(Variables)));
 
 }}
 

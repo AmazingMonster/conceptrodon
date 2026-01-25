@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Predicate, auto...Variables>
-concept Passed = Predicate{}(Variables...);
+concept Passed = static_cast<bool>(Predicate{}(Variables...));
 
 }}
 

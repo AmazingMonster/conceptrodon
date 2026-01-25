@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Typelivore {
 
 template<typename Predicate, auto...Variables>
-concept AllFailed = (...&&(not Predicate{}(Variables)));
+concept AllFailed = (...&& not static_cast<bool>(Predicate{}(Variables)));
 
 }}
 

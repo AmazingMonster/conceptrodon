@@ -8,7 +8,7 @@ namespace Conceptrodon {
 namespace Varybivore {
 
 template<auto Predicate, auto...Variables>
-concept AnyPassed = (...||(Predicate(Variables)));
+concept AnyPassed = (...|| static_cast<bool>(Predicate(Variables)));
 
 }}
 
