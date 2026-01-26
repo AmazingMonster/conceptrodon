@@ -16,6 +16,25 @@
       <tbody>
         <tr>
           <td>Plan</td>
+          <td>Remove some work I did recently since I was thinking it wrong</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2026/01/27
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
           <td>Add class member function probes (<code>->*</code>, <code>()</code>, <code>[]</code>, <code>at</code>, <code>get</code>)</td>
         </tr>
         <tr>
