@@ -8,6 +8,25 @@
 
 ## Diary
 
+### 2026/01/29
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add class member function probes (<code>=<code>, <code>->*</code>, <code>()</code>, <code>at</code>, <code>get</code>)</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In Progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/27
 
 <ul>
@@ -27,15 +46,13 @@
   </li>
 </ul>
 
-### 2026/01/27
-
 <ul>
   <li>
     <table>
       <tbody>
         <tr>
           <td>Plan</td>
-          <td>Add class member function probes (<code>->*</code>, <code>()</code>, <code>[]</code>, <code>at</code>, <code>get</code>)</td>
+          <td>Add class member function probes (<code>=<code>, <code>->*</code>, <code>()</code>, <code>at</code>, <code>get</code>)</td>
         </tr>
         <tr>
           <td>Progress</td>
