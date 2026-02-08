@@ -27,7 +27,7 @@ target_include_directories(ConceptrodonFacilities INTERFACE
 
 if(CMAKE_SOURCE_DIR STREQUAL Conceptrodon_SOURCE_DIR OR TEST_CONCEPTRODON)
 
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(TestConceptrodon

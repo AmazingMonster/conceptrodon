@@ -8,6 +8,44 @@
 
 ## Diary
 
+### 2026/02/08
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add class member function probes (<code>=<code>, <code>->*</code>, <code>()</code>, <code>at</code>, <code>get</code>) that also check if the return types satisfy given predicates</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>Done</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+### 2026/02/01
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Plan</td>
+          <td>Add class member function probes (<code>=<code>, <code>->*</code>, <code>()</code>, <code>at</code>, <code>get</code>) that also check if the return types satisfy given predicates</td>
+        </tr>
+        <tr>
+          <td>Progress</td>
+          <td>In Progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
 ### 2026/01/29
 
 <ul>

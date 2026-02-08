@@ -85,6 +85,12 @@ SPDX-License-Identifier: Apache-2.0 -->
   <dd><code>true</code> if the value result of the argument is false.</dd>
 
   <dt>
+    <a href="./concepts/typelivore/static_castable.doc.md">StaticCastable</a>
+    <a id="typelivore-static-castable"></a>
+  </dt>
+  <dd><code>true</code> if the first type can be casted to the second.</dd>
+
+  <dt>
     <a href="./concepts/typelivore/true_probe.doc.md">TrueProbe</a>
     <a id="typelivore-true-probe"></a>
   </dt>
@@ -1021,10 +1027,26 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
+    <a href="./concepts/functivore/assignment_operator_available.doc.md">AssignmentOperatorAvailable</a>
+    <a id="functivore-assignment-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if the first type can be assigned to by the second type.</dd>
+</dl>
+
+<dl>
+  <dt>
     <a href="./concepts/functivore/const_qualified.doc.md">ConstQualified</a>
     <a id="functivore-const-qualified"></a>
   </dt>
   <dd><code>true</code> if the function-like type is <code>const</code> qualified.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/function_call_operator_available.doc.md">FunctionCallOperatorAvailable</a>
+    <a id="functivore-function-call-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if the type can be invoked by the argument types.</dd>
 </dl>
 
 <dl>
@@ -1061,8 +1083,32 @@ SPDX-License-Identifier: Apache-2.0 -->
 
 <dl>
   <dt>
-    <a href="./concepts/functivore/member_function_pointer.doc.md">MemberFunctionPointer</a>
-    <a id="functivore-member-function-pointer"></a>
+    <a href="./concepts/functivore/member_access_through_pointer_to_member_operator_available.doc.md">MemberAccessThroughPointerToMemberOperatorAvailable</a>
+    <a id="functivore-member-access-through-pointer-to-member-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if <code>->*</code> is available on the type.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/member_function_at_available.doc.md">MemberFunctionAtAvailable</a>
+    <a id="functivore-member-function-at-available"></a>
+  </dt>
+  <dd><code>true</code> if member function <code>at</code> is available on the type.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/member_function_get_available.doc.md">MemberFunctionGetAvailable</a>
+    <a id="functivore-member-function-get-available"></a>
+  </dt>
+  <dd><code>true</code> if member function <code>get</code> is available on the type.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/member_function_pointer_probe.doc.md">MemberFunctionPointerProbe</a>
+    <a id="functivore-member-function-pointer-probe"></a>
   </dt>
   <dd><code>true</code> if the function-like type is a member function pointer.</dd>
 </dl>
@@ -1089,6 +1135,46 @@ SPDX-License-Identifier: Apache-2.0 -->
     <a id="functivore-result-in"></a>
   </dt>
   <dd><code>true</code> if the function-like type returns the given type.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/return_type_constrained_assignment_operator_available.doc.md">ReturnTypeConstrainedAssignmentOperatorAvailable</a>
+    <a id="functivore-return-type-constrained-assignment-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if the first type can be assigned to by the second type, and the result is properly constrained.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/return_type_constrained_function_call_operator_available.doc.md">ReturnTypeConstrainedFunctionCallOperatorAvailable</a>
+    <a id="functivore-return-type-constrained-function-call-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if the type can be invoked by the argument types, and the result is properly constrained.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/return_type_constrained_member_access_through_pointer_to_member_operator_available.doc.md">ReturnTypeConstrainedMemberAccessThroughPointerToMemberOperatorAvailable</a>
+    <a id="functivore-return-type-constrained-member-access-through-pointer-to-member-operator-available"></a>
+  </dt>
+  <dd><code>true</code> if <code>->*</code> is available on the type, and the result is properly constrained.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/return_type_constrained_member_function_at_available.doc.md">ReturnTypeConstrainedMemberFunctionAtAvailable</a>
+    <a id="functivore-return-type-constrained-member-function-at-available"></a>
+  </dt>
+  <dd><code>true</code> if member function <code>at</code> is available on the type, and the result is properly constrained.</dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="./concepts/functivore/return_type_constrained_member_function_get_available.doc.md">ReturnTypeConstrainedMemberFunctionGetAvailable</a>
+    <a id="functivore-return-type-constrained-member-function-get-available"></a>
+  </dt>
+  <dd><code>true</code> if member function <code>get</code> is available on the type, and the result is properly constrained.</dd>
 </dl>
 
 <dl>
